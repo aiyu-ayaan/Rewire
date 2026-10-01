@@ -31,6 +31,48 @@ import java.time.ZoneId
 
 enum class GuardOutcome { CONTINUED, EMERGENCY_ONCE, WENT_BACK, ABANDONED }
 
+interface EnginePlatform {
+    val packageName: String
+    fun isKeyboard(pkg: String): Boolean
+    fun sendHome(): Boolean
+    fun showGuard(pkg: String, habitId: String, level: WarningLevel, blockReason: String?)
+    fun launchApp(pkg: String)
+    fun syncGuardService(anyHabitEnabled: Boolean)
+}
+
+class DefaultEnginePlatform(private val context: Context) : EnginePlatform {
+    override val packageName: String
+        get() = context.packageName
+
+    override fun isKeyboard(pkg: String): Boolean =
+        context.getSystemService(InputMethodManager::class.java)?.enabledInputMethodList?.map { it.packageName }?.contains(pkg) == true
+
+    override fun sendHome(): Boolean {
+        val sentHome = RewireAccessibilityService.instance?.sendHome() ?: false
+        if (!sentHome) {
+            context.startActivity(Intent(Intent.ACTION_MAIN).addCategory(Intent.CATEGORY_HOME).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK))
+        }
+        return sentHome
+    }
+
+    override fun showGuard(pkg: String, habitId: String, level: WarningLevel, blockReason: String?) {
+        context.startActivity(
+            GuardActivity.intent(context, pkg, habitId, level, blockReason)
+                .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_SINGLE_TOP)
+        )
+    }
+
+    override fun launchApp(pkg: String) {
+        context.packageManager.getLaunchIntentForPackage(pkg)
+            ?.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_RESET_TASK_IF_NEEDED)
+            ?.let(context::startActivity)
+    }
+
+    override fun syncGuardService(anyHabitEnabled: Boolean) {
+        GuardMonitorService.sync(context, anyHabitEnabled)
+    }
+}
+
 /**
  * Orchestrates Guard: foreground app in -> RuleEngine decision -> warning/block screen -> event log.
  * Main-thread only (accessibility callbacks + activity results), so no locking.
@@ -41,7 +83,6 @@ enum class GuardOutcome { CONTINUED, EMERGENCY_ONCE, WENT_BACK, ABANDONED }
  * by itself (no loops). Continue / emergency relaunch the app and let that one visit through.
  */
 class HabitEngine(
-    private val context: Context,
     private val habits: HabitRepository,
     private val events: EventRepository,
     private val settings: StateFlow<Settings?>,
@@ -49,7 +90,28 @@ class HabitEngine(
     private val usage: UsageTracker,
     private val mainScope: CoroutineScope,
     private val clock: () -> Long = System::currentTimeMillis,
+    private val platform: EnginePlatform,
 ) {
+    constructor(
+        context: Context,
+        habits: HabitRepository,
+        events: EventRepository,
+        settings: StateFlow<Settings?>,
+        focus: StateFlow<FocusState>,
+        usage: UsageTracker,
+        mainScope: CoroutineScope,
+        clock: () -> Long = System::currentTimeMillis,
+    ) : this(
+        habits = habits,
+        events = events,
+        settings = settings,
+        focus = focus,
+        usage = usage,
+        mainScope = mainScope,
+        clock = clock,
+        platform = DefaultEnginePlatform(context),
+    )
+
     /** Last real foreground app (Rewire, System UI and keyboards ignored). */
     private var current: String? = null
     /** Guard screen currently shown for this package. */
@@ -61,7 +123,7 @@ class HabitEngine(
     init {
         mainScope.launch {
             habits.habits.collect { list ->
-                GuardMonitorService.sync(context, list.any { it.habit.enabled })
+                platform.syncGuardService(list.any { it.habit.enabled })
             }
         }
     }
@@ -78,6 +140,7 @@ class HabitEngine(
 
     fun onGuardResult(pkg: String, habitId: String, level: WarningLevel, outcome: GuardOutcome) {
         showingFor = null
+        current = null
         when (outcome) {
             GuardOutcome.CONTINUED -> {
                 events.log(if (level == WarningLevel.MINOR) HabitEventType.APP_CONTINUED else HabitEventType.OVERRIDE_USED, pkg, habitId)
@@ -96,9 +159,7 @@ class HabitEngine(
         events.log(HabitEventType.APP_OPENED, pkg, habitId)
         granted = pkg
         current = null // the relaunch below must reach onForeground
-        context.packageManager.getLaunchIntentForPackage(pkg)
-            ?.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_RESET_TASK_IF_NEEDED)
-            ?.let(context::startActivity)
+        platform.launchApp(pkg)
     }
 
     /**
@@ -135,14 +196,8 @@ class HabitEngine(
 
     private fun show(pkg: String, profile: HabitProfile, level: WarningLevel, blockReason: String?) {
         showingFor = pkg
-        val sentHome = RewireAccessibilityService.instance?.sendHome() ?: false
-        if (!sentHome) {
-            context.startActivity(Intent(Intent.ACTION_MAIN).addCategory(Intent.CATEGORY_HOME).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK))
-        }
-        context.startActivity(
-            GuardActivity.intent(context, pkg, profile.id, level, blockReason)
-                .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_SINGLE_TOP)
-        )
+        platform.sendHome()
+        platform.showGuard(pkg, profile.id, level, blockReason)
     }
 
     /** Re-check exactly when a Max boundary (window end, daily limit) is crossed — no polling. */
@@ -183,10 +238,7 @@ class HabitEngine(
     }
 
     private fun isIgnored(pkg: String): Boolean =
-        pkg == context.packageName || pkg == SYSTEM_UI || pkg in keyboards()
-
-    private fun keyboards(): Set<String> =
-        context.getSystemService(InputMethodManager::class.java)?.enabledInputMethodList?.map { it.packageName }?.toSet().orEmpty()
+        pkg == platform.packageName || pkg == SYSTEM_UI || platform.isKeyboard(pkg)
 
     private companion object {
         const val TAG = "RewireGuard"

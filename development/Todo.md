@@ -119,7 +119,7 @@ notifications production-ready. Data in memory + DataStore (Room = Phase 2).
 - [x] Usage-based daily limit via UsageStats events (needs Usage access; skipped if not granted)
 - [x] Daily-limit UI hint when Usage access missing
 - [ ] Foreground-service focus timer (focus bypass currently needs the app process alive — it is while a11y runs)
-- [ ] Engine unit tests with fakes (decision -> outcome flows)
+- [x] Engine unit tests with fakes (decision -> outcome flows)
 
 Verified on emulator: 1st Camera open allowed, 2nd blocked; emergency -> PIN -> opens once -> next open blocked;
 blocked app's notification removed; kill -9 -> process + service restarted by system, still blocked;
