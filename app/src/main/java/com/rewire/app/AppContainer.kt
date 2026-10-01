@@ -4,6 +4,8 @@ import android.content.Context
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.platform.LocalContext
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.ViewModelStoreOwner
+import androidx.lifecycle.viewmodel.compose.LocalViewModelStoreOwner
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.rewire.app.core.apps.InstalledAppsSource
 import com.rewire.app.core.datastore.Settings
@@ -40,7 +42,11 @@ class AppContainer(context: Context) {
 }
 
 @Composable
-inline fun <reified VM : ViewModel> rewireViewModel(key: String? = null, crossinline create: (AppContainer) -> VM): VM {
+inline fun <reified VM : ViewModel> rewireViewModel(
+    key: String? = null,
+    owner: ViewModelStoreOwner = checkNotNull(LocalViewModelStoreOwner.current),
+    crossinline create: (AppContainer) -> VM,
+): VM {
     val container = (LocalContext.current.applicationContext as RewireApp).container
-    return viewModel(key = key) { create(container) }
+    return viewModel(viewModelStoreOwner = owner, key = key) { create(container) }
 }

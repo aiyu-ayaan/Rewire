@@ -22,6 +22,7 @@ import androidx.navigation.compose.rememberNavController
 import androidx.navigation.toRoute
 import com.rewire.app.RewireApp
 import com.rewire.app.core.notifications.DeepLink
+import com.rewire.app.feature.focus.FocusFullscreenScreen
 import com.rewire.app.feature.guard.HabitDetailScreen
 import com.rewire.app.feature.guard.WarningPreviewScreen
 import com.rewire.app.feature.landing.LandingScreen
@@ -40,6 +41,7 @@ object Routes {
     @Serializable data class WarningPreview(val habitId: String)
     @Serializable data object NotificationSettings
     @Serializable data object WarningLibrary
+    @Serializable data object FocusFullscreen
 }
 
 @Composable
@@ -89,11 +91,11 @@ fun RewireNavHost(
                     enterTransition = { fadeIn(tween(500, delayMillis = 120)) + scaleIn(tween(500, delayMillis = 120), initialScale = 0.96f) },
                     // Card -> detail is a container transform: the shared card carries motion, screens only fade.
                     exitTransition = {
-                        if (targetState.destination.hasRoute(Routes.HabitDetail::class)) fadeOut(effects)
+                        if (targetState.destination.hasRoute(Routes.HabitDetail::class) || targetState.destination.hasRoute(Routes.FocusFullscreen::class)) fadeOut(effects)
                         else slideOutHorizontally(spatial) { -it / 8 } + fadeOut(effects)
                     },
                     popEnterTransition = {
-                        if (initialState.destination.hasRoute(Routes.HabitDetail::class)) fadeIn(effects)
+                        if (initialState.destination.hasRoute(Routes.HabitDetail::class) || initialState.destination.hasRoute(Routes.FocusFullscreen::class)) fadeIn(effects)
                         else slideInHorizontally(spatial) { -it / 8 } + fadeIn(effects)
                     },
                 ) {
@@ -104,6 +106,7 @@ fun RewireNavHost(
                             onOpenHabit = { nav.navigate(Routes.HabitDetail(it)) },
                             onOpenNotificationSettings = { nav.navigate(Routes.NotificationSettings) },
                             onOpenWarningLibrary = { nav.navigate(Routes.WarningLibrary) },
+                            onOpenFocusFullscreen = { nav.navigate(Routes.FocusFullscreen) { launchSingleTop = true } },
                         )
                     }
                 }
@@ -124,6 +127,15 @@ fun RewireNavHost(
                     popExitTransition = { fadeOut(effects) + scaleOut(targetScale = 0.9f) },
                 ) { entry ->
                     WarningPreviewScreen(habitId = entry.toRoute<Routes.WarningPreview>().habitId, onClose = { nav.popBackStack() })
+                }
+                // Timer digits are a shared element: they fly from the ring into the black screen.
+                composable<Routes.FocusFullscreen>(
+                    enterTransition = { fadeIn(effects) },
+                    popExitTransition = { fadeOut(effects) },
+                ) {
+                    CompositionLocalProvider(LocalNavAnimatedScope provides this) {
+                        FocusFullscreenScreen(onExit = { nav.popBackStack() })
+                    }
                 }
                 composable<Routes.NotificationSettings> {
                     NotificationSettingsScreen(onBack = { nav.popBackStack() })
