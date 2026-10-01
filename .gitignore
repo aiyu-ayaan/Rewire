@@ -18,3 +18,8 @@ node_modules/
 # OS
 .DS_Store
 Thumbs.db
+
+# Release signing
+keystore.properties
+*.jks
+*.keystore
