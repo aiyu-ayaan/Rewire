@@ -6,7 +6,8 @@ app/src/main/java/com/rewire/app/
 ├── MainActivity.kt           setContent only; reads deep-link tab extra
 ├── AppContainer.kt           manual DI (Hilt in Phase 2)
 ├── core/
-│   ├── datastore/            SettingsRepository (theme, onboarding, notif prefs, focus bypass)
+│   ├── settings/             Settings model + SettingsRepository (Room single-row table)
+│   ├── focus/                FocusController: app-scoped timer, persists every transition
 │   ├── notifications/        Channels, RewireNotifier, permission helpers
 │   └── apps/                 InstalledAppsSource (PackageManager launcher query)
 ├── domain/
@@ -15,9 +16,11 @@ app/src/main/java/com/rewire/app/
 │   ├── focus/                FocusConfig (+validation), FocusTimer state machine
 │   └── analytics/            HabitEvent, DailyMetrics, MetricsCalculator
 ├── data/
-│   ├── HabitRepository       interface + InMemory impl
-│   ├── WarningRepository     interface + impl (loads res/raw/default_warnings.json)
-│   └── EventLog              in-memory HabitEvent stream
+│   ├── Repositories.kt       Habit / Warning / Event / FocusSession repos: Room + write-through cache
+│   └── local/                RewireDatabase, entities, DAOs, mappers, LegacyImport (JSON + DataStore -> Room, once)
+├── service/
+│   ├── accessibility/  monitoring/  boot/
+│   └── focus/                FocusTimerService: FGS + wake lock for the running phase
 ├── feature/
 │   ├── landing/  guard/  focus/  matrix/  profile/
 └── ui/
@@ -30,6 +33,18 @@ Flow: `Composable -> ViewModel -> Repository/UseCase -> source`.
 Domain has zero Android imports (enforced by keeping it in plain Kotlin; tests run on JVM).
 
 ## Phase 1 ceilings (marked `ponytail:` in code)
-- Repos in memory -> Room (Phase 2)
-- Focus timer in ViewModel -> ForegroundService (Phase 3)
+- Repos cache whole tables in memory (sync reads for the a11y hot path) -> page from Room if it grows
+- Focus wake lock per running phase -> exact AlarmManager alarms if battery vitals complain
+
+## Database (Room, `rewire.db`, schema exported to `app/schemas/`)
+| Table | Key | Notes |
+|---|---|---|
+| `habits` | id | `created_at` orders the list |
+| `protected_apps` | (habit_id, package_name) | FK habits CASCADE, index package_name |
+| `restriction_rules` | id, unique habit_id | FK habits CASCADE, 1:1 |
+| `warnings` | id | built-ins insert-ignored on start, user edits kept |
+| `habit_events` | id | no FK (history outlives habits); index timestamp, (habit_id, type, timestamp); metadata JSON |
+| `focus_sessions` | id | live timer state while active, history + note once finished |
+| `settings` | id = 0 | single typed row |
+Schema changes = new version + `Migration` + exported JSON. Never destructive fallback.
 - Manual DI -> Hilt (Phase 2)

@@ -56,7 +56,7 @@ notifications production-ready. Data in memory + DataStore (Room = Phase 2).
 - [x] State machine: IDLE/FOCUSING/BREAK/PAUSED/COMPLETED/CANCELLED (pure Kotlin, tested)
 - [x] Hold-to-end (escape not too easy)
 - [x] Focus bypass settings (Minor on / Major configurable / Max off)
-- [~] Timer lives in ViewModel; survives rotation, not process death -> Phase 3 ForegroundService
+- [x] Timer in `FocusController` + `FocusTimerService` (FGS): survives swipe-away, minimise, screen off, process death (2026-10-02)
 
 ### 1.7 Notifications
 - [x] Channels: Focus session (ongoing), Focus alerts, Guard, Daily summary, System
@@ -119,7 +119,7 @@ notifications production-ready. Data in memory + DataStore (Room = Phase 2).
 - [x] "Protection is off" banner on Guard + system notification when the service stops
 - [x] Usage-based daily limit via UsageStats events (needs Usage access; skipped if not granted)
 - [x] Daily-limit UI hint when Usage access missing
-- [ ] Foreground-service focus timer (focus bypass currently needs the app process alive — it is while a11y runs)
+- [x] Foreground-service focus timer (2026-10-02)
 - [x] Engine unit tests with fakes (decision -> outcome flows)
 
 Verified on emulator: 1st Camera open allowed, 2nd blocked; emergency -> PIN -> opens once -> next open blocked;
@@ -134,19 +134,26 @@ service off -> banner + notification.
 - Not yet checked: >= 600dp NavigationRail layout, 200% font scale, TalkBack pass
 
 ### Known Phase 1 limits
-- In-memory habits/warnings/events vanish on process death (Room in Phase 2)
 - Debug build drops frames on first composition of a screen; profile on release build before tuning
 - UI copy partly inline in composables; extract to strings.xml with i18n pass (Phase 2)
+
+### 1.15 Focus: background, history, notes (added 2026-10-02)
+- [x] Optional "what did you achieve?" dialog when a session completes or is stopped
+- [x] Focus history screen: all finished sessions, Completed / Stopped filter, focused time, blocks, note (tap to edit)
+- [x] Heads-up "Focus keeps running" pop-up when leaving the app mid-session (silent channel, auto timeout)
+- [x] Android 16 Live Update: countdown chip in status bar / lock screen
+- [x] Focus DND mutes notifications only: calls, alarms, media allowed; Rewire focus alerts bypass it
+- [x] Verified on emulator: swipe-away keeps timer, `kill -9` resumes + completes on time, import kept habit/events/profile
 
 ## Phase 2 — Persistence + DI  (NEXT)
 - [ ] Extract remaining inline UI copy to strings.xml
 - [ ] Baseline profile + release-build perf check of transitions
 - [ ] Hilt (verify AGP 9 compat) replaces `AppContainer`
-- [ ] Room: habits, protected apps, rules, warnings, events, focus sessions
-- [ ] Repositories swap in-memory -> Room, same interfaces
+- [x] Room: habits, protected apps, rules, warnings, events, focus sessions, settings (schema v1 exported)
+- [x] Repositories swap JSON/DataStore -> Room, same interfaces; one-time legacy import (device-verified)
 - [ ] Event logger (`HabitEvent`) writes every action
 - [ ] Export / import / clear history (JSON, kotlinx.serialization)
-- [ ] Migration tests
+- [ ] Migration tests (needed from schema v2; v1 has only the legacy import)
 
 ## Phase 3 — Guard engine + Monitoring
 - [x] `RuleEngine` -> `RestrictionDecision` (Minor/Major/Max, windows, limits, launches) + tests
