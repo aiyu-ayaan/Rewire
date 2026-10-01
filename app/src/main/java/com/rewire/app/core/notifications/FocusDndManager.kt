@@ -22,6 +22,7 @@ class FocusDndManager(private val context: Context) {
         private const val KEY_SAVED_CATEGORIES = "saved_categories"
         private const val KEY_SAVED_CALL_SENDERS = "saved_call_senders"
         private const val KEY_SAVED_MSG_SENDERS = "saved_msg_senders"
+        private const val KEY_SAVED_CONV_SENDERS = "saved_conv_senders"
     }
 
     val isAccessGranted: Boolean
@@ -36,7 +37,7 @@ class FocusDndManager(private val context: Context) {
      * Applies Focus DND mode:
      * - Interruption filter set to PRIORITY
      * - Allows only phone and incoming app calls from any sender
-     * - Silences all messages, notifications, and non-call alerts
+     * - Silences all messages, conversations, notifications, and non-call alerts
      */
     @Synchronized
     fun applyFocusDnd(): Boolean {
@@ -57,18 +58,33 @@ class FocusDndManager(private val context: Context) {
                         putInt(KEY_SAVED_CATEGORIES, currentPolicy.priorityCategories)
                         putInt(KEY_SAVED_CALL_SENDERS, currentPolicy.priorityCallSenders)
                         putInt(KEY_SAVED_MSG_SENDERS, currentPolicy.priorityMessageSenders)
+                        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.R) {
+                            putInt(KEY_SAVED_CONV_SENDERS, currentPolicy.priorityConversationSenders)
+                        }
                     }
                     apply()
                 }
             }
 
-            // Calls allowed from ANY sender; messages silenced completely (omitted from priorityCategories)
-            val focusPolicy = NotificationManager.Policy(
-                NotificationManager.Policy.PRIORITY_CATEGORY_CALLS or
-                    NotificationManager.Policy.PRIORITY_CATEGORY_REPEAT_CALLERS,
-                NotificationManager.Policy.PRIORITY_SENDERS_ANY,
-                0,
-            )
+            // Calls allowed from ANY sender; messages and conversations silenced completely
+            val priorityCategories = NotificationManager.Policy.PRIORITY_CATEGORY_CALLS or
+                NotificationManager.Policy.PRIORITY_CATEGORY_REPEAT_CALLERS
+
+            val focusPolicy = if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.R) {
+                NotificationManager.Policy(
+                    priorityCategories,
+                    NotificationManager.Policy.PRIORITY_SENDERS_ANY,
+                    0,
+                    0,
+                    NotificationManager.Policy.CONVERSATION_SENDERS_NONE,
+                )
+            } else {
+                NotificationManager.Policy(
+                    priorityCategories,
+                    NotificationManager.Policy.PRIORITY_SENDERS_ANY,
+                    0,
+                )
+            }
 
             manager.notificationPolicy = focusPolicy
             manager.setInterruptionFilter(NotificationManager.INTERRUPTION_FILTER_PRIORITY)
@@ -99,11 +115,24 @@ class FocusDndManager(private val context: Context) {
             }
 
             if (prefs.contains(KEY_SAVED_CATEGORIES)) {
-                val restoredPolicy = NotificationManager.Policy(
-                    prefs.getInt(KEY_SAVED_CATEGORIES, 0),
-                    prefs.getInt(KEY_SAVED_CALL_SENDERS, NotificationManager.Policy.PRIORITY_SENDERS_ANY),
-                    prefs.getInt(KEY_SAVED_MSG_SENDERS, 0),
-                )
+                val savedCategories = prefs.getInt(KEY_SAVED_CATEGORIES, 0)
+                val savedCallSenders = prefs.getInt(KEY_SAVED_CALL_SENDERS, NotificationManager.Policy.PRIORITY_SENDERS_ANY)
+                val savedMsgSenders = prefs.getInt(KEY_SAVED_MSG_SENDERS, 0)
+                val restoredPolicy = if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.R && prefs.contains(KEY_SAVED_CONV_SENDERS)) {
+                    NotificationManager.Policy(
+                        savedCategories,
+                        savedCallSenders,
+                        savedMsgSenders,
+                        0,
+                        prefs.getInt(KEY_SAVED_CONV_SENDERS, NotificationManager.Policy.CONVERSATION_SENDERS_NONE),
+                    )
+                } else {
+                    NotificationManager.Policy(
+                        savedCategories,
+                        savedCallSenders,
+                        savedMsgSenders,
+                    )
+                }
                 runCatching { manager.notificationPolicy = restoredPolicy }
             }
 
