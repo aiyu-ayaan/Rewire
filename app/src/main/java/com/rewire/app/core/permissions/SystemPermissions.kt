@@ -19,14 +19,20 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.automirrored.rounded.OpenInNew
 import androidx.compose.material.icons.rounded.Accessibility
 import androidx.compose.material.icons.rounded.BatteryChargingFull
 import androidx.compose.material.icons.rounded.CheckCircle
+import androidx.compose.material.icons.rounded.Info
 import androidx.compose.material.icons.rounded.Notifications
-import androidx.compose.material.icons.rounded.NotificationsOff
 import androidx.compose.material.icons.rounded.QueryStats
 import androidx.compose.material3.AlertDialog
+import androidx.compose.material3.Card
+import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.FilledTonalButton
 import androidx.compose.material3.Icon
 import androidx.compose.material3.ListItem
@@ -177,24 +183,80 @@ fun PermissionsPanel(containerColor: Color = MaterialTheme.colorScheme.surfaceCo
                 colors = ListItemDefaults.colors(containerColor = containerColor),
             )
         }
+
+        val isAndroid13Plus = Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU
+        val accessibilityAllowed = SystemPermissions.accessibilityEnabled(context)
+        if (isAndroid13Plus && !accessibilityAllowed) {
+            Spacer(Modifier.height(8.dp))
+            Card(
+                shape = MaterialTheme.shapes.medium,
+                colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surfaceVariant),
+                modifier = Modifier.fillMaxWidth().padding(horizontal = 16.dp, vertical = 8.dp),
+            ) {
+                Column(Modifier.padding(16.dp)) {
+                    Row(verticalAlignment = Alignment.CenterVertically) {
+                        Icon(Icons.Rounded.Info, contentDescription = null, tint = MaterialTheme.colorScheme.primary, modifier = Modifier.size(20.dp))
+                        Spacer(Modifier.width(8.dp))
+                        Text("Android 13+ Restricted Settings", style = MaterialTheme.typography.titleSmall)
+                    }
+                    Spacer(Modifier.height(6.dp))
+                    Text(
+                        "If Accessibility is greyed out with \"Restricted setting\":\n1. Tap \"Open App Info\" below\n2. Tap the 3 dots (⋮) in the top-right corner\n3. Tap \"Allow restricted settings\"\n4. Return here to turn on Accessibility.",
+                        style = MaterialTheme.typography.bodySmall,
+                        color = MaterialTheme.colorScheme.onSurfaceVariant,
+                    )
+                    Spacer(Modifier.height(10.dp))
+                    FilledTonalButton(
+                        onClick = { SystemPermissions.open(context, SystemPermissions.appDetailsSettings(context)) },
+                        modifier = Modifier.align(Alignment.End),
+                    ) {
+                        Text("Open App Info")
+                        Spacer(Modifier.width(4.dp))
+                        Icon(Icons.AutoMirrored.Rounded.OpenInNew, contentDescription = null, modifier = Modifier.size(16.dp))
+                    }
+                }
+            }
+        }
     }
 
     // Prominent disclosure before sending the user to Accessibility settings (Play policy + honesty).
     if (disclosure) {
+        val isAndroid13Plus = Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU
         AlertDialog(
             onDismissRequest = { disclosure = false },
             icon = { Icon(Icons.Rounded.Accessibility, contentDescription = null) },
             title = { Text("Turn on Rewire in Accessibility") },
             text = {
-                Text(
-                    stringResource(R.string.accessibility_service_description) +
-                        "\n\nIn the next screen: Installed apps → Rewire → turn on.",
-                )
+                Column {
+                    Text(stringResource(R.string.accessibility_service_description))
+                    Spacer(Modifier.height(12.dp))
+                    Text(
+                        "In the next screen:\nInstalled apps → Rewire → turn on.",
+                        style = MaterialTheme.typography.bodyMedium,
+                    )
+                    if (isAndroid13Plus) {
+                        Spacer(Modifier.height(12.dp))
+                        Text(
+                            "Note: If Android says \"Restricted setting\", tap \"Open App Info\", tap the 3 dots (⋮) at top-right, and choose \"Allow restricted settings\".",
+                            style = MaterialTheme.typography.bodySmall,
+                            color = MaterialTheme.colorScheme.primary,
+                        )
+                    }
+                }
             },
             confirmButton = {
                 TextButton(onClick = { disclosure = false; SystemPermissions.open(context, SystemPermissions.accessibilitySettings()) }) { Text("Open settings") }
             },
-            dismissButton = { TextButton(onClick = { disclosure = false }) { Text("Not now") } },
+            dismissButton = {
+                Row {
+                    if (isAndroid13Plus) {
+                        TextButton(onClick = { disclosure = false; SystemPermissions.open(context, SystemPermissions.appDetailsSettings(context)) }) {
+                            Text("Open App Info")
+                        }
+                    }
+                    TextButton(onClick = { disclosure = false }) { Text("Not now") }
+                }
+            },
         )
     }
 }

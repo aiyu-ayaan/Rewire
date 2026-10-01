@@ -30,8 +30,11 @@ import androidx.compose.material.icons.rounded.GppMaybe
 import androidx.compose.material.icons.rounded.Add
 import androidx.compose.material.icons.rounded.Check
 import androidx.compose.material.icons.rounded.Timer
+import android.os.Build
+import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
+import androidx.compose.material3.TextButton
 import androidx.compose.material3.CircularWavyProgressIndicator
 import androidx.compose.material3.ExtendedFloatingActionButton
 import androidx.compose.material3.FilledTonalButton
@@ -251,6 +254,9 @@ private fun ProtectionBanner() {
     var resumed by remember { mutableStateOf(0) }
     LifecycleResumeEffect(Unit) { resumed++; onPauseOrDispose { } }
     val enabled = remember(running, resumed) { SystemPermissions.accessibilityEnabled(context) }
+    val isAndroid13Plus = Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU
+    var showRestrictedDialog by remember { mutableStateOf(false) }
+
     AnimatedVisibility(!running) {
         Card(
             shape = MaterialTheme.shapes.large,
@@ -264,12 +270,52 @@ private fun ProtectionBanner() {
                     Text("Protection is off", style = MaterialTheme.typography.titleMedium)
                     Text(
                         if (enabled) "Android stopped Rewire's service. Turn Rewire off and on in Accessibility."
+                        else if (isAndroid13Plus) "Turn on Rewire in Accessibility. If disabled, tap Fix to allow restricted settings."
                         else "Turn on Rewire in Accessibility so Guard can see protected apps.",
                         style = MaterialTheme.typography.bodyMedium,
                     )
                 }
-                FilledTonalButton(onClick = { SystemPermissions.open(context, SystemPermissions.accessibilitySettings()) }) { Text("Fix") }
+                FilledTonalButton(onClick = {
+                    if (!enabled && isAndroid13Plus) {
+                        showRestrictedDialog = true
+                    } else {
+                        SystemPermissions.open(context, SystemPermissions.accessibilitySettings())
+                    }
+                }) { Text("Fix") }
             }
         }
+    }
+
+    if (showRestrictedDialog) {
+        AlertDialog(
+            onDismissRequest = { showRestrictedDialog = false },
+            icon = { Icon(Icons.Rounded.GppMaybe, contentDescription = null) },
+            title = { Text("Enable Guard in Accessibility") },
+            text = {
+                Column {
+                    Text("1. In Accessibility settings, find Rewire and turn it on.")
+                    Spacer(Modifier.height(8.dp))
+                    Text(
+                        "2. If the setting says \"Restricted setting\": tap \"Open App Info\" below, tap the 3 dots (⋮) in the top-right corner, and choose \"Allow restricted settings\".",
+                        style = MaterialTheme.typography.bodyMedium,
+                    )
+                }
+            },
+            confirmButton = {
+                TextButton(onClick = {
+                    showRestrictedDialog = false
+                    SystemPermissions.open(context, SystemPermissions.accessibilitySettings())
+                }) { Text("Accessibility") }
+            },
+            dismissButton = {
+                Row {
+                    TextButton(onClick = {
+                        showRestrictedDialog = false
+                        SystemPermissions.open(context, SystemPermissions.appDetailsSettings(context))
+                    }) { Text("Open App Info") }
+                    TextButton(onClick = { showRestrictedDialog = false }) { Text("Cancel") }
+                }
+            },
+        )
     }
 }
