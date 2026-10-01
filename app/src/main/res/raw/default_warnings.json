@@ -1,0 +1,15 @@
+[
+  {"id":"d-minor-1","category":"DISCIPLINE","level":"MINOR","title":"Why are you opening this?","message":"Take a breath. Is this a choice or a reflex?","motivationalMessage":"Small pauses build big control."},
+  {"id":"d-minor-2","category":"SOCIAL_MEDIA","level":"MINOR","title":"Quick check-in","message":"You said you wanted to scroll less.","motivationalMessage":"More focus. Less wasted time."},
+  {"id":"d-minor-3","category":"PRODUCTIVITY","level":"MINOR","title":"What were you about to do?","message":"Name the task you came to the phone for.","motivationalMessage":"Intention first, app second."},
+  {"id":"d-minor-4","category":"SLEEP","level":"MINOR","title":"Winding down?","message":"Screens late at night push sleep later.","motivationalMessage":"Tomorrow-you will thank you."},
+  {"id":"d-major-1","category":"SOCIAL_MEDIA","level":"MAJOR","title":"You planned to avoid this right now","message":"This is one of the apps you chose to guard.","motivationalMessage":"More focus. Less wasted time."},
+  {"id":"d-major-2","category":"STUDY","level":"MAJOR","title":"Study time is protected","message":"Ten more minutes of work beats ten minutes of feed.","motivationalMessage":"Progress compounds quietly."},
+  {"id":"d-major-3","category":"GAMING","level":"MAJOR","title":"One more round?","message":"Rounds add up faster than they feel.","motivationalMessage":"Play on purpose, not on autopilot."},
+  {"id":"d-major-4","category":"MONEY","level":"MAJOR","title":"Pause before you spend","message":"Would you still want this tomorrow?","motivationalMessage":"Every skipped impulse is money kept."},
+  {"id":"d-major-5","category":"FITNESS","level":"MAJOR","title":"Move first?","message":"A short walk resets attention better than a scroll.","motivationalMessage":"Your body is the original focus tool."},
+  {"id":"d-max-1","category":"DISCIPLINE","level":"MAX","title":"This app is resting","message":"You set this boundary when you were thinking clearly.","motivationalMessage":"I want control over my time."},
+  {"id":"d-max-2","category":"SOCIAL_MEDIA","level":"MAX","title":"Limit reached for today","message":"The feed will still be there tomorrow.","motivationalMessage":"Today's time is already well spent."},
+  {"id":"d-max-3","category":"SLEEP","level":"MAX","title":"Outside your allowed hours","message":"Rest is part of the plan.","motivationalMessage":"Protect the night, own the morning."},
+  {"id":"d-max-4","category":"GAMING","level":"MAX","title":"Game time is done","message":"You hit the boundary you chose.","motivationalMessage":"Stopping on your terms is the real win."}
+]
