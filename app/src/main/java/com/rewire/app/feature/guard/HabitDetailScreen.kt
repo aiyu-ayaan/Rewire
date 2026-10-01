@@ -54,7 +54,14 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableFloatStateOf
 import androidx.compose.runtime.mutableStateListOf
 import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.produceState
 import androidx.compose.runtime.remember
+import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.compose.LocalLifecycleOwner
+import androidx.lifecycle.repeatOnLifecycle
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.withContext
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -185,9 +192,26 @@ fun HabitDetailScreen(habitId: String, onBack: () -> Unit, onPreview: (String) -
     }
 }
 
+/**
+ * Today's usage read straight from UsageStatsManager (never persisted): re-read on every resume and
+ * each minute while visible, off the main thread.
+ */
+@Composable
+internal fun rememberLiveUsage(key: Any?, read: () -> Int?): Int? {
+    val lifecycle = LocalLifecycleOwner.current.lifecycle
+    return produceState<Int?>(null, key, lifecycle) {
+        lifecycle.repeatOnLifecycle(Lifecycle.State.RESUMED) {
+            while (true) {
+                value = withContext(Dispatchers.IO) { read() }
+                delay(60_000L)
+            }
+        }
+    }.value
+}
+
 @Composable
 private fun BoundariesCard(p: HabitProfile, vm: HabitDetailViewModel) {
-    val usage = vm.usageMinutesToday()
+    val usage = rememberLiveUsage(p.apps) { vm.usageMinutesToday() }
     Card(shape = MaterialTheme.shapes.large, colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surfaceContainerLow)) {
         Column(Modifier.padding(20.dp), verticalArrangement = Arrangement.spacedBy(20.dp)) {
             if (usage != null && usage > 0) {

@@ -105,7 +105,7 @@ fun GuardScreen(onOpenHabit: (String) -> Unit, onStartFocus: () -> Unit) {
             items(habits, key = { it.id }) { profile ->
                 HabitCard(
                     profile = profile,
-                    usageMinutes = vm.usageMinutesFor(profile),
+                    usageMinutes = rememberLiveUsage(profile.apps) { vm.usageMinutesFor(profile) },
                     onClick = { onOpenHabit(profile.id) },
                     onToggle = { vm.setEnabled(profile, it) },
                     modifier = Modifier.animateItem().padding(bottom = 12.dp),
