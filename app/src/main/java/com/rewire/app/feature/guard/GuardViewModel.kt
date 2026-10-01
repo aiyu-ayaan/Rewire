@@ -61,6 +61,8 @@ class HabitDetailViewModel @AssistedInject constructor(
     fun usageMinutesToday(): Int? =
         habit.value?.let { p -> usage.minutesToday(p.apps.map { it.packageName }.toSet()) }
 
+    fun appUsageMinutesToday(pkg: String): Int? = usage.minutesToday(setOf(pkg))
+
     val hasUsageAccess: Boolean get() = usage.hasPermission()
 
     fun appLabel(pkg: String) = installedApps.label(pkg)

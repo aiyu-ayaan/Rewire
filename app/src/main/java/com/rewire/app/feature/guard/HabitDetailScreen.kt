@@ -148,8 +148,10 @@ fun HabitDetailScreen(habitId: String, onBack: () -> Unit, onPreview: (String) -
                 items(p.apps, key = { it.packageName }) { app ->
                     val ctx = LocalContext.current
                     val label = remember(app.packageName) { vm.appLabel(app.packageName) }
+                    val used = rememberLiveUsage(app.packageName) { vm.appUsageMinutesToday(app.packageName) }
                     ListItem(
                         headlineContent = { Text(label) },
+                        supportingContent = used?.let { { Text("${formatMinutes(it)} today") } },
                         leadingContent = { AppIcon(app.packageName) },
                         trailingContent = { IconButton(onClick = { vm.removeApp(app.packageName) }) { Icon(Icons.Rounded.Close, contentDescription = "Remove $label") } },
                         colors = ListItemDefaults.colors(containerColor = MaterialTheme.colorScheme.surface),
@@ -216,7 +218,7 @@ private fun BoundariesCard(p: HabitProfile, vm: HabitDetailViewModel) {
         Column(Modifier.padding(20.dp), verticalArrangement = Arrangement.spacedBy(20.dp)) {
             if (usage != null && usage > 0) {
                 Row(verticalAlignment = Alignment.CenterVertically) {
-                    Text("Today's usage (Digital Wellbeing)", style = MaterialTheme.typography.titleSmall, modifier = Modifier.weight(1f))
+                    Text(if (p.apps.size > 1) "Today's usage, all apps combined" else "Today's usage (Digital Wellbeing)", style = MaterialTheme.typography.titleSmall, modifier = Modifier.weight(1f))
                     Text(formatMinutes(usage), style = MaterialTheme.typography.titleMedium, color = MaterialTheme.colorScheme.primary)
                 }
             }
