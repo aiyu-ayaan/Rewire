@@ -468,6 +468,46 @@ class HabitEngineOutcomeTest {
     }
 
     @Test
+    fun `picking the blocked app from recents while block screen is open re-blocks it`() {
+        val launchHabit = HabitProfile(
+            habit = Habit("h-chrome", "Browsing", null, enabled = true),
+            apps = listOf(ProtectedApp("com.android.chrome", "h-chrome", WarningLevel.MAJOR, enabled = true)),
+            rule = RestrictionRule("r-chrome", "h-chrome", null, null, null, maxLaunches = 2, WarningLevel.MAJOR, 5)
+        )
+        habitRepo.setHabits(listOf(launchHabit))
+        repeat(2) {
+            engine.onForeground("com.android.chrome")
+            engine.onGuardResult("com.android.chrome", "h-chrome", WarningLevel.MAJOR, GuardOutcome.CONTINUED)
+            engine.onForeground("com.android.chrome") // granted relaunch
+            engine.onForeground("com.google.android.apps.nexuslauncher")
+        }
+
+        // 3rd open: blocked, engine sends Home and shows the block screen
+        engine.onForeground("com.android.chrome")
+        assertEquals("LAUNCH_LIMIT", platform.guardShown.last().blockReason)
+        val shown = platform.guardShown.size
+
+        // Real device order: Home event, recents (launcher), user taps the Chrome card,
+        // and only then does the block screen's onStop report ABANDONED.
+        engine.onForeground("com.google.android.apps.nexuslauncher")
+        engine.onForeground("com.android.chrome")
+        engine.onGuardResult("com.android.chrome", "h-chrome", WarningLevel.MAX, GuardOutcome.ABANDONED)
+
+        assertEquals(shown + 1, platform.guardShown.size)
+        assertEquals("LAUNCH_LIMIT", platform.guardShown.last().blockReason)
+        assertEquals(2, eventRepo.events.value.count { it.type == HabitEventType.APP_OPENED })
+    }
+
+    @Test
+    fun `leaving block screen for home does not re-show it`() {
+        engine.onForeground("com.supercell.clashroyale")
+        engine.onForeground("com.google.android.apps.nexuslauncher")
+        engine.onGuardResult("com.supercell.clashroyale", "h-max", WarningLevel.MAX, GuardOutcome.ABANDONED)
+
+        assertEquals(1, platform.guardShown.size)
+    }
+
+    @Test
     fun `granted visit is revoked after System UI appears`() {
         // Minor habit — first open is a warn, continue grants a visit
         engine.onForeground("com.instagram.android")

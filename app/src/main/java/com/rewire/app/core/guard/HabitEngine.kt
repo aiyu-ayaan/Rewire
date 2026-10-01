@@ -118,6 +118,8 @@ class HabitEngine(
     private var showingFor: String? = null
     /** One visit let through (Continue / emergency); cleared as soon as the user is in another app. */
     private var granted: String? = null
+    /** Protected app brought up while a guard screen was open (e.g. tapped in recents); judged once the screen closes. */
+    private var pending: String? = null
     private var recheck: Job? = null
 
     init {
@@ -142,13 +144,19 @@ class HabitEngine(
         recheck?.cancel()
         if (granted != null && pkg != granted) granted = null
         if (pkg == granted) { profileFor(pkg)?.let { scheduleRecheck(pkg, it) }; return }
-        if (showingFor != null) return
+        if (showingFor != null) {
+            // The guard's onStop (ABANDONED) lands after this event on real devices; dropping it let the app through.
+            pending = pkg.takeIf { profileFor(it) != null }
+            return
+        }
         evaluate(pkg, isRecheck = false)
     }
 
     fun onGuardResult(pkg: String, habitId: String, level: WarningLevel, outcome: GuardOutcome) {
         showingFor = null
         current = null
+        val next = pending
+        pending = null
         when (outcome) {
             GuardOutcome.CONTINUED -> {
                 events.log(if (level == WarningLevel.MINOR) HabitEventType.APP_CONTINUED else HabitEventType.OVERRIDE_USED, pkg, habitId)
@@ -159,7 +167,8 @@ class HabitEngine(
                 letThrough(pkg, habitId)
             }
             GuardOutcome.WENT_BACK -> events.log(HabitEventType.WENT_BACK, pkg, habitId)
-            GuardOutcome.ABANDONED -> Unit // user went elsewhere; next open is judged fresh
+            // User went elsewhere; if that was a protected app, judge it now (bounded: one real event, one check).
+            GuardOutcome.ABANDONED -> next?.let(::onForeground)
         }
     }
 
