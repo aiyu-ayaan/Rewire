@@ -12,6 +12,7 @@ import android.media.RingtoneManager
 import android.net.Uri
 import android.os.Build
 import android.provider.Settings
+import androidx.annotation.RawRes
 import androidx.core.app.NotificationChannelCompat
 import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
@@ -117,15 +118,20 @@ class RewireNotifier(
             .setAutoCancel(true)
             .setCategory(NotificationCompat.CATEGORY_REMINDER)
             .setPriority(NotificationCompat.PRIORITY_HIGH)
-            .setSilent(alert != FocusAlert.FOCUS_RESUMED) // break chime is the audible cue; avoid a double sound
+            .setSilent(true) // the chimes are the audible cue; avoid a double sound
             .build()
         post(NotificationCategory.FOCUS, Ids.FOCUS_ALERT, n)
     }
 
-    /** Plays Rewire's bundled break chime (res/raw/break_tone) when a focus phase ends. */
-    fun playBreakTone() {
+    /** Rising chime: focus block ended, break (or session end) begins. */
+    fun playBreakTone() = playTone(R.raw.break_tone)
+
+    /** Answering chime: break is over, focus resumes. */
+    fun playFocusTone() = playTone(R.raw.focus_tone)
+
+    private fun playTone(@RawRes res: Int) {
         runCatching {
-            val uri = Uri.parse("android.resource://${context.packageName}/${R.raw.break_tone}")
+            val uri = Uri.parse("android.resource://${context.packageName}/$res")
             RingtoneManager.getRingtone(context, uri)?.apply {
                 audioAttributes = AudioAttributes.Builder()
                     .setUsage(AudioAttributes.USAGE_NOTIFICATION_EVENT)

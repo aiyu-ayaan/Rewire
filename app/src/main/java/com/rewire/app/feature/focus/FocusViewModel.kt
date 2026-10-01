@@ -91,15 +91,21 @@ class FocusViewModel(
         val prev = _state.value
         _state.value = next
         _now.value = clock()
-        updateDnd(next)
+        updateDnd(prev, next)
         onPhaseChange(prev, next)
         c.notifier.showFocusOngoing(next, clock())
         if (next.isRunning) ensureTicker() else { ticker?.cancel(); ticker = null }
     }
 
-    private fun updateDnd(state: FocusState) {
+    private var pendingDnd: Job? = null
+
+    private fun updateDnd(prev: FocusState, state: FocusState) {
+        pendingDnd?.cancel()
         val shouldDnd = (focusDndEnabled.value ?: true) && state.isRunning && state.phase == FocusSessionStatus.FOCUSING
-        if (shouldDnd) {
+        if (shouldDnd && prev.phase == FocusSessionStatus.BREAK) {
+            // DND would mute the back-to-focus chime; let it ring out first.
+            pendingDnd = viewModelScope.launch { delay(TONE_MILLIS); c.dndManager.applyFocusDnd() }
+        } else if (shouldDnd) {
             c.dndManager.applyFocusDnd()
         } else {
             c.dndManager.restoreDnd()
@@ -139,6 +145,7 @@ class FocusViewModel(
                 val spent = elapsedMinutes(prev, clock()).coerceAtMost((prev.config.breakMillis / FocusState.MINUTE).toInt())
                 c.events.log(HabitEventType.BREAK_COMPLETED, metadata = mapOf(HabitEvent.KEY_BREAK_MINUTES to "$spent"))
                 c.notifier.focusAlert(FocusAlert.FOCUS_RESUMED, next)
+                c.notifier.playFocusTone()
             }
             prev.phase == FocusSessionStatus.FOCUSING && next.phase == FocusSessionStatus.FOCUSING && next.cycle > prev.cycle -> {
                 c.events.log(HabitEventType.CYCLE_COMPLETED, metadata = mapOf(HabitEvent.KEY_FOCUS_MINUTES to focusMin))
@@ -155,5 +162,6 @@ class FocusViewModel(
 
     private companion object {
         const val TICK_MILLIS = 250L
+        const val TONE_MILLIS = 1_500L
     }
 }
