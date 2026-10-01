@@ -38,37 +38,46 @@ object RuleEngine {
             WarningLevel.MAX -> i.bypassMax
         }
         if (bypass) return RestrictionDecision.Allow
+
+        val r = i.profile.rule
+        val start = r.allowedStartMinutes
+        val end = r.allowedEndMinutes
+        val limit = r.dailyLimitMinutes
+        val launches = r.maxLaunches
+
+        // 1. Any configured boundary breached -> hard block
+        if (start != null && end != null && !inWindow(i.nowMinutes, start, end)) {
+            return RestrictionDecision.Block(BlockReason.OUTSIDE_WINDOW)
+        }
+        if (launches != null && i.launchesToday >= launches) {
+            return RestrictionDecision.Block(BlockReason.LAUNCH_LIMIT)
+        }
+        if (limit != null && i.usageMinutesToday != null && i.usageMinutesToday >= limit) {
+            return RestrictionDecision.Block(BlockReason.DAILY_LIMIT)
+        }
+
+        // 2. Within boundaries (or no boundaries configured) -> apply configured friction level
         return when (rule.warningLevel) {
             WarningLevel.MINOR -> RestrictionDecision.Warn(WarningLevel.MINOR)
             WarningLevel.MAJOR -> RestrictionDecision.Warn(WarningLevel.MAJOR)
-            WarningLevel.MAX -> maxDecision(i)
-        }
-    }
-
-    private fun maxDecision(i: RuleInput): RestrictionDecision {
-        val r = i.profile.rule
-        val hasWindow = r.allowedStartMinutes != null && r.allowedEndMinutes != null
-        val hasLimit = r.dailyLimitMinutes != null
-        val hasLaunches = r.maxLaunches != null
-        return when {
-            hasWindow && !inWindow(i.nowMinutes, r.allowedStartMinutes!!, r.allowedEndMinutes!!) ->
-                RestrictionDecision.Block(BlockReason.OUTSIDE_WINDOW)
-            hasLaunches && i.launchesToday >= r.maxLaunches!! -> RestrictionDecision.Block(BlockReason.LAUNCH_LIMIT)
-            hasLimit && i.usageMinutesToday != null && i.usageMinutesToday >= r.dailyLimitMinutes!! ->
-                RestrictionDecision.Block(BlockReason.DAILY_LIMIT)
-            // Max with no boundary at all means "never": the user asked for a hard block.
-            !hasWindow && !hasLimit && !hasLaunches -> RestrictionDecision.Block(BlockReason.ALWAYS)
-            else -> RestrictionDecision.Allow
+            WarningLevel.MAX -> {
+                // Max with no boundaries at all means "never": the user asked for a hard block.
+                if (start == null && end == null && limit == null && launches == null) {
+                    RestrictionDecision.Block(BlockReason.ALWAYS)
+                } else {
+                    RestrictionDecision.Allow
+                }
+            }
         }
     }
 
     /**
-     * Minutes until an allowed Max session crosses a boundary (window end or daily limit),
+     * Minutes until an allowed session crosses a boundary (window end or daily limit),
      * so the monitor can re-check exactly then instead of polling. Null = nothing to wait for.
      */
     fun minutesUntilNextBoundary(i: RuleInput): Int? {
         val r = i.profile.rule
-        if (r.warningLevel != WarningLevel.MAX || !i.profile.habit.enabled) return null
+        if (!i.profile.habit.enabled) return null
         val candidates = buildList {
             if (r.allowedStartMinutes != null && r.allowedEndMinutes != null && inWindow(i.nowMinutes, r.allowedStartMinutes, r.allowedEndMinutes)) {
                 add(Math.floorMod(r.allowedEndMinutes - i.nowMinutes, MINUTES_PER_DAY))

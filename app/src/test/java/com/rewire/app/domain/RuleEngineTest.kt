@@ -67,6 +67,29 @@ class RuleEngineTest {
     @Test fun nextBoundaryIsEarliestOfWindowEndAndLimit() {
         assertEquals(20, RuleEngine.minutesUntilNextBoundary(input(WarningLevel.MAX, start = 540, end = 600, now = 580, daily = 60, usage = 30)))
         assertEquals(5, RuleEngine.minutesUntilNextBoundary(input(WarningLevel.MAX, daily = 60, usage = 55)))
-        assertNull(RuleEngine.minutesUntilNextBoundary(input(WarningLevel.MAJOR, daily = 60, usage = 55)))
+        assertEquals(5, RuleEngine.minutesUntilNextBoundary(input(WarningLevel.MAJOR, daily = 60, usage = 55)))
+        assertNull(RuleEngine.minutesUntilNextBoundary(input(WarningLevel.MAJOR, enabled = false, daily = 60, usage = 55)))
+    }
+
+    @Test fun majorWithLaunchLimitWarnsUnderLimitThenBlocks() {
+        assertEquals(Warn(WarningLevel.MAJOR), RuleEngine.decide(input(WarningLevel.MAJOR, launches = 2, launchesToday = 0)))
+        assertEquals(Warn(WarningLevel.MAJOR), RuleEngine.decide(input(WarningLevel.MAJOR, launches = 2, launchesToday = 1)))
+        assertEquals(Block(BlockReason.LAUNCH_LIMIT), RuleEngine.decide(input(WarningLevel.MAJOR, launches = 2, launchesToday = 2)))
+        assertEquals(Block(BlockReason.LAUNCH_LIMIT), RuleEngine.decide(input(WarningLevel.MAJOR, launches = 2, launchesToday = 3)))
+    }
+
+    @Test fun minorWithLaunchLimitWarnsUnderLimitThenBlocks() {
+        assertEquals(Warn(WarningLevel.MINOR), RuleEngine.decide(input(WarningLevel.MINOR, launches = 2, launchesToday = 1)))
+        assertEquals(Block(BlockReason.LAUNCH_LIMIT), RuleEngine.decide(input(WarningLevel.MINOR, launches = 2, launchesToday = 2)))
+    }
+
+    @Test fun majorWithDailyLimitWarnsUnderLimitThenBlocks() {
+        assertEquals(Warn(WarningLevel.MAJOR), RuleEngine.decide(input(WarningLevel.MAJOR, daily = 30, usage = 15)))
+        assertEquals(Block(BlockReason.DAILY_LIMIT), RuleEngine.decide(input(WarningLevel.MAJOR, daily = 30, usage = 30)))
+    }
+
+    @Test fun majorWithAllowedWindowWarnsInWindowThenBlocksOutside() {
+        assertEquals(Warn(WarningLevel.MAJOR), RuleEngine.decide(input(WarningLevel.MAJOR, start = 540, end = 570, now = 550)))
+        assertEquals(Block(BlockReason.OUTSIDE_WINDOW), RuleEngine.decide(input(WarningLevel.MAJOR, start = 540, end = 570, now = 600)))
     }
 }
