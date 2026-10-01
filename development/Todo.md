@@ -107,6 +107,24 @@ notifications production-ready. Data in memory + DataStore (Room = Phase 2).
 - [x] `PACKAGE_USAGE_STATS` declared so Rewire appears in Usage access list
 - [ ] Use profile `reason` inside warning screens (Phase 3 overlay)
 
+### 1.14 Real enforcement (pulled forward from Phase 3, 2026-10-01)
+- [x] `RuleEngine` (domain, 10 tests): Minor/Major warn, Max blocks on window / launch limit / daily limit, Max w/o boundary = always, focus bypass, overnight windows, next-boundary time
+- [x] `HabitEngine`: accessibility foreground change -> decision -> guard screen -> events; main-thread, no polling (re-check scheduled at exact boundary)
+- [x] Guard screen over Home (send Home first) -> protected app can't resume over it; abandoning never re-triggers (no loops)
+- [x] Continue / emergency let exactly one visit through; next open judged again
+- [x] Emergency unlock requires device screen lock (BiometricPrompt: biometric or PIN/pattern/password)
+- [x] Max-blocked apps' notifications hidden (NotificationListenerService, content never read), `NOTIFICATION_BLOCKED` logged
+- [x] Habits, warnings, events persisted (JSON files, atomic writes) -> rules work with UI never opened / after process death
+- [x] "Protection is off" banner on Guard + system notification when the service stops
+- [x] Usage-based daily limit via UsageStats events (needs Usage access; skipped if not granted)
+- [ ] Daily-limit UI hint when Usage access missing
+- [ ] Foreground-service focus timer (focus bypass currently needs the app process alive — it is while a11y runs)
+- [ ] Engine unit tests with fakes (decision -> outcome flows)
+
+Verified on emulator: 1st Camera open allowed, 2nd blocked; emergency -> PIN -> opens once -> next open blocked;
+blocked app's notification removed; kill -9 -> process + service restarted by system, still blocked;
+service off -> banner + notification.
+
 ### 1.11 Verified on emulator (API 37, 1080x2400)
 - Landing morph/orbit loop, hero shared-bounds into Guard header (checked at 5x animator scale)
 - Habit card -> detail container transform, create flow, Major preview pause countdown
