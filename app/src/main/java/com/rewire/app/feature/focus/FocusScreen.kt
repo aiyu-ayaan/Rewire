@@ -79,6 +79,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.LifecycleResumeEffect
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import com.rewire.app.BuildConfig
 import com.rewire.app.core.datastore.FocusBypass
 import com.rewire.app.core.notifications.NotificationRationaleCard
 import com.rewire.app.core.notifications.RewireNotifier
@@ -137,6 +138,7 @@ fun FocusScreen(onFullscreen: () -> Unit) {
                 onFocusDnd = vm::setFocusDndEnabled,
                 onOpenDndSettings = { context.startActivity(vm.dndSettingsIntent()) },
                 onStart = vm::start,
+                onQuickTest = vm::startQuickTest,
             )
             1 -> FocusRunning(state, now, vm::pause, vm::resume, vm::skipBreak, vm::end, onFullscreen)
             else -> FocusFinished(state, onDone = vm::reset)
@@ -160,6 +162,7 @@ private fun FocusSetup(
     onFocusDnd: (Boolean) -> Unit,
     onOpenDndSettings: () -> Unit,
     onStart: () -> Unit,
+    onQuickTest: () -> Unit,
 ) {
     val permission = rememberNotificationPermission()
     Column(
@@ -221,6 +224,11 @@ private fun FocusSetup(
             Icon(Icons.Rounded.PlayArrow, contentDescription = null)
             Spacer(Modifier.width(8.dp))
             Text("Start focus", style = MaterialTheme.typography.titleMedium)
+        }
+        if (BuildConfig.DEBUG) {
+            OutlinedButton(onClick = onQuickTest, modifier = Modifier.fillMaxWidth().padding(top = 8.dp)) {
+                Text("Quick test · 20s focus / 10s break")
+            }
         }
 
         NotificationRationaleCard(

@@ -63,4 +63,11 @@ class FocusStateTest {
 
     @Test fun cancelEndsActiveSession() =
         assertEquals(CANCELLED, FocusState().start(FocusConfig(10, 5, 1), 0).cancel(1).status)
+
+    @Test fun quickTestRunsInSeconds() {
+        val s = FocusState().start(FocusState.QUICK_TEST, 0)
+        assertEquals(20_000L, s.phaseEndsAt)
+        assertEquals(BREAK, s.advance(20_000).status)
+        assertEquals(30_000L, s.advance(20_000).phaseEndsAt)
+    }
 }

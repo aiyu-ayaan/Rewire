@@ -62,8 +62,12 @@ class FocusViewModel(
         }
     }
 
-    fun start() {
-        val config = _draft.value
+    fun start() = start(_draft.value)
+
+    /** Debug builds only: 20 s / 10 s session to exercise phase changes, chime and notifications fast. */
+    fun startQuickTest() = start(FocusState.QUICK_TEST)
+
+    private fun start(config: FocusConfig) {
         if (!config.isValid) return
         transition(FocusState().start(config, clock()))
         c.events.log(HabitEventType.FOCUS_STARTED, metadata = mapOf("focus" to "${config.focusMinutes}", "break" to "${config.breakMinutes}", "cycles" to "${config.cycles}"))
@@ -119,7 +123,7 @@ class FocusViewModel(
     /** Logs + notifies on natural phase boundaries (not on user pause/resume). */
     private fun onPhaseChange(prev: FocusState, next: FocusState) {
         if (prev.phase == next.phase && prev.cycle == next.cycle && next.status != FocusSessionStatus.COMPLETED) return
-        val focusMin = "${prev.config.focusMinutes}"
+        val focusMin = "${prev.config.focusMillis / FocusState.MINUTE}"
         when {
             next.status == FocusSessionStatus.COMPLETED && prev.status != FocusSessionStatus.COMPLETED -> {
                 c.events.log(HabitEventType.FOCUS_COMPLETED, metadata = mapOf(HabitEvent.KEY_FOCUS_MINUTES to focusMin))
@@ -132,7 +136,7 @@ class FocusViewModel(
                 c.notifier.playBreakTone()
             }
             prev.phase == FocusSessionStatus.BREAK && next.phase == FocusSessionStatus.FOCUSING -> {
-                val spent = elapsedMinutes(prev, clock()).coerceAtMost(prev.config.breakMinutes)
+                val spent = elapsedMinutes(prev, clock()).coerceAtMost((prev.config.breakMillis / FocusState.MINUTE).toInt())
                 c.events.log(HabitEventType.BREAK_COMPLETED, metadata = mapOf(HabitEvent.KEY_BREAK_MINUTES to "$spent"))
                 c.notifier.focusAlert(FocusAlert.FOCUS_RESUMED, next)
             }

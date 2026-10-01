@@ -8,7 +8,12 @@ data class FocusConfig(
     val focusMinutes: Int,
     val breakMinutes: Int,
     val cycles: Int,
+    /** Length of one "minute". Only debug quick-test shrinks it; real sessions keep [FocusState.MINUTE]. */
+    val unitMillis: Long = FocusState.MINUTE,
 ) {
+    val focusMillis get() = focusMinutes * unitMillis
+    val breakMillis get() = breakMinutes * unitMillis
+
     fun validate(): FocusConfigError? = when {
         focusMinutes < 1 -> FocusConfigError.FOCUS_TOO_SHORT
         breakMinutes < 0 -> FocusConfigError.BREAK_TOO_SHORT
@@ -44,8 +49,8 @@ data class FocusState(
     val phase: FocusSessionStatus? get() = if (status == FocusSessionStatus.PAUSED) pausedFrom else status.takeIf { isRunning }
 
     fun phaseMillis(): Long = when (phase) {
-        FocusSessionStatus.BREAK -> config.breakMinutes * MINUTE
-        else -> config.focusMinutes * MINUTE
+        FocusSessionStatus.BREAK -> config.breakMillis
+        else -> config.focusMillis
     }
 
     fun remaining(now: Long): Long = when {
@@ -66,7 +71,7 @@ data class FocusState(
             status = FocusSessionStatus.FOCUSING,
             config = config,
             cycle = 1,
-            phaseEndsAt = now + config.focusMinutes * MINUTE,
+            phaseEndsAt = now + config.focusMillis,
             startedAt = now,
         )
     }
@@ -97,14 +102,17 @@ data class FocusState(
     private fun nextPhase(at: Long): FocusState {
         val fromBreak = phase == FocusSessionStatus.BREAK
         return when {
-            fromBreak -> copy(status = FocusSessionStatus.FOCUSING, cycle = cycle + 1, phaseEndsAt = at + config.focusMinutes * MINUTE, pausedRemaining = null, pausedFrom = null)
+            fromBreak -> copy(status = FocusSessionStatus.FOCUSING, cycle = cycle + 1, phaseEndsAt = at + config.focusMillis, pausedRemaining = null, pausedFrom = null)
             cycle >= config.cycles -> copy(status = FocusSessionStatus.COMPLETED, phaseEndsAt = null, completedAt = at)
-            config.breakMinutes == 0 -> copy(status = FocusSessionStatus.FOCUSING, cycle = cycle + 1, phaseEndsAt = at + config.focusMinutes * MINUTE)
-            else -> copy(status = FocusSessionStatus.BREAK, phaseEndsAt = at + config.breakMinutes * MINUTE)
+            config.breakMinutes == 0 -> copy(status = FocusSessionStatus.FOCUSING, cycle = cycle + 1, phaseEndsAt = at + config.focusMillis)
+            else -> copy(status = FocusSessionStatus.BREAK, phaseEndsAt = at + config.breakMillis)
         }
     }
 
     companion object {
         const val MINUTE = 60_000L
+
+        /** Debug-only: 20 s focus / 10 s break, 2 cycles. */
+        val QUICK_TEST = FocusConfig(focusMinutes = 2, breakMinutes = 1, cycles = 2, unitMillis = 10_000)
     }
 }
