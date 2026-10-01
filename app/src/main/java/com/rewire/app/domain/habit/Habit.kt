@@ -1,7 +1,10 @@
 package com.rewire.app.domain.habit
 
+import kotlinx.serialization.Serializable
+
 enum class WarningLevel { MINOR, MAJOR, MAX }
 
+@Serializable
 data class Habit(
     val id: String,
     val name: String,
@@ -9,6 +12,7 @@ data class Habit(
     val enabled: Boolean,
 )
 
+@Serializable
 data class ProtectedApp(
     val packageName: String,
     val habitId: String,
@@ -17,6 +21,7 @@ data class ProtectedApp(
 )
 
 /** Times are minutes from midnight. Null = no boundary. */
+@Serializable
 data class RestrictionRule(
     val id: String,
     val habitId: String,
@@ -30,6 +35,7 @@ data class RestrictionRule(
 )
 
 /** Aggregate the UI works with: one habit + its apps + its rule. */
+@Serializable
 data class HabitProfile(
     val habit: Habit,
     val apps: List<ProtectedApp>,
