@@ -97,6 +97,16 @@ notifications production-ready. Data in memory + DataStore (Room = Phase 2).
 - [x] Bottom bar / rail only on tab base screens; `HideNavigationBar()` for in-tab deeper states (focus timer, result)
 - [ ] Visual check of fullscreen on device (emulator was in use)
 
+### 1.13 Onboarding profile + grantable permissions (added 2026-10-01)
+- [x] Onboarding: Landing -> Profile setup (name, avatar shape, goal, reason) -> Permissions -> app; hero shared through every step
+- [x] User profile stored in DataStore; Profile tab header = user card (tap to edit, avatar shared element)
+- [x] Avatar morphs between MaterialShapes with bouncy pop on change
+- [x] PermissionsPanel (onboarding + Profile): Notifications, Accessibility, Usage access, Unrestricted battery; live status on resume, Allow opens the right settings
+- [x] Accessibility prominent-disclosure dialog before opening settings
+- [x] `RewireAccessibilityService` declared (window-change events only, no content); reports foreground package to `ForegroundAppDetector` — engine wiring is Phase 3
+- [x] `PACKAGE_USAGE_STATS` declared so Rewire appears in Usage access list
+- [ ] Use profile `reason` inside warning screens (Phase 3 overlay)
+
 ### 1.11 Verified on emulator (API 37, 1080x2400)
 - Landing morph/orbit loop, hero shared-bounds into Guard header (checked at 5x animator scale)
 - Habit card -> detail container transform, create flow, Major preview pause countdown
