@@ -8,9 +8,8 @@ import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.media.AudioAttributes
-import android.media.AudioManager
 import android.media.RingtoneManager
-import android.media.ToneGenerator
+import android.net.Uri
 import android.os.Build
 import android.provider.Settings
 import androidx.core.app.NotificationChannelCompat
@@ -118,27 +117,21 @@ class RewireNotifier(
             .setAutoCancel(true)
             .setCategory(NotificationCompat.CATEGORY_REMINDER)
             .setPriority(NotificationCompat.PRIORITY_HIGH)
+            .setSilent(alert != FocusAlert.FOCUS_RESUMED) // break chime is the audible cue; avoid a double sound
             .build()
         post(NotificationCategory.FOCUS, Ids.FOCUS_ALERT, n)
     }
 
-    /**
-     * Plays a pleasant audible tone when a focus phase completes and break mode starts.
-     */
+    /** Plays Rewire's bundled break chime (res/raw/break_tone) when a focus phase ends. */
     fun playBreakTone() {
         runCatching {
-            val uri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION)
-                ?: RingtoneManager.getDefaultUri(RingtoneManager.TYPE_ALARM)
-            val ringtone = RingtoneManager.getRingtone(context, uri)
-            if (ringtone != null) {
-                ringtone.audioAttributes = AudioAttributes.Builder()
+            val uri = Uri.parse("android.resource://${context.packageName}/${R.raw.break_tone}")
+            RingtoneManager.getRingtone(context, uri)?.apply {
+                audioAttributes = AudioAttributes.Builder()
                     .setUsage(AudioAttributes.USAGE_NOTIFICATION_EVENT)
                     .setContentType(AudioAttributes.CONTENT_TYPE_SONIFICATION)
                     .build()
-                ringtone.play()
-            } else {
-                val toneGen = ToneGenerator(AudioManager.STREAM_NOTIFICATION, 90)
-                toneGen.startTone(ToneGenerator.TONE_PROP_ACK, 350)
+                play()
             }
         }
     }
