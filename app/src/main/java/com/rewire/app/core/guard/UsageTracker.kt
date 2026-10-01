@@ -1,7 +1,6 @@
 package com.rewire.app.core.guard
 
 import android.app.usage.UsageEvents
-import android.app.usage.UsageStats
 import android.app.usage.UsageStatsManager
 import android.content.Context
 import com.rewire.app.core.permissions.SystemPermissions
@@ -21,20 +20,9 @@ open class UsageTracker(private val context: Context? = null) {
      * Returns null when Usage access isn't granted.
      */
     open fun minutesToday(packages: Set<String>, now: Long = System.currentTimeMillis()): Int? {
-        val ctx = context ?: return null
-        if (packages.isEmpty() || !SystemPermissions.usageAccessGranted(ctx)) return null
-        val usm = ctx.getSystemService(UsageStatsManager::class.java) ?: return null
-        val start = LocalDate.now().atStartOfDay(ZoneId.systemDefault()).toInstant().toEpochMilli()
-
-        // 1. Query aggregated stats (same API used by Digital Wellbeing)
-        val aggregated = runCatching { usm.queryAndAggregateUsageStats(start, now) }.getOrNull().orEmpty()
-        var totalMillis = packages.sumOf { aggregated[it]?.totalTimeInForeground ?: 0L }
-
-        // 2. Add currently active un-flushed session from recent UsageEvents
-        val activeDelta = activeSessionDuration(usm, packages, now)
-        totalMillis += activeDelta
-
-        return (totalMillis / 60_000L).toInt()
+        if (packages.isEmpty()) return null
+        val millis = foregroundMillisToday(now) ?: return null
+        return (packages.sumOf { millis[it] ?: 0L } / 60_000L).toInt()
     }
 
     /** Single app foreground minutes today. */
@@ -44,31 +32,38 @@ open class UsageTracker(private val context: Context? = null) {
     /**
      * Map of packageName to minutes used today for all applications (matching Digital Wellbeing).
      */
-    fun allAppsMinutesToday(now: Long = System.currentTimeMillis()): Map<String, Int> {
-        val ctx = context ?: return emptyMap()
-        if (!SystemPermissions.usageAccessGranted(ctx)) return emptyMap()
-        val usm = ctx.getSystemService(UsageStatsManager::class.java) ?: return emptyMap()
-        val start = LocalDate.now().atStartOfDay(ZoneId.systemDefault()).toInstant().toEpochMilli()
-        val aggregated = runCatching { usm.queryAndAggregateUsageStats(start, now) }.getOrNull().orEmpty()
-        return aggregated.mapNotNull { (pkg, stats) ->
-            val minutes = (stats.totalTimeInForeground / 60_000L).toInt()
+    fun allAppsMinutesToday(now: Long = System.currentTimeMillis()): Map<String, Int> =
+        foregroundMillisToday(now).orEmpty().mapNotNull { (pkg, ms) ->
+            val minutes = (ms / 60_000L).toInt()
             if (minutes > 0) pkg to minutes else null
         }.toMap()
-    }
 
     /**
      * Total device screen time today in minutes (matching Digital Wellbeing dashboard).
      */
-    fun totalScreenTimeToday(now: Long = System.currentTimeMillis()): Int {
-        val ctx = context ?: return 0
-        if (!SystemPermissions.usageAccessGranted(ctx)) return 0
-        val usm = ctx.getSystemService(UsageStatsManager::class.java) ?: return 0
+    fun totalScreenTimeToday(now: Long = System.currentTimeMillis()): Int =
+        (foregroundMillisToday(now).orEmpty().values.sum() / 60_000L).toInt()
+
+    /**
+     * Per-package foreground millis since local midnight, built from raw UsageEvents like Digital
+     * Wellbeing. The aggregated UsageStats buckets aren't aligned to midnight and overlap the query
+     * range, so they leak yesterday's usage into today.
+     */
+    private fun foregroundMillisToday(now: Long): Map<String, Long>? {
+        val ctx = context ?: return null
+        if (!SystemPermissions.usageAccessGranted(ctx)) return null
+        val usm = ctx.getSystemService(UsageStatsManager::class.java) ?: return null
         val start = LocalDate.now().atStartOfDay(ZoneId.systemDefault()).toInstant().toEpochMilli()
-        val statsList = runCatching {
-            usm.queryUsageStats(UsageStatsManager.INTERVAL_DAILY, start, now)
-        }.getOrNull().orEmpty()
-        val totalMillis = statsList.sumOf { it.totalTimeInForeground }
-        return (totalMillis / 60_000L).toInt()
+        return runCatching {
+            val events = usm.queryEvents(start, now)
+            val list = ArrayList<Event>()
+            val e = UsageEvents.Event()
+            while (events.hasNextEvent()) {
+                events.getNextEvent(e)
+                list += Event(e.packageName, e.className, e.eventType, e.timeStamp)
+            }
+            foregroundMillis(list, start, now)
+        }.getOrNull()
     }
 
     /** App open in the foreground right now per UsageEvents; null without usage access or when unknown. */
@@ -77,15 +72,6 @@ open class UsageTracker(private val context: Context? = null) {
         if (!SystemPermissions.usageAccessGranted(ctx)) return null
         val usm = ctx.getSystemService(UsageStatsManager::class.java) ?: return null
         return lastResumed(usm, now)?.first
-    }
-
-    /**
-     * Detects if any app in [packages] is currently open in the foreground right now,
-     * calculating any un-flushed duration since its last resumed event.
-     */
-    private fun activeSessionDuration(usm: UsageStatsManager, packages: Set<String>, now: Long): Long {
-        val (pkg, resumedAt) = lastResumed(usm, now) ?: return 0L
-        return if (pkg in packages && resumedAt > 0L) (now - resumedAt).coerceIn(0L, 30 * 60_000L) else 0L
     }
 
     /** Last app resumed in the past 30 min (today) and not paused since, with its resume time. */
@@ -115,5 +101,56 @@ open class UsageTracker(private val context: Context? = null) {
             }
             lastResumedPkg?.let { it to lastResumedTime }
         }.getOrNull()
+    }
+
+    internal data class Event(val pkg: String?, val cls: String?, val type: Int, val time: Long)
+
+    internal companion object {
+        private const val RESUMED = 1 // ACTIVITY_RESUMED
+        private const val PAUSED = 2 // ACTIVITY_PAUSED
+        private const val SCREEN_OFF = 16 // SCREEN_NON_INTERACTIVE
+        private const val STOPPED = 23 // ACTIVITY_STOPPED
+        private const val SHUTDOWN = 26 // DEVICE_SHUTDOWN
+
+        /**
+         * Sums foreground time per package from [events] in [start, now]. A package counts as
+         * foreground while any of its activities is resumed; a pause with no resume today means the
+         * app was already open at [start]; sessions still open count up to [now].
+         */
+        fun foregroundMillis(events: List<Event>, start: Long, now: Long): Map<String, Long> {
+            val total = HashMap<String, Long>()
+            val open = HashMap<String, MutableSet<String?>>()
+            val since = HashMap<String, Long>()
+            val seen = HashSet<String>()
+            fun add(pkg: String, from: Long, to: Long) { total.merge(pkg, (to - from).coerceAtLeast(0L), Long::plus) }
+            fun closeAll(at: Long) {
+                since.forEach { (pkg, from) -> add(pkg, from, at) }
+                since.clear(); open.clear()
+            }
+            for (e in events) {
+                when (e.type) {
+                    SCREEN_OFF, SHUTDOWN -> closeAll(e.time)
+                    RESUMED -> {
+                        val pkg = e.pkg ?: continue
+                        seen += pkg
+                        val classes = open.getOrPut(pkg) { HashSet() }
+                        if (classes.isEmpty()) since[pkg] = e.time
+                        classes += e.cls
+                    }
+                    PAUSED, STOPPED -> {
+                        val pkg = e.pkg ?: continue
+                        val classes = open[pkg]
+                        if (classes == null || !classes.remove(e.cls)) {
+                            if (pkg !in seen) add(pkg, start, e.time)
+                        } else if (classes.isEmpty()) {
+                            since.remove(pkg)?.let { add(pkg, it, e.time) }
+                        }
+                        seen += pkg
+                    }
+                }
+            }
+            closeAll(now)
+            return total
+        }
     }
 }
