@@ -2,5 +2,8 @@
 <resources>
     <color name="canvas">#F4FBF8</color>
     <color name="notification_accent">#006A60</color>
+    <!-- REWIRE mark: pause bar + turn bar (development/brand/README.md) -->
+    <color name="brand_pause">#006A60</color>
+    <color name="brand_turn">#B86A1B</color>
     <color name="ic_launcher_background">#005048</color>
 </resources>

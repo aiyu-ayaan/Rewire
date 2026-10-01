@@ -2,4 +2,6 @@
 <resources>
     <color name="canvas">#0E1513</color>
     <color name="notification_accent">#82D5C8</color>
+    <color name="brand_pause">#82D5C8</color>
+    <color name="brand_turn">#FDB876</color>
 </resources>

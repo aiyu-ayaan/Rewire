@@ -63,6 +63,7 @@ dependencies {
     implementation(libs.androidx.datastore.preferences)
     implementation(libs.androidx.graphics.shapes)
     implementation(libs.androidx.biometric)
+    implementation(libs.androidx.core.splashscreen)
 
     implementation(platform(libs.compose.bom))
     implementation(libs.compose.ui)
