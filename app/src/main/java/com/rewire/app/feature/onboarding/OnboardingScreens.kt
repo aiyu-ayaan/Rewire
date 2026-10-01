@@ -22,6 +22,8 @@ import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.rounded.ArrowBack
 import androidx.compose.material.icons.automirrored.rounded.ArrowForward
+import androidx.compose.material.icons.rounded.CheckCircle
+import androidx.compose.material.icons.rounded.Shield
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Card
@@ -30,6 +32,7 @@ import androidx.compose.material3.FilterChip
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
@@ -38,6 +41,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
@@ -53,12 +57,21 @@ import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.input.KeyboardCapitalization
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.window.Dialog
+import androidx.compose.ui.window.DialogProperties
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.rewire.app.RewireApp
 import com.rewire.app.core.datastore.UserGoal
 import com.rewire.app.core.datastore.UserProfile
 import com.rewire.app.core.permissions.PermissionsPanel
 import com.rewire.app.core.permissions.rememberGrantedCount
+import com.rewire.app.domain.habit.Habit
+import com.rewire.app.domain.habit.HabitProfile
+import com.rewire.app.domain.habit.RestrictionRule
+import com.rewire.app.domain.habit.WarningLevel
+import com.rewire.app.domain.warning.Warning
+import com.rewire.app.domain.warning.WarningCategory
+import com.rewire.app.feature.guard.WarningScreen
 import com.rewire.app.feature.landing.HERO_KEY
 import com.rewire.app.ui.components.AvatarShapes
 import com.rewire.app.ui.components.InnerScreen
@@ -154,6 +167,10 @@ fun ProfileSetupScreen(onboarding: Boolean, onDone: () -> Unit, onBack: (() -> U
 @Composable
 fun PermissionsSetupScreen(onFinish: () -> Unit, onBack: () -> Unit) {
     val granted = rememberGrantedCount()
+    val totalPermissions = 6
+    var testProtection by remember { mutableStateOf(false) }
+    var testedProtection by remember { mutableStateOf(false) }
+
     InnerScreen(title = "Let Rewire help", subtitle = "Step 2 of 2", onBack = onBack) {
         MorphingShape(brush = heroBrush(), modifier = Modifier.size(88.dp).sharedBoundsOrSelf(HERO_KEY), rotationMillis = 30_000)
         Spacer(Modifier.height(16.dp))
@@ -168,19 +185,72 @@ fun PermissionsSetupScreen(onFinish: () -> Unit, onBack: () -> Unit) {
             modifier = Modifier.widthIn(max = 560.dp).padding(top = 24.dp),
         ) { PermissionsPanel() }
         Text(
-            "$granted of 5 allowed",
+            "$granted of $totalPermissions allowed",
             style = MaterialTheme.typography.labelLarge, color = MaterialTheme.colorScheme.primary,
             modifier = Modifier.padding(top = 12.dp),
         )
-        Spacer(Modifier.height(24.dp))
+        Spacer(Modifier.height(16.dp))
+        OutlinedButton(
+            onClick = { testProtection = true },
+            modifier = Modifier.widthIn(max = 520.dp).fillMaxWidth().height(ButtonDefaults.MediumContainerHeight),
+            contentPadding = ButtonDefaults.MediumContentPadding,
+        ) {
+            Icon(
+                if (testedProtection) Icons.Rounded.CheckCircle else Icons.Rounded.Shield,
+                contentDescription = null,
+                tint = if (testedProtection) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.onSurface,
+            )
+            Spacer(Modifier.size(8.dp))
+            Text(if (testedProtection) "Test protection again" else "Test protection")
+        }
+        Spacer(Modifier.height(12.dp))
         Box(Modifier.widthIn(max = 520.dp)) {
             Button(
                 onClick = onFinish,
                 modifier = Modifier.fillMaxWidth().height(ButtonDefaults.MediumContainerHeight),
                 contentPadding = ButtonDefaults.MediumContentPadding,
             ) {
-                Text(if (granted == 5) "Start using Rewire" else "Continue for now", style = MaterialTheme.typography.titleMedium)
+                Text(if (granted == totalPermissions) "Start using Rewire" else "Continue for now", style = MaterialTheme.typography.titleMedium)
             }
+        }
+    }
+
+    if (testProtection) {
+        Dialog(
+            onDismissRequest = { testProtection = false; testedProtection = true },
+            properties = DialogProperties(usePlatformDefaultWidth = false),
+        ) {
+            val container = (LocalContext.current.applicationContext as RewireApp).container
+            val settings by container.settings.collectAsStateWithLifecycle()
+            val userReason = settings?.profile?.reason?.takeIf { it.isNotBlank() }
+            val testProfile = remember {
+                HabitProfile(
+                    habit = Habit("test-onboarding", "Doom Scrolling", null, enabled = true),
+                    apps = emptyList(),
+                    rule = RestrictionRule("r-test", "test-onboarding", null, null, null, null, WarningLevel.MAJOR, 5),
+                )
+            }
+            val testWarning = remember(userReason) {
+                Warning(
+                    id = "test-w",
+                    category = WarningCategory.CUSTOM,
+                    level = WarningLevel.MAJOR,
+                    title = "Pause and reflect",
+                    message = "This is what happens when you open a guarded app. Rewire creates a deliberate moment to choose.",
+                    motivationalMessage = userReason ?: "More focus. Less wasted time.",
+                    custom = false,
+                )
+            }
+            WarningScreen(
+                profile = testProfile,
+                warning = testWarning,
+                packageName = null,
+                appLabel = "Sample App",
+                preview = true,
+                userReason = userReason,
+                onGoBack = { testProtection = false; testedProtection = true },
+                onContinue = { testProtection = false; testedProtection = true },
+            )
         }
     }
 }

@@ -157,7 +157,7 @@ service off -> banner + notification.
 - [x] Battery optimization guidance screen
 - [x] Android 13+ restricted settings guidance + deep link
 - [x] Monitoring-disabled notification
-- [ ] Onboarding: permission explain + "Test protection"
+- [x] Onboarding: permission explain + "Test protection"
 
 ## Phase 4 — Usage analytics
 - [x] UsageStatsManager adapter synced with Digital Wellbeing data
