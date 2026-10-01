@@ -1,5 +1,56 @@
 # Changelog
 
+## [1.0.1-alpha.2](https://github.com/aiyu-ayaan/Rewire/compare/v1.0.1-alpha.1...v1.0.1-alpha.2) (2026-10-01)
+
+### Features
+
+* In-app updates from GitHub releases
+* Release rules and Room schema v2 for update prefs
+* Add achievement note and focus history
+* Pop up when leaving mid-session and show a Live Update
+* Move all persistence to a Room database
+* Chime when break ends and focus resumes
+* Add debug-only 20s/10s quick test session
+* Play bundled break chime when focus ends
+* Add interactive protection test and align permission count
+* Add usage access permission guidance hint to daily limit settings
+* Display user profile personal reason on warning and block screens
+* Play audio tone on break start and add 1-tap notification mute for blocked apps
+* Silence all messages except calls during focus mode
+* Sync digital wellbeing usage stats for accurate time-based tracking
+* Add android 13+ restricted settings guidance and deep link
+* Add foreground service and system alert window for reliable background blocking
+
+### Bug fixes
+
+* Silence only notifications during focus DND
+* Run the timer in a foreground service
+* Judge the open app when Guard reconnects after process death
+* Guard screen never silently lost, so blocked apps stay blocked
+* Only System UI recents ends a visit, not shade or volume panel
+* Re-judge protected app opened from recents over block screen
+* Prevent launch limit bypass via recents screen
+* SilenceNotification works for all blocked habits, use consistent clock
+* Enforce launch/daily/window limits for all warning levels
+* Suppress conversations and restore DND on app start
+* Remove high-risk permissions and network dependency to prevent play protect blocking
+
+### Other changes
+
+* Room database, foreground focus timer, focus history, Hilt and in-app updates
+* Wait for onboarding or main app in benchmark setup
+* Add baseline profile module and generated startup/journey profile
+* Replace AppContainer with Hilt
+* Add Hilt 2.60.1 (works with AGP 9 built-in Kotlin)
+* Update tracker and architecture for Room and focus service
+* List Room and WorkManager in acknowledgements
+* Add Room with KSP and schema export
+* Update tracker for guard hardening
+* Drop unused accessibility service instance handle
+* Add WorkManager dependency for deferred background work
+* Add comprehensive unit tests for habit engine outcome flows
+* Update Todo roadmap with completed background resilience and wellbeing tracking
+
 ## [1.0.1-alpha.1](https://github.com/aiyu-ayaan/Rewire/compare/v1.0.0...v1.0.1-alpha.1) (2026-10-01)
 
 ### Features
