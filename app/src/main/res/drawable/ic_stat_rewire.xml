@@ -1,11 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Monochrome status icon: 4-leaf clover (Rewire hero shape). -->
+<!-- Monochrome status icon: REWIRE mark. -->
 <vector xmlns:android="http://schemas.android.com/apk/res/android"
     android:width="24dp"
     android:height="24dp"
-    android:viewportWidth="24"
-    android:viewportHeight="24">
-    <path
-        android:fillColor="#FFFFFFFF"
-        android:pathData="M12,3.5a4.25,4.25 0,0 1,8.5 4.25a4.25,4.25 0,0 1,-4.25 4.25a4.25,4.25 0,0 1,4.25 4.25a4.25,4.25 0,0 1,-8.5 4.25a4.25,4.25 0,0 1,-8.5 -4.25a4.25,4.25 0,0 1,4.25 -4.25a4.25,4.25 0,0 1,-4.25 -4.25a4.25,4.25 0,0 1,8.5 -4.25z" />
+    android:viewportWidth="256"
+    android:viewportHeight="256">
+    <group android:pivotX="128"
+        android:pivotY="128"
+        android:scaleX="1.2"
+        android:scaleY="1.2"
+        android:translateY="-4">
+        <!-- Pause bar -->
+        <path
+            android:name="pause"
+            android:pathData="M72,200 V56"
+            android:strokeColor="#FFFFFFFF"
+            android:strokeWidth="34"
+            android:strokeLineCap="round" />
+        <!-- Turn bar: the deliberate choice -->
+        <path
+            android:name="turn"
+            android:pathData="M136,200 V112 L184,64"
+            android:strokeColor="#FFFFFFFF"
+            android:strokeWidth="34"
+            android:strokeLineCap="round"
+            android:strokeLineJoin="round" />
+    </group>
 </vector>
