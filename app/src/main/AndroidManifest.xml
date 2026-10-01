@@ -3,6 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <!-- Focus/break alerts and ongoing session (asked with in-app rationale first, API 33+). -->
+    <!-- About screen only: fetches the developer avatar from GitHub. No usage data is sent. -->
+    <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
 
     <!-- Usage access (user grants in system settings): screen-time stats for Matrix. -->

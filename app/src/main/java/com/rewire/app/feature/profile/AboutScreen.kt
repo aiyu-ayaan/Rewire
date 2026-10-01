@@ -16,6 +16,8 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.rounded.ArrowBack
 import androidx.compose.material.icons.automirrored.rounded.OpenInNew
 import androidx.compose.material.icons.rounded.Code
+import androidx.compose.material.icons.rounded.Description
+import androidx.compose.material.icons.automirrored.rounded.KeyboardArrowRight
 import androidx.compose.material.icons.rounded.Language
 import androidx.compose.material.icons.rounded.Info
 import androidx.compose.material3.Card
@@ -30,45 +32,38 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.produceState
+import androidx.compose.ui.graphics.ImageBitmap
+import androidx.compose.ui.graphics.asImageBitmap
+import android.graphics.BitmapFactory
+import androidx.compose.material.icons.rounded.AccountCircle
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.withContext
+import java.net.URL
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.compose.ui.platform.LocalContext
-import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import com.rewire.app.BuildConfig
-import com.rewire.app.R
 import com.rewire.app.ui.components.SectionTitle
 
 private const val GITHUB_URL = "https://github.com/aiyu-ayaan"
 private const val PORTFOLIO_URL = "https://aiyu.co.in"
 
-/** Name, project URL, license. Keep in sync with gradle/libs.versions.toml. */
-private data class Library(val name: String, val url: String, val license: String)
-
-private const val APACHE = "Apache License 2.0"
-
-private val libraries = listOf(
-    Library("Kotlin", "https://github.com/JetBrains/kotlin", APACHE),
-    Library("kotlinx.coroutines", "https://github.com/Kotlin/kotlinx.coroutines", APACHE),
-    Library("kotlinx.serialization", "https://github.com/Kotlin/kotlinx.serialization", APACHE),
-    Library("Jetpack Compose", "https://developer.android.com/jetpack/compose", APACHE),
-    Library("Material 3 for Compose", "https://developer.android.com/jetpack/androidx/releases/compose-material3", APACHE),
-    Library("Material Icons Extended", "https://developer.android.com/jetpack/androidx/releases/compose-material", APACHE),
-    Library("AndroidX Core KTX", "https://developer.android.com/jetpack/androidx/releases/core", APACHE),
-    Library("AndroidX Core SplashScreen", "https://developer.android.com/jetpack/androidx/releases/core", APACHE),
-    Library("AndroidX Lifecycle", "https://developer.android.com/jetpack/androidx/releases/lifecycle", APACHE),
-    Library("AndroidX Activity Compose", "https://developer.android.com/jetpack/androidx/releases/activity", APACHE),
-    Library("AndroidX Navigation Compose", "https://developer.android.com/jetpack/androidx/releases/navigation", APACHE),
-    Library("AndroidX DataStore", "https://developer.android.com/jetpack/androidx/releases/datastore", APACHE),
-    Library("AndroidX Graphics Shapes", "https://developer.android.com/jetpack/androidx/releases/graphics", APACHE),
-    Library("AndroidX Biometric", "https://developer.android.com/jetpack/androidx/releases/biometric", APACHE),
-)
+/** Null on any failure (offline etc.); the UI shows a placeholder. */
+private suspend fun fetchAvatar(): ImageBitmap? = withContext(Dispatchers.IO) {
+    runCatching {
+        val c = URL("$GITHUB_URL.png?size=256").openConnection().apply { connectTimeout = 8_000; readTimeout = 8_000 }
+        c.getInputStream().use { BitmapFactory.decodeStream(it)?.asImageBitmap() }
+    }.getOrNull()
+}
 
 @Composable
-fun AboutScreen(onBack: () -> Unit) {
+fun AboutScreen(onBack: () -> Unit, onOpenAcknowledgements: () -> Unit) {
     val context = LocalContext.current
     val open = { url: String -> context.startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(url))) }
     val scroll = TopAppBarDefaults.exitUntilCollapsedScrollBehavior()
@@ -103,10 +98,10 @@ fun AboutScreen(onBack: () -> Unit) {
             SectionTitle("Developer")
             Group {
                 Column(Modifier.fillMaxWidth().padding(16.dp), horizontalAlignment = Alignment.CenterHorizontally, verticalArrangement = Arrangement.spacedBy(4.dp)) {
-                    Image(
-                        painterResource(R.drawable.developer_avatar), contentDescription = "Ayaan's GitHub profile picture",
-                        modifier = Modifier.size(96.dp).clip(CircleShape),
-                    )
+                    val avatar by produceState<ImageBitmap?>(null) { value = fetchAvatar() }
+                    val img = avatar
+                    if (img != null) Image(img, contentDescription = "Developer's GitHub profile picture", modifier = Modifier.size(96.dp).clip(CircleShape))
+                    else Icon(Icons.Rounded.AccountCircle, contentDescription = null, modifier = Modifier.size(96.dp), tint = MaterialTheme.colorScheme.onSurfaceVariant)
                     Text("aiyu-ayaan", style = MaterialTheme.typography.titleLarge, modifier = Modifier.padding(top = 8.dp))
                     Text("Built Rewire.", style = MaterialTheme.typography.bodyMedium, color = MaterialTheme.colorScheme.onSurfaceVariant, textAlign = TextAlign.Center)
                 }
@@ -114,34 +109,21 @@ fun AboutScreen(onBack: () -> Unit) {
                 LinkRow(Icons.Rounded.Language, "Portfolio", "aiyu.co.in") { open(PORTFOLIO_URL) }
             }
 
-            SectionTitle("Acknowledgements")
-            Text(
-                "Rewire is built on these open-source libraries. Tap one to visit its page.",
-                style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant,
-                modifier = Modifier.padding(start = 4.dp, bottom = 8.dp),
-            )
+            SectionTitle("Open source")
             Group {
-                libraries.forEach { lib ->
-                    ListItem(
-                        headlineContent = { Text(lib.name) },
-                        supportingContent = { Text("${lib.license}\n${lib.url.removePrefix("https://")}") },
-                        trailingContent = { Icon(Icons.AutoMirrored.Rounded.OpenInNew, contentDescription = null) },
-                        colors = itemColors(),
-                        modifier = Modifier.clickable { open(lib.url) },
-                    )
-                }
+                LinkRow(Icons.Rounded.Description, "Acknowledgements", "Libraries Rewire is built on", onClick = onOpenAcknowledgements, external = false)
             }
         }
     }
 }
 
 @Composable
-private fun LinkRow(icon: androidx.compose.ui.graphics.vector.ImageVector, title: String, subtitle: String, onClick: () -> Unit) {
+private fun LinkRow(icon: androidx.compose.ui.graphics.vector.ImageVector, title: String, subtitle: String, external: Boolean = true, onClick: () -> Unit) {
     ListItem(
         headlineContent = { Text(title) },
         supportingContent = { Text(subtitle) },
         leadingContent = { Icon(icon, contentDescription = null) },
-        trailingContent = { Icon(Icons.AutoMirrored.Rounded.OpenInNew, contentDescription = null) },
+        trailingContent = { Icon(if (external) Icons.AutoMirrored.Rounded.OpenInNew else Icons.AutoMirrored.Rounded.KeyboardArrowRight, contentDescription = null) },
         colors = itemColors(),
         modifier = Modifier.clickable(onClick = onClick),
     )
