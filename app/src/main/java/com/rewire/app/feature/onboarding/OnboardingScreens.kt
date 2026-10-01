@@ -61,6 +61,7 @@ import com.rewire.app.core.permissions.PermissionsPanel
 import com.rewire.app.core.permissions.rememberGrantedCount
 import com.rewire.app.feature.landing.HERO_KEY
 import com.rewire.app.ui.components.AvatarShapes
+import com.rewire.app.ui.components.InnerScreen
 import com.rewire.app.ui.components.MorphingShape
 import com.rewire.app.ui.components.UserAvatar
 import com.rewire.app.ui.components.heroBrush
@@ -85,27 +86,13 @@ fun ProfileSetupScreen(onboarding: Boolean, onDone: () -> Unit, onBack: (() -> U
     var reason by rememberSaveable { mutableStateOf(initial.reason) }
     var shape by rememberSaveable { mutableIntStateOf(initial.avatarShape) }
 
-    Column(
-        Modifier.fillMaxSize().safeDrawingPadding().imePadding().verticalScroll(rememberScrollState()).padding(horizontal = 24.dp, vertical = 16.dp),
-        horizontalAlignment = Alignment.CenterHorizontally,
+    InnerScreen(
+        title = if (onboarding) "Make it yours" else "Edit profile",
+        subtitle = if (onboarding) "Step 1 of 2 · stays on this device" else "Stays on this device",
+        onBack = onBack,
     ) {
-        Row(Modifier.fillMaxWidth(), verticalAlignment = Alignment.CenterVertically) {
-            if (onBack != null) IconButton(onClick = onBack) { Icon(Icons.AutoMirrored.Rounded.ArrowBack, contentDescription = "Back") }
-            Text(
-                if (onboarding) "Step 1 of 2" else "Edit profile",
-                style = MaterialTheme.typography.labelLarge, color = MaterialTheme.colorScheme.primary,
-                modifier = Modifier.padding(start = if (onBack != null) 4.dp else 0.dp),
-            )
-        }
-        Spacer(Modifier.height(8.dp))
         // Onboarding: the landing hero lands here and becomes your avatar. Edit: avatar flies in from Profile.
         UserAvatar(name, shape, 128.dp, Modifier.size(128.dp).sharedBoundsOrSelf(if (onboarding) HERO_KEY else AVATAR_KEY))
-        Spacer(Modifier.height(16.dp))
-        Text(if (onboarding) "Make it yours" else "Your profile", style = MaterialTheme.typography.headlineMedium)
-        Text(
-            "Stays on this device. Rewire uses it to talk to you, not about you.",
-            style = MaterialTheme.typography.bodyMedium, color = MaterialTheme.colorScheme.onSurfaceVariant, textAlign = TextAlign.Center,
-        )
 
         Column(Modifier.widthIn(max = 520.dp).padding(top = 24.dp), verticalArrangement = Arrangement.spacedBy(20.dp)) {
             OutlinedTextField(
@@ -167,17 +154,9 @@ fun ProfileSetupScreen(onboarding: Boolean, onDone: () -> Unit, onBack: (() -> U
 @Composable
 fun PermissionsSetupScreen(onFinish: () -> Unit, onBack: () -> Unit) {
     val granted = rememberGrantedCount()
-    Column(
-        Modifier.fillMaxSize().safeDrawingPadding().verticalScroll(rememberScrollState()).padding(horizontal = 24.dp, vertical = 16.dp),
-        horizontalAlignment = Alignment.CenterHorizontally,
-    ) {
-        Row(Modifier.fillMaxWidth(), verticalAlignment = Alignment.CenterVertically) {
-            IconButton(onClick = onBack) { Icon(Icons.AutoMirrored.Rounded.ArrowBack, contentDescription = "Back") }
-            Text("Step 2 of 2", style = MaterialTheme.typography.labelLarge, color = MaterialTheme.colorScheme.primary, modifier = Modifier.padding(start = 4.dp))
-        }
+    InnerScreen(title = "Let Rewire help", subtitle = "Step 2 of 2", onBack = onBack) {
         MorphingShape(brush = heroBrush(), modifier = Modifier.size(88.dp).sharedBoundsOrSelf(HERO_KEY), rotationMillis = 30_000)
         Spacer(Modifier.height(16.dp))
-        Text("Let Rewire help", style = MaterialTheme.typography.headlineMedium)
         Text(
             "Each one has a single job, explained below. Data never leaves your phone. Change any of them later in Profile.",
             style = MaterialTheme.typography.bodyMedium, color = MaterialTheme.colorScheme.onSurfaceVariant, textAlign = TextAlign.Center,
