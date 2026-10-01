@@ -88,6 +88,15 @@ notifications production-ready. Data in memory + DataStore (Room = Phase 2).
 
 ---
 
+### 1.12 Focus fullscreen + nav bar rules (added 2026-10-01)
+- [x] Fullscreen AMOLED timer route: true black, immersive bars, screen kept on
+- [x] Per-digit rolling countdown (bouncy spring), blinking colon, wavy linear progress
+- [x] Timer digits shared element: ring screen -> fullscreen
+- [x] Burn-in drift (content shifts a few dp each minute), tap to reveal auto-hiding controls
+- [x] FocusViewModel activity-scoped (one timer for tab + fullscreen)
+- [x] Bottom bar / rail only on tab base screens; `HideNavigationBar()` for in-tab deeper states (focus timer, result)
+- [ ] Visual check of fullscreen on device (emulator was in use)
+
 ### 1.11 Verified on emulator (API 37, 1080x2400)
 - Landing morph/orbit loop, hero shared-bounds into Guard header (checked at 5x animator scale)
 - Habit card -> detail container transform, create flow, Major preview pause countdown
