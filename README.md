@@ -1,3 +1,4 @@
+<p align="center"><img src="development/brand/rewire-symbol.svg" width="120" alt="REWIRE logo"></p>
 <h1 align="center">REWIRE</h1>
 <p align="center"><b>Break habits. Build control.</b></p>
 
@@ -5,6 +6,7 @@
   <img alt="Android" src="https://img.shields.io/badge/Android-8.0%2B-3DDC84?logo=android&logoColor=white">
   <img alt="Kotlin" src="https://img.shields.io/badge/Kotlin-2.4-7F52FF?logo=kotlin&logoColor=white">
   <img alt="Compose" src="https://img.shields.io/badge/Jetpack%20Compose-Material%203%20Expressive-4285F4?logo=jetpackcompose&logoColor=white">
+  <img alt="License" src="https://img.shields.io/badge/license-MIT-blue">
   <img alt="Privacy" src="https://img.shields.io/badge/data-on--device%20only-0f766e">
 </p>
 
@@ -193,3 +195,7 @@ Rules always stay deterministic. Any future AI layer only explains recorded data
 ## Contributing
 
 Small, conventional commits (`feat:`, `fix:`, `refactor:`, `test:`). Keep business logic out of Activities, services and receivers, keep rule logic in `RuleEngine`, and add tests for rule-engine changes. See [`CLAUDE.md`](CLAUDE.md) for the full project rules.
+
+## License
+
+Released under the [MIT License](LICENSE).
