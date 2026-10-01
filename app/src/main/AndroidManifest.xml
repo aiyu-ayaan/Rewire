@@ -15,6 +15,9 @@
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE_SPECIAL_USE" />
 
+    <!-- Focus timer: CPU kept awake only until the running phase ends, so chimes ring on time with the screen off -->
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+
     <!-- Restores monitoring state on device boot -->
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
 
@@ -84,6 +87,16 @@
             <property
                 android:name="android.app.PROPERTY_SPECIAL_USE_FGS_SUBTYPE"
                 android:value="Habit guard monitoring to enforce configured friction and daily limits" />
+        </service>
+
+        <!-- Runs the focus timer when the app is minimised, swiped away or the screen is off -->
+        <service
+            android:name=".service.focus.FocusTimerService"
+            android:exported="false"
+            android:foregroundServiceType="specialUse">
+            <property
+                android:name="android.app.PROPERTY_SPECIAL_USE_FGS_SUBTYPE"
+                android:value="User-started focus session timer that must keep counting and chime at phase ends" />
         </service>
 
         <!-- Restores background monitoring on device boot -->

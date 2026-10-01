@@ -79,8 +79,8 @@ class RewireNotifier(
 
     // ---- Focus -------------------------------------------------------------------------------
 
-    fun showFocusOngoing(state: FocusState, now: Long) {
-        if (!state.isActive) return cancelFocusOngoing()
+    /** Foreground-service notification of [com.rewire.app.service.focus.FocusTimerService]; shown regardless of category prefs (Android requires one). */
+    fun focusOngoing(state: FocusState, now: Long): Notification {
         val onBreak = state.phase == FocusSessionStatus.BREAK
         val title = context.getString(if (onBreak) R.string.notif_focus_break_title else R.string.notif_focus_title)
         val session = context.getString(R.string.notif_focus_session, state.cycle, state.config.cycles)
@@ -101,7 +101,7 @@ class RewireNotifier(
                 .setUsesChronometer(true)
                 .setChronometerCountDown(true)
         }
-        post(NotificationCategory.FOCUS, Ids.FOCUS_ONGOING, builder.build())
+        return builder.setForegroundServiceBehavior(NotificationCompat.FOREGROUND_SERVICE_IMMEDIATE).build()
     }
 
     fun cancelFocusOngoing() = manager.cancel(Ids.FOCUS_ONGOING)

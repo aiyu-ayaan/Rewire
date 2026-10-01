@@ -8,6 +8,8 @@ import androidx.lifecycle.ViewModelStoreOwner
 import androidx.lifecycle.viewmodel.compose.LocalViewModelStoreOwner
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.rewire.app.core.apps.InstalledAppsSource
+import com.rewire.app.core.focus.FocusController
+import com.rewire.app.service.focus.FocusTimerService
 import com.rewire.app.core.settings.Settings
 import com.rewire.app.core.settings.SettingsRepository
 import com.rewire.app.core.notifications.RewireNotifier
@@ -54,7 +56,7 @@ class AppContainer(context: Context) {
     val events: EventRepository = RoomEventRepository(database.events(), writer)
     val focusSessions: FocusSessionRepository = RoomFocusSessionRepository(database.focusSessions(), writer)
 
-    /** The one focus session; written by FocusViewModel, read by the Guard engine for bypass rules. */
+    /** The one focus session; written by [FocusController], read by the Guard engine for bypass rules. */
     val focusState = MutableStateFlow(FocusState())
     val installedApps = InstalledAppsSource(context)
     val usage = UsageTracker(context)
@@ -63,6 +65,11 @@ class AppContainer(context: Context) {
 
     val notifier = RewireNotifier(context) { category -> settings.value?.notifications?.get(category) ?: true }
     val dndManager = com.rewire.app.core.notifications.FocusDndManager(context)
+
+    val focus = FocusController(
+        focusState, focusSessions, events, notifier, dndManager, settings, MainScope(),
+        keepAlive = { active -> FocusTimerService.sync(context, active) },
+    )
 }
 
 @Composable

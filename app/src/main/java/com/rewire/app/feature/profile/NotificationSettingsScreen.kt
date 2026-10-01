@@ -133,7 +133,7 @@ fun NotificationSettingsScreen(onBack: () -> Unit) {
                         } else {
                             Switch(
                                 checked = s.focusDndEnabled,
-                                onCheckedChange = { on -> scope.launch { container.settingsRepository.setFocusDndEnabled(on) } },
+                                onCheckedChange = { on -> scope.launch { container.settingsRepository.setFocusDndEnabled(on); container.focus.onDndSettingChanged(on) } },
                                 modifier = Modifier.semantics { contentDescription = "Silence during Focus" },
                             )
                         }

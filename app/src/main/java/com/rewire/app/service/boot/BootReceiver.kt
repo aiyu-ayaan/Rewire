@@ -15,8 +15,7 @@ class BootReceiver : BroadcastReceiver() {
     override fun onReceive(context: Context, intent: Intent) {
         if (intent.action == Intent.ACTION_BOOT_COMPLETED) {
             val app = context.applicationContext as? RewireApp ?: return
-            // Ensure DND is restored if device rebooted mid-focus
-            app.container.dndManager.restoreDnd()
+            // A session interrupted by the reboot was already resumed (or its DND undone) in RewireApp.onCreate.
             val habits = app.container.habits.habits.value
             if (habits.any { it.habit.enabled }) {
                 GuardMonitorService.start(context)

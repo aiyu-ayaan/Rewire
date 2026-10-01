@@ -10,8 +10,7 @@ class RewireApp : Application() {
         super.onCreate()
         container = AppContainer(this)
         container.notifier.createChannels()
-        // A previous process may have died mid-session; its ongoing notification would lie.
-        container.notifier.cancelFocusOngoing()
-        container.dndManager.restoreDnd()
+        // A previous process may have died mid-session: resume it from Room (or undo its DND).
+        container.focus.restore()
     }
 }
