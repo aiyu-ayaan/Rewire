@@ -148,18 +148,19 @@ service off -> banner + notification.
 - [ ] Migration tests
 
 ## Phase 3 — Guard engine + Monitoring
-- [ ] `RuleEngine` -> `RestrictionDecision` (Minor/Major/Max, windows, limits, launches) + tests
-- [ ] AccessibilityService: foreground package detect only, delegate to engine
-- [ ] Warning/Block overlay activity
-- [ ] Emergency unlock flow (confirm -> temp unlock -> log)
-- [ ] Focus timer -> ForegroundService (`specialUse`/`shortService` review), restore from persistence
-- [ ] BootReceiver restores monitoring
-- [ ] Battery optimization guidance screen
-- [ ] Monitoring-disabled notification
+- [x] `RuleEngine` -> `RestrictionDecision` (Minor/Major/Max, windows, limits, launches) + tests
+- [x] AccessibilityService: foreground package detect only, delegate to engine
+- [x] Warning/Block overlay activity
+- [x] Emergency unlock flow (confirm -> temp unlock -> log)
+- [x] Guard monitoring ForegroundService (`specialUse`) with ongoing notification
+- [x] BootReceiver restores monitoring
+- [x] Battery optimization guidance screen
+- [x] Android 13+ restricted settings guidance + deep link
+- [x] Monitoring-disabled notification
 - [ ] Onboarding: permission explain + "Test protection"
 
 ## Phase 4 — Usage analytics
-- [ ] UsageStatsManager adapter (usage access onboarding)
+- [x] UsageStatsManager adapter synced with Digital Wellbeing data
 - [ ] WorkManager daily aggregation + daily summary notification
 - [ ] DailyMetrics / weekly / monthly aggregator + tests
 
