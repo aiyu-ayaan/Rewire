@@ -60,8 +60,9 @@ class AppContainer(context: Context) {
     /** The one focus session; written by FocusViewModel, read by the Guard engine for bypass rules. */
     val focusState = MutableStateFlow(FocusState())
     val installedApps = InstalledAppsSource(context)
+    val usage = UsageTracker(context)
 
-    val engine = HabitEngine(context, habits, events, settings, focusState, UsageTracker(context), MainScope())
+    val engine = HabitEngine(context, habits, events, settings, focusState, usage, MainScope())
 
     val notifier = RewireNotifier(context) { category -> settings.value?.notifications?.get(category) ?: true }
 }

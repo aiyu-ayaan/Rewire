@@ -39,6 +39,7 @@ data class DailyMetrics(
     val continuedCount: Int = 0,
     val appOpens: Int = 0,
     val notificationsBlocked: Int = 0,
+    val screenTimeMinutes: Int = 0,
 ) {
     /** Times Guard stepped in (warning or block). */
     val frictionMoments: Int get() = warningCount + blockedAttempts

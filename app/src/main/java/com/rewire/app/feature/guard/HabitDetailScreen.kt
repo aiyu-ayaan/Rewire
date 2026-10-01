@@ -185,8 +185,15 @@ fun HabitDetailScreen(habitId: String, onBack: () -> Unit, onPreview: (String) -
 
 @Composable
 private fun BoundariesCard(p: HabitProfile, vm: HabitDetailViewModel) {
+    val usage = vm.usageMinutesToday()
     Card(shape = MaterialTheme.shapes.large, colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surfaceContainerLow)) {
         Column(Modifier.padding(20.dp), verticalArrangement = Arrangement.spacedBy(20.dp)) {
+            if (usage != null && usage > 0) {
+                Row(verticalAlignment = Alignment.CenterVertically) {
+                    Text("Today's usage (Digital Wellbeing)", style = MaterialTheme.typography.titleSmall, modifier = Modifier.weight(1f))
+                    Text(formatMinutes(usage), style = MaterialTheme.typography.titleMedium, color = MaterialTheme.colorScheme.primary)
+                }
+            }
             // 0 on slider = no limit
             SliderSetting(
                 title = "Daily limit",

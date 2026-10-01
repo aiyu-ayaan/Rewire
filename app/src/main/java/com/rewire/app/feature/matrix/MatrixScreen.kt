@@ -89,7 +89,10 @@ class MatrixViewModel(private val c: AppContainer) : ViewModel() {
         val zone = ZoneId.systemDefault()
         val today = LocalDate.now()
         val since = today.minusDays(6).atStartOfDay(zone).toInstant().toEpochMilli()
-        val week = MetricsCalculator.lastDays(events, today, 7, zone)
+        val weekRaw = MetricsCalculator.lastDays(events, today, 7, zone)
+        val week = weekRaw.mapIndexed { idx, m ->
+            if (idx == weekRaw.lastIndex) m.copy(screenTimeMinutes = c.usage.totalScreenTimeToday()) else m
+        }
         val names = habits.associate { it.id to it.habit.name }
         val seed = today.toEpochDay()
         return MatrixUi(

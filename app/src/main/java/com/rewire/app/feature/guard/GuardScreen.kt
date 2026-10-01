@@ -105,6 +105,7 @@ fun GuardScreen(onOpenHabit: (String) -> Unit, onStartFocus: () -> Unit) {
             items(habits, key = { it.id }) { profile ->
                 HabitCard(
                     profile = profile,
+                    usageMinutes = vm.usageMinutesFor(profile),
                     onClick = { onOpenHabit(profile.id) },
                     onToggle = { vm.setEnabled(profile, it) },
                     modifier = Modifier.animateItem().padding(bottom = 12.dp),
@@ -178,6 +179,9 @@ private fun TodayCard(m: DailyMetrics, activeHabits: Int, onStartFocus: () -> Un
                 Spacer(Modifier.width(20.dp))
                 Column(Modifier.weight(1f), verticalArrangement = Arrangement.spacedBy(10.dp)) {
                     Stat("Focus", formatMinutes(m.focusMinutes))
+                    if (m.screenTimeMinutes > 0) {
+                        Stat("Screen time", formatMinutes(m.screenTimeMinutes))
+                    }
                     Stat("Warnings", "${m.warningCount}")
                     Stat("Blocked", "${m.blockedAttempts}")
                     Stat("Guarding", if (activeHabits == 1) "1 habit" else "$activeHabits habits")
@@ -202,7 +206,13 @@ private fun Stat(label: String, value: String) {
 }
 
 @Composable
-fun HabitCard(profile: HabitProfile, onClick: () -> Unit, onToggle: (Boolean) -> Unit, modifier: Modifier = Modifier) {
+fun HabitCard(
+    profile: HabitProfile,
+    usageMinutes: Int? = null,
+    onClick: () -> Unit,
+    onToggle: (Boolean) -> Unit,
+    modifier: Modifier = Modifier,
+) {
     Card(
         onClick = onClick,
         shape = MaterialTheme.shapes.large,
@@ -214,7 +224,17 @@ fun HabitCard(profile: HabitProfile, onClick: () -> Unit, onToggle: (Boolean) ->
                 Column(Modifier.weight(1f)) {
                     Text(profile.habit.name, style = MaterialTheme.typography.titleLarge, maxLines = 2, overflow = TextOverflow.Ellipsis)
                     Spacer(Modifier.height(6.dp))
-                    LevelBadge(profile.level)
+                    Row(verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+                        LevelBadge(profile.level)
+                        if (usageMinutes != null && usageMinutes > 0) {
+                            val limit = profile.rule.dailyLimitMinutes
+                            Text(
+                                if (limit != null) "${formatMinutes(usageMinutes)} / ${formatMinutes(limit)}" else "${formatMinutes(usageMinutes)} today",
+                                style = MaterialTheme.typography.labelMedium,
+                                color = if (limit != null && usageMinutes >= limit) MaterialTheme.colorScheme.error else MaterialTheme.colorScheme.onSurfaceVariant,
+                            )
+                        }
+                    }
                 }
                 Switch(
                     checked = profile.habit.enabled,

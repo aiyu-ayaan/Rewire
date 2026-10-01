@@ -18,8 +18,14 @@ class GuardViewModel(private val c: AppContainer) : ViewModel() {
     val habits: StateFlow<List<HabitProfile>> = c.habits.habits
 
     val today: StateFlow<DailyMetrics> = c.events.events
-        .map { MetricsCalculator.daily(it, LocalDate.now(), ZoneId.systemDefault()) }
+        .map {
+            MetricsCalculator.daily(it, LocalDate.now(), ZoneId.systemDefault())
+                .copy(screenTimeMinutes = c.usage.totalScreenTimeToday())
+        }
         .stateIn(viewModelScope, SharingStarted.WhileSubscribed(5_000), MetricsCalculator.daily(emptyList(), LocalDate.now(), ZoneId.systemDefault()))
+
+    fun usageMinutesFor(profile: HabitProfile): Int? =
+        c.usage.minutesToday(profile.apps.map { it.packageName }.toSet())
 
     fun create(name: String, level: WarningLevel, packages: List<String>) = c.habits.create(name, level, packages)
 
@@ -29,6 +35,9 @@ class GuardViewModel(private val c: AppContainer) : ViewModel() {
 
 class HabitDetailViewModel(private val c: AppContainer, id: String) : ViewModel() {
     val habit: StateFlow<HabitProfile?> = c.habits.habit(id).stateIn(viewModelScope, SharingStarted.Eagerly, c.habits.habits.value.find { it.id == id })
+
+    fun usageMinutesToday(): Int? =
+        habit.value?.let { p -> c.usage.minutesToday(p.apps.map { it.packageName }.toSet()) }
 
     private fun edit(block: (HabitProfile) -> HabitProfile) { habit.value?.let { c.habits.update(block(it)) } }
 
