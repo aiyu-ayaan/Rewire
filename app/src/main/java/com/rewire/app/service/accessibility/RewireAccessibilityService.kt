@@ -33,8 +33,6 @@ class RewireAccessibilityService : AccessibilityService() {
         super.onDestroy()
     }
 
-    fun sendHome(): Boolean = performGlobalAction(GLOBAL_ACTION_HOME)
-
     override fun onAccessibilityEvent(event: AccessibilityEvent) {
         if (event.eventType != AccessibilityEvent.TYPE_WINDOW_STATE_CHANGED) return
         val pkg = event.packageName?.toString() ?: return

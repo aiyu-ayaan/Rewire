@@ -40,6 +40,7 @@ class GuardActivity : FragmentActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        instances++
         enableEdgeToEdge()
         request = intent.toRequest() ?: return finish()
         onBackPressedDispatcher.addCallback(this) { goBack() }
@@ -121,6 +122,13 @@ class GuardActivity : FragmentActivity() {
         }
     }
 
+    override fun onDestroy() {
+        super.onDestroy()
+        instances--
+        // Finished or killed by the system before the user chose: still report, or the engine waits forever.
+        if (!isChangingConfigurations && !resolved) request?.let { resolve(it, GuardOutcome.ABANDONED) }
+    }
+
     private fun resolve(r: Request, outcome: GuardOutcome) {
         if (resolved) return
         resolved = true
@@ -135,6 +143,10 @@ class GuardActivity : FragmentActivity() {
     }
 
     companion object {
+        /** Live screens; main thread only. Lets the engine tell a pending guard from one the system dropped. */
+        var instances = 0
+            private set
+
         private const val EXTRA_PKG = "pkg"
         private const val EXTRA_HABIT = "habit"
         private const val EXTRA_LEVEL = "level"

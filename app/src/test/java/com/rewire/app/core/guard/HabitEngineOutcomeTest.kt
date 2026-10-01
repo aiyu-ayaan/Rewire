@@ -67,19 +67,17 @@ class HabitEngineOutcomeTest {
     private class FakeEnginePlatform : EnginePlatform {
         override val packageName: String = "com.rewire.app"
         val keyboards = setOf("com.google.android.inputmethod.latin")
-        var homeSent = false
         val guardShown = mutableListOf<GuardCall>()
         val launchedApps = mutableListOf<String>()
         var guardServiceSynced: Boolean? = null
 
         data class GuardCall(val pkg: String, val habitId: String, val level: WarningLevel, val blockReason: String?)
 
+        var guardOpen = true
+
         override fun isKeyboard(pkg: String): Boolean = pkg in keyboards
 
-        override fun sendHome(): Boolean {
-            homeSent = true
-            return true
-        }
+        override fun isGuardOpen(): Boolean = guardOpen
 
         override fun showGuard(pkg: String, habitId: String, level: WarningLevel, blockReason: String?) {
             guardShown.add(GuardCall(pkg, habitId, level, blockReason))
@@ -183,7 +181,6 @@ class HabitEngineOutcomeTest {
     fun `minor habit triggers minor warning guard and logs WARNING_SHOWN`() {
         engine.onForeground("com.instagram.android")
 
-        assertTrue(platform.homeSent)
         assertEquals(1, platform.guardShown.size)
         val call = platform.guardShown.first()
         assertEquals("com.instagram.android", call.pkg)
@@ -199,7 +196,6 @@ class HabitEngineOutcomeTest {
     fun `major habit triggers major warning guard and logs WARNING_SHOWN`() {
         engine.onForeground("com.reddit.frontpage")
 
-        assertTrue(platform.homeSent)
         assertEquals(1, platform.guardShown.size)
         val call = platform.guardShown.first()
         assertEquals("com.reddit.frontpage", call.pkg)
@@ -215,7 +211,6 @@ class HabitEngineOutcomeTest {
     fun `max habit without boundary triggers block guard with ALWAYS reason`() {
         engine.onForeground("com.supercell.clashroyale")
 
-        assertTrue(platform.homeSent)
         assertEquals(1, platform.guardShown.size)
         val call = platform.guardShown.first()
         assertEquals("com.supercell.clashroyale", call.pkg)
@@ -496,6 +491,30 @@ class HabitEngineOutcomeTest {
         assertEquals(shown + 1, platform.guardShown.size)
         assertEquals("LAUNCH_LIMIT", platform.guardShown.last().blockReason)
         assertEquals(2, eventRepo.events.value.count { it.type == HabitEventType.APP_OPENED })
+    }
+
+    @Test
+    fun `reopening the same app straight over its warning re-judges it`() {
+        engine.onForeground("com.reddit.frontpage")
+        // No launcher event: Home is started under the guard. User relaunches the app from a shortcut.
+        engine.onForeground("com.reddit.frontpage")
+        engine.onGuardResult("com.reddit.frontpage", "h-major", WarningLevel.MAJOR, GuardOutcome.ABANDONED)
+
+        assertEquals(2, platform.guardShown.size)
+    }
+
+    @Test
+    fun `guard dropped by the system does not swallow later opens`() {
+        var now = 1_000_000L
+        engine = HabitEngine(habitRepo, eventRepo, settingsFlow, focusFlow, usageTracker, CoroutineScope(Dispatchers.Unconfined), { now }, platform)
+        engine.onForeground("com.reddit.frontpage")
+        platform.guardOpen = false // task trimmed before onCreate: no outcome ever arrives
+        now += 5_000
+
+        engine.onForeground("com.google.android.apps.nexuslauncher")
+        engine.onForeground("com.reddit.frontpage")
+
+        assertEquals(2, platform.guardShown.size)
     }
 
     @Test

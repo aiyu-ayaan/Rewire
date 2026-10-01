@@ -17,7 +17,6 @@ import com.rewire.app.domain.restriction.RestrictionDecision
 import com.rewire.app.domain.restriction.RuleEngine
 import com.rewire.app.domain.restriction.RuleInput
 import com.rewire.app.feature.guard.GuardActivity
-import com.rewire.app.service.accessibility.RewireAccessibilityService
 import com.rewire.app.service.monitoring.GuardMonitorService
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Job
@@ -34,8 +33,9 @@ enum class GuardOutcome { CONTINUED, EMERGENCY_ONCE, WENT_BACK, ABANDONED }
 interface EnginePlatform {
     val packageName: String
     fun isKeyboard(pkg: String): Boolean
-    fun sendHome(): Boolean
     fun showGuard(pkg: String, habitId: String, level: WarningLevel, blockReason: String?)
+    /** A guard screen exists right now (created, not yet destroyed). */
+    fun isGuardOpen(): Boolean
     fun launchApp(pkg: String)
     fun syncGuardService(anyHabitEnabled: Boolean)
 }
@@ -47,20 +47,22 @@ class DefaultEnginePlatform(private val context: Context) : EnginePlatform {
     override fun isKeyboard(pkg: String): Boolean =
         context.getSystemService(InputMethodManager::class.java)?.enabledInputMethodList?.map { it.packageName }?.contains(pkg) == true
 
-    override fun sendHome(): Boolean {
-        val sentHome = RewireAccessibilityService.instance?.sendHome() ?: false
-        if (!sentHome) {
-            context.startActivity(Intent(Intent.ACTION_MAIN).addCategory(Intent.CATEGORY_HOME).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK))
-        }
-        return sentHome
-    }
-
+    /**
+     * Home and the guard in one call, so the guard always lands on top of Home. A separate global HOME
+     * action raced the guard: when Home won, the guard task (excluded from recents) sat hidden behind it
+     * and the system trimmed it before onCreate, leaving the engine stuck "showing" a screen nobody saw.
+     */
     override fun showGuard(pkg: String, habitId: String, level: WarningLevel, blockReason: String?) {
-        context.startActivity(
-            GuardActivity.intent(context, pkg, habitId, level, blockReason)
-                .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_SINGLE_TOP)
+        context.startActivities(
+            arrayOf(
+                Intent(Intent.ACTION_MAIN).addCategory(Intent.CATEGORY_HOME).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK),
+                GuardActivity.intent(context, pkg, habitId, level, blockReason)
+                    .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_SINGLE_TOP),
+            )
         )
     }
+
+    override fun isGuardOpen(): Boolean = GuardActivity.instances > 0
 
     override fun launchApp(pkg: String) {
         context.packageManager.getLaunchIntentForPackage(pkg)
@@ -78,7 +80,7 @@ class DefaultEnginePlatform(private val context: Context) : EnginePlatform {
  * Main-thread only (accessibility callbacks + activity results), so no locking.
  * Business rules live in [RuleEngine]; this class only gathers inputs and acts on decisions.
  *
- * Flow on a warning/block: send the user Home first, then show the guard screen over Home.
+ * Flow on a warning/block: show the guard screen over Home (Home started underneath it).
  * The protected app can't resume on top of the screen, and leaving the screen never re-triggers
  * by itself (no loops). Continue / emergency relaunch the app and let that one visit through.
  */
@@ -116,6 +118,7 @@ class HabitEngine(
     private var current: String? = null
     /** Guard screen currently shown for this package. */
     private var showingFor: String? = null
+    private var shownAt = 0L
     /** One visit let through (Continue / emergency); cleared as soon as the user is in another app. */
     private var granted: String? = null
     /** Protected app brought up while a guard screen was open (e.g. tapped in recents); judged once the screen closes. */
@@ -147,6 +150,9 @@ class HabitEngine(
         recheck?.cancel()
         if (granted != null && pkg != granted) granted = null
         if (pkg == granted) { profileFor(pkg)?.let { scheduleRecheck(pkg, it) }; return }
+        // The system can drop the guard before it reports back (trimmed task, process death before onCreate).
+        // Never let a screen that no longer exists keep swallowing opens.
+        if (showingFor != null && !platform.isGuardOpen() && clock() - shownAt > GUARD_START_GRACE_MS) showingFor = null
         if (showingFor != null) {
             // The guard's onStop (ABANDONED) lands after this event on real devices; dropping it let the app through.
             pending = pkg.takeIf { profileFor(it) != null }
@@ -171,7 +177,9 @@ class HabitEngine(
             }
             GuardOutcome.WENT_BACK -> events.log(HabitEventType.WENT_BACK, pkg, habitId)
             // User went elsewhere; if that was a protected app, judge it now (bounded: one real event, one check).
-            GuardOutcome.ABANDONED -> next?.let(::onForeground)
+            // Posted: the guard reports from onStop and finishes right after; re-showing synchronously would
+            // hand the new request to that finishing screen and lose it.
+            GuardOutcome.ABANDONED -> next?.let { mainScope.launch { onForeground(it) } }
         }
     }
 
@@ -216,7 +224,8 @@ class HabitEngine(
 
     private fun show(pkg: String, profile: HabitProfile, level: WarningLevel, blockReason: String?) {
         showingFor = pkg
-        platform.sendHome()
+        shownAt = clock()
+        current = null // the guard is in front now; any return to an app is a new open
         platform.showGuard(pkg, profile.id, level, blockReason)
     }
 
@@ -264,6 +273,7 @@ class HabitEngine(
     private companion object {
         const val TAG = "RewireGuard"
         const val MINUTE = 60_000L
+        const val GUARD_START_GRACE_MS = 3_000L
         const val SYSTEM_UI = "com.android.systemui"
     }
 }
