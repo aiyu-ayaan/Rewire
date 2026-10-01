@@ -105,7 +105,7 @@ notifications production-ready. Data in memory + DataStore (Room = Phase 2).
 - [x] Accessibility prominent-disclosure dialog before opening settings
 - [x] `RewireAccessibilityService` declared (window-change events only, no content); reports foreground package to `ForegroundAppDetector` — engine wiring is Phase 3
 - [x] `PACKAGE_USAGE_STATS` declared so Rewire appears in Usage access list
-- [ ] Use profile `reason` inside warning screens (Phase 3 overlay)
+- [x] Use profile `reason` inside warning screens (Phase 3 overlay)
 
 ### 1.14 Real enforcement (pulled forward from Phase 3, 2026-10-01)
 - [x] `RuleEngine` (domain, 10 tests): Minor/Major warn, Max blocks on window / launch limit / daily limit, Max w/o boundary = always, focus bypass, overnight windows, next-boundary time

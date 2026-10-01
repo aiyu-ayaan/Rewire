@@ -53,9 +53,11 @@ class GuardActivity : FragmentActivity() {
             val shown = profile.copy(rule = profile.rule.copy(warningLevel = req.level))
             val warning = remember(req) { WarningPicker.pick(warnings, req.level) }
             val label = remember(req.pkg) { container.installedApps.label(req.pkg) }
+            val userReason = settings?.profile?.reason?.takeIf { it.isNotBlank() }
             RewireTheme(themeMode = settings?.themeMode ?: ThemeMode.SYSTEM, dynamicColor = settings?.dynamicColor ?: false) {
                 WarningScreen(
                     profile = shown, warning = warning, packageName = req.pkg, appLabel = label, preview = false,
+                    userReason = userReason,
                     onGoBack = ::goBack,
                     onContinue = { if (req.level == WarningLevel.MAX) authenticateEmergency() else proceed(GuardOutcome.CONTINUED) },
                     blockReason = req.blockReason,

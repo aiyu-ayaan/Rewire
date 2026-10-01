@@ -64,11 +64,13 @@ fun WarningPreviewScreen(habitId: String, onClose: () -> Unit) {
     val container = (LocalContext.current.applicationContext as RewireApp).container
     val profile = remember(habitId) { container.habits.habits.value.find { it.id == habitId } }
     if (profile == null) { LaunchedEffect(Unit) { onClose() }; return }
+    val settings by container.settings.collectAsStateWithLifecycle()
     val warnings by container.warnings.warnings.collectAsStateWithLifecycle()
     val warning = remember(profile.level) { WarningPicker.pick(warnings, profile.level) }
     val app = profile.apps.firstOrNull()?.packageName
     val appLabel = remember(app) { app?.let(container.installedApps::label) ?: profile.habit.name }
-    WarningScreen(profile, warning, app, appLabel, preview = true, onGoBack = onClose, onContinue = onClose)
+    val userReason = settings?.profile?.reason?.takeIf { it.isNotBlank() }
+    WarningScreen(profile, warning, app, appLabel, preview = true, userReason = userReason, onGoBack = onClose, onContinue = onClose)
 }
 
 @Composable
@@ -78,6 +80,7 @@ fun WarningScreen(
     packageName: String?,
     appLabel: String,
     preview: Boolean,
+    userReason: String? = null,
     onGoBack: () -> Unit,
     onContinue: () -> Unit,
     /** Why a Max block fired (BlockReason name); null in previews. */
@@ -132,13 +135,13 @@ fun WarningScreen(
             Spacer(Modifier.height(8.dp))
             Text(warning?.title.orEmpty(), style = MaterialTheme.typography.displaySmall, color = s.onContainer)
             Spacer(Modifier.height(12.dp))
-            Text(warning?.message.orEmpty(), style = MaterialTheme.typography.bodyLarge, color = s.onContainer)
-            if (warning != null) {
+            val reasonText = userReason ?: warning?.motivationalMessage
+            if (!reasonText.isNullOrBlank()) {
                 Spacer(Modifier.height(20.dp))
                 Surface(shape = MaterialTheme.shapes.large, color = MaterialTheme.colorScheme.surface.copy(alpha = 0.6f), modifier = Modifier.fillMaxWidth()) {
                     Column(Modifier.padding(16.dp)) {
                         Text(stringResource(R.string.warning_reason), style = MaterialTheme.typography.labelLarge, color = MaterialTheme.colorScheme.onSurfaceVariant)
-                        Text("“${warning.motivationalMessage}”", style = MaterialTheme.typography.titleLarge, color = MaterialTheme.colorScheme.onSurface)
+                        Text("“$reasonText”", style = MaterialTheme.typography.titleLarge, color = MaterialTheme.colorScheme.onSurface)
                     }
                 }
             }
