@@ -77,6 +77,7 @@ fun MainScreen(
     onOpenWarningLibrary: () -> Unit,
     onOpenFocusFullscreen: () -> Unit,
     onEditProfile: () -> Unit,
+    onOpenAbout: () -> Unit,
 ) {
     var tab by rememberSaveable { mutableStateOf(Tab.GUARD) }
     val navBar = remember { NavBarController() }
@@ -106,7 +107,7 @@ fun MainScreen(
                 Tab.GUARD -> GuardScreen(onOpenHabit = onOpenHabit, onStartFocus = { tab = Tab.FOCUS })
                 Tab.FOCUS -> FocusScreen(onFullscreen = onOpenFocusFullscreen)
                 Tab.MATRIX -> MatrixScreen()
-                Tab.PROFILE -> ProfileScreen(onOpenNotificationSettings = onOpenNotificationSettings, onOpenWarningLibrary = onOpenWarningLibrary, onEditProfile = onEditProfile)
+                Tab.PROFILE -> ProfileScreen(onOpenNotificationSettings = onOpenNotificationSettings, onOpenWarningLibrary = onOpenWarningLibrary, onEditProfile = onEditProfile, onOpenAbout = onOpenAbout)
             }
         }
         }

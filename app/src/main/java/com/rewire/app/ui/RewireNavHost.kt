@@ -28,6 +28,7 @@ import com.rewire.app.feature.onboarding.PermissionsSetupScreen
 import com.rewire.app.feature.onboarding.ProfileSetupScreen
 import com.rewire.app.feature.guard.WarningPreviewScreen
 import com.rewire.app.feature.landing.LandingScreen
+import com.rewire.app.feature.profile.AboutScreen
 import com.rewire.app.feature.profile.NotificationSettingsScreen
 import com.rewire.app.feature.profile.WarningLibraryScreen
 import com.rewire.app.ui.components.LocalNavAnimatedScope
@@ -47,6 +48,7 @@ object Routes {
     @Serializable data object OnboardingProfile
     @Serializable data object OnboardingPermissions
     @Serializable data object EditProfile
+    @Serializable data object About
 }
 
 @Composable
@@ -135,6 +137,7 @@ fun RewireNavHost(
                             onOpenWarningLibrary = { nav.navigate(Routes.WarningLibrary) },
                             onOpenFocusFullscreen = { nav.navigate(Routes.FocusFullscreen) { launchSingleTop = true } },
                             onEditProfile = { nav.navigate(Routes.EditProfile) },
+                            onOpenAbout = { nav.navigate(Routes.About) },
                         )
                     }
                 }
@@ -167,6 +170,9 @@ fun RewireNavHost(
                 }
                 composable<Routes.NotificationSettings> {
                     NotificationSettingsScreen(onBack = { nav.popBackStack() })
+                }
+                composable<Routes.About> {
+                    AboutScreen(onBack = { nav.popBackStack() })
                 }
                 composable<Routes.WarningLibrary> {
                     WarningLibraryScreen(onBack = { nav.popBackStack() })
