@@ -16,6 +16,9 @@ REWIRE is an Android app that reduces unwanted habits by adding **intentional fr
 Friction → Awareness → Choice → Action → Measurement → Improvement
 ```
 
+<p align="center"><a href="rewire-launch.mp4"><img src="docs/rewire-launch.gif" width="280" alt="REWIRE launch video"></a></p>
+<p align="center"><sub>Launch video (click for the full-quality MP4)</sub></p>
+
 ## Screenshots
 
 | Guard | Habit detail | Max block screen |
