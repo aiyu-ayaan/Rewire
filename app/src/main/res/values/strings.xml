@@ -42,4 +42,7 @@
     <string name="warning_next_available">Next available</string>
     <string name="warning_emergency_unlock">Emergency unlock</string>
     <string name="warning_preview_note">Preview — nothing is logged.</string>
+
+    <!-- Accessibility (shown in system settings; prominent disclosure) -->
+    <string name="accessibility_service_description">Rewire uses this service only to notice when an app you chose to guard comes to the screen, so it can show your warning or block. It does not read screen content, type, or collect personal data, and nothing leaves your device.</string>
 </resources>
