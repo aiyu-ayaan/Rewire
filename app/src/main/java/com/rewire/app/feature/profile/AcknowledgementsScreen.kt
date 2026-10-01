@@ -44,7 +44,9 @@ private val libraries = listOf(
     Library("AndroidX Lifecycle", "https://developer.android.com/jetpack/androidx/releases/lifecycle", APACHE),
     Library("AndroidX Activity Compose", "https://developer.android.com/jetpack/androidx/releases/activity", APACHE),
     Library("AndroidX Navigation Compose", "https://developer.android.com/jetpack/androidx/releases/navigation", APACHE),
-    Library("AndroidX DataStore", "https://developer.android.com/jetpack/androidx/releases/datastore", APACHE),
+    Library("AndroidX Room", "https://developer.android.com/jetpack/androidx/releases/room", APACHE),
+    Library("AndroidX DataStore (one-time settings import)", "https://developer.android.com/jetpack/androidx/releases/datastore", APACHE),
+    Library("AndroidX WorkManager", "https://developer.android.com/jetpack/androidx/releases/work", APACHE),
     Library("AndroidX Graphics Shapes", "https://developer.android.com/jetpack/androidx/releases/graphics", APACHE),
     Library("AndroidX Biometric", "https://developer.android.com/jetpack/androidx/releases/biometric", APACHE),
 )
