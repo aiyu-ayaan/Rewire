@@ -21,6 +21,9 @@ import androidx.compose.material.icons.rounded.Info
 import androidx.compose.material.icons.rounded.FormatQuote
 import androidx.compose.material.icons.rounded.Notifications
 import androidx.compose.material.icons.rounded.Palette
+import androidx.compose.material.icons.rounded.SystemUpdate
+import com.rewire.app.core.update.UpdateState
+import com.rewire.app.feature.update.UpdateViewModel
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.Icon
@@ -52,10 +55,12 @@ import com.rewire.app.core.notifications.rememberNotificationPermission
 import com.rewire.app.ui.components.SectionTitle
 
 @Composable
-fun ProfileScreen(onOpenNotificationSettings: () -> Unit, onOpenWarningLibrary: () -> Unit, onEditProfile: () -> Unit, onOpenAbout: () -> Unit) {
+fun ProfileScreen(onOpenNotificationSettings: () -> Unit, onOpenWarningLibrary: () -> Unit, onEditProfile: () -> Unit, onOpenAbout: () -> Unit, onOpenUpdates: () -> Unit) {
     val vm = hiltViewModel<SettingsViewModel>()
     val settings by vm.settings.collectAsStateWithLifecycle()
     val warnings by hiltViewModel<WarningLibraryViewModel>().warnings.collectAsStateWithLifecycle()
+    val updates = hiltViewModel<UpdateViewModel>()
+    val updateState by updates.state.collectAsStateWithLifecycle()
     val s = settings ?: return
     val permission = rememberNotificationPermission()
 
@@ -97,6 +102,15 @@ fun ProfileScreen(onOpenNotificationSettings: () -> Unit, onOpenWarningLibrary: 
                 else -> "Off — tap to fix"
             }, onOpenNotificationSettings)
             NavRow(Icons.Rounded.FormatQuote, "Warning library", "${warnings.count { it.enabled }} active · ${warnings.count { it.custom }} custom", onOpenWarningLibrary)
+            NavRow(
+                Icons.Rounded.SystemUpdate, "Updates",
+                when {
+                    updateState is UpdateState.Available || updateState is UpdateState.Ready -> "A newer version is available"
+                    !s.updatesEnabled -> "Automatic checks off · ${BuildConfig.VERSION_NAME}"
+                    else -> "${BuildConfig.VERSION_NAME} · ${(s.updateChannel ?: updates.channel).label} channel"
+                },
+                onOpenUpdates,
+            )
             NavRow(Icons.Rounded.Info, "About Rewire", "Version ${BuildConfig.VERSION_NAME} · developer · open-source licenses", onOpenAbout)
         }
 

@@ -23,6 +23,7 @@ import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import com.rewire.app.core.notifications.DeepLink
 import com.rewire.app.feature.focus.FocusFullscreenScreen
 import com.rewire.app.feature.focus.FocusHistoryScreen
+import com.rewire.app.feature.update.UpdateScreen
 import com.rewire.app.feature.guard.HabitDetailScreen
 import com.rewire.app.feature.onboarding.PermissionsSetupScreen
 import com.rewire.app.feature.onboarding.ProfileSetupScreen
@@ -50,6 +51,7 @@ object Routes {
     @Serializable data object OnboardingPermissions
     @Serializable data object EditProfile
     @Serializable data object About
+    @Serializable data object Updates
     @Serializable data object Acknowledgements
     @Serializable data class MatrixBreakdown(val apps: Boolean)
 }
@@ -142,6 +144,7 @@ fun RewireNavHost(
                             onOpenFocusHistory = { nav.navigate(Routes.FocusHistory) { launchSingleTop = true } },
                             onEditProfile = { nav.navigate(Routes.EditProfile) },
                             onOpenAbout = { nav.navigate(Routes.About) },
+                            onOpenUpdates = { nav.navigate(Routes.Updates) },
                         )
                     }
                 }
@@ -177,6 +180,9 @@ fun RewireNavHost(
                 }
                 composable<Routes.NotificationSettings> {
                     NotificationSettingsScreen(onBack = { nav.popBackStack() })
+                }
+                composable<Routes.Updates> {
+                    UpdateScreen(onBack = { nav.popBackStack() })
                 }
                 composable<Routes.About> {
                     AboutScreen(onBack = { nav.popBackStack() }, onOpenAcknowledgements = { nav.navigate(Routes.Acknowledgements) })

@@ -7,12 +7,14 @@ app/src/main/java/com/rewire/app/
 ├── di/AppModule.kt          Hilt singleton graph (Room, repos, settings flow, engines)
 ├── core/
 │   ├── settings/             Settings model + SettingsRepository (Room single-row table)
+│   ├── update/               AppUpdater, UpdateWorker, UpdateInstallReceiver (GitHub self-update)
 │   ├── focus/                FocusController: app-scoped timer, persists every transition
 │   ├── notifications/        Channels, RewireNotifier, permission helpers
 │   └── apps/                 InstalledAppsSource (PackageManager launcher query)
 ├── domain/
 │   ├── habit/                Habit, ProtectedApp, RestrictionRule, WarningLevel
 │   ├── warning/              Warning, WarningCategory, WarningPicker
+│   ├── update/               Version, UpdateChannel, Releases, ReleaseNotes (pure)
 │   ├── focus/                FocusConfig (+validation), FocusTimer state machine
 │   └── analytics/            HabitEvent, DailyMetrics, MetricsCalculator
 ├── data/

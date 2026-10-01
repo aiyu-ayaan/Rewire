@@ -1,5 +1,9 @@
 package com.rewire.app
 
+import androidx.lifecycle.lifecycleScope
+import com.rewire.app.core.update.AppUpdater
+import com.rewire.app.feature.update.UpdateHost
+import kotlinx.coroutines.launch
 import com.rewire.app.core.focus.FocusController
 import com.rewire.app.core.settings.Settings
 import dagger.hilt.android.AndroidEntryPoint
@@ -37,6 +41,7 @@ class MainActivity : ComponentActivity() {
     @Inject lateinit var settingsState: StateFlow<Settings?>
     @Inject lateinit var notifier: RewireNotifier
     @Inject lateinit var focus: FocusController
+    @Inject lateinit var updater: AppUpdater
 
     private var deepLink by mutableStateOf<DeepLink?>(null)
 
@@ -60,7 +65,11 @@ class MainActivity : ComponentActivity() {
                 .start()
         }
         enableEdgeToEdge()
-        if (savedInstanceState == null) deepLink = intent.deepLink()
+        if (savedInstanceState == null) {
+            deepLink = intent.deepLink()
+            // Silent unless something newer exists; skipped when auto-update is off, snoozed or checked within the hour.
+            lifecycleScope.launch { updater.check() }
+        }
         setContent {
             val settings by settingsState.collectAsStateWithLifecycle()
             val s = settings
@@ -84,6 +93,7 @@ class MainActivity : ComponentActivity() {
                             deepLink = deepLink,
                             onDeepLinkConsumed = { deepLink = null },
                         )
+                        if (s.onboardingDone) UpdateHost()
                     }
                 }
             }
@@ -93,6 +103,7 @@ class MainActivity : ComponentActivity() {
     override fun onStart() {
         super.onStart()
         notifier.cancelFocusMinimised()
+        notifier.cancelUpdateAvailable() // the app is about to show the offer itself
     }
 
     // Leaving mid-session (home, recents, another app) pops a heads-up so the user knows the timer runs on.

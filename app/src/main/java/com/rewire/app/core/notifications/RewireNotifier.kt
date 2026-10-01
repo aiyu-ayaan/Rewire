@@ -45,12 +45,14 @@ class RewireNotifier(
         const val GUARD = "guard"
         const val SUMMARY = "daily_summary"
         const val SYSTEM = "system"
+        const val UPDATES = "app_updates"
     }
 
     object Ids {
         const val FOCUS_ONGOING = 1001
         const val FOCUS_ALERT = 1002
         const val FOCUS_MINIMISED = 1004
+        const val UPDATE_AVAILABLE = 1005
         const val GUARD_ONGOING = 1003
         const val TEST = 1900
         const val PROTECTION_OFF = 1500
@@ -72,6 +74,8 @@ class RewireNotifier(
                 channel(Channels.GUARD, NotificationManagerCompat.IMPORTANCE_DEFAULT, R.string.channel_guard, R.string.channel_guard_desc),
                 channel(Channels.SUMMARY, NotificationManagerCompat.IMPORTANCE_LOW, R.string.channel_summary, R.string.channel_summary_desc),
                 channel(Channels.SYSTEM, NotificationManagerCompat.IMPORTANCE_DEFAULT, R.string.channel_system, R.string.channel_system_desc),
+                // Low: a new version is worth seeing and never worth interrupting anything for.
+                channel(Channels.UPDATES, NotificationManagerCompat.IMPORTANCE_LOW, R.string.channel_updates, R.string.channel_updates_desc),
             )
         )
         letFocusThroughDnd()
@@ -202,6 +206,19 @@ class RewireNotifier(
             .setPriority(NotificationCompat.PRIORITY_LOW)
             .setCategory(NotificationCompat.CATEGORY_SERVICE)
             .build()
+
+    /** One id, always: a phone that was off for a fortnight has no business showing a fortnight of releases. */
+    fun updateAvailable(releaseName: String, installedName: String) {
+        val n = base(Channels.UPDATES, DeepLink.PROFILE)
+            .setContentTitle(context.getString(R.string.notif_update_title, releaseName))
+            .setContentText(context.getString(R.string.notif_update_text, installedName))
+            .setAutoCancel(true)
+            .setPriority(NotificationCompat.PRIORITY_LOW)
+            .build()
+        post(null, Ids.UPDATE_AVAILABLE, n) // gated by the auto-update switch, not a notification category
+    }
+
+    fun cancelUpdateAvailable() = manager.cancel(Ids.UPDATE_AVAILABLE)
 
     fun cancelProtectionOff() = manager.cancel(Ids.PROTECTION_OFF)
 

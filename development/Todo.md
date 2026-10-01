@@ -145,9 +145,19 @@ service off -> banner + notification.
 - [x] Focus DND mutes notifications only: calls, alarms, media allowed; Rewire focus alerts bypass it
 - [x] Verified on emulator: swipe-away keeps timer, `kill -9` resumes + completes on time, import kept habit/events/profile
 
-## Phase 2 — Persistence + DI  (NEXT)
+### 1.16 App updates, same logic as BetweenUs (added 2026-10-02)
+- [x] GitHub Releases as the only source; cumulative stable/beta/alpha channels; version-based "newer"
+- [x] Launch check + daily WorkManager check (unmetered), "Not now" snooze, hourly throttle
+- [x] Verified download (SHA-256) + PackageInstaller session + failure reasons via `UpdateInstallReceiver`
+- [x] Release notes rendered as headings / bullets; update sheet + Profile -> Updates screen
+- [x] Room schema v2 (`AutoMigration`), device-verified on a populated v1 DB
+- [x] Verified on emulator against the real v1.0.1-alpha.1 release (offer, notes, download, refusal message)
+- [ ] Real install end to end needs two signed releases (emulator only had a debug build)
+- [ ] Play build: compile the feature out before any Play submission (see docs/UPDATES.md)
+
+## Phase 2 — Persistence + DI  (DONE 2026-10-02 except items below)
 - [ ] Extract remaining inline UI copy to strings.xml
-- [ ] Baseline profile + release-build perf check of transitions
+- [x] Baseline profile generated + wired (`:baselineprofile`); emulator startup median 749 ms -> 685 ms. Frame-timing comparison needs a real device (emulator reports frame counts only)
 - [x] Hilt 2.60.1 (works with AGP 9 built-in Kotlin) replaces `AppContainer`; `@HiltViewModel` per screen, `@AndroidEntryPoint` services (2026-10-02)
 - [x] Room: habits, protected apps, rules, warnings, events, focus sessions, settings (schema v1 exported)
 - [x] Repositories swap JSON/DataStore -> Room, same interfaces; one-time legacy import (device-verified)

@@ -2,6 +2,9 @@
 
 Newest first. Format: date — decision — why.
 
+- 2026-10-02 — Self-update from GitHub Releases, BetweenUs-style, with `HttpURLConnection` (no OkHttp) and kotlinx.serialization for parsing. — Mirrors the proven design; stdlib HTTP keeps the dependency list unchanged and the parser is JVM-testable. Re-adds `INTERNET` (+ `REQUEST_INSTALL_PACKAGES`) knowingly; opt-out switch, no usage data sent, see docs/UPDATES.md.
+- 2026-10-02 — Update prefs live in the Room settings row (schema v2, AutoMigration), not SharedPreferences. — Same rule as the rest of the app: one database, one backup/export story.
+
 - 2026-10-02 — Hilt replaces manual `AppContainer`; one `AppModule` of @Provides (no @Binds-per-repo modules). — AGP 9 compat verified (2.60.1); repos need non-injectable args (clock, defaults), so providers are simpler than @Inject constructors. Preference screens share one `SettingsViewModel`.
 
 - 2026-10-02 — Everything in Room, incl. settings (single typed row); DataStore kept only to import old prefs once. — One source of truth, migrations, history queries. Repos keep a write-through cache so the a11y service reads rules synchronously.

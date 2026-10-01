@@ -2,6 +2,12 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <!-- Self-update: one GET of the public GitHub release list, and the APK download. No usage data is ever sent. Off with the auto-update switch. -->
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <!-- Self-update: lets the user allow Rewire to hand a downloaded APK to Android's installer (the system confirmation screen is never skipped). -->
+    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
+
     <!-- Focus/break alerts and ongoing session (asked with in-app rationale first, API 33+). -->
     <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
 
@@ -101,6 +107,9 @@
                 android:name="android.app.PROPERTY_SPECIAL_USE_FGS_SUBTYPE"
                 android:value="User-started focus session timer that must keep counting and chime at phase ends" />
         </service>
+
+        <!-- Answers the PackageInstaller session an update starts (confirmation screen / failure reason) -->
+        <receiver android:name=".core.update.UpdateInstallReceiver" android:exported="false" />
 
         <!-- Restores background monitoring on device boot -->
         <receiver
