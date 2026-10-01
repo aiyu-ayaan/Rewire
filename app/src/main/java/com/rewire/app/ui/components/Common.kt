@@ -65,8 +65,8 @@ data class LevelStyle(val container: Color, val onContainer: Color, val accent: 
 fun WarningLevel.style(): LevelStyle {
     val c = MaterialTheme.colorScheme
     return when (this) {
-        WarningLevel.MINOR -> LevelStyle(c.secondaryContainer, c.onSecondaryContainer, c.secondary, Icons.Rounded.Lightbulb, "Minor", "Gentle reminder on open. Never blocks.")
-        WarningLevel.MAJOR -> LevelStyle(c.tertiaryContainer, c.onTertiaryContainer, c.tertiary, Icons.Rounded.PanTool, "Major", "Full-screen pause. You can still choose to continue.")
+        WarningLevel.MINOR -> LevelStyle(c.secondaryContainer, c.onSecondaryContainer, c.secondary, Icons.Rounded.Lightbulb, "Minor", "Gentle reminder when you cross a boundary, or on every open if none are set. Never blocks.")
+        WarningLevel.MAJOR -> LevelStyle(c.tertiaryContainer, c.onTertiaryContainer, c.tertiary, Icons.Rounded.PanTool, "Major", "Full-screen pause when you cross a boundary, or on every open if none are set. You can still continue.")
         WarningLevel.MAX -> LevelStyle(c.errorContainer, c.onErrorContainer, c.error, Icons.Rounded.Block, "Max", "Hard block outside your boundaries. Emergency unlock only.")
     }
 }
