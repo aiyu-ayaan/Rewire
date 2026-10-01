@@ -51,7 +51,6 @@ class FocusController(
 
     private var sessionId: String? = null
     private var ticker: Job? = null
-    private var pendingDnd: Job? = null
 
     /** App start: pick up a session the previous process left running, else clean up its leftovers. */
     fun restore() {
@@ -104,7 +103,7 @@ class FocusController(
 
     fun onDndSettingChanged(enabled: Boolean) {
         if (!enabled) dnd.restoreDnd()
-        else if (state.value.isRunning && state.value.phase == FocusSessionStatus.FOCUSING) dnd.applyFocusDnd()
+        else if (state.value.isRunning && state.value.phase == FocusSessionStatus.FOCUSING) applyDnd()
     }
 
     private fun transition(next: FocusState, focusedMillis: Long? = null, force: Boolean = false) {
@@ -114,7 +113,7 @@ class FocusController(
         state.value = next
         _now.value = now
         persist(next, focusedMillis ?: next.focusedMillis(now))
-        updateDnd(prev, next)
+        updateDnd(next)
         onPhaseChange(prev, next)
         if (prev.isActive != next.isActive || force) keepAlive(next.isActive)
         if (next.isRunning) ensureTicker() else { ticker?.cancel(); ticker = null }
@@ -131,17 +130,14 @@ class FocusController(
         }
     }
 
-    private fun updateDnd(prev: FocusState, next: FocusState) {
-        pendingDnd?.cancel()
+    private fun updateDnd(next: FocusState) {
         val shouldDnd = (settings.value?.focusDndEnabled ?: true) && next.isRunning && next.phase == FocusSessionStatus.FOCUSING
-        if (shouldDnd && prev.phase == FocusSessionStatus.BREAK) {
-            // DND would mute the back-to-focus chime; let it ring out first.
-            pendingDnd = scope.launch { delay(TONE_MILLIS); dnd.applyFocusDnd() }
-        } else if (shouldDnd) {
-            dnd.applyFocusDnd()
-        } else {
-            dnd.restoreDnd()
-        }
+        if (shouldDnd) applyDnd() else dnd.restoreDnd()
+    }
+
+    private fun applyDnd() {
+        notifier.letFocusThroughDnd()
+        dnd.applyFocusDnd()
     }
 
     private fun ensureTicker() {
@@ -191,6 +187,5 @@ class FocusController(
     private companion object {
         const val TICK_MILLIS = 250L
         const val IDLE_TICK_MILLIS = 30_000L
-        const val TONE_MILLIS = 1_500L
     }
 }

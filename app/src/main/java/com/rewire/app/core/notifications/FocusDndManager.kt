@@ -8,7 +8,7 @@ import android.util.Log
 
 /**
  * Manages Do Not Disturb (Notification Interruption Filter) during Focus sessions.
- * Silences all messages and alerts while allowing incoming calls from any application.
+ * Silences notifications and messages; calls (any sender), alarms and media still come through.
  */
 class FocusDndManager(private val context: Context) {
 
@@ -66,9 +66,14 @@ class FocusDndManager(private val context: Context) {
                 }
             }
 
-            // Calls allowed from ANY sender; messages and conversations silenced completely
-            val priorityCategories = NotificationManager.Policy.PRIORITY_CATEGORY_CALLS or
+            // Only notifications go quiet: calls from ANY sender, alarms (incl. Rewire's own timer chime)
+            // and media keep working; messages and conversations are silenced completely.
+            var priorityCategories = NotificationManager.Policy.PRIORITY_CATEGORY_CALLS or
                 NotificationManager.Policy.PRIORITY_CATEGORY_REPEAT_CALLERS
+            if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.P) {
+                priorityCategories = priorityCategories or NotificationManager.Policy.PRIORITY_CATEGORY_ALARMS or
+                    NotificationManager.Policy.PRIORITY_CATEGORY_MEDIA
+            }
 
             val focusPolicy = if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.R) {
                 NotificationManager.Policy(
@@ -88,7 +93,7 @@ class FocusDndManager(private val context: Context) {
 
             manager.notificationPolicy = focusPolicy
             manager.setInterruptionFilter(NotificationManager.INTERRUPTION_FILTER_PRIORITY)
-            Log.i(TAG, "Focus DND applied: calls allowed from ANY sender, all messages silenced")
+            Log.i(TAG, "Focus DND applied: calls, alarms and media allowed; notifications silenced")
             return true
         } catch (e: Exception) {
             Log.e(TAG, "Failed to apply Focus DND", e)
