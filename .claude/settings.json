@@ -1,0 +1,7 @@
+{
+  "enabledPlugins": {
+    "ponytail@ponytail": true,
+    "superpowers@claude-plugins-official": true,
+    "logo-design@logo-design-skill": true
+  }
+}
