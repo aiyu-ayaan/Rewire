@@ -1,5 +1,23 @@
 # Changelog
 
+## [1.0.1-alpha.3](https://github.com/aiyu-ayaan/Rewire/compare/v1.0.1-alpha.2...v1.0.1-alpha.3) (2026-10-01)
+
+### Features
+
+* Show per-app usage today under protected apps
+
+### Bug fixes
+
+* Minor and major warn only once a boundary is crossed
+* Refresh today's usage live on resume and every minute
+* Compute today's usage from UsageEvents instead of overlapping stat buckets
+
+### Other changes
+
+* Accurate Digital Wellbeing usage, per-app usage, and warnings only at boundaries
+* Describe when minor and major warnings appear
+* Cover usage event aggregation
+
 ## [1.0.1-alpha.2](https://github.com/aiyu-ayaan/Rewire/compare/v1.0.1-alpha.1...v1.0.1-alpha.2) (2026-10-01)
 
 ### Features
