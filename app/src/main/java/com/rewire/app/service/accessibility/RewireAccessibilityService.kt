@@ -38,7 +38,7 @@ class RewireAccessibilityService : AccessibilityService() {
     override fun onAccessibilityEvent(event: AccessibilityEvent) {
         if (event.eventType != AccessibilityEvent.TYPE_WINDOW_STATE_CHANGED) return
         val pkg = event.packageName?.toString() ?: return
-        (application as RewireApp).container.engine.onForeground(pkg)
+        (application as RewireApp).container.engine.onForeground(pkg, event.className?.toString())
     }
 
     override fun onInterrupt() = Unit

@@ -130,13 +130,16 @@ class HabitEngine(
         }
     }
 
-    fun onForeground(pkg: String) {
-        // System UI (recents screen, notification shade) means the user left the app.
-        // Reset tracking so the next foreground event triggers a fresh evaluation.
+    /** [className] = window class from the event; only used to tell System UI recents from its overlays. */
+    fun onForeground(pkg: String, className: String? = null) {
         if (pkg == SYSTEM_UI) {
-            current = null
-            granted = null
-            recheck?.cancel()
+            // Recents in System UI (older/AOSP-style devices) means the user left the app: judge the return fresh.
+            // Shade, volume panel, biometric prompt are overlays on the same visit: ignore them.
+            if (className?.contains("recents", ignoreCase = true) == true) {
+                current = null
+                granted = null
+                recheck?.cancel()
+            }
             return
         }
         if (isIgnored(pkg) || pkg == current) return

@@ -433,7 +433,7 @@ class HabitEngineOutcomeTest {
         engine.onGuardResult("com.android.chrome", "h-chrome", WarningLevel.MAJOR, GuardOutcome.CONTINUED)
 
         // User opens recents (System UI) then taps Chrome again — must re-trigger guard
-        engine.onForeground("com.android.systemui")  // recents screen
+        engine.onForeground("com.android.systemui", RECENTS)  // recents screen
         engine.onForeground("com.android.chrome")     // tap Chrome from recents
         assertEquals(2, platform.guardShown.size)     // new warning must appear
         assertEquals(WarningLevel.MAJOR, platform.guardShown.last().level)
@@ -454,13 +454,13 @@ class HabitEngineOutcomeTest {
         assertEquals(1, eventRepo.events.value.count { it.type == HabitEventType.APP_OPENED })
 
         // Open 2 via recents: continue through warning
-        engine.onForeground("com.android.systemui")
+        engine.onForeground("com.android.systemui", RECENTS)
         engine.onForeground("com.android.camera")
         engine.onGuardResult("com.android.camera", "h-cam", WarningLevel.MAJOR, GuardOutcome.CONTINUED)
         assertEquals(2, eventRepo.events.value.count { it.type == HabitEventType.APP_OPENED })
 
         // Open 3 via recents: must be BLOCKED
-        engine.onForeground("com.android.systemui")
+        engine.onForeground("com.android.systemui", RECENTS)
         engine.onForeground("com.android.camera")
         val last = platform.guardShown.last()
         assertEquals(WarningLevel.MAX, last.level)
@@ -508,6 +508,21 @@ class HabitEngineOutcomeTest {
     }
 
     @Test
+    fun `notification shade during a granted visit does not re-warn or count a launch`() {
+        engine.onForeground("com.instagram.android")
+        engine.onGuardResult("com.instagram.android", "h-minor", WarningLevel.MINOR, GuardOutcome.CONTINUED)
+        engine.onForeground("com.instagram.android")
+        platform.guardShown.clear()
+        eventRepo.logged.clear()
+
+        engine.onForeground("com.android.systemui", "android.widget.FrameLayout") // shade
+        engine.onForeground("com.instagram.android") // in-app dialog after shade closes
+
+        assertTrue(platform.guardShown.isEmpty())
+        assertTrue(eventRepo.logged.isEmpty())
+    }
+
+    @Test
     fun `granted visit is revoked after System UI appears`() {
         // Minor habit — first open is a warn, continue grants a visit
         engine.onForeground("com.instagram.android")
@@ -519,10 +534,14 @@ class HabitEngineOutcomeTest {
         assertTrue(platform.guardShown.isEmpty()) // still granted
 
         // Now open recents — grant should be revoked
-        engine.onForeground("com.android.systemui")
+        engine.onForeground("com.android.systemui", RECENTS)
         engine.onForeground("com.instagram.android")
         // A new warning must appear because grant was revoked
         assertEquals(1, platform.guardShown.size)
         assertEquals(WarningLevel.MINOR, platform.guardShown.last().level)
+    }
+
+    private companion object {
+        const val RECENTS = "com.android.systemui.recents.RecentsActivity"
     }
 }
