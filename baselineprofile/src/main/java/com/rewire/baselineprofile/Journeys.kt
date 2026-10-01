@@ -10,9 +10,19 @@ import androidx.test.uiautomator.Until
 const val PACKAGE = "com.rewire.app"
 private const val TIMEOUT = 5_000L
 
-/** Fresh installs land on onboarding; walk through it once (state persists between iterations). */
+/**
+ * Fresh installs land on onboarding; walk through it once (state persists between iterations).
+ * An interpreted (no-profile) build can take seconds to compose its first screen, so wait for either
+ * onboarding or the main app rather than guessing how long that takes.
+ */
 fun MacrobenchmarkScope.passOnboardingIfShown() {
-    if (!device.wait(Until.hasObject(By.text("Skip")), 2_000)) return
+    val deadline = System.currentTimeMillis() + 15_000
+    while (System.currentTimeMillis() < deadline) {
+        if (device.hasObject(By.text("Guard"))) return // already past onboarding
+        if (device.hasObject(By.text("Skip"))) break
+        Thread.sleep(200)
+    }
+    if (!device.hasObject(By.text("Skip"))) return
     tap(By.text("Skip")) // straight to profile setup
     tap(By.text("Continue"))
     tap(By.text("Continue for now")) // permissions are optional; the journey skips granting them
