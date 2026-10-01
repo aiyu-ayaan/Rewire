@@ -6,6 +6,32 @@ plugins {
     alias(libs.plugins.kotlin.serialization)
 }
 
+// Release signing: env vars (CI) win over gitignored keystore.properties (local); neither = unsigned release.
+val keystoreProps = Properties().apply {
+    rootProject.file("keystore.properties").takeIf { it.exists() }?.inputStream()?.use(::load)
+}
+
+fun signingValue(env: String, property: String): String? =
+    System.getenv(env)?.takeIf { it.isNotBlank() } ?: keystoreProps.getProperty(property)?.takeIf { it.isNotBlank() }
+
+val keystoreFile = signingValue("ANDROID_KEYSTORE_FILE", "storeFile")?.let(rootProject::file)
+
+// Version name lives in the root VERSION file, bumped by the release PR.
+val appVersionName = rootProject.file("VERSION").readText().trim()
+
+/** Packs X.Y.Z[-alpha|beta.N] into a code that rises with every release: 1.4.2-beta.3 = 10402103, 1.4.2 = 10402200. */
+fun versionCodeOf(name: String): Int {
+    val match = Regex("""^(\d+)\.(\d+)\.(\d+)(?:-(alpha|beta)\.(\d+))?$""").matchEntire(name)
+        ?: error("VERSION '$name' is not X.Y.Z or X.Y.Z-alpha|beta.N")
+    val (major, minor, patch, label, number) = match.destructured
+    require(minor.toInt() < 100 && patch.toInt() < 100 && (number.toIntOrNull() ?: 0) < 100) {
+        "VERSION '$name' overflows a version code slot"
+    }
+    val stage = when (label) { "alpha" -> 0; "beta" -> 1; else -> 2 }
+    return major.toInt() * 10_000_000 + minor.toInt() * 100_000 + patch.toInt() * 1_000 +
+        stage * 100 + (number.toIntOrNull() ?: 0)
+}
+
 android {
     namespace = "com.rewire.app"
     compileSdk = 37
@@ -14,8 +40,8 @@ android {
         applicationId = "com.rewire.app"
         minSdk = 26
         targetSdk = 35
-        versionCode = 1
-        versionName = "1.0.0"
+        versionCode = versionCodeOf(appVersionName)
+        versionName = appVersionName
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -25,16 +51,13 @@ android {
         localeFilters += "en"
     }
 
-    // Release signing from gitignored keystore.properties; without it the release APK is unsigned.
-    val keystoreProps = rootProject.file("keystore.properties")
     signingConfigs {
-        if (keystoreProps.exists()) {
-            val props = Properties().apply { keystoreProps.inputStream().use(::load) }
+        if (keystoreFile?.exists() == true) {
             create("release") {
-                storeFile = rootProject.file(props.getProperty("storeFile"))
-                storePassword = props.getProperty("storePassword")
-                keyAlias = props.getProperty("keyAlias")
-                keyPassword = props.getProperty("keyPassword")
+                storeFile = keystoreFile
+                storePassword = signingValue("ANDROID_KEYSTORE_PASSWORD", "storePassword")
+                keyAlias = signingValue("ANDROID_KEY_ALIAS", "keyAlias")
+                keyPassword = signingValue("ANDROID_KEY_PASSWORD", "keyPassword")
             }
         }
     }
