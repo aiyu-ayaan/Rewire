@@ -2,6 +2,8 @@
 
 Newest first. Format: date — decision — why.
 
+- 2026-10-02 — Hilt replaces manual `AppContainer`; one `AppModule` of @Provides (no @Binds-per-repo modules). — AGP 9 compat verified (2.60.1); repos need non-injectable args (clock, defaults), so providers are simpler than @Inject constructors. Preference screens share one `SettingsViewModel`.
+
 - 2026-10-02 — Everything in Room, incl. settings (single typed row); DataStore kept only to import old prefs once. — One source of truth, migrations, history queries. Repos keep a write-through cache so the a11y service reads rules synchronously.
 - 2026-10-02 — Focus timer = app-scoped `FocusController` + `FocusTimerService` (specialUse FGS, sticky). — Activity-scoped ViewModel died with the task; Room row lets a killed process resume the session.
 - 2026-10-02 — Partial wake lock until the running phase ends, not exact alarms. — Exact alarms need a user-granted permission on Android 14+; a timed wake lock is reliable and scoped to an active session.

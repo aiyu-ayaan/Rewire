@@ -15,3 +15,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "Rewire"
 include(":app")
+include(":baselineprofile")

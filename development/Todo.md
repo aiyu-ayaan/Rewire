@@ -148,7 +148,7 @@ service off -> banner + notification.
 ## Phase 2 — Persistence + DI  (NEXT)
 - [ ] Extract remaining inline UI copy to strings.xml
 - [ ] Baseline profile + release-build perf check of transitions
-- [ ] Hilt (verify AGP 9 compat) replaces `AppContainer`
+- [x] Hilt 2.60.1 (works with AGP 9 built-in Kotlin) replaces `AppContainer`; `@HiltViewModel` per screen, `@AndroidEntryPoint` services (2026-10-02)
 - [x] Room: habits, protected apps, rules, warnings, events, focus sessions, settings (schema v1 exported)
 - [x] Repositories swap JSON/DataStore -> Room, same interfaces; one-time legacy import (device-verified)
 - [ ] Event logger (`HabitEvent`) writes every action

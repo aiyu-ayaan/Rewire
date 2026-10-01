@@ -4,7 +4,7 @@
 app/src/main/java/com/rewire/app/
 ├── RewireApp.kt              Application; owns AppContainer, creates notification channels
 ├── MainActivity.kt           setContent only; reads deep-link tab extra
-├── AppContainer.kt           manual DI (Hilt in Phase 2)
+├── di/AppModule.kt          Hilt singleton graph (Room, repos, settings flow, engines)
 ├── core/
 │   ├── settings/             Settings model + SettingsRepository (Room single-row table)
 │   ├── focus/                FocusController: app-scoped timer, persists every transition
@@ -47,4 +47,3 @@ Domain has zero Android imports (enforced by keeping it in plain Kotlin; tests r
 | `focus_sessions` | id | live timer state while active, history + note once finished |
 | `settings` | id = 0 | single typed row |
 Schema changes = new version + `Migration` + exported JSON. Never destructive fallback.
-- Manual DI -> Hilt (Phase 2)

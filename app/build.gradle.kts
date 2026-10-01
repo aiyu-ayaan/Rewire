@@ -7,6 +7,7 @@ plugins {
     alias(libs.plugins.ksp)
     alias(libs.plugins.room)
     alias(libs.plugins.hilt)
+    alias(libs.plugins.baselineprofile)
 }
 
 // Release signing: env vars (CI) win over gitignored keystore.properties (local); neither = unsigned release.
@@ -80,6 +81,10 @@ android {
             isDebuggable = true
         }
     }
+    // Baseline-profile / benchmark builds (added by the plugin) must install: debug key when no release keystore.
+    buildTypes.configureEach {
+        if (name != "release" && name.endsWith("Release") && signingConfig == null) signingConfig = signingConfigs.getByName("debug")
+    }
 
     buildFeatures {
         compose = true
@@ -136,6 +141,8 @@ dependencies {
     implementation(libs.androidx.room.runtime)
     implementation(libs.androidx.room.ktx)
     ksp(libs.androidx.room.compiler)
+    implementation(libs.androidx.profileinstaller)
+    baselineProfile(project(":baselineprofile"))
     implementation(libs.hilt.android)
     ksp(libs.hilt.compiler)
     implementation(libs.androidx.hilt.lifecycle.viewmodel.compose)
