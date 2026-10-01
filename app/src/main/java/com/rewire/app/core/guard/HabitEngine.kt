@@ -129,6 +129,14 @@ class HabitEngine(
     }
 
     fun onForeground(pkg: String) {
+        // System UI (recents screen, notification shade) means the user left the app.
+        // Reset tracking so the next foreground event triggers a fresh evaluation.
+        if (pkg == SYSTEM_UI) {
+            current = null
+            granted = null
+            recheck?.cancel()
+            return
+        }
         if (isIgnored(pkg) || pkg == current) return
         current = pkg
         recheck?.cancel()
