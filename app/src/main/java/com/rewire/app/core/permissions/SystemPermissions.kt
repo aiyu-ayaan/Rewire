@@ -27,6 +27,7 @@ import androidx.compose.material.icons.automirrored.rounded.OpenInNew
 import androidx.compose.material.icons.rounded.Accessibility
 import androidx.compose.material.icons.rounded.BatteryChargingFull
 import androidx.compose.material.icons.rounded.CheckCircle
+import androidx.compose.material.icons.rounded.DoNotDisturbOn
 import androidx.compose.material.icons.rounded.Info
 import androidx.compose.material.icons.rounded.Notifications
 import androidx.compose.material.icons.rounded.QueryStats
@@ -97,6 +98,12 @@ object SystemPermissions {
     fun usageAccessSettings(context: Context) =
         Intent(Settings.ACTION_USAGE_ACCESS_SETTINGS, Uri.parse("package:${context.packageName}"))
 
+    fun dndAccessGranted(context: Context): Boolean =
+        context.getSystemService(android.app.NotificationManager::class.java).isNotificationPolicyAccessGranted
+
+    fun dndSettings(): Intent =
+        Intent(Settings.ACTION_NOTIFICATION_POLICY_ACCESS_SETTINGS)
+
     fun batterySettings() = Intent(Settings.ACTION_IGNORE_BATTERY_OPTIMIZATION_SETTINGS)
 
     fun open(context: Context, intent: Intent, fallback: Intent = Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS, Uri.parse("package:${context.packageName}"))) {
@@ -149,6 +156,11 @@ fun PermissionsPanel(containerColor: Color = MaterialTheme.colorScheme.surfaceCo
                 "Allows Rewire to show the warning and block screen over guarded apps when opened.",
                 SystemPermissions.systemAlertWindowGranted(context),
             ) { SystemPermissions.open(context, SystemPermissions.systemAlertWindowSettings(context)) },
+            PermissionRow(
+                Icons.Rounded.DoNotDisturbOn, "Do Not Disturb access",
+                "Silences all messages and alerts while allowing incoming calls from any app during Focus sessions.",
+                SystemPermissions.dndAccessGranted(context),
+            ) { SystemPermissions.open(context, SystemPermissions.dndSettings()) },
             PermissionRow(
                 Icons.Rounded.BatteryChargingFull, "Unrestricted battery",
                 "Stops the system from putting protection to sleep. Find Rewire and choose Unrestricted / Don't optimize.",
@@ -274,6 +286,7 @@ fun rememberGrantedCount(): Int {
             SystemPermissions.accessibilityEnabled(context),
             SystemPermissions.usageAccessGranted(context),
             SystemPermissions.systemAlertWindowGranted(context),
+            SystemPermissions.dndAccessGranted(context),
             SystemPermissions.batteryUnrestricted(context),
         ).count { it }
     }

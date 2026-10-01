@@ -44,6 +44,8 @@ data class Settings(
     val dynamicColor: Boolean,
     val notifications: Map<NotificationCategory, Boolean>,
     val focusBypass: FocusBypass,
+    /** Silences all messages while allowing incoming calls from any app during focus sessions. */
+    val focusDndEnabled: Boolean,
     /** Asked for POST_NOTIFICATIONS at least once — after that, recovery goes through system settings. */
     val notificationPermissionAsked: Boolean,
     val profile: UserProfile,
@@ -61,6 +63,7 @@ class SettingsRepository(private val context: Context) {
         val bypassMinor = booleanPreferencesKey("bypass_minor")
         val bypassMajor = booleanPreferencesKey("bypass_major")
         val bypassMax = booleanPreferencesKey("bypass_max")
+        val focusDnd = booleanPreferencesKey("focus_dnd_enabled")
         val userName = stringPreferencesKey("user_name")
         val userGoal = stringPreferencesKey("user_goal")
         val userReason = stringPreferencesKey("user_reason")
@@ -81,6 +84,7 @@ class SettingsRepository(private val context: Context) {
             major = this[Keys.bypassMajor] ?: false,
             max = this[Keys.bypassMax] ?: false,
         ),
+        focusDndEnabled = this[Keys.focusDnd] ?: true,
         notificationPermissionAsked = this[Keys.permissionAsked] ?: false,
         profile = UserProfile(
             name = this[Keys.userName].orEmpty(),
@@ -105,5 +109,8 @@ class SettingsRepository(private val context: Context) {
         it[Keys.bypassMinor] = b.minor
         it[Keys.bypassMajor] = b.major
         it[Keys.bypassMax] = b.max
+    }
+    suspend fun setFocusDndEnabled(enabled: Boolean) = context.dataStore.edit {
+        it[Keys.focusDnd] = enabled
     }
 }

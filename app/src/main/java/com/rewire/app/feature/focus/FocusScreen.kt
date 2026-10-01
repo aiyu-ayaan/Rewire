@@ -58,6 +58,7 @@ import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
@@ -68,6 +69,7 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.hapticfeedback.HapticFeedbackType
 import androidx.compose.ui.input.pointer.pointerInput
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalHapticFeedback
 import androidx.compose.ui.semantics.contentDescription
 import androidx.compose.ui.semantics.onClick
@@ -75,6 +77,7 @@ import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.semantics.stateDescription
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
+import androidx.lifecycle.compose.LifecycleResumeEffect
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.rewire.app.core.datastore.FocusBypass
 import com.rewire.app.core.notifications.NotificationRationaleCard
@@ -96,10 +99,16 @@ import kotlinx.coroutines.launch
 @Composable
 fun FocusScreen(onFullscreen: () -> Unit) {
     val vm = focusViewModel()
+    val context = LocalContext.current
     val state by vm.state.collectAsStateWithLifecycle()
     val now by vm.now.collectAsStateWithLifecycle()
     val draft by vm.draft.collectAsStateWithLifecycle()
     val bypass by vm.bypass.collectAsStateWithLifecycle()
+    val focusDnd by vm.focusDndEnabled.collectAsStateWithLifecycle()
+
+    var resumeCount by remember { mutableIntStateOf(0) }
+    LifecycleResumeEffect(Unit) { resumeCount++; onPauseOrDispose { } }
+    val isDndGranted = remember(resumeCount) { vm.isDndAccessGranted }
 
     val mode = when (state.status) {
         FocusSessionStatus.IDLE -> 0
@@ -118,7 +127,17 @@ fun FocusScreen(onFullscreen: () -> Unit) {
         label = "focusMode",
     ) { m ->
         when (m) {
-            0 -> FocusSetup(draft, bypass, vm::setDraft, vm::setBypass, vm::start)
+            0 -> FocusSetup(
+                draft = draft,
+                bypass = bypass,
+                focusDnd = focusDnd ?: true,
+                isDndGranted = isDndGranted,
+                onDraft = vm::setDraft,
+                onBypass = vm::setBypass,
+                onFocusDnd = vm::setFocusDndEnabled,
+                onOpenDndSettings = { context.startActivity(vm.dndSettingsIntent()) },
+                onStart = vm::start,
+            )
             1 -> FocusRunning(state, now, vm::pause, vm::resume, vm::skipBreak, vm::end, onFullscreen)
             else -> FocusFinished(state, onDone = vm::reset)
         }
@@ -134,8 +153,12 @@ private val presets = listOf(Preset(25, 5), Preset(50, 10), Preset(90, 20))
 private fun FocusSetup(
     draft: FocusConfig,
     bypass: FocusBypass?,
+    focusDnd: Boolean,
+    isDndGranted: Boolean,
     onDraft: (FocusConfig) -> Unit,
     onBypass: (FocusBypass) -> Unit,
+    onFocusDnd: (Boolean) -> Unit,
+    onOpenDndSettings: () -> Unit,
     onStart: () -> Unit,
 ) {
     val permission = rememberNotificationPermission()
@@ -205,7 +228,16 @@ private fun FocusSetup(
             reason = "Rewire tells you when a break starts and when it's time to come back, even with the screen off.",
             modifier = Modifier.padding(top = 16.dp),
         )
-        if (bypass != null) BypassCard(bypass, onBypass)
+        if (bypass != null) {
+            BypassCard(
+                bypass = bypass,
+                onChange = onBypass,
+                focusDnd = focusDnd,
+                onFocusDnd = onFocusDnd,
+                isDndGranted = isDndGranted,
+                onOpenDndSettings = onOpenDndSettings,
+            )
+        }
     }
 }
 
@@ -223,11 +255,31 @@ private fun Stepper(label: String, value: String, onMinus: () -> Unit, onPlus: (
 }
 
 @Composable
-private fun BypassCard(bypass: FocusBypass, onChange: (FocusBypass) -> Unit) {
+private fun BypassCard(
+    bypass: FocusBypass,
+    onChange: (FocusBypass) -> Unit,
+    focusDnd: Boolean,
+    onFocusDnd: (Boolean) -> Unit,
+    isDndGranted: Boolean,
+    onOpenDndSettings: () -> Unit,
+) {
     var confirmMax by remember { mutableStateOf(false) }
+    var showDndDialog by remember { mutableStateOf(false) }
     SectionTitle("During focus")
     Card(shape = MaterialTheme.shapes.large, colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surfaceContainerLow)) {
         Column(Modifier.padding(vertical = 8.dp)) {
+            BypassRow(
+                "Silence messages (allow calls)",
+                if (!isDndGranted) "Tap to grant Do Not Disturb access. Incoming calls will ring; all messages silenced."
+                else "Mutes notifications & messages from all apps. Incoming calls will still ring.",
+                checked = focusDnd && isDndGranted,
+            ) { checked ->
+                if (!isDndGranted) {
+                    showDndDialog = true
+                } else {
+                    onFocusDnd(checked)
+                }
+            }
             BypassRow("Skip Minor reminders", "Quiet nudges while you work.", bypass.minor) { onChange(bypass.copy(minor = it)) }
             BypassRow("Skip Major pauses", "Guarded apps open without the full-screen pause.", bypass.major) { onChange(bypass.copy(major = it)) }
             BypassRow("Lift Max blocks", "Off by default. Blocks protect you most during focus.", bypass.max) { if (it) confirmMax = true else onChange(bypass.copy(max = false)) }
@@ -240,6 +292,15 @@ private fun BypassCard(bypass: FocusBypass, onChange: (FocusBypass) -> Unit) {
             text = { Text("Apps you hard-blocked will open freely while a focus session runs. Most people keep this off.") },
             confirmButton = { TextButton(onClick = { onChange(bypass.copy(max = true)); confirmMax = false }) { Text("Lift blocks") } },
             dismissButton = { TextButton(onClick = { confirmMax = false }) { Text("Keep blocks") } },
+        )
+    }
+    if (showDndDialog) {
+        AlertDialog(
+            onDismissRequest = { showDndDialog = false },
+            title = { Text("Grant Do Not Disturb access") },
+            text = { Text("To silence messages and alerts while allowing phone and incoming app calls during focus sessions, Rewire needs Do Not Disturb permission.") },
+            confirmButton = { TextButton(onClick = { showDndDialog = false; onOpenDndSettings() }) { Text("Open settings") } },
+            dismissButton = { TextButton(onClick = { showDndDialog = false }) { Text("Not now") } },
         )
     }
 }

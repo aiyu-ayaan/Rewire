@@ -65,6 +65,7 @@ class AppContainer(context: Context) {
     val engine = HabitEngine(context, habits, events, settings, focusState, usage, MainScope())
 
     val notifier = RewireNotifier(context) { category -> settings.value?.notifications?.get(category) ?: true }
+    val dndManager = com.rewire.app.core.notifications.FocusDndManager(context)
 }
 
 @Composable

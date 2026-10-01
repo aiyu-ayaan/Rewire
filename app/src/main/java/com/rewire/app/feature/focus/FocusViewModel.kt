@@ -39,6 +39,10 @@ class FocusViewModel(
     val draft: StateFlow<FocusConfig> = _draft.asStateFlow()
 
     val bypass: StateFlow<FocusBypass?> = c.settings.map { it?.focusBypass }.stateIn(viewModelScope, SharingStarted.Eagerly, null)
+    val focusDndEnabled: StateFlow<Boolean?> = c.settings.map { it?.focusDndEnabled }.stateIn(viewModelScope, SharingStarted.Eagerly, null)
+
+    val isDndAccessGranted: Boolean get() = c.dndManager.isAccessGranted
+    fun dndSettingsIntent() = c.dndManager.dndSettingsIntent()
 
     private var ticker: Job? = null
 
@@ -48,6 +52,15 @@ class FocusViewModel(
     }
 
     fun setBypass(b: FocusBypass) = viewModelScope.launch { c.settingsRepository.setFocusBypass(b) }
+
+    fun setFocusDndEnabled(enabled: Boolean) = viewModelScope.launch {
+        c.settingsRepository.setFocusDndEnabled(enabled)
+        if (!enabled) {
+            c.dndManager.restoreDnd()
+        } else if (_state.value.isRunning && _state.value.phase == FocusSessionStatus.FOCUSING) {
+            c.dndManager.applyFocusDnd()
+        }
+    }
 
     fun start() {
         val config = _draft.value
@@ -75,8 +88,18 @@ class FocusViewModel(
         _state.value = next
         _now.value = clock()
         onPhaseChange(prev, next)
+        updateDnd(next)
         c.notifier.showFocusOngoing(next, clock())
         if (next.isRunning) ensureTicker() else { ticker?.cancel(); ticker = null }
+    }
+
+    private fun updateDnd(state: FocusState) {
+        val shouldDnd = (focusDndEnabled.value ?: true) && state.isRunning && state.phase == FocusSessionStatus.FOCUSING
+        if (shouldDnd) {
+            c.dndManager.applyFocusDnd()
+        } else {
+            c.dndManager.restoreDnd()
+        }
     }
 
     private fun ensureTicker() {
@@ -121,6 +144,7 @@ class FocusViewModel(
 
     override fun onCleared() {
         c.notifier.cancelFocusOngoing()
+        c.dndManager.restoreDnd()
     }
 
     private companion object {

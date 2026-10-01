@@ -12,6 +12,7 @@ import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.rounded.ArrowBack
 import androidx.compose.material.icons.automirrored.rounded.OpenInNew
+import androidx.compose.material.icons.rounded.DoNotDisturbOn
 import androidx.compose.material.icons.rounded.Insights
 import androidx.compose.material.icons.rounded.Send
 import androidx.compose.material.icons.rounded.Shield
@@ -111,6 +112,34 @@ fun NotificationSettingsScreen(onBack: () -> Unit) {
                         colors = ListItemDefaults.colors(containerColor = MaterialTheme.colorScheme.surfaceContainerLow),
                     )
                 }
+            }
+            Spacer(Modifier.height(16.dp))
+            Card(shape = MaterialTheme.shapes.large, colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surfaceContainerLow)) {
+                val dndGranted = container.dndManager.isAccessGranted
+                ListItem(
+                    headlineContent = { Text("Silence during Focus") },
+                    supportingContent = {
+                        Text(
+                            if (!dndGranted) "Tap to grant Do Not Disturb access. Incoming calls will ring; all messages silenced."
+                            else "Silences messages & alerts from all apps during focus sessions. Incoming calls still ring."
+                        )
+                    },
+                    leadingContent = { Icon(Icons.Rounded.DoNotDisturbOn, contentDescription = null) },
+                    trailingContent = {
+                        if (!dndGranted) {
+                            FilledTonalButton(onClick = { context.startActivity(container.dndManager.dndSettingsIntent()) }) {
+                                Text("Allow")
+                            }
+                        } else {
+                            Switch(
+                                checked = s.focusDndEnabled,
+                                onCheckedChange = { on -> scope.launch { container.settingsRepository.setFocusDndEnabled(on) } },
+                                modifier = Modifier.semantics { contentDescription = "Silence during Focus" },
+                            )
+                        }
+                    },
+                    colors = ListItemDefaults.colors(containerColor = MaterialTheme.colorScheme.surfaceContainerLow),
+                )
             }
             Spacer(Modifier.height(16.dp))
             FilledTonalButton(
