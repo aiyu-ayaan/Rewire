@@ -23,6 +23,7 @@ import androidx.navigation.toRoute
 import com.rewire.app.RewireApp
 import com.rewire.app.core.notifications.DeepLink
 import com.rewire.app.feature.focus.FocusFullscreenScreen
+import com.rewire.app.feature.focus.FocusHistoryScreen
 import com.rewire.app.feature.guard.HabitDetailScreen
 import com.rewire.app.feature.onboarding.PermissionsSetupScreen
 import com.rewire.app.feature.onboarding.ProfileSetupScreen
@@ -47,6 +48,7 @@ object Routes {
     @Serializable data object NotificationSettings
     @Serializable data object WarningLibrary
     @Serializable data object FocusFullscreen
+    @Serializable data object FocusHistory
     @Serializable data object OnboardingProfile
     @Serializable data object OnboardingPermissions
     @Serializable data object EditProfile
@@ -141,6 +143,7 @@ fun RewireNavHost(
                             onOpenWarningLibrary = { nav.navigate(Routes.WarningLibrary) },
                             onOpenMatrixBreakdown = { nav.navigate(Routes.MatrixBreakdown(it)) },
                             onOpenFocusFullscreen = { nav.navigate(Routes.FocusFullscreen) { launchSingleTop = true } },
+                            onOpenFocusHistory = { nav.navigate(Routes.FocusHistory) { launchSingleTop = true } },
                             onEditProfile = { nav.navigate(Routes.EditProfile) },
                             onOpenAbout = { nav.navigate(Routes.About) },
                         )
@@ -172,6 +175,9 @@ fun RewireNavHost(
                     CompositionLocalProvider(LocalNavAnimatedScope provides this) {
                         FocusFullscreenScreen(onExit = { nav.popBackStack() })
                     }
+                }
+                composable<Routes.FocusHistory> {
+                    FocusHistoryScreen(onBack = { nav.popBackStack() })
                 }
                 composable<Routes.NotificationSettings> {
                     NotificationSettingsScreen(onBack = { nav.popBackStack() })

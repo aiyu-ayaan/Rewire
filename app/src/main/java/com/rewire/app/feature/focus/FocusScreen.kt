@@ -33,6 +33,7 @@ import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.rounded.Add
 import androidx.compose.material.icons.rounded.Fullscreen
+import androidx.compose.material.icons.rounded.History
 import androidx.compose.material.icons.rounded.Pause
 import androidx.compose.material.icons.rounded.PlayArrow
 import androidx.compose.material.icons.rounded.Remove
@@ -98,7 +99,7 @@ import com.rewire.app.ui.theme.TimerTextStyle
 import kotlinx.coroutines.launch
 
 @Composable
-fun FocusScreen(onFullscreen: () -> Unit) {
+fun FocusScreen(onFullscreen: () -> Unit, onHistory: () -> Unit) {
     val vm = focusViewModel()
     val context = LocalContext.current
     val state by vm.state.collectAsStateWithLifecycle()
@@ -106,6 +107,7 @@ fun FocusScreen(onFullscreen: () -> Unit) {
     val draft by vm.draft.collectAsStateWithLifecycle()
     val bypass by vm.bypass.collectAsStateWithLifecycle()
     val focusDnd by vm.focusDndEnabled.collectAsStateWithLifecycle()
+    val awaitingNote by vm.awaitingNote.collectAsStateWithLifecycle()
 
     var resumeCount by remember { mutableIntStateOf(0) }
     LifecycleResumeEffect(Unit) { resumeCount++; onPauseOrDispose { } }
@@ -139,10 +141,20 @@ fun FocusScreen(onFullscreen: () -> Unit) {
                 onOpenDndSettings = { context.startActivity(vm.dndSettingsIntent()) },
                 onStart = vm::start,
                 onQuickTest = vm::startQuickTest,
+                onHistory = onHistory,
             )
             1 -> FocusRunning(state, now, vm::pause, vm::resume, vm::skipBreak, vm::end, onFullscreen)
-            else -> FocusFinished(state, onDone = vm::reset)
+            else -> FocusFinished(state, onDone = vm::reset, onHistory = onHistory)
         }
+    }
+    // Optional: Skip (or dismiss) leaves the session in history without a note.
+    awaitingNote?.let { s ->
+        AchievementDialog(
+            initial = "",
+            completed = s.state.status == FocusSessionStatus.COMPLETED,
+            onSave = vm::saveNote,
+            onDismiss = vm::skipNote,
+        )
     }
 }
 
@@ -163,12 +175,18 @@ private fun FocusSetup(
     onOpenDndSettings: () -> Unit,
     onStart: () -> Unit,
     onQuickTest: () -> Unit,
+    onHistory: () -> Unit,
 ) {
     val permission = rememberNotificationPermission()
     Column(
         Modifier.fillMaxSize().statusBarsPadding().verticalScroll(rememberScrollState()).padding(horizontal = 16.dp).padding(bottom = 24.dp),
     ) {
-        Text("Focus", style = MaterialTheme.typography.headlineLarge, modifier = Modifier.padding(top = 16.dp))
+        Row(Modifier.fillMaxWidth().padding(top = 16.dp), verticalAlignment = Alignment.CenterVertically) {
+            Text("Focus", style = MaterialTheme.typography.headlineLarge, modifier = Modifier.weight(1f))
+            FilledTonalIconButton(onClick = onHistory, shapes = IconButtonDefaults.shapes()) {
+                Icon(Icons.Rounded.History, contentDescription = "Focus history")
+            }
+        }
         Text("Deep work, then real rest.", style = MaterialTheme.typography.bodyMedium, color = MaterialTheme.colorScheme.onSurfaceVariant)
 
         Box(Modifier.fillMaxWidth().padding(vertical = 24.dp), contentAlignment = Alignment.Center) {
@@ -428,7 +446,7 @@ private fun HoldToEnd(onEnd: () -> Unit) {
 // ---- Finished -----------------------------------------------------------------------------------
 
 @Composable
-private fun FocusFinished(state: FocusState, onDone: () -> Unit) {
+private fun FocusFinished(state: FocusState, onDone: () -> Unit, onHistory: () -> Unit) {
     val completed = state.status == FocusSessionStatus.COMPLETED
     Column(
         Modifier.fillMaxSize().statusBarsPadding().navigationBarsPadding().padding(24.dp),
@@ -450,5 +468,10 @@ private fun FocusFinished(state: FocusState, onDone: () -> Unit) {
         )
         Spacer(Modifier.height(32.dp))
         if (completed) Button(onClick = onDone) { Text("Done") } else OutlinedButton(onClick = onDone) { Text("Back to setup") }
+        TextButton(onClick = onHistory, modifier = Modifier.padding(top = 8.dp)) {
+            Icon(Icons.Rounded.History, contentDescription = null)
+            Spacer(Modifier.width(8.dp))
+            Text("Focus history")
+        }
     }
 }
