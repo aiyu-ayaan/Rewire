@@ -1,4 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Rewire</string>
+    <string name="tagline">Break habits.\nBuild control.</string>
+
+    <!-- Notification channels -->
+    <string name="channel_focus_session">Focus session</string>
+    <string name="channel_focus_session_desc">Silent ongoing timer while a focus session runs.</string>
+    <string name="channel_focus_alerts">Focus alerts</string>
+    <string name="channel_focus_alerts_desc">Break started, focus resumed and session complete.</string>
+    <string name="channel_guard">Guard</string>
+    <string name="channel_guard_desc">Important restriction status for your protected apps.</string>
+    <string name="channel_summary">Daily summary</string>
+    <string name="channel_summary_desc">One short recap of your day.</string>
+    <string name="channel_system">System</string>
+    <string name="channel_system_desc">Permission problems or protection turned off.</string>
+
+    <!-- Notifications -->
+    <string name="notif_focus_title">Deep work</string>
+    <string name="notif_focus_break_title">Break time</string>
+    <string name="notif_focus_session">Session %1$d of %2$d</string>
+    <string name="notif_focus_paused">Paused · %1$s left · %2$s</string>
+    <string name="notif_break_started_title">Focus block done. Take a break.</string>
+    <string name="notif_break_started_text">%1$d minutes are yours. Step away from the screen.</string>
+    <string name="notif_focus_resumed_title">Break over. Back to focus.</string>
+    <string name="notif_completed_title">Session complete</string>
+    <string name="notif_completed_text">%1$d blocks · %2$d focused minutes. Nice work.</string>
+    <string name="notif_test_title">Notifications work</string>
+    <string name="notif_test_text">Rewire can reach you when it matters.</string>
+
+    <!-- Warning screens (layout copy; message text comes from the warning library) -->
+    <string name="warning_minor_eyebrow">Quick pause</string>
+    <string name="warning_major_eyebrow">You are about to open %1$s</string>
+    <string name="warning_max_title">%1$s is blocked</string>
+    <string name="warning_reason">Reason</string>
+    <string name="warning_continue">Continue</string>
+    <string name="warning_continue_anyway">Continue anyway</string>
+    <string name="warning_continue_in">Continue in %1$ds</string>
+    <string name="warning_go_back">Go back</string>
+    <string name="warning_back">Back</string>
+    <string name="warning_allowed_time">Allowed time</string>
+    <string name="warning_next_available">Next available</string>
+    <string name="warning_emergency_unlock">Emergency unlock</string>
+    <string name="warning_preview_note">Preview — nothing is logged.</string>
 </resources>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Monochrome status icon: 4-leaf clover (Rewire hero shape). -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+    <path
+        android:fillColor="#FFFFFFFF"
+        android:pathData="M12,3.5a4.25,4.25 0,0 1,8.5 4.25a4.25,4.25 0,0 1,-4.25 4.25a4.25,4.25 0,0 1,4.25 4.25a4.25,4.25 0,0 1,-8.5 4.25a4.25,4.25 0,0 1,-8.5 -4.25a4.25,4.25 0,0 1,4.25 -4.25a4.25,4.25 0,0 1,-4.25 -4.25a4.25,4.25 0,0 1,8.5 -4.25z" />
+</vector>
