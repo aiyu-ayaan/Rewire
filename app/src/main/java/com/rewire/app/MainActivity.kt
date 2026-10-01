@@ -82,6 +82,19 @@ class MainActivity : ComponentActivity() {
         }
     }
 
+    override fun onStart() {
+        super.onStart()
+        (application as RewireApp).container.notifier.cancelFocusMinimised()
+    }
+
+    // Leaving mid-session (home, recents, another app) pops a heads-up so the user knows the timer runs on.
+    override fun onStop() {
+        super.onStop()
+        if (isChangingConfigurations) return
+        val c = (application as RewireApp).container
+        c.notifier.focusMinimised(c.focus.current.value, System.currentTimeMillis())
+    }
+
     override fun onNewIntent(intent: Intent) {
         super.onNewIntent(intent)
         intent.deepLink()?.let { deepLink = it }

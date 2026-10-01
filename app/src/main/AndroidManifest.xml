@@ -15,6 +15,9 @@
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE_SPECIAL_USE" />
 
+    <!-- Android 16+ Live Update: focus countdown chip in the status bar (normal permission) -->
+    <uses-permission android:name="android.permission.POST_PROMOTED_NOTIFICATIONS" />
+
     <!-- Focus timer: CPU kept awake only until the running phase ends, so chimes ring on time with the screen off -->
     <uses-permission android:name="android.permission.WAKE_LOCK" />
 

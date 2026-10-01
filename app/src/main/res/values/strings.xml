@@ -8,6 +8,10 @@
     <string name="channel_focus_session_desc">Silent ongoing timer while a focus session runs.</string>
     <string name="channel_focus_alerts">Focus alerts</string>
     <string name="channel_focus_alerts_desc">Break started, focus resumed and session complete.</string>
+    <string name="channel_focus_minimised">Focus running in background</string>
+    <string name="channel_focus_minimised_desc">Silent pop-up when you leave Rewire during a focus session, so you know the timer keeps going.</string>
+    <string name="notif_focus_minimised_title">Focus keeps running</string>
+    <string name="notif_focus_minimised_text">%1$s left · session %2$d of %3$d. Tap to come back.</string>
     <string name="channel_guard">Guard</string>
     <string name="channel_guard_desc">Important restriction status for your protected apps.</string>
     <string name="channel_summary">Daily summary</string>

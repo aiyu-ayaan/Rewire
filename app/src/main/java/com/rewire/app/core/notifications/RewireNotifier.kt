@@ -41,6 +41,7 @@ class RewireNotifier(
     object Channels {
         const val FOCUS_SESSION = "focus_session"
         const val FOCUS_ALERTS = "focus_alerts"
+        const val FOCUS_MINIMISED = "focus_minimised"
         const val GUARD = "guard"
         const val SUMMARY = "daily_summary"
         const val SYSTEM = "system"
@@ -49,6 +50,7 @@ class RewireNotifier(
     object Ids {
         const val FOCUS_ONGOING = 1001
         const val FOCUS_ALERT = 1002
+        const val FOCUS_MINIMISED = 1004
         const val GUARD_ONGOING = 1003
         const val TEST = 1900
         const val PROTECTION_OFF = 1500
@@ -65,11 +67,27 @@ class RewireNotifier(
             listOf(
                 channel(Channels.FOCUS_SESSION, NotificationManagerCompat.IMPORTANCE_LOW, R.string.channel_focus_session, R.string.channel_focus_session_desc, silent = true),
                 channel(Channels.FOCUS_ALERTS, NotificationManagerCompat.IMPORTANCE_HIGH, R.string.channel_focus_alerts, R.string.channel_focus_alerts_desc),
+                // High importance = pops up; silent so leaving the app never makes a sound.
+                channel(Channels.FOCUS_MINIMISED, NotificationManagerCompat.IMPORTANCE_HIGH, R.string.channel_focus_minimised, R.string.channel_focus_minimised_desc, silent = true),
                 channel(Channels.GUARD, NotificationManagerCompat.IMPORTANCE_DEFAULT, R.string.channel_guard, R.string.channel_guard_desc),
                 channel(Channels.SUMMARY, NotificationManagerCompat.IMPORTANCE_LOW, R.string.channel_summary, R.string.channel_summary_desc),
                 channel(Channels.SYSTEM, NotificationManagerCompat.IMPORTANCE_DEFAULT, R.string.channel_system, R.string.channel_system_desc),
             )
         )
+        letFocusThroughDnd()
+    }
+
+    /**
+     * Focus DND is Rewire's own: its focus alerts and the "still running" pop-up must still show.
+     * Android only keeps bypassDnd for apps with DND access, so this re-runs right before DND is applied.
+     */
+    fun letFocusThroughDnd() {
+        val nm = context.getSystemService(android.app.NotificationManager::class.java) ?: return
+        if (!nm.isNotificationPolicyAccessGranted) return
+        listOf(Channels.FOCUS_ALERTS, Channels.FOCUS_MINIMISED).forEach { id ->
+            val ch = nm.getNotificationChannel(id) ?: return@forEach
+            if (!ch.canBypassDnd()) runCatching { ch.setBypassDnd(true); nm.createNotificationChannel(ch) }
+        }
     }
 
     fun hasPermission(): Boolean =
@@ -101,8 +119,28 @@ class RewireNotifier(
                 .setUsesChronometer(true)
                 .setChronometerCountDown(true)
         }
-        return builder.setForegroundServiceBehavior(NotificationCompat.FOREGROUND_SERVICE_IMMEDIATE).build()
+        return builder
+            .setForegroundServiceBehavior(NotificationCompat.FOREGROUND_SERVICE_IMMEDIATE)
+            // Android 16+ Live Update: countdown chip in the status bar and on the lock screen.
+            .setRequestPromotedOngoing(true)
+            .build()
     }
+
+    /** Heads-up when the user leaves the app mid-session: the timer didn't stop. Times out by itself. */
+    fun focusMinimised(state: FocusState, now: Long) {
+        if (!state.isActive) return
+        val n = base(Channels.FOCUS_MINIMISED, DeepLink.FOCUS)
+            .setContentTitle(context.getString(R.string.notif_focus_minimised_title))
+            .setContentText(context.getString(R.string.notif_focus_minimised_text, formatRemaining(state.remaining(now)), state.cycle, state.config.cycles))
+            .setCategory(NotificationCompat.CATEGORY_STATUS)
+            .setPriority(NotificationCompat.PRIORITY_HIGH)
+            .setAutoCancel(true)
+            .setTimeoutAfter(MINIMISED_TIMEOUT_MILLIS)
+            .build()
+        post(NotificationCategory.FOCUS, Ids.FOCUS_MINIMISED, n)
+    }
+
+    fun cancelFocusMinimised() = manager.cancel(Ids.FOCUS_MINIMISED)
 
     fun cancelFocusOngoing() = manager.cancel(Ids.FOCUS_ONGOING)
 
@@ -134,7 +172,8 @@ class RewireNotifier(
             val uri = Uri.parse("android.resource://${context.packageName}/$res")
             RingtoneManager.getRingtone(context, uri)?.apply {
                 audioAttributes = AudioAttributes.Builder()
-                    .setUsage(AudioAttributes.USAGE_NOTIFICATION_EVENT)
+                    // Alarm stream: the chime is the timer's alarm, and alarms pass Focus DND.
+                    .setUsage(AudioAttributes.USAGE_ALARM)
                     .setContentType(AudioAttributes.CONTENT_TYPE_SONIFICATION)
                     .build()
                 play()
@@ -213,6 +252,7 @@ class RewireNotifier(
 
     companion object {
         const val EXTRA_DEEP_LINK = "com.rewire.app.DEEP_LINK"
+        private const val MINIMISED_TIMEOUT_MILLIS = 8_000L
 
         fun formatRemaining(millis: Long): String {
             val total = (millis + 999) / 1000
