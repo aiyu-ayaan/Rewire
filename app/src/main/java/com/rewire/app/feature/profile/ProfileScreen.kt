@@ -15,7 +15,7 @@ import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.rounded.KeyboardArrowRight
-import androidx.compose.material.icons.rounded.Accessibility
+import androidx.compose.material.icons.rounded.Edit
 import androidx.compose.material.icons.rounded.BatteryAlert
 import androidx.compose.material.icons.rounded.FormatQuote
 import androidx.compose.material.icons.rounded.Notifications
@@ -47,6 +47,11 @@ import com.rewire.app.BuildConfig
 import com.rewire.app.R
 import com.rewire.app.RewireApp
 import com.rewire.app.core.datastore.ThemeMode
+import com.rewire.app.core.datastore.UserProfile
+import com.rewire.app.core.permissions.PermissionsPanel
+import com.rewire.app.feature.onboarding.AVATAR_KEY
+import com.rewire.app.ui.components.UserAvatar
+import com.rewire.app.ui.components.sharedBoundsOrSelf
 import com.rewire.app.core.notifications.PermissionStatus
 import com.rewire.app.core.notifications.rememberNotificationPermission
 import com.rewire.app.ui.components.MorphingShape
@@ -55,7 +60,7 @@ import com.rewire.app.ui.components.SectionTitle
 import kotlinx.coroutines.launch
 
 @Composable
-fun ProfileScreen(onOpenNotificationSettings: () -> Unit, onOpenWarningLibrary: () -> Unit) {
+fun ProfileScreen(onOpenNotificationSettings: () -> Unit, onOpenWarningLibrary: () -> Unit, onEditProfile: () -> Unit) {
     val container = (LocalContext.current.applicationContext as RewireApp).container
     val settings by container.settings.collectAsStateWithLifecycle()
     val warnings by container.warnings.warnings.collectAsStateWithLifecycle()
@@ -64,18 +69,7 @@ fun ProfileScreen(onOpenNotificationSettings: () -> Unit, onOpenWarningLibrary: 
     val permission = rememberNotificationPermission()
 
     Column(Modifier.fillMaxSize().statusBarsPadding().verticalScroll(rememberScrollState()).padding(horizontal = 16.dp).padding(bottom = 24.dp)) {
-        Row(Modifier.padding(top = 16.dp), verticalAlignment = Alignment.CenterVertically) {
-            MorphingShape(
-                brush = heroBrush(),
-                modifier = Modifier.size(64.dp),
-                rotationMillis = 40_000,
-            )
-            Spacer(Modifier.width(16.dp))
-            Column {
-                Text("Profile", style = MaterialTheme.typography.headlineLarge)
-                Text(stringResource(R.string.tagline).replace("\n", " "), style = MaterialTheme.typography.bodyMedium, color = MaterialTheme.colorScheme.onSurfaceVariant)
-            }
-        }
+        UserCard(s.profile, onEditProfile)
 
         SectionTitle("Appearance")
         Group {
@@ -115,12 +109,7 @@ fun ProfileScreen(onOpenNotificationSettings: () -> Unit, onOpenWarningLibrary: 
         }
 
         SectionTitle("Permissions")
-        Group {
-            StatusRow(Icons.Rounded.Notifications, "Notifications", if (permission.status == PermissionStatus.GRANTED) "Allowed" else "Not allowed", ok = permission.status == PermissionStatus.GRANTED)
-            StatusRow(Icons.Rounded.Accessibility, "Accessibility service", "Needed to detect protected apps. Set up when Guard goes live.", ok = null)
-            StatusRow(Icons.Rounded.QueryStats, "Usage access", "Powers screen-time charts. Coming with usage analytics.", ok = null)
-            StatusRow(Icons.Rounded.BatteryAlert, "Battery optimization", "Guidance to keep protection running on aggressive devices.", ok = null)
-        }
+        Group { PermissionsPanel() }
 
         Text(
             "Rewire ${BuildConfig.VERSION_NAME} · All data stays on this device.",
@@ -152,20 +141,29 @@ private fun NavRow(icon: ImageVector, title: String, subtitle: String, onClick: 
     )
 }
 
-/** ok = null -> upcoming feature (neutral), never shown as an error. */
+
+/** The user, not the app: avatar, name, goal and their own reason. Tap to edit. */
 @Composable
-private fun StatusRow(icon: ImageVector, title: String, subtitle: String, ok: Boolean?) {
-    ListItem(
-        headlineContent = { Text(title) },
-        supportingContent = { Text(subtitle) },
-        leadingContent = { Icon(icon, contentDescription = null) },
-        trailingContent = {
-            Text(
-                when (ok) { true -> "OK"; false -> "Action needed"; null -> "Later" },
-                style = MaterialTheme.typography.labelLarge,
-                color = when (ok) { true -> MaterialTheme.colorScheme.primary; false -> MaterialTheme.colorScheme.error; null -> MaterialTheme.colorScheme.onSurfaceVariant },
-            )
-        },
-        colors = groupItemColors(),
-    )
+private fun UserCard(p: UserProfile, onEdit: () -> Unit) {
+    Card(
+        onClick = onEdit,
+        shape = MaterialTheme.shapes.extraLarge,
+        colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.primaryContainer, contentColor = MaterialTheme.colorScheme.onPrimaryContainer),
+        modifier = Modifier.fillMaxWidth().padding(top = 16.dp),
+    ) {
+        Column(Modifier.padding(20.dp)) {
+            Row(verticalAlignment = Alignment.CenterVertically) {
+                UserAvatar(p.name, p.avatarShape, 72.dp, Modifier.size(72.dp).sharedBoundsOrSelf(AVATAR_KEY))
+                Spacer(Modifier.width(16.dp))
+                Column(Modifier.weight(1f)) {
+                    Text(p.displayName, style = MaterialTheme.typography.headlineMedium)
+                    Text(p.goal?.label ?: "Set a goal", style = MaterialTheme.typography.titleSmall, color = MaterialTheme.colorScheme.onPrimaryContainer.copy(alpha = 0.8f))
+                }
+                Icon(Icons.Rounded.Edit, contentDescription = "Edit profile")
+            }
+            if (p.reason.isNotBlank()) {
+                Text("\u201C${p.reason}\u201D", style = MaterialTheme.typography.titleMedium, modifier = Modifier.padding(top = 16.dp))
+            }
+        }
+    }
 }
