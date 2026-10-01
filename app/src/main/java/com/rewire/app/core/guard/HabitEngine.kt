@@ -168,7 +168,7 @@ class HabitEngine(
      */
     fun silenceNotificationFrom(pkg: String): Boolean {
         if (pkg == granted) return false
-        val profile = profileFor(pkg)?.takeIf { it.level == WarningLevel.MAX } ?: return false
+        val profile = profileFor(pkg) ?: return false
         val blocked = RuleEngine.decide(inputFor(profile)) is RestrictionDecision.Block
         if (blocked) events.log(HabitEventType.NOTIFICATION_BLOCKED, pkg, profile.id)
         return blocked
@@ -217,14 +217,15 @@ class HabitEngine(
     private fun inputFor(p: HabitProfile): RuleInput {
         val now = clock()
         val zone = ZoneId.systemDefault()
-        val today = LocalDate.now(zone)
+        val zdt = Instant.ofEpochMilli(now).atZone(zone)
+        val today = zdt.toLocalDate()
         val s = settings.value
         val launches = events.events.value.count {
             it.type == HabitEventType.APP_OPENED && it.habitId == p.id && Instant.ofEpochMilli(it.timestamp).atZone(zone).toLocalDate() == today
         }
         // Usage is only needed (and only queried) when a daily limit exists.
         val minutes = if (p.rule.dailyLimitMinutes != null) usage.minutesToday(p.apps.map { it.packageName }.toSet(), now) else null
-        val time = LocalTime.now(zone)
+        val time = zdt.toLocalTime()
         return RuleInput(
             profile = p,
             nowMinutes = time.hour * 60 + time.minute,

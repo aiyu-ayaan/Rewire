@@ -369,4 +369,49 @@ class HabitEngineOutcomeTest {
         assertEquals(listOf(HabitEventType.APP_BLOCKED), eventRepo.logged.map { it.type })
         assertEquals("DAILY_LIMIT", eventRepo.logged.first().metadata["reason"])
     }
+
+    @Test
+    fun `major habit with launch limit allows up to limit then blocks`() {
+        val launchHabit = HabitProfile(
+            habit = Habit("h-chrome", "Browsing", null, enabled = true),
+            apps = listOf(ProtectedApp("com.android.chrome", "h-chrome", WarningLevel.MAJOR, enabled = true)),
+            rule = RestrictionRule("r-chrome", "h-chrome", dailyLimitMinutes = null, allowedStartMinutes = null, allowedEndMinutes = null, maxLaunches = 2, WarningLevel.MAJOR, 6)
+        )
+        habitRepo.setHabits(listOf(launchHabit))
+
+        // 1st open: triggers MAJOR warning
+        engine.onForeground("com.android.chrome")
+        assertEquals(1, platform.guardShown.size)
+        assertEquals(WarningLevel.MAJOR, platform.guardShown.last().level)
+        assertEquals(null, platform.guardShown.last().blockReason)
+
+        // User continues: 1st launch recorded
+        engine.onGuardResult("com.android.chrome", "h-chrome", WarningLevel.MAJOR, GuardOutcome.CONTINUED)
+        assertEquals(1, eventRepo.events.value.count { it.type == HabitEventType.APP_OPENED })
+
+        // User leaves app
+        engine.onForeground("com.android.launcher")
+
+        // 2nd open: triggers MAJOR warning
+        engine.onForeground("com.android.chrome")
+        assertEquals(2, platform.guardShown.size)
+        assertEquals(WarningLevel.MAJOR, platform.guardShown.last().level)
+        assertEquals(null, platform.guardShown.last().blockReason)
+
+        // User continues: 2nd launch recorded
+        engine.onGuardResult("com.android.chrome", "h-chrome", WarningLevel.MAJOR, GuardOutcome.CONTINUED)
+        assertEquals(2, eventRepo.events.value.count { it.type == HabitEventType.APP_OPENED })
+
+        // User leaves app
+        engine.onForeground("com.android.launcher")
+
+        // 3rd open (more than 2 times!): now BLOCKED with LAUNCH_LIMIT!
+        engine.onForeground("com.android.chrome")
+        assertEquals(3, platform.guardShown.size)
+        val blockedCall = platform.guardShown.last()
+        assertEquals(WarningLevel.MAX, blockedCall.level)
+        assertEquals("LAUNCH_LIMIT", blockedCall.blockReason)
+        assertEquals(HabitEventType.APP_BLOCKED, eventRepo.logged.last().type)
+        assertEquals("LAUNCH_LIMIT", eventRepo.logged.last().metadata["reason"])
+    }
 }
