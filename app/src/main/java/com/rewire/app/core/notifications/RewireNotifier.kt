@@ -42,9 +42,10 @@ class RewireNotifier(
         const val SYSTEM = "system"
     }
 
-    private object Ids {
+    object Ids {
         const val FOCUS_ONGOING = 1001
         const val FOCUS_ALERT = 1002
+        const val GUARD_ONGOING = 1003
         const val TEST = 1900
         const val PROTECTION_OFF = 1500
     }
@@ -128,6 +129,16 @@ class RewireNotifier(
             .build()
         post(null, Ids.PROTECTION_OFF, n)
     }
+
+    fun guardOngoingNotification(): Notification =
+        base(Channels.GUARD, DeepLink.GUARD)
+            .setContentTitle(context.getString(R.string.notif_guard_active_title))
+            .setContentText(context.getString(R.string.notif_guard_active_text))
+            .setOngoing(true)
+            .setSilent(true)
+            .setPriority(NotificationCompat.PRIORITY_LOW)
+            .setCategory(NotificationCompat.CATEGORY_SERVICE)
+            .build()
 
     fun cancelProtectionOff() = manager.cancel(Ids.PROTECTION_OFF)
 

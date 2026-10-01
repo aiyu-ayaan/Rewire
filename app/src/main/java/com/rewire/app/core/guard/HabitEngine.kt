@@ -17,6 +17,8 @@ import com.rewire.app.domain.restriction.RestrictionDecision
 import com.rewire.app.domain.restriction.RuleEngine
 import com.rewire.app.domain.restriction.RuleInput
 import com.rewire.app.feature.guard.GuardActivity
+import com.rewire.app.service.accessibility.RewireAccessibilityService
+import com.rewire.app.service.monitoring.GuardMonitorService
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.delay
@@ -55,6 +57,14 @@ class HabitEngine(
     /** One visit let through (Continue / emergency); cleared as soon as the user is in another app. */
     private var granted: String? = null
     private var recheck: Job? = null
+
+    init {
+        mainScope.launch {
+            habits.habits.collect { list ->
+                GuardMonitorService.sync(context, list.any { it.habit.enabled })
+            }
+        }
+    }
 
     fun onForeground(pkg: String) {
         if (isIgnored(pkg) || pkg == current) return
@@ -125,8 +135,14 @@ class HabitEngine(
 
     private fun show(pkg: String, profile: HabitProfile, level: WarningLevel, blockReason: String?) {
         showingFor = pkg
-        context.startActivity(Intent(Intent.ACTION_MAIN).addCategory(Intent.CATEGORY_HOME).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK))
-        context.startActivity(GuardActivity.intent(context, pkg, profile.id, level, blockReason).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK))
+        val sentHome = RewireAccessibilityService.instance?.sendHome() ?: false
+        if (!sentHome) {
+            context.startActivity(Intent(Intent.ACTION_MAIN).addCategory(Intent.CATEGORY_HOME).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK))
+        }
+        context.startActivity(
+            GuardActivity.intent(context, pkg, profile.id, level, blockReason)
+                .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_SINGLE_TOP)
+        )
     }
 
     /** Re-check exactly when a Max boundary (window end, daily limit) is crossed — no polling. */

@@ -14,16 +14,26 @@ import kotlinx.coroutines.flow.asStateFlow
  */
 class RewireAccessibilityService : AccessibilityService() {
     override fun onServiceConnected() {
+        instance = this
         running.value = true
         (application as RewireApp).container.notifier.cancelProtectionOff()
     }
 
     override fun onUnbind(intent: Intent?): Boolean {
+        if (instance === this) instance = null
         running.value = false
         val c = (application as RewireApp).container
         if (c.habits.habits.value.any { it.habit.enabled }) c.notifier.protectionOff()
         return super.onUnbind(intent)
     }
+
+    override fun onDestroy() {
+        if (instance === this) instance = null
+        running.value = false
+        super.onDestroy()
+    }
+
+    fun sendHome(): Boolean = performGlobalAction(GLOBAL_ACTION_HOME)
 
     override fun onAccessibilityEvent(event: AccessibilityEvent) {
         if (event.eventType != AccessibilityEvent.TYPE_WINDOW_STATE_CHANGED) return
@@ -34,6 +44,9 @@ class RewireAccessibilityService : AccessibilityService() {
     override fun onInterrupt() = Unit
 
     companion object {
+        @Volatile var instance: RewireAccessibilityService? = null
+            private set
+
         private val running = MutableStateFlow(false)
         /** True while the system has the service connected in this process. */
         val isRunning: StateFlow<Boolean> = running.asStateFlow()

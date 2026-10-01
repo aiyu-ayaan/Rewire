@@ -5,6 +5,16 @@
     <!-- Focus/break alerts and ongoing session (asked with in-app rationale first, API 33+). -->
     <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
 
+    <!-- Allows Guard to display warning/block screen over guarded apps on Android 10+ -->
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+
+    <!-- Keeps Guard alive in background and resilient to OEM process killing -->
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_SPECIAL_USE" />
+
+    <!-- Restores monitoring state on device boot -->
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+
     <!-- Usage access (user grants in system settings): screen-time stats for Matrix. -->
     <uses-permission
         android:name="android.permission.PACKAGE_USAGE_STATS"
@@ -62,6 +72,25 @@
                 android:name="android.accessibilityservice"
                 android:resource="@xml/accessibility_service_config" />
         </service>
+
+        <!-- Foreground service keeping habit guard alive in background -->
+        <service
+            android:name=".service.monitoring.GuardMonitorService"
+            android:exported="false"
+            android:foregroundServiceType="specialUse">
+            <property
+                android:name="android.app.PROPERTY_SPECIAL_USE_FGS_SUBTYPE"
+                android:value="Habit guard monitoring to enforce configured friction and daily limits" />
+        </service>
+
+        <!-- Restores background monitoring on device boot -->
+        <receiver
+            android:name=".service.boot.BootReceiver"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
 
     </application>
 
