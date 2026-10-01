@@ -1,9 +1,9 @@
 package com.rewire.app.core.guard
 
-import com.rewire.app.core.datastore.FocusBypass
-import com.rewire.app.core.datastore.Settings
-import com.rewire.app.core.datastore.ThemeMode
-import com.rewire.app.core.datastore.UserProfile
+import com.rewire.app.core.settings.FocusBypass
+import com.rewire.app.core.settings.Settings
+import com.rewire.app.core.settings.ThemeMode
+import com.rewire.app.core.settings.UserProfile
 import com.rewire.app.data.EventRepository
 import com.rewire.app.data.HabitRepository
 import com.rewire.app.domain.analytics.HabitEvent

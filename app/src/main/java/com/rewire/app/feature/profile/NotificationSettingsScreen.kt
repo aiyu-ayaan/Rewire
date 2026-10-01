@@ -46,7 +46,7 @@ import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.rewire.app.RewireApp
-import com.rewire.app.core.datastore.NotificationCategory
+import com.rewire.app.core.settings.NotificationCategory
 import com.rewire.app.core.notifications.NotificationRationaleCard
 import com.rewire.app.core.notifications.PermissionStatus
 import com.rewire.app.core.notifications.RewireNotifier.Channels

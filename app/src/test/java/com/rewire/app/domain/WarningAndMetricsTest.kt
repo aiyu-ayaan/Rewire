@@ -1,7 +1,7 @@
 package com.rewire.app.domain
 
-import com.rewire.app.data.JsonStore
-import com.rewire.app.data.PersistentWarningRepository
+import com.rewire.app.data.DbWriter
+import com.rewire.app.data.RoomWarningRepository
 import com.rewire.app.domain.analytics.HabitEvent
 import com.rewire.app.domain.analytics.HabitEventType
 import com.rewire.app.domain.analytics.MetricsCalculator
@@ -15,7 +15,9 @@ import org.junit.Assert.assertNull
 import org.junit.Test
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
-import kotlinx.serialization.builtins.ListSerializer
+import com.rewire.app.data.local.WarningDao
+import com.rewire.app.data.local.WarningEntity
+import com.rewire.app.data.local.toEntity
 import java.io.File
 import java.time.LocalDate
 import java.time.ZoneOffset
@@ -57,16 +59,14 @@ class WarningAndMetricsTest {
     }
 
     @Test fun newDefaultsMergeIntoExistingLibraryKeepingEdits() {
-        val file = File.createTempFile("warnings", ".json").apply { delete() }
-        val scope = CoroutineScope(Dispatchers.Unconfined)
-        val store = JsonStore(file, ListSerializer(Warning.serializer()), scope) { listOf(w("a", WarningLevel.MINOR, enabled = false)) }
-        val repo = PersistentWarningRepository(store, listOf(w("a", WarningLevel.MINOR), w("b", WarningLevel.MAX)))
+        val dao = FakeWarningDao(listOf(w("a", WarningLevel.MINOR, enabled = false).toEntity()))
+        val repo = RoomWarningRepository(dao, DbWriter(CoroutineScope(Dispatchers.Unconfined)), listOf(w("a", WarningLevel.MINOR), w("b", WarningLevel.MAX)))
         assertEquals(listOf("a", "b"), repo.warnings.value.map { it.id })
         assertEquals(false, repo.warnings.value.first().enabled) // user's edit kept
     }
 
     @Test fun bundledDefaultsParseWithUniqueIds() {
-        val list = PersistentWarningRepository.defaults(File("src/main/res/raw/default_warnings.json").readText())
+        val list = RoomWarningRepository.defaults(File("src/main/res/raw/default_warnings.json").readText())
         assertEquals(list.size, list.map { it.id }.toSet().size)
         WarningLevel.entries.forEach { l -> assert(list.count { it.level == l } >= 5) }
     }
@@ -103,4 +103,13 @@ class WarningAndMetricsTest {
         assert(Punchlines.focus(2, 0)!!.contains("2m"))
         repeat(10) { assert(Punchlines.focus(30, it.toLong())!!.contains("≈")) }
     }
+}
+
+/** Mirrors Room's insert-ignore: existing ids keep the user's row. */
+private class FakeWarningDao(initial: List<WarningEntity>) : WarningDao {
+    val rows = initial.toMutableList()
+    override suspend fun all() = rows.toList()
+    override suspend fun insertMissing(warnings: List<WarningEntity>) { warnings.filter { w -> rows.none { it.id == w.id } }.forEach { rows += it } }
+    override suspend fun update(warning: WarningEntity) { rows.replaceAll { if (it.id == warning.id) warning else it } }
+    override suspend fun deleteCustom(id: String) { rows.removeAll { it.id == id && it.custom } }
 }

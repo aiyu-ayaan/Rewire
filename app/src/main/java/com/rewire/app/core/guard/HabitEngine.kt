@@ -5,7 +5,7 @@ import android.content.Intent
 import android.util.Log
 import android.view.inputmethod.InputMethodManager
 import com.rewire.app.BuildConfig
-import com.rewire.app.core.datastore.Settings
+import com.rewire.app.core.settings.Settings
 import com.rewire.app.data.EventRepository
 import com.rewire.app.data.HabitRepository
 import com.rewire.app.domain.analytics.HabitEventType

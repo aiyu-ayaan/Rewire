@@ -80,7 +80,7 @@ import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.LifecycleResumeEffect
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.rewire.app.BuildConfig
-import com.rewire.app.core.datastore.FocusBypass
+import com.rewire.app.core.settings.FocusBypass
 import com.rewire.app.core.notifications.NotificationRationaleCard
 import com.rewire.app.core.notifications.RewireNotifier
 import com.rewire.app.core.notifications.rememberNotificationPermission

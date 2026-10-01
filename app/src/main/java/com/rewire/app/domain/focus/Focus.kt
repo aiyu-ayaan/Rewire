@@ -65,6 +65,17 @@ data class FocusState(
         return if (total == 0L) 1f else 1f - remaining(now).toFloat() / total
     }
 
+    /**
+     * Deep-work time done so far: finished focus blocks plus the elapsed part of the current one.
+     * Call on the live state; a cancelled state no longer knows its phase, so read it before [cancel].
+     */
+    fun focusedMillis(now: Long): Long = when {
+        status == FocusSessionStatus.COMPLETED -> config.cycles * config.focusMillis
+        !isActive -> 0
+        phase == FocusSessionStatus.BREAK -> cycle * config.focusMillis
+        else -> (cycle - 1) * config.focusMillis + (config.focusMillis - remaining(now))
+    }
+
     fun start(config: FocusConfig, now: Long): FocusState {
         require(config.isValid) { "Invalid focus config: ${config.validate()}" }
         return FocusState(
@@ -115,4 +126,16 @@ data class FocusState(
         /** Debug-only: 20 s focus / 10 s break, 2 cycles. */
         val QUICK_TEST = FocusConfig(focusMinutes = 2, breakMinutes = 1, cycles = 2, unitMillis = 10_000)
     }
+}
+
+/** One focus session as stored: live while active, history once COMPLETED / CANCELLED. */
+data class FocusSession(
+    val id: String,
+    val state: FocusState,
+    /** Deep-work time done, frozen when the session ends. */
+    val focusedMillis: Long,
+    /** Optional "what I achieved", written after the session ends. */
+    val note: String? = null,
+) {
+    val isFinished get() = state.status == FocusSessionStatus.COMPLETED || state.status == FocusSessionStatus.CANCELLED
 }

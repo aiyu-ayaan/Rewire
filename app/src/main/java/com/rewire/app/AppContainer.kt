@@ -8,25 +8,25 @@ import androidx.lifecycle.ViewModelStoreOwner
 import androidx.lifecycle.viewmodel.compose.LocalViewModelStoreOwner
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.rewire.app.core.apps.InstalledAppsSource
-import com.rewire.app.core.datastore.Settings
-import com.rewire.app.core.datastore.SettingsRepository
+import com.rewire.app.core.settings.Settings
+import com.rewire.app.core.settings.SettingsRepository
 import com.rewire.app.core.notifications.RewireNotifier
 import com.rewire.app.data.EventRepository
 import com.rewire.app.data.HabitRepository
 import com.rewire.app.core.guard.HabitEngine
 import com.rewire.app.core.guard.UsageTracker
-import com.rewire.app.data.JsonStore
-import com.rewire.app.data.PersistentEventRepository
-import com.rewire.app.data.PersistentHabitRepository
-import com.rewire.app.data.PersistentWarningRepository
-import com.rewire.app.domain.analytics.HabitEvent
+import com.rewire.app.data.DbWriter
+import com.rewire.app.data.FocusSessionRepository
+import com.rewire.app.data.RoomEventRepository
+import com.rewire.app.data.RoomFocusSessionRepository
+import com.rewire.app.data.RoomHabitRepository
+import com.rewire.app.data.RoomWarningRepository
+import com.rewire.app.data.loadNow
+import com.rewire.app.data.local.LegacyImport
+import com.rewire.app.data.local.RewireDatabase
 import com.rewire.app.domain.focus.FocusState
-import com.rewire.app.domain.habit.HabitProfile
-import com.rewire.app.domain.warning.Warning
 import kotlinx.coroutines.MainScope
 import kotlinx.coroutines.flow.MutableStateFlow
-import kotlinx.serialization.builtins.ListSerializer
-import java.io.File
 import com.rewire.app.data.WarningRepository
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -39,23 +39,20 @@ import kotlinx.coroutines.flow.stateIn
 class AppContainer(context: Context) {
     val appScope = CoroutineScope(SupervisorJob() + Dispatchers.Default)
 
-    val settingsRepository = SettingsRepository(context)
-    val settings: StateFlow<Settings?> = settingsRepository.settings.stateIn(appScope, SharingStarted.Eagerly, null)
+    val database = RewireDatabase.create(context).also { db -> loadNow { LegacyImport.runIfNeeded(context, db) } }
+    private val writer = DbWriter(appScope)
 
-    private val files = context.filesDir
-    val habits: HabitRepository = PersistentHabitRepository(
-        JsonStore(File(files, "habits.json"), ListSerializer(HabitProfile.serializer()), appScope) { emptyList() }
-    )
-    private val defaultWarnings = PersistentWarningRepository.defaults(
+    val settingsRepository = SettingsRepository(database.settings())
+    val settings: StateFlow<Settings?> = settingsRepository.settings
+        .stateIn(appScope, SharingStarted.Eagerly, loadNow { settingsRepository.current() })
+
+    val habits: HabitRepository = RoomHabitRepository(database.habits(), writer)
+    private val defaultWarnings = RoomWarningRepository.defaults(
         context.resources.openRawResource(R.raw.default_warnings).bufferedReader().use { it.readText() }
     )
-    val warnings: WarningRepository = PersistentWarningRepository(
-        JsonStore(File(files, "warnings.json"), ListSerializer(Warning.serializer()), appScope) { defaultWarnings },
-        defaultWarnings,
-    )
-    val events: EventRepository = PersistentEventRepository(
-        JsonStore(File(files, "events.json"), ListSerializer(HabitEvent.serializer()), appScope) { emptyList() }
-    )
+    val warnings: WarningRepository = RoomWarningRepository(database.warnings(), writer, defaultWarnings)
+    val events: EventRepository = RoomEventRepository(database.events(), writer)
+    val focusSessions: FocusSessionRepository = RoomFocusSessionRepository(database.focusSessions(), writer)
 
     /** The one focus session; written by FocusViewModel, read by the Guard engine for bypass rules. */
     val focusState = MutableStateFlow(FocusState())

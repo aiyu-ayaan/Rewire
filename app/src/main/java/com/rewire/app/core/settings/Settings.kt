@@ -1,12 +1,9 @@
-package com.rewire.app.core.datastore
+package com.rewire.app.core.settings
 
-import android.content.Context
-import androidx.datastore.preferences.core.Preferences
-import androidx.datastore.preferences.core.booleanPreferencesKey
-import androidx.datastore.preferences.core.edit
-import androidx.datastore.preferences.core.intPreferencesKey
-import androidx.datastore.preferences.core.stringPreferencesKey
-import androidx.datastore.preferences.preferencesDataStore
+import com.rewire.app.data.local.SettingsDao
+import com.rewire.app.data.local.SettingsEntity
+import com.rewire.app.data.local.toDomain
+import com.rewire.app.data.local.withNotification
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
 
@@ -51,66 +48,21 @@ data class Settings(
     val profile: UserProfile,
 )
 
-private val Context.dataStore by preferencesDataStore("settings")
+class SettingsRepository(private val dao: SettingsDao) {
 
-class SettingsRepository(private val context: Context) {
+    val settings: Flow<Settings> = dao.observe().map { (it ?: SettingsEntity()).toDomain() }
 
-    private object Keys {
-        val onboarding = booleanPreferencesKey("onboarding_done")
-        val theme = stringPreferencesKey("theme_mode")
-        val dynamic = booleanPreferencesKey("dynamic_color")
-        val permissionAsked = booleanPreferencesKey("notif_permission_asked")
-        val bypassMinor = booleanPreferencesKey("bypass_minor")
-        val bypassMajor = booleanPreferencesKey("bypass_major")
-        val bypassMax = booleanPreferencesKey("bypass_max")
-        val focusDnd = booleanPreferencesKey("focus_dnd_enabled")
-        val userName = stringPreferencesKey("user_name")
-        val userGoal = stringPreferencesKey("user_goal")
-        val userReason = stringPreferencesKey("user_reason")
-        val avatarShape = intPreferencesKey("avatar_shape")
-        fun notif(c: NotificationCategory) = booleanPreferencesKey("notif_${c.name.lowercase()}")
+    /** Synchronous first read so services see real settings before the Flow emits. */
+    suspend fun current(): Settings = (dao.get() ?: SettingsEntity()).toDomain()
+
+    suspend fun setOnboardingDone() = dao.edit { it.copy(onboardingDone = true) }
+    suspend fun setThemeMode(mode: ThemeMode) = dao.edit { it.copy(themeMode = mode) }
+    suspend fun setDynamicColor(on: Boolean) = dao.edit { it.copy(dynamicColor = on) }
+    suspend fun setNotification(c: NotificationCategory, on: Boolean) = dao.edit { it.withNotification(c, on) }
+    suspend fun setNotificationPermissionAsked() = dao.edit { it.copy(notificationPermissionAsked = true) }
+    suspend fun setProfile(p: UserProfile) = dao.edit {
+        it.copy(userName = p.name.trim(), userGoal = p.goal, userReason = p.reason.trim(), avatarShape = p.avatarShape)
     }
-
-    val settings: Flow<Settings> = context.dataStore.data.map { it.toSettings() }
-
-    private fun Preferences.toSettings() = Settings(
-        onboardingDone = this[Keys.onboarding] ?: false,
-        themeMode = this[Keys.theme]?.let { runCatching { ThemeMode.valueOf(it) }.getOrNull() } ?: ThemeMode.SYSTEM,
-        dynamicColor = this[Keys.dynamic] ?: false,
-        notifications = NotificationCategory.entries.associateWith { this[Keys.notif(it)] ?: true },
-        // CLAUDE.md §7 recommended defaults: Minor bypass on, Major configurable (off), Max off.
-        focusBypass = FocusBypass(
-            minor = this[Keys.bypassMinor] ?: true,
-            major = this[Keys.bypassMajor] ?: false,
-            max = this[Keys.bypassMax] ?: false,
-        ),
-        focusDndEnabled = this[Keys.focusDnd] ?: true,
-        notificationPermissionAsked = this[Keys.permissionAsked] ?: false,
-        profile = UserProfile(
-            name = this[Keys.userName].orEmpty(),
-            goal = this[Keys.userGoal]?.let { runCatching { UserGoal.valueOf(it) }.getOrNull() },
-            reason = this[Keys.userReason].orEmpty(),
-            avatarShape = this[Keys.avatarShape] ?: 0,
-        ),
-    )
-
-    suspend fun setOnboardingDone() = context.dataStore.edit { it[Keys.onboarding] = true }
-    suspend fun setThemeMode(mode: ThemeMode) = context.dataStore.edit { it[Keys.theme] = mode.name }
-    suspend fun setDynamicColor(on: Boolean) = context.dataStore.edit { it[Keys.dynamic] = on }
-    suspend fun setNotification(c: NotificationCategory, on: Boolean) = context.dataStore.edit { it[Keys.notif(c)] = on }
-    suspend fun setNotificationPermissionAsked() = context.dataStore.edit { it[Keys.permissionAsked] = true }
-    suspend fun setProfile(p: UserProfile) = context.dataStore.edit {
-        it[Keys.userName] = p.name.trim()
-        if (p.goal != null) it[Keys.userGoal] = p.goal.name else it.remove(Keys.userGoal)
-        it[Keys.userReason] = p.reason.trim()
-        it[Keys.avatarShape] = p.avatarShape
-    }
-    suspend fun setFocusBypass(b: FocusBypass) = context.dataStore.edit {
-        it[Keys.bypassMinor] = b.minor
-        it[Keys.bypassMajor] = b.major
-        it[Keys.bypassMax] = b.max
-    }
-    suspend fun setFocusDndEnabled(enabled: Boolean) = context.dataStore.edit {
-        it[Keys.focusDnd] = enabled
-    }
+    suspend fun setFocusBypass(b: FocusBypass) = dao.edit { it.copy(bypassMinor = b.minor, bypassMajor = b.major, bypassMax = b.max) }
+    suspend fun setFocusDndEnabled(enabled: Boolean) = dao.edit { it.copy(focusDndEnabled = enabled) }
 }

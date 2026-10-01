@@ -18,7 +18,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.rewire.app.RewireApp
-import com.rewire.app.core.datastore.ThemeMode
+import com.rewire.app.core.settings.ThemeMode
 import com.rewire.app.core.guard.GuardOutcome
 import com.rewire.app.domain.habit.WarningLevel
 import com.rewire.app.domain.warning.WarningPicker

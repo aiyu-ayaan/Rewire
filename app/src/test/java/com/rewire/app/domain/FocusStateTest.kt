@@ -70,4 +70,14 @@ class FocusStateTest {
         assertEquals(BREAK, s.advance(20_000).status)
         assertEquals(30_000L, s.advance(20_000).phaseEndsAt)
     }
+
+    @Test fun focusedMillisCountsOnlyDeepWork() {
+        val s0 = FocusState().start(FocusConfig(50, 10, 2), 0)
+        assertEquals(20 * MINUTE, s0.focusedMillis(20 * MINUTE))
+        assertEquals(50 * MINUTE, s0.advance(55 * MINUTE).focusedMillis(55 * MINUTE)) // on break
+        val paused = s0.advance(70 * MINUTE).pause(70 * MINUTE) // 10 min into block 2
+        assertEquals(60 * MINUTE, paused.focusedMillis(999 * MINUTE))
+        assertEquals(100 * MINUTE, s0.advance(110 * MINUTE).focusedMillis(200 * MINUTE))
+        assertEquals(0, s0.cancel(5).focusedMillis(5))
+    }
 }

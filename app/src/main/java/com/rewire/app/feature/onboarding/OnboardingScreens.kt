@@ -61,8 +61,8 @@ import androidx.compose.ui.window.Dialog
 import androidx.compose.ui.window.DialogProperties
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.rewire.app.RewireApp
-import com.rewire.app.core.datastore.UserGoal
-import com.rewire.app.core.datastore.UserProfile
+import com.rewire.app.core.settings.UserGoal
+import com.rewire.app.core.settings.UserProfile
 import com.rewire.app.core.permissions.PermissionsPanel
 import com.rewire.app.core.permissions.rememberGrantedCount
 import com.rewire.app.domain.habit.Habit

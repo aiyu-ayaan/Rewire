@@ -47,8 +47,8 @@ import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.rewire.app.BuildConfig
 import com.rewire.app.R
 import com.rewire.app.RewireApp
-import com.rewire.app.core.datastore.ThemeMode
-import com.rewire.app.core.datastore.UserProfile
+import com.rewire.app.core.settings.ThemeMode
+import com.rewire.app.core.settings.UserProfile
 import com.rewire.app.core.permissions.PermissionsPanel
 import com.rewire.app.feature.onboarding.AVATAR_KEY
 import com.rewire.app.ui.components.UserAvatar

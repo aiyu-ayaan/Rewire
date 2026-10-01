@@ -21,7 +21,7 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import com.rewire.app.core.datastore.ThemeMode
+import com.rewire.app.core.settings.ThemeMode
 import com.rewire.app.core.notifications.DeepLink
 import com.rewire.app.core.notifications.RewireNotifier
 import com.rewire.app.ui.RewireNavHost

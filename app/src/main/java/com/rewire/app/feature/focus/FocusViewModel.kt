@@ -3,7 +3,7 @@ package com.rewire.app.feature.focus
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.rewire.app.AppContainer
-import com.rewire.app.core.datastore.FocusBypass
+import com.rewire.app.core.settings.FocusBypass
 import com.rewire.app.core.notifications.FocusAlert
 import com.rewire.app.domain.analytics.HabitEvent
 import com.rewire.app.domain.analytics.HabitEventType

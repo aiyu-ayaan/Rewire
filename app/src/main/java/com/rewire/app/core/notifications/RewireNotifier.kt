@@ -19,7 +19,7 @@ import androidx.core.app.NotificationManagerCompat
 import androidx.core.content.ContextCompat
 import com.rewire.app.MainActivity
 import com.rewire.app.R
-import com.rewire.app.core.datastore.NotificationCategory
+import com.rewire.app.core.settings.NotificationCategory
 import com.rewire.app.domain.focus.FocusSessionStatus
 import com.rewire.app.domain.focus.FocusState
 
