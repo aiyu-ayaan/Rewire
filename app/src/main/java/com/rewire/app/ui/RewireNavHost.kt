@@ -24,6 +24,8 @@ import com.rewire.app.RewireApp
 import com.rewire.app.core.notifications.DeepLink
 import com.rewire.app.feature.focus.FocusFullscreenScreen
 import com.rewire.app.feature.guard.HabitDetailScreen
+import com.rewire.app.feature.onboarding.PermissionsSetupScreen
+import com.rewire.app.feature.onboarding.ProfileSetupScreen
 import com.rewire.app.feature.guard.WarningPreviewScreen
 import com.rewire.app.feature.landing.LandingScreen
 import com.rewire.app.feature.profile.NotificationSettingsScreen
@@ -42,6 +44,9 @@ object Routes {
     @Serializable data object NotificationSettings
     @Serializable data object WarningLibrary
     @Serializable data object FocusFullscreen
+    @Serializable data object OnboardingProfile
+    @Serializable data object OnboardingPermissions
+    @Serializable data object EditProfile
 }
 
 @Composable
@@ -81,21 +86,43 @@ fun RewireNavHost(
                     exitTransition = { fadeOut(tween(450)) + scaleOut(tween(450), targetScale = 1.04f) },
                 ) {
                     CompositionLocalProvider(LocalNavAnimatedScope provides this) {
-                        LandingScreen(onGetStarted = {
-                            scope.launch { container.settingsRepository.setOnboardingDone() }
-                            nav.navigate(Routes.Main) { popUpTo(Routes.Landing) { inclusive = true } }
-                        })
+                        LandingScreen(onGetStarted = { nav.navigate(Routes.OnboardingProfile) })
+                    }
+                }
+                // Onboarding: landing -> profile -> permissions -> app. The hero shape is shared through every step.
+                composable<Routes.OnboardingProfile> {
+                    CompositionLocalProvider(LocalNavAnimatedScope provides this) {
+                        ProfileSetupScreen(onboarding = true, onDone = { nav.navigate(Routes.OnboardingPermissions) }, onBack = { nav.popBackStack() })
+                    }
+                }
+                composable<Routes.OnboardingPermissions> {
+                    CompositionLocalProvider(LocalNavAnimatedScope provides this) {
+                        PermissionsSetupScreen(
+                            onBack = { nav.popBackStack() },
+                            onFinish = {
+                                scope.launch { container.settingsRepository.setOnboardingDone() }
+                                nav.navigate(Routes.Main) { popUpTo(Routes.Landing) { inclusive = true } }
+                            },
+                        )
+                    }
+                }
+                composable<Routes.EditProfile>(
+                    enterTransition = { fadeIn(effects) },
+                    popExitTransition = { fadeOut(effects) },
+                ) {
+                    CompositionLocalProvider(LocalNavAnimatedScope provides this) {
+                        ProfileSetupScreen(onboarding = false, onDone = { nav.popBackStack() }, onBack = { nav.popBackStack() })
                     }
                 }
                 composable<Routes.Main>(
                     enterTransition = { fadeIn(tween(500, delayMillis = 120)) + scaleIn(tween(500, delayMillis = 120), initialScale = 0.96f) },
                     // Card -> detail is a container transform: the shared card carries motion, screens only fade.
                     exitTransition = {
-                        if (targetState.destination.hasRoute(Routes.HabitDetail::class) || targetState.destination.hasRoute(Routes.FocusFullscreen::class)) fadeOut(effects)
+                        if (targetState.destination.hasRoute(Routes.HabitDetail::class) || targetState.destination.hasRoute(Routes.FocusFullscreen::class) || targetState.destination.hasRoute(Routes.EditProfile::class)) fadeOut(effects)
                         else slideOutHorizontally(spatial) { -it / 8 } + fadeOut(effects)
                     },
                     popEnterTransition = {
-                        if (initialState.destination.hasRoute(Routes.HabitDetail::class) || initialState.destination.hasRoute(Routes.FocusFullscreen::class)) fadeIn(effects)
+                        if (initialState.destination.hasRoute(Routes.HabitDetail::class) || initialState.destination.hasRoute(Routes.FocusFullscreen::class) || initialState.destination.hasRoute(Routes.EditProfile::class)) fadeIn(effects)
                         else slideInHorizontally(spatial) { -it / 8 } + fadeIn(effects)
                     },
                 ) {
@@ -107,6 +134,7 @@ fun RewireNavHost(
                             onOpenNotificationSettings = { nav.navigate(Routes.NotificationSettings) },
                             onOpenWarningLibrary = { nav.navigate(Routes.WarningLibrary) },
                             onOpenFocusFullscreen = { nav.navigate(Routes.FocusFullscreen) { launchSingleTop = true } },
+                            onEditProfile = { nav.navigate(Routes.EditProfile) },
                         )
                     }
                 }
