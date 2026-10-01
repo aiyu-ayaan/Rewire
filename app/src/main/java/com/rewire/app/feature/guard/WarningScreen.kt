@@ -1,0 +1,201 @@
+package com.rewire.app.feature.guard
+
+import androidx.compose.animation.core.animateFloatAsState
+import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.safeDrawingPadding
+import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.layout.widthIn
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.rounded.Info
+import androidx.compose.material3.AlertDialog
+import androidx.compose.material3.Button
+import androidx.compose.material3.ButtonDefaults
+import androidx.compose.material3.Icon
+import androidx.compose.material3.LinearWavyProgressIndicator
+import androidx.compose.material3.MaterialShapes
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Surface
+import androidx.compose.material3.Text
+import androidx.compose.material3.TextButton
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableIntStateOf
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
+import androidx.compose.ui.Alignment
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.alpha
+import androidx.compose.ui.graphics.SolidColor
+import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.unit.dp
+import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import com.rewire.app.R
+import com.rewire.app.RewireApp
+import com.rewire.app.domain.habit.HabitProfile
+import com.rewire.app.domain.habit.WarningLevel
+import com.rewire.app.domain.warning.Warning
+import com.rewire.app.domain.warning.WarningPicker
+import com.rewire.app.ui.components.AppIcon
+import com.rewire.app.ui.components.MorphingShape
+import com.rewire.app.ui.components.formatClock
+import com.rewire.app.ui.components.style
+import kotlinx.coroutines.delay
+
+/** Preview of what the habit's warning will look like. Phase 3 reuses [WarningScreen] in the overlay. */
+@Composable
+fun WarningPreviewScreen(habitId: String, onClose: () -> Unit) {
+    val container = (LocalContext.current.applicationContext as RewireApp).container
+    val profile = remember(habitId) { container.habits.habits.value.find { it.id == habitId } }
+    if (profile == null) { LaunchedEffect(Unit) { onClose() }; return }
+    val warnings by container.warnings.warnings.collectAsStateWithLifecycle()
+    val warning = remember(profile.level) { WarningPicker.pick(warnings, profile.level) }
+    val app = profile.apps.firstOrNull()?.packageName
+    val appLabel = remember(app) { app?.let(container.installedApps::label) ?: profile.habit.name }
+    WarningScreen(profile, warning, app, appLabel, preview = true, onGoBack = onClose, onContinue = onClose)
+}
+
+@Composable
+fun WarningScreen(
+    profile: HabitProfile,
+    warning: Warning?,
+    packageName: String?,
+    appLabel: String,
+    preview: Boolean,
+    onGoBack: () -> Unit,
+    onContinue: () -> Unit,
+) {
+    val level = profile.level
+    val s = level.style()
+    var unlockDialog by remember { mutableStateOf(false) }
+
+    Box(Modifier.fillMaxSize().background(s.container)) {
+        // Decorative slow morph in the corner — same visual language as the landing hero.
+        MorphingShape(
+            brush = SolidColor(s.accent.copy(alpha = 0.18f)),
+            shapes = when (level) {
+                WarningLevel.MINOR -> listOf(MaterialShapes.Sunny, MaterialShapes.Cookie6Sided)
+                WarningLevel.MAJOR -> listOf(MaterialShapes.Gem, MaterialShapes.SoftBurst)
+                WarningLevel.MAX -> listOf(MaterialShapes.Cookie12Sided, MaterialShapes.Boom)
+            },
+            segmentMillis = 4000,
+            rotationMillis = 40_000,
+            modifier = Modifier.size(360.dp).align(Alignment.TopEnd).padding(start = 120.dp),
+        )
+        Column(
+            Modifier.fillMaxSize().safeDrawingPadding().padding(24.dp).verticalScroll(rememberScrollState()),
+            horizontalAlignment = Alignment.Start,
+        ) {
+            if (preview) {
+                Surface(shape = MaterialTheme.shapes.extraLarge, color = MaterialTheme.colorScheme.surface.copy(alpha = 0.7f)) {
+                    Row(Modifier.padding(horizontal = 12.dp, vertical = 6.dp), verticalAlignment = Alignment.CenterVertically) {
+                        Icon(Icons.Rounded.Info, contentDescription = null, modifier = Modifier.size(16.dp))
+                        Spacer(Modifier.width(6.dp))
+                        Text(stringResource(R.string.warning_preview_note), style = MaterialTheme.typography.labelMedium)
+                    }
+                }
+            }
+            Spacer(Modifier.weight(1f))
+            Row(verticalAlignment = Alignment.CenterVertically) {
+                if (packageName != null) AppIcon(packageName, size = 48.dp)
+                Spacer(Modifier.width(12.dp))
+                Icon(s.icon, contentDescription = s.label, tint = s.onContainer)
+            }
+            Spacer(Modifier.height(20.dp))
+            Text(
+                when (level) {
+                    WarningLevel.MINOR -> stringResource(R.string.warning_minor_eyebrow)
+                    WarningLevel.MAJOR -> stringResource(R.string.warning_major_eyebrow, appLabel)
+                    WarningLevel.MAX -> stringResource(R.string.warning_max_title, appLabel)
+                },
+                style = MaterialTheme.typography.titleMedium,
+                color = s.onContainer,
+            )
+            Spacer(Modifier.height(8.dp))
+            Text(warning?.title.orEmpty(), style = MaterialTheme.typography.displaySmall, color = s.onContainer)
+            Spacer(Modifier.height(12.dp))
+            Text(warning?.message.orEmpty(), style = MaterialTheme.typography.bodyLarge, color = s.onContainer)
+            if (warning != null) {
+                Spacer(Modifier.height(20.dp))
+                Surface(shape = MaterialTheme.shapes.large, color = MaterialTheme.colorScheme.surface.copy(alpha = 0.6f), modifier = Modifier.fillMaxWidth()) {
+                    Column(Modifier.padding(16.dp)) {
+                        Text(stringResource(R.string.warning_reason), style = MaterialTheme.typography.labelLarge, color = MaterialTheme.colorScheme.onSurfaceVariant)
+                        Text("“${warning.motivationalMessage}”", style = MaterialTheme.typography.titleLarge, color = MaterialTheme.colorScheme.onSurface)
+                    }
+                }
+            }
+            if (level == WarningLevel.MAX) {
+                Spacer(Modifier.height(16.dp))
+                val start = profile.rule.allowedStartMinutes
+                val end = profile.rule.allowedEndMinutes
+                InfoRow(stringResource(R.string.warning_allowed_time), if (start != null && end != null) "${formatClock(start)} – ${formatClock(end)}" else "Daily limit")
+                InfoRow(stringResource(R.string.warning_next_available), if (start != null) "Tomorrow at ${formatClock(start)}" else "Tomorrow")
+            }
+            Spacer(Modifier.weight(1.2f))
+            Actions(level, profile.rule.pauseSeconds, onGoBack, onContinue, onEmergency = { unlockDialog = true })
+        }
+    }
+
+    if (unlockDialog) {
+        AlertDialog(
+            onDismissRequest = { unlockDialog = false },
+            title = { Text(stringResource(R.string.warning_emergency_unlock)) },
+            text = { Text("Unlocks temporarily and is recorded as an override. Use it for real emergencies." + if (preview) "\n\n(Preview: nothing will unlock.)" else "") },
+            confirmButton = { TextButton(onClick = { unlockDialog = false; if (!preview) onContinue() }) { Text("Unlock") } },
+            dismissButton = { TextButton(onClick = { unlockDialog = false }) { Text("Stay blocked") } },
+        )
+    }
+}
+
+@Composable
+private fun InfoRow(label: String, value: String) {
+    Row(Modifier.fillMaxWidth().padding(vertical = 4.dp)) {
+        Text(label, style = MaterialTheme.typography.bodyLarge, modifier = Modifier.weight(1f))
+        Text(value, style = MaterialTheme.typography.titleMedium)
+    }
+}
+
+@Composable
+private fun Actions(level: WarningLevel, pauseSeconds: Int, onGoBack: () -> Unit, onContinue: () -> Unit, onEmergency: () -> Unit) {
+    Column(Modifier.fillMaxWidth().widthIn(max = 480.dp), verticalArrangement = Arrangement.spacedBy(8.dp), horizontalAlignment = Alignment.CenterHorizontally) {
+        when (level) {
+            WarningLevel.MINOR -> Button(onClick = onContinue, modifier = Modifier.fillMaxWidth().height(ButtonDefaults.MediumContainerHeight)) {
+                Text(stringResource(R.string.warning_continue), style = MaterialTheme.typography.titleMedium)
+            }
+            WarningLevel.MAJOR -> {
+                var left by remember { mutableIntStateOf(pauseSeconds) }
+                LaunchedEffect(Unit) { while (left > 0) { delay(1000); left-- } }
+                val progress by animateFloatAsState(if (pauseSeconds == 0) 1f else 1f - left / pauseSeconds.toFloat(), label = "pause")
+                Button(onClick = onGoBack, modifier = Modifier.fillMaxWidth().height(ButtonDefaults.MediumContainerHeight)) {
+                    Text(stringResource(R.string.warning_go_back), style = MaterialTheme.typography.titleMedium)
+                }
+                // Always laid out (alpha only) so buttons don't jump when the pause ends.
+                LinearWavyProgressIndicator(progress = { progress }, modifier = Modifier.fillMaxWidth().padding(top = 4.dp).alpha(if (left > 0) 1f else 0f))
+                TextButton(onClick = onContinue, enabled = left == 0) {
+                    Text(if (left > 0) stringResource(R.string.warning_continue_in, left) else stringResource(R.string.warning_continue_anyway))
+                }
+            }
+            WarningLevel.MAX -> {
+                Button(onClick = onGoBack, modifier = Modifier.fillMaxWidth().height(ButtonDefaults.MediumContainerHeight)) {
+                    Text(stringResource(R.string.warning_back), style = MaterialTheme.typography.titleMedium)
+                }
+                TextButton(onClick = onEmergency) { Text(stringResource(R.string.warning_emergency_unlock), textAlign = TextAlign.Center) }
+            }
+        }
+    }
+}
