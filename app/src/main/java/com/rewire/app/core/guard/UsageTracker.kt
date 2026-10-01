@@ -71,11 +71,25 @@ open class UsageTracker(private val context: Context? = null) {
         return (totalMillis / 60_000L).toInt()
     }
 
+    /** App open in the foreground right now per UsageEvents; null without usage access or when unknown. */
+    open fun foregroundApp(now: Long = System.currentTimeMillis()): String? {
+        val ctx = context ?: return null
+        if (!SystemPermissions.usageAccessGranted(ctx)) return null
+        val usm = ctx.getSystemService(UsageStatsManager::class.java) ?: return null
+        return lastResumed(usm, now)?.first
+    }
+
     /**
      * Detects if any app in [packages] is currently open in the foreground right now,
      * calculating any un-flushed duration since its last resumed event.
      */
     private fun activeSessionDuration(usm: UsageStatsManager, packages: Set<String>, now: Long): Long {
+        val (pkg, resumedAt) = lastResumed(usm, now) ?: return 0L
+        return if (pkg in packages && resumedAt > 0L) (now - resumedAt).coerceIn(0L, 30 * 60_000L) else 0L
+    }
+
+    /** Last app resumed in the past 30 min (today) and not paused since, with its resume time. */
+    private fun lastResumed(usm: UsageStatsManager, now: Long): Pair<String, Long>? {
         return runCatching {
             val recentStart = (now - 30 * 60_000L).coerceAtLeast(
                 LocalDate.now().atStartOfDay(ZoneId.systemDefault()).toInstant().toEpochMilli()
@@ -99,10 +113,7 @@ open class UsageTracker(private val context: Context? = null) {
                     }
                 }
             }
-
-            if (lastResumedPkg != null && lastResumedPkg in packages && lastResumedTime > 0L) {
-                (now - lastResumedTime).coerceIn(0L, 30 * 60_000L)
-            } else 0L
-        }.getOrDefault(0L)
+            lastResumedPkg?.let { it to lastResumedTime }
+        }.getOrNull()
     }
 }

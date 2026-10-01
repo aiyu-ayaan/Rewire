@@ -16,7 +16,9 @@ class RewireAccessibilityService : AccessibilityService() {
     override fun onServiceConnected() {
         instance = this
         running.value = true
-        (application as RewireApp).container.notifier.cancelProtectionOff()
+        val c = (application as RewireApp).container
+        c.notifier.cancelProtectionOff()
+        c.engine.resync()
     }
 
     override fun onUnbind(intent: Intent?): Boolean {

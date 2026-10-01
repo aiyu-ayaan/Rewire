@@ -161,6 +161,14 @@ class HabitEngine(
         evaluate(pkg, isRecheck = false)
     }
 
+    /**
+     * Monitoring (re)connected, e.g. the system restarting the service after process death (with back-off,
+     * seconds to minutes). Apps opened in that gap sent no event: judge whatever is open now.
+     */
+    fun resync() {
+        usage.foregroundApp(clock())?.let(::onForeground)
+    }
+
     fun onGuardResult(pkg: String, habitId: String, level: WarningLevel, outcome: GuardOutcome) {
         showingFor = null
         current = null

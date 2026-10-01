@@ -60,6 +60,8 @@ class HabitEngineOutcomeTest {
 
     private class FakeUsageTracker : UsageTracker() {
         var minutes: Int? = null
+        var foreground: String? = null
+        override fun foregroundApp(now: Long): String? = foreground
         override fun hasPermission(): Boolean = true
         override fun minutesToday(packages: Set<String>, now: Long): Int? = minutes
     }
@@ -515,6 +517,17 @@ class HabitEngineOutcomeTest {
         engine.onForeground("com.reddit.frontpage")
 
         assertEquals(2, platform.guardShown.size)
+    }
+
+    @Test
+    fun `resync after reconnect judges the app opened while monitoring was down`() {
+        usageTracker.foreground = "com.reddit.frontpage"
+        engine.resync()
+        assertEquals(1, platform.guardShown.size)
+
+        usageTracker.foreground = null // no usage access / nothing open
+        engine.resync()
+        assertEquals(1, platform.guardShown.size)
     }
 
     @Test
