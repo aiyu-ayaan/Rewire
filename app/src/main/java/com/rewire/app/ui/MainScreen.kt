@@ -75,6 +75,7 @@ fun MainScreen(
     onOpenHabit: (String) -> Unit,
     onOpenNotificationSettings: () -> Unit,
     onOpenWarningLibrary: () -> Unit,
+    onOpenMatrixBreakdown: (apps: Boolean) -> Unit,
     onOpenFocusFullscreen: () -> Unit,
     onEditProfile: () -> Unit,
     onOpenAbout: () -> Unit,
@@ -106,7 +107,7 @@ fun MainScreen(
             when (current) {
                 Tab.GUARD -> GuardScreen(onOpenHabit = onOpenHabit, onStartFocus = { tab = Tab.FOCUS })
                 Tab.FOCUS -> FocusScreen(onFullscreen = onOpenFocusFullscreen)
-                Tab.MATRIX -> MatrixScreen()
+                Tab.MATRIX -> MatrixScreen(onShowAll = onOpenMatrixBreakdown)
                 Tab.PROFILE -> ProfileScreen(onOpenNotificationSettings = onOpenNotificationSettings, onOpenWarningLibrary = onOpenWarningLibrary, onEditProfile = onEditProfile, onOpenAbout = onOpenAbout)
             }
         }

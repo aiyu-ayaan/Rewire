@@ -28,6 +28,7 @@ import com.rewire.app.feature.onboarding.PermissionsSetupScreen
 import com.rewire.app.feature.onboarding.ProfileSetupScreen
 import com.rewire.app.feature.guard.WarningPreviewScreen
 import com.rewire.app.feature.landing.LandingScreen
+import com.rewire.app.feature.matrix.MatrixBreakdownScreen
 import com.rewire.app.feature.profile.AboutScreen
 import com.rewire.app.feature.profile.AcknowledgementsScreen
 import com.rewire.app.feature.profile.NotificationSettingsScreen
@@ -51,6 +52,7 @@ object Routes {
     @Serializable data object EditProfile
     @Serializable data object About
     @Serializable data object Acknowledgements
+    @Serializable data class MatrixBreakdown(val apps: Boolean)
 }
 
 @Composable
@@ -137,6 +139,7 @@ fun RewireNavHost(
                             onOpenHabit = { nav.navigate(Routes.HabitDetail(it)) },
                             onOpenNotificationSettings = { nav.navigate(Routes.NotificationSettings) },
                             onOpenWarningLibrary = { nav.navigate(Routes.WarningLibrary) },
+                            onOpenMatrixBreakdown = { nav.navigate(Routes.MatrixBreakdown(it)) },
                             onOpenFocusFullscreen = { nav.navigate(Routes.FocusFullscreen) { launchSingleTop = true } },
                             onEditProfile = { nav.navigate(Routes.EditProfile) },
                             onOpenAbout = { nav.navigate(Routes.About) },
@@ -178,6 +181,9 @@ fun RewireNavHost(
                 }
                 composable<Routes.Acknowledgements> {
                     AcknowledgementsScreen(onBack = { nav.popBackStack() })
+                }
+                composable<Routes.MatrixBreakdown> {
+                    MatrixBreakdownScreen(it.toRoute<Routes.MatrixBreakdown>().apps, onBack = { nav.popBackStack() })
                 }
                 composable<Routes.WarningLibrary> {
                     WarningLibraryScreen(onBack = { nav.popBackStack() })
