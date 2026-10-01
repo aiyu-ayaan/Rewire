@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="canvas">#121212</color>
+    <color name="canvas">#F4FBF8</color>
+    <color name="notification_accent">#006A60</color>
     <color name="ic_launcher_background">#0F172A</color>
 </resources>

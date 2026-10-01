@@ -2,47 +2,38 @@ package com.rewire.app.ui.theme
 
 import android.os.Build
 import androidx.compose.foundation.isSystemInDarkTheme
-import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.darkColorScheme
+import androidx.compose.material3.MaterialExpressiveTheme
+import androidx.compose.material3.MotionScheme
 import androidx.compose.material3.dynamicDarkColorScheme
 import androidx.compose.material3.dynamicLightColorScheme
-import androidx.compose.material3.lightColorScheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.platform.LocalContext
-
-private val DarkColorScheme = darkColorScheme(
-    primary = RewirePrimary,
-    secondary = RewireSecondary,
-    tertiary = RewireAccentOrange,
-    background = RewireBackgroundDark,
-    surface = RewireSurfaceDark,
-    surfaceVariant = RewireCardDark
-)
-
-private val LightColorScheme = lightColorScheme(
-    primary = RewirePrimary,
-    secondary = RewireSecondary,
-    tertiary = RewireAccentOrange
-)
+import com.rewire.app.core.datastore.ThemeMode
 
 @Composable
 fun RewireTheme(
-    darkTheme: Boolean = isSystemInDarkTheme(),
+    themeMode: ThemeMode = ThemeMode.SYSTEM,
     dynamicColor: Boolean = false,
-    content: @Composable () -> Unit
+    content: @Composable () -> Unit,
 ) {
+    val dark = when (themeMode) {
+        ThemeMode.SYSTEM -> isSystemInDarkTheme()
+        ThemeMode.LIGHT -> false
+        ThemeMode.DARK -> true
+    }
     val colorScheme = when {
         dynamicColor && Build.VERSION.SDK_INT >= Build.VERSION_CODES.S -> {
             val context = LocalContext.current
-            if (darkTheme) dynamicDarkColorScheme(context) else dynamicLightColorScheme(context)
+            if (dark) dynamicDarkColorScheme(context) else dynamicLightColorScheme(context)
         }
-        darkTheme -> DarkColorScheme
-        else -> DarkColorScheme // Default to sleek dark mode for Rewire
+        dark -> DarkColors
+        else -> LightColors
     }
-
-    MaterialTheme(
+    MaterialExpressiveTheme(
         colorScheme = colorScheme,
-        typography = Typography,
-        content = content
+        motionScheme = MotionScheme.expressive(),
+        shapes = RewireShapes,
+        typography = RewireTypography,
+        content = content,
     )
 }
