@@ -2,7 +2,6 @@ package com.rewire.app.feature.profile
 
 import android.content.Intent
 import android.net.Uri
-import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -10,7 +9,6 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.rememberScrollState
-import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.rounded.ArrowBack
@@ -33,17 +31,9 @@ import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
-import androidx.compose.runtime.produceState
-import androidx.compose.ui.graphics.ImageBitmap
-import androidx.compose.ui.graphics.asImageBitmap
-import android.graphics.BitmapFactory
-import androidx.compose.material.icons.rounded.AccountCircle
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.withContext
-import java.net.URL
+import com.rewire.app.ui.components.UserAvatar
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.clip
 import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.style.TextAlign
@@ -53,14 +43,6 @@ import com.rewire.app.ui.components.SectionTitle
 
 private const val GITHUB_URL = "https://github.com/aiyu-ayaan"
 private const val PORTFOLIO_URL = "https://aiyu.co.in"
-
-/** Null on any failure (offline etc.); the UI shows a placeholder. */
-private suspend fun fetchAvatar(): ImageBitmap? = withContext(Dispatchers.IO) {
-    runCatching {
-        val c = URL("$GITHUB_URL.png?size=256").openConnection().apply { connectTimeout = 8_000; readTimeout = 8_000 }
-        c.getInputStream().use { BitmapFactory.decodeStream(it)?.asImageBitmap() }
-    }.getOrNull()
-}
 
 @Composable
 fun AboutScreen(onBack: () -> Unit, onOpenAcknowledgements: () -> Unit) {
@@ -98,10 +80,7 @@ fun AboutScreen(onBack: () -> Unit, onOpenAcknowledgements: () -> Unit) {
             SectionTitle("Developer")
             Group {
                 Column(Modifier.fillMaxWidth().padding(16.dp), horizontalAlignment = Alignment.CenterHorizontally, verticalArrangement = Arrangement.spacedBy(4.dp)) {
-                    val avatar by produceState<ImageBitmap?>(null) { value = fetchAvatar() }
-                    val img = avatar
-                    if (img != null) Image(img, contentDescription = "Developer's GitHub profile picture", modifier = Modifier.size(96.dp).clip(CircleShape))
-                    else Icon(Icons.Rounded.AccountCircle, contentDescription = null, modifier = Modifier.size(96.dp), tint = MaterialTheme.colorScheme.onSurfaceVariant)
+                    UserAvatar("aiyu-ayaan", shapeIndex = 0, size = 96.dp)
                     Text("aiyu-ayaan", style = MaterialTheme.typography.titleLarge, modifier = Modifier.padding(top = 8.dp))
                     Text("Built Rewire.", style = MaterialTheme.typography.bodyMedium, color = MaterialTheme.colorScheme.onSurfaceVariant, textAlign = TextAlign.Center)
                 }

@@ -17,7 +17,6 @@ import com.rewire.app.domain.restriction.RestrictionDecision
 import com.rewire.app.domain.restriction.RuleEngine
 import com.rewire.app.domain.restriction.RuleInput
 import com.rewire.app.feature.guard.GuardActivity
-import com.rewire.app.service.notifications.RewireNotificationListener
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.delay
@@ -120,7 +119,6 @@ class HabitEngine(
             is RestrictionDecision.Block -> {
                 events.log(HabitEventType.APP_BLOCKED, pkg, profile.id, mapOf("reason" to d.reason.name))
                 show(pkg, profile, WarningLevel.MAX, d.reason.name)
-                RewireNotificationListener.instance?.sweep()
             }
         }
     }
