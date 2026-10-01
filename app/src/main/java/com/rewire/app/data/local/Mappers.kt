@@ -83,6 +83,10 @@ fun SettingsEntity.toDomain() = Settings(
     focusDndEnabled = focusDndEnabled,
     notificationPermissionAsked = notificationPermissionAsked,
     profile = UserProfile(userName, userGoal, userReason, avatarShape),
+    updatesEnabled = updatesEnabled,
+    updateChannel = updateChannel,
+    updateSnoozedUntil = updateSnoozedUntil,
+    updateLastChecked = updateLastChecked,
 )
 
 fun SettingsEntity.withNotification(c: NotificationCategory, on: Boolean) = when (c) {

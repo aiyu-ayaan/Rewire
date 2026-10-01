@@ -1,6 +1,7 @@
 package com.rewire.app.data.local
 
 import android.content.Context
+import androidx.room.AutoMigration
 import androidx.room.Dao
 import androidx.room.Database
 import androidx.room.Insert
@@ -21,8 +22,10 @@ import kotlinx.serialization.json.Json
         HabitEntity::class, ProtectedAppEntity::class, RestrictionRuleEntity::class,
         WarningEntity::class, HabitEventEntity::class, FocusSessionEntity::class, SettingsEntity::class,
     ],
-    version = 1,
+    version = 2,
     exportSchema = true,
+    // 1 -> 2: four settings columns for app updates (defaults declared on the columns).
+    autoMigrations = [AutoMigration(from = 1, to = 2)],
 )
 @TypeConverters(Converters::class)
 abstract class RewireDatabase : RoomDatabase() {

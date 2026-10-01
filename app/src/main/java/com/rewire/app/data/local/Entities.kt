@@ -12,6 +12,7 @@ import com.rewire.app.core.settings.UserGoal
 import com.rewire.app.domain.analytics.HabitEventType
 import com.rewire.app.domain.focus.FocusSessionStatus
 import com.rewire.app.domain.habit.WarningLevel
+import com.rewire.app.domain.update.UpdateChannel
 import com.rewire.app.domain.warning.WarningCategory
 
 // Enums are stored by name (Room default), so reordering an enum never corrupts rows.
@@ -147,6 +148,12 @@ data class SettingsEntity(
     @ColumnInfo(name = "user_goal") val userGoal: UserGoal? = null,
     @ColumnInfo(name = "user_reason") val userReason: String = "",
     @ColumnInfo(name = "avatar_shape") val avatarShape: Int = 0,
+    // v2: app self-update. Defaults live in the column too so the 1 -> 2 auto-migration can add them.
+    @ColumnInfo(name = "updates_enabled", defaultValue = "1") val updatesEnabled: Boolean = true,
+    /** null = follow the channel this build belongs to. */
+    @ColumnInfo(name = "update_channel") val updateChannel: UpdateChannel? = null,
+    @ColumnInfo(name = "update_snoozed_until", defaultValue = "0") val updateSnoozedUntil: Long = 0,
+    @ColumnInfo(name = "update_last_checked", defaultValue = "0") val updateLastChecked: Long = 0,
 ) {
     companion object {
         const val SINGLETON_ID = 0

@@ -1,6 +1,7 @@
 package com.rewire.app.core.settings
 
 import com.rewire.app.data.local.SettingsDao
+import com.rewire.app.domain.update.UpdateChannel
 import com.rewire.app.data.local.SettingsEntity
 import com.rewire.app.data.local.toDomain
 import com.rewire.app.data.local.withNotification
@@ -46,6 +47,11 @@ data class Settings(
     /** Asked for POST_NOTIFICATIONS at least once — after that, recovery goes through system settings. */
     val notificationPermissionAsked: Boolean,
     val profile: UserProfile,
+    val updatesEnabled: Boolean = true,
+    /** null = follow this build's own channel. */
+    val updateChannel: UpdateChannel? = null,
+    val updateSnoozedUntil: Long = 0,
+    val updateLastChecked: Long = 0,
 )
 
 class SettingsRepository(private val dao: SettingsDao) {
@@ -64,5 +70,9 @@ class SettingsRepository(private val dao: SettingsDao) {
         it.copy(userName = p.name.trim(), userGoal = p.goal, userReason = p.reason.trim(), avatarShape = p.avatarShape)
     }
     suspend fun setFocusBypass(b: FocusBypass) = dao.edit { it.copy(bypassMinor = b.minor, bypassMajor = b.major, bypassMax = b.max) }
+    suspend fun setUpdatesEnabled(on: Boolean) = dao.edit { it.copy(updatesEnabled = on) }
+    suspend fun setUpdateChannel(channel: UpdateChannel) = dao.edit { it.copy(updateChannel = channel) }
+    suspend fun setUpdateSnoozedUntil(at: Long) = dao.edit { it.copy(updateSnoozedUntil = at) }
+    suspend fun setUpdateLastChecked(at: Long) = dao.edit { it.copy(updateLastChecked = at) }
     suspend fun setFocusDndEnabled(enabled: Boolean) = dao.edit { it.copy(focusDndEnabled = enabled) }
 }
