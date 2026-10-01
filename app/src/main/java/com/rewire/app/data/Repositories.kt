@@ -67,8 +67,18 @@ interface WarningRepository {
 }
 
 /** Seeds from bundled JSON (res/raw/default_warnings.json) on first run, then keeps the user's edits. */
-class PersistentWarningRepository(private val store: JsonStore<List<Warning>>) : WarningRepository {
+class PersistentWarningRepository(
+    private val store: JsonStore<List<Warning>>,
+    defaults: List<Warning> = emptyList(),
+) : WarningRepository {
     override val warnings = store.value
+
+    init {
+        // Built-ins added in app updates reach existing libraries; user edits to old ones are kept.
+        val have = warnings.value.mapTo(HashSet()) { it.id }
+        val missing = defaults.filterNot { it.id in have }
+        if (missing.isNotEmpty()) store.update { it + missing }
+    }
 
     override fun update(warning: Warning) = store.update { list -> list.map { if (it.id == warning.id) warning else it } }
 

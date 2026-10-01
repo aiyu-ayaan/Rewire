@@ -46,10 +46,12 @@ class AppContainer(context: Context) {
     val habits: HabitRepository = PersistentHabitRepository(
         JsonStore(File(files, "habits.json"), ListSerializer(HabitProfile.serializer()), appScope) { emptyList() }
     )
+    private val defaultWarnings = PersistentWarningRepository.defaults(
+        context.resources.openRawResource(R.raw.default_warnings).bufferedReader().use { it.readText() }
+    )
     val warnings: WarningRepository = PersistentWarningRepository(
-        JsonStore(File(files, "warnings.json"), ListSerializer(Warning.serializer()), appScope) {
-            PersistentWarningRepository.defaults(context.resources.openRawResource(R.raw.default_warnings).bufferedReader().use { it.readText() })
-        }
+        JsonStore(File(files, "warnings.json"), ListSerializer(Warning.serializer()), appScope) { defaultWarnings },
+        defaultWarnings,
     )
     val events: EventRepository = PersistentEventRepository(
         JsonStore(File(files, "events.json"), ListSerializer(HabitEvent.serializer()), appScope) { emptyList() }

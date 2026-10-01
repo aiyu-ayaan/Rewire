@@ -1,5 +1,7 @@
 package com.rewire.app.domain
 
+import com.rewire.app.data.JsonStore
+import com.rewire.app.data.PersistentWarningRepository
 import com.rewire.app.domain.analytics.HabitEvent
 import com.rewire.app.domain.analytics.HabitEventType
 import com.rewire.app.domain.analytics.MetricsCalculator
@@ -10,6 +12,10 @@ import com.rewire.app.domain.warning.WarningPicker
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertNull
 import org.junit.Test
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.serialization.builtins.ListSerializer
+import java.io.File
 import java.time.LocalDate
 import java.time.ZoneOffset
 import kotlin.random.Random
@@ -47,5 +53,20 @@ class WarningAndMetricsTest {
         assertEquals(1, m.warningCount)
         assertEquals(1, m.blockedAttempts)
         assertEquals(0.5f, m.disciplineScore!!, 0.001f)
+    }
+
+    @Test fun newDefaultsMergeIntoExistingLibraryKeepingEdits() {
+        val file = File.createTempFile("warnings", ".json").apply { delete() }
+        val scope = CoroutineScope(Dispatchers.Unconfined)
+        val store = JsonStore(file, ListSerializer(Warning.serializer()), scope) { listOf(w("a", WarningLevel.MINOR, enabled = false)) }
+        val repo = PersistentWarningRepository(store, listOf(w("a", WarningLevel.MINOR), w("b", WarningLevel.MAX)))
+        assertEquals(listOf("a", "b"), repo.warnings.value.map { it.id })
+        assertEquals(false, repo.warnings.value.first().enabled) // user's edit kept
+    }
+
+    @Test fun bundledDefaultsParseWithUniqueIds() {
+        val list = PersistentWarningRepository.defaults(File("src/main/res/raw/default_warnings.json").readText())
+        assertEquals(list.size, list.map { it.id }.toSet().size)
+        WarningLevel.entries.forEach { l -> assert(list.count { it.level == l } >= 5) }
     }
 }
