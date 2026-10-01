@@ -71,25 +71,28 @@ class RuleEngineTest {
         assertNull(RuleEngine.minutesUntilNextBoundary(input(WarningLevel.MAJOR, enabled = false, daily = 60, usage = 55)))
     }
 
-    @Test fun majorWithLaunchLimitWarnsUnderLimitThenBlocks() {
-        assertEquals(Warn(WarningLevel.MAJOR), RuleEngine.decide(input(WarningLevel.MAJOR, launches = 2, launchesToday = 0)))
-        assertEquals(Warn(WarningLevel.MAJOR), RuleEngine.decide(input(WarningLevel.MAJOR, launches = 2, launchesToday = 1)))
-        assertEquals(Block(BlockReason.LAUNCH_LIMIT), RuleEngine.decide(input(WarningLevel.MAJOR, launches = 2, launchesToday = 2)))
-        assertEquals(Block(BlockReason.LAUNCH_LIMIT), RuleEngine.decide(input(WarningLevel.MAJOR, launches = 2, launchesToday = 3)))
+    @Test fun majorWithLaunchLimitAllowsUnderLimitThenWarns() {
+        assertEquals(Allow, RuleEngine.decide(input(WarningLevel.MAJOR, launches = 2, launchesToday = 1)))
+        assertEquals(Warn(WarningLevel.MAJOR), RuleEngine.decide(input(WarningLevel.MAJOR, launches = 2, launchesToday = 2)))
     }
 
-    @Test fun minorWithLaunchLimitWarnsUnderLimitThenBlocks() {
-        assertEquals(Warn(WarningLevel.MINOR), RuleEngine.decide(input(WarningLevel.MINOR, launches = 2, launchesToday = 1)))
-        assertEquals(Block(BlockReason.LAUNCH_LIMIT), RuleEngine.decide(input(WarningLevel.MINOR, launches = 2, launchesToday = 2)))
+    @Test fun minorWithLaunchLimitAllowsUnderLimitThenWarns() {
+        assertEquals(Allow, RuleEngine.decide(input(WarningLevel.MINOR, launches = 2, launchesToday = 1)))
+        assertEquals(Warn(WarningLevel.MINOR), RuleEngine.decide(input(WarningLevel.MINOR, launches = 2, launchesToday = 2)))
     }
 
-    @Test fun majorWithDailyLimitWarnsUnderLimitThenBlocks() {
-        assertEquals(Warn(WarningLevel.MAJOR), RuleEngine.decide(input(WarningLevel.MAJOR, daily = 30, usage = 15)))
-        assertEquals(Block(BlockReason.DAILY_LIMIT), RuleEngine.decide(input(WarningLevel.MAJOR, daily = 30, usage = 30)))
+    @Test fun majorWithDailyLimitAllowsUnderLimitThenWarns() {
+        assertEquals(Allow, RuleEngine.decide(input(WarningLevel.MAJOR, daily = 15, usage = 0)))
+        assertEquals(Warn(WarningLevel.MAJOR), RuleEngine.decide(input(WarningLevel.MAJOR, daily = 15, usage = 15)))
+        // usage unknown (no Usage access): never warn on a limit we can't measure
+        assertEquals(Allow, RuleEngine.decide(input(WarningLevel.MAJOR, daily = 15, usage = null)))
     }
 
-    @Test fun majorWithAllowedWindowWarnsInWindowThenBlocksOutside() {
-        assertEquals(Warn(WarningLevel.MAJOR), RuleEngine.decide(input(WarningLevel.MAJOR, start = 540, end = 570, now = 550)))
-        assertEquals(Block(BlockReason.OUTSIDE_WINDOW), RuleEngine.decide(input(WarningLevel.MAJOR, start = 540, end = 570, now = 600)))
+    @Test fun majorWithAllowedWindowAllowsInWindowThenWarnsOutside() {
+        assertEquals(Allow, RuleEngine.decide(input(WarningLevel.MAJOR, start = 540, end = 570, now = 550)))
+        assertEquals(Warn(WarningLevel.MAJOR), RuleEngine.decide(input(WarningLevel.MAJOR, start = 540, end = 570, now = 600)))
     }
+
+    @Test fun halfSetWindowIsNotABoundary() =
+        assertEquals(Warn(WarningLevel.MAJOR), RuleEngine.decide(input(WarningLevel.MAJOR, start = 540)))
 }

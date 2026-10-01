@@ -368,7 +368,7 @@ class HabitEngineOutcomeTest {
     }
 
     @Test
-    fun `major habit with launch limit allows up to limit then blocks`() {
+    fun `major habit with launch limit opens freely up to limit then warns`() {
         val launchHabit = HabitProfile(
             habit = Habit("h-chrome", "Browsing", null, enabled = true),
             apps = listOf(ProtectedApp("com.android.chrome", "h-chrome", WarningLevel.MAJOR, enabled = true)),
@@ -376,106 +376,69 @@ class HabitEngineOutcomeTest {
         )
         habitRepo.setHabits(listOf(launchHabit))
 
-        // 1st open: triggers MAJOR warning
+        // Opens 1 and 2: inside the boundary, no friction
+        repeat(2) {
+            engine.onForeground("com.android.chrome")
+            engine.onForeground("com.android.launcher")
+        }
+        assertEquals(0, platform.guardShown.size)
+        assertEquals(2, eventRepo.events.value.count { it.type == HabitEventType.APP_OPENED })
+
+        // 3rd open crosses the limit: Major warning, still skippable (not a block)
         engine.onForeground("com.android.chrome")
         assertEquals(1, platform.guardShown.size)
         assertEquals(WarningLevel.MAJOR, platform.guardShown.last().level)
         assertEquals(null, platform.guardShown.last().blockReason)
-
-        // User continues: 1st launch recorded
-        engine.onGuardResult("com.android.chrome", "h-chrome", WarningLevel.MAJOR, GuardOutcome.CONTINUED)
-        assertEquals(1, eventRepo.events.value.count { it.type == HabitEventType.APP_OPENED })
-
-        // User leaves app
-        engine.onForeground("com.android.launcher")
-
-        // 2nd open: triggers MAJOR warning
-        engine.onForeground("com.android.chrome")
-        assertEquals(2, platform.guardShown.size)
-        assertEquals(WarningLevel.MAJOR, platform.guardShown.last().level)
-        assertEquals(null, platform.guardShown.last().blockReason)
-
-        // User continues: 2nd launch recorded
-        engine.onGuardResult("com.android.chrome", "h-chrome", WarningLevel.MAJOR, GuardOutcome.CONTINUED)
-        assertEquals(2, eventRepo.events.value.count { it.type == HabitEventType.APP_OPENED })
-
-        // User leaves app
-        engine.onForeground("com.android.launcher")
-
-        // 3rd open (more than 2 times!): now BLOCKED with LAUNCH_LIMIT!
-        engine.onForeground("com.android.chrome")
-        assertEquals(3, platform.guardShown.size)
-        val blockedCall = platform.guardShown.last()
-        assertEquals(WarningLevel.MAX, blockedCall.level)
-        assertEquals("LAUNCH_LIMIT", blockedCall.blockReason)
-        assertEquals(HabitEventType.APP_BLOCKED, eventRepo.logged.last().type)
-        assertEquals("LAUNCH_LIMIT", eventRepo.logged.last().metadata["reason"])
+        assertEquals(HabitEventType.WARNING_SHOWN, eventRepo.logged.last().type)
     }
 
     @Test
     fun `returning to app via recents re-triggers guard evaluation`() {
-        // Setup: major habit with launch limit
-        val launchHabit = HabitProfile(
-            habit = Habit("h-chrome", "Browsing", null, enabled = true),
-            apps = listOf(ProtectedApp("com.android.chrome", "h-chrome", WarningLevel.MAJOR, enabled = true)),
-            rule = RestrictionRule("r-chrome", "h-chrome", null, null, null, maxLaunches = 2, WarningLevel.MAJOR, 5)
-        )
-        habitRepo.setHabits(listOf(launchHabit))
-
-        // 1st open: warning shown
-        engine.onForeground("com.android.chrome")
+        // Major habit without boundaries: warns on every open
+        engine.onForeground("com.reddit.frontpage")
         assertEquals(1, platform.guardShown.size)
 
         // User continues
-        engine.onGuardResult("com.android.chrome", "h-chrome", WarningLevel.MAJOR, GuardOutcome.CONTINUED)
+        engine.onGuardResult("com.reddit.frontpage", "h-major", WarningLevel.MAJOR, GuardOutcome.CONTINUED)
 
-        // User opens recents (System UI) then taps Chrome again — must re-trigger guard
+        // User opens recents (System UI) then taps the app again — must re-trigger guard
         engine.onForeground("com.android.systemui", RECENTS)  // recents screen
-        engine.onForeground("com.android.chrome")     // tap Chrome from recents
+        engine.onForeground("com.reddit.frontpage")     // tap from recents
         assertEquals(2, platform.guardShown.size)     // new warning must appear
         assertEquals(WarningLevel.MAJOR, platform.guardShown.last().level)
     }
 
     @Test
     fun `recents clears granted visit so launch count stays accurate`() {
-        val launchHabit = HabitProfile(
-            habit = Habit("h-cam", "Camera", null, enabled = true),
-            apps = listOf(ProtectedApp("com.android.camera", "h-cam", WarningLevel.MAJOR, enabled = true)),
-            rule = RestrictionRule("r-cam", "h-cam", null, null, null, maxLaunches = 2, WarningLevel.MAJOR, 5)
-        )
-        habitRepo.setHabits(listOf(launchHabit))
-
         // Open 1: continue through warning
-        engine.onForeground("com.android.camera")
-        engine.onGuardResult("com.android.camera", "h-cam", WarningLevel.MAJOR, GuardOutcome.CONTINUED)
+        engine.onForeground("com.reddit.frontpage")
+        engine.onGuardResult("com.reddit.frontpage", "h-major", WarningLevel.MAJOR, GuardOutcome.CONTINUED)
         assertEquals(1, eventRepo.events.value.count { it.type == HabitEventType.APP_OPENED })
 
-        // Open 2 via recents: continue through warning
+        // Open 2 via recents: warned again (grant cleared), continue
         engine.onForeground("com.android.systemui", RECENTS)
-        engine.onForeground("com.android.camera")
-        engine.onGuardResult("com.android.camera", "h-cam", WarningLevel.MAJOR, GuardOutcome.CONTINUED)
+        engine.onForeground("com.reddit.frontpage")
+        assertEquals(2, platform.guardShown.size)
+        engine.onGuardResult("com.reddit.frontpage", "h-major", WarningLevel.MAJOR, GuardOutcome.CONTINUED)
         assertEquals(2, eventRepo.events.value.count { it.type == HabitEventType.APP_OPENED })
 
-        // Open 3 via recents: must be BLOCKED
+        // Open 3 via recents: warned again, not let through on the old grant
         engine.onForeground("com.android.systemui", RECENTS)
-        engine.onForeground("com.android.camera")
-        val last = platform.guardShown.last()
-        assertEquals(WarningLevel.MAX, last.level)
-        assertEquals("LAUNCH_LIMIT", last.blockReason)
+        engine.onForeground("com.reddit.frontpage")
+        assertEquals(3, platform.guardShown.size)
+        assertEquals(2, eventRepo.events.value.count { it.type == HabitEventType.APP_OPENED })
     }
 
     @Test
     fun `picking the blocked app from recents while block screen is open re-blocks it`() {
         val launchHabit = HabitProfile(
             habit = Habit("h-chrome", "Browsing", null, enabled = true),
-            apps = listOf(ProtectedApp("com.android.chrome", "h-chrome", WarningLevel.MAJOR, enabled = true)),
-            rule = RestrictionRule("r-chrome", "h-chrome", null, null, null, maxLaunches = 2, WarningLevel.MAJOR, 5)
+            apps = listOf(ProtectedApp("com.android.chrome", "h-chrome", WarningLevel.MAX, enabled = true)),
+            rule = RestrictionRule("r-chrome", "h-chrome", null, null, null, maxLaunches = 2, WarningLevel.MAX, 5)
         )
         habitRepo.setHabits(listOf(launchHabit))
         repeat(2) {
-            engine.onForeground("com.android.chrome")
-            engine.onGuardResult("com.android.chrome", "h-chrome", WarningLevel.MAJOR, GuardOutcome.CONTINUED)
-            engine.onForeground("com.android.chrome") // granted relaunch
+            engine.onForeground("com.android.chrome") // allowed: under the limit
             engine.onForeground("com.google.android.apps.nexuslauncher")
         }
 

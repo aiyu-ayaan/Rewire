@@ -45,28 +45,22 @@ object RuleEngine {
         val limit = r.dailyLimitMinutes
         val launches = r.maxLaunches
 
-        // 1. Any configured boundary breached -> hard block
-        if (start != null && end != null && !inWindow(i.nowMinutes, start, end)) {
-            return RestrictionDecision.Block(BlockReason.OUTSIDE_WINDOW)
+        val breach = when {
+            start != null && end != null && !inWindow(i.nowMinutes, start, end) -> BlockReason.OUTSIDE_WINDOW
+            launches != null && i.launchesToday >= launches -> BlockReason.LAUNCH_LIMIT
+            limit != null && i.usageMinutesToday != null && i.usageMinutesToday >= limit -> BlockReason.DAILY_LIMIT
+            else -> null
         }
-        if (launches != null && i.launchesToday >= launches) {
-            return RestrictionDecision.Block(BlockReason.LAUNCH_LIMIT)
-        }
-        if (limit != null && i.usageMinutesToday != null && i.usageMinutesToday >= limit) {
-            return RestrictionDecision.Block(BlockReason.DAILY_LIMIT)
-        }
-
-        // 2. Within boundaries (or no boundaries configured) -> apply configured friction level
+        // Boundaries are the trigger, the level is the response. No boundaries means "every open".
+        val hasBoundary = (start != null && end != null) || limit != null || launches != null
         return when (rule.warningLevel) {
-            WarningLevel.MINOR -> RestrictionDecision.Warn(WarningLevel.MINOR)
-            WarningLevel.MAJOR -> RestrictionDecision.Warn(WarningLevel.MAJOR)
-            WarningLevel.MAX -> {
+            WarningLevel.MINOR, WarningLevel.MAJOR ->
+                if (breach != null || !hasBoundary) RestrictionDecision.Warn(rule.warningLevel) else RestrictionDecision.Allow
+            WarningLevel.MAX -> when {
+                breach != null -> RestrictionDecision.Block(breach)
                 // Max with no boundaries at all means "never": the user asked for a hard block.
-                if (start == null && end == null && limit == null && launches == null) {
-                    RestrictionDecision.Block(BlockReason.ALWAYS)
-                } else {
-                    RestrictionDecision.Allow
-                }
+                !hasBoundary -> RestrictionDecision.Block(BlockReason.ALWAYS)
+                else -> RestrictionDecision.Allow
             }
         }
     }
