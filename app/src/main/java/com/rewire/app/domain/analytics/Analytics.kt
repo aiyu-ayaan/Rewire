@@ -1,5 +1,6 @@
 package com.rewire.app.domain.analytics
 
+import kotlinx.serialization.Serializable
 import java.time.Instant
 import java.time.LocalDate
 import java.time.ZoneId
@@ -7,9 +8,10 @@ import java.time.ZoneId
 enum class HabitEventType {
     APP_OPENED, WARNING_SHOWN, APP_CONTINUED, APP_BLOCKED, OVERRIDE_USED, WENT_BACK,
     FOCUS_STARTED, FOCUS_PAUSED, FOCUS_RESUMED, FOCUS_COMPLETED, FOCUS_CANCELLED,
-    BREAK_STARTED, BREAK_COMPLETED, CYCLE_COMPLETED,
+    BREAK_STARTED, BREAK_COMPLETED, CYCLE_COMPLETED, NOTIFICATION_BLOCKED,
 }
 
+@Serializable
 data class HabitEvent(
     val id: String,
     val type: HabitEventType,

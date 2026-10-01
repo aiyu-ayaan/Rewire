@@ -25,6 +25,8 @@
     <string name="notif_focus_resumed_title">Break over. Back to focus.</string>
     <string name="notif_completed_title">Session complete</string>
     <string name="notif_completed_text">%1$d blocks · %2$d focused minutes. Nice work.</string>
+    <string name="notif_protection_off_title">Guard protection is off</string>
+    <string name="notif_protection_off_text">Rewire can\'t see protected apps. Tap to turn it back on.</string>
     <string name="notif_test_title">Notifications work</string>
     <string name="notif_test_text">Rewire can reach you when it matters.</string>
 

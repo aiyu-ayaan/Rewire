@@ -1,0 +1,182 @@
+package com.rewire.app.core.guard
+
+import android.content.Context
+import android.content.Intent
+import android.util.Log
+import android.view.inputmethod.InputMethodManager
+import com.rewire.app.BuildConfig
+import com.rewire.app.core.datastore.Settings
+import com.rewire.app.data.EventRepository
+import com.rewire.app.data.HabitRepository
+import com.rewire.app.domain.analytics.HabitEventType
+import com.rewire.app.domain.focus.FocusSessionStatus
+import com.rewire.app.domain.focus.FocusState
+import com.rewire.app.domain.habit.HabitProfile
+import com.rewire.app.domain.habit.WarningLevel
+import com.rewire.app.domain.restriction.RestrictionDecision
+import com.rewire.app.domain.restriction.RuleEngine
+import com.rewire.app.domain.restriction.RuleInput
+import com.rewire.app.feature.guard.GuardActivity
+import com.rewire.app.service.notifications.RewireNotificationListener
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Job
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.launch
+import java.time.Instant
+import java.time.LocalDate
+import java.time.LocalTime
+import java.time.ZoneId
+
+enum class GuardOutcome { CONTINUED, EMERGENCY_ONCE, WENT_BACK, ABANDONED }
+
+/**
+ * Orchestrates Guard: foreground app in -> RuleEngine decision -> warning/block screen -> event log.
+ * Main-thread only (accessibility callbacks + activity results), so no locking.
+ * Business rules live in [RuleEngine]; this class only gathers inputs and acts on decisions.
+ *
+ * Flow on a warning/block: send the user Home first, then show the guard screen over Home.
+ * The protected app can't resume on top of the screen, and leaving the screen never re-triggers
+ * by itself (no loops). Continue / emergency relaunch the app and let that one visit through.
+ */
+class HabitEngine(
+    private val context: Context,
+    private val habits: HabitRepository,
+    private val events: EventRepository,
+    private val settings: StateFlow<Settings?>,
+    private val focus: StateFlow<FocusState>,
+    private val usage: UsageTracker,
+    private val mainScope: CoroutineScope,
+    private val clock: () -> Long = System::currentTimeMillis,
+) {
+    /** Last real foreground app (Rewire, System UI and keyboards ignored). */
+    private var current: String? = null
+    /** Guard screen currently shown for this package. */
+    private var showingFor: String? = null
+    /** One visit let through (Continue / emergency); cleared as soon as the user is in another app. */
+    private var granted: String? = null
+    private var recheck: Job? = null
+
+    fun onForeground(pkg: String) {
+        if (isIgnored(pkg) || pkg == current) return
+        current = pkg
+        recheck?.cancel()
+        if (granted != null && pkg != granted) granted = null
+        if (pkg == granted) { profileFor(pkg)?.let { scheduleRecheck(pkg, it) }; return }
+        if (showingFor != null) return
+        evaluate(pkg, isRecheck = false)
+    }
+
+    fun onGuardResult(pkg: String, habitId: String, level: WarningLevel, outcome: GuardOutcome) {
+        showingFor = null
+        when (outcome) {
+            GuardOutcome.CONTINUED -> {
+                events.log(if (level == WarningLevel.MINOR) HabitEventType.APP_CONTINUED else HabitEventType.OVERRIDE_USED, pkg, habitId)
+                letThrough(pkg, habitId)
+            }
+            GuardOutcome.EMERGENCY_ONCE -> {
+                events.log(HabitEventType.OVERRIDE_USED, pkg, habitId, mapOf("emergency" to "once"))
+                letThrough(pkg, habitId)
+            }
+            GuardOutcome.WENT_BACK -> events.log(HabitEventType.WENT_BACK, pkg, habitId)
+            GuardOutcome.ABANDONED -> Unit // user went elsewhere; next open is judged fresh
+        }
+    }
+
+    private fun letThrough(pkg: String, habitId: String) {
+        events.log(HabitEventType.APP_OPENED, pkg, habitId)
+        granted = pkg
+        current = null // the relaunch below must reach onForeground
+        context.packageManager.getLaunchIntentForPackage(pkg)
+            ?.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_RESET_TASK_IF_NEEDED)
+            ?.let(context::startActivity)
+    }
+
+    /**
+     * True when [pkg] belongs to a Max habit that would block it right now (and it isn't the visit
+     * the user just let through). Pure check: logs only the silenced notification, no launch events.
+     */
+    fun silenceNotificationFrom(pkg: String): Boolean {
+        if (pkg == granted) return false
+        val profile = profileFor(pkg)?.takeIf { it.level == WarningLevel.MAX } ?: return false
+        val blocked = RuleEngine.decide(inputFor(profile)) is RestrictionDecision.Block
+        if (blocked) events.log(HabitEventType.NOTIFICATION_BLOCKED, pkg, profile.id)
+        return blocked
+    }
+
+    private fun evaluate(pkg: String, isRecheck: Boolean) {
+        val profile = profileFor(pkg) ?: return
+        val d = RuleEngine.decide(inputFor(profile))
+        if (BuildConfig.DEBUG) Log.d(TAG, "decision=$d recheck=$isRecheck") // no package names in logs
+        when (d) {
+            RestrictionDecision.Allow -> {
+                if (!isRecheck) events.log(HabitEventType.APP_OPENED, pkg, profile.id)
+                scheduleRecheck(pkg, profile)
+            }
+            is RestrictionDecision.Warn -> {
+                events.log(HabitEventType.WARNING_SHOWN, pkg, profile.id, mapOf("level" to d.level.name))
+                show(pkg, profile, d.level, null)
+            }
+            is RestrictionDecision.Block -> {
+                events.log(HabitEventType.APP_BLOCKED, pkg, profile.id, mapOf("reason" to d.reason.name))
+                show(pkg, profile, WarningLevel.MAX, d.reason.name)
+                RewireNotificationListener.instance?.sweep()
+            }
+        }
+    }
+
+    private fun show(pkg: String, profile: HabitProfile, level: WarningLevel, blockReason: String?) {
+        showingFor = pkg
+        context.startActivity(Intent(Intent.ACTION_MAIN).addCategory(Intent.CATEGORY_HOME).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK))
+        context.startActivity(GuardActivity.intent(context, pkg, profile.id, level, blockReason).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK))
+    }
+
+    /** Re-check exactly when a Max boundary (window end, daily limit) is crossed — no polling. */
+    private fun scheduleRecheck(pkg: String, profile: HabitProfile) {
+        recheck?.cancel()
+        if (pkg == granted) return // a granted visit runs until the user leaves
+        val minutes = RuleEngine.minutesUntilNextBoundary(inputFor(profile)) ?: return
+        recheck = mainScope.launch {
+            delay(minutes * MINUTE + 1_000)
+            if (current == pkg && showingFor == null) evaluate(pkg, isRecheck = true)
+        }
+    }
+
+    private fun profileFor(pkg: String): HabitProfile? =
+        habits.habits.value.firstOrNull { p -> p.habit.enabled && p.apps.any { it.enabled && it.packageName == pkg } }
+
+    private fun inputFor(p: HabitProfile): RuleInput {
+        val now = clock()
+        val zone = ZoneId.systemDefault()
+        val today = LocalDate.now(zone)
+        val s = settings.value
+        val launches = events.events.value.count {
+            it.type == HabitEventType.APP_OPENED && it.habitId == p.id && Instant.ofEpochMilli(it.timestamp).atZone(zone).toLocalDate() == today
+        }
+        // Usage is only needed (and only queried) when a daily limit exists.
+        val minutes = if (p.rule.dailyLimitMinutes != null) usage.minutesToday(p.apps.map { it.packageName }.toSet(), now) else null
+        val time = LocalTime.now(zone)
+        return RuleInput(
+            profile = p,
+            nowMinutes = time.hour * 60 + time.minute,
+            launchesToday = launches,
+            usageMinutesToday = minutes,
+            focusing = focus.value.status == FocusSessionStatus.FOCUSING,
+            bypassMinor = s?.focusBypass?.minor ?: false,
+            bypassMajor = s?.focusBypass?.major ?: false,
+            bypassMax = s?.focusBypass?.max ?: false,
+        )
+    }
+
+    private fun isIgnored(pkg: String): Boolean =
+        pkg == context.packageName || pkg == SYSTEM_UI || pkg in keyboards()
+
+    private fun keyboards(): Set<String> =
+        context.getSystemService(InputMethodManager::class.java)?.enabledInputMethodList?.map { it.packageName }?.toSet().orEmpty()
+
+    private companion object {
+        const val TAG = "RewireGuard"
+        const val MINUTE = 60_000L
+        const val SYSTEM_UI = "com.android.systemui"
+    }
+}

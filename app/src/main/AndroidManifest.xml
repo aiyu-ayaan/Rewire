@@ -39,6 +39,15 @@
             </intent-filter>
         </activity>
 
+        <!-- Warning / block screen shown over protected apps. Own task, hidden from recents. -->
+        <activity
+            android:name=".feature.guard.GuardActivity"
+            android:excludeFromRecents="true"
+            android:exported="false"
+            android:launchMode="singleInstance"
+            android:taskAffinity=""
+            android:theme="@style/Theme.Rewire" />
+
         <!-- Detects which protected app opened. Enabled by the user in Accessibility settings. -->
         <service
             android:name=".service.accessibility.RewireAccessibilityService"
@@ -51,6 +60,17 @@
             <meta-data
                 android:name="android.accessibilityservice"
                 android:resource="@xml/accessibility_service_config" />
+        </service>
+
+        <!-- Hides notifications from apps while they are Max-blocked. Enabled by the user in Notification access. -->
+        <service
+            android:name=".service.notifications.RewireNotificationListener"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:permission="android.permission.BIND_NOTIFICATION_LISTENER_SERVICE">
+            <intent-filter>
+                <action android:name="android.service.notification.NotificationListenerService" />
+            </intent-filter>
         </service>
 
     </application>

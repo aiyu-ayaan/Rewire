@@ -24,6 +24,7 @@ import androidx.compose.material.icons.rounded.Accessibility
 import androidx.compose.material.icons.rounded.BatteryChargingFull
 import androidx.compose.material.icons.rounded.CheckCircle
 import androidx.compose.material.icons.rounded.Notifications
+import androidx.compose.material.icons.rounded.NotificationsOff
 import androidx.compose.material.icons.rounded.QueryStats
 import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.FilledTonalButton
@@ -46,11 +47,13 @@ import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
+import androidx.core.app.NotificationManagerCompat
 import androidx.lifecycle.compose.LifecycleResumeEffect
 import com.rewire.app.R
 import com.rewire.app.core.notifications.PermissionStatus
 import com.rewire.app.core.notifications.rememberNotificationPermission
 import com.rewire.app.service.accessibility.RewireAccessibilityService
+import com.rewire.app.service.notifications.RewireNotificationListener
 
 /** Special-access permissions: granted by the user in system settings, never requested silently. */
 object SystemPermissions {
@@ -73,6 +76,18 @@ object SystemPermissions {
 
     fun batteryUnrestricted(context: Context): Boolean =
         context.getSystemService(PowerManager::class.java).isIgnoringBatteryOptimizations(context.packageName)
+
+    fun notificationAccessGranted(context: Context): Boolean =
+        context.packageName in NotificationManagerCompat.getEnabledListenerPackages(context)
+
+    /** API 30+ jumps straight to Rewire's toggle; older versions open the list. */
+    fun notificationAccessSettings(context: Context): Intent =
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+            Intent(Settings.ACTION_NOTIFICATION_LISTENER_DETAIL_SETTINGS)
+                .putExtra(Settings.EXTRA_NOTIFICATION_LISTENER_COMPONENT_NAME, ComponentName(context, RewireNotificationListener::class.java).flattenToString())
+        } else {
+            Intent(Settings.ACTION_NOTIFICATION_LISTENER_SETTINGS)
+        }
 
     fun accessibilitySettings() = Intent(Settings.ACTION_ACCESSIBILITY_SETTINGS)
 
@@ -127,6 +142,11 @@ fun PermissionsPanel(containerColor: Color = MaterialTheme.colorScheme.surfaceCo
                 "Counts time in guarded apps for limits and Matrix charts. Stays on this device.",
                 SystemPermissions.usageAccessGranted(context),
             ) { SystemPermissions.open(context, SystemPermissions.usageAccessSettings(context)) },
+            PermissionRow(
+                Icons.Rounded.NotificationsOff, "Notification access",
+                "Hides notifications from apps while they're Max-blocked, so they can't pull you back. Content is never read.",
+                SystemPermissions.notificationAccessGranted(context),
+            ) { SystemPermissions.open(context, SystemPermissions.notificationAccessSettings(context), Intent(Settings.ACTION_NOTIFICATION_LISTENER_SETTINGS)) },
             PermissionRow(
                 Icons.Rounded.BatteryChargingFull, "Unrestricted battery",
                 "Stops the system from putting protection to sleep. Find Rewire and choose Unrestricted / Don't optimize.",
@@ -195,6 +215,7 @@ fun rememberGrantedCount(): Int {
             notifications.status == PermissionStatus.GRANTED,
             SystemPermissions.accessibilityEnabled(context),
             SystemPermissions.usageAccessGranted(context),
+            SystemPermissions.notificationAccessGranted(context),
             SystemPermissions.batteryUnrestricted(context),
         ).count { it }
     }

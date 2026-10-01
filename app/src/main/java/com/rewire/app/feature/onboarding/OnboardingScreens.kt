@@ -168,7 +168,7 @@ fun PermissionsSetupScreen(onFinish: () -> Unit, onBack: () -> Unit) {
             modifier = Modifier.widthIn(max = 560.dp).padding(top = 24.dp),
         ) { PermissionsPanel() }
         Text(
-            "$granted of 4 allowed",
+            "$granted of 5 allowed",
             style = MaterialTheme.typography.labelLarge, color = MaterialTheme.colorScheme.primary,
             modifier = Modifier.padding(top = 12.dp),
         )
@@ -179,7 +179,7 @@ fun PermissionsSetupScreen(onFinish: () -> Unit, onBack: () -> Unit) {
                 modifier = Modifier.fillMaxWidth().height(ButtonDefaults.MediumContainerHeight),
                 contentPadding = ButtonDefaults.MediumContentPadding,
             ) {
-                Text(if (granted == 4) "Start using Rewire" else "Continue for now", style = MaterialTheme.typography.titleMedium)
+                Text(if (granted == 5) "Start using Rewire" else "Continue for now", style = MaterialTheme.typography.titleMedium)
             }
         }
     }

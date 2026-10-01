@@ -79,6 +79,8 @@ fun WarningScreen(
     preview: Boolean,
     onGoBack: () -> Unit,
     onContinue: () -> Unit,
+    /** Why a Max block fired (BlockReason name); null in previews. */
+    blockReason: String? = null,
 ) {
     val level = profile.level
     val s = level.style()
@@ -141,10 +143,25 @@ fun WarningScreen(
             }
             if (level == WarningLevel.MAX) {
                 Spacer(Modifier.height(16.dp))
-                val start = profile.rule.allowedStartMinutes
-                val end = profile.rule.allowedEndMinutes
-                InfoRow(stringResource(R.string.warning_allowed_time), if (start != null && end != null) "${formatClock(start)} – ${formatClock(end)}" else "Daily limit")
-                InfoRow(stringResource(R.string.warning_next_available), if (start != null) "Tomorrow at ${formatClock(start)}" else "Tomorrow")
+                val r = profile.rule
+                val start = r.allowedStartMinutes
+                val end = r.allowedEndMinutes
+                when (blockReason) {
+                    "LAUNCH_LIMIT" -> InfoRow("Opens today", "${r.maxLaunches} of ${r.maxLaunches} used")
+                    "DAILY_LIMIT" -> InfoRow("Daily limit", "${r.dailyLimitMinutes} min reached")
+                    "ALWAYS" -> InfoRow("Boundary", "Always blocked")
+                }
+                if (start != null && end != null) InfoRow(stringResource(R.string.warning_allowed_time), "${formatClock(start)} – ${formatClock(end)}")
+                val nowMinutes = remember { java.time.LocalTime.now().let { it.hour * 60 + it.minute } }
+                InfoRow(
+                    stringResource(R.string.warning_next_available),
+                    when {
+                        blockReason == "ALWAYS" -> "When you change this habit"
+                        blockReason == "OUTSIDE_WINDOW" && start != null && start > nowMinutes -> "Today at ${formatClock(start)}"
+                        start != null -> "Tomorrow at ${formatClock(start)}"
+                        else -> "Tomorrow"
+                    },
+                )
             }
             Spacer(Modifier.weight(1.2f))
             Actions(level, profile.rule.pauseSeconds, onGoBack, onContinue, onEmergency = { unlockDialog = true })
@@ -155,7 +172,7 @@ fun WarningScreen(
         AlertDialog(
             onDismissRequest = { unlockDialog = false },
             title = { Text(stringResource(R.string.warning_emergency_unlock)) },
-            text = { Text("Unlocks temporarily and is recorded as an override. Use it for real emergencies." + if (preview) "\n\n(Preview: nothing will unlock.)" else "") },
+            text = { Text("Opens the app this one time and records an override. Next time it's blocked again. Use it for real emergencies." + if (preview) "\n\n(Preview: nothing will unlock.)" else "") },
             confirmButton = { TextButton(onClick = { unlockDialog = false; if (!preview) onContinue() }) { Text("Unlock") } },
             dismissButton = { TextButton(onClick = { unlockDialog = false }) { Text("Stay blocked") } },
         )

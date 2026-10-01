@@ -22,6 +22,11 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.material.icons.Icons
+import com.rewire.app.service.accessibility.RewireAccessibilityService
+import com.rewire.app.core.permissions.SystemPermissions
+import androidx.lifecycle.compose.LifecycleResumeEffect
+import androidx.compose.ui.platform.LocalContext
+import androidx.compose.material.icons.rounded.GppMaybe
 import androidx.compose.material.icons.rounded.Add
 import androidx.compose.material.icons.rounded.Check
 import androidx.compose.material.icons.rounded.Timer
@@ -82,6 +87,7 @@ fun GuardScreen(onOpenHabit: (String) -> Unit, onStartFocus: () -> Unit) {
             contentPadding = PaddingValues(start = 16.dp, end = 16.dp, bottom = 112.dp),
         ) {
             item { Header() }
+            if (habits.any { it.habit.enabled }) item { ProtectionBanner() }
             item { TodayCard(today, habits.count { it.habit.enabled }, onStartFocus) }
             item { SectionTitle("Your habits", trailing = { if (habits.isNotEmpty()) Text("${habits.size}", style = MaterialTheme.typography.labelLarge, color = MaterialTheme.colorScheme.onSurfaceVariant) }) }
             if (habits.isEmpty()) {
@@ -229,6 +235,40 @@ fun HabitCard(profile: HabitProfile, onClick: () -> Unit, onToggle: (Boolean) ->
                         modifier = Modifier.offset(x = (-10 * profile.apps.take(5).size + 18).dp).widthIn(min = 0.dp),
                     )
                 }
+            }
+        }
+    }
+}
+
+/**
+ * Shown only when habits exist but the accessibility service isn't running, so blocking can't happen.
+ * Two cases: never enabled, or enabled but stopped by the system (toggle off/on fixes it).
+ */
+@Composable
+private fun ProtectionBanner() {
+    val context = LocalContext.current
+    val running by RewireAccessibilityService.isRunning.collectAsStateWithLifecycle()
+    var resumed by remember { mutableStateOf(0) }
+    LifecycleResumeEffect(Unit) { resumed++; onPauseOrDispose { } }
+    val enabled = remember(running, resumed) { SystemPermissions.accessibilityEnabled(context) }
+    AnimatedVisibility(!running) {
+        Card(
+            shape = MaterialTheme.shapes.large,
+            colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.errorContainer, contentColor = MaterialTheme.colorScheme.onErrorContainer),
+            modifier = Modifier.fillMaxWidth().padding(top = 8.dp),
+        ) {
+            Row(Modifier.padding(16.dp), verticalAlignment = Alignment.CenterVertically) {
+                Icon(Icons.Rounded.GppMaybe, contentDescription = null)
+                Spacer(Modifier.width(12.dp))
+                Column(Modifier.weight(1f)) {
+                    Text("Protection is off", style = MaterialTheme.typography.titleMedium)
+                    Text(
+                        if (enabled) "Android stopped Rewire's service. Turn Rewire off and on in Accessibility."
+                        else "Turn on Rewire in Accessibility so Guard can see protected apps.",
+                        style = MaterialTheme.typography.bodyMedium,
+                    )
+                }
+                FilledTonalButton(onClick = { SystemPermissions.open(context, SystemPermissions.accessibilitySettings()) }) { Text("Fix") }
             }
         }
     }

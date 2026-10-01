@@ -27,7 +27,8 @@ class FocusViewModel(
     private val clock: () -> Long = System::currentTimeMillis,
 ) : ViewModel() {
 
-    private val _state = MutableStateFlow(FocusState())
+    // Shared with the Guard engine so focus bypass rules see the live session.
+    private val _state = c.focusState
     val state: StateFlow<FocusState> = _state.asStateFlow()
 
     /** Wall clock for UI; ticks only while running. */

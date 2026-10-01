@@ -13,9 +13,20 @@ import com.rewire.app.core.datastore.SettingsRepository
 import com.rewire.app.core.notifications.RewireNotifier
 import com.rewire.app.data.EventRepository
 import com.rewire.app.data.HabitRepository
-import com.rewire.app.data.InMemoryEventRepository
-import com.rewire.app.data.InMemoryHabitRepository
-import com.rewire.app.data.InMemoryWarningRepository
+import com.rewire.app.core.guard.HabitEngine
+import com.rewire.app.core.guard.UsageTracker
+import com.rewire.app.data.JsonStore
+import com.rewire.app.data.PersistentEventRepository
+import com.rewire.app.data.PersistentHabitRepository
+import com.rewire.app.data.PersistentWarningRepository
+import com.rewire.app.domain.analytics.HabitEvent
+import com.rewire.app.domain.focus.FocusState
+import com.rewire.app.domain.habit.HabitProfile
+import com.rewire.app.domain.warning.Warning
+import kotlinx.coroutines.MainScope
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.serialization.builtins.ListSerializer
+import java.io.File
 import com.rewire.app.data.WarningRepository
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -31,12 +42,24 @@ class AppContainer(context: Context) {
     val settingsRepository = SettingsRepository(context)
     val settings: StateFlow<Settings?> = settingsRepository.settings.stateIn(appScope, SharingStarted.Eagerly, null)
 
-    val habits: HabitRepository = InMemoryHabitRepository()
-    val warnings: WarningRepository = InMemoryWarningRepository(
-        context.resources.openRawResource(R.raw.default_warnings).bufferedReader().use { it.readText() }
+    private val files = context.filesDir
+    val habits: HabitRepository = PersistentHabitRepository(
+        JsonStore(File(files, "habits.json"), ListSerializer(HabitProfile.serializer()), appScope) { emptyList() }
     )
-    val events: EventRepository = InMemoryEventRepository()
+    val warnings: WarningRepository = PersistentWarningRepository(
+        JsonStore(File(files, "warnings.json"), ListSerializer(Warning.serializer()), appScope) {
+            PersistentWarningRepository.defaults(context.resources.openRawResource(R.raw.default_warnings).bufferedReader().use { it.readText() })
+        }
+    )
+    val events: EventRepository = PersistentEventRepository(
+        JsonStore(File(files, "events.json"), ListSerializer(HabitEvent.serializer()), appScope) { emptyList() }
+    )
+
+    /** The one focus session; written by FocusViewModel, read by the Guard engine for bypass rules. */
+    val focusState = MutableStateFlow(FocusState())
     val installedApps = InstalledAppsSource(context)
+
+    val engine = HabitEngine(context, habits, events, settings, focusState, UsageTracker(context), MainScope())
 
     val notifier = RewireNotifier(context) { category -> settings.value?.notifications?.get(category) ?: true }
 }

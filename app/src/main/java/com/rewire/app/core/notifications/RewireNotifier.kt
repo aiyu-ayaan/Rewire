@@ -46,6 +46,7 @@ class RewireNotifier(
         const val FOCUS_ONGOING = 1001
         const val FOCUS_ALERT = 1002
         const val TEST = 1900
+        const val PROTECTION_OFF = 1500
     }
 
     fun createChannels() {
@@ -117,6 +118,18 @@ class RewireNotifier(
     }
 
     // ---- Misc --------------------------------------------------------------------------------
+
+    /** CLAUDE.md §28 "monitoring disabled": system channel, always on, opens Guard. */
+    fun protectionOff() {
+        val n = base(Channels.SYSTEM, DeepLink.GUARD)
+            .setContentTitle(context.getString(R.string.notif_protection_off_title))
+            .setContentText(context.getString(R.string.notif_protection_off_text))
+            .setAutoCancel(true)
+            .build()
+        post(null, Ids.PROTECTION_OFF, n)
+    }
+
+    fun cancelProtectionOff() = manager.cancel(Ids.PROTECTION_OFF)
 
     /** Lets user verify delivery from Profile → Notifications. Bypasses category prefs on purpose. */
     fun sendTest(): Boolean {
