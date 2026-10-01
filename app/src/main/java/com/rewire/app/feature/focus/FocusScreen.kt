@@ -23,6 +23,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.navigationBarsPadding
 import androidx.compose.foundation.layout.statusBarsPadding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.layout.widthIn
@@ -31,6 +32,7 @@ import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.rounded.Add
+import androidx.compose.material.icons.rounded.Fullscreen
 import androidx.compose.material.icons.rounded.Pause
 import androidx.compose.material.icons.rounded.PlayArrow
 import androidx.compose.material.icons.rounded.Remove
@@ -82,17 +84,18 @@ import com.rewire.app.domain.focus.FocusConfig
 import com.rewire.app.domain.focus.FocusConfigError
 import com.rewire.app.domain.focus.FocusSessionStatus
 import com.rewire.app.domain.focus.FocusState
-import com.rewire.app.rewireViewModel
 import com.rewire.app.ui.components.MorphingShape
 import com.rewire.app.ui.components.heroBrush
 import com.rewire.app.ui.components.SectionTitle
+import com.rewire.app.ui.HideNavigationBar
 import com.rewire.app.ui.components.formatMinutes
+import com.rewire.app.ui.components.sharedBoundsOrSelf
 import com.rewire.app.ui.theme.TimerTextStyle
 import kotlinx.coroutines.launch
 
 @Composable
-fun FocusScreen() {
-    val vm = rewireViewModel { FocusViewModel(it) }
+fun FocusScreen(onFullscreen: () -> Unit) {
+    val vm = focusViewModel()
     val state by vm.state.collectAsStateWithLifecycle()
     val now by vm.now.collectAsStateWithLifecycle()
     val draft by vm.draft.collectAsStateWithLifecycle()
@@ -103,6 +106,8 @@ fun FocusScreen() {
         FocusSessionStatus.COMPLETED, FocusSessionStatus.CANCELLED -> 2
         else -> 1
     }
+    // Setup is the tab's base screen; timer + result are "inside" it, so the bottom bar steps away.
+    HideNavigationBar(hide = mode != 0)
     val motion = MaterialTheme.motionScheme
     val effects = motion.defaultEffectsSpec<Float>()
     val spatial = motion.defaultSpatialSpec<Float>()
@@ -114,7 +119,7 @@ fun FocusScreen() {
     ) { m ->
         when (m) {
             0 -> FocusSetup(draft, bypass, vm::setDraft, vm::setBypass, vm::start)
-            1 -> FocusRunning(state, now, vm::pause, vm::resume, vm::skipBreak, vm::end)
+            1 -> FocusRunning(state, now, vm::pause, vm::resume, vm::skipBreak, vm::end, onFullscreen)
             else -> FocusFinished(state, onDone = vm::reset)
         }
     }
@@ -254,28 +259,31 @@ private fun BypassRow(title: String, body: String, checked: Boolean, onChange: (
 // ---- Running ------------------------------------------------------------------------------------
 
 @Composable
-private fun FocusRunning(state: FocusState, now: Long, onPause: () -> Unit, onResume: () -> Unit, onSkipBreak: () -> Unit, onEnd: () -> Unit) {
+private fun FocusRunning(state: FocusState, now: Long, onPause: () -> Unit, onResume: () -> Unit, onSkipBreak: () -> Unit, onEnd: () -> Unit, onFullscreen: () -> Unit) {
     val paused = state.status == FocusSessionStatus.PAUSED
     val onBreak = state.phase == FocusSessionStatus.BREAK
     val c = MaterialTheme.colorScheme
     val ringColor = if (onBreak) c.tertiary else c.primary
     val amplitude by animateFloatAsState(if (paused) 0f else 1f, MaterialTheme.motionScheme.slowEffectsSpec(), label = "amp")
-    val remaining = RewireNotifier.formatRemaining(state.remaining(now))
 
     Column(
-        Modifier.fillMaxSize().statusBarsPadding().padding(16.dp),
+        Modifier.fillMaxSize().statusBarsPadding().navigationBarsPadding().padding(16.dp),
         horizontalAlignment = Alignment.CenterHorizontally,
     ) {
-        Surface(shape = CircleShape, color = if (onBreak) c.tertiaryContainer else c.primaryContainer, modifier = Modifier.padding(top = 16.dp)) {
-            Text(
-                when { paused -> "Paused"; onBreak -> "Break"; else -> "Deep work" },
-                style = MaterialTheme.typography.labelLarge,
-                modifier = Modifier.padding(horizontal = 16.dp, vertical = 8.dp),
-            )
+        Box(Modifier.fillMaxWidth().padding(top = 8.dp), contentAlignment = Alignment.Center) {
+            Surface(shape = CircleShape, color = if (onBreak) c.tertiaryContainer else c.primaryContainer) {
+                Text(
+                    when { paused -> "Paused"; onBreak -> "Break"; else -> "Deep work" },
+                    style = MaterialTheme.typography.labelLarge,
+                    modifier = Modifier.padding(horizontal = 16.dp, vertical = 8.dp),
+                )
+            }
+            FilledTonalIconButton(onClick = onFullscreen, shapes = IconButtonDefaults.shapes(), modifier = Modifier.align(Alignment.CenterEnd)) {
+                Icon(Icons.Rounded.Fullscreen, contentDescription = "Full screen timer")
+            }
         }
         Spacer(Modifier.weight(1f))
         Box(contentAlignment = Alignment.Center, modifier = Modifier.semantics(mergeDescendants = true) {
-            contentDescription = "$remaining remaining"
             stateDescription = if (paused) "Paused" else if (onBreak) "Break" else "Focusing"
         }) {
             CircularWavyProgressIndicator(
@@ -285,7 +293,7 @@ private fun FocusRunning(state: FocusState, now: Long, onPause: () -> Unit, onRe
                 modifier = Modifier.size(300.dp),
             )
             Column(horizontalAlignment = Alignment.CenterHorizontally) {
-                Text(remaining, style = TimerTextStyle)
+                RollingTime(state.remaining(now), TimerTextStyle, c.onSurface, Modifier.sharedBoundsOrSelf(TIMER_KEY))
                 Text("Session ${state.cycle} / ${state.config.cycles}", style = MaterialTheme.typography.titleMedium, color = c.onSurfaceVariant)
             }
         }
@@ -354,7 +362,7 @@ private fun HoldToEnd(onEnd: () -> Unit) {
 private fun FocusFinished(state: FocusState, onDone: () -> Unit) {
     val completed = state.status == FocusSessionStatus.COMPLETED
     Column(
-        Modifier.fillMaxSize().statusBarsPadding().padding(24.dp),
+        Modifier.fillMaxSize().statusBarsPadding().navigationBarsPadding().padding(24.dp),
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center,
     ) {
