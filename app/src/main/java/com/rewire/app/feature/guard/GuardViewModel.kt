@@ -39,6 +39,8 @@ class HabitDetailViewModel(private val c: AppContainer, id: String) : ViewModel(
     fun usageMinutesToday(): Int? =
         habit.value?.let { p -> c.usage.minutesToday(p.apps.map { it.packageName }.toSet()) }
 
+    val hasUsageAccess: Boolean get() = c.usage.hasPermission()
+
     private fun edit(block: (HabitProfile) -> HabitProfile) { habit.value?.let { c.habits.update(block(it)) } }
 
     fun setEnabled(on: Boolean) = edit { it.copy(habit = it.habit.copy(enabled = on)) }

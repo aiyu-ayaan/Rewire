@@ -20,7 +20,9 @@ import androidx.compose.material.icons.automirrored.rounded.ArrowBack
 import androidx.compose.material.icons.rounded.Add
 import androidx.compose.material.icons.rounded.Close
 import androidx.compose.material.icons.rounded.DeleteOutline
+import androidx.compose.material.icons.rounded.Info
 import androidx.compose.material.icons.rounded.Visibility
+import com.rewire.app.core.permissions.SystemPermissions
 import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.AssistChip
 import androidx.compose.material3.Button
@@ -201,6 +203,51 @@ private fun BoundariesCard(p: HabitProfile, vm: HabitDetailViewModel) {
                 display = { if (it == 0) "No limit" else formatMinutes(it) },
                 onCommit = { vm.setDailyLimit(it.takeIf { v -> v > 0 }) },
             )
+            if (p.rule.dailyLimitMinutes != null && !vm.hasUsageAccess) {
+                val context = LocalContext.current
+                Surface(
+                    shape = MaterialTheme.shapes.medium,
+                    color = MaterialTheme.colorScheme.errorContainer.copy(alpha = 0.7f),
+                    modifier = Modifier.fillMaxWidth(),
+                ) {
+                    Row(
+                        modifier = Modifier.padding(12.dp),
+                        verticalAlignment = Alignment.CenterVertically,
+                    ) {
+                        Icon(
+                            Icons.Rounded.Info,
+                            contentDescription = null,
+                            tint = MaterialTheme.colorScheme.onErrorContainer,
+                            modifier = Modifier.size(20.dp),
+                        )
+                        Spacer(Modifier.width(10.dp))
+                        Column(Modifier.weight(1f)) {
+                            Text(
+                                "Usage access required",
+                                style = MaterialTheme.typography.titleSmall,
+                                color = MaterialTheme.colorScheme.onErrorContainer,
+                            )
+                            Text(
+                                "Daily limit tracking needs Usage access to count screen time. Tap to grant.",
+                                style = MaterialTheme.typography.bodySmall,
+                                color = MaterialTheme.colorScheme.onErrorContainer,
+                            )
+                        }
+                        Spacer(Modifier.width(8.dp))
+                        FilledTonalButton(
+                            onClick = {
+                                SystemPermissions.open(
+                                    context,
+                                    SystemPermissions.usageAccessSettings(context),
+                                )
+                            },
+                            contentPadding = PaddingValues(horizontal = 12.dp, vertical = 4.dp),
+                        ) {
+                            Text("Grant")
+                        }
+                    }
+                }
+            }
             SliderSetting(
                 title = "Launch limit",
                 value = p.rule.maxLaunches ?: 0, range = 0..30, step = 1,

@@ -14,6 +14,8 @@ import java.time.ZoneId
  */
 class UsageTracker(private val context: Context) {
 
+    fun hasPermission(): Boolean = SystemPermissions.usageAccessGranted(context)
+
     /**
      * Total foreground minutes today across [packages].
      * Returns null when Usage access isn't granted.

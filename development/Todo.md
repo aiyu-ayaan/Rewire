@@ -117,7 +117,7 @@ notifications production-ready. Data in memory + DataStore (Room = Phase 2).
 - [x] Habits, warnings, events persisted (JSON files, atomic writes) -> rules work with UI never opened / after process death
 - [x] "Protection is off" banner on Guard + system notification when the service stops
 - [x] Usage-based daily limit via UsageStats events (needs Usage access; skipped if not granted)
-- [ ] Daily-limit UI hint when Usage access missing
+- [x] Daily-limit UI hint when Usage access missing
 - [ ] Foreground-service focus timer (focus bypass currently needs the app process alive — it is while a11y runs)
 - [ ] Engine unit tests with fakes (decision -> outcome flows)
 
