@@ -110,7 +110,8 @@ notifications production-ready. Data in memory + DataStore (Room = Phase 2).
 ### 1.14 Real enforcement (pulled forward from Phase 3, 2026-10-01)
 - [x] `RuleEngine` (domain, 10 tests): Minor/Major warn, Max blocks on window / launch limit / daily limit, Max w/o boundary = always, focus bypass, overnight windows, next-boundary time
 - [x] `HabitEngine`: accessibility foreground change -> decision -> guard screen -> events; main-thread, no polling (re-check scheduled at exact boundary)
-- [x] Guard screen over Home (send Home first) -> protected app can't resume over it; abandoning never re-triggers (no loops)
+- [x] Guard screen over Home (Home + guard in one startActivities) -> protected app can't resume over it; abandoning never re-triggers (no loops)
+- [x] Guard hardening (device-verified, all 3 levels): recents/relaunch over guard re-judged, dropped guard never wedges engine, System UI overlays don't end a visit, reconnect after process death judges the open app
 - [x] Continue / emergency let exactly one visit through; next open judged again
 - [x] Emergency unlock requires device screen lock (BiometricPrompt: biometric or PIN/pattern/password)
 - [x] Max-blocked apps' notifications hidden (NotificationListenerService, content never read), `NOTIFICATION_BLOCKED` logged
