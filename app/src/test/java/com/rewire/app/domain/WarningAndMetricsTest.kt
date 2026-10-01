@@ -5,6 +5,7 @@ import com.rewire.app.data.PersistentWarningRepository
 import com.rewire.app.domain.analytics.HabitEvent
 import com.rewire.app.domain.analytics.HabitEventType
 import com.rewire.app.domain.analytics.MetricsCalculator
+import com.rewire.app.domain.analytics.Punchlines
 import com.rewire.app.domain.habit.WarningLevel
 import com.rewire.app.domain.warning.Warning
 import com.rewire.app.domain.warning.WarningCategory
@@ -68,5 +69,38 @@ class WarningAndMetricsTest {
         val list = PersistentWarningRepository.defaults(File("src/main/res/raw/default_warnings.json").readText())
         assertEquals(list.size, list.map { it.id }.toSet().size)
         WarningLevel.entries.forEach { l -> assert(list.count { it.level == l } >= 5) }
+    }
+
+    @Test fun breakdownGroupsGuardEventsByKeySinceCutoff() {
+        val t = 1_000_000L
+        val events = listOf(
+            HabitEvent("1", HabitEventType.WARNING_SHOWN, "insta", "doom", t),
+            HabitEvent("2", HabitEventType.WENT_BACK, "insta", "doom", t),
+            HabitEvent("3", HabitEventType.APP_BLOCKED, "steam", "gaming", t),
+            HabitEvent("4", HabitEventType.OVERRIDE_USED, "steam", "gaming", t),
+            HabitEvent("5", HabitEventType.APP_BLOCKED, "steam", "gaming", t),
+            HabitEvent("6", HabitEventType.WARNING_SHOWN, "insta", "doom", t - 1), // before cutoff
+            HabitEvent("7", HabitEventType.FOCUS_COMPLETED, null, null, t), // not guard
+        )
+        val b = MetricsCalculator.breakdown(events, t) { it.habitId }
+        assertEquals(listOf("gaming", "doom"), b.map { it.key })
+        assertEquals(2, b[0].moments); assertEquals(1, b[0].overrides)
+        assertEquals(1, b[1].moments); assertEquals(1, b[1].wentBack)
+    }
+
+    @Test fun peakHourPicksBusiestHour() {
+        val base = LocalDate.of(2026, 10, 1).atStartOfDay().toInstant(ZoneOffset.UTC).toEpochMilli()
+        val h = 3_600_000L
+        val events = listOf(22, 22, 9).mapIndexed { i, hr -> HabitEvent("$i", HabitEventType.WARNING_SHOWN, "p", "h", base + hr * h) }
+        assertEquals(22, MetricsCalculator.peakHour(events, 0, ZoneOffset.UTC))
+        assertNull(MetricsCalculator.peakHour(emptyList(), 0, ZoneOffset.UTC))
+    }
+
+    @Test fun punchlinesNullWithoutDataAndStableForSeed() {
+        assertNull(Punchlines.focus(0, 1))
+        assertNull(Punchlines.guard(0, 0, 1))
+        assertEquals(Punchlines.focus(300, 7), Punchlines.focus(300, 7))
+        assert(Punchlines.focus(2, 0)!!.contains("2m"))
+        repeat(10) { assert(Punchlines.focus(30, it.toLong())!!.contains("≈")) }
     }
 }
