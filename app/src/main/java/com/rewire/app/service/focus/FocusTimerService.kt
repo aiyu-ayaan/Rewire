@@ -9,7 +9,9 @@ import android.os.IBinder
 import android.os.PowerManager
 import androidx.core.app.ServiceCompat
 import androidx.core.content.ContextCompat
-import com.rewire.app.RewireApp
+import com.rewire.app.core.focus.FocusController
+import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 import com.rewire.app.core.notifications.RewireNotifier
 import com.rewire.app.domain.focus.FocusState
 import kotlinx.coroutines.MainScope
@@ -21,23 +23,26 @@ import kotlinx.coroutines.launch
  * Pure platform glue: the timer itself is [com.rewire.app.core.focus.FocusController]; this service
  * only holds the foreground notification and a wake lock so phase changes fire on time.
  */
+@AndroidEntryPoint
 class FocusTimerService : Service() {
+    @Inject lateinit var focus: FocusController
+    @Inject lateinit var notifier: RewireNotifier
+
 
     private val scope = MainScope()
     private var wakeLock: PowerManager.WakeLock? = null
 
     override fun onCreate() {
         super.onCreate()
-        val c = (application as RewireApp).container
         // startForeground must run within seconds of startForegroundService, before anything else.
-        promote(c.notifier, c.focus.current.value)
+        promote(notifier, focus.current.value)
         scope.launch {
-            c.focus.current.collect { s ->
+            focus.current.collect { s ->
                 if (!s.isActive) {
                     stopSelf()
                     return@collect
                 }
-                promote(c.notifier, s)
+                promote(notifier, s)
                 holdWakeLock(s)
             }
         }
@@ -45,9 +50,8 @@ class FocusTimerService : Service() {
 
     // Sticky: if Android kills the process, it recreates the service and RewireApp restores the session from Room.
     override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
-        val c = (application as RewireApp).container
-        val s = c.focus.current.value
-        promote(c.notifier, s) // every startForegroundService needs a matching startForeground
+        val s = focus.current.value
+        promote(notifier, s) // every startForegroundService needs a matching startForeground
         if (!s.isActive) stopSelf()
         return START_STICKY
     }
@@ -75,7 +79,7 @@ class FocusTimerService : Service() {
     override fun onDestroy() {
         scope.cancel()
         wakeLock?.takeIf { it.isHeld }?.release()
-        (application as RewireApp).container.notifier.cancelFocusOngoing()
+        notifier.cancelFocusOngoing()
         super.onDestroy()
     }
 

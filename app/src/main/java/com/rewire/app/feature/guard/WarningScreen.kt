@@ -1,6 +1,8 @@
 package com.rewire.app.feature.guard
 
 import androidx.compose.animation.core.animateFloatAsState
+import androidx.compose.runtime.setValue
+import androidx.compose.runtime.getValue
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -32,11 +34,9 @@ import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
-import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
-import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.alpha
@@ -47,7 +47,15 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.rewire.app.R
-import com.rewire.app.RewireApp
+import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
+import androidx.lifecycle.ViewModel
+import com.rewire.app.core.apps.InstalledAppsSource
+import com.rewire.app.core.settings.Settings
+import com.rewire.app.data.HabitRepository
+import com.rewire.app.data.WarningRepository
+import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.flow.StateFlow
+import javax.inject.Inject
 import com.rewire.app.domain.habit.HabitProfile
 import com.rewire.app.domain.habit.WarningLevel
 import com.rewire.app.domain.warning.Warning
@@ -58,17 +66,25 @@ import com.rewire.app.ui.components.formatClock
 import com.rewire.app.ui.components.style
 import kotlinx.coroutines.delay
 
+@HiltViewModel
+class WarningPreviewViewModel @Inject constructor(
+    val habits: HabitRepository,
+    val warnings: WarningRepository,
+    val settings: StateFlow<Settings?>,
+    val installedApps: InstalledAppsSource,
+) : ViewModel()
+
 /** Preview of what the habit's warning will look like. Phase 3 reuses [WarningScreen] in the overlay. */
 @Composable
 fun WarningPreviewScreen(habitId: String, onClose: () -> Unit) {
-    val container = (LocalContext.current.applicationContext as RewireApp).container
-    val profile = remember(habitId) { container.habits.habits.value.find { it.id == habitId } }
+    val vm = hiltViewModel<WarningPreviewViewModel>()
+    val profile = remember(habitId) { vm.habits.habits.value.find { it.id == habitId } }
     if (profile == null) { LaunchedEffect(Unit) { onClose() }; return }
-    val settings by container.settings.collectAsStateWithLifecycle()
-    val warnings by container.warnings.warnings.collectAsStateWithLifecycle()
+    val settings by vm.settings.collectAsStateWithLifecycle()
+    val warnings by vm.warnings.warnings.collectAsStateWithLifecycle()
     val warning = remember(profile.level) { WarningPicker.pick(warnings, profile.level) }
     val app = profile.apps.firstOrNull()?.packageName
-    val appLabel = remember(app) { app?.let(container.installedApps::label) ?: profile.habit.name }
+    val appLabel = remember(app) { app?.let(vm.installedApps::label) ?: profile.habit.name }
     val userReason = settings?.profile?.reason?.takeIf { it.isNotBlank() }
     WarningScreen(profile, warning, app, appLabel, preview = true, userReason = userReason, onGoBack = onClose, onContinue = onClose)
 }

@@ -1,6 +1,8 @@
 package com.rewire.app.feature.profile
 
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.runtime.setValue
+import androidx.compose.runtime.getValue
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
@@ -36,28 +38,33 @@ import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.saveable.rememberSaveable
-import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.input.nestedscroll.nestedScroll
-import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.semantics.contentDescription
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import com.rewire.app.RewireApp
+import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
+import androidx.lifecycle.ViewModel
+import com.rewire.app.data.WarningRepository
+import dagger.hilt.android.lifecycle.HiltViewModel
+import javax.inject.Inject
 import com.rewire.app.domain.habit.WarningLevel
 import com.rewire.app.domain.warning.Warning
 import com.rewire.app.feature.guard.LevelSelector
 import com.rewire.app.ui.components.LevelBadge
 import com.rewire.app.ui.components.style
 
+/** Warning library CRUD; thin on purpose, rules live in [WarningRepository]. */
+@HiltViewModel
+class WarningLibraryViewModel @Inject constructor(private val repo: WarningRepository) : ViewModel(), WarningRepository by repo
+
 @Composable
 fun WarningLibraryScreen(onBack: () -> Unit) {
-    val repo = (LocalContext.current.applicationContext as RewireApp).container.warnings
+    val repo = hiltViewModel<WarningLibraryViewModel>()
     val warnings by repo.warnings.collectAsStateWithLifecycle()
     var filter by rememberSaveable { mutableStateOf<WarningLevel?>(null) }
     var adding by rememberSaveable { mutableStateOf(false) }

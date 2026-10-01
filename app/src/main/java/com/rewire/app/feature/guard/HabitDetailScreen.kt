@@ -1,6 +1,8 @@
 package com.rewire.app.feature.guard
 
 import androidx.compose.animation.AnimatedVisibility
+import androidx.compose.runtime.setValue
+import androidx.compose.runtime.getValue
 import androidx.compose.animation.animateColorAsState
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -49,13 +51,11 @@ import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.material3.rememberModalBottomSheetState
 import androidx.compose.material3.rememberTimePickerState
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableFloatStateOf
 import androidx.compose.runtime.mutableStateListOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.saveable.rememberSaveable
-import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
@@ -63,10 +63,10 @@ import androidx.compose.ui.semantics.contentDescription
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import com.rewire.app.RewireApp
+
 import com.rewire.app.domain.habit.HabitProfile
 import com.rewire.app.domain.habit.WarningLevel
-import com.rewire.app.rewireViewModel
+import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import com.rewire.app.ui.components.AppIcon
 import com.rewire.app.ui.components.SectionTitle
 import com.rewire.app.ui.components.formatClock
@@ -77,7 +77,7 @@ import kotlin.math.roundToInt
 
 @Composable
 fun HabitDetailScreen(habitId: String, onBack: () -> Unit, onPreview: (String) -> Unit) {
-    val vm = rewireViewModel(key = habitId) { HabitDetailViewModel(it, habitId) }
+    val vm = hiltViewModel<HabitDetailViewModel, HabitDetailViewModel.Factory>(key = habitId) { it.create(habitId) }
     val profile by vm.habit.collectAsStateWithLifecycle()
     val p = profile ?: return // deleted -> caller already popped
     var pickingApps by rememberSaveable { mutableStateOf(false) }
@@ -140,7 +140,7 @@ fun HabitDetailScreen(habitId: String, onBack: () -> Unit, onPreview: (String) -
                 }
                 items(p.apps, key = { it.packageName }) { app ->
                     val ctx = LocalContext.current
-                    val label = remember(app.packageName) { (ctx.applicationContext as RewireApp).container.installedApps.label(app.packageName) }
+                    val label = remember(app.packageName) { vm.appLabel(app.packageName) }
                     ListItem(
                         headlineContent = { Text(label) },
                         leadingContent = { AppIcon(app.packageName) },

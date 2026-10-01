@@ -79,7 +79,7 @@ import androidx.core.view.WindowInsetsControllerCompat
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.rewire.app.core.notifications.RewireNotifier
 import com.rewire.app.domain.focus.FocusSessionStatus
-import com.rewire.app.rewireViewModel
+import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import com.rewire.app.ui.components.sharedBoundsOrSelf
 import com.rewire.app.ui.theme.DarkColors
 import com.rewire.app.ui.theme.TimerTextStyle
@@ -92,7 +92,7 @@ const val TIMER_KEY = "focus-timer"
 /** One focus timer for the whole activity: tab screen and fullscreen route share it. */
 @Composable
 fun focusViewModel(): FocusViewModel =
-    rewireViewModel(owner = LocalActivity.current as ComponentActivity) { FocusViewModel(it) }
+    hiltViewModel<FocusViewModel>(LocalActivity.current as ComponentActivity)
 
 /** True-black scheme: AMOLED pixels off everywhere except the digits and thin progress. */
 private val AmoledColors = DarkColors.copy(

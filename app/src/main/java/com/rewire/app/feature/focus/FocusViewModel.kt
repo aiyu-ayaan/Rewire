@@ -2,7 +2,12 @@ package com.rewire.app.feature.focus
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.rewire.app.AppContainer
+import com.rewire.app.core.focus.FocusController
+import com.rewire.app.core.notifications.FocusDndManager
+import com.rewire.app.core.settings.Settings
+import com.rewire.app.core.settings.SettingsRepository
+import dagger.hilt.android.lifecycle.HiltViewModel
+import javax.inject.Inject
 import com.rewire.app.core.settings.FocusBypass
 import com.rewire.app.domain.focus.FocusConfig
 import com.rewire.app.domain.focus.FocusSession
@@ -16,44 +21,50 @@ import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.launch
 
 /** UI facade over the app-scoped [com.rewire.app.core.focus.FocusController]; the timer itself survives this ViewModel. */
-class FocusViewModel(private val c: AppContainer) : ViewModel() {
+@HiltViewModel
+class FocusViewModel @Inject constructor(
+    private val focus: FocusController,
+    private val settingsRepository: SettingsRepository,
+    private val dnd: FocusDndManager,
+    settings: StateFlow<Settings?>,
+) : ViewModel() {
 
-    val state: StateFlow<FocusState> = c.focus.current
-    val now: StateFlow<Long> = c.focus.now
-    val awaitingNote: StateFlow<FocusSession?> = c.focus.awaitingNote
+    val state: StateFlow<FocusState> = focus.current
+    val now: StateFlow<Long> = focus.now
+    val awaitingNote: StateFlow<FocusSession?> = focus.awaitingNote
 
     private val _draft = MutableStateFlow(FocusConfig(focusMinutes = 25, breakMinutes = 5, cycles = 4))
     val draft: StateFlow<FocusConfig> = _draft.asStateFlow()
 
-    val bypass: StateFlow<FocusBypass?> = c.settings.map { it?.focusBypass }.stateIn(viewModelScope, SharingStarted.Eagerly, null)
-    val focusDndEnabled: StateFlow<Boolean?> = c.settings.map { it?.focusDndEnabled }.stateIn(viewModelScope, SharingStarted.Eagerly, null)
+    val bypass: StateFlow<FocusBypass?> = settings.map { it?.focusBypass }.stateIn(viewModelScope, SharingStarted.Eagerly, null)
+    val focusDndEnabled: StateFlow<Boolean?> = settings.map { it?.focusDndEnabled }.stateIn(viewModelScope, SharingStarted.Eagerly, null)
 
-    val isDndAccessGranted: Boolean get() = c.dndManager.isAccessGranted
-    fun dndSettingsIntent() = c.dndManager.dndSettingsIntent()
+    val isDndAccessGranted: Boolean get() = dnd.isAccessGranted
+    fun dndSettingsIntent() = dnd.dndSettingsIntent()
 
     fun setDraft(config: FocusConfig) {
         // Keep break <= focus while the user drags focus down.
         _draft.value = config.copy(breakMinutes = config.breakMinutes.coerceAtMost(config.focusMinutes))
     }
 
-    fun setBypass(b: FocusBypass) = viewModelScope.launch { c.settingsRepository.setFocusBypass(b) }
+    fun setBypass(b: FocusBypass) = viewModelScope.launch { settingsRepository.setFocusBypass(b) }
 
     fun setFocusDndEnabled(enabled: Boolean) = viewModelScope.launch {
-        c.settingsRepository.setFocusDndEnabled(enabled)
-        c.focus.onDndSettingChanged(enabled)
+        settingsRepository.setFocusDndEnabled(enabled)
+        focus.onDndSettingChanged(enabled)
     }
 
-    fun start() = c.focus.start(_draft.value)
+    fun start() = focus.start(_draft.value)
 
     /** Debug builds only: 20 s / 10 s session to exercise phase changes, chime and notifications fast. */
-    fun startQuickTest() = c.focus.start(FocusState.QUICK_TEST)
+    fun startQuickTest() = focus.start(FocusState.QUICK_TEST)
 
-    fun pause() = c.focus.pause()
-    fun resume() = c.focus.resume()
-    fun skipBreak() = c.focus.skipBreak()
-    fun end() = c.focus.end()
-    fun reset() = c.focus.reset(_draft.value)
+    fun pause() = focus.pause()
+    fun resume() = focus.resume()
+    fun skipBreak() = focus.skipBreak()
+    fun end() = focus.end()
+    fun reset() = focus.reset(_draft.value)
 
-    fun saveNote(note: String) = c.focus.saveNote(note)
-    fun skipNote() = c.focus.skipNote()
+    fun saveNote(note: String) = focus.saveNote(note)
+    fun skipNote() = focus.skipNote()
 }

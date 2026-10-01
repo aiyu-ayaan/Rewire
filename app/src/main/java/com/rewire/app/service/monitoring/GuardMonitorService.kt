@@ -7,7 +7,9 @@ import android.content.pm.ServiceInfo
 import android.os.Build
 import android.os.IBinder
 import androidx.core.content.ContextCompat
-import com.rewire.app.RewireApp
+import com.rewire.app.data.HabitRepository
+import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 import com.rewire.app.core.notifications.RewireNotifier
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -23,15 +25,16 @@ import kotlinx.coroutines.launch
  * so Android and aggressive OEM battery killers (ColorOS, MIUI, etc.) do not terminate habit guard.
  * Displays a persistent, low-priority ongoing notification.
  */
+@AndroidEntryPoint
 class GuardMonitorService : Service() {
+    @Inject lateinit var notifier: RewireNotifier
+    @Inject lateinit var habits: HabitRepository
 
     private val serviceScope = CoroutineScope(SupervisorJob() + Dispatchers.Default)
     private var watchdogJob: Job? = null
 
     override fun onCreate() {
         super.onCreate()
-        val app = application as? RewireApp ?: return
-        val notifier = app.container.notifier
         notifier.createChannels()
 
         val notification = notifier.guardOngoingNotification()
@@ -48,8 +51,7 @@ class GuardMonitorService : Service() {
     }
 
     override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
-        val app = application as? RewireApp
-        val hasActiveHabits = app?.container?.habits?.habits?.value?.any { it.habit.enabled } ?: false
+        val hasActiveHabits = habits.habits.value.any { it.habit.enabled }
         if (!hasActiveHabits) {
             stopSelf()
             return START_NOT_STICKY
@@ -60,11 +62,9 @@ class GuardMonitorService : Service() {
     private fun startWatchdog() {
         watchdogJob?.cancel()
         watchdogJob = serviceScope.launch {
-            val app = application as? RewireApp ?: return@launch
             while (isActive) {
                 delay(5_000)
-                val habits = app.container.habits.habits.value
-                val anyActive = habits.any { it.habit.enabled }
+                val anyActive = habits.habits.value.any { it.habit.enabled }
                 if (!anyActive) {
                     stopSelf()
                     break

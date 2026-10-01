@@ -1,6 +1,7 @@
 package com.rewire.app.feature.profile
 
 import android.os.Build
+import androidx.compose.runtime.getValue
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -17,11 +18,9 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.rounded.KeyboardArrowRight
 import androidx.compose.material.icons.rounded.Edit
 import androidx.compose.material.icons.rounded.Info
-import androidx.compose.material.icons.rounded.BatteryAlert
 import androidx.compose.material.icons.rounded.FormatQuote
 import androidx.compose.material.icons.rounded.Notifications
 import androidx.compose.material.icons.rounded.Palette
-import androidx.compose.material.icons.rounded.QueryStats
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.Icon
@@ -34,19 +33,14 @@ import androidx.compose.material3.SingleChoiceSegmentedButtonRow
 import androidx.compose.material3.Switch
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.vector.ImageVector
-import androidx.compose.ui.platform.LocalContext
-import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.rewire.app.BuildConfig
-import com.rewire.app.R
-import com.rewire.app.RewireApp
+import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
+import com.rewire.app.ui.SettingsViewModel
 import com.rewire.app.core.settings.ThemeMode
 import com.rewire.app.core.settings.UserProfile
 import com.rewire.app.core.permissions.PermissionsPanel
@@ -55,18 +49,14 @@ import com.rewire.app.ui.components.UserAvatar
 import com.rewire.app.ui.components.sharedBoundsOrSelf
 import com.rewire.app.core.notifications.PermissionStatus
 import com.rewire.app.core.notifications.rememberNotificationPermission
-import com.rewire.app.ui.components.MorphingShape
-import com.rewire.app.ui.components.heroBrush
 import com.rewire.app.ui.components.SectionTitle
-import kotlinx.coroutines.launch
 
 @Composable
 fun ProfileScreen(onOpenNotificationSettings: () -> Unit, onOpenWarningLibrary: () -> Unit, onEditProfile: () -> Unit, onOpenAbout: () -> Unit) {
-    val container = (LocalContext.current.applicationContext as RewireApp).container
-    val settings by container.settings.collectAsStateWithLifecycle()
-    val warnings by container.warnings.warnings.collectAsStateWithLifecycle()
+    val vm = hiltViewModel<SettingsViewModel>()
+    val settings by vm.settings.collectAsStateWithLifecycle()
+    val warnings by hiltViewModel<WarningLibraryViewModel>().warnings.collectAsStateWithLifecycle()
     val s = settings ?: return
-    val scope = rememberCoroutineScope()
     val permission = rememberNotificationPermission()
 
     Column(Modifier.fillMaxSize().statusBarsPadding().verticalScroll(rememberScrollState()).padding(horizontal = 16.dp).padding(bottom = 24.dp)) {
@@ -84,7 +74,7 @@ fun ProfileScreen(onOpenNotificationSettings: () -> Unit, onOpenWarningLibrary: 
                     ThemeMode.entries.forEachIndexed { i, mode ->
                         SegmentedButton(
                             selected = s.themeMode == mode,
-                            onClick = { scope.launch { container.settingsRepository.setThemeMode(mode) } },
+                            onClick = { vm.setThemeMode(mode) },
                             shape = SegmentedButtonDefaults.itemShape(i, ThemeMode.entries.size),
                         ) { Text(mode.name.lowercase().replaceFirstChar { it.uppercase() }) }
                     }
@@ -94,7 +84,7 @@ fun ProfileScreen(onOpenNotificationSettings: () -> Unit, onOpenWarningLibrary: 
                 ListItem(
                     headlineContent = { Text("Dynamic color") },
                     supportingContent = { Text("Match your wallpaper instead of Rewire teal.") },
-                    trailingContent = { Switch(s.dynamicColor, { on -> scope.launch { container.settingsRepository.setDynamicColor(on) } }) },
+                    trailingContent = { Switch(s.dynamicColor, vm::setDynamicColor) },
                     colors = groupItemColors(),
                 )
             }

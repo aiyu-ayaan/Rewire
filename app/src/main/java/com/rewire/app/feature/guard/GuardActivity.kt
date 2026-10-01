@@ -17,7 +17,14 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import com.rewire.app.RewireApp
+import com.rewire.app.core.apps.InstalledAppsSource
+import com.rewire.app.core.guard.HabitEngine
+import com.rewire.app.core.settings.Settings
+import com.rewire.app.data.HabitRepository
+import com.rewire.app.data.WarningRepository
+import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.flow.StateFlow
+import javax.inject.Inject
 import com.rewire.app.core.settings.ThemeMode
 import com.rewire.app.core.guard.GuardOutcome
 import com.rewire.app.domain.habit.WarningLevel
@@ -28,7 +35,13 @@ import com.rewire.app.ui.theme.RewireTheme
  * The real warning / block screen, launched by HabitEngine over the protected app.
  * Own task, excluded from recents. Every exit path reports an outcome so nothing is silently skipped.
  */
+@AndroidEntryPoint
 class GuardActivity : FragmentActivity() {
+    @Inject lateinit var engine: HabitEngine
+    @Inject lateinit var settingsState: StateFlow<Settings?>
+    @Inject lateinit var habitRepo: HabitRepository
+    @Inject lateinit var warningRepo: WarningRepository
+    @Inject lateinit var installedApps: InstalledAppsSource
 
     private data class Request(val pkg: String, val habitId: String, val level: WarningLevel, val blockReason: String?)
 
@@ -36,7 +49,6 @@ class GuardActivity : FragmentActivity() {
     private var resolved = false
     /** System auth screen (PIN/pattern) stops us; that's not the user abandoning the block. */
     private var authenticating = false
-    private val engine get() = (application as RewireApp).container.engine
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -44,16 +56,15 @@ class GuardActivity : FragmentActivity() {
         enableEdgeToEdge()
         request = intent.toRequest() ?: return finish()
         onBackPressedDispatcher.addCallback(this) { goBack() }
-        val container = (application as RewireApp).container
         setContent {
-            val settings by container.settings.collectAsStateWithLifecycle()
-            val habits by container.habits.habits.collectAsStateWithLifecycle()
-            val warnings by container.warnings.warnings.collectAsStateWithLifecycle()
+            val settings by settingsState.collectAsStateWithLifecycle()
+            val habits by habitRepo.habits.collectAsStateWithLifecycle()
+            val warnings by warningRepo.warnings.collectAsStateWithLifecycle()
             val req = request ?: return@setContent
             val profile = habits.find { it.id == req.habitId } ?: return@setContent
             val shown = profile.copy(rule = profile.rule.copy(warningLevel = req.level))
             val warning = remember(req) { WarningPicker.pick(warnings, req.level) }
-            val label = remember(req.pkg) { container.installedApps.label(req.pkg) }
+            val label = remember(req.pkg) { installedApps.label(req.pkg) }
             val userReason = settings?.profile?.reason?.takeIf { it.isNotBlank() }
             RewireTheme(themeMode = settings?.themeMode ?: ThemeMode.SYSTEM, dynamicColor = settings?.dynamicColor ?: false) {
                 WarningScreen(

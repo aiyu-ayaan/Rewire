@@ -1,5 +1,10 @@
 package com.rewire.app
 
+import com.rewire.app.core.focus.FocusController
+import com.rewire.app.core.settings.Settings
+import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.flow.StateFlow
+import javax.inject.Inject
 import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
@@ -27,7 +32,11 @@ import com.rewire.app.core.notifications.RewireNotifier
 import com.rewire.app.ui.RewireNavHost
 import com.rewire.app.ui.theme.RewireTheme
 
+@AndroidEntryPoint
 class MainActivity : ComponentActivity() {
+    @Inject lateinit var settingsState: StateFlow<Settings?>
+    @Inject lateinit var notifier: RewireNotifier
+    @Inject lateinit var focus: FocusController
 
     private var deepLink by mutableStateOf<DeepLink?>(null)
 
@@ -52,9 +61,8 @@ class MainActivity : ComponentActivity() {
         }
         enableEdgeToEdge()
         if (savedInstanceState == null) deepLink = intent.deepLink()
-        val container = (application as RewireApp).container
         setContent {
-            val settings by container.settings.collectAsStateWithLifecycle()
+            val settings by settingsState.collectAsStateWithLifecycle()
             val s = settings
             val mode = s?.themeMode ?: ThemeMode.SYSTEM
             val dark = mode == ThemeMode.DARK || (mode == ThemeMode.SYSTEM && isSystemInDarkTheme())
@@ -84,15 +92,14 @@ class MainActivity : ComponentActivity() {
 
     override fun onStart() {
         super.onStart()
-        (application as RewireApp).container.notifier.cancelFocusMinimised()
+        notifier.cancelFocusMinimised()
     }
 
     // Leaving mid-session (home, recents, another app) pops a heads-up so the user knows the timer runs on.
     override fun onStop() {
         super.onStop()
         if (isChangingConfigurations) return
-        val c = (application as RewireApp).container
-        c.notifier.focusMinimised(c.focus.current.value, System.currentTimeMillis())
+        notifier.focusMinimised(focus.current.value, System.currentTimeMillis())
     }
 
     override fun onNewIntent(intent: Intent) {

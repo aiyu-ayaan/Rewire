@@ -45,7 +45,8 @@ import androidx.compose.ui.semantics.contentDescription
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import com.rewire.app.RewireApp
+import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
+import com.rewire.app.ui.SettingsViewModel
 import com.rewire.app.core.settings.NotificationCategory
 import com.rewire.app.core.notifications.NotificationRationaleCard
 import com.rewire.app.core.notifications.PermissionStatus
@@ -64,8 +65,8 @@ private val categories = listOf(
 @Composable
 fun NotificationSettingsScreen(onBack: () -> Unit) {
     val context = LocalContext.current
-    val container = (context.applicationContext as RewireApp).container
-    val settings by container.settings.collectAsStateWithLifecycle()
+    val vm = hiltViewModel<SettingsViewModel>()
+    val settings by vm.settings.collectAsStateWithLifecycle()
     val s = settings ?: return
     val permission = rememberNotificationPermission()
     val granted = permission.status == PermissionStatus.GRANTED
@@ -93,7 +94,7 @@ fun NotificationSettingsScreen(onBack: () -> Unit) {
             )
             Card(shape = MaterialTheme.shapes.large, colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surfaceContainerLow)) {
                 categories.forEach { info ->
-                    val systemOff = granted && info.channels.all { !container.notifier.channelEnabled(it) }
+                    val systemOff = granted && info.channels.all { !vm.channelEnabled(it) }
                     ListItem(
                         headlineContent = { Text(info.title) },
                         supportingContent = { Text(if (systemOff) "Turned off in system settings" else info.body) },
@@ -102,8 +103,8 @@ fun NotificationSettingsScreen(onBack: () -> Unit) {
                             Switch(
                                 checked = s.notifications[info.category] == true && !systemOff,
                                 onCheckedChange = { on ->
-                                    if (systemOff) context.startActivity(container.notifier.appSettingsIntent())
-                                    else scope.launch { container.settingsRepository.setNotification(info.category, on) }
+                                    if (systemOff) context.startActivity(vm.appNotificationSettingsIntent())
+                                    else vm.setNotification(info.category, on)
                                 },
                                 enabled = granted,
                                 modifier = Modifier.semantics { contentDescription = info.title },
@@ -115,7 +116,7 @@ fun NotificationSettingsScreen(onBack: () -> Unit) {
             }
             Spacer(Modifier.height(16.dp))
             Card(shape = MaterialTheme.shapes.large, colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surfaceContainerLow)) {
-                val dndGranted = container.dndManager.isAccessGranted
+                val dndGranted = vm.isDndAccessGranted
                 ListItem(
                     headlineContent = { Text("Silence during Focus") },
                     supportingContent = {
@@ -127,13 +128,13 @@ fun NotificationSettingsScreen(onBack: () -> Unit) {
                     leadingContent = { Icon(Icons.Rounded.DoNotDisturbOn, contentDescription = null) },
                     trailingContent = {
                         if (!dndGranted) {
-                            FilledTonalButton(onClick = { context.startActivity(container.dndManager.dndSettingsIntent()) }) {
+                            FilledTonalButton(onClick = { context.startActivity(vm.dndSettingsIntent()) }) {
                                 Text("Allow")
                             }
                         } else {
                             Switch(
                                 checked = s.focusDndEnabled,
-                                onCheckedChange = { on -> scope.launch { container.settingsRepository.setFocusDndEnabled(on); container.focus.onDndSettingChanged(on) } },
+                                onCheckedChange = vm::setFocusDnd,
                                 modifier = Modifier.semantics { contentDescription = "Silence during Focus" },
                             )
                         }
@@ -144,7 +145,7 @@ fun NotificationSettingsScreen(onBack: () -> Unit) {
             Spacer(Modifier.height(16.dp))
             FilledTonalButton(
                 onClick = {
-                    val sent = container.notifier.sendTest()
+                    val sent = vm.sendTestNotification()
                     scope.launch { snackbar.showSnackbar(if (sent) "Test sent. Check your shade." else "Can't send — notifications are off.") }
                 },
                 modifier = Modifier.fillMaxWidth(),
@@ -153,7 +154,7 @@ fun NotificationSettingsScreen(onBack: () -> Unit) {
                 Spacer(Modifier.width(8.dp))
                 Text("Send test notification")
             }
-            TextButton(onClick = { context.startActivity(container.notifier.appSettingsIntent()) }, modifier = Modifier.fillMaxWidth()) {
+            TextButton(onClick = { context.startActivity(vm.appNotificationSettingsIntent()) }, modifier = Modifier.fillMaxWidth()) {
                 Text("System notification settings")
                 Spacer(Modifier.width(6.dp))
                 Icon(Icons.AutoMirrored.Rounded.OpenInNew, contentDescription = null, modifier = Modifier.size(16.dp))

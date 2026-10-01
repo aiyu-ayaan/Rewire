@@ -13,14 +13,13 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.remember
-import androidx.compose.runtime.rememberCoroutineScope
 import androidx.navigation.NavDestination.Companion.hasRoute
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.toRoute
-import com.rewire.app.RewireApp
+import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import com.rewire.app.core.notifications.DeepLink
 import com.rewire.app.feature.focus.FocusFullscreenScreen
 import com.rewire.app.feature.focus.FocusHistoryScreen
@@ -36,9 +35,7 @@ import com.rewire.app.feature.profile.NotificationSettingsScreen
 import com.rewire.app.feature.profile.WarningLibraryScreen
 import com.rewire.app.ui.components.LocalNavAnimatedScope
 import com.rewire.app.ui.components.LocalSharedTransitionScope
-import kotlinx.coroutines.launch
 import kotlinx.serialization.Serializable
-import androidx.compose.ui.platform.LocalContext
 
 object Routes {
     @Serializable data object Landing
@@ -64,8 +61,7 @@ fun RewireNavHost(
     onDeepLinkConsumed: () -> Unit,
     nav: NavHostController = rememberNavController(),
 ) {
-    val container = (LocalContext.current.applicationContext as RewireApp).container
-    val scope = rememberCoroutineScope()
+    val settingsVm = hiltViewModel<SettingsViewModel>()
     val spatial = MaterialTheme.motionScheme.defaultSpatialSpec<androidx.compose.ui.unit.IntOffset>()
     val effects = MaterialTheme.motionScheme.defaultEffectsSpec<Float>()
 
@@ -108,7 +104,7 @@ fun RewireNavHost(
                         PermissionsSetupScreen(
                             onBack = { nav.popBackStack() },
                             onFinish = {
-                                scope.launch { container.settingsRepository.setOnboardingDone() }
+                                settingsVm.setOnboardingDone()
                                 nav.navigate(Routes.Main) { popUpTo(Routes.Landing) { inclusive = true } }
                             },
                         )

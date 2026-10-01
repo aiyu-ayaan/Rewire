@@ -1,6 +1,8 @@
 package com.rewire.app.feature.focus
 
 import androidx.compose.foundation.clickable
+import androidx.compose.runtime.setValue
+import androidx.compose.runtime.getValue
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -25,20 +27,25 @@ import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.saveable.rememberSaveable
-import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.text.input.KeyboardCapitalization
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import com.rewire.app.RewireApp
+import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
+import com.rewire.app.data.FocusSessionRepository
+import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.flow.SharingStarted
+import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.stateIn
+import javax.inject.Inject
 import com.rewire.app.domain.focus.FocusSession
 import com.rewire.app.domain.focus.FocusSessionStatus
 import com.rewire.app.domain.focus.FocusState
@@ -50,13 +57,20 @@ import java.time.ZoneId
 import java.time.format.DateTimeFormatter
 import java.time.format.FormatStyle
 
+@HiltViewModel
+class FocusHistoryViewModel @Inject constructor(private val sessions: FocusSessionRepository) : ViewModel() {
+    /** null until the first Room read lands. */
+    val history: StateFlow<List<FocusSession>?> = sessions.history.stateIn(viewModelScope, SharingStarted.WhileSubscribed(5_000), null)
+    fun setNote(id: String, note: String) = sessions.setNote(id, note)
+}
+
 private enum class HistoryFilter(val label: String) { ALL("All"), COMPLETED("Completed"), STOPPED("Stopped") }
 
 /** Every finished focus session, newest first, with its outcome and optional achievement note. */
 @Composable
 fun FocusHistoryScreen(onBack: () -> Unit) {
-    val repo = (LocalContext.current.applicationContext as RewireApp).container.focusSessions
-    val sessions by remember(repo) { repo.history }.collectAsStateWithLifecycle(initialValue = null)
+    val vm = hiltViewModel<FocusHistoryViewModel>()
+    val sessions by vm.history.collectAsStateWithLifecycle()
     var filter by rememberSaveable { mutableStateOf(HistoryFilter.ALL) }
     var editing by remember { mutableStateOf<FocusSession?>(null) }
 
@@ -97,7 +111,7 @@ fun FocusHistoryScreen(onBack: () -> Unit) {
         AchievementDialog(
             initial = s.note.orEmpty(),
             completed = s.state.status == FocusSessionStatus.COMPLETED,
-            onSave = { repo.setNote(s.id, it); editing = null },
+            onSave = { vm.setNote(s.id, it); editing = null },
             onDismiss = { editing = null },
         )
     }

@@ -62,7 +62,7 @@ import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.rewire.app.domain.analytics.DailyMetrics
 import com.rewire.app.domain.habit.HabitProfile
 import com.rewire.app.feature.landing.HERO_KEY
-import com.rewire.app.rewireViewModel
+import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import com.rewire.app.ui.components.AppIcon
 import com.rewire.app.ui.components.EmptyState
 import com.rewire.app.ui.components.LevelBadge
@@ -76,7 +76,7 @@ import java.time.format.DateTimeFormatter
 
 @Composable
 fun GuardScreen(onOpenHabit: (String) -> Unit, onStartFocus: () -> Unit) {
-    val vm = rewireViewModel { GuardViewModel(it) }
+    val vm = hiltViewModel<GuardViewModel>()
     val habits by vm.habits.collectAsStateWithLifecycle()
     val today by vm.today.collectAsStateWithLifecycle()
     var creating by rememberSaveable { mutableStateOf(false) }

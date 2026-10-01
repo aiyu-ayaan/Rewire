@@ -1,6 +1,8 @@
 package com.rewire.app.feature.guard
 
 import androidx.compose.animation.AnimatedContent
+import androidx.compose.runtime.setValue
+import androidx.compose.runtime.getValue
 import androidx.compose.animation.fadeIn
 import androidx.compose.animation.fadeOut
 import androidx.compose.animation.slideInHorizontally
@@ -40,23 +42,24 @@ import androidx.compose.material3.ToggleButton
 import androidx.compose.material3.ToggleButtonDefaults
 import androidx.compose.material3.rememberModalBottomSheetState
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateListOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.produceState
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.saveable.rememberSaveable
-import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.semantics.role
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.input.KeyboardCapitalization
 import androidx.compose.ui.unit.dp
-import com.rewire.app.RewireApp
+import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
+import androidx.lifecycle.ViewModel
+import com.rewire.app.core.apps.InstalledAppsSource
+import dagger.hilt.android.lifecycle.HiltViewModel
+import javax.inject.Inject
 import com.rewire.app.core.apps.InstalledApp
 import com.rewire.app.domain.habit.WarningLevel
 import com.rewire.app.ui.components.AppIcon
@@ -149,9 +152,12 @@ fun LevelSelector(level: WarningLevel, onSelect: (WarningLevel) -> Unit, modifie
     }
 }
 
+@HiltViewModel
+class AppPickerViewModel @Inject constructor(val source: InstalledAppsSource) : ViewModel()
+
 @Composable
 fun AppPicker(selected: MutableList<String>, modifier: Modifier = Modifier) {
-    val source = (LocalContext.current.applicationContext as RewireApp).container.installedApps
+    val source = hiltViewModel<AppPickerViewModel>().source
     val apps by produceState<List<InstalledApp>?>(null) { value = source.launchableApps() }
     var query by rememberSaveable { mutableStateOf("") }
 

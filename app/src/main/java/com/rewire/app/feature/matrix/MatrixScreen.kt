@@ -38,14 +38,19 @@ import androidx.compose.ui.unit.dp
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.viewModelScope
-import com.rewire.app.AppContainer
 import com.rewire.app.domain.analytics.DailyMetrics
 import com.rewire.app.domain.analytics.GuardBreakdown
 import com.rewire.app.domain.analytics.HabitEvent
 import com.rewire.app.domain.analytics.MetricsCalculator
 import com.rewire.app.domain.analytics.Punchlines
 import com.rewire.app.domain.habit.HabitProfile
-import com.rewire.app.rewireViewModel
+import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
+import com.rewire.app.core.apps.InstalledAppsSource
+import com.rewire.app.core.guard.UsageTracker
+import com.rewire.app.data.EventRepository
+import com.rewire.app.data.HabitRepository
+import dagger.hilt.android.lifecycle.HiltViewModel
+import javax.inject.Inject
 import com.rewire.app.ui.components.AppIcon
 import com.rewire.app.ui.components.EmptyState
 import com.rewire.app.ui.components.SectionTitle
@@ -80,8 +85,14 @@ data class MatrixUi(
     val hasGuard get() = week.any { it.frictionMoments > 0 || it.appOpens > 0 }
 }
 
-class MatrixViewModel(private val c: AppContainer) : ViewModel() {
-    val ui: StateFlow<MatrixUi> = combine(c.events.events, c.habits.habits, ::build)
+@HiltViewModel
+class MatrixViewModel @Inject constructor(
+    events: EventRepository,
+    habits: HabitRepository,
+    private val usage: UsageTracker,
+    private val installedApps: InstalledAppsSource,
+) : ViewModel() {
+    val ui: StateFlow<MatrixUi> = combine(events.events, habits.habits, ::build)
         .flowOn(Dispatchers.Default)
         .stateIn(viewModelScope, SharingStarted.WhileSubscribed(5_000), build(emptyList(), emptyList()))
 
@@ -91,7 +102,7 @@ class MatrixViewModel(private val c: AppContainer) : ViewModel() {
         val since = today.minusDays(6).atStartOfDay(zone).toInstant().toEpochMilli()
         val weekRaw = MetricsCalculator.lastDays(events, today, 7, zone)
         val week = weekRaw.mapIndexed { idx, m ->
-            if (idx == weekRaw.lastIndex) m.copy(screenTimeMinutes = c.usage.totalScreenTimeToday()) else m
+            if (idx == weekRaw.lastIndex) m.copy(screenTimeMinutes = usage.totalScreenTimeToday()) else m
         }
         val names = habits.associate { it.id to it.habit.name }
         val seed = today.toEpochDay()
@@ -101,7 +112,7 @@ class MatrixViewModel(private val c: AppContainer) : ViewModel() {
             habits = MetricsCalculator.breakdown(events, since) { it.habitId }
                 .map { NamedBreakdown(names[it.key] ?: "Removed habit", null, it) },
             apps = MetricsCalculator.breakdown(events, since) { it.packageName }
-                .map { NamedBreakdown(c.installedApps.label(it.key), it.key, it) },
+                .map { NamedBreakdown(installedApps.label(it.key), it.key, it) },
             peakHour = MetricsCalculator.peakHour(events, since, zone),
             focusLine = Punchlines.focus(week.sumOf { it.focusMinutes }, seed),
             guardLine = Punchlines.guard(week.sumOf { it.wentBackCount }, week.sumOf { it.overrideCount }, seed),
@@ -111,7 +122,7 @@ class MatrixViewModel(private val c: AppContainer) : ViewModel() {
 
 @Composable
 fun MatrixScreen(onShowAll: (apps: Boolean) -> Unit) {
-    val vm = rewireViewModel { MatrixViewModel(it) }
+    val vm = hiltViewModel<MatrixViewModel>()
     val ui by vm.ui.collectAsStateWithLifecycle()
     val scheme = MaterialTheme.colorScheme
 
@@ -187,7 +198,7 @@ private fun ShowAll(count: Int, onClick: () -> Unit) {
 /** Full habit or app list for the last 7 days, opened from "Show all". */
 @Composable
 fun MatrixBreakdownScreen(apps: Boolean, onBack: () -> Unit) {
-    val vm = rewireViewModel { MatrixViewModel(it) }
+    val vm = hiltViewModel<MatrixViewModel>()
     val ui by vm.ui.collectAsStateWithLifecycle()
     val items = if (apps) ui.apps else ui.habits
     val scroll = TopAppBarDefaults.exitUntilCollapsedScrollBehavior()
