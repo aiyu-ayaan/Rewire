@@ -87,8 +87,8 @@ class FocusViewModel(
         val prev = _state.value
         _state.value = next
         _now.value = clock()
-        onPhaseChange(prev, next)
         updateDnd(next)
+        onPhaseChange(prev, next)
         c.notifier.showFocusOngoing(next, clock())
         if (next.isRunning) ensureTicker() else { ticker?.cancel(); ticker = null }
     }
@@ -124,10 +124,12 @@ class FocusViewModel(
             next.status == FocusSessionStatus.COMPLETED && prev.status != FocusSessionStatus.COMPLETED -> {
                 c.events.log(HabitEventType.FOCUS_COMPLETED, metadata = mapOf(HabitEvent.KEY_FOCUS_MINUTES to focusMin))
                 c.notifier.focusAlert(FocusAlert.COMPLETED, next)
+                c.notifier.playBreakTone()
             }
             prev.phase == FocusSessionStatus.FOCUSING && next.status == FocusSessionStatus.BREAK -> {
                 c.events.log(HabitEventType.BREAK_STARTED, metadata = mapOf(HabitEvent.KEY_FOCUS_MINUTES to focusMin))
                 c.notifier.focusAlert(FocusAlert.BREAK_STARTED, next)
+                c.notifier.playBreakTone()
             }
             prev.phase == FocusSessionStatus.BREAK && next.phase == FocusSessionStatus.FOCUSING -> {
                 val spent = elapsedMinutes(prev, clock()).coerceAtMost(prev.config.breakMinutes)

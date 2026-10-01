@@ -18,6 +18,7 @@ import androidx.compose.foundation.layout.widthIn
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.rounded.DoNotDisturbOn
 import androidx.compose.material.icons.rounded.Info
 import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Button
@@ -164,7 +165,7 @@ fun WarningScreen(
                 )
             }
             Spacer(Modifier.weight(1.2f))
-            Actions(level, profile.rule.pauseSeconds, onGoBack, onContinue, onEmergency = { unlockDialog = true })
+            Actions(level, profile.rule.pauseSeconds, packageName, onGoBack, onContinue, onEmergency = { unlockDialog = true })
         }
     }
 
@@ -188,7 +189,15 @@ private fun InfoRow(label: String, value: String) {
 }
 
 @Composable
-private fun Actions(level: WarningLevel, pauseSeconds: Int, onGoBack: () -> Unit, onContinue: () -> Unit, onEmergency: () -> Unit) {
+private fun Actions(
+    level: WarningLevel,
+    pauseSeconds: Int,
+    packageName: String?,
+    onGoBack: () -> Unit,
+    onContinue: () -> Unit,
+    onEmergency: () -> Unit,
+) {
+    val context = LocalContext.current
     Column(Modifier.fillMaxWidth().widthIn(max = 480.dp), verticalArrangement = Arrangement.spacedBy(8.dp), horizontalAlignment = Alignment.CenterHorizontally) {
         when (level) {
             WarningLevel.MINOR -> Button(onClick = onContinue, modifier = Modifier.fillMaxWidth().height(ButtonDefaults.MediumContainerHeight)) {
@@ -210,6 +219,19 @@ private fun Actions(level: WarningLevel, pauseSeconds: Int, onGoBack: () -> Unit
             WarningLevel.MAX -> {
                 Button(onClick = onGoBack, modifier = Modifier.fillMaxWidth().height(ButtonDefaults.MediumContainerHeight)) {
                     Text(stringResource(R.string.warning_back), style = MaterialTheme.typography.titleMedium)
+                }
+                if (packageName != null) {
+                    TextButton(onClick = {
+                        val intent = android.content.Intent(android.provider.Settings.ACTION_APP_NOTIFICATION_SETTINGS).apply {
+                            putExtra(android.provider.Settings.EXTRA_APP_PACKAGE, packageName)
+                            addFlags(android.content.Intent.FLAG_ACTIVITY_NEW_TASK)
+                        }
+                        runCatching { context.startActivity(intent) }
+                    }) {
+                        Icon(Icons.Rounded.DoNotDisturbOn, contentDescription = null, modifier = Modifier.size(18.dp))
+                        Spacer(Modifier.width(6.dp))
+                        Text("Mute app notifications")
+                    }
                 }
                 TextButton(onClick = onEmergency) { Text(stringResource(R.string.warning_emergency_unlock), textAlign = TextAlign.Center) }
             }

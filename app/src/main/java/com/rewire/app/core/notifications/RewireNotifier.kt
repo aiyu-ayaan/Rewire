@@ -7,6 +7,10 @@ import android.app.PendingIntent
 import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
+import android.media.AudioAttributes
+import android.media.AudioManager
+import android.media.RingtoneManager
+import android.media.ToneGenerator
 import android.os.Build
 import android.provider.Settings
 import androidx.core.app.NotificationChannelCompat
@@ -116,6 +120,27 @@ class RewireNotifier(
             .setPriority(NotificationCompat.PRIORITY_HIGH)
             .build()
         post(NotificationCategory.FOCUS, Ids.FOCUS_ALERT, n)
+    }
+
+    /**
+     * Plays a pleasant audible tone when a focus phase completes and break mode starts.
+     */
+    fun playBreakTone() {
+        runCatching {
+            val uri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION)
+                ?: RingtoneManager.getDefaultUri(RingtoneManager.TYPE_ALARM)
+            val ringtone = RingtoneManager.getRingtone(context, uri)
+            if (ringtone != null) {
+                ringtone.audioAttributes = AudioAttributes.Builder()
+                    .setUsage(AudioAttributes.USAGE_NOTIFICATION_EVENT)
+                    .setContentType(AudioAttributes.CONTENT_TYPE_SONIFICATION)
+                    .build()
+                ringtone.play()
+            } else {
+                val toneGen = ToneGenerator(AudioManager.STREAM_NOTIFICATION, 90)
+                toneGen.startTone(ToneGenerator.TONE_PROP_ACK, 350)
+            }
+        }
     }
 
     // ---- Misc --------------------------------------------------------------------------------
