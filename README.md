@@ -173,6 +173,9 @@ Every [release](https://github.com/aiyu-ayaan/Rewire/releases) ships two APKs wi
 Why two: Play Protect's fraud protection blocks browser and file-manager installs of any app that declares an accessibility service. Payment apps also refuse to run while one from outside Play is switched on. On Full, turn Rewire off in Accessibility before paying. Guard keeps working through Usage access (grant it and Display over apps), then turn it back on.
 
 Both are signed with the same key. Install the other APK over the top to switch builds, and your data is kept. Each one updates itself within its own flavor.
+**Profile → About Rewire** shows which one you have (*Full build* / *Lite build*).
+
+Both keep guarding with Rewire closed or swiped away from recents. The Guard service runs on its own with an ongoing notification and restarts after the system kills it or the phone reboots. Two things stop it until you open Rewire again: **Force stop** in App info, and an aggressive battery saver. Set Rewire's battery usage to **Unrestricted**.
 
 ## Build and run
 

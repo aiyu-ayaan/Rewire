@@ -375,6 +375,27 @@ jobs:
           fi
           ls -la "$RUNNER_TEMP/android"
 
+      # Both APKs must ship, and Lite must never regain the accessibility
+      # service: that is the whole reason it exists (Play Protect blocks
+      # browser installs of apps that declare one; payment apps refuse to run).
+      - name: Check both flavors
+        if: matrix.artifact == 'apk'
+        env:
+          VERSION: ${{ needs.merged.outputs.version }}
+        run: |
+          full="$RUNNER_TEMP/android/Rewire-${VERSION}.apk"
+          lite="$RUNNER_TEMP/android/Rewire-Lite-${VERSION}.apk"
+          test -f "$full" || { echo "::error::Full APK missing"; exit 1; }
+          test -f "$lite" || { echo "::error::Lite APK missing"; exit 1; }
+          aapt2="$(ls -d "$ANDROID_HOME"/build-tools/*/ | sort -V | tail -1)aapt2"
+          if "$aapt2" dump xmltree --file AndroidManifest.xml "$lite" | grep -q BIND_ACCESSIBILITY_SERVICE; then
+            echo "::error::Lite APK declares an accessibility service; Play Protect will block it."
+            exit 1
+          fi
+          "$aapt2" dump xmltree --file AndroidManifest.xml "$full" | grep -q BIND_ACCESSIBILITY_SERVICE \
+            || { echo "::error::Full APK lost its accessibility service."; exit 1; }
+          echo "Full + Lite APKs present; Lite has no accessibility service."
+
       # One name per matrix leg; two legs uploading the same name is a 409.
       - uses: actions/upload-artifact@v4
         with:
@@ -441,6 +462,9 @@ jobs:
 
             Both are signed with the same key, so you can switch by installing the other.
             Each updates itself to its own flavor. The `.aab` is for Play, not for sideloading.
+
+            Which one am I on? **Profile → About Rewire** shows *Full build* or *Lite build*.
+            More: [Full vs Lite, Play Protect and payment apps](https://github.com/${{ github.repository }}#install)
           files: artifacts/android/*
 
   # --- If any of that failed, leave nothing half-published -------------------
