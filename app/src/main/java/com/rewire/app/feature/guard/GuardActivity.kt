@@ -3,6 +3,7 @@ package com.rewire.app.feature.guard
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.view.WindowManager
 import androidx.biometric.BiometricManager
 import androidx.biometric.BiometricManager.Authenticators.BIOMETRIC_WEAK
 import androidx.biometric.BiometricManager.Authenticators.DEVICE_CREDENTIAL
@@ -54,6 +55,10 @@ class GuardActivity : FragmentActivity() {
         super.onCreate(savedInstanceState)
         instances++
         enableEdgeToEdge()
+        // Android always lists the task that is on screen in Recents (excludeFromRecents applies once it's gone)
+        // and captures it as Recents opens, before any lifecycle callback. A secure window is shown blank there,
+        // so what was blocked is never on display. Also blanks screenshots of this one screen.
+        window.addFlags(WindowManager.LayoutParams.FLAG_SECURE)
         request = intent.toRequest() ?: return finish()
         onBackPressedDispatcher.addCallback(this) { goBack() }
         setContent {
