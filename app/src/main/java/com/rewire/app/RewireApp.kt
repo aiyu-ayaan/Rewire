@@ -2,6 +2,7 @@ package com.rewire.app
 
 import android.app.Application
 import com.rewire.app.core.focus.FocusController
+import com.rewire.app.core.guard.HabitEngine
 import com.rewire.app.core.update.AppUpdater
 import com.rewire.app.core.update.UpdateWorker
 import com.rewire.app.core.notifications.RewireNotifier
@@ -13,6 +14,9 @@ class RewireApp : Application() {
     @Inject lateinit var notifier: RewireNotifier
     @Inject lateinit var focus: FocusController
     @Inject lateinit var updater: AppUpdater
+    // Eager: the engine starts GuardMonitorService once a habit is on. Lite (and Full with Accessibility off)
+    // has no accessibility service to create it, so without this nothing ever watched.
+    @Inject lateinit var engine: HabitEngine
 
     override fun onCreate() {
         super.onCreate()
