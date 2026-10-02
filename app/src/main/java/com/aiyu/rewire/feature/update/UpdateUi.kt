@@ -1,4 +1,4 @@
-package com.rewire.app.feature.update
+package com.aiyu.rewire.feature.update
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -31,7 +31,7 @@ import androidx.compose.ui.unit.dp
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.lifecycle.compose.LifecycleResumeEffect
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import com.rewire.app.core.update.UpdateState
+import com.aiyu.rewire.core.update.UpdateState
 
 /** Shown over the app when the launch / daily check found a newer release. "Not now" is quiet for a day. */
 @Composable

@@ -1,20 +1,20 @@
-package com.rewire.app.core.guard
+package com.aiyu.rewire.core.guard
 
-import com.rewire.app.core.settings.FocusBypass
-import com.rewire.app.core.settings.Settings
-import com.rewire.app.core.settings.ThemeMode
-import com.rewire.app.core.settings.UserProfile
-import com.rewire.app.data.EventRepository
-import com.rewire.app.data.HabitRepository
-import com.rewire.app.domain.analytics.HabitEvent
-import com.rewire.app.domain.analytics.HabitEventType
-import com.rewire.app.domain.focus.FocusSessionStatus
-import com.rewire.app.domain.focus.FocusState
-import com.rewire.app.domain.habit.Habit
-import com.rewire.app.domain.habit.HabitProfile
-import com.rewire.app.domain.habit.ProtectedApp
-import com.rewire.app.domain.habit.RestrictionRule
-import com.rewire.app.domain.habit.WarningLevel
+import com.aiyu.rewire.core.settings.FocusBypass
+import com.aiyu.rewire.core.settings.Settings
+import com.aiyu.rewire.core.settings.ThemeMode
+import com.aiyu.rewire.core.settings.UserProfile
+import com.aiyu.rewire.data.EventRepository
+import com.aiyu.rewire.data.HabitRepository
+import com.aiyu.rewire.domain.analytics.HabitEvent
+import com.aiyu.rewire.domain.analytics.HabitEventType
+import com.aiyu.rewire.domain.focus.FocusSessionStatus
+import com.aiyu.rewire.domain.focus.FocusState
+import com.aiyu.rewire.domain.habit.Habit
+import com.aiyu.rewire.domain.habit.HabitProfile
+import com.aiyu.rewire.domain.habit.ProtectedApp
+import com.aiyu.rewire.domain.habit.RestrictionRule
+import com.aiyu.rewire.domain.habit.WarningLevel
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
@@ -67,7 +67,7 @@ class HabitEngineOutcomeTest {
     }
 
     private class FakeEnginePlatform : EnginePlatform {
-        override val packageName: String = "com.rewire.app"
+        override val packageName: String = "com.aiyu.rewire"
         val keyboards = setOf("com.google.android.inputmethod.latin")
         val guardShown = mutableListOf<GuardCall>()
         val launchedApps = mutableListOf<String>()
@@ -163,7 +163,7 @@ class HabitEngineOutcomeTest {
 
     @Test
     fun `ignored packages do not trigger guard`() {
-        engine.onForeground("com.rewire.app") // Own package
+        engine.onForeground("com.aiyu.rewire") // Own package
         engine.onForeground("com.android.systemui") // System UI
         engine.onForeground("com.google.android.inputmethod.latin") // Keyboard
 

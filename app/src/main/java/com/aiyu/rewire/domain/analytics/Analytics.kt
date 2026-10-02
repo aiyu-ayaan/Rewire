@@ -1,4 +1,4 @@
-package com.rewire.app.domain.analytics
+package com.aiyu.rewire.domain.analytics
 
 import kotlinx.serialization.Serializable
 import java.time.Instant

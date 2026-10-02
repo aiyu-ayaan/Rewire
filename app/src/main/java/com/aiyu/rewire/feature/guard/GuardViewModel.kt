@@ -1,20 +1,20 @@
-package com.rewire.app.feature.guard
+package com.aiyu.rewire.feature.guard
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.rewire.app.core.apps.InstalledAppsSource
-import com.rewire.app.core.guard.UsageTracker
-import com.rewire.app.data.EventRepository
-import com.rewire.app.data.HabitRepository
+import com.aiyu.rewire.core.apps.InstalledAppsSource
+import com.aiyu.rewire.core.guard.UsageTracker
+import com.aiyu.rewire.data.EventRepository
+import com.aiyu.rewire.data.HabitRepository
 import dagger.assisted.Assisted
 import dagger.assisted.AssistedFactory
 import dagger.assisted.AssistedInject
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
-import com.rewire.app.domain.analytics.DailyMetrics
-import com.rewire.app.domain.analytics.MetricsCalculator
-import com.rewire.app.domain.habit.HabitProfile
-import com.rewire.app.domain.habit.WarningLevel
+import com.aiyu.rewire.domain.analytics.DailyMetrics
+import com.aiyu.rewire.domain.analytics.MetricsCalculator
+import com.aiyu.rewire.domain.habit.HabitProfile
+import com.aiyu.rewire.domain.habit.WarningLevel
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.map
@@ -78,7 +78,7 @@ class HabitDetailViewModel @AssistedInject constructor(
     fun removeApp(pkg: String) = edit { p -> p.copy(apps = p.apps.filterNot { it.packageName == pkg }) }
     fun setApps(packages: List<String>) = edit { p ->
         val existing = p.apps.associateBy { it.packageName }
-        p.copy(apps = packages.map { existing[it] ?: com.rewire.app.domain.habit.ProtectedApp(it, p.id, p.level, true) })
+        p.copy(apps = packages.map { existing[it] ?: com.aiyu.rewire.domain.habit.ProtectedApp(it, p.id, p.level, true) })
     }
     fun delete() { habit.value?.let { habitRepo.delete(it.id) } }
 }

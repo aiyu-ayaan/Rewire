@@ -1,12 +1,12 @@
-package com.rewire.app.service.accessibility
+package com.aiyu.rewire.service.accessibility
 
 import android.accessibilityservice.AccessibilityService
 import android.view.accessibility.AccessibilityEvent
 import android.content.Intent
-import com.rewire.app.core.guard.HabitEngine
-import com.rewire.app.core.notifications.RewireNotifier
-import com.rewire.app.core.permissions.SystemPermissions
-import com.rewire.app.data.HabitRepository
+import com.aiyu.rewire.core.guard.HabitEngine
+import com.aiyu.rewire.core.notifications.RewireNotifier
+import com.aiyu.rewire.core.permissions.SystemPermissions
+import com.aiyu.rewire.data.HabitRepository
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 import kotlinx.coroutines.flow.MutableStateFlow

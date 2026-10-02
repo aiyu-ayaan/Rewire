@@ -1,4 +1,4 @@
-package com.rewire.app.feature.profile
+package com.aiyu.rewire.feature.profile
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
@@ -46,12 +46,12 @@ import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
-import com.rewire.app.ui.SettingsViewModel
-import com.rewire.app.core.settings.NotificationCategory
-import com.rewire.app.core.notifications.NotificationRationaleCard
-import com.rewire.app.core.notifications.PermissionStatus
-import com.rewire.app.core.notifications.RewireNotifier.Channels
-import com.rewire.app.core.notifications.rememberNotificationPermission
+import com.aiyu.rewire.ui.SettingsViewModel
+import com.aiyu.rewire.core.settings.NotificationCategory
+import com.aiyu.rewire.core.notifications.NotificationRationaleCard
+import com.aiyu.rewire.core.notifications.PermissionStatus
+import com.aiyu.rewire.core.notifications.RewireNotifier.Channels
+import com.aiyu.rewire.core.notifications.rememberNotificationPermission
 import kotlinx.coroutines.launch
 
 private data class CategoryInfo(val category: NotificationCategory, val icon: ImageVector, val title: String, val body: String, val channels: List<String>)

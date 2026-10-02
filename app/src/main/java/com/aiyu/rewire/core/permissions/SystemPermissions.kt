@@ -1,4 +1,4 @@
-package com.rewire.app.core.permissions
+package com.aiyu.rewire.core.permissions
 
 import android.app.AppOpsManager
 import android.content.ComponentName
@@ -56,11 +56,11 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.material.icons.rounded.Layers
 import androidx.lifecycle.compose.LifecycleResumeEffect
-import com.rewire.app.BuildConfig
-import com.rewire.app.R
-import com.rewire.app.core.notifications.PermissionStatus
-import com.rewire.app.core.notifications.rememberNotificationPermission
-import com.rewire.app.service.accessibility.RewireAccessibilityService
+import com.aiyu.rewire.BuildConfig
+import com.aiyu.rewire.R
+import com.aiyu.rewire.core.notifications.PermissionStatus
+import com.aiyu.rewire.core.notifications.rememberNotificationPermission
+import com.aiyu.rewire.service.accessibility.RewireAccessibilityService
 
 /** Special-access permissions: granted by the user in system settings, never requested silently. */
 object SystemPermissions {

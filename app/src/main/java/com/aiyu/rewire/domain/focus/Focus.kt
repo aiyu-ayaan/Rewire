@@ -1,4 +1,4 @@
-package com.rewire.app.domain.focus
+package com.aiyu.rewire.domain.focus
 
 enum class FocusSessionStatus { IDLE, FOCUSING, BREAK, PAUSED, COMPLETED, CANCELLED }
 

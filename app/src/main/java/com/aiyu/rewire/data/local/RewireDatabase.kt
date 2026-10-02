@@ -1,4 +1,4 @@
-package com.rewire.app.data.local
+package com.aiyu.rewire.data.local
 
 import android.content.Context
 import androidx.room.AutoMigration

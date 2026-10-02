@@ -1,6 +1,6 @@
-package com.rewire.app.data
+package com.aiyu.rewire.data
 
-import com.rewire.app.data.local.Converters
+import com.aiyu.rewire.data.local.Converters
 import org.junit.Assert.assertEquals
 import org.junit.Test
 

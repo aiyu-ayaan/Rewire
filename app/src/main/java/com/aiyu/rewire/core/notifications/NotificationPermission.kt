@@ -1,4 +1,4 @@
-package com.rewire.app.core.notifications
+package com.aiyu.rewire.core.notifications
 
 import android.Manifest
 import androidx.compose.runtime.setValue
@@ -34,7 +34,7 @@ import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.LifecycleResumeEffect
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
-import com.rewire.app.ui.SettingsViewModel
+import com.aiyu.rewire.ui.SettingsViewModel
 import kotlinx.coroutines.launch
 
 enum class PermissionStatus { GRANTED, ASKABLE, BLOCKED }

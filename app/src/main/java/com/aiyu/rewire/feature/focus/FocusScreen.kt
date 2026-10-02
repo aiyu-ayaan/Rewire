@@ -1,4 +1,4 @@
-package com.rewire.app.feature.focus
+package com.aiyu.rewire.feature.focus
 
 import androidx.compose.animation.AnimatedContent
 import androidx.compose.animation.AnimatedVisibility
@@ -84,22 +84,22 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.LifecycleResumeEffect
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import com.rewire.app.BuildConfig
-import com.rewire.app.core.settings.FocusBypass
-import com.rewire.app.core.notifications.NotificationRationaleCard
-import com.rewire.app.core.notifications.RewireNotifier
-import com.rewire.app.core.notifications.rememberNotificationPermission
-import com.rewire.app.domain.focus.FocusConfig
-import com.rewire.app.domain.focus.FocusConfigError
-import com.rewire.app.domain.focus.FocusSessionStatus
-import com.rewire.app.domain.focus.FocusState
-import com.rewire.app.ui.components.MorphingShape
-import com.rewire.app.ui.components.heroBrush
-import com.rewire.app.ui.components.SectionTitle
-import com.rewire.app.ui.HideNavigationBar
-import com.rewire.app.ui.components.formatMinutes
-import com.rewire.app.ui.components.sharedBoundsOrSelf
-import com.rewire.app.ui.theme.TimerTextStyle
+import com.aiyu.rewire.BuildConfig
+import com.aiyu.rewire.core.settings.FocusBypass
+import com.aiyu.rewire.core.notifications.NotificationRationaleCard
+import com.aiyu.rewire.core.notifications.RewireNotifier
+import com.aiyu.rewire.core.notifications.rememberNotificationPermission
+import com.aiyu.rewire.domain.focus.FocusConfig
+import com.aiyu.rewire.domain.focus.FocusConfigError
+import com.aiyu.rewire.domain.focus.FocusSessionStatus
+import com.aiyu.rewire.domain.focus.FocusState
+import com.aiyu.rewire.ui.components.MorphingShape
+import com.aiyu.rewire.ui.components.heroBrush
+import com.aiyu.rewire.ui.components.SectionTitle
+import com.aiyu.rewire.ui.HideNavigationBar
+import com.aiyu.rewire.ui.components.formatMinutes
+import com.aiyu.rewire.ui.components.sharedBoundsOrSelf
+import com.aiyu.rewire.ui.theme.TimerTextStyle
 import kotlinx.coroutines.launch
 
 @Composable

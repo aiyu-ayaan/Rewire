@@ -1,4 +1,4 @@
-package com.rewire.app.domain.update
+package com.aiyu.rewire.domain.update
 
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable

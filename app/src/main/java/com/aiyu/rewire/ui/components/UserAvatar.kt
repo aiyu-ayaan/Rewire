@@ -1,4 +1,4 @@
-package com.rewire.app.ui.components
+package com.aiyu.rewire.ui.components
 
 import androidx.compose.animation.core.Animatable
 import androidx.compose.animation.core.Spring
@@ -26,7 +26,7 @@ import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.graphics.shapes.Morph
-import com.rewire.app.ui.theme.rememberReducedMotion
+import com.aiyu.rewire.ui.theme.rememberReducedMotion
 import kotlinx.coroutines.coroutineScope
 import kotlinx.coroutines.launch
 

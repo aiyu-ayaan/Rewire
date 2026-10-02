@@ -1,4 +1,4 @@
-package com.rewire.baselineprofile
+package com.aiyu.rewire.baselineprofile
 
 import androidx.benchmark.macro.MacrobenchmarkScope
 import androidx.test.uiautomator.By
@@ -7,7 +7,7 @@ import androidx.test.uiautomator.Direction
 import androidx.test.uiautomator.StaleObjectException
 import androidx.test.uiautomator.Until
 
-const val PACKAGE = "com.rewire.app"
+const val PACKAGE = "com.aiyu.rewire"
 private const val TIMEOUT = 5_000L
 
 /**

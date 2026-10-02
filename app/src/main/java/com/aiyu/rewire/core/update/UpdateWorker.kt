@@ -1,4 +1,4 @@
-package com.rewire.app.core.update
+package com.aiyu.rewire.core.update
 
 import android.content.Context
 import androidx.work.Constraints
@@ -8,7 +8,7 @@ import androidx.work.NetworkType
 import androidx.work.PeriodicWorkRequestBuilder
 import androidx.work.WorkManager
 import androidx.work.WorkerParameters
-import com.rewire.app.core.notifications.RewireNotifier
+import com.aiyu.rewire.core.notifications.RewireNotifier
 import dagger.hilt.EntryPoint
 import dagger.hilt.InstallIn
 import dagger.hilt.android.EntryPointAccessors

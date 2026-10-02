@@ -1,4 +1,4 @@
-package com.rewire.app.core.notifications
+package com.aiyu.rewire.core.notifications
 
 import android.app.NotificationManager
 import android.content.Context

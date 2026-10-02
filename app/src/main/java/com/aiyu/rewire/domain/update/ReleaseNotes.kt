@@ -1,4 +1,4 @@
-package com.rewire.app.domain.update
+package com.aiyu.rewire.domain.update
 
 /** One drawable piece of a release body, which `scripts/release-notes.mjs` writes as `### Heading` + `* bullet` lines. */
 sealed interface NoteBlock {

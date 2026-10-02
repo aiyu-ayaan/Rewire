@@ -1,4 +1,4 @@
-package com.rewire.app.ui
+package com.aiyu.rewire.ui
 
 import androidx.compose.animation.SharedTransitionLayout
 import androidx.compose.animation.core.tween
@@ -20,22 +20,22 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.toRoute
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
-import com.rewire.app.core.notifications.DeepLink
-import com.rewire.app.feature.focus.FocusFullscreenScreen
-import com.rewire.app.feature.focus.FocusHistoryScreen
-import com.rewire.app.feature.update.UpdateScreen
-import com.rewire.app.feature.guard.HabitDetailScreen
-import com.rewire.app.feature.onboarding.PermissionsSetupScreen
-import com.rewire.app.feature.onboarding.ProfileSetupScreen
-import com.rewire.app.feature.guard.WarningPreviewScreen
-import com.rewire.app.feature.landing.LandingScreen
-import com.rewire.app.feature.matrix.MatrixBreakdownScreen
-import com.rewire.app.feature.profile.AboutScreen
-import com.rewire.app.feature.profile.AcknowledgementsScreen
-import com.rewire.app.feature.profile.NotificationSettingsScreen
-import com.rewire.app.feature.profile.WarningLibraryScreen
-import com.rewire.app.ui.components.LocalNavAnimatedScope
-import com.rewire.app.ui.components.LocalSharedTransitionScope
+import com.aiyu.rewire.core.notifications.DeepLink
+import com.aiyu.rewire.feature.focus.FocusFullscreenScreen
+import com.aiyu.rewire.feature.focus.FocusHistoryScreen
+import com.aiyu.rewire.feature.update.UpdateScreen
+import com.aiyu.rewire.feature.guard.HabitDetailScreen
+import com.aiyu.rewire.feature.onboarding.PermissionsSetupScreen
+import com.aiyu.rewire.feature.onboarding.ProfileSetupScreen
+import com.aiyu.rewire.feature.guard.WarningPreviewScreen
+import com.aiyu.rewire.feature.landing.LandingScreen
+import com.aiyu.rewire.feature.matrix.MatrixBreakdownScreen
+import com.aiyu.rewire.feature.profile.AboutScreen
+import com.aiyu.rewire.feature.profile.AcknowledgementsScreen
+import com.aiyu.rewire.feature.profile.NotificationSettingsScreen
+import com.aiyu.rewire.feature.profile.WarningLibraryScreen
+import com.aiyu.rewire.ui.components.LocalNavAnimatedScope
+import com.aiyu.rewire.ui.components.LocalSharedTransitionScope
 import kotlinx.serialization.Serializable
 
 object Routes {

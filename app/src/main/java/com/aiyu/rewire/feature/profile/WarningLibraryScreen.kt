@@ -1,4 +1,4 @@
-package com.rewire.app.feature.profile
+package com.aiyu.rewire.feature.profile
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.runtime.setValue
@@ -49,14 +49,14 @@ import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.lifecycle.ViewModel
-import com.rewire.app.data.WarningRepository
+import com.aiyu.rewire.data.WarningRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
-import com.rewire.app.domain.habit.WarningLevel
-import com.rewire.app.domain.warning.Warning
-import com.rewire.app.feature.guard.LevelSelector
-import com.rewire.app.ui.components.LevelBadge
-import com.rewire.app.ui.components.style
+import com.aiyu.rewire.domain.habit.WarningLevel
+import com.aiyu.rewire.domain.warning.Warning
+import com.aiyu.rewire.feature.guard.LevelSelector
+import com.aiyu.rewire.ui.components.LevelBadge
+import com.aiyu.rewire.ui.components.style
 
 /** Warning library CRUD; thin on purpose, rules live in [WarningRepository]. */
 @HiltViewModel

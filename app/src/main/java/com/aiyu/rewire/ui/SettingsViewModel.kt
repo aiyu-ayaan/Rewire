@@ -1,16 +1,16 @@
-package com.rewire.app.ui
+package com.aiyu.rewire.ui
 
 import android.content.Intent
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.rewire.app.core.focus.FocusController
-import com.rewire.app.core.notifications.FocusDndManager
-import com.rewire.app.core.notifications.RewireNotifier
-import com.rewire.app.core.settings.NotificationCategory
-import com.rewire.app.core.settings.Settings
-import com.rewire.app.core.settings.SettingsRepository
-import com.rewire.app.core.settings.ThemeMode
-import com.rewire.app.core.settings.UserProfile
+import com.aiyu.rewire.core.focus.FocusController
+import com.aiyu.rewire.core.notifications.FocusDndManager
+import com.aiyu.rewire.core.notifications.RewireNotifier
+import com.aiyu.rewire.core.settings.NotificationCategory
+import com.aiyu.rewire.core.settings.Settings
+import com.aiyu.rewire.core.settings.SettingsRepository
+import com.aiyu.rewire.core.settings.ThemeMode
+import com.aiyu.rewire.core.settings.UserProfile
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch

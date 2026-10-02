@@ -1,4 +1,4 @@
-package com.rewire.app.feature.guard
+package com.aiyu.rewire.feature.guard
 
 import androidx.compose.animation.core.animateFloatAsState
 import androidx.compose.runtime.setValue
@@ -46,24 +46,24 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import com.rewire.app.R
+import com.aiyu.rewire.R
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.lifecycle.ViewModel
-import com.rewire.app.core.apps.InstalledAppsSource
-import com.rewire.app.core.settings.Settings
-import com.rewire.app.data.HabitRepository
-import com.rewire.app.data.WarningRepository
+import com.aiyu.rewire.core.apps.InstalledAppsSource
+import com.aiyu.rewire.core.settings.Settings
+import com.aiyu.rewire.data.HabitRepository
+import com.aiyu.rewire.data.WarningRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.StateFlow
 import javax.inject.Inject
-import com.rewire.app.domain.habit.HabitProfile
-import com.rewire.app.domain.habit.WarningLevel
-import com.rewire.app.domain.warning.Warning
-import com.rewire.app.domain.warning.WarningPicker
-import com.rewire.app.ui.components.AppIcon
-import com.rewire.app.ui.components.MorphingShape
-import com.rewire.app.ui.components.formatClock
-import com.rewire.app.ui.components.style
+import com.aiyu.rewire.domain.habit.HabitProfile
+import com.aiyu.rewire.domain.habit.WarningLevel
+import com.aiyu.rewire.domain.warning.Warning
+import com.aiyu.rewire.domain.warning.WarningPicker
+import com.aiyu.rewire.ui.components.AppIcon
+import com.aiyu.rewire.ui.components.MorphingShape
+import com.aiyu.rewire.ui.components.formatClock
+import com.aiyu.rewire.ui.components.style
 import kotlinx.coroutines.delay
 
 @HiltViewModel

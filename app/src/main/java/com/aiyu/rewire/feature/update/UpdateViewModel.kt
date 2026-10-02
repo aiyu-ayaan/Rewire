@@ -1,16 +1,16 @@
-package com.rewire.app.feature.update
+package com.aiyu.rewire.feature.update
 
 import android.content.Context
 import android.content.Intent
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.rewire.app.core.notifications.RewireNotifier
-import com.rewire.app.core.settings.Settings
-import com.rewire.app.core.settings.SettingsRepository
-import com.rewire.app.core.update.AppUpdater
-import com.rewire.app.core.update.UpdateState
-import com.rewire.app.core.update.UpdateWorker
-import com.rewire.app.domain.update.UpdateChannel
+import com.aiyu.rewire.core.notifications.RewireNotifier
+import com.aiyu.rewire.core.settings.Settings
+import com.aiyu.rewire.core.settings.SettingsRepository
+import com.aiyu.rewire.core.update.AppUpdater
+import com.aiyu.rewire.core.update.UpdateState
+import com.aiyu.rewire.core.update.UpdateWorker
+import com.aiyu.rewire.domain.update.UpdateChannel
 import dagger.hilt.android.lifecycle.HiltViewModel
 import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.flow.MutableStateFlow

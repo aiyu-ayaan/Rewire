@@ -1,17 +1,17 @@
-package com.rewire.app.feature.focus
+package com.aiyu.rewire.feature.focus
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.rewire.app.core.focus.FocusController
-import com.rewire.app.core.notifications.FocusDndManager
-import com.rewire.app.core.settings.Settings
-import com.rewire.app.core.settings.SettingsRepository
+import com.aiyu.rewire.core.focus.FocusController
+import com.aiyu.rewire.core.notifications.FocusDndManager
+import com.aiyu.rewire.core.settings.Settings
+import com.aiyu.rewire.core.settings.SettingsRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
-import com.rewire.app.core.settings.FocusBypass
-import com.rewire.app.domain.focus.FocusConfig
-import com.rewire.app.domain.focus.FocusSession
-import com.rewire.app.domain.focus.FocusState
+import com.aiyu.rewire.core.settings.FocusBypass
+import com.aiyu.rewire.domain.focus.FocusConfig
+import com.aiyu.rewire.domain.focus.FocusSession
+import com.aiyu.rewire.domain.focus.FocusState
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
@@ -20,7 +20,7 @@ import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.launch
 
-/** UI facade over the app-scoped [com.rewire.app.core.focus.FocusController]; the timer itself survives this ViewModel. */
+/** UI facade over the app-scoped [com.aiyu.rewire.core.focus.FocusController]; the timer itself survives this ViewModel. */
 @HiltViewModel
 class FocusViewModel @Inject constructor(
     private val focus: FocusController,

@@ -1,7 +1,7 @@
-package com.rewire.app.domain.restriction
+package com.aiyu.rewire.domain.restriction
 
-import com.rewire.app.domain.habit.HabitProfile
-import com.rewire.app.domain.habit.WarningLevel
+import com.aiyu.rewire.domain.habit.HabitProfile
+import com.aiyu.rewire.domain.habit.WarningLevel
 
 enum class BlockReason { OUTSIDE_WINDOW, LAUNCH_LIMIT, DAILY_LIMIT, ALWAYS }
 

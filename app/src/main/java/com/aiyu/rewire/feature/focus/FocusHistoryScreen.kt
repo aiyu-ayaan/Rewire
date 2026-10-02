@@ -1,4 +1,4 @@
-package com.rewire.app.feature.focus
+package com.aiyu.rewire.feature.focus
 
 import androidx.compose.foundation.clickable
 import androidx.compose.runtime.setValue
@@ -40,18 +40,18 @@ import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.rewire.app.data.FocusSessionRepository
+import com.aiyu.rewire.data.FocusSessionRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.stateIn
 import javax.inject.Inject
-import com.rewire.app.domain.focus.FocusSession
-import com.rewire.app.domain.focus.FocusSessionStatus
-import com.rewire.app.domain.focus.FocusState
-import com.rewire.app.ui.components.EmptyState
-import com.rewire.app.ui.components.InnerScreen
-import com.rewire.app.ui.components.formatMinutes
+import com.aiyu.rewire.domain.focus.FocusSession
+import com.aiyu.rewire.domain.focus.FocusSessionStatus
+import com.aiyu.rewire.domain.focus.FocusState
+import com.aiyu.rewire.ui.components.EmptyState
+import com.aiyu.rewire.ui.components.InnerScreen
+import com.aiyu.rewire.ui.components.formatMinutes
 import java.time.Instant
 import java.time.ZoneId
 import java.time.format.DateTimeFormatter

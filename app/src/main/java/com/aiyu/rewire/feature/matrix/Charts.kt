@@ -1,4 +1,4 @@
-package com.rewire.app.feature.matrix
+package com.aiyu.rewire.feature.matrix
 
 import androidx.compose.animation.core.Animatable
 import androidx.compose.foundation.Canvas
@@ -31,8 +31,8 @@ import androidx.compose.ui.graphics.lerp
 import androidx.compose.ui.semantics.contentDescription
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.unit.dp
-import com.rewire.app.domain.analytics.DailyMetrics
-import com.rewire.app.ui.theme.rememberReducedMotion
+import com.aiyu.rewire.domain.analytics.DailyMetrics
+import com.aiyu.rewire.ui.theme.rememberReducedMotion
 
 /** 0 → 1 reveal on first show / data change; static under reduced motion. */
 @Composable

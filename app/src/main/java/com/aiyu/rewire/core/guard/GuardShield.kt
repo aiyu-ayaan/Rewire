@@ -1,4 +1,4 @@
-package com.rewire.app.core.guard
+package com.aiyu.rewire.core.guard
 
 import android.content.Context
 import android.graphics.PixelFormat
@@ -12,7 +12,7 @@ import android.view.WindowManager
 import android.widget.Button
 import android.widget.LinearLayout
 import android.widget.TextView
-import com.rewire.app.R
+import com.aiyu.rewire.R
 
 /**
  * Full-screen overlay (Display over apps) put up before the guard screen when Accessibility isn't running.

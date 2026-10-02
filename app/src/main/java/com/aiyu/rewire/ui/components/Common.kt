@@ -1,4 +1,4 @@
-package com.rewire.app.ui.components
+package com.aiyu.rewire.ui.components
 
 import androidx.compose.animation.AnimatedVisibilityScope
 import androidx.compose.animation.SharedTransitionScope
@@ -33,8 +33,8 @@ import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
-import com.rewire.app.core.apps.rememberAppIcon
-import com.rewire.app.domain.habit.WarningLevel
+import com.aiyu.rewire.core.apps.rememberAppIcon
+import com.aiyu.rewire.domain.habit.WarningLevel
 
 // ---- Shared transition plumbing -----------------------------------------------------------------
 

@@ -1,4 +1,4 @@
-package com.rewire.app.feature.guard
+package com.aiyu.rewire.feature.guard
 
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.runtime.setValue
@@ -24,7 +24,7 @@ import androidx.compose.material.icons.rounded.Close
 import androidx.compose.material.icons.rounded.DeleteOutline
 import androidx.compose.material.icons.rounded.Info
 import androidx.compose.material.icons.rounded.Visibility
-import com.rewire.app.core.permissions.SystemPermissions
+import com.aiyu.rewire.core.permissions.SystemPermissions
 import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.AssistChip
 import androidx.compose.material3.Button
@@ -71,15 +71,15 @@ import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 
-import com.rewire.app.domain.habit.HabitProfile
-import com.rewire.app.domain.habit.WarningLevel
+import com.aiyu.rewire.domain.habit.HabitProfile
+import com.aiyu.rewire.domain.habit.WarningLevel
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
-import com.rewire.app.ui.components.AppIcon
-import com.rewire.app.ui.components.SectionTitle
-import com.rewire.app.ui.components.formatClock
-import com.rewire.app.ui.components.formatMinutes
-import com.rewire.app.ui.components.sharedBoundsOrSelf
-import com.rewire.app.ui.components.style
+import com.aiyu.rewire.ui.components.AppIcon
+import com.aiyu.rewire.ui.components.SectionTitle
+import com.aiyu.rewire.ui.components.formatClock
+import com.aiyu.rewire.ui.components.formatMinutes
+import com.aiyu.rewire.ui.components.sharedBoundsOrSelf
+import com.aiyu.rewire.ui.components.style
 import kotlin.math.roundToInt
 
 @Composable

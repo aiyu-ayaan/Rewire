@@ -1,4 +1,4 @@
-package com.rewire.app.feature.focus
+package com.aiyu.rewire.feature.focus
 
 import android.content.pm.ActivityInfo
 import androidx.activity.ComponentActivity
@@ -81,13 +81,13 @@ import androidx.core.view.WindowCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.WindowInsetsControllerCompat
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import com.rewire.app.core.notifications.RewireNotifier
-import com.rewire.app.domain.focus.FocusSessionStatus
+import com.aiyu.rewire.core.notifications.RewireNotifier
+import com.aiyu.rewire.domain.focus.FocusSessionStatus
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
-import com.rewire.app.ui.components.sharedBoundsOrSelf
-import com.rewire.app.ui.theme.DarkColors
-import com.rewire.app.ui.theme.TimerTextStyle
-import com.rewire.app.ui.theme.rememberReducedMotion
+import com.aiyu.rewire.ui.components.sharedBoundsOrSelf
+import com.aiyu.rewire.ui.theme.DarkColors
+import com.aiyu.rewire.ui.theme.TimerTextStyle
+import com.aiyu.rewire.ui.theme.rememberReducedMotion
 import kotlinx.coroutines.delay
 import kotlin.random.Random
 

@@ -1,10 +1,10 @@
-package com.rewire.app.core.settings
+package com.aiyu.rewire.core.settings
 
-import com.rewire.app.data.local.SettingsDao
-import com.rewire.app.domain.update.UpdateChannel
-import com.rewire.app.data.local.SettingsEntity
-import com.rewire.app.data.local.toDomain
-import com.rewire.app.data.local.withNotification
+import com.aiyu.rewire.data.local.SettingsDao
+import com.aiyu.rewire.domain.update.UpdateChannel
+import com.aiyu.rewire.data.local.SettingsEntity
+import com.aiyu.rewire.data.local.toDomain
+import com.aiyu.rewire.data.local.withNotification
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
 

@@ -1,4 +1,4 @@
-package com.rewire.app.feature.profile
+package com.aiyu.rewire.feature.profile
 
 import android.content.Intent
 import android.net.Uri
@@ -31,15 +31,15 @@ import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
-import com.rewire.app.ui.components.UserAvatar
+import com.aiyu.rewire.ui.components.UserAvatar
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
-import com.rewire.app.BuildConfig
-import com.rewire.app.ui.components.SectionTitle
+import com.aiyu.rewire.BuildConfig
+import com.aiyu.rewire.ui.components.SectionTitle
 
 private const val GITHUB_URL = "https://github.com/aiyu-ayaan"
 private const val INSTALL_GUIDE_URL = "https://github.com/aiyu-ayaan/Rewire#install"

@@ -1,9 +1,9 @@
-package com.rewire.app.core.guard
+package com.aiyu.rewire.core.guard
 
 import android.app.usage.UsageEvents
 import android.app.usage.UsageStatsManager
 import android.content.Context
-import com.rewire.app.core.permissions.SystemPermissions
+import com.aiyu.rewire.core.permissions.SystemPermissions
 import java.time.LocalDate
 import java.time.ZoneId
 

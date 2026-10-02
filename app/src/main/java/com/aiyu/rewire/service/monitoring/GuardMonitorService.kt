@@ -1,4 +1,4 @@
-package com.rewire.app.service.monitoring
+package com.aiyu.rewire.service.monitoring
 
 import android.app.Service
 import android.content.Context
@@ -8,14 +8,14 @@ import android.os.Build
 import android.os.IBinder
 import androidx.core.content.ContextCompat
 import android.os.PowerManager
-import com.rewire.app.core.guard.HabitEngine
-import com.rewire.app.core.guard.UsageTracker
-import com.rewire.app.core.permissions.SystemPermissions
-import com.rewire.app.data.HabitRepository
-import com.rewire.app.service.accessibility.RewireAccessibilityService
+import com.aiyu.rewire.core.guard.HabitEngine
+import com.aiyu.rewire.core.guard.UsageTracker
+import com.aiyu.rewire.core.permissions.SystemPermissions
+import com.aiyu.rewire.data.HabitRepository
+import com.aiyu.rewire.service.accessibility.RewireAccessibilityService
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
-import com.rewire.app.core.notifications.RewireNotifier
+import com.aiyu.rewire.core.notifications.RewireNotifier
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job

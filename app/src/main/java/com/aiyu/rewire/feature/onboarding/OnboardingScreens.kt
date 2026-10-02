@@ -1,4 +1,4 @@
-package com.rewire.app.feature.onboarding
+package com.aiyu.rewire.feature.onboarding
 
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.runtime.setValue
@@ -50,26 +50,26 @@ import androidx.compose.ui.window.Dialog
 import androidx.compose.ui.window.DialogProperties
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
-import com.rewire.app.ui.SettingsViewModel
-import com.rewire.app.core.settings.UserGoal
-import com.rewire.app.core.settings.UserProfile
-import com.rewire.app.core.permissions.PermissionsPanel
-import com.rewire.app.core.permissions.SystemPermissions
-import com.rewire.app.core.permissions.rememberGrantedCount
-import com.rewire.app.domain.habit.Habit
-import com.rewire.app.domain.habit.HabitProfile
-import com.rewire.app.domain.habit.RestrictionRule
-import com.rewire.app.domain.habit.WarningLevel
-import com.rewire.app.domain.warning.Warning
-import com.rewire.app.domain.warning.WarningCategory
-import com.rewire.app.feature.guard.WarningScreen
-import com.rewire.app.feature.landing.HERO_KEY
-import com.rewire.app.ui.components.AvatarShapes
-import com.rewire.app.ui.components.InnerScreen
-import com.rewire.app.ui.components.MorphingShape
-import com.rewire.app.ui.components.UserAvatar
-import com.rewire.app.ui.components.heroBrush
-import com.rewire.app.ui.components.sharedBoundsOrSelf
+import com.aiyu.rewire.ui.SettingsViewModel
+import com.aiyu.rewire.core.settings.UserGoal
+import com.aiyu.rewire.core.settings.UserProfile
+import com.aiyu.rewire.core.permissions.PermissionsPanel
+import com.aiyu.rewire.core.permissions.SystemPermissions
+import com.aiyu.rewire.core.permissions.rememberGrantedCount
+import com.aiyu.rewire.domain.habit.Habit
+import com.aiyu.rewire.domain.habit.HabitProfile
+import com.aiyu.rewire.domain.habit.RestrictionRule
+import com.aiyu.rewire.domain.habit.WarningLevel
+import com.aiyu.rewire.domain.warning.Warning
+import com.aiyu.rewire.domain.warning.WarningCategory
+import com.aiyu.rewire.feature.guard.WarningScreen
+import com.aiyu.rewire.feature.landing.HERO_KEY
+import com.aiyu.rewire.ui.components.AvatarShapes
+import com.aiyu.rewire.ui.components.InnerScreen
+import com.aiyu.rewire.ui.components.MorphingShape
+import com.aiyu.rewire.ui.components.UserAvatar
+import com.aiyu.rewire.ui.components.heroBrush
+import com.aiyu.rewire.ui.components.sharedBoundsOrSelf
 
 const val AVATAR_KEY = "user-avatar"
 

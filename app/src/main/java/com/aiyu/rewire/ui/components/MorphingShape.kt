@@ -1,4 +1,4 @@
-package com.rewire.app.ui.components
+package com.aiyu.rewire.ui.components
 
 import androidx.compose.animation.core.CubicBezierEasing
 import androidx.compose.animation.core.LinearEasing
@@ -20,8 +20,8 @@ import androidx.compose.ui.graphics.Path
 import androidx.compose.ui.graphics.drawscope.rotate
 import androidx.graphics.shapes.Morph
 import androidx.graphics.shapes.RoundedPolygon
-import com.rewire.app.ui.theme.RewireMotion
-import com.rewire.app.ui.theme.rememberReducedMotion
+import com.aiyu.rewire.ui.theme.RewireMotion
+import com.aiyu.rewire.ui.theme.rememberReducedMotion
 
 /** Hero sequence used on landing + brand mark. */
 val HeroShapes: List<RoundedPolygon>

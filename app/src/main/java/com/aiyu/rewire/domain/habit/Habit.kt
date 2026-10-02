@@ -1,4 +1,4 @@
-package com.rewire.app.domain.habit
+package com.aiyu.rewire.domain.habit
 
 import kotlinx.serialization.Serializable
 

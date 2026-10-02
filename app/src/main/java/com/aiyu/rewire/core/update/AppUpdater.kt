@@ -1,4 +1,4 @@
-package com.rewire.app.core.update
+package com.aiyu.rewire.core.update
 
 import android.app.PendingIntent
 import android.content.Context
@@ -6,15 +6,15 @@ import android.content.Intent
 import android.content.pm.PackageInstaller
 import android.net.Uri
 import android.os.Build
-import com.rewire.app.BuildConfig
-import com.rewire.app.core.settings.Settings
-import com.rewire.app.core.settings.SettingsRepository
-import com.rewire.app.di.AppScope
-import com.rewire.app.domain.update.Release
-import com.rewire.app.domain.update.ReleaseAsset
-import com.rewire.app.domain.update.Releases
-import com.rewire.app.domain.update.UpdateChannel
-import com.rewire.app.domain.update.Version
+import com.aiyu.rewire.BuildConfig
+import com.aiyu.rewire.core.settings.Settings
+import com.aiyu.rewire.core.settings.SettingsRepository
+import com.aiyu.rewire.di.AppScope
+import com.aiyu.rewire.domain.update.Release
+import com.aiyu.rewire.domain.update.ReleaseAsset
+import com.aiyu.rewire.domain.update.Releases
+import com.aiyu.rewire.domain.update.UpdateChannel
+import com.aiyu.rewire.domain.update.Version
 import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers

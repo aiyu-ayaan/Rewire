@@ -1,4 +1,4 @@
-package com.rewire.app.ui.theme
+package com.aiyu.rewire.ui.theme
 
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Shapes

@@ -1,4 +1,4 @@
-package com.rewire.app.feature.profile
+package com.aiyu.rewire.feature.profile
 
 import android.content.Intent
 import android.net.Uri

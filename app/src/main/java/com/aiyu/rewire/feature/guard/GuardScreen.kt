@@ -1,4 +1,4 @@
-package com.rewire.app.feature.guard
+package com.aiyu.rewire.feature.guard
 
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.core.animateFloatAsState
@@ -22,9 +22,9 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.material.icons.Icons
-import com.rewire.app.BuildConfig
-import com.rewire.app.service.accessibility.RewireAccessibilityService
-import com.rewire.app.core.permissions.SystemPermissions
+import com.aiyu.rewire.BuildConfig
+import com.aiyu.rewire.service.accessibility.RewireAccessibilityService
+import com.aiyu.rewire.core.permissions.SystemPermissions
 import androidx.lifecycle.compose.LifecycleResumeEffect
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.material.icons.rounded.GppMaybe
@@ -60,18 +60,18 @@ import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import com.rewire.app.domain.analytics.DailyMetrics
-import com.rewire.app.domain.habit.HabitProfile
-import com.rewire.app.feature.landing.HERO_KEY
+import com.aiyu.rewire.domain.analytics.DailyMetrics
+import com.aiyu.rewire.domain.habit.HabitProfile
+import com.aiyu.rewire.feature.landing.HERO_KEY
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
-import com.rewire.app.ui.components.AppIcon
-import com.rewire.app.ui.components.EmptyState
-import com.rewire.app.ui.components.LevelBadge
-import com.rewire.app.ui.components.MorphingShape
-import com.rewire.app.ui.components.heroBrush
-import com.rewire.app.ui.components.SectionTitle
-import com.rewire.app.ui.components.formatMinutes
-import com.rewire.app.ui.components.sharedBoundsOrSelf
+import com.aiyu.rewire.ui.components.AppIcon
+import com.aiyu.rewire.ui.components.EmptyState
+import com.aiyu.rewire.ui.components.LevelBadge
+import com.aiyu.rewire.ui.components.MorphingShape
+import com.aiyu.rewire.ui.components.heroBrush
+import com.aiyu.rewire.ui.components.SectionTitle
+import com.aiyu.rewire.ui.components.formatMinutes
+import com.aiyu.rewire.ui.components.sharedBoundsOrSelf
 import java.time.LocalDate
 import java.time.format.DateTimeFormatter
 

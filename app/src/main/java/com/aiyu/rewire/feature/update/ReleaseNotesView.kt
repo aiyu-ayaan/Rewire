@@ -1,4 +1,4 @@
-package com.rewire.app.feature.update
+package com.aiyu.rewire.feature.update
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -17,8 +17,8 @@ import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.unit.dp
-import com.rewire.app.domain.update.NoteBlock
-import com.rewire.app.domain.update.ReleaseNotes
+import com.aiyu.rewire.domain.update.NoteBlock
+import com.aiyu.rewire.domain.update.ReleaseNotes
 
 /** A GitHub release body drawn as what it is (headings, bullets, paragraphs), not as raw `###` and `**`. */
 @Composable

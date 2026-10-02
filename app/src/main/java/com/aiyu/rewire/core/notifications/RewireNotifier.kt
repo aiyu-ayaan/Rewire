@@ -1,4 +1,4 @@
-package com.rewire.app.core.notifications
+package com.aiyu.rewire.core.notifications
 
 import android.Manifest
 import android.annotation.SuppressLint
@@ -17,11 +17,11 @@ import androidx.core.app.NotificationChannelCompat
 import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
 import androidx.core.content.ContextCompat
-import com.rewire.app.MainActivity
-import com.rewire.app.R
-import com.rewire.app.core.settings.NotificationCategory
-import com.rewire.app.domain.focus.FocusSessionStatus
-import com.rewire.app.domain.focus.FocusState
+import com.aiyu.rewire.MainActivity
+import com.aiyu.rewire.R
+import com.aiyu.rewire.core.settings.NotificationCategory
+import com.aiyu.rewire.domain.focus.FocusSessionStatus
+import com.aiyu.rewire.domain.focus.FocusState
 
 /** Top-level destinations a notification can open. */
 enum class DeepLink { GUARD, FOCUS, MATRIX, PROFILE }
@@ -101,7 +101,7 @@ class RewireNotifier(
 
     // ---- Focus -------------------------------------------------------------------------------
 
-    /** Foreground-service notification of [com.rewire.app.service.focus.FocusTimerService]; shown regardless of category prefs (Android requires one). */
+    /** Foreground-service notification of [com.aiyu.rewire.service.focus.FocusTimerService]; shown regardless of category prefs (Android requires one). */
     fun focusOngoing(state: FocusState, now: Long): Notification {
         val onBreak = state.phase == FocusSessionStatus.BREAK
         val title = context.getString(if (onBreak) R.string.notif_focus_break_title else R.string.notif_focus_title)
@@ -268,7 +268,7 @@ class RewireNotifier(
     }
 
     companion object {
-        const val EXTRA_DEEP_LINK = "com.rewire.app.DEEP_LINK"
+        const val EXTRA_DEEP_LINK = "com.aiyu.rewire.DEEP_LINK"
         private const val MINIMISED_TIMEOUT_MILLIS = 8_000L
 
         fun formatRemaining(millis: Long): String {

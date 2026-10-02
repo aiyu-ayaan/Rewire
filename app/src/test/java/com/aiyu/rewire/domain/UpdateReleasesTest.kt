@@ -1,12 +1,12 @@
-package com.rewire.app.domain
+package com.aiyu.rewire.domain
 
-import com.rewire.app.domain.update.NoteBlock
-import com.rewire.app.domain.update.Release
-import com.rewire.app.domain.update.ReleaseAsset
-import com.rewire.app.domain.update.ReleaseNotes
-import com.rewire.app.domain.update.Releases
-import com.rewire.app.domain.update.UpdateChannel
-import com.rewire.app.domain.update.Version
+import com.aiyu.rewire.domain.update.NoteBlock
+import com.aiyu.rewire.domain.update.Release
+import com.aiyu.rewire.domain.update.ReleaseAsset
+import com.aiyu.rewire.domain.update.ReleaseNotes
+import com.aiyu.rewire.domain.update.Releases
+import com.aiyu.rewire.domain.update.UpdateChannel
+import com.aiyu.rewire.domain.update.Version
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertNull
 import org.junit.Assert.assertTrue

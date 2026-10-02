@@ -1,4 +1,4 @@
-package com.rewire.app.feature.profile
+package com.aiyu.rewire.feature.profile
 
 import android.os.Build
 import androidx.compose.runtime.getValue
@@ -22,8 +22,8 @@ import androidx.compose.material.icons.rounded.FormatQuote
 import androidx.compose.material.icons.rounded.Notifications
 import androidx.compose.material.icons.rounded.Palette
 import androidx.compose.material.icons.rounded.SystemUpdate
-import com.rewire.app.core.update.UpdateState
-import com.rewire.app.feature.update.UpdateViewModel
+import com.aiyu.rewire.core.update.UpdateState
+import com.aiyu.rewire.feature.update.UpdateViewModel
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.Icon
@@ -41,18 +41,18 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import com.rewire.app.BuildConfig
+import com.aiyu.rewire.BuildConfig
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
-import com.rewire.app.ui.SettingsViewModel
-import com.rewire.app.core.settings.ThemeMode
-import com.rewire.app.core.settings.UserProfile
-import com.rewire.app.core.permissions.PermissionsPanel
-import com.rewire.app.feature.onboarding.AVATAR_KEY
-import com.rewire.app.ui.components.UserAvatar
-import com.rewire.app.ui.components.sharedBoundsOrSelf
-import com.rewire.app.core.notifications.PermissionStatus
-import com.rewire.app.core.notifications.rememberNotificationPermission
-import com.rewire.app.ui.components.SectionTitle
+import com.aiyu.rewire.ui.SettingsViewModel
+import com.aiyu.rewire.core.settings.ThemeMode
+import com.aiyu.rewire.core.settings.UserProfile
+import com.aiyu.rewire.core.permissions.PermissionsPanel
+import com.aiyu.rewire.feature.onboarding.AVATAR_KEY
+import com.aiyu.rewire.ui.components.UserAvatar
+import com.aiyu.rewire.ui.components.sharedBoundsOrSelf
+import com.aiyu.rewire.core.notifications.PermissionStatus
+import com.aiyu.rewire.core.notifications.rememberNotificationPermission
+import com.aiyu.rewire.ui.components.SectionTitle
 
 @Composable
 fun ProfileScreen(onOpenNotificationSettings: () -> Unit, onOpenWarningLibrary: () -> Unit, onEditProfile: () -> Unit, onOpenAbout: () -> Unit, onOpenUpdates: () -> Unit) {

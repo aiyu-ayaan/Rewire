@@ -1,12 +1,12 @@
-package com.rewire.app
+package com.aiyu.rewire
 
 import androidx.lifecycle.lifecycleScope
-import com.rewire.app.core.update.AppUpdater
-import com.rewire.app.feature.update.UpdateHost
+import com.aiyu.rewire.core.update.AppUpdater
+import com.aiyu.rewire.feature.update.UpdateHost
 import kotlinx.coroutines.launch
-import com.rewire.app.core.focus.FocusController
-import com.rewire.app.core.guard.HabitEngine
-import com.rewire.app.core.settings.Settings
+import com.aiyu.rewire.core.focus.FocusController
+import com.aiyu.rewire.core.guard.HabitEngine
+import com.aiyu.rewire.core.settings.Settings
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.StateFlow
 import javax.inject.Inject
@@ -31,11 +31,11 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import com.rewire.app.core.settings.ThemeMode
-import com.rewire.app.core.notifications.DeepLink
-import com.rewire.app.core.notifications.RewireNotifier
-import com.rewire.app.ui.RewireNavHost
-import com.rewire.app.ui.theme.RewireTheme
+import com.aiyu.rewire.core.settings.ThemeMode
+import com.aiyu.rewire.core.notifications.DeepLink
+import com.aiyu.rewire.core.notifications.RewireNotifier
+import com.aiyu.rewire.ui.RewireNavHost
+import com.aiyu.rewire.ui.theme.RewireTheme
 
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {

@@ -1,6 +1,6 @@
-package com.rewire.app.core.guard
+package com.aiyu.rewire.core.guard
 
-import com.rewire.app.core.guard.UsageTracker.Event
+import com.aiyu.rewire.core.guard.UsageTracker.Event
 import org.junit.Assert.assertEquals
 import org.junit.Test
 

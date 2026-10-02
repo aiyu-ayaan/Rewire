@@ -1,4 +1,4 @@
-package com.rewire.app.ui
+package com.aiyu.rewire.ui
 
 import androidx.compose.animation.AnimatedContent
 import androidx.compose.animation.AnimatedVisibility
@@ -55,11 +55,11 @@ import androidx.compose.ui.unit.IntOffset
 import androidx.compose.ui.unit.IntSize
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.unit.dp
-import com.rewire.app.core.notifications.DeepLink
-import com.rewire.app.feature.focus.FocusScreen
-import com.rewire.app.feature.guard.GuardScreen
-import com.rewire.app.feature.matrix.MatrixScreen
-import com.rewire.app.feature.profile.ProfileScreen
+import com.aiyu.rewire.core.notifications.DeepLink
+import com.aiyu.rewire.feature.focus.FocusScreen
+import com.aiyu.rewire.feature.guard.GuardScreen
+import com.aiyu.rewire.feature.matrix.MatrixScreen
+import com.aiyu.rewire.feature.profile.ProfileScreen
 
 enum class Tab(val label: String, val icon: ImageVector, val selectedIcon: ImageVector, val link: DeepLink) {
     GUARD("Guard", Icons.Outlined.Shield, Icons.Rounded.Shield, DeepLink.GUARD),

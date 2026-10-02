@@ -1,10 +1,10 @@
-package com.rewire.app.service.boot
+package com.aiyu.rewire.service.boot
 
 import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
-import com.rewire.app.data.HabitRepository
-import com.rewire.app.service.monitoring.GuardMonitorService
+import com.aiyu.rewire.data.HabitRepository
+import com.aiyu.rewire.service.monitoring.GuardMonitorService
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 

@@ -1,4 +1,4 @@
-package com.rewire.app.data.local
+package com.aiyu.rewire.data.local
 
 import androidx.room.ColumnInfo
 import androidx.room.Embedded
@@ -7,13 +7,13 @@ import androidx.room.ForeignKey
 import androidx.room.Index
 import androidx.room.PrimaryKey
 import androidx.room.Relation
-import com.rewire.app.core.settings.ThemeMode
-import com.rewire.app.core.settings.UserGoal
-import com.rewire.app.domain.analytics.HabitEventType
-import com.rewire.app.domain.focus.FocusSessionStatus
-import com.rewire.app.domain.habit.WarningLevel
-import com.rewire.app.domain.update.UpdateChannel
-import com.rewire.app.domain.warning.WarningCategory
+import com.aiyu.rewire.core.settings.ThemeMode
+import com.aiyu.rewire.core.settings.UserGoal
+import com.aiyu.rewire.domain.analytics.HabitEventType
+import com.aiyu.rewire.domain.focus.FocusSessionStatus
+import com.aiyu.rewire.domain.habit.WarningLevel
+import com.aiyu.rewire.domain.update.UpdateChannel
+import com.aiyu.rewire.domain.warning.WarningCategory
 
 // Enums are stored by name (Room default), so reordering an enum never corrupts rows.
 

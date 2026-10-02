@@ -1,4 +1,4 @@
-package com.rewire.app.feature.update
+package com.aiyu.rewire.feature.update
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -29,11 +29,11 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import com.rewire.app.BuildConfig
-import com.rewire.app.core.update.UpdateState
-import com.rewire.app.domain.update.UpdateChannel
-import com.rewire.app.ui.components.InnerScreen
-import com.rewire.app.ui.components.SectionTitle
+import com.aiyu.rewire.BuildConfig
+import com.aiyu.rewire.core.update.UpdateState
+import com.aiyu.rewire.domain.update.UpdateChannel
+import com.aiyu.rewire.ui.components.InnerScreen
+import com.aiyu.rewire.ui.components.SectionTitle
 import java.time.Instant
 import java.time.ZoneId
 import java.time.format.DateTimeFormatter

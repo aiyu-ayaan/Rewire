@@ -1,4 +1,4 @@
-package com.rewire.app.feature.landing
+package com.aiyu.rewire.feature.landing
 
 import androidx.compose.animation.core.LinearEasing
 import androidx.compose.animation.core.animateDpAsState
@@ -53,12 +53,12 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.graphics.shapes.RoundedPolygon
-import com.rewire.app.R
-import com.rewire.app.ui.components.MorphingShape
-import com.rewire.app.ui.components.heroBrush
-import com.rewire.app.ui.components.sharedBoundsOrSelf
-import com.rewire.app.ui.theme.RewireMotion
-import com.rewire.app.ui.theme.rememberReducedMotion
+import com.aiyu.rewire.R
+import com.aiyu.rewire.ui.components.MorphingShape
+import com.aiyu.rewire.ui.components.heroBrush
+import com.aiyu.rewire.ui.components.sharedBoundsOrSelf
+import com.aiyu.rewire.ui.theme.RewireMotion
+import com.aiyu.rewire.ui.theme.rememberReducedMotion
 import kotlinx.coroutines.launch
 import kotlin.math.cos
 import kotlin.math.sin

@@ -1,14 +1,14 @@
-package com.rewire.app.domain
+package com.aiyu.rewire.domain
 
-import com.rewire.app.domain.focus.FocusConfig
-import com.rewire.app.domain.focus.FocusConfigError
-import com.rewire.app.domain.focus.FocusSessionStatus.BREAK
-import com.rewire.app.domain.focus.FocusSessionStatus.CANCELLED
-import com.rewire.app.domain.focus.FocusSessionStatus.COMPLETED
-import com.rewire.app.domain.focus.FocusSessionStatus.FOCUSING
-import com.rewire.app.domain.focus.FocusSessionStatus.PAUSED
-import com.rewire.app.domain.focus.FocusState
-import com.rewire.app.domain.focus.FocusState.Companion.MINUTE
+import com.aiyu.rewire.domain.focus.FocusConfig
+import com.aiyu.rewire.domain.focus.FocusConfigError
+import com.aiyu.rewire.domain.focus.FocusSessionStatus.BREAK
+import com.aiyu.rewire.domain.focus.FocusSessionStatus.CANCELLED
+import com.aiyu.rewire.domain.focus.FocusSessionStatus.COMPLETED
+import com.aiyu.rewire.domain.focus.FocusSessionStatus.FOCUSING
+import com.aiyu.rewire.domain.focus.FocusSessionStatus.PAUSED
+import com.aiyu.rewire.domain.focus.FocusState
+import com.aiyu.rewire.domain.focus.FocusState.Companion.MINUTE
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertNull
 import org.junit.Test

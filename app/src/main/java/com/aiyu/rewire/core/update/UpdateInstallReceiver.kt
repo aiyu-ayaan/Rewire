@@ -1,4 +1,4 @@
-package com.rewire.app.core.update
+package com.aiyu.rewire.core.update
 
 import android.content.BroadcastReceiver
 import android.content.Context
@@ -45,6 +45,6 @@ class UpdateInstallReceiver : BroadcastReceiver() {
         else intent.getParcelableExtra(Intent.EXTRA_INTENT)
 
     companion object {
-        const val ACTION_STATUS = "com.rewire.app.UPDATE_INSTALL_STATUS"
+        const val ACTION_STATUS = "com.aiyu.rewire.UPDATE_INSTALL_STATUS"
     }
 }

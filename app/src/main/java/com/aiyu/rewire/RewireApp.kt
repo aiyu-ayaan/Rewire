@@ -1,11 +1,11 @@
-package com.rewire.app
+package com.aiyu.rewire
 
 import android.app.Application
-import com.rewire.app.core.focus.FocusController
-import com.rewire.app.core.guard.HabitEngine
-import com.rewire.app.core.update.AppUpdater
-import com.rewire.app.core.update.UpdateWorker
-import com.rewire.app.core.notifications.RewireNotifier
+import com.aiyu.rewire.core.focus.FocusController
+import com.aiyu.rewire.core.guard.HabitEngine
+import com.aiyu.rewire.core.update.AppUpdater
+import com.aiyu.rewire.core.update.UpdateWorker
+import com.aiyu.rewire.core.notifications.RewireNotifier
 import dagger.hilt.android.HiltAndroidApp
 import javax.inject.Inject
 

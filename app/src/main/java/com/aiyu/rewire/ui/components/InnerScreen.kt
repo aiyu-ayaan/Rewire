@@ -1,4 +1,4 @@
-package com.rewire.app.ui.components
+package com.aiyu.rewire.ui.components
 
 import androidx.compose.foundation.layout.ColumnScope
 import androidx.compose.foundation.layout.Column

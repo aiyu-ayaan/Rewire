@@ -1,4 +1,4 @@
-package com.rewire.app.feature.guard
+package com.aiyu.rewire.feature.guard
 
 import android.content.Context
 import android.content.Intent
@@ -19,20 +19,20 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import com.rewire.app.core.apps.InstalledAppsSource
-import com.rewire.app.core.guard.HabitEngine
-import com.rewire.app.core.settings.Settings
-import com.rewire.app.data.HabitRepository
-import com.rewire.app.data.WarningRepository
+import com.aiyu.rewire.core.apps.InstalledAppsSource
+import com.aiyu.rewire.core.guard.HabitEngine
+import com.aiyu.rewire.core.settings.Settings
+import com.aiyu.rewire.data.HabitRepository
+import com.aiyu.rewire.data.WarningRepository
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.StateFlow
 import javax.inject.Inject
-import com.rewire.app.core.settings.ThemeMode
-import com.rewire.app.core.guard.GuardOutcome
-import com.rewire.app.core.guard.GuardShield
-import com.rewire.app.domain.habit.WarningLevel
-import com.rewire.app.domain.warning.WarningPicker
-import com.rewire.app.ui.theme.RewireTheme
+import com.aiyu.rewire.core.settings.ThemeMode
+import com.aiyu.rewire.core.guard.GuardOutcome
+import com.aiyu.rewire.core.guard.GuardShield
+import com.aiyu.rewire.domain.habit.WarningLevel
+import com.aiyu.rewire.domain.warning.WarningPicker
+import com.aiyu.rewire.ui.theme.RewireTheme
 
 /**
  * The real warning / block screen, launched by HabitEngine over the protected app.

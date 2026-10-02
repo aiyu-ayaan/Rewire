@@ -1,4 +1,4 @@
-package com.rewire.app.ui.theme
+package com.aiyu.rewire.ui.theme
 
 import android.provider.Settings
 import androidx.compose.runtime.Composable

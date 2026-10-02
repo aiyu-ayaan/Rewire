@@ -1,18 +1,18 @@
-package com.rewire.app.data.local
+package com.aiyu.rewire.data.local
 
-import com.rewire.app.core.settings.FocusBypass
-import com.rewire.app.core.settings.NotificationCategory
-import com.rewire.app.core.settings.Settings
-import com.rewire.app.core.settings.UserProfile
-import com.rewire.app.domain.analytics.HabitEvent
-import com.rewire.app.domain.focus.FocusConfig
-import com.rewire.app.domain.focus.FocusSession
-import com.rewire.app.domain.focus.FocusState
-import com.rewire.app.domain.habit.Habit
-import com.rewire.app.domain.habit.HabitProfile
-import com.rewire.app.domain.habit.ProtectedApp
-import com.rewire.app.domain.habit.RestrictionRule
-import com.rewire.app.domain.warning.Warning
+import com.aiyu.rewire.core.settings.FocusBypass
+import com.aiyu.rewire.core.settings.NotificationCategory
+import com.aiyu.rewire.core.settings.Settings
+import com.aiyu.rewire.core.settings.UserProfile
+import com.aiyu.rewire.domain.analytics.HabitEvent
+import com.aiyu.rewire.domain.focus.FocusConfig
+import com.aiyu.rewire.domain.focus.FocusSession
+import com.aiyu.rewire.domain.focus.FocusState
+import com.aiyu.rewire.domain.habit.Habit
+import com.aiyu.rewire.domain.habit.HabitProfile
+import com.aiyu.rewire.domain.habit.ProtectedApp
+import com.aiyu.rewire.domain.habit.RestrictionRule
+import com.aiyu.rewire.domain.warning.Warning
 
 fun HabitWithDetails.toDomain(): HabitProfile? {
     val r = rule ?: return null // a habit without a rule can't be enforced; never surface half a row

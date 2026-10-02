@@ -1,6 +1,6 @@
-package com.rewire.app.domain.warning
+package com.aiyu.rewire.domain.warning
 
-import com.rewire.app.domain.habit.WarningLevel
+import com.aiyu.rewire.domain.habit.WarningLevel
 import kotlinx.serialization.Serializable
 import kotlin.random.Random
 

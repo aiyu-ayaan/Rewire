@@ -1,15 +1,15 @@
-package com.rewire.app.domain
+package com.aiyu.rewire.domain
 
-import com.rewire.app.domain.habit.Habit
-import com.rewire.app.domain.habit.HabitProfile
-import com.rewire.app.domain.habit.RestrictionRule
-import com.rewire.app.domain.habit.WarningLevel
-import com.rewire.app.domain.restriction.BlockReason
-import com.rewire.app.domain.restriction.RestrictionDecision.Allow
-import com.rewire.app.domain.restriction.RestrictionDecision.Block
-import com.rewire.app.domain.restriction.RestrictionDecision.Warn
-import com.rewire.app.domain.restriction.RuleEngine
-import com.rewire.app.domain.restriction.RuleInput
+import com.aiyu.rewire.domain.habit.Habit
+import com.aiyu.rewire.domain.habit.HabitProfile
+import com.aiyu.rewire.domain.habit.RestrictionRule
+import com.aiyu.rewire.domain.habit.WarningLevel
+import com.aiyu.rewire.domain.restriction.BlockReason
+import com.aiyu.rewire.domain.restriction.RestrictionDecision.Allow
+import com.aiyu.rewire.domain.restriction.RestrictionDecision.Block
+import com.aiyu.rewire.domain.restriction.RestrictionDecision.Warn
+import com.aiyu.rewire.domain.restriction.RuleEngine
+import com.aiyu.rewire.domain.restriction.RuleInput
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertFalse
 import org.junit.Assert.assertNull

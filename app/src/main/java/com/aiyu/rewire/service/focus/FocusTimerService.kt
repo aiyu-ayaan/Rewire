@@ -1,4 +1,4 @@
-package com.rewire.app.service.focus
+package com.aiyu.rewire.service.focus
 
 import android.app.Service
 import android.content.Context
@@ -9,18 +9,18 @@ import android.os.IBinder
 import android.os.PowerManager
 import androidx.core.app.ServiceCompat
 import androidx.core.content.ContextCompat
-import com.rewire.app.core.focus.FocusController
+import com.aiyu.rewire.core.focus.FocusController
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
-import com.rewire.app.core.notifications.RewireNotifier
-import com.rewire.app.domain.focus.FocusState
+import com.aiyu.rewire.core.notifications.RewireNotifier
+import com.aiyu.rewire.domain.focus.FocusState
 import kotlinx.coroutines.MainScope
 import kotlinx.coroutines.cancel
 import kotlinx.coroutines.launch
 
 /**
  * Keeps a focus session alive when the app is swiped from recents, minimised or the screen is off.
- * Pure platform glue: the timer itself is [com.rewire.app.core.focus.FocusController]; this service
+ * Pure platform glue: the timer itself is [com.aiyu.rewire.core.focus.FocusController]; this service
  * only holds the foreground notification and a wake lock so phase changes fire on time.
  */
 @AndroidEntryPoint

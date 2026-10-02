@@ -1,4 +1,4 @@
-package com.rewire.app.core.apps
+package com.aiyu.rewire.core.apps
 
 import android.content.Context
 import android.content.Intent
