@@ -1,5 +1,15 @@
 # Changelog
 
+## [1.0.1-alpha.6](https://github.com/aiyu-ayaan/Rewire/compare/v1.0.1-alpha.5...v1.0.1-alpha.6) (2026-10-02)
+
+### Bug fixes
+
+* No flash before the block screen in Lite
+
+### Other changes
+
+* Lite block screen opens without a flash
+
 ## [1.0.1-alpha.5](https://github.com/aiyu-ayaan/Rewire/compare/v1.0.1-alpha.4...v1.0.1-alpha.5) (2026-10-02)
 
 ### Bug fixes
