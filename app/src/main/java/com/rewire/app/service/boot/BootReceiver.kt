@@ -9,7 +9,8 @@ import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 
 /**
- * Restores required monitoring state after device reboot (AGENTS.md §17).
+ * Restores required monitoring state after device reboot (AGENTS.md §17) and after an update replaced the app,
+ * which kills the process: Full gets its accessibility service rebound by the system, Lite has nothing else.
  * Light check: only starts foreground service if habits are enabled.
  */
 @AndroidEntryPoint
@@ -17,7 +18,7 @@ class BootReceiver : BroadcastReceiver() {
     @Inject lateinit var habits: HabitRepository
 
     override fun onReceive(context: Context, intent: Intent) {
-        if (intent.action == Intent.ACTION_BOOT_COMPLETED) {
+        if (intent.action == Intent.ACTION_BOOT_COMPLETED || intent.action == Intent.ACTION_MY_PACKAGE_REPLACED) {
             // A session interrupted by the reboot was already resumed (or its DND undone) in RewireApp.onCreate.
             if (habits.habits.value.any { it.habit.enabled }) {
                 GuardMonitorService.start(context)

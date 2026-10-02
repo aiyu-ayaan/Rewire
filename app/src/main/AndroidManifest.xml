@@ -111,12 +111,13 @@
         <!-- Answers the PackageInstaller session an update starts (confirmation screen / failure reason) -->
         <receiver android:name=".core.update.UpdateInstallReceiver" android:exported="false" />
 
-        <!-- Restores background monitoring on device boot -->
+        <!-- Restores background monitoring on device boot and after an update -->
         <receiver
             android:name=".service.boot.BootReceiver"
             android:exported="false">
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.intent.action.MY_PACKAGE_REPLACED" />
             </intent-filter>
         </receiver>
 
