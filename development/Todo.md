@@ -183,6 +183,7 @@ service off -> banner + notification.
 - [x] About shows Full/Lite build + install guide link; CI fails unless both APKs ship correctly (2026-10-02)
 - [x] Focus timer + full-screen timer: landscape layouts, sensor rotation (2026-10-02)
 - [x] Lite: Max not blocking on a real device fixed: overlay shield before the guard start, every usage resume judged (2026-10-02)
+- [x] Lite: re-judge open app after unlock, restart monitoring when Rewire opens, warn on refused start / missing grants, 15 s usage lookback (2026-10-02)
 - [ ] Device-test Lite release on a real phone (OEM skin) after the shield fix: Max daily limit, window, launch limit
 - [ ] Device-test Full flavor end to end after the flavor split (only Lite was run on the emulator)
 
