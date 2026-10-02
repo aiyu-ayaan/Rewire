@@ -1,7 +1,6 @@
 package com.rewire.app.core.guard
 
 import android.content.Context
-import android.graphics.Color
 import android.graphics.PixelFormat
 import android.os.Handler
 import android.os.Looper
@@ -22,16 +21,20 @@ import com.rewire.app.R
  * start silently: the block was logged but the app stayed usable. An app with a visible window may start
  * activities, so the shield goes up first and the guard starts once it is on screen. If the start is still
  * refused, the shield covers the app itself and offers Go back / Open Rewire (a tap is always allowed).
+ * It starts as the guard window's own background, blank, so the normal case reads as one screen; text and
+ * buttons appear only if the guard isn't up after [FALLBACK_MS]. Not FLAG_SECURE: there is nothing to hide.
  * Never a lockout: Go back is always there, and it removes itself after [TIMEOUT_MS].
  * Main thread only.
  */
 object GuardShield {
     private const val SETTLE_MS = 150L
     private const val TIMEOUT_MS = 30_000L
+    private const val FALLBACK_MS = 1_500L
 
     private val main = Handler(Looper.getMainLooper())
     private var view: View? = null
     private val expire = Runnable { dismiss() }
+    private val reveal = Runnable { (view as? LinearLayout)?.let { v -> for (i in 0 until v.childCount) v.getChildAt(i).visibility = View.VISIBLE } }
 
     /** Puts the shield up and runs [startGuard] once it's on screen. False = no overlay grant, nothing shown. */
     fun cover(context: Context, startGuard: () -> Unit, goHome: () -> Unit): Boolean {
@@ -44,13 +47,14 @@ object GuardShield {
             WindowManager.LayoutParams.MATCH_PARENT,
             WindowManager.LayoutParams.MATCH_PARENT,
             WindowManager.LayoutParams.TYPE_APPLICATION_OVERLAY,
-            WindowManager.LayoutParams.FLAG_LAYOUT_IN_SCREEN or WindowManager.LayoutParams.FLAG_SECURE,
+            WindowManager.LayoutParams.FLAG_LAYOUT_IN_SCREEN,
             PixelFormat.OPAQUE,
         )
         if (runCatching { wm.addView(v, params) }.isFailure) return false
         view = v
         // Started once the window is drawn and visible to the system; earlier it doesn't count yet.
         v.post { main.postDelayed({ if (view === v) startGuard() }, SETTLE_MS) }
+        main.postDelayed(reveal, FALLBACK_MS)
         main.removeCallbacks(expire)
         main.postDelayed(expire, TIMEOUT_MS)
         return true
@@ -59,6 +63,7 @@ object GuardShield {
     /** Guard screen is up, or the user chose: take the shield down. */
     fun dismiss() {
         main.removeCallbacks(expire)
+        main.removeCallbacks(reveal)
         val v = view ?: return
         view = null
         runCatching { v.context.getSystemService(WindowManager::class.java)?.removeView(v) }
@@ -66,11 +71,12 @@ object GuardShield {
 
     private fun content(context: Context, onBack: () -> Unit, onOpen: () -> Unit): View {
         fun dp(value: Int) = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, value.toFloat(), context.resources.displayMetrics).toInt()
-        val onSurface = Color.WHITE
+        val onSurface = context.getColor(R.color.brand_pause)
         return LinearLayout(context).apply {
             orientation = LinearLayout.VERTICAL
             gravity = Gravity.CENTER
-            setBackgroundColor(context.getColor(R.color.ic_launcher_background))
+            // Same colour as GuardActivity's window background, its first frame: no visible switch.
+            setBackgroundColor(context.getColor(R.color.canvas))
             setPadding(dp(32), dp(32), dp(32), dp(32))
             isClickable = true // swallow touches meant for the app underneath
             addView(TextView(context).apply {
@@ -94,6 +100,7 @@ object GuardShield {
                 text = context.getString(R.string.guard_shield_back)
                 setOnClickListener { onBack() }
             })
+            for (i in 0 until childCount) getChildAt(i).visibility = View.INVISIBLE // shown by [reveal]
         }
     }
 }
