@@ -56,6 +56,7 @@ class GuardMonitorService : Service() {
         } else {
             startForeground(RewireNotifier.Ids.GUARD_ONGOING, notification)
         }
+        notifier.cancelProtectionOff() // running again; the usage watch re-warns if permissions are missing
         startWatchdog()
         startUsageWatch()
     }
@@ -93,11 +94,23 @@ class GuardMonitorService : Service() {
         usageWatchJob = serviceScope.launch {
             val power = getSystemService(PowerManager::class.java)
             var cursor = 0L // 0 = not watching; the next active tick resyncs instead of reading history
+            var interactive = true
+            var warned = false
             while (isActive) {
                 delay(USAGE_POLL_MS)
                 val now = System.currentTimeMillis()
-                val active = !RewireAccessibilityService.isRunning.value && power.isInteractive &&
-                    SystemPermissions.usageFallbackReady(this@GuardMonitorService)
+                val screenOn = power.isInteractive
+                if (interactive && !screenOn) withContext(Dispatchers.Main) { engine.onScreenOff() }
+                interactive = screenOn
+                val accessibility = RewireAccessibilityService.isRunning.value
+                val ready = SystemPermissions.usageFallbackReady(this@GuardMonitorService)
+                // Lite with Usage access or Display over apps revoked sees nothing: say so instead of failing silently.
+                if (!accessibility && !ready) {
+                    if (!warned) { notifier.protectionOff(); warned = true }
+                } else if (warned) {
+                    notifier.cancelProtectionOff(); warned = false
+                }
+                val active = !accessibility && screenOn && ready
                 if (!active) { cursor = 0L; continue }
                 if (cursor == 0L) {
                     cursor = now
@@ -125,12 +138,17 @@ class GuardMonitorService : Service() {
 
     companion object {
         private const val USAGE_POLL_MS = 1_000L
-        private const val USAGE_LOOKBACK_MS = 5_000L
+        /** Some devices write usage events late; the cursor still keeps each one from being used twice. */
+        private const val USAGE_LOOKBACK_MS = 15_000L
 
         fun start(context: Context) {
             val intent = Intent(context, GuardMonitorService::class.java)
             runCatching {
                 ContextCompat.startForegroundService(context, intent)
+            }.onFailure {
+                // Android 12+ refuses foreground-service starts from the background (e.g. the system restarted
+                // the process). Lite then watches nothing: tell the user; opening Rewire starts it again.
+                RewireNotifier(context.applicationContext) { true }.protectionOff()
             }
         }
 
