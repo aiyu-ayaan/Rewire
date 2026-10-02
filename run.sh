@@ -29,8 +29,8 @@ if [ "$DEVICE_COUNT" -eq 0 ]; then
     exit 1
 fi
 
-echo "==> Device detected. Building and installing debug build..."
-./gradlew installDebug
+echo "==> Device detected. Building and installing ${REWIRE_FLAVOR:-Full} debug build..."
+./gradlew "install${REWIRE_FLAVOR:-Full}Debug"
 
 echo "==> Launching $PACKAGE_NAME..."
 adb shell am start -n "$PACKAGE_NAME/$ACTIVITY_NAME" -a android.intent.action.MAIN -c android.intent.category.LAUNCHER

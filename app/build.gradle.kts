@@ -50,6 +50,21 @@ android {
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
+    // full = Accessibility detection (instant). lite = no accessibility service in the manifest: installs from a
+    // browser past Play Protect and doesn't trip payment apps; Guard detects via Usage access instead.
+    flavorDimensions += "detection"
+    productFlavors {
+        create("full") {
+            dimension = "detection"
+            isDefault = true
+            buildConfigField("boolean", "ACCESSIBILITY", "true")
+        }
+        create("lite") {
+            dimension = "detection"
+            buildConfigField("boolean", "ACCESSIBILITY", "false")
+        }
+    }
+
     // English-only UI: drop library translations from the APK.
     androidResources {
         localeFilters += "en"

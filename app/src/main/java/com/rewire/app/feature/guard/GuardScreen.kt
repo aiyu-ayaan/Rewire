@@ -22,6 +22,7 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.material.icons.Icons
+import com.rewire.app.BuildConfig
 import com.rewire.app.service.accessibility.RewireAccessibilityService
 import com.rewire.app.core.permissions.SystemPermissions
 import androidx.lifecycle.compose.LifecycleResumeEffect
@@ -290,14 +291,21 @@ private fun ProtectionBanner() {
                 Column(Modifier.weight(1f)) {
                     Text("Protection is off", style = MaterialTheme.typography.titleMedium)
                     Text(
-                        if (enabled) "Android stopped Rewire's service. Turn Rewire off and on in Accessibility."
+                        if (!BuildConfig.ACCESSIBILITY) "Allow Usage access and Display over apps so Guard can see protected apps."
+                        else if (enabled) "Android stopped Rewire's service. Turn Rewire off and on in Accessibility."
                         else if (isAndroid13Plus) "Turn on Rewire in Accessibility. If disabled, tap Fix to allow restricted settings."
                         else "Turn on Rewire in Accessibility so Guard can see protected apps.",
                         style = MaterialTheme.typography.bodyMedium,
                     )
                 }
                 FilledTonalButton(onClick = {
-                    if (!enabled && isAndroid13Plus) {
+                    if (!BuildConfig.ACCESSIBILITY) {
+                        SystemPermissions.open(
+                            context,
+                            if (!SystemPermissions.usageAccessGranted(context)) SystemPermissions.usageAccessSettings(context)
+                            else SystemPermissions.systemAlertWindowSettings(context),
+                        )
+                    } else if (!enabled && isAndroid13Plus) {
                         showRestrictedDialog = true
                     } else {
                         SystemPermissions.open(context, SystemPermissions.accessibilitySettings())

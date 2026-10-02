@@ -56,6 +56,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.material.icons.rounded.Layers
 import androidx.lifecycle.compose.LifecycleResumeEffect
+import com.rewire.app.BuildConfig
 import com.rewire.app.R
 import com.rewire.app.core.notifications.PermissionStatus
 import com.rewire.app.core.notifications.rememberNotificationPermission
@@ -64,7 +65,11 @@ import com.rewire.app.service.accessibility.RewireAccessibilityService
 /** Special-access permissions: granted by the user in system settings, never requested silently. */
 object SystemPermissions {
 
+    /** Rows in [PermissionsPanel]; Lite has no Accessibility row. */
+    val permissionCount = if (BuildConfig.ACCESSIBILITY) 6 else 5
+
     fun accessibilityEnabled(context: Context): Boolean {
+        if (!BuildConfig.ACCESSIBILITY) return false
         val enabled = Settings.Secure.getString(context.contentResolver, Settings.Secure.ENABLED_ACCESSIBILITY_SERVICES) ?: return false
         val me = ComponentName(context, RewireAccessibilityService::class.java)
         return enabled.split(':').any { ComponentName.unflattenFromString(it) == me }
@@ -138,21 +143,22 @@ fun PermissionsPanel(containerColor: Color = MaterialTheme.colorScheme.surfaceCo
     var disclosure by remember { mutableStateOf(false) }
 
     val rows = remember(refresh, notifications.status) {
-        listOf(
+        listOfNotNull(
             PermissionRow(
                 Icons.Rounded.Notifications, "Notifications",
                 "Focus timer, break alerts and important Guard status.",
                 notifications.status == PermissionStatus.GRANTED,
                 if (notifications.status == PermissionStatus.ASKABLE) notifications.request else notifications.openSettings,
             ),
-            PermissionRow(
+            if (BuildConfig.ACCESSIBILITY) PermissionRow(
                 Icons.Rounded.Accessibility, "Accessibility",
                 "Notices when a guarded app opens so Rewire can pause or block it. Reads nothing on screen.",
                 SystemPermissions.accessibilityEnabled(context),
-            ) { disclosure = true },
+            ) { disclosure = true } else null,
             PermissionRow(
                 Icons.Rounded.QueryStats, "Usage access",
-                "Counts time in guarded apps for limits and Matrix charts. Stays on this device.",
+                if (BuildConfig.ACCESSIBILITY) "Counts time in guarded apps for limits and Matrix charts. Stays on this device."
+                else "Notices when a guarded app opens and counts its time for limits and Matrix. Stays on this device.",
                 SystemPermissions.usageAccessGranted(context),
             ) { SystemPermissions.open(context, SystemPermissions.usageAccessSettings(context)) },
             PermissionRow(
@@ -202,7 +208,7 @@ fun PermissionsPanel(containerColor: Color = MaterialTheme.colorScheme.surfaceCo
 
         val isAndroid13Plus = Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU
         val accessibilityAllowed = SystemPermissions.accessibilityEnabled(context)
-        if (isAndroid13Plus && !accessibilityAllowed) {
+        if (BuildConfig.ACCESSIBILITY && isAndroid13Plus && !accessibilityAllowed) {
             Spacer(Modifier.height(8.dp))
             Card(
                 shape = MaterialTheme.shapes.medium,
@@ -287,7 +293,7 @@ fun rememberGrantedCount(): Int {
     return remember(refresh, notifications.status) {
         listOf(
             notifications.status == PermissionStatus.GRANTED,
-            SystemPermissions.accessibilityEnabled(context),
+            SystemPermissions.accessibilityEnabled(context), // always false in Lite, which has one row fewer
             SystemPermissions.usageAccessGranted(context),
             SystemPermissions.systemAlertWindowGranted(context),
             SystemPermissions.dndAccessGranted(context),

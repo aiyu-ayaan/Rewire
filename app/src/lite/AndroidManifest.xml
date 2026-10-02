@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Lite: no accessibility service, so Play Protect lets a browser/file-manager install through and payment
+     apps see none. Guard detects protected apps through Usage access + Display over apps instead. -->
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <application>
+        <service
+            android:name=".service.accessibility.RewireAccessibilityService"
+            tools:node="remove" />
+    </application>
+
+</manifest>

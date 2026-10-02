@@ -54,6 +54,7 @@ import com.rewire.app.ui.SettingsViewModel
 import com.rewire.app.core.settings.UserGoal
 import com.rewire.app.core.settings.UserProfile
 import com.rewire.app.core.permissions.PermissionsPanel
+import com.rewire.app.core.permissions.SystemPermissions
 import com.rewire.app.core.permissions.rememberGrantedCount
 import com.rewire.app.domain.habit.Habit
 import com.rewire.app.domain.habit.HabitProfile
@@ -152,7 +153,7 @@ fun ProfileSetupScreen(onboarding: Boolean, onDone: () -> Unit, onBack: (() -> U
 @Composable
 fun PermissionsSetupScreen(onFinish: () -> Unit, onBack: () -> Unit) {
     val granted = rememberGrantedCount()
-    val totalPermissions = 6
+    val totalPermissions = SystemPermissions.permissionCount
     var testProtection by remember { mutableStateOf(false) }
     var testedProtection by remember { mutableStateOf(false) }
 
