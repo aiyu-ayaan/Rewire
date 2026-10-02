@@ -42,6 +42,7 @@ import com.rewire.app.BuildConfig
 import com.rewire.app.ui.components.SectionTitle
 
 private const val GITHUB_URL = "https://github.com/aiyu-ayaan"
+private const val INSTALL_GUIDE_URL = "https://github.com/aiyu-ayaan/Rewire#install"
 private const val PORTFOLIO_URL = "https://aiyu.co.in"
 
 @Composable
@@ -70,6 +71,12 @@ fun AboutScreen(onBack: () -> Unit, onOpenAcknowledgements: () -> Unit) {
                     leadingContent = { Icon(Icons.Rounded.Info, contentDescription = null) },
                     colors = itemColors(),
                 )
+                LinkRow(
+                    Icons.Rounded.Info,
+                    if (BuildConfig.ACCESSIBILITY) "Full build" else "Lite build",
+                    if (BuildConfig.ACCESSIBILITY) "Instant detection through Accessibility. If Play Protect blocks the install or a payment app objects, Rewire Lite has the same features without Accessibility."
+                    else "No Accessibility service, so Play Protect allows the install and payment apps keep working. Guard notices apps through Usage access within about a second.",
+                ) { open(INSTALL_GUIDE_URL) }
                 ListItem(
                     headlineContent = { Text("Privacy") },
                     supportingContent = { Text("All data stays on this device.") },
