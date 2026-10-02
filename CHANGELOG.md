@@ -1,5 +1,20 @@
 # Changelog
 
+## [1.0.1-alpha.5](https://github.com/aiyu-ayaan/Rewire/compare/v1.0.1-alpha.4...v1.0.1-alpha.5) (2026-10-02)
+
+### Bug fixes
+
+* Warn when Lite can't watch, read usage events further back
+* Re-judge the open app after unlock, restart monitoring from the app
+* Block Max apps in Lite when the guard start is refused
+* Judge every usage resume in Lite, not only the newest
+
+### Other changes
+
+* Lite blocks Max apps reliably (overlay shield, every open judged, re-check after unlock, protection-off warnings)
+* Log the remaining Lite blocking fixes
+* Log the Lite blocking fix
+
 ## [1.0.1-alpha.4](https://github.com/aiyu-ayaan/Rewire/compare/v1.0.1-alpha.3...v1.0.1-alpha.4) (2026-10-02)
 
 ### Features
