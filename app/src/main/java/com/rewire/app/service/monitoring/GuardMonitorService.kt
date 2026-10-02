@@ -7,7 +7,12 @@ import android.content.pm.ServiceInfo
 import android.os.Build
 import android.os.IBinder
 import androidx.core.content.ContextCompat
+import android.os.PowerManager
+import com.rewire.app.core.guard.HabitEngine
+import com.rewire.app.core.guard.UsageTracker
+import com.rewire.app.core.permissions.SystemPermissions
 import com.rewire.app.data.HabitRepository
+import com.rewire.app.service.accessibility.RewireAccessibilityService
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 import com.rewire.app.core.notifications.RewireNotifier
@@ -19,6 +24,7 @@ import kotlinx.coroutines.cancel
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.isActive
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 
 /**
  * Ongoing ForegroundService that keeps Rewire alive in the background (AGENTS.md §15, §20)
@@ -29,9 +35,12 @@ import kotlinx.coroutines.launch
 class GuardMonitorService : Service() {
     @Inject lateinit var notifier: RewireNotifier
     @Inject lateinit var habits: HabitRepository
+    @Inject lateinit var engine: HabitEngine
+    @Inject lateinit var usage: UsageTracker
 
     private val serviceScope = CoroutineScope(SupervisorJob() + Dispatchers.Default)
     private var watchdogJob: Job? = null
+    private var usageWatchJob: Job? = null
 
     override fun onCreate() {
         super.onCreate()
@@ -48,6 +57,7 @@ class GuardMonitorService : Service() {
             startForeground(RewireNotifier.Ids.GUARD_ONGOING, notification)
         }
         startWatchdog()
+        startUsageWatch()
     }
 
     override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
@@ -73,7 +83,37 @@ class GuardMonitorService : Service() {
         }
     }
 
+    /**
+     * Detection without Accessibility (Lite build, or Accessibility switched off so payment apps run).
+     * Usage events have no push API, so this reads the last second of them, only while the screen is on
+     * and Accessibility isn't already reporting. Each event is consumed once (cursor = its timestamp).
+     */
+    private fun startUsageWatch() {
+        usageWatchJob?.cancel()
+        usageWatchJob = serviceScope.launch {
+            val power = getSystemService(PowerManager::class.java)
+            var cursor = 0L // 0 = not watching; the next active tick resyncs instead of reading history
+            while (isActive) {
+                delay(USAGE_POLL_MS)
+                val now = System.currentTimeMillis()
+                val active = !RewireAccessibilityService.isRunning.value && power.isInteractive &&
+                    SystemPermissions.usageFallbackReady(this@GuardMonitorService)
+                if (!active) { cursor = 0L; continue }
+                if (cursor == 0L) {
+                    cursor = now
+                    withContext(Dispatchers.Main) { engine.resync() }
+                    continue
+                }
+                // Events can land a moment after they happen: look back a little, never before the last one used.
+                val e = usage.latestResume(maxOf(cursor + 1, now - USAGE_LOOKBACK_MS), now) ?: continue
+                cursor = e.time
+                withContext(Dispatchers.Main) { engine.onForeground(e.pkg ?: return@withContext, e.cls) }
+            }
+        }
+    }
+
     override fun onDestroy() {
+        usageWatchJob?.cancel()
         watchdogJob?.cancel()
         serviceScope.cancel()
         super.onDestroy()
@@ -82,6 +122,9 @@ class GuardMonitorService : Service() {
     override fun onBind(intent: Intent?): IBinder? = null
 
     companion object {
+        private const val USAGE_POLL_MS = 1_000L
+        private const val USAGE_LOOKBACK_MS = 5_000L
+
         fun start(context: Context) {
             val intent = Intent(context, GuardMonitorService::class.java)
             runCatching {

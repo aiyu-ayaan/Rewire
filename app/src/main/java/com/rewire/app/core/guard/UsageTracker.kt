@@ -103,7 +103,24 @@ open class UsageTracker(private val context: Context? = null) {
         }.getOrNull()
     }
 
-    internal data class Event(val pkg: String?, val cls: String?, val type: Int, val time: Long)
+    /** Newest app resume recorded in [from, to], or null (also without usage access). Cheap: a seconds-wide window. */
+    open fun latestResume(from: Long, to: Long): Event? {
+        val ctx = context ?: return null
+        if (!SystemPermissions.usageAccessGranted(ctx)) return null
+        val usm = ctx.getSystemService(UsageStatsManager::class.java) ?: return null
+        return runCatching {
+            val events = usm.queryEvents(from, to)
+            val list = ArrayList<Event>()
+            val e = UsageEvents.Event()
+            while (events.hasNextEvent()) {
+                events.getNextEvent(e)
+                list += Event(e.packageName, e.className, e.eventType, e.timeStamp)
+            }
+            latestResume(list)
+        }.getOrNull()
+    }
+
+    data class Event(val pkg: String?, val cls: String?, val type: Int, val time: Long)
 
     internal companion object {
         private const val RESUMED = 1 // ACTIVITY_RESUMED
@@ -111,6 +128,8 @@ open class UsageTracker(private val context: Context? = null) {
         private const val SCREEN_OFF = 16 // SCREEN_NON_INTERACTIVE
         private const val STOPPED = 23 // ACTIVITY_STOPPED
         private const val SHUTDOWN = 26 // DEVICE_SHUTDOWN
+
+        fun latestResume(events: List<Event>): Event? = events.lastOrNull { it.type == RESUMED && it.pkg != null }
 
         /**
          * Sums foreground time per package from [events] in [start, now]. A package counts as

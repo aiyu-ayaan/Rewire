@@ -5,6 +5,7 @@ import android.view.accessibility.AccessibilityEvent
 import android.content.Intent
 import com.rewire.app.core.guard.HabitEngine
 import com.rewire.app.core.notifications.RewireNotifier
+import com.rewire.app.core.permissions.SystemPermissions
 import com.rewire.app.data.HabitRepository
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
@@ -30,7 +31,8 @@ class RewireAccessibilityService : AccessibilityService() {
 
     override fun onUnbind(intent: Intent?): Boolean {
         running.value = false
-        if (habits.habits.value.any { it.habit.enabled }) notifier.protectionOff()
+        // Usage-access fallback keeps Guard working (e.g. Accessibility off so payment apps run): not "off".
+        if (habits.habits.value.any { it.habit.enabled } && !SystemPermissions.usageFallbackReady(this)) notifier.protectionOff()
         return super.onUnbind(intent)
     }
 

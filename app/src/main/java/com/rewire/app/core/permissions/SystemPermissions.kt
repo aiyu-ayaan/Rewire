@@ -86,6 +86,10 @@ object SystemPermissions {
     fun systemAlertWindowGranted(context: Context): Boolean =
         Settings.canDrawOverlays(context)
 
+    /** Guard can run without Accessibility: usage events see the app, the overlay grant lets the guard screen start from the background. */
+    fun usageFallbackReady(context: Context): Boolean =
+        usageAccessGranted(context) && systemAlertWindowGranted(context)
+
     fun systemAlertWindowSettings(context: Context): Intent =
         Intent(Settings.ACTION_MANAGE_OVERLAY_PERMISSION, Uri.parse("package:${context.packageName}"))
 

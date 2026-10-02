@@ -264,7 +264,7 @@ fun HabitCard(
 }
 
 /**
- * Shown only when habits exist but the accessibility service isn't running, so blocking can't happen.
+ * Shown only when habits exist but neither the accessibility service nor the usage-access fallback can see apps.
  * Two cases: never enabled, or enabled but stopped by the system (toggle off/on fixes it).
  */
 @Composable
@@ -274,10 +274,11 @@ private fun ProtectionBanner() {
     var resumed by remember { mutableStateOf(0) }
     LifecycleResumeEffect(Unit) { resumed++; onPauseOrDispose { } }
     val enabled = remember(running, resumed) { SystemPermissions.accessibilityEnabled(context) }
+    val fallback = remember(running, resumed) { SystemPermissions.usageFallbackReady(context) }
     val isAndroid13Plus = Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU
     var showRestrictedDialog by remember { mutableStateOf(false) }
 
-    AnimatedVisibility(!running) {
+    AnimatedVisibility(!running && !fallback) {
         Card(
             shape = MaterialTheme.shapes.large,
             colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.errorContainer, contentColor = MaterialTheme.colorScheme.onErrorContainer),

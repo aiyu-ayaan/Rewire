@@ -46,4 +46,15 @@ class UsageTrackerTest {
         )
         assertEquals(12 * min, UsageTracker.foregroundMillis(events, 0L, 60 * min)[ig])
     }
+
+    @Test
+    fun latestResumeIsTheNewestResumeNotAPause() {
+        val events = listOf(
+            Event(ig, "Main", 1, 1_000L),
+            Event("launcher", "Home", 1, 2_000L),
+            Event(ig, "Main", 2, 2_100L),
+        )
+        assertEquals("launcher", UsageTracker.latestResume(events)?.pkg)
+        assertEquals(null, UsageTracker.latestResume(listOf(Event(ig, "Main", 2, 1L))))
+    }
 }
