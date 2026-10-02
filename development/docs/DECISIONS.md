@@ -2,6 +2,8 @@
 
 Newest first. Format: date — decision — why.
 
+- 2026-10-02 — Without Accessibility the guard starts behind a full-screen overlay (`GuardShield`). — On a real Lite install a Max app over its daily limit stayed usable: the block was logged but the background start of the guard screen was refused (OEM / Android background-activity rules), and the emulator never showed it. An app with a visible window may start activities, so the overlay goes up first; if the start is still refused the overlay itself covers the app with Go back / Open Rewire. Removed when the guard resumes, on either button, or after 30 s (no lockout).
+- 2026-10-02 — Lite poller feeds every resume of a tick to the engine, not only the newest. — The cursor moved past the newest event, so a protected open followed by any other resume in the same window (System UI overlay, helper activity) was never judged.
 - 2026-10-02 — Block screen uses `FLAG_SECURE`. — Android lists the on-screen task in Recents despite `excludeFromRecents` and captures it before any callback (pause, top-resumed and focus loss were all tried on API 37: too late). A secure window is blank there. Cost: no screenshots of that one screen.
 - 2026-10-02 — `RewireApp` injects `HabitEngine` eagerly. — The engine starts `GuardMonitorService`. Only the accessibility service created it before, so Lite never monitored.
 - 2026-10-02 — Focus timer screens follow the sensor (`FULL_SENSOR`) and get landscape layouts. — A desk timer is often landscape. The fixed 300dp ring squashed in landscape and the controls fell off screen. Orientation is restored on leaving full screen.
