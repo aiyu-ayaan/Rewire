@@ -536,6 +536,66 @@ class HabitEngineOutcomeTest {
         assertEquals(WarningLevel.MINOR, platform.guardShown.last().level)
     }
 
+    @Test
+    fun `max daily limit blocks when the open and an overlay land in one usage tick`() {
+        habitRepo.setHabits(listOf(maxHabit.copy(rule = maxHabit.rule.copy(dailyLimitMinutes = 60))))
+        usageTracker.minutes = 204
+
+        // GuardMonitorService feeds every resume of a tick in order (Lite has no accessibility events).
+        listOf("com.supercell.clashroyale" to "Main", "com.android.systemui" to "android.widget.FrameLayout")
+            .forEach { (pkg, cls) -> engine.onForeground(pkg, cls) }
+
+        assertEquals(1, platform.guardShown.size)
+        assertEquals("DAILY_LIMIT", platform.guardShown.single().blockReason)
+        assertEquals(listOf(HabitEventType.APP_BLOCKED), eventRepo.logged.map { it.type })
+    }
+
+    @Test
+    fun `unlocking back into an app re-judges it without counting a launch`() {
+        habitRepo.setHabits(listOf(maxHabit.copy(rule = maxHabit.rule.copy(dailyLimitMinutes = 60))))
+        usageTracker.minutes = 30
+        engine.onForeground("com.supercell.clashroyale")
+        assertTrue(platform.guardShown.isEmpty())
+
+        usageTracker.minutes = 61 // limit crossed while the screen was off (recheck timer did not fire)
+        engine.onScreenOff()
+        engine.onForeground("com.android.systemui", "Keyguard") // lock screen overlay: ignored, still stale
+        engine.onForeground("com.supercell.clashroyale")
+
+        assertEquals("DAILY_LIMIT", platform.guardShown.single().blockReason)
+        assertEquals(listOf(HabitEventType.APP_OPENED, HabitEventType.APP_BLOCKED), eventRepo.logged.map { it.type })
+    }
+
+    @Test
+    fun `same app reported again without screen off is not re-judged`() {
+        engine.onForeground("com.instagram.android")
+        engine.onGuardResult("com.instagram.android", "h-minor", WarningLevel.MINOR, GuardOutcome.CONTINUED)
+        engine.onForeground("com.instagram.android") // the granted relaunch
+        platform.guardShown.clear()
+
+        engine.onForeground("com.instagram.android")
+        assertTrue(platform.guardShown.isEmpty())
+    }
+
+    @Test
+    fun `granted visit survives screen off`() {
+        engine.onForeground("com.instagram.android")
+        engine.onGuardResult("com.instagram.android", "h-minor", WarningLevel.MINOR, GuardOutcome.CONTINUED)
+        engine.onForeground("com.instagram.android")
+        platform.guardShown.clear()
+
+        engine.onScreenOff()
+        engine.onForeground("com.instagram.android")
+        assertTrue(platform.guardShown.isEmpty())
+    }
+
+    @Test
+    fun `ensureMonitoring restarts the service while a habit is on`() {
+        platform.guardServiceSynced = null
+        engine.ensureMonitoring()
+        assertEquals(true, platform.guardServiceSynced)
+    }
+
     private companion object {
         const val RECENTS = "com.android.systemui.recents.RecentsActivity"
     }

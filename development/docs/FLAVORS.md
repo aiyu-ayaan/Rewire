@@ -6,7 +6,7 @@ applicationId, same signing key. Only how Guard notices a protected app differs.
 | | Full (`full`, default) | Lite (`lite`) |
 | --- | --- | --- |
 | Detection | AccessibilityService (instant) | Usage access events, read once a second while the screen is on |
-| Guard screen launch | Accessibility service | Display over apps grant (background-activity-start exemption) |
+| Guard screen launch | Accessibility service | Display over apps: overlay shield first (`GuardShield`), then the guard screen; the shield blocks on its own if the start is refused |
 | Manifest | declares `RewireAccessibilityService` | `src/lite/AndroidManifest.xml` removes it (`tools:node="remove"`) |
 | `BuildConfig.ACCESSIBILITY` | `true` | `false` |
 | Play Protect, browser install | blocked (enhanced fraud protection) | allowed |

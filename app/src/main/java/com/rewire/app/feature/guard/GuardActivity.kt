@@ -28,6 +28,7 @@ import kotlinx.coroutines.flow.StateFlow
 import javax.inject.Inject
 import com.rewire.app.core.settings.ThemeMode
 import com.rewire.app.core.guard.GuardOutcome
+import com.rewire.app.core.guard.GuardShield
 import com.rewire.app.domain.habit.WarningLevel
 import com.rewire.app.domain.warning.WarningPicker
 import com.rewire.app.ui.theme.RewireTheme
@@ -127,6 +128,11 @@ class GuardActivity : FragmentActivity() {
                 .setAllowedAuthenticators(authenticators)
                 .build()
         )
+    }
+
+    override fun onResume() {
+        super.onResume()
+        GuardShield.dismiss() // the guard is on screen now; the overlay only bridged its start
     }
 
     override fun onStop() {

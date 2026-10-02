@@ -57,4 +57,10 @@
 
     <!-- Accessibility (shown in system settings; prominent disclosure) -->
     <string name="accessibility_service_description">Rewire uses this service only to notice when an app you chose to guard comes to the screen, so it can show your warning or block. It does not read screen content, type, or collect personal data, and nothing leaves your device.</string>
+
+    <!-- Guard shield: overlay shown while the guard screen opens without Accessibility -->
+    <string name="guard_shield_title">Paused by Rewire</string>
+    <string name="guard_shield_text">This app is guarded right now.</string>
+    <string name="guard_shield_open">Open Rewire</string>
+    <string name="guard_shield_back">Go back</string>
 </resources>

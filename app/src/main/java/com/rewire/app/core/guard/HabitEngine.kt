@@ -17,6 +17,7 @@ import com.rewire.app.domain.restriction.RestrictionDecision
 import com.rewire.app.domain.restriction.RuleEngine
 import com.rewire.app.domain.restriction.RuleInput
 import com.rewire.app.feature.guard.GuardActivity
+import com.rewire.app.service.accessibility.RewireAccessibilityService
 import com.rewire.app.service.monitoring.GuardMonitorService
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Job
@@ -53,14 +54,23 @@ class DefaultEnginePlatform(private val context: Context) : EnginePlatform {
      * and the system trimmed it before onCreate, leaving the engine stuck "showing" a screen nobody saw.
      */
     override fun showGuard(pkg: String, habitId: String, level: WarningLevel, blockReason: String?) {
-        context.startActivities(
-            arrayOf(
-                Intent(Intent.ACTION_MAIN).addCategory(Intent.CATEGORY_HOME).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK),
-                GuardActivity.intent(context, pkg, habitId, level, blockReason)
-                    .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_SINGLE_TOP),
-            )
-        )
+        val start = {
+            runCatching {
+                context.startActivities(
+                    arrayOf(
+                        home(),
+                        GuardActivity.intent(context, pkg, habitId, level, blockReason)
+                            .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_SINGLE_TOP),
+                    )
+                )
+            }
+            Unit
+        }
+        // Accessibility services may start activities; without one (Lite, or switched off) the start can be refused.
+        if (RewireAccessibilityService.isRunning.value || !GuardShield.cover(context, start, goHome = { runCatching { context.startActivity(home()) } })) start()
     }
+
+    private fun home() = Intent(Intent.ACTION_MAIN).addCategory(Intent.CATEGORY_HOME).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
 
     override fun isGuardOpen(): Boolean = GuardActivity.instances > 0
 
@@ -124,6 +134,8 @@ class HabitEngine(
     /** Protected app brought up while a guard screen was open (e.g. tapped in recents); judged once the screen closes. */
     private var pending: String? = null
     private var recheck: Job? = null
+    /** Screen was off since [current] was judged: its next report is re-judged. */
+    private var stale = false
 
     init {
         mainScope.launch {
@@ -145,7 +157,15 @@ class HabitEngine(
             }
             return
         }
-        if (isIgnored(pkg) || pkg == current) return
+        if (isIgnored(pkg)) return
+        if (pkg == current) {
+            if (stale) {
+                stale = false
+                if (showingFor == null && pkg != granted) evaluate(pkg, isRecheck = true)
+            }
+            return
+        }
+        stale = false
         current = pkg
         recheck?.cancel()
         if (granted != null && pkg != granted) granted = null
@@ -167,6 +187,21 @@ class HabitEngine(
      */
     fun resync() {
         usage.foregroundApp(clock())?.let(::onForeground)
+    }
+
+    /** (Re)start the monitor service if a habit is on; safe to call often. */
+    fun ensureMonitoring() {
+        platform.syncGuardService(habits.habits.value.any { it.habit.enabled })
+    }
+
+    /**
+     * Screen went off. Unlocking back into the same app sends no new app change, so the next report of it
+     * is judged again (as a re-check: no extra launch counted). A boundary crossed while the screen was off
+     * (allowed window ended, a new day) would otherwise leave the app open until the user switched away.
+     */
+    fun onScreenOff() {
+        if (current != null) stale = true
+        recheck?.cancel()
     }
 
     fun onGuardResult(pkg: String, habitId: String, level: WarningLevel, outcome: GuardOutcome) {
