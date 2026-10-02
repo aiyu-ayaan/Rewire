@@ -3,6 +3,7 @@ package com.rewire.app.feature.guard
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.view.ViewTreeObserver
 import android.view.WindowManager
 import androidx.biometric.BiometricManager
 import androidx.biometric.BiometricManager.Authenticators.BIOMETRIC_WEAK
@@ -132,7 +133,20 @@ class GuardActivity : FragmentActivity() {
 
     override fun onResume() {
         super.onResume()
-        GuardShield.dismiss() // the guard is on screen now; the overlay only bridged its start
+        // The overlay only bridged the start. Take it down after this screen's first frame, not at resume,
+        // or what is underneath (Home, the app) shows for a frame in between.
+        val decor = window.decorView
+        val observer = decor.viewTreeObserver
+        val onDraw = object : ViewTreeObserver.OnDrawListener {
+            override fun onDraw() {
+                decor.post {
+                    if (observer.isAlive) observer.removeOnDrawListener(this)
+                    GuardShield.dismiss()
+                }
+            }
+        }
+        observer.addOnDrawListener(onDraw)
+        decor.invalidate()
     }
 
     override fun onStop() {

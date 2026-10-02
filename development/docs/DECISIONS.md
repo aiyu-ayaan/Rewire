@@ -2,6 +2,7 @@
 
 Newest first. Format: date — decision — why.
 
+- 2026-10-02 — `GuardShield` starts blank in the guard window's colour (`canvas`), shows text/buttons only after 1.5 s, has no FLAG_SECURE, and is removed after the guard's first frame. — On device a teal "Paused by Rewire" screen flashed before every block (unrecordable: FLAG_SECURE), and removing it at resume could show Home for a frame.
 - 2026-10-02 — Screen off marks the open app stale; its next report is re-judged as a re-check (no launch counted). — Unlocking back into the same app sends no app change, so a boundary crossed while the screen was off (window ended, new day) left the app open until the user switched away.
 - 2026-10-02 — Opening Rewire (re)starts `GuardMonitorService`; a refused start posts "Guard protection is off". — Android 12+ refuses foreground-service starts from the background (system-restarted process); the failure was swallowed, so Lite watched nothing with no sign.
 - 2026-10-02 — Lite warns ("Guard protection is off") while Usage access or Display over apps is missing, and reads 15 s of usage events back instead of 5. — Detection silently stopped without either grant; some devices write usage events late.
