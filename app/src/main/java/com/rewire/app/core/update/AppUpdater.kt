@@ -80,7 +80,7 @@ class AppUpdater @Inject constructor(
             try {
                 if (connection.responseCode !in 200..299) error("GitHub answered ${connection.responseCode}")
                 val pick = Releases.pick(Releases.parse(connection.inputStream.bufferedReader().use { it.readText() }), installed, channel)
-                val apk = pick?.let(Releases::apkFor) // a release whose Android job failed still exists, and is not an offer
+                val apk = pick?.let { Releases.apkFor(it, lite = !BuildConfig.ACCESSIBILITY) } // a release whose Android job failed still exists, and is not an offer
                 if (pick == null || apk == null) UpdateState.UpToDate else UpdateState.Available(pick, apk)
             } finally {
                 connection.disconnect()

@@ -20,7 +20,7 @@
 #      writes the CHANGELOG entry, and nothing is built. The diff is the last
 #      chance to look at what is about to ship and at the notes describing it.
 #
-#   2. Merging that PR is what releases. The signed APK and AAB are built, and
+#   2. Merging that PR is what releases. The signed APKs (Full + Lite) and AAB are built, and
 #      the tag and the GitHub Release are created last, once both exist.
 #
 # `!patch` skips step 1: it rebuilds the APK/AAB of the version master already
@@ -174,14 +174,14 @@ jobs:
             | From | `${{ needs.version.outputs.current }}` |
             | To | `${{ needs.version.outputs.version }}` |
             | Marker | `!${{ needs.version.outputs.marker }}` |
-            | Builds | `android (APK + AAB)` |
+            | Builds | `android (Full APK + Lite APK + AAB)` |
 
             Changed here: `VERSION`, `CHANGELOG.md`.
             The CHANGELOG diff is the release note — edit it in this branch if it
             reads badly, that is what this PR is for.
 
-            **Merging this PR is what releases.** It builds the signed Android APK
-            and AAB, then creates the tag and the GitHub Release. Closing it
+            **Merging this PR is what releases.** It builds the signed Android APKs
+            (Full + Lite) and AAB, then creates the tag and the GitHub Release. Closing it
             without merging releases nothing and costs nothing.
           branch: chore/release-v${{ needs.version.outputs.version }}
           base: master
@@ -307,12 +307,14 @@ jobs:
       fail-fast: false
       matrix:
         include:
+          # Both flavors' APKs (full = Accessibility, lite = none, for Play
+          # Protect / payment apps). Only full goes to Play, so one AAB.
           - label: APK
             artifact: apk
-            task: ':app:assembleRelease'
+            task: ':app:assembleFullRelease :app:assembleLiteRelease'
           - label: AAB
             artifact: aab
-            task: ':app:bundleRelease'
+            task: ':app:bundleFullRelease'
     # Hoisted so a step can ask whether it was supplied: the `secrets` context
     # is not available in a step-level `if`, but `env` is.
     env:
@@ -364,10 +366,12 @@ jobs:
           KIND: ${{ matrix.artifact }}
         run: |
           mkdir -p "$RUNNER_TEMP/android"
+          # The in-app updater matches these names (Releases.apkFor): keep them in step.
           if [ "$KIND" = apk ]; then
-            cp app/build/outputs/apk/release/app-release*.apk "$RUNNER_TEMP/android/Rewire-${VERSION}.apk"
+            cp app/build/outputs/apk/full/release/app-full-release*.apk "$RUNNER_TEMP/android/Rewire-${VERSION}.apk"
+            cp app/build/outputs/apk/lite/release/app-lite-release*.apk "$RUNNER_TEMP/android/Rewire-Lite-${VERSION}.apk"
           else
-            cp app/build/outputs/bundle/release/app-release.aab "$RUNNER_TEMP/android/Rewire-${VERSION}.aab"
+            cp app/build/outputs/bundle/fullRelease/app-full-release.aab "$RUNNER_TEMP/android/Rewire-${VERSION}.aab"
           fi
           ls -la "$RUNNER_TEMP/android"
 
@@ -424,8 +428,19 @@ jobs:
 
             ## Install
 
-            **Android** — take `Rewire-${{ needs.merged.outputs.version }}.apk` and
-            install it. The `.aab` is for Play, not for sideloading.
+            **Android** — two APKs, same features, pick one:
+
+            - `Rewire-Lite-${{ needs.merged.outputs.version }}.apk` — **recommended for
+              downloading from a browser.** No accessibility service, so Play Protect
+              lets it install and banking/UPI apps keep working. Guard detects apps
+              through Usage access + Display over apps (within about a second).
+            - `Rewire-${{ needs.merged.outputs.version }}.apk` — Full: instant detection
+              through Accessibility. Play Protect may block it from a browser; install
+              it with Obtainium or `adb install`. Switch Rewire off in Accessibility
+              before paying — Guard keeps working through Usage access.
+
+            Both are signed with the same key, so you can switch by installing the other.
+            Each updates itself to its own flavor. The `.aab` is for Play, not for sideloading.
           files: artifacts/android/*
 
   # --- If any of that failed, leave nothing half-published -------------------

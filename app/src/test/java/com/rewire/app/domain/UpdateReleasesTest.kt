@@ -60,6 +60,14 @@ class UpdateReleasesTest {
         assertNull(Releases.apkFor(release("1.0.2", "Rewire-1.0.2.aab")))
     }
 
+    @Test fun apkForKeepsEachBuildOnItsOwnFlavor() {
+        val r = release("1.0.2", "Rewire-1.0.2.aab", "Rewire-1.0.2.apk", "Rewire-Lite-1.0.2.apk")
+        assertEquals("Rewire-1.0.2.apk", Releases.apkFor(r, lite = false)!!.name)
+        assertEquals("Rewire-Lite-1.0.2.apk", Releases.apkFor(r, lite = true)!!.name)
+        assertNull(Releases.apkFor(release("1.0.2", "Rewire-1.0.2.apk"), lite = true))
+        assertNull(Releases.apkFor(release("1.0.2", "Rewire-Lite-1.0.2.apk"), lite = false))
+    }
+
     @Test fun parsesGithubJsonSkippingDraftsAndUnknownTags() {
         val body = """
             [

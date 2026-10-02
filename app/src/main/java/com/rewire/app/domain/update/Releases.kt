@@ -74,9 +74,17 @@ object Releases {
     fun pick(releases: List<Release>, installed: Version?, channel: UpdateChannel): Release? =
         releases.filter { channel.accepts(it.version) && (installed == null || it.version > installed) }.maxByOrNull { it.version }
 
-    /** The sideloadable build. The `.aab` is for Play and never matches. A release without an APK is not an offer. */
-    fun apkFor(release: Release): ReleaseAsset? =
-        release.assets.firstOrNull { it.name.startsWith("Rewire-") && it.name.endsWith(".apk", ignoreCase = true) }
+    /**
+     * The sideloadable build of the installed flavor: `Rewire-<v>.apk` (full) or `Rewire-Lite-<v>.apk`, so an update
+     * never swaps one for the other. The `.aab` is for Play and never matches. A release without one is not an offer.
+     */
+    fun apkFor(release: Release, lite: Boolean = false): ReleaseAsset? =
+        release.assets.firstOrNull {
+            it.name.endsWith(".apk", ignoreCase = true) &&
+                if (lite) it.name.startsWith(LITE_PREFIX) else it.name.startsWith("Rewire-") && !it.name.startsWith(LITE_PREFIX)
+        }
+
+    private const val LITE_PREFIX = "Rewire-Lite-"
 
     private val json = Json { ignoreUnknownKeys = true }
 
