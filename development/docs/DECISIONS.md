@@ -2,6 +2,10 @@
 
 Newest first. Format: date — decision — why.
 
+- 2026-10-02 — Block screen uses `FLAG_SECURE`. — Android lists the on-screen task in Recents despite `excludeFromRecents` and captures it before any callback (pause, top-resumed and focus loss were all tried on API 37: too late). A secure window is blank there. Cost: no screenshots of that one screen.
+- 2026-10-02 — `RewireApp` injects `HabitEngine` eagerly. — The engine starts `GuardMonitorService`. Only the accessibility service created it before, so Lite never monitored.
+- 2026-10-02 — Focus timer screens follow the sensor (`FULL_SENSOR`) and get landscape layouts. — A desk timer is often landscape. The fixed 300dp ring squashed in landscape and the controls fell off screen. Orientation is restored on leaving full screen.
+
 - 2026-10-02 — Two flavors: `full` (Accessibility) and `lite` (no accessibility service in the manifest, Usage access + overlay detection). — Play Protect's enhanced fraud protection blocks sideloaded installs that declare an accessibility service, and UPI/payment apps refuse to run while one is enabled. Without Play Console, a manifest without the service is the only way past both. Usage events have no push API, so detection reads one second of events per tick, only while the screen is on and Accessibility isn't reporting. Full falls back to the same path when Accessibility is off.
 
 - 2026-10-02 — Self-update from GitHub Releases, BetweenUs-style, with `HttpURLConnection` (no OkHttp) and kotlinx.serialization for parsing. — Mirrors the proven design; stdlib HTTP keeps the dependency list unchanged and the parser is JVM-testable. Re-adds `INTERNET` (+ `REQUEST_INSTALL_PACKAGES`) knowingly; opt-out switch, no usage data sent, see docs/UPDATES.md.

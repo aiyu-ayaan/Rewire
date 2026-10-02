@@ -49,3 +49,14 @@ Domain has zero Android imports (enforced by keeping it in plain Kotlin; tests r
 | `focus_sessions` | id | live timer state while active, history + note once finished |
 | `settings` | id = 0 | single typed row |
 Schema changes = new version + `Migration` + exported JSON. Never destructive fallback.
+
+## Protected-app detection (two paths, one engine)
+
+```text
+RewireAccessibilityService (Full only) ──┐
+                                        ├──> HabitEngine.onForeground ──> RuleEngine ──> GuardActivity
+GuardMonitorService usage watch ────────┘    (when accessibility isn't running; Usage access + overlay)
+```
+
+The usage watch reads one second of `UsageEvents` per tick, only with the screen on, consuming each resume
+once (cursor = its timestamp). See [FLAVORS.md](FLAVORS.md).

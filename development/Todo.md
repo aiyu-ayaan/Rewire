@@ -3,6 +3,7 @@
 Single source of truth for progress. Update checkbox + commit together.
 Details per phase: [`docs/ROADMAP.md`](docs/ROADMAP.md). Design rules: [`docs/DESIGN.md`](docs/DESIGN.md).
 Architecture: [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md). Decisions log: [`docs/DECISIONS.md`](docs/DECISIONS.md).
+Full vs Lite build, switching flavor: [`docs/FLAVORS.md`](docs/FLAVORS.md).
 
 Legend: `[x]` done · `[ ]` todo · `[~]` partial (see note)
 
@@ -177,6 +178,11 @@ service off -> banner + notification.
 - [x] Monitoring-disabled notification
 - [x] Onboarding: permission explain + "Test protection"
 - [x] Lite flavor (no accessibility service) + Usage-access fallback detection; CI ships both APKs (2026-10-02)
+- [x] Engine created at app start (Lite had no monitoring); Guard restarts after app update (2026-10-02)
+- [x] Block screen content hidden in Recents (FLAG_SECURE) (2026-10-02)
+- [x] About shows Full/Lite build + install guide link; CI fails unless both APKs ship correctly (2026-10-02)
+- [x] Focus timer + full-screen timer: landscape layouts, sensor rotation (2026-10-02)
+- [ ] Device-test Full flavor end to end after the flavor split (only Lite was run on the emulator)
 
 ## Phase 4 — Usage analytics
 - [x] UsageStatsManager adapter synced with Digital Wellbeing data
