@@ -66,7 +66,7 @@ fun AboutScreen(onBack: () -> Unit, onOpenAcknowledgements: () -> Unit) {
             Group {
                 ListItem(
                     headlineContent = { Text("Rewire") },
-                    supportingContent = { Text("Version ${BuildConfig.VERSION_NAME} (${BuildConfig.VERSION_CODE})") },
+                    supportingContent = { Text("Version ${BuildConfig.VERSION_NAME} (${BuildConfig.VERSION_CODE}) · ${if (BuildConfig.ACCESSIBILITY) "Full" else "Lite"} build") },
                     leadingContent = { Icon(Icons.Rounded.Info, contentDescription = null) },
                     colors = itemColors(),
                 )

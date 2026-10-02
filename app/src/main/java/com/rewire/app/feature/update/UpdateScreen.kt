@@ -29,6 +29,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import com.rewire.app.BuildConfig
 import com.rewire.app.core.update.UpdateState
 import com.rewire.app.domain.update.UpdateChannel
 import com.rewire.app.ui.components.InnerScreen
@@ -53,7 +54,7 @@ fun UpdateScreen(onBack: () -> Unit) {
     val busy = state is UpdateState.Checking || state is UpdateState.Downloading
     val channel = s.updateChannel ?: vm.channel
 
-    InnerScreen(title = "Updates", subtitle = "Rewire ${vm.installedName}", onBack = onBack) {
+    InnerScreen(title = "Updates", subtitle = "Rewire ${vm.installedName} · ${if (BuildConfig.ACCESSIBILITY) "Full" else "Lite"}", onBack = onBack) {
         Card(Modifier.fillMaxWidth(), shape = MaterialTheme.shapes.large, colors = CardDefaults.cardColors(containerColor = c.surfaceContainerLow)) {
             Column(Modifier.padding(16.dp), verticalArrangement = Arrangement.spacedBy(12.dp)) {
                 when (val st = state) {
