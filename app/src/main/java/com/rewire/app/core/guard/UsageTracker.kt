@@ -103,11 +103,11 @@ open class UsageTracker(private val context: Context? = null) {
         }.getOrNull()
     }
 
-    /** Newest app resume recorded in [from, to], or null (also without usage access). Cheap: a seconds-wide window. */
-    open fun latestResume(from: Long, to: Long): Event? {
-        val ctx = context ?: return null
-        if (!SystemPermissions.usageAccessGranted(ctx)) return null
-        val usm = ctx.getSystemService(UsageStatsManager::class.java) ?: return null
+    /** App resumes recorded in [from, to], oldest first; empty without usage access. Cheap: a seconds-wide window. */
+    open fun resumes(from: Long, to: Long): List<Event> {
+        val ctx = context ?: return emptyList()
+        if (!SystemPermissions.usageAccessGranted(ctx)) return emptyList()
+        val usm = ctx.getSystemService(UsageStatsManager::class.java) ?: return emptyList()
         return runCatching {
             val events = usm.queryEvents(from, to)
             val list = ArrayList<Event>()
@@ -116,8 +116,8 @@ open class UsageTracker(private val context: Context? = null) {
                 events.getNextEvent(e)
                 list += Event(e.packageName, e.className, e.eventType, e.timeStamp)
             }
-            latestResume(list)
-        }.getOrNull()
+            resumes(list)
+        }.getOrDefault(emptyList())
     }
 
     data class Event(val pkg: String?, val cls: String?, val type: Int, val time: Long)
@@ -129,7 +129,11 @@ open class UsageTracker(private val context: Context? = null) {
         private const val STOPPED = 23 // ACTIVITY_STOPPED
         private const val SHUTDOWN = 26 // DEVICE_SHUTDOWN
 
-        fun latestResume(events: List<Event>): Event? = events.lastOrNull { it.type == RESUMED && it.pkg != null }
+        /**
+         * Every resume, in order. Keeping only the newest lost opens: a protected app followed in the same
+         * window by any other resume (a System UI overlay, an in-app helper activity) was never judged.
+         */
+        fun resumes(events: List<Event>): List<Event> = events.filter { it.type == RESUMED && it.pkg != null }
 
         /**
          * Sums foreground time per package from [events] in [start, now]. A package counts as

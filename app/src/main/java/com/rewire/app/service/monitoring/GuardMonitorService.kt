@@ -105,9 +105,11 @@ class GuardMonitorService : Service() {
                     continue
                 }
                 // Events can land a moment after they happen: look back a little, never before the last one used.
-                val e = usage.latestResume(maxOf(cursor + 1, now - USAGE_LOOKBACK_MS), now) ?: continue
-                cursor = e.time
-                withContext(Dispatchers.Main) { engine.onForeground(e.pkg ?: return@withContext, e.cls) }
+                val resumes = usage.resumes(maxOf(cursor + 1, now - USAGE_LOOKBACK_MS), now)
+                if (resumes.isEmpty()) continue
+                cursor = resumes.last().time
+                // All of them, in order: the engine skips System UI overlays and keyboards and dedups repeats.
+                withContext(Dispatchers.Main) { resumes.forEach { e -> e.pkg?.let { engine.onForeground(it, e.cls) } } }
             }
         }
     }

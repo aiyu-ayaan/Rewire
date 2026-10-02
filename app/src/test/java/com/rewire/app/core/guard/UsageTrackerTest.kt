@@ -48,13 +48,14 @@ class UsageTrackerTest {
     }
 
     @Test
-    fun latestResumeIsTheNewestResumeNotAPause() {
+    fun resumesKeepsEveryResumeInOrderAndNoPauses() {
         val events = listOf(
             Event(ig, "Main", 1, 1_000L),
-            Event("launcher", "Home", 1, 2_000L),
+            Event("com.android.systemui", "Shade", 1, 1_200L), // must not hide the protected open before it
             Event(ig, "Main", 2, 2_100L),
+            Event(null, null, 1, 2_200L),
         )
-        assertEquals("launcher", UsageTracker.latestResume(events)?.pkg)
-        assertEquals(null, UsageTracker.latestResume(listOf(Event(ig, "Main", 2, 1L))))
+        assertEquals(listOf(ig, "com.android.systemui"), UsageTracker.resumes(events).map { it.pkg })
+        assertEquals(emptyList<Event>(), UsageTracker.resumes(listOf(Event(ig, "Main", 2, 1L))))
     }
 }

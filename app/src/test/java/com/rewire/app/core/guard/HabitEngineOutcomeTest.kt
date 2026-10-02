@@ -536,6 +536,20 @@ class HabitEngineOutcomeTest {
         assertEquals(WarningLevel.MINOR, platform.guardShown.last().level)
     }
 
+    @Test
+    fun `max daily limit blocks when the open and an overlay land in one usage tick`() {
+        habitRepo.setHabits(listOf(maxHabit.copy(rule = maxHabit.rule.copy(dailyLimitMinutes = 60))))
+        usageTracker.minutes = 204
+
+        // GuardMonitorService feeds every resume of a tick in order (Lite has no accessibility events).
+        listOf("com.supercell.clashroyale" to "Main", "com.android.systemui" to "android.widget.FrameLayout")
+            .forEach { (pkg, cls) -> engine.onForeground(pkg, cls) }
+
+        assertEquals(1, platform.guardShown.size)
+        assertEquals("DAILY_LIMIT", platform.guardShown.single().blockReason)
+        assertEquals(listOf(HabitEventType.APP_BLOCKED), eventRepo.logged.map { it.type })
+    }
+
     private companion object {
         const val RECENTS = "com.android.systemui.recents.RecentsActivity"
     }
