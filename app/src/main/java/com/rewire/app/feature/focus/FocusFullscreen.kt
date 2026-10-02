@@ -1,5 +1,6 @@
 package com.rewire.app.feature.focus
 
+import android.content.pm.ActivityInfo
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.BackHandler
 import androidx.activity.compose.LocalActivity
@@ -17,7 +18,9 @@ import androidx.compose.animation.fadeIn
 import androidx.compose.animation.fadeOut
 import androidx.compose.animation.scaleIn
 import androidx.compose.animation.scaleOut
+import androidx.compose.animation.slideInHorizontally
 import androidx.compose.animation.slideInVertically
+import androidx.compose.animation.slideOutHorizontally
 import androidx.compose.animation.slideOutVertically
 import androidx.compose.animation.togetherWith
 import androidx.compose.foundation.background
@@ -32,6 +35,7 @@ import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.safeDrawingPadding
@@ -89,6 +93,9 @@ import kotlin.random.Random
 
 const val TIMER_KEY = "focus-timer"
 
+/** Trailing-edge lane for the controls in landscape: 84dp main button + 2 x 14dp margin (8dp grid-ish). */
+private val ControlLane = 112.dp
+
 /** One focus timer for the whole activity: tab screen and fullscreen route share it. */
 @Composable
 fun focusViewModel(): FocusViewModel =
@@ -129,47 +136,50 @@ fun FocusFullscreenScreen(onExit: () -> Unit) {
                 .clickable(remember { MutableInteractionSource() }, indication = null) { controlsVisible = !controlsVisible; interaction++ }
                 .safeDrawingPadding(),
         ) {
-            BoxWithConstraints(Modifier.fillMaxSize().burnInDrift(), contentAlignment = Alignment.Center) {
-                // Digits fill the short side; works portrait + landscape.
-                val digitSize = min(maxWidth / 3.4f, maxHeight / 1.9f)
-                Column(horizontalAlignment = Alignment.CenterHorizontally) {
-                    AnimatedContent(
-                        targetState = when { paused -> "Paused"; onBreak -> "Break"; else -> "Deep work" },
-                        transitionSpec = { (fadeIn() + scaleIn(initialScale = 0.8f)).togetherWith(fadeOut() + scaleOut(targetScale = 1.1f)) },
-                        label = "phase",
-                    ) { label ->
-                        Text(label.uppercase(), style = MaterialTheme.typography.labelLarge.copy(letterSpacing = 4.sp), color = accent.copy(alpha = 0.8f))
-                    }
-                    Spacer(Modifier.height(8.dp))
-                    RollingTime(
-                        millis = state.remaining(now),
-                        style = with(LocalDensity.current) { TimerTextStyle.copy(fontSize = digitSize.toSp(), lineHeight = (digitSize * 1.15f).toSp()) },
-                        color = if (paused) c.onSurfaceVariant else c.onSurface,
-                        blinkColon = !paused,
-                        modifier = Modifier.sharedBoundsOrSelf(TIMER_KEY),
-                    )
-                    LinearWavyProgressIndicator(
-                        progress = { state.progress(now) },
-                        color = accent,
-                        trackColor = c.surfaceContainerHighest,
-                        modifier = Modifier.fillMaxWidth(0.55f).padding(top = 12.dp),
-                    )
-                    Text(
-                        "Session ${state.cycle} / ${state.config.cycles}",
-                        style = MaterialTheme.typography.titleSmall,
-                        color = c.onSurfaceVariant.copy(alpha = 0.6f),
-                        modifier = Modifier.padding(top = 16.dp),
-                    )
-                }
-            }
+            BoxWithConstraints(Modifier.fillMaxSize()) {
+                // Landscape: timer on the left, controls in a lane on the trailing edge so they never cover the
+                // digits in the short height. The lane is always reserved, so showing controls doesn't shift the clock.
+                val landscape = maxWidth > maxHeight
+                val timerWidth = if (landscape) maxWidth - ControlLane else maxWidth
+                // Digits fill the short side of the timer area.
+                val digitSize = if (landscape) min(timerWidth / 3.4f, maxHeight / 1.6f) else min(maxWidth / 3.4f, maxHeight / 1.9f)
 
-            AnimatedVisibility(
-                visible = controlsVisible || paused,
-                enter = fadeIn() + slideInVertically(MaterialTheme.motionScheme.defaultSpatialSpec()) { it / 2 },
-                exit = fadeOut() + slideOutVertically(MaterialTheme.motionScheme.fastSpatialSpec()) { it / 2 },
-                modifier = Modifier.align(Alignment.BottomCenter).padding(bottom = 24.dp),
-            ) {
-                Row(horizontalArrangement = Arrangement.spacedBy(20.dp), verticalAlignment = Alignment.CenterVertically) {
+                Box(
+                    Modifier.size(timerWidth, maxHeight).burnInDrift(),
+                    contentAlignment = Alignment.Center,
+                ) {
+                    Column(horizontalAlignment = Alignment.CenterHorizontally) {
+                        AnimatedContent(
+                            targetState = when { paused -> "Paused"; onBreak -> "Break"; else -> "Deep work" },
+                            transitionSpec = { (fadeIn() + scaleIn(initialScale = 0.8f)).togetherWith(fadeOut() + scaleOut(targetScale = 1.1f)) },
+                            label = "phase",
+                        ) { label ->
+                            Text(label.uppercase(), style = MaterialTheme.typography.labelLarge.copy(letterSpacing = 4.sp), color = accent.copy(alpha = 0.8f))
+                        }
+                        Spacer(Modifier.height(8.dp))
+                        RollingTime(
+                            millis = state.remaining(now),
+                            style = with(LocalDensity.current) { TimerTextStyle.copy(fontSize = digitSize.toSp(), lineHeight = (digitSize * 1.15f).toSp()) },
+                            color = if (paused) c.onSurfaceVariant else c.onSurface,
+                            blinkColon = !paused,
+                            modifier = Modifier.sharedBoundsOrSelf(TIMER_KEY),
+                        )
+                        LinearWavyProgressIndicator(
+                            progress = { state.progress(now) },
+                            color = accent,
+                            trackColor = c.surfaceContainerHighest,
+                            modifier = Modifier.width(timerWidth * 0.55f).padding(top = 12.dp),
+                        )
+                        Text(
+                            "Session ${state.cycle} / ${state.config.cycles}",
+                            style = MaterialTheme.typography.titleSmall,
+                            color = c.onSurfaceVariant.copy(alpha = 0.6f),
+                            modifier = Modifier.padding(top = 16.dp),
+                        )
+                    }
+                }
+
+                val buttons: @Composable () -> Unit = {
                     FilledTonalIconButton(onClick = onExit, shapes = IconButtonDefaults.shapes(), modifier = Modifier.size(64.dp)) {
                         Icon(Icons.Rounded.FullscreenExit, contentDescription = "Exit full screen")
                     }
@@ -185,6 +195,18 @@ fun FocusFullscreenScreen(onExit: () -> Unit) {
                             Icon(Icons.Rounded.SkipNext, contentDescription = "Skip break")
                         }
                     }
+                }
+                val enterSpec = MaterialTheme.motionScheme.defaultSpatialSpec<IntOffset>()
+                val exitSpec = MaterialTheme.motionScheme.fastSpatialSpec<IntOffset>()
+                AnimatedVisibility(
+                    visible = controlsVisible || paused,
+                    enter = fadeIn() + if (landscape) slideInHorizontally(enterSpec) { it / 2 } else slideInVertically(enterSpec) { it / 2 },
+                    exit = fadeOut() + if (landscape) slideOutHorizontally(exitSpec) { it / 2 } else slideOutVertically(exitSpec) { it / 2 },
+                    modifier = if (landscape) Modifier.align(Alignment.CenterEnd).width(ControlLane)
+                    else Modifier.align(Alignment.BottomCenter).padding(bottom = 24.dp),
+                ) {
+                    if (landscape) Column(verticalArrangement = Arrangement.spacedBy(16.dp), horizontalAlignment = Alignment.CenterHorizontally) { buttons() }
+                    else Row(horizontalArrangement = Arrangement.spacedBy(20.dp), verticalAlignment = Alignment.CenterVertically) { buttons() }
                 }
             }
         }
@@ -245,7 +267,11 @@ private fun ImmersiveKeepScreenOn() {
         controller.systemBarsBehavior = WindowInsetsControllerCompat.BEHAVIOR_SHOW_TRANSIENT_BARS_BY_SWIPE
         controller.hide(WindowInsetsCompat.Type.systemBars())
         view.keepScreenOn = true
+        // Turn with the phone (all four ways), even with auto-rotate off: a desk clock is often landscape.
+        val orientation = activity.requestedOrientation
+        activity.requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_FULL_SENSOR
         onDispose {
+            activity.requestedOrientation = orientation
             controller.show(WindowInsetsCompat.Type.systemBars())
             view.keepScreenOn = false
         }

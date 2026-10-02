@@ -15,6 +15,10 @@ import androidx.compose.foundation.gestures.detectTapGestures
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.ui.unit.min
+import androidx.compose.ui.unit.Dp
+import androidx.compose.foundation.layout.displayCutoutPadding
+import androidx.compose.foundation.layout.BoxWithConstraints
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxHeight
@@ -353,10 +357,7 @@ private fun FocusRunning(state: FocusState, now: Long, onPause: () -> Unit, onRe
     val ringColor = if (onBreak) c.tertiary else c.primary
     val amplitude by animateFloatAsState(if (paused) 0f else 1f, MaterialTheme.motionScheme.slowEffectsSpec(), label = "amp")
 
-    Column(
-        Modifier.fillMaxSize().statusBarsPadding().navigationBarsPadding().padding(16.dp),
-        horizontalAlignment = Alignment.CenterHorizontally,
-    ) {
+    val header: @Composable () -> Unit = {
         Box(Modifier.fillMaxWidth().padding(top = 8.dp), contentAlignment = Alignment.Center) {
             Surface(shape = CircleShape, color = if (onBreak) c.tertiaryContainer else c.primaryContainer) {
                 Text(
@@ -369,7 +370,8 @@ private fun FocusRunning(state: FocusState, now: Long, onPause: () -> Unit, onRe
                 Icon(Icons.Rounded.Fullscreen, contentDescription = "Full screen timer")
             }
         }
-        Spacer(Modifier.weight(1f))
+    }
+    val ring: @Composable (Dp) -> Unit = { size ->
         Box(contentAlignment = Alignment.Center, modifier = Modifier.semantics(mergeDescendants = true) {
             stateDescription = if (paused) "Paused" else if (onBreak) "Break" else "Focusing"
         }) {
@@ -377,20 +379,22 @@ private fun FocusRunning(state: FocusState, now: Long, onPause: () -> Unit, onRe
                 progress = { state.progress(now) },
                 color = ringColor,
                 amplitude = { amplitude },
-                modifier = Modifier.size(300.dp),
+                modifier = Modifier.size(size),
             )
             Column(horizontalAlignment = Alignment.CenterHorizontally) {
                 RollingTime(state.remaining(now), TimerTextStyle, c.onSurface, Modifier.sharedBoundsOrSelf(TIMER_KEY))
                 Text("Session ${state.cycle} / ${state.config.cycles}", style = MaterialTheme.typography.titleMedium, color = c.onSurfaceVariant)
             }
         }
-        Spacer(Modifier.weight(1f))
+    }
+    val caption: @Composable () -> Unit = {
         Text(
             if (onBreak) "Step away. Stretch, drink water, look far." else "Deep work mode. Guarded apps follow your focus rules.",
             style = MaterialTheme.typography.bodyMedium, color = c.onSurfaceVariant, textAlign = TextAlign.Center,
             modifier = Modifier.widthIn(max = 320.dp),
         )
-        Spacer(Modifier.height(24.dp))
+    }
+    val controls: @Composable () -> Unit = {
         Row(verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(24.dp)) {
             HoldToEnd(onEnd)
             FilledIconButton(
@@ -408,7 +412,37 @@ private fun FocusRunning(state: FocusState, now: Long, onPause: () -> Unit, onRe
                 }
             }
         }
-        Spacer(Modifier.height(32.dp))
+    }
+
+    BoxWithConstraints(Modifier.fillMaxSize().statusBarsPadding().navigationBarsPadding().displayCutoutPadding().padding(16.dp)) {
+        val ringInLandscape = min(300.dp, maxHeight - 16.dp)
+        if (maxWidth > maxHeight) {
+            // Landscape: two panes. The ring takes the short side (never squashed); header, caption and controls
+            // stack beside it, all within the height.
+            Row(Modifier.fillMaxSize(), verticalAlignment = Alignment.CenterVertically) {
+                Box(Modifier.weight(1f), contentAlignment = Alignment.Center) { ring(ringInLandscape) }
+                Column(
+                    Modifier.weight(1f).fillMaxHeight(),
+                    horizontalAlignment = Alignment.CenterHorizontally,
+                    verticalArrangement = Arrangement.SpaceEvenly,
+                ) {
+                    header()
+                    caption()
+                    controls()
+                }
+            }
+        } else {
+            Column(Modifier.fillMaxSize(), horizontalAlignment = Alignment.CenterHorizontally) {
+                header()
+                Spacer(Modifier.weight(1f))
+                ring(300.dp)
+                Spacer(Modifier.weight(1f))
+                caption()
+                Spacer(Modifier.height(24.dp))
+                controls()
+                Spacer(Modifier.height(32.dp))
+            }
+        }
     }
 }
 
