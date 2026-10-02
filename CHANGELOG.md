@@ -1,5 +1,29 @@
 # Changelog
 
+## [1.0.1-alpha.4](https://github.com/aiyu-ayaan/Rewire/compare/v1.0.1-alpha.3...v1.0.1-alpha.4) (2026-10-02)
+
+### Features
+
+* Landscape layouts and sensor rotation for the timer
+* Explain Full vs Lite build in About, link the install guide
+* Show Full or Lite build in About and Updates
+* Add Lite build without an accessibility service
+* Detect protected apps via usage access when accessibility is off
+
+### Bug fixes
+
+* Keep the block screen's content out of Recents
+* Restart monitoring after an app update
+* Create HabitEngine at app start so Lite starts monitoring
+
+### Other changes
+
+* Rewire Lite (installs past Play Protect, works with payment apps), landscape focus timer
+* Flavors guide, switching, testing; log today's decisions
+* Fail unless both APKs ship and Lite has no accessibility service
+* Explain Full vs Lite APK and the Play Protect / payment-app fix
+* Ship Full and Lite APKs; updater keeps each on its flavor
+
 ## [1.0.1-alpha.3](https://github.com/aiyu-ayaan/Rewire/compare/v1.0.1-alpha.2...v1.0.1-alpha.3) (2026-10-01)
 
 ### Features
