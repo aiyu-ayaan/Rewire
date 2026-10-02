@@ -7,7 +7,7 @@ plugins {
 //   ./gradlew :app:generateReleaseBaselineProfile
 //   ./gradlew :baselineprofile:connectedBenchmarkReleaseAndroidTest
 android {
-    namespace = "com.rewire.baselineprofile"
+    namespace = "com.aiyu.rewire.baselineprofile"
     compileSdk = 37
 
     defaultConfig {

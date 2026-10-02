@@ -1,7 +1,7 @@
 # Architecture (Phase 1 snapshot)
 
 ```
-app/src/main/java/com/rewire/app/
+app/src/main/java/com/aiyu/rewire/
 ├── RewireApp.kt              Application; owns AppContainer, creates notification channels
 ├── MainActivity.kt           setContent only; reads deep-link tab extra
 ├── di/AppModule.kt          Hilt singleton graph (Room, repos, settings flow, engines)

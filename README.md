@@ -107,7 +107,7 @@ Accessibility       Notification            UsageStats
 ### Project structure
 
 ```
-app/src/main/java/com/rewire/app/
+app/src/main/java/com/aiyu/rewire/
 ├── RewireApp.kt, MainActivity.kt, AppContainer.kt   Application, entry point, manual DI
 ├── core/
 │   ├── apps/            Installed launcher apps (PackageManager)
@@ -192,7 +192,7 @@ Requirements: Android Studio (current stable) or JDK 17+ with the Android SDK, a
 ./gradlew test
 ```
 
-The debug build installs as `com.rewire.app.debug`. After install, open **Profile → Permissions** to enable Accessibility (Full only), Usage access and the other grants, then create a habit in **Guard**.
+The debug build installs as `com.aiyu.rewire.debug`. After install, open **Profile → Permissions** to enable Accessibility (Full only), Usage access and the other grants, then create a habit in **Guard**.
 
 ## Testing
 

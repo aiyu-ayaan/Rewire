@@ -8,22 +8,22 @@
 # kotlinx.serialization: models persisted to disk (habits, warnings, events) and nav routes.
 # Keep generated serializers so stored JSON and type-safe navigation survive obfuscation.
 -keepattributes RuntimeVisibleAnnotations,AnnotationDefault,InnerClasses,Signature
--if @kotlinx.serialization.Serializable class com.rewire.app.**
+-if @kotlinx.serialization.Serializable class com.aiyu.rewire.**
 -keepclassmembers class <1> {
     static <1>$Companion Companion;
     static <1> INSTANCE;
     kotlinx.serialization.KSerializer serializer(...);
 }
--if @kotlinx.serialization.Serializable class com.rewire.app.** {
+-if @kotlinx.serialization.Serializable class com.aiyu.rewire.** {
     static **$* *;
 }
 -keepclassmembers class <2>$<3> {
     kotlinx.serialization.KSerializer serializer(...);
 }
--keep,includedescriptorclasses class com.rewire.app.**$$serializer { *; }
+-keep,includedescriptorclasses class com.aiyu.rewire.**$$serializer { *; }
 
 # Enums persisted by name (DataStore, intent extras) are restored with valueOf().
--keepclassmembers enum com.rewire.app.** {
+-keepclassmembers enum com.aiyu.rewire.** {
     public static **[] values();
     public static ** valueOf(java.lang.String);
 }

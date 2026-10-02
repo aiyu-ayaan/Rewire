@@ -33,7 +33,7 @@ CLI:
 REWIRE_FLAVOR=Lite ./run.sh     # Lite
 ```
 
-Both debug builds install as `com.rewire.app.debug` with the debug key, so each one installs over the
+Both debug builds install as `com.aiyu.rewire.debug` with the debug key, so each one installs over the
 other and keeps its data. A plain `installDebug` / `assembleRelease` no longer exists by that name (or
 builds both): always name the flavor.
 
@@ -49,8 +49,8 @@ Detection goes through `HabitEngine.onForeground` either way, so rules stay in o
 On a device, Lite needs Usage access + Display over apps (Profile → Permissions). With adb:
 
 ```bash
-adb shell appops set com.rewire.app.debug GET_USAGE_STATS allow
-adb shell appops set com.rewire.app.debug SYSTEM_ALERT_WINDOW allow
+adb shell appops set com.aiyu.rewire.debug GET_USAGE_STATS allow
+adb shell appops set com.aiyu.rewire.debug SYSTEM_ALERT_WINDOW allow
 adb logcat -s RewireGuard   # decision=… per protected open (debug builds only, no package names)
 ```
 

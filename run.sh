@@ -7,8 +7,8 @@ set -e
 ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 cd "$ROOT_DIR"
 
-PACKAGE_NAME="com.rewire.app.debug"
-ACTIVITY_NAME="com.rewire.app.MainActivity"
+PACKAGE_NAME="com.aiyu.rewire.debug"
+ACTIVITY_NAME="com.aiyu.rewire.MainActivity"
 
 echo "==> Checking for connected Android devices..."
 if ! command -v adb &> /dev/null; then

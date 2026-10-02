@@ -37,11 +37,11 @@ fun versionCodeOf(name: String): Int {
 }
 
 android {
-    namespace = "com.rewire.app"
+    namespace = "com.aiyu.rewire"
     compileSdk = 37
 
     defaultConfig {
-        applicationId = "com.rewire.app"
+        applicationId = "com.aiyu.rewire"
         minSdk = 26
         targetSdk = 35
         versionCode = versionCodeOf(appVersionName)
