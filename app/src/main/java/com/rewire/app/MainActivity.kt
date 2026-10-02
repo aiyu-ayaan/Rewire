@@ -5,6 +5,7 @@ import com.rewire.app.core.update.AppUpdater
 import com.rewire.app.feature.update.UpdateHost
 import kotlinx.coroutines.launch
 import com.rewire.app.core.focus.FocusController
+import com.rewire.app.core.guard.HabitEngine
 import com.rewire.app.core.settings.Settings
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.StateFlow
@@ -42,6 +43,7 @@ class MainActivity : ComponentActivity() {
     @Inject lateinit var notifier: RewireNotifier
     @Inject lateinit var focus: FocusController
     @Inject lateinit var updater: AppUpdater
+    @Inject lateinit var engine: HabitEngine
 
     private var deepLink by mutableStateOf<DeepLink?>(null)
 
@@ -104,6 +106,9 @@ class MainActivity : ComponentActivity() {
         super.onStart()
         notifier.cancelFocusMinimised()
         notifier.cancelUpdateAvailable() // the app is about to show the offer itself
+        // Android refuses a foreground-service start from the background (process restarted by the system):
+        // Rewire in front is the moment it is always allowed.
+        engine.ensureMonitoring()
     }
 
     // Leaving mid-session (home, recents, another app) pops a heads-up so the user knows the timer runs on.
