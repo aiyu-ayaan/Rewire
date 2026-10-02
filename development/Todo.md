@@ -176,6 +176,7 @@ service off -> banner + notification.
 - [x] Android 13+ restricted settings guidance + deep link
 - [x] Monitoring-disabled notification
 - [x] Onboarding: permission explain + "Test protection"
+- [x] Lite flavor (no accessibility service) + Usage-access fallback detection; CI ships both APKs (2026-10-02)
 
 ## Phase 4 — Usage analytics
 - [x] UsageStatsManager adapter synced with Digital Wellbeing data

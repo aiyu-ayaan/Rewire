@@ -161,6 +161,19 @@ Each permission is explained in-app before it is requested.
 
 > Android controls process lifetime. REWIRE is built for resilience (persisted state, system-bound services), not for a promise that it can never be killed.
 
+## Install
+
+Every [release](https://github.com/aiyu-ayaan/Rewire/releases) ships two APKs with the same features:
+
+| APK | Detects protected apps through | Pick it when |
+| --- | --- | --- |
+| `Rewire-Lite-<version>.apk` | Usage access + Display over apps (within ~1 s) | You download from a browser. Play Protect lets it install, and banking/UPI apps keep working. |
+| `Rewire-<version>.apk` (Full) | Accessibility (instant) | You install with [Obtainium](https://github.com/ImranR98/Obtainium) or `adb install`. |
+
+Why two: Play Protect's fraud protection blocks browser and file-manager installs of any app that declares an accessibility service. Payment apps also refuse to run while one from outside Play is switched on. On Full, turn Rewire off in Accessibility before paying. Guard keeps working through Usage access (grant it and Display over apps), then turn it back on.
+
+Both are signed with the same key. Install the other APK over the top to switch builds, and your data is kept. Each one updates itself within its own flavor.
+
 ## Build and run
 
 Requirements: Android Studio (current stable) or JDK 17+ with the Android SDK, and a device or emulator on API 26+.
@@ -169,14 +182,14 @@ Requirements: Android Studio (current stable) or JDK 17+ with the Android SDK, a
 # Build, install and launch the debug build on a connected device/emulator
 ./run.sh            # add --logs to stream logcat
 
-# Or manually
-./gradlew installDebug
+# Or manually (Full; installLiteDebug for Lite, REWIRE_FLAVOR=Lite ./run.sh)
+./gradlew installFullDebug
 
 # Unit tests
 ./gradlew test
 ```
 
-The debug build installs as `com.rewire.app.debug`. After install, open **Profile → Permissions** to enable Accessibility, Usage access and the other grants, then create a habit in **Guard**.
+The debug build installs as `com.rewire.app.debug`. After install, open **Profile → Permissions** to enable Accessibility (Full only), Usage access and the other grants, then create a habit in **Guard**.
 
 ## Testing
 
