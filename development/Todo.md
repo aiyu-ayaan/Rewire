@@ -69,13 +69,13 @@ notifications production-ready. Data in memory + DataStore (Room = Phase 2).
 - [x] Notification preferences screen (per category toggles, DataStore)
 - [x] Test notification button
 - [x] Content intent deep links into Focus tab
-- [ ] Daily summary scheduling (WorkManager) -> Phase 4
+- [x] Daily summary scheduling (WorkManager, daily 09:00, KEEP, skips quiet days) (2026-10-03)
 - [ ] Monitoring-disabled alert -> Phase 3
 
 ### 1.8 Matrix (basic)
 - [x] Daily metrics cards from in-memory event log
 - [x] Bar chart (focus minutes / day), progress ring, empty states
-- [ ] Real data from Room -> Phase 2/5
+- [x] Real data from Room (events repository; weekly/monthly/daily views, Phase 5)
 
 ### 1.9 Profile
 - [x] Theme (system/light/dark) + dynamic color
@@ -154,17 +154,17 @@ service off -> banner + notification.
 - [x] Room schema v2 (`AutoMigration`), device-verified on a populated v1 DB
 - [x] Verified on emulator against the real v1.0.1-alpha.1 release (offer, notes, download, refusal message)
 - [ ] Real install end to end needs two signed releases (emulator only had a debug build)
-- [ ] Play build: compile the feature out before any Play submission (see docs/UPDATES.md)
+- [x] Play build: `play` flavor, updates compiled out (UPDATES flag, no REQUEST_INSTALL_PACKAGES/INTERNET/receiver) (2026-10-03). Confirm `assemblePlayRelease` R8 result before submitting
 
 ## Phase 2 — Persistence + DI  (DONE 2026-10-02 except items below)
-- [ ] Extract remaining inline UI copy to strings.xml
+- [x] Extract remaining inline UI copy to strings.xml (~330 strings; domain-layer text, update errors, debug button left inline on purpose) (2026-10-03)
 - [x] Baseline profile generated + wired (`:baselineprofile`); emulator startup median 749 ms -> 685 ms. Frame-timing comparison needs a real device (emulator reports frame counts only)
 - [x] Hilt 2.60.1 (works with AGP 9 built-in Kotlin) replaces `AppContainer`; `@HiltViewModel` per screen, `@AndroidEntryPoint` services (2026-10-02)
 - [x] Room: habits, protected apps, rules, warnings, events, focus sessions, settings (schema v1 exported)
 - [x] Repositories swap JSON/DataStore -> Room, same interfaces; one-time legacy import (device-verified)
-- [ ] Event logger (`HabitEvent`) writes every action
-- [ ] Export / import / clear history (JSON, kotlinx.serialization)
-- [ ] Migration tests (needed from schema v2; v1 has only the legacy import)
+- [x] Event logger (`HabitEvent`) writes every action (audited: Guard + Focus, 2026-10-03)
+- [x] Export / import / clear history (versioned JSON, validated, one Room transaction; Profile > Your data) (2026-10-03). Not yet tried on a device
+- [x] Migration tests 1->2 and 2->3 (androidTest, compile-checked; run on a device still pending)
 
 ## Phase 3 — Guard engine + Monitoring
 - [x] `RuleEngine` -> `RestrictionDecision` (Minor/Major/Max, windows, limits, launches) + tests
@@ -189,12 +189,19 @@ service off -> banner + notification.
 
 ## Phase 4 — Usage analytics
 - [x] UsageStatsManager adapter synced with Digital Wellbeing data
-- [ ] WorkManager daily aggregation + daily summary notification
-- [ ] DailyMetrics / weekly / monthly aggregator + tests
+- [x] WorkManager daily aggregation + daily summary notification (2026-10-03)
+- [x] DailyMetrics / weekly / monthly aggregator + tests (`PeriodMetrics`) (2026-10-03). Past-day screen time not stored yet (only today's)
 
 ## Phase 5 — Matrix full
-- [ ] Chart set: line, area, stacked bar, donut, radar, heatmap, timeline, scatter
-- [ ] Weekly + monthly views, table alternative for a11y
+- [x] Chart set: line, area, stacked bar, bar, donut, radar, heatmap, timeline, scatter (2026-10-03)
+- [x] Weekly + monthly views, table alternative for a11y (2026-10-03)
 
-## Phase 6 (V2) — Escalation, streaks, presets, goals
+## Phase 6 (V2) — Escalation, streaks, presets, goals  (2026-10-03)
+- [x] Smart escalation: configurable Minor/Major/Max minute tiers, off by default, in `RuleEngine`; Room schema v3 (AutoMigration 2->3)
+- [ ] Escalation: "repeated usage" mode (only minute tiers built)
+- [x] Goals (daily focus target, max overrides) + streaks, Profile editor, chips on Guard/Matrix daily, in backup
+- [x] Focus presets (built-in + user presets, DataStore, in backup)
+- [ ] Built-in preset names to strings.xml (English literals in domain now)
+- [ ] Snapshot daily screen time so weekly/monthly screen-time charts have past days
+- [ ] Remove unused `ActivityHeatmap` in Charts.kt
 ## Phase 7 (V3) — External data adapters, backup, AI insights (read-only)
