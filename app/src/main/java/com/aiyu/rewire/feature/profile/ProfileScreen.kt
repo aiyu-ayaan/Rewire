@@ -75,7 +75,7 @@ import com.aiyu.rewire.core.notifications.rememberNotificationPermission
 import com.aiyu.rewire.ui.components.SectionTitle
 
 @Composable
-fun ProfileScreen(onOpenNotificationSettings: () -> Unit, onOpenWarningLibrary: () -> Unit, onEditProfile: () -> Unit, onOpenAbout: () -> Unit, onOpenUpdates: () -> Unit) {
+fun ProfileScreen(onOpenNotificationSettings: () -> Unit, onOpenWarningLibrary: () -> Unit, onEditProfile: () -> Unit, onOpenAbout: () -> Unit, onOpenUpdates: () -> Unit, onOpenLanguage: () -> Unit, onOpenGoals: () -> Unit) {
     val vm = hiltViewModel<SettingsViewModel>()
     val settings by vm.settings.collectAsStateWithLifecycle()
     val warnings by hiltViewModel<WarningLibraryViewModel>().warnings.collectAsStateWithLifecycle()
@@ -117,17 +117,15 @@ fun ProfileScreen(onOpenNotificationSettings: () -> Unit, onOpenWarningLibrary: 
 
         SectionTitle(stringResource(R.string.app_name))
         Group {
-            GoalsRow(MaterialTheme.colorScheme.surfaceContainerLow)
+            GoalsRow(MaterialTheme.colorScheme.surfaceContainerLow, onOpenGoals)
             NavRow(Icons.Rounded.Notifications, stringResource(R.string.profile_notifications), when (permission.status) {
                 PermissionStatus.GRANTED -> stringResource(R.string.profile_notifications_on, s.notifications.count { it.value }, s.notifications.size)
                 else -> stringResource(R.string.profile_notifications_off)
             }, onOpenNotificationSettings)
             NavRow(Icons.Rounded.FormatQuote, stringResource(R.string.profile_warning_library), stringResource(R.string.profile_warning_library_summary, warnings.count { it.enabled }, warnings.count { it.custom }), onOpenWarningLibrary)
             val context = LocalContext.current
-            var languageOpen by remember { mutableStateOf(false) }
             val language = AppLocale.current(context)
-            NavRow(Icons.Rounded.Language, stringResource(R.string.profile_language), if (language.isEmpty()) stringResource(R.string.profile_language_system) else AppLocale.nativeName(language)) { languageOpen = true }
-            if (languageOpen) LanguageDialog(language) { languageOpen = false }
+            NavRow(Icons.Rounded.Language, stringResource(R.string.profile_language), if (language.isEmpty()) stringResource(R.string.profile_language_system) else AppLocale.nativeName(language), onOpenLanguage)
             if (BuildConfig.UPDATES) UpdatesRow(s, onOpenUpdates) // gone entirely in the play flavor
             NavRow(Icons.Rounded.Info, stringResource(R.string.profile_about), stringResource(R.string.profile_about_summary, BuildConfig.VERSION_NAME), onOpenAbout)
         }

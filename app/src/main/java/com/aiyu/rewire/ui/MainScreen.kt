@@ -63,6 +63,26 @@ import com.aiyu.rewire.feature.focus.FocusScreen
 import com.aiyu.rewire.feature.guard.GuardScreen
 import com.aiyu.rewire.feature.matrix.MatrixScreen
 import com.aiyu.rewire.feature.profile.ProfileScreen
+import com.aiyu.rewire.BuildConfig
+import com.aiyu.rewire.feature.focus.FocusHistoryScreen
+import com.aiyu.rewire.feature.guard.HabitDetailScreen
+import com.aiyu.rewire.feature.matrix.MatrixBreakdownScreen
+import com.aiyu.rewire.feature.profile.AboutScreen
+import com.aiyu.rewire.feature.profile.AcknowledgementsScreen
+import com.aiyu.rewire.feature.profile.GoalsScreen
+import com.aiyu.rewire.feature.profile.LanguageScreen
+import com.aiyu.rewire.feature.profile.NotificationSettingsScreen
+import com.aiyu.rewire.feature.profile.WarningLibraryScreen
+import com.aiyu.rewire.feature.update.UpdateScreen
+import com.aiyu.rewire.ui.components.LocalNavAnimatedScope
+import com.aiyu.rewire.ui.components.LocalSharedTransitionScope
+import com.aiyu.rewire.ui.components.MorphingShape
+import com.aiyu.rewire.ui.components.heroBrush
+import androidx.compose.foundation.layout.fillMaxHeight
+import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.width
+import androidx.compose.material3.Surface
+import androidx.compose.ui.draw.alpha
 
 enum class Tab(@StringRes val label: Int, val icon: ImageVector, val selectedIcon: ImageVector, val link: DeepLink) {
     GUARD(R.string.nav_guard, Icons.Outlined.Shield, Icons.Rounded.Shield, DeepLink.GUARD),
@@ -84,12 +104,18 @@ fun MainScreen(
     onEditProfile: () -> Unit,
     onOpenAbout: () -> Unit,
     onOpenUpdates: () -> Unit,
+    onOpenLanguage: () -> Unit,
+    onOpenGoals: () -> Unit,
+    onPreviewWarning: (String) -> Unit,
 ) {
     var tab by rememberSaveable { mutableStateOf(Tab.GUARD) }
+    // On wide windows a screen opened from a tab shows beside the list instead of replacing it (see TabPane).
+    var detail by rememberSaveable { mutableStateOf<String?>(null) }
+    val select = { t: Tab -> tab = t; detail = null }
     val navBar = remember { NavBarController() }
     LaunchedEffect(deepLink) {
         if (deepLink != null) {
-            tab = Tab.entries.first { it.link == deepLink }
+            select(Tab.entries.first { it.link == deepLink })
             onDeepLinkConsumed()
         }
     }
@@ -98,7 +124,8 @@ fun MainScreen(
     val effects = motion.defaultEffectsSpec<Float>()
     val spatial = motion.defaultSpatialSpec<Float>()
     val fastEffects = motion.fastEffectsSpec<Float>()
-    val content: @Composable (Modifier) -> Unit = { modifier ->
+    val content: @Composable (Modifier, Boolean) -> Unit = { modifier, wide ->
+        val open = { key: String, narrow: () -> Unit -> if (wide) detail = key else narrow() }
         CompositionLocalProvider(LocalNavBarController provides navBar) {
         AnimatedContent(
             targetState = tab,
@@ -110,10 +137,26 @@ fun MainScreen(
             label = "tab",
         ) { current ->
             when (current) {
-                Tab.GUARD -> GuardScreen(onOpenHabit = onOpenHabit, onStartFocus = { tab = Tab.FOCUS })
-                Tab.FOCUS -> FocusScreen(onFullscreen = onOpenFocusFullscreen, onHistory = onOpenFocusHistory)
-                Tab.MATRIX -> MatrixScreen(onShowAll = onOpenMatrixBreakdown)
-                Tab.PROFILE -> ProfileScreen(onOpenNotificationSettings = onOpenNotificationSettings, onOpenWarningLibrary = onOpenWarningLibrary, onEditProfile = onEditProfile, onOpenAbout = onOpenAbout, onOpenUpdates = onOpenUpdates)
+                Tab.GUARD -> TabPane(wide, detail, { DetailContent(it, { detail = null }, { k -> detail = k }, onPreviewWarning) }) {
+                    GuardScreen(onOpenHabit = { open("habit:$it") { onOpenHabit(it) } }, onStartFocus = { select(Tab.FOCUS) })
+                }
+                Tab.FOCUS -> TabPane(wide, detail, { DetailContent(it, { detail = null }, { k -> detail = k }, onPreviewWarning) }) {
+                    FocusScreen(onFullscreen = onOpenFocusFullscreen, onHistory = { open("history", onOpenFocusHistory) })
+                }
+                Tab.MATRIX -> TabPane(wide, detail, { DetailContent(it, { detail = null }, { k -> detail = k }, onPreviewWarning) }) {
+                    MatrixScreen(onShowAll = { apps -> open("matrix:$apps") { onOpenMatrixBreakdown(apps) } })
+                }
+                Tab.PROFILE -> TabPane(wide, detail ?: if (wide) "notifications" else null, { DetailContent(it, { detail = null }, { k -> detail = k }, onPreviewWarning) }) {
+                    ProfileScreen(
+                        onOpenNotificationSettings = { open("notifications", onOpenNotificationSettings) },
+                        onOpenWarningLibrary = { open("warnings", onOpenWarningLibrary) },
+                        onEditProfile = onEditProfile,
+                        onOpenAbout = { open("about", onOpenAbout) },
+                        onOpenUpdates = { open("updates", onOpenUpdates) },
+                        onOpenLanguage = { open("language", onOpenLanguage) },
+                        onOpenGoals = { open("goals", onOpenGoals) },
+                    )
+                }
             }
         }
         }
@@ -124,6 +167,8 @@ fun MainScreen(
     val barExit = slideOutVertically(barSpatial) { it } + shrinkVertically(barSize, shrinkTowards = Alignment.Top) + fadeOut(fastEffects)
 
     BoxWithConstraints(Modifier.fillMaxSize()) {
+        // Content width left of the rail: list + detail only when both panes get a comfortable size.
+        val widePane = maxWidth >= 920.dp
         if (maxWidth >= 600.dp) {
             Row(Modifier.fillMaxSize()) {
                 AnimatedVisibility(
@@ -135,14 +180,14 @@ fun MainScreen(
                     Tab.entries.forEach { t ->
                         NavigationRailItem(
                             selected = t == tab,
-                            onClick = { tab = t },
+                            onClick = { select(t) },
                             icon = { Icon(if (t == tab) t.selectedIcon else t.icon, contentDescription = null) },
                             label = { Text(stringResource(t.label)) },
                         )
                     }
                 }
                 }
-                Box(Modifier.weight(1f)) { content(Modifier.fillMaxSize()) }
+                Box(Modifier.weight(1f)) { content(Modifier.fillMaxSize(), widePane) }
             }
         } else {
             Scaffold(
@@ -153,7 +198,7 @@ fun MainScreen(
                         Tab.entries.forEach { t ->
                             ShortNavigationBarItem(
                                 selected = t == tab,
-                                onClick = { tab = t },
+                                onClick = { select(t) },
                                 icon = { Icon(if (t == tab) t.selectedIcon else t.icon, contentDescription = null) },
                                 label = { Text(stringResource(t.label)) },
                             )
@@ -162,7 +207,7 @@ fun MainScreen(
                     }
                 },
             ) { padding ->
-                content(Modifier.fillMaxSize().padding(padding).consumeWindowInsets(padding))
+                content(Modifier.fillMaxSize().padding(padding).consumeWindowInsets(padding), false)
             }
         }
     }
@@ -187,5 +232,44 @@ fun HideNavigationBar(hide: Boolean = true) {
     DisposableEffect(controller, hide) {
         if (hide) controller.acquire()
         onDispose { if (hide) controller.release() }
+    }
+}
+
+/** Wide windows: [list] on the left (fixed width), the opened screen on the right like Android Settings. Narrow: [list] only. */
+@Composable
+private fun TabPane(wide: Boolean, detail: String?, detailContent: @Composable (String) -> Unit, list: @Composable () -> Unit) {
+    if (!wide) { list(); return }
+    Row(Modifier.fillMaxSize()) {
+        Box(Modifier.width(420.dp).fillMaxHeight()) { list() }
+        Surface(
+            Modifier.weight(1f).fillMaxHeight().padding(top = 8.dp, end = 8.dp, bottom = 8.dp),
+            shape = MaterialTheme.shapes.extraLarge,
+            color = MaterialTheme.colorScheme.surfaceContainerLow,
+        ) {
+            // The pane is not a nav destination: hero/container transforms don't apply here.
+            CompositionLocalProvider(LocalSharedTransitionScope provides null, LocalNavAnimatedScope provides null) {
+                if (detail != null) detailContent(detail)
+                else Box(Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
+                    MorphingShape(brush = heroBrush(), modifier = Modifier.size(96.dp).alpha(0.4f))
+                }
+            }
+        }
+    }
+}
+
+/** Screens that open beside the list on wide windows. [key] is "kind" or "kind:arg" and survives rotation. */
+@Composable
+private fun DetailContent(key: String, onClose: () -> Unit, open: (String) -> Unit, onPreviewWarning: (String) -> Unit) {
+    when {
+        key.startsWith("habit:") -> HabitDetailScreen(key.removePrefix("habit:"), onBack = onClose, onPreview = onPreviewWarning)
+        key.startsWith("matrix:") -> MatrixBreakdownScreen(key.removePrefix("matrix:").toBoolean(), onBack = onClose)
+        key == "history" -> FocusHistoryScreen(onBack = onClose)
+        key == "notifications" -> NotificationSettingsScreen(onBack = onClose)
+        key == "warnings" -> WarningLibraryScreen(onBack = onClose)
+        key == "about" -> AboutScreen(onBack = onClose, onOpenAcknowledgements = { open("acks") })
+        key == "acks" -> AcknowledgementsScreen(onBack = { open("about") })
+        key == "updates" -> if (BuildConfig.UPDATES) UpdateScreen(onBack = onClose)
+        key == "goals" -> GoalsScreen(onBack = onClose)
+        key == "language" -> LanguageScreen(onBack = onClose)
     }
 }

@@ -33,6 +33,8 @@ import com.aiyu.rewire.feature.landing.LandingScreen
 import com.aiyu.rewire.feature.matrix.MatrixBreakdownScreen
 import com.aiyu.rewire.feature.profile.AboutScreen
 import com.aiyu.rewire.feature.profile.AcknowledgementsScreen
+import com.aiyu.rewire.feature.profile.GoalsScreen
+import com.aiyu.rewire.feature.profile.LanguageScreen
 import com.aiyu.rewire.feature.profile.NotificationSettingsScreen
 import com.aiyu.rewire.feature.profile.WarningLibraryScreen
 import com.aiyu.rewire.ui.components.LocalNavAnimatedScope
@@ -54,6 +56,8 @@ object Routes {
     @Serializable data object About
     @Serializable data object Updates
     @Serializable data object Acknowledgements
+    @Serializable data object Language
+    @Serializable data object Goals
     @Serializable data class MatrixBreakdown(val apps: Boolean)
 }
 
@@ -146,6 +150,9 @@ fun RewireNavHost(
                             onEditProfile = { nav.navigate(Routes.EditProfile) },
                             onOpenAbout = { nav.navigate(Routes.About) },
                             onOpenUpdates = { nav.navigate(Routes.Updates) },
+                            onOpenLanguage = { nav.navigate(Routes.Language) },
+                            onOpenGoals = { nav.navigate(Routes.Goals) },
+                            onPreviewWarning = { nav.navigate(Routes.WarningPreview(it)) },
                         )
                     }
                 }
@@ -193,6 +200,12 @@ fun RewireNavHost(
                 }
                 composable<Routes.MatrixBreakdown> {
                     MatrixBreakdownScreen(it.toRoute<Routes.MatrixBreakdown>().apps, onBack = { nav.popBackStack() })
+                }
+                composable<Routes.Goals> {
+                    GoalsScreen(onBack = { nav.popBackStack() })
+                }
+                composable<Routes.Language> {
+                    LanguageScreen(onBack = { nav.popBackStack() })
                 }
                 composable<Routes.WarningLibrary> {
                     WarningLibraryScreen(onBack = { nav.popBackStack() })
