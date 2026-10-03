@@ -132,7 +132,7 @@ service off -> banner + notification.
 - Habit card -> detail container transform, create flow, Major preview pause countdown
 - POST_NOTIFICATIONS prompt, ongoing focus notification w/ countdown, test notification, deep link -> Focus
 - Light + dark theme, system bar icons follow app theme
-- Not yet checked: >= 600dp NavigationRail layout, 200% font scale, TalkBack pass
+- Code-level audit done 2026-10-03 (width cap on wide screens, wrap/scroll at large font, TalkBack labels/roles, lint clean). Still needs a real device: >= 600dp rail, 200% font scale, TalkBack run, landscape focus timer, NavigationRail clipping at 200% font
 
 ### Known Phase 1 limits
 - Debug build drops frames on first composition of a screen; profile on release build before tuning
