@@ -295,7 +295,10 @@
     <string name="guard_usage_access_text">Daily limit tracking needs Usage access to count screen time. Tap to grant.</string>
     <string name="guard_grant">Grant</string>
     <string name="guard_launch_limit">Launch limit per app</string>
-    <string name="guard_opens_per_day">%1$d opens / day</string>
+    <plurals name="guard_opens_per_day">
+        <item quantity="one">%1$d open / day</item>
+        <item quantity="other">%1$d opens / day</item>
+    </plurals>
     <string name="guard_pause_before_continue">Pause before continue</string>
     <string name="guard_instant">Instant</string>
     <string name="guard_seconds">%1$ds</string>
@@ -594,7 +597,9 @@
     <string name="guard_app_own_launch">Own launch limit</string>
     <string name="guard_app_own_window">Own allowed window</string>
     <string name="guard_app_habit_value">Habit: %1$s</string>
-    <string name="guard_app_own_limits">own limits</string>
-    <string name="guard_app_habit_limits">habit limits</string>
+    <string name="guard_app_habit_limits">Follows habit</string>
     <string name="guard_app_window_any">Any time</string>
+    <string name="guard_app_limit_daily">%1$s / day</string>
+    <string name="guard_app_limit_no_daily">no daily limit</string>
+    <string name="guard_app_limit_no_launch">no launch limit</string>
 </resources>

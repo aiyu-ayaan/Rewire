@@ -2,6 +2,7 @@ package com.aiyu.rewire.feature.guard
 
 import androidx.compose.ui.semantics.stateDescription
 import com.aiyu.rewire.domain.habit.AppLimits
+import com.aiyu.rewire.domain.habit.summaryParts
 import androidx.compose.ui.semantics.Role
 import androidx.compose.foundation.selection.toggleable
 import androidx.compose.foundation.clickable
@@ -171,12 +172,12 @@ fun HabitDetailScreen(habitId: String, onBack: () -> Unit, onPreview: (String) -
                     val ctx = LocalContext.current
                     val label = remember(app.packageName) { vm.appLabel(app.packageName) }
                     val used = rememberLiveUsage(app.packageName) { vm.appUsageMinutesToday(app.packageName) }
-                    val own = app.limits.any
+                    val summary = appLimitsSummary(app.limits) ?: stringResource(R.string.guard_app_habit_limits)
                     ListItem(
                         headlineContent = { Text(label) },
                         supportingContent = {
                             val usedText = used?.let { stringResource(R.string.guard_usage_today, formatMinutes(it)) }
-                            val text = listOfNotNull(usedText, stringResource(if (own) R.string.guard_app_own_limits else R.string.guard_app_habit_limits)).joinToString(" · ")
+                            val text = listOfNotNull(usedText, summary).joinToString(" · ")
                             Text(text)
                         },
                         leadingContent = { AppIcon(app.packageName) },
@@ -312,7 +313,7 @@ private fun BoundariesCard(p: HabitProfile, vm: HabitDetailViewModel) {
             SliderSetting(
                 title = stringResource(R.string.guard_launch_limit),
                 value = p.rule.maxLaunches ?: 0, range = 0..30, step = 1,
-                display = { if (it == 0) stringResource(R.string.guard_no_limit) else stringResource(R.string.guard_opens_per_day, it) },
+                display = { if (it == 0) stringResource(R.string.guard_no_limit) else pluralStringResource(R.plurals.guard_opens_per_day, it, it) },
                 onCommit = { vm.setMaxLaunches(it.takeIf { v -> v > 0 }) },
             )
             AnimatedVisibility(p.level == WarningLevel.MAJOR) {
@@ -416,6 +417,20 @@ private fun AllowedWindow(start: Int?, end: Int?, onChange: (Int?, Int?) -> Unit
     )
 }
 
+@Composable
+private fun appLimitsSummary(limits: AppLimits): String? {
+    if (!limits.any) return null
+    val parts = limits.summaryParts(
+        dailyFormatted = limits.dailyLimitMinutes?.let { stringResource(R.string.guard_app_limit_daily, formatMinutes(it)) },
+        noDaily = stringResource(R.string.guard_app_limit_no_daily),
+        launchesFormatted = limits.maxLaunches?.let { pluralStringResource(R.plurals.guard_opens_per_day, it, it) },
+        noLaunches = stringResource(R.string.guard_app_limit_no_launch),
+        windowFormatted = if (limits.allowedStartMinutes != null && limits.allowedEndMinutes != null) "${formatClock(limits.allowedStartMinutes)} – ${formatClock(limits.allowedEndMinutes)}" else null,
+        anyWindow = stringResource(R.string.guard_app_window_any),
+    )
+    return parts.joinToString(", ").takeIf { it.isNotEmpty() }
+}
+
 /**
  * One app's limits. Each boundary follows the habit (global) until the user switches it to this app's own value;
  * switching one on starts from the habit's value, so nothing changes until it is edited.
@@ -425,7 +440,7 @@ private fun AppLimitsSheet(p: HabitProfile, pkg: String, limits: AppLimits, labe
     val r = p.rule
     val noLimit = stringResource(R.string.guard_no_limit)
     val habitDaily = r.dailyLimitMinutes?.let { formatMinutes(it) } ?: noLimit
-    val habitLaunches = r.maxLaunches?.let { stringResource(R.string.guard_opens_per_day, it) } ?: noLimit
+    val habitLaunches = r.maxLaunches?.let { pluralStringResource(R.plurals.guard_opens_per_day, it, it) } ?: noLimit
     val habitWindow = if (r.allowedStartMinutes != null && r.allowedEndMinutes != null) "${formatClock(r.allowedStartMinutes)} – ${formatClock(r.allowedEndMinutes)}" else stringResource(R.string.guard_app_window_any)
     Column(
         Modifier.verticalScroll(rememberScrollState()).padding(horizontal = 24.dp).padding(bottom = 32.dp),
@@ -457,7 +472,7 @@ private fun AppLimitsSheet(p: HabitProfile, pkg: String, limits: AppLimits, labe
             SliderSetting(
                 title = stringResource(R.string.guard_launch_limit),
                 value = limits.maxLaunches ?: 0, range = 0..30, step = 1,
-                display = { if (it == 0) stringResource(R.string.guard_no_limit) else stringResource(R.string.guard_opens_per_day, it) },
+                display = { if (it == 0) stringResource(R.string.guard_no_limit) else pluralStringResource(R.plurals.guard_opens_per_day, it, it) },
                 onCommit = { onChange(limits.copy(maxLaunches = it.takeIf { v -> v > 0 })) },
             )
         }
