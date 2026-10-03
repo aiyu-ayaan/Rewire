@@ -107,50 +107,34 @@ object MetricsCalculator {
 
 data class GuardBreakdown(val key: String, val moments: Int, val wentBack: Int, val overrides: Int, val opens: Int)
 
+/** A Matrix-header comparison as data; the UI picks the wording from strings.xml. [unit] indexes [Punchlines.focusUnitMinutes], null = too little focus to compare. */
+data class FocusPunch(val unit: Int?, val count: Int, val minutes: Int)
+
+/** [variant] indexes the guard lines in strings.xml (0-2 mostly went back, 3-4 balanced, 5-6 mostly overrides). */
+data class GuardPunch(val variant: Int, val wentBack: Int, val overrides: Int)
+
 /**
  * Light-hearted comparisons for the Matrix header, like "that's 3 movies of focus".
  * Deterministic per day so the line doesn't flicker on every recomposition.
  */
 object Punchlines {
-    private class Measure(val minutes: Int, val one: String, val many: String)
+    val focusUnitMinutes = listOf(22, 120, 4, 43, 540, 25, 180, 121)
 
-    private val focusUnits = listOf(
-        Measure(22, "sitcom episode", "sitcom episodes"),
-        Measure(120, "feature film", "feature films"),
-        Measure(4, "pop song", "pop songs"),
-        Measure(43, "football half", "football halves"),
-        Measure(540, "Lord of the Rings extended trilogy", "Lord of the Rings extended trilogies"),
-        Measure(25, "pomodoro", "pomodoros"),
-        Measure(180, "Great Gatsby audiobook", "Great Gatsby audiobooks"),
-        Measure(121, "world-record marathon", "world-record marathons"),
-    )
-
-    fun focus(weekFocusMinutes: Int, seed: Long): String? {
+    fun focus(weekFocusMinutes: Int, seed: Long): FocusPunch? {
         if (weekFocusMinutes <= 0) return null
-        val fits = focusUnits.filter { weekFocusMinutes >= it.minutes }.ifEmpty { return "Every minute counts. ${weekFocusMinutes}m of focus is a real start." }
+        val fits = focusUnitMinutes.indices.filter { weekFocusMinutes >= focusUnitMinutes[it] }
+        if (fits.isEmpty()) return FocusPunch(null, 0, weekFocusMinutes)
         val u = fits[Math.floorMod(seed, fits.size.toLong()).toInt()]
-        val n = weekFocusMinutes / u.minutes
-        val x = if (n == 1) "one ${u.one}" else "~$n ${u.many}"
-        return "Your focus this week ≈ $x. Except this time you made something."
+        return FocusPunch(u, weekFocusMinutes / focusUnitMinutes[u], weekFocusMinutes)
     }
 
-    fun guard(wentBack: Int, overrides: Int, seed: Long): String? {
-        val lines = when {
+    fun guard(wentBack: Int, overrides: Int, seed: Long): GuardPunch? {
+        val variants = when {
             wentBack == 0 && overrides == 0 -> return null
-            wentBack >= overrides * 3 && wentBack > 0 -> listOf(
-                "You chose to go back $wentBack times. That's $wentBack small wins nobody saw.",
-                "$wentBack reflexes interrupted. Your thumb is learning new tricks.",
-                "Went back $wentBack times. The algorithm misses you. You don't miss it.",
-            )
-            wentBack >= overrides -> listOf(
-                "More go-backs than overrides. The balance is tipping your way.",
-                "$wentBack back, $overrides through. Control is winning on points.",
-            )
-            else -> listOf(
-                "$overrides overrides this week. No shame, just data. Patterns show up here first.",
-                "The apps won a few rounds. Matrix keeps score so you can plan the rematch.",
-            )
-        }
-        return lines[Math.floorMod(seed, lines.size.toLong()).toInt()]
+            wentBack >= overrides * 3 && wentBack > 0 -> 0..2
+            wentBack >= overrides -> 3..4
+            else -> 5..6
+        }.toList()
+        return GuardPunch(variants[Math.floorMod(seed, variants.size.toLong()).toInt()], wentBack, overrides)
     }
 }

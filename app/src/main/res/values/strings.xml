@@ -609,4 +609,45 @@
     <string name="guard_app_limit_daily">%1$s / day</string>
     <string name="guard_app_limit_no_daily">no daily limit</string>
     <string name="guard_app_limit_no_launch">no launch limit</string>
+
+    <!-- Updates: channels and errors -->
+    <string name="update_channel_stable">Stable</string>
+    <string name="update_channel_beta">Beta</string>
+    <string name="update_channel_alpha">Alpha</string>
+    <string name="update_channel_stable_desc">Finished releases only.</string>
+    <string name="update_channel_beta_desc">Release candidates, plus every stable release.</string>
+    <string name="update_channel_alpha_desc">Everything, the moment it is built.</string>
+    <string name="update_err_check">The update check failed</string>
+    <string name="update_err_github">GitHub answered %1$d</string>
+    <string name="update_err_download">The download failed</string>
+    <string name="update_err_download_code">The download failed (%1$d)</string>
+    <string name="update_err_checksum">The download did not match the checksum GitHub published for it</string>
+    <string name="update_err_start">Could not start the install</string>
+    <string name="update_err_screen">Android would not show the install screen</string>
+    <string name="update_err_signature">Android refused the update: this APK is signed with a different key from the installed build. Uninstall this copy first; uninstalling takes its data with it.</string>
+    <string name="update_err_install">The install failed</string>
+
+    <!-- Misc -->
+    <string name="focus_quick_test">Quick test · 20s focus / 10s break</string>
+    <string name="profile_default_name">You</string>
+    <string name="onboarding_sample_habit">Doom Scrolling</string>
+
+    <!-- Matrix punchlines -->
+    <string name="punch_focus">Your focus this week ≈ %1$s. Except this time you made something.</string>
+    <string name="punch_focus_start">Every minute counts. %1$dm of focus is a real start.</string>
+    <plurals name="punch_unit_sitcom"><item quantity="one">one sitcom episode</item><item quantity="other">~%1$d sitcom episodes</item></plurals>
+    <plurals name="punch_unit_film"><item quantity="one">one feature film</item><item quantity="other">~%1$d feature films</item></plurals>
+    <plurals name="punch_unit_song"><item quantity="one">one pop song</item><item quantity="other">~%1$d pop songs</item></plurals>
+    <plurals name="punch_unit_football"><item quantity="one">one football half</item><item quantity="other">~%1$d football halves</item></plurals>
+    <plurals name="punch_unit_lotr"><item quantity="one">one Lord of the Rings extended trilogy</item><item quantity="other">~%1$d Lord of the Rings extended trilogies</item></plurals>
+    <plurals name="punch_unit_pomodoro"><item quantity="one">one pomodoro</item><item quantity="other">~%1$d pomodoros</item></plurals>
+    <plurals name="punch_unit_gatsby"><item quantity="one">one Great Gatsby audiobook</item><item quantity="other">~%1$d Great Gatsby audiobooks</item></plurals>
+    <plurals name="punch_unit_marathon"><item quantity="one">one world-record marathon</item><item quantity="other">~%1$d world-record marathons</item></plurals>
+    <string name="punch_guard_0">You chose to go back %1$d times. That\'s %1$d small wins nobody saw.</string>
+    <string name="punch_guard_1">%1$d reflexes interrupted. Your thumb is learning new tricks.</string>
+    <string name="punch_guard_2">Went back %1$d times. The algorithm misses you. You don\'t miss it.</string>
+    <string name="punch_guard_3">More go-backs than overrides. The balance is tipping your way.</string>
+    <string name="punch_guard_4">%1$d back, %2$d through. Control is winning on points.</string>
+    <string name="punch_guard_5">%2$d overrides this week. No shame, just data. Patterns show up here first.</string>
+    <string name="punch_guard_6">The apps won a few rounds. Matrix keeps score so you can plan the rematch.</string>
 </resources>

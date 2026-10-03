@@ -275,7 +275,7 @@ private fun FocusSetup(
         }
         if (BuildConfig.DEBUG) {
             OutlinedButton(onClick = onQuickTest, modifier = Modifier.fillMaxWidth().padding(top = 8.dp)) {
-                Text("Quick test · 20s focus / 10s break")
+                Text(stringResource(R.string.focus_quick_test))
             }
         }
 

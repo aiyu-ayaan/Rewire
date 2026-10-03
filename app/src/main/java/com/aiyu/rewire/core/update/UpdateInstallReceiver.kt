@@ -1,5 +1,6 @@
 package com.aiyu.rewire.core.update
 
+import com.aiyu.rewire.R
 import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
@@ -27,15 +28,12 @@ class UpdateInstallReceiver : BroadcastReceiver() {
                 val confirm = confirmIntent(intent) ?: return
                 confirm.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK) // started from a receiver: no task of its own
                 runCatching { context.startActivity(confirm) }
-                    .onFailure { updater.fail(it.message ?: "Android would not show the install screen") }
+                    .onFailure { updater.fail(it.message ?: context.getString(R.string.update_err_screen)) }
             }
             PackageInstaller.STATUS_SUCCESS -> Unit
             PackageInstaller.STATUS_FAILURE_ABORTED -> updater.dismiss()
-            PackageInstaller.STATUS_FAILURE_CONFLICT -> updater.fail(
-                "Android refused the update: this APK is signed with a different key from the installed build. " +
-                    "Uninstall this copy first; uninstalling takes its data with it.",
-            )
-            else -> updater.fail(intent.getStringExtra(PackageInstaller.EXTRA_STATUS_MESSAGE) ?: "The install failed")
+            PackageInstaller.STATUS_FAILURE_CONFLICT -> updater.fail(context.getString(R.string.update_err_signature))
+            else -> updater.fail(intent.getStringExtra(PackageInstaller.EXTRA_STATUS_MESSAGE) ?: context.getString(R.string.update_err_install))
         }
     }
 

@@ -101,13 +101,25 @@ fun UpdateScreen(onBack: () -> Unit) {
                     selected = channel == ch,
                     onClick = { vm.setChannel(ch) },
                     shape = SegmentedButtonDefaults.itemShape(i, UpdateChannel.entries.size),
-                ) { Text(ch.label) }
+                ) { Text(stringResource(ch.labelRes)) }
             }
         }
-        Text(channel.detail, style = MaterialTheme.typography.bodySmall, color = c.onSurfaceVariant, modifier = Modifier.fillMaxWidth().padding(start = 4.dp, top = 6.dp))
+        Text(stringResource(channel.detailRes), style = MaterialTheme.typography.bodySmall, color = c.onSurfaceVariant, modifier = Modifier.fillMaxWidth().padding(start = 4.dp, top = 6.dp))
         Spacer(Modifier.height(8.dp))
     }
 }
 
 private val whenFormat = DateTimeFormatter.ofLocalizedDateTime(FormatStyle.MEDIUM, FormatStyle.SHORT)
 private fun formatWhen(at: Long): String = Instant.ofEpochMilli(at).atZone(ZoneId.systemDefault()).format(whenFormat)
+
+val UpdateChannel.labelRes: Int get() = when (this) {
+    UpdateChannel.STABLE -> R.string.update_channel_stable
+    UpdateChannel.BETA -> R.string.update_channel_beta
+    UpdateChannel.ALPHA -> R.string.update_channel_alpha
+}
+
+val UpdateChannel.detailRes: Int get() = when (this) {
+    UpdateChannel.STABLE -> R.string.update_channel_stable_desc
+    UpdateChannel.BETA -> R.string.update_channel_beta_desc
+    UpdateChannel.ALPHA -> R.string.update_channel_alpha_desc
+}

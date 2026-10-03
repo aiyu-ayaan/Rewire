@@ -13,10 +13,10 @@ import kotlinx.serialization.json.Json
  */
 
 /** Which builds a device is willing to be offered. */
-enum class UpdateChannel(val label: String, val detail: String, internal val stage: Int) {
-    STABLE("Stable", "Finished releases only.", Version.STABLE),
-    BETA("Beta", "Release candidates, plus every stable release.", Version.BETA),
-    ALPHA("Alpha", "Everything, the moment it is built.", Version.ALPHA);
+enum class UpdateChannel(internal val stage: Int) {
+    STABLE(Version.STABLE),
+    BETA(Version.BETA),
+    ALPHA(Version.ALPHA);
 
     /** A channel takes its own builds and everything steadier, so beta still sees the stable that supersedes it. */
     fun accepts(version: Version): Boolean = version.stage >= stage

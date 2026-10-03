@@ -1,5 +1,6 @@
 package com.aiyu.rewire.core.update
 
+import com.aiyu.rewire.R
 import android.app.PendingIntent
 import android.content.Context
 import android.content.Intent
@@ -78,14 +79,14 @@ class AppUpdater @Inject constructor(
         val next = runCatching {
             val connection = open(Releases.API)
             try {
-                if (connection.responseCode !in 200..299) error("GitHub answered ${connection.responseCode}")
+                if (connection.responseCode !in 200..299) error(context.getString(R.string.update_err_github, connection.responseCode))
                 val pick = Releases.pick(Releases.parse(connection.inputStream.bufferedReader().use { it.readText() }), installed, channel)
                 val apk = pick?.let { Releases.apkFor(it, lite = !BuildConfig.ACCESSIBILITY) } // a release whose Android job failed still exists, and is not an offer
                 if (pick == null || apk == null) UpdateState.UpToDate else UpdateState.Available(pick, apk)
             } finally {
                 connection.disconnect()
             }
-        }.getOrElse { UpdateState.Failed(it.message ?: "The update check failed") }
+        }.getOrElse { UpdateState.Failed(it.message ?: context.getString(R.string.update_err_check)) }
         repo.setUpdateLastChecked(System.currentTimeMillis())
         _state.value = next
         next
@@ -96,7 +97,7 @@ class AppUpdater @Inject constructor(
         if (_state.value is UpdateState.Downloading) return
         scope.launch(Dispatchers.IO) {
             runCatching { fetch(release, asset) }
-                .onFailure { _state.value = UpdateState.Failed(it.message ?: "The download failed") }
+                .onFailure { _state.value = UpdateState.Failed(it.message ?: context.getString(R.string.update_err_download)) }
         }
     }
 
@@ -112,7 +113,7 @@ class AppUpdater @Inject constructor(
         _state.value = UpdateState.Downloading(release, 0f)
         val connection = open(asset.url)
         try {
-            if (connection.responseCode !in 200..299) error("The download failed (${connection.responseCode})")
+            if (connection.responseCode !in 200..299) error(context.getString(R.string.update_err_download_code, connection.responseCode))
             val total = if (asset.size > 0) asset.size else connection.contentLengthLong
             var written = 0L
             var lastReported = 0f
@@ -137,7 +138,7 @@ class AppUpdater @Inject constructor(
         }
         if (!verified(target, asset)) {
             target.delete()
-            error("The download did not match the checksum GitHub published for it")
+            error(context.getString(R.string.update_err_checksum))
         }
         _state.value = UpdateState.Ready(release, target)
     }
@@ -188,7 +189,7 @@ class AppUpdater @Inject constructor(
                     )
                     session.commit(status.intentSender)
                 }
-            }.onFailure { fail(it.message ?: "Could not start the install") }
+            }.onFailure { fail(it.message ?: context.getString(R.string.update_err_start)) }
         }
     }
 

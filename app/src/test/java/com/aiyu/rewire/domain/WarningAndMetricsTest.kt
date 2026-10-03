@@ -100,8 +100,8 @@ class WarningAndMetricsTest {
         assertNull(Punchlines.focus(0, 1))
         assertNull(Punchlines.guard(0, 0, 1))
         assertEquals(Punchlines.focus(300, 7), Punchlines.focus(300, 7))
-        assert(Punchlines.focus(2, 0)!!.contains("2m"))
-        repeat(10) { assert(Punchlines.focus(30, it.toLong())!!.contains("≈")) }
+        assertNull(Punchlines.focus(2, 0)!!.unit)
+        repeat(10) { assert(Punchlines.focus(30, it.toLong())!!.unit != null) }
     }
 }
 

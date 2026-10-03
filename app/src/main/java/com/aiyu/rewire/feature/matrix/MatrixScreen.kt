@@ -58,6 +58,8 @@ import com.aiyu.rewire.domain.analytics.WeeklyMetrics
 import android.content.Context
 import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.flow.MutableStateFlow
+import com.aiyu.rewire.domain.analytics.FocusPunch
+import com.aiyu.rewire.domain.analytics.GuardPunch
 import com.aiyu.rewire.domain.analytics.Punchlines
 import com.aiyu.rewire.data.GoalsRepository
 import com.aiyu.rewire.domain.goals.DayProgress
@@ -166,6 +168,14 @@ class MatrixViewModel @Inject constructor(
 
     private fun s(id: Int) = context.getString(id)
 
+    private fun focusText(p: FocusPunch): String {
+        val unit = p.unit ?: return context.getString(R.string.punch_focus_start, p.minutes)
+        val phrase = context.resources.getQuantityString(FOCUS_UNITS[unit], p.count, p.count)
+        return context.getString(R.string.punch_focus, phrase)
+    }
+
+    private fun guardText(p: GuardPunch) = context.getString(GUARD_LINES[p.variant], p.wentBack, p.overrides)
+
     private fun build(events: List<HabitEvent>, habits: List<HabitProfile>, period: MatrixPeriod, goals: Goals, history: Map<LocalDate, Int>): MatrixUi {
         val zone = ZoneId.systemDefault()
         val today = LocalDate.now()
@@ -227,8 +237,8 @@ class MatrixViewModel @Inject constructor(
             apps = MetricsCalculator.breakdown(events, since) { it.packageName }
                 .map { NamedBreakdown(installedApps.label(it.key), it.key, it) },
             peakHour = MetricsCalculator.peakHour(events, since, zone),
-            focusLine = Punchlines.focus(week.sumOf { it.focusMinutes }, seed),
-            guardLine = Punchlines.guard(week.sumOf { it.wentBackCount }, week.sumOf { it.overrideCount }, seed),
+            focusLine = Punchlines.focus(week.sumOf { it.focusMinutes }, seed)?.let(::focusText),
+            guardLine = Punchlines.guard(week.sumOf { it.wentBackCount }, week.sumOf { it.overrideCount }, seed)?.let(::guardText),
         )
     }
 }
@@ -407,3 +417,13 @@ internal fun Stat(label: String, value: String) {
 }
 
 internal fun dayName(d: LocalDate, style: TextStyle) = d.dayOfWeek.getDisplayName(style, Locale.getDefault())
+
+private val FOCUS_UNITS = intArrayOf(
+    R.plurals.punch_unit_sitcom, R.plurals.punch_unit_film, R.plurals.punch_unit_song, R.plurals.punch_unit_football,
+    R.plurals.punch_unit_lotr, R.plurals.punch_unit_pomodoro, R.plurals.punch_unit_gatsby, R.plurals.punch_unit_marathon,
+)
+
+private val GUARD_LINES = intArrayOf(
+    R.string.punch_guard_0, R.string.punch_guard_1, R.string.punch_guard_2, R.string.punch_guard_3,
+    R.string.punch_guard_4, R.string.punch_guard_5, R.string.punch_guard_6,
+)

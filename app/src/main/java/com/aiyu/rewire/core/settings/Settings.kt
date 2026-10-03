@@ -34,9 +34,7 @@ data class UserProfile(
     val reason: String,
     /** Index into the avatar shape list (ui layer owns the shapes). */
     val avatarShape: Int,
-) {
-    val displayName get() = name.ifBlank { "You" }
-}
+)
 
 @Serializable
 data class FocusBypass(val minor: Boolean, val major: Boolean, val max: Boolean)

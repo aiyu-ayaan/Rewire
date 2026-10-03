@@ -217,9 +217,10 @@ fun PermissionsSetupScreen(onFinish: () -> Unit, onBack: () -> Unit) {
             val testMessage = stringResource(R.string.onboarding_test_message)
             val testDefaultReason = stringResource(R.string.onboarding_reason_hint)
             val sampleApp = stringResource(R.string.onboarding_sample_app)
+            val sampleHabit = stringResource(R.string.onboarding_sample_habit)
             val testProfile = remember {
                 HabitProfile(
-                    habit = Habit("test-onboarding", "Doom Scrolling", null, enabled = true),
+                    habit = Habit("test-onboarding", sampleHabit, null, enabled = true),
                     apps = emptyList(),
                     rule = RestrictionRule("r-test", "test-onboarding", null, null, null, null, WarningLevel.MAJOR, 5),
                 )

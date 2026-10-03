@@ -34,6 +34,7 @@ import androidx.compose.material.icons.rounded.Palette
 import androidx.compose.material.icons.rounded.SystemUpdate
 import com.aiyu.rewire.core.update.UpdateState
 import com.aiyu.rewire.feature.update.UpdateViewModel
+import com.aiyu.rewire.feature.update.labelRes
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.Icon
@@ -167,7 +168,7 @@ private fun UserCard(p: UserProfile, onEdit: () -> Unit) {
                 UserAvatar(p.name, p.avatarShape, 72.dp, Modifier.size(72.dp).sharedBoundsOrSelf(AVATAR_KEY))
                 Spacer(Modifier.width(16.dp))
                 Column(Modifier.weight(1f)) {
-                    Text(p.displayName, style = MaterialTheme.typography.headlineMedium)
+                    Text(p.name.ifBlank { stringResource(R.string.profile_default_name) }, style = MaterialTheme.typography.headlineMedium)
                     Text(stringResource(p.goal?.label ?: R.string.profile_set_goal), style = MaterialTheme.typography.titleSmall, color = MaterialTheme.colorScheme.onPrimaryContainer.copy(alpha = 0.8f))
                 }
                 Icon(Icons.Rounded.Edit, contentDescription = stringResource(R.string.profile_edit))
@@ -188,7 +189,7 @@ private fun UpdatesRow(s: Settings, onOpenUpdates: () -> Unit) {
         when {
             updateState is UpdateState.Available || updateState is UpdateState.Ready -> stringResource(R.string.profile_update_available)
             !s.updatesEnabled -> stringResource(R.string.profile_update_checks_off, BuildConfig.VERSION_NAME)
-            else -> stringResource(R.string.profile_update_channel, BuildConfig.VERSION_NAME, (s.updateChannel ?: updates.channel).label)
+            else -> stringResource(R.string.profile_update_channel, BuildConfig.VERSION_NAME, stringResource((s.updateChannel ?: updates.channel).labelRes))
         },
         onOpenUpdates,
     )
