@@ -63,4 +63,51 @@
     <string name="guard_shield_text">This app is guarded right now.</string>
     <string name="guard_shield_open">Open Rewire</string>
     <string name="guard_shield_back">Go back</string>
+    <!-- Matrix -->
+    <string name="matrix_title">Matrix</string>
+    <string name="matrix_subtitle">Focus and Guard, measured together. Stored only on this device.</string>
+    <string name="matrix_empty_title">No data yet</string>
+    <string name="matrix_empty_text">Finish a focus block or let Guard catch an app. Your week shows up here.</string>
+    <string name="matrix_today">Today</string>
+    <string name="matrix_focus_week">Focus · last 7 days</string>
+    <string name="matrix_focus_week_empty">No focus sessions this week. Start one from the Focus tab and it lands here.</string>
+    <string name="matrix_focus_chart_desc">Focus minutes per day: %1$s</string>
+    <string name="matrix_focus_summary">Total %1$s · best day %2$s · %3$s</string>
+    <plurals name="matrix_sessions">
+        <item quantity="one">%1$d session</item>
+        <item quantity="other">%1$d sessions</item>
+    </plurals>
+    <string name="matrix_guard_week">Guard · last 7 days</string>
+    <string name="matrix_guard_week_empty">Guard hasn\'t stepped in this week. Either you\'re in control, or no habit is active yet.</string>
+    <string name="matrix_friction_per_day">Friction moments per day</string>
+    <string name="matrix_friction_chart_desc">Guard warnings and blocks per day: %1$s</string>
+    <string name="matrix_peak_hour">Most guarded hour: %1$s–%2$s</string>
+    <string name="matrix_by_habit">By habit</string>
+    <string name="matrix_top_apps">Most opened protected apps</string>
+    <string name="matrix_focus_month">Focus · last 4 weeks</string>
+    <string name="matrix_focus_month_caption">Focused on %1$d of %2$d days. Darker = longer.</string>
+    <string name="matrix_heatmap_desc">Focused on %1$d of the last %2$d days</string>
+    <string name="matrix_show_all">Show all (%1$d)</string>
+    <string name="matrix_protected_apps">Protected apps</string>
+    <string name="matrix_habits">Habits</string>
+    <string name="matrix_breakdown_subtitle">Last 7 days · busiest first</string>
+    <string name="matrix_breakdown_empty_title">Nothing here yet</string>
+    <string name="matrix_breakdown_empty_text">Guard activity from the last 7 days shows up here.</string>
+    <string name="matrix_control">control</string>
+    <string name="matrix_stat_focus">Focus</string>
+    <string name="matrix_stat_break">Break</string>
+    <string name="matrix_stat_warnings">Warnings</string>
+    <string name="matrix_stat_blocked">Blocked</string>
+    <string name="matrix_stat_went_back">Went back</string>
+    <string name="matrix_stat_overrides">Overrides</string>
+    <string name="matrix_slice_continued">Continued (minor)</string>
+    <string name="matrix_slice_notifications_held">Notifications held</string>
+    <string name="matrix_guard_events">guard events</string>
+    <string name="matrix_removed_habit">Removed habit</string>
+    <string name="matrix_breakdown_counts">%1$d opens · %2$d caught</string>
+    <string name="matrix_breakdown_outcomes">Went back %1$d · overrode %2$d</string>
+    <!-- Navigation -->
+    <string name="nav_guard">Guard</string>
+    <string name="nav_focus">Focus</string>
+    <string name="nav_profile">Profile</string>
 </resources>

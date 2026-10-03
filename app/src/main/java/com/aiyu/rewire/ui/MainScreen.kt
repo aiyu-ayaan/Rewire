@@ -1,6 +1,9 @@
 package com.aiyu.rewire.ui
 
 import androidx.compose.animation.AnimatedContent
+import androidx.compose.ui.res.stringResource
+import com.aiyu.rewire.R
+import androidx.annotation.StringRes
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.expandHorizontally
 import androidx.compose.animation.expandVertically
@@ -61,11 +64,11 @@ import com.aiyu.rewire.feature.guard.GuardScreen
 import com.aiyu.rewire.feature.matrix.MatrixScreen
 import com.aiyu.rewire.feature.profile.ProfileScreen
 
-enum class Tab(val label: String, val icon: ImageVector, val selectedIcon: ImageVector, val link: DeepLink) {
-    GUARD("Guard", Icons.Outlined.Shield, Icons.Rounded.Shield, DeepLink.GUARD),
-    FOCUS("Focus", Icons.Outlined.Timer, Icons.Rounded.Timer, DeepLink.FOCUS),
-    MATRIX("Matrix", Icons.Outlined.Insights, Icons.Rounded.Insights, DeepLink.MATRIX),
-    PROFILE("Profile", Icons.Outlined.Person, Icons.Rounded.Person, DeepLink.PROFILE),
+enum class Tab(@StringRes val label: Int, val icon: ImageVector, val selectedIcon: ImageVector, val link: DeepLink) {
+    GUARD(R.string.nav_guard, Icons.Outlined.Shield, Icons.Rounded.Shield, DeepLink.GUARD),
+    FOCUS(R.string.nav_focus, Icons.Outlined.Timer, Icons.Rounded.Timer, DeepLink.FOCUS),
+    MATRIX(R.string.matrix_title, Icons.Outlined.Insights, Icons.Rounded.Insights, DeepLink.MATRIX),
+    PROFILE(R.string.nav_profile, Icons.Outlined.Person, Icons.Rounded.Person, DeepLink.PROFILE),
 }
 
 @Composable
@@ -134,7 +137,7 @@ fun MainScreen(
                             selected = t == tab,
                             onClick = { tab = t },
                             icon = { Icon(if (t == tab) t.selectedIcon else t.icon, contentDescription = null) },
-                            label = { Text(t.label) },
+                            label = { Text(stringResource(t.label)) },
                         )
                     }
                 }
@@ -152,7 +155,7 @@ fun MainScreen(
                                 selected = t == tab,
                                 onClick = { tab = t },
                                 icon = { Icon(if (t == tab) t.selectedIcon else t.icon, contentDescription = null) },
-                                label = { Text(t.label) },
+                                label = { Text(stringResource(t.label)) },
                             )
                         }
                     }
