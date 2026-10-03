@@ -20,6 +20,8 @@ class RewireApp : Application() {
     // has no accessibility service to create it, so without this nothing ever watched.
     @Inject lateinit var engine: HabitEngine
 
+    override fun attachBaseContext(base: android.content.Context) = super.attachBaseContext(com.aiyu.rewire.core.settings.AppLocale.wrap(base))
+
     override fun onCreate() {
         super.onCreate()
         notifier.createChannels()

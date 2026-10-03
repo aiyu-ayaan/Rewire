@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Rewire</string>
+    <string name="app_name" translatable="false">Rewire</string>
     <string name="tagline">Break habits.\nBuild control.</string>
 
     <!-- Notification channels -->
@@ -650,4 +650,8 @@
     <string name="punch_guard_4">%1$d back, %2$d through. Control is winning on points.</string>
     <string name="punch_guard_5">%2$d overrides this week. No shame, just data. Patterns show up here first.</string>
     <string name="punch_guard_6">The apps won a few rounds. Matrix keeps score so you can plan the rematch.</string>
+
+    <!-- Language -->
+    <string name="profile_language">Language</string>
+    <string name="profile_language_system">System default</string>
 </resources>

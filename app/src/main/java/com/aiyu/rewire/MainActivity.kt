@@ -50,6 +50,8 @@ class MainActivity : ComponentActivity() {
     /** Splash stays up until settings load, so landing vs main is decided under it. */
     @Volatile private var contentReady = false
 
+    override fun attachBaseContext(base: android.content.Context) = super.attachBaseContext(com.aiyu.rewire.core.settings.AppLocale.wrap(base))
+
     override fun onCreate(savedInstanceState: Bundle?) {
         val splash = installSplashScreen()
         super.onCreate(savedInstanceState)

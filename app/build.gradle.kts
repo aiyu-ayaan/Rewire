@@ -76,9 +76,17 @@ android {
     // MigrationTestHelper reads the exported schemas as assets.
     sourceSets.getByName("androidTest").assets.srcDir("$projectDir/schemas")
 
-    // English-only UI: drop library translations from the APK.
+    // Ship only the languages Rewire is translated into (see AppLocale.tags); drops other library translations.
     androidResources {
-        localeFilters += "en"
+        localeFilters += listOf("en", "hi", "es", "pt", "in", "ar", "fr", "ru", "de", "tr", "ja", "ko", "it", "vi", "th", "zh", "pl", "bn")
+        generateLocaleConfig = true // manifest localeConfig built from the values-* folders: powers Settings → App languages
+    }
+
+    // The app switches language at runtime, so Play must ship every language in one APK set, not split by device locale.
+    bundle {
+        language {
+            enableSplit = false
+        }
     }
 
     signingConfigs {

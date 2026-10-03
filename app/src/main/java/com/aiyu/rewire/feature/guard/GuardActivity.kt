@@ -47,6 +47,8 @@ class GuardActivity : FragmentActivity() {
     @Inject lateinit var warningRepo: WarningRepository
     @Inject lateinit var installedApps: InstalledAppsSource
 
+    override fun attachBaseContext(base: android.content.Context) = super.attachBaseContext(com.aiyu.rewire.core.settings.AppLocale.wrap(base))
+
     private data class Request(val pkg: String, val habitId: String, val level: WarningLevel, val blockReason: String?)
 
     private var request by mutableStateOf<Request?>(null)

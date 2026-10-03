@@ -11,7 +11,13 @@ import com.aiyu.rewire.ui.components.readableWidth
 import android.os.Build
 import androidx.compose.ui.res.stringResource
 import com.aiyu.rewire.R
+import androidx.compose.material.icons.rounded.Language
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
+import androidx.compose.ui.platform.LocalContext
+import com.aiyu.rewire.core.settings.AppLocale
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -114,6 +120,11 @@ fun ProfileScreen(onOpenNotificationSettings: () -> Unit, onOpenWarningLibrary: 
                 else -> stringResource(R.string.profile_notifications_off)
             }, onOpenNotificationSettings)
             NavRow(Icons.Rounded.FormatQuote, stringResource(R.string.profile_warning_library), stringResource(R.string.profile_warning_library_summary, warnings.count { it.enabled }, warnings.count { it.custom }), onOpenWarningLibrary)
+            val context = LocalContext.current
+            var languageOpen by remember { mutableStateOf(false) }
+            val language = AppLocale.current(context)
+            NavRow(Icons.Rounded.Language, stringResource(R.string.profile_language), if (language.isEmpty()) stringResource(R.string.profile_language_system) else AppLocale.nativeName(language)) { languageOpen = true }
+            if (languageOpen) LanguageDialog(language) { languageOpen = false }
             if (BuildConfig.UPDATES) UpdatesRow(s, onOpenUpdates) // gone entirely in the play flavor
             NavRow(Icons.Rounded.Info, stringResource(R.string.profile_about), stringResource(R.string.profile_about_summary, BuildConfig.VERSION_NAME), onOpenAbout)
         }
