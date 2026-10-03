@@ -3,6 +3,7 @@ package com.aiyu.rewire.domain.backup
 import com.aiyu.rewire.core.settings.Settings
 import com.aiyu.rewire.domain.analytics.HabitEvent
 import com.aiyu.rewire.domain.focus.FocusSession
+import com.aiyu.rewire.domain.goals.Goals
 import com.aiyu.rewire.domain.habit.HabitProfile
 import com.aiyu.rewire.domain.warning.Warning
 import kotlinx.serialization.Serializable
@@ -20,6 +21,8 @@ data class BackupSnapshot(
     val events: List<HabitEvent>,
     val focusSessions: List<FocusSession>,
     val settings: Settings,
+    /** Added after v1: absent in older files (leave current goals alone on import). */
+    val goals: Goals? = null,
 )
 
 class BackupException(val reason: Reason, cause: Throwable? = null) : Exception(reason.name, cause) {
@@ -55,5 +58,6 @@ object BackupCodec {
             warnings.map { it.id }.distinct().size == warnings.size &&
             events.map { it.id }.distinct().size == events.size &&
             focusSessions.map { it.id }.distinct().size == focusSessions.size &&
-            focusSessions.all { it.isFinished && it.state.startedAt != null }
+            focusSessions.all { it.isFinished && it.state.startedAt != null } &&
+            (goals?.isValid ?: true)
 }
