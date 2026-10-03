@@ -67,6 +67,24 @@ class MigrationTest {
         }
     }
 
+    @Test
+    fun migrate3To4_appsKeepFollowingTheirHabit() {
+        helper.createDatabase(DB, 3).apply {
+            execSQL("INSERT INTO habits (id, name, description, enabled, created_at) VALUES ('h1', 'Scrolling', NULL, 1, 1)")
+            execSQL("INSERT INTO protected_apps (habit_id, package_name, warning_level, enabled) VALUES ('h1', 'com.a', 'MAX', 1)")
+            close()
+        }
+
+        val db = helper.runMigrationsAndValidate(DB, 4, true)
+
+        db.query("SELECT enabled, own_daily_limit, own_launch_limit, own_window, daily_limit_minutes, max_launches, allowed_start_minutes, allowed_end_minutes FROM protected_apps WHERE package_name = 'com.a'").use {
+            it.moveToFirst()
+            assertEquals(1, it.getInt(0))
+            for (c in 1..3) assertEquals(0, it.getInt(c)) // no overrides: every boundary follows the habit
+            for (c in 4..7) assertEquals(true, it.isNull(c))
+        }
+    }
+
     private companion object {
         const val DB = "migration-test"
     }

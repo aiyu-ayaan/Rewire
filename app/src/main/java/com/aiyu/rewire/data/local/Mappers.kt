@@ -8,6 +8,7 @@ import com.aiyu.rewire.domain.analytics.HabitEvent
 import com.aiyu.rewire.domain.focus.FocusConfig
 import com.aiyu.rewire.domain.focus.FocusSession
 import com.aiyu.rewire.domain.focus.FocusState
+import com.aiyu.rewire.domain.habit.AppLimits
 import com.aiyu.rewire.domain.habit.Habit
 import com.aiyu.rewire.domain.habit.HabitProfile
 import com.aiyu.rewire.domain.habit.ProtectedApp
@@ -18,13 +19,19 @@ fun HabitWithDetails.toDomain(): HabitProfile? {
     val r = rule ?: return null // a habit without a rule can't be enforced; never surface half a row
     return HabitProfile(
         habit = Habit(habit.id, habit.name, habit.description, habit.enabled),
-        apps = apps.map { ProtectedApp(it.packageName, it.habitId, it.warningLevel, it.enabled) },
+        apps = apps.map {
+            val limits = AppLimits(it.ownDailyLimit, it.dailyLimitMinutes, it.ownLaunchLimit, it.maxLaunches, it.ownWindow, it.allowedStartMinutes, it.allowedEndMinutes)
+            ProtectedApp(it.packageName, it.habitId, it.warningLevel, it.enabled, limits)
+        },
         rule = RestrictionRule(r.id, r.habitId, r.dailyLimitMinutes, r.allowedStartMinutes, r.allowedEndMinutes, r.maxLaunches, r.warningLevel, r.pauseSeconds, r.escalationEnabled, r.escalationMajorMinutes, r.escalationMaxMinutes),
     )
 }
 
 fun HabitProfile.toHabitEntity(createdAt: Long) = HabitEntity(habit.id, habit.name, habit.description, habit.enabled, createdAt)
-fun HabitProfile.toAppEntities() = apps.map { ProtectedAppEntity(id, it.packageName, it.warningLevel, it.enabled) }
+fun HabitProfile.toAppEntities() = apps.map {
+    val l = it.limits
+    ProtectedAppEntity(id, it.packageName, it.warningLevel, it.enabled, l.ownDailyLimit, l.dailyLimitMinutes, l.ownLaunchLimit, l.maxLaunches, l.ownWindow, l.allowedStartMinutes, l.allowedEndMinutes)
+}
 fun HabitProfile.toRuleEntity() = with(rule) {
     RestrictionRuleEntity(this.id, habitId, dailyLimitMinutes, allowedStartMinutes, allowedEndMinutes, maxLaunches, warningLevel, pauseSeconds, escalationEnabled, escalationMajorAfterMinutes, escalationMaxAfterMinutes)
 }

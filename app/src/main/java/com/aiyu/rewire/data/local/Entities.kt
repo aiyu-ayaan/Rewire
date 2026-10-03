@@ -41,6 +41,15 @@ data class ProtectedAppEntity(
     @ColumnInfo(name = "package_name") val packageName: String,
     @ColumnInfo(name = "warning_level") val warningLevel: WarningLevel,
     val enabled: Boolean,
+    // v4: per-app overrides, one switch per boundary. A switch at 0 means that boundary comes from the habit
+    // and its value column is ignored; a null value under a switch at 1 means "no limit" for this app.
+    @ColumnInfo(name = "own_daily_limit", defaultValue = "0") val ownDailyLimit: Boolean = false,
+    @ColumnInfo(name = "daily_limit_minutes") val dailyLimitMinutes: Int? = null,
+    @ColumnInfo(name = "own_launch_limit", defaultValue = "0") val ownLaunchLimit: Boolean = false,
+    @ColumnInfo(name = "max_launches") val maxLaunches: Int? = null,
+    @ColumnInfo(name = "own_window", defaultValue = "0") val ownWindow: Boolean = false,
+    @ColumnInfo(name = "allowed_start_minutes") val allowedStartMinutes: Int? = null,
+    @ColumnInfo(name = "allowed_end_minutes") val allowedEndMinutes: Int? = null,
 )
 
 /** One rule per habit (unique habit_id). Times are minutes from midnight; null = no boundary. */
