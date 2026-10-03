@@ -31,9 +31,12 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.statusBarsPadding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.layout.widthIn
-import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.foundation.lazy.items
-import androidx.compose.foundation.lazy.rememberLazyListState
+import androidx.compose.foundation.lazy.grid.GridCells
+import androidx.compose.foundation.lazy.grid.GridItemSpan
+import androidx.compose.foundation.lazy.grid.LazyGridItemSpanScope
+import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
+import androidx.compose.foundation.lazy.grid.items
+import androidx.compose.foundation.lazy.grid.rememberLazyGridState
 import androidx.compose.material.icons.Icons
 import com.aiyu.rewire.BuildConfig
 import com.aiyu.rewire.service.accessibility.RewireAccessibilityService
@@ -97,21 +100,25 @@ fun GuardScreen(onOpenHabit: (String) -> Unit, onStartFocus: () -> Unit) {
     val today by vm.today.collectAsStateWithLifecycle()
     val progress by vm.progress.collectAsStateWithLifecycle()
     var creating by rememberSaveable { mutableStateOf(false) }
-    val list = rememberLazyListState()
+    val list = rememberLazyGridState()
     val fabExpanded by remember { derivedStateOf { list.firstVisibleItemIndex == 0 } }
 
     Box(Modifier.fillMaxSize()) {
-        LazyColumn(
+        // One column on phones; habit cards flow into 2-3 columns once the window is wide.
+        LazyVerticalGrid(
+            columns = GridCells.Adaptive(340.dp),
             state = list,
-            modifier = Modifier.fillMaxSize().statusBarsPadding().readableWidth(720.dp),
+            modifier = Modifier.fillMaxSize().statusBarsPadding().readableWidth(1200.dp),
             contentPadding = PaddingValues(start = 16.dp, end = 16.dp, bottom = 112.dp),
+            horizontalArrangement = Arrangement.spacedBy(12.dp),
         ) {
-            item { Header() }
-            if (habits.any { it.habit.enabled }) item { ProtectionBanner() }
-            item { TodayCard(today, progress, habits.count { it.habit.enabled }, onStartFocus) }
-            item { SectionTitle(stringResource(R.string.guard_your_habits), trailing = { if (habits.isNotEmpty()) Text("${habits.size}", style = MaterialTheme.typography.labelLarge, color = MaterialTheme.colorScheme.onSurfaceVariant) }) }
+            val full: LazyGridItemSpanScope.() -> GridItemSpan = { GridItemSpan(maxLineSpan) }
+            item(span = full) { Header() }
+            if (habits.any { it.habit.enabled }) item(span = full) { ProtectionBanner() }
+            item(span = full) { TodayCard(today, progress, habits.count { it.habit.enabled }, onStartFocus) }
+            item(span = full) { SectionTitle(stringResource(R.string.guard_your_habits), trailing = { if (habits.isNotEmpty()) Text("${habits.size}", style = MaterialTheme.typography.labelLarge, color = MaterialTheme.colorScheme.onSurfaceVariant) }) }
             if (habits.isEmpty()) {
-                item {
+                item(span = full) {
                     EmptyState(
                         title = stringResource(R.string.guard_empty_title),
                         body = stringResource(R.string.guard_empty_body),
