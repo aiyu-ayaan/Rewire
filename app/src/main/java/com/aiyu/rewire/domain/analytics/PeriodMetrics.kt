@@ -1,5 +1,7 @@
 package com.aiyu.rewire.domain.analytics
 
+import com.aiyu.rewire.domain.goals.GoalRules
+import com.aiyu.rewire.domain.goals.Goals
 import java.time.DayOfWeek
 import java.time.Instant
 import java.time.LocalDate
@@ -51,7 +53,7 @@ data class MonthlyMetrics(
     val habitReduction: Float?,
     /** Share of days on track: some focus, or at least half of Guard friction handled without an override. */
     val consistency: Float,
-    /** Proxy for goals (no goal data exists yet): share of days with at least one completed focus session. */
+    /** Share of days meeting the user's goals; with none set, share of days with a completed focus session. */
     val goalCompletion: Float,
 )
 
@@ -104,6 +106,7 @@ object PeriodMetrics {
         today: LocalDate,
         zone: ZoneId,
         screenTimeMinutes: Map<LocalDate, Int> = emptyMap(),
+        goals: Goals = Goals(),
     ): MonthlyMetrics {
         val first = month.atDay(1)
         val last = minOf(month.atEndOfMonth(), today)
@@ -119,10 +122,13 @@ object PeriodMetrics {
             screenTimeTrend = days.map { TrendPoint(it.date, it.screenTimeMinutes) },
             overrideTrend = days.map { TrendPoint(it.date, it.overrideCount) },
             habitReduction = if (early == 0) null else (early - late).toFloat() / early,
-            consistency = ratio(days) { it.focusMinutes > 0 || (it.disciplineScore ?: 0f) >= 0.5f },
-            goalCompletion = ratio(days) { it.sessionsCompleted > 0 },
+            consistency = ratio(days, ::dayOnTrack),
+            goalCompletion = if (goals.isEmpty) ratio(days) { it.sessionsCompleted > 0 } else ratio(days) { GoalRules.met(it, goals) },
         )
     }
+
+    /** The "on track" day rule: some focus, or at least half of Guard friction handled without an override. */
+    fun dayOnTrack(d: DailyMetrics) = d.focusMinutes > 0 || (d.disciplineScore ?: 0f) >= 0.5f
 
     private fun ratio(days: List<DailyMetrics>, ok: (DailyMetrics) -> Boolean) =
         if (days.isEmpty()) 0f else days.count(ok).toFloat() / days.size
