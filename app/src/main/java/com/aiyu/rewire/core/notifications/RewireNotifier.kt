@@ -20,6 +20,7 @@ import androidx.core.content.ContextCompat
 import com.aiyu.rewire.MainActivity
 import com.aiyu.rewire.R
 import com.aiyu.rewire.core.settings.NotificationCategory
+import com.aiyu.rewire.domain.analytics.DailyMetrics
 import com.aiyu.rewire.domain.focus.FocusSessionStatus
 import com.aiyu.rewire.domain.focus.FocusState
 
@@ -53,6 +54,7 @@ class RewireNotifier(
         const val FOCUS_ALERT = 1002
         const val FOCUS_MINIMISED = 1004
         const val UPDATE_AVAILABLE = 1005
+        const val DAILY_SUMMARY = 1006
         const val GUARD_ONGOING = 1003
         const val TEST = 1900
         const val PROTECTION_OFF = 1500
@@ -216,6 +218,17 @@ class RewireNotifier(
             .setPriority(NotificationCompat.PRIORITY_LOW)
             .build()
         post(null, Ids.UPDATE_AVAILABLE, n) // gated by the auto-update switch, not a notification category
+    }
+
+    /** One id, always: today's recap replaces yesterday's instead of stacking. Gated by the Daily summary preference. */
+    fun dailySummary(m: DailyMetrics): Boolean {
+        val n = base(Channels.SUMMARY, DeepLink.MATRIX)
+            .setContentTitle(context.getString(R.string.notif_summary_title))
+            .setContentText(context.getString(R.string.notif_summary_text, m.focusMinutes, m.wentBackCount, m.overrideCount))
+            .setAutoCancel(true)
+            .setPriority(NotificationCompat.PRIORITY_LOW)
+            .build()
+        return post(NotificationCategory.SUMMARY, Ids.DAILY_SUMMARY, n)
     }
 
     fun cancelUpdateAvailable() = manager.cancel(Ids.UPDATE_AVAILABLE)
