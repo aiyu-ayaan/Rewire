@@ -626,8 +626,8 @@
     <string name="focus_quick_test">اختبار سريع · تركيز 20 ث / استراحة 10 ث</string>
     <string name="profile_default_name">أنت</string>
     <string name="onboarding_sample_habit">التمرير اللانهائي</string>
-    <string name="punch_focus">تركيزك هذا الأسبوع ≈ %1$s. الفرق أنك صنعتَ شيئًا هذه المرة.</string>
-    <string name="punch_focus_start">كل دقيقة تُحتسب. %1$d د من التركيز بداية حقيقية.</string>
+    <string name="punch_focus">تركيزك هذا الأسبوع ≈ %1$s. والفرق أنك هذه المرة أنجزتَ شيئًا فعلًا.</string>
+    <string name="punch_focus_start">كل دقيقة لها وزنها. %1$d د من التركيز بداية حقيقية.</string>
     <plurals name="punch_unit_sitcom">
         <item quantity="zero">لا حلقات كوميدية</item>
         <item quantity="one">حلقة كوميدية واحدة</item>
@@ -692,13 +692,13 @@
         <item quantity="many">~%1$d ماراثونًا بالرقم القياسي العالمي</item>
         <item quantity="other">~%1$d ماراثون بالرقم القياسي العالمي</item>
     </plurals>
-    <string name="punch_guard_0">اخترتَ التراجع %1$d مرات. هذه %1$d انتصارات صغيرة لم يرها أحد.</string>
-    <string name="punch_guard_1">%1$d ردود فعل تلقائية أوقفتها. إبهامك يتعلم حيلًا جديدة.</string>
-    <string name="punch_guard_2">تراجعتَ %1$d مرات. الخوارزمية تشتاق إليك. وأنت لا تشتاق إليها.</string>
-    <string name="punch_guard_3">تراجعات أكثر من التجاوزات. الميزان يميل لصالحك.</string>
-    <string name="punch_guard_4">%1$d تراجعات، و%2$d مرور. السيطرة تفوز بالنقاط.</string>
-    <string name="punch_guard_5">%2$d تجاوزات هذا الأسبوع. لا لوم، مجرد بيانات. تظهر الأنماط هنا أولًا.</string>
-    <string name="punch_guard_6">ربحت التطبيقات بضع جولات. تحتفظ Matrix بالنتيجة لتخطط للمباراة الثانية.</string>
+    <string name="punch_guard_0">اخترتَ التراجع %1$d مرات. أي %1$d انتصارات صغيرة لم يلاحظها أحد غيرك.</string>
+    <string name="punch_guard_1">أوقفتَ %1$d حركات تلقائية قبل أن تكتمل. إبهامك يتعلّم عادات جديدة.</string>
+    <string name="punch_guard_2">تراجعتَ %1$d مرات. الخوارزمية اشتاقت إليك، أما أنت فلم تشتق إليها.</string>
+    <string name="punch_guard_3">تراجعاتك أكثر من تجاوزاتك. الكفّة تميل إلى صفّك.</string>
+    <string name="punch_guard_4">%1$d تراجعات مقابل %2$d تجاوزات. السيطرة تتقدّم بالنقاط.</string>
+    <string name="punch_guard_5">%2$d تجاوزات هذا الأسبوع. بلا لوم، هي مجرد أرقام. وهنا تظهر الأنماط أولًا.</string>
+    <string name="punch_guard_6">ربحت التطبيقات بضع جولات. Matrix يحتفظ بالنتيجة لتستعد للجولة القادمة.</string>
     <string name="profile_language">اللغة</string>
     <string name="profile_language_system">افتراضي النظام</string>
 </resources>

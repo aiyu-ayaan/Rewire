@@ -594,8 +594,8 @@
     <string name="focus_quick_test">त्वरित टेस्ट · 20 सेकंड फ़ोकस / 10 सेकंड ब्रेक</string>
     <string name="profile_default_name">आप</string>
     <string name="onboarding_sample_habit">डूम स्क्रॉलिंग</string>
-    <string name="punch_focus">इस हफ़्ते आपका फ़ोकस ≈ %1$s। बस इस बार आपने कुछ बनाया।</string>
-    <string name="punch_focus_start">हर मिनट मायने रखता है। %1$d मिनट का फ़ोकस एक सच्ची शुरुआत है।</string>
+    <string name="punch_focus">इस हफ़्ते का आपका फ़ोकस ≈ %1$s। फ़र्क़ बस इतना कि इस बार आपने कुछ रचा।</string>
+    <string name="punch_focus_start">हर मिनट गिना जाता है। %1$d मिनट का फ़ोकस भी असली शुरुआत है।</string>
     <plurals name="punch_unit_sitcom">
         <item quantity="one">%1$d सिटकॉम एपिसोड</item>
         <item quantity="other">~%1$d सिटकॉम एपिसोड</item>
@@ -628,13 +628,13 @@
         <item quantity="one">%1$d विश्व-रिकॉर्ड मैराथन</item>
         <item quantity="other">~%1$d विश्व-रिकॉर्ड मैराथन</item>
     </plurals>
-    <string name="punch_guard_0">आपने %1$d बार वापस लौटना चुना। यानी %1$d छोटी जीतें जो किसी ने नहीं देखीं।</string>
-    <string name="punch_guard_1">%1$d आदतन हरकतें रुकीं। आपका अंगूठा नई चालें सीख रहा है।</string>
-    <string name="punch_guard_2">%1$d बार वापस लौटे। एल्गोरिद्म आपको याद करता है। आप उसे नहीं।</string>
-    <string name="punch_guard_3">ओवरराइड से ज़्यादा वापसी। पलड़ा आपकी ओर झुक रहा है।</string>
-    <string name="punch_guard_4">%1$d वापस, %2$d आगे। कंट्रोल अंकों पर जीत रहा है।</string>
-    <string name="punch_guard_5">इस हफ़्ते %2$d ओवरराइड। कोई शर्म नहीं, बस डेटा। पैटर्न सबसे पहले यहीं दिखते हैं।</string>
-    <string name="punch_guard_6">ऐप्स ने कुछ राउंड जीते। Matrix स्कोर रखता है ताकि आप रीमैच की योजना बना सकें।</string>
+    <string name="punch_guard_0">आपने %1$d बार पीछे हटना चुना। यानी %1$d छोटी जीतें, जिनका किसी को पता नहीं चला।</string>
+    <string name="punch_guard_1">%1$d बार हाथ अपने-आप ऐप की ओर बढ़ा और आपने रोक लिया। अंगूठा नए सबक़ सीख रहा है।</string>
+    <string name="punch_guard_2">%1$d बार पीछे हटे। एल्गोरिद्म को आपकी याद सताती है, आपको उसकी नहीं।</string>
+    <string name="punch_guard_3">ओवरराइड से ज़्यादा वापसियाँ। पलड़ा अब आपकी तरफ़ झुक रहा है।</string>
+    <string name="punch_guard_4">%1$d बार वापस, %2$d बार आगे। अंकों पर बढ़त आपके कंट्रोल की है।</string>
+    <string name="punch_guard_5">इस हफ़्ते %2$d ओवरराइड। न कोई शर्म, न कोई ताना, बस आँकड़े। पैटर्न सबसे पहले यहीं दिखते हैं।</string>
+    <string name="punch_guard_6">इस बार ऐप्स ने कुछ राउंड मार लिए। Matrix स्कोर लिखता रहता है, ताकि आप अगले मुक़ाबले की तैयारी कर सकें।</string>
     <string name="profile_language">भाषा</string>
     <string name="profile_language_system">सिस्टम डिफ़ॉल्ट</string>
 </resources>

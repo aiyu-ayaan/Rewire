@@ -594,8 +594,8 @@
     <string name="focus_quick_test">দ্রুত পরীক্ষা · ২০ সে. ফোকাস / ১০ সে. বিরতি</string>
     <string name="profile_default_name">আপনি</string>
     <string name="onboarding_sample_habit">অন্তহীন স্ক্রল</string>
-    <string name="punch_focus">এই সপ্তাহে আপনার ফোকাস ≈ %1$s। তফাত শুধু এটুকু যে এবার আপনি কিছু একটা গড়েছেন।</string>
-    <string name="punch_focus_start">প্রতিটি মিনিটই গুরুত্বপূর্ণ। %1$d মিনিটের ফোকাসও সত্যিকারের শুরু।</string>
+    <string name="punch_focus">এই সপ্তাহের ফোকাস ≈ %1$s। স্ক্রল করলেও এই সময়টা কাটত, তফাত একটাই, এবার আপনি কিছু গড়েছেন।</string>
+    <string name="punch_focus_start">প্রতিটি মিনিটের হিসাব আছে। %1$d মিনিটের ফোকাসও একটা সত্যিকারের শুরু।</string>
     <plurals name="punch_unit_sitcom">
         <item quantity="one">%1$dটি সিটকম পর্ব</item>
         <item quantity="other">~%1$dটি সিটকম পর্ব</item>
@@ -609,12 +609,12 @@
         <item quantity="other">~%1$dটি পপ গান</item>
     </plurals>
     <plurals name="punch_unit_football">
-        <item quantity="one">%1$dটি ফুটবলের অর্ধ</item>
-        <item quantity="other">~%1$dটি ফুটবলের অর্ধ</item>
+        <item quantity="one">%1$dটি ফুটবল হাফ</item>
+        <item quantity="other">~%1$dটি ফুটবল হাফ</item>
     </plurals>
     <plurals name="punch_unit_lotr">
         <item quantity="one">%1$dটি দ্য লর্ড অব দ্য রিংস এক্সটেন্ডেড ট্রিলজি</item>
-        <item quantity="other">~%1$d বার দ্য লর্ড অব দ্য রিংস এক্সটেন্ডেড ট্রিলজি</item>
+        <item quantity="other">~%1$dটি দ্য লর্ড অব দ্য রিংস এক্সটেন্ডেড ট্রিলজি</item>
     </plurals>
     <plurals name="punch_unit_pomodoro">
         <item quantity="one">%1$dটি পোমোডোরো</item>
@@ -626,15 +626,15 @@
     </plurals>
     <plurals name="punch_unit_marathon">
         <item quantity="one">%1$dটি বিশ্বরেকর্ড ম্যারাথন</item>
-        <item quantity="other">~%1$dটি বিশ্বরেকর্ডের ম্যারাথন</item>
+        <item quantity="other">~%1$dটি বিশ্বরেকর্ড ম্যারাথন</item>
     </plurals>
-    <string name="punch_guard_0">আপনি %1$d বার ফিরে আসা বেছে নিয়েছেন। এ যেন %1$dটি ছোট জয়, যা কেউ দেখেনি।</string>
-    <string name="punch_guard_1">%1$dটি অভ্যাসের প্রতিক্রিয়া থামানো হয়েছে। আপনার বুড়ো আঙুল নতুন কৌশল শিখছে।</string>
-    <string name="punch_guard_2">%1$d বার ফিরে এসেছেন। অ্যালগরিদম আপনাকে মিস করছে। আপনি তাকে মিস করছেন না।</string>
-    <string name="punch_guard_3">ফিরে আসা ওভাররাইডের চেয়ে বেশি। পাল্লা আপনার দিকে ঝুঁকছে।</string>
-    <string name="punch_guard_4">%1$d বার ফেরা, %2$d বার এগোনো। নিয়ন্ত্রণ পয়েন্টে জিতছে।</string>
-    <string name="punch_guard_5">এই সপ্তাহে %2$dটি ওভাররাইড। লজ্জার কিছু নেই, শুধু ডেটা। ধরনগুলো সবার আগে এখানেই ধরা পড়ে।</string>
-    <string name="punch_guard_6">অ্যাপগুলো কয়েক রাউন্ড জিতেছে। Matrix স্কোর রাখছে, যাতে আপনি রিম্যাচের পরিকল্পনা করতে পারেন।</string>
+    <string name="punch_guard_0">%1$d বার আপনি নিজেই ফিরে এসেছেন। %1$dটি ছোট জয়, যা কেউ দেখেনি, শুধু আপনি জানেন।</string>
+    <string name="punch_guard_1">অভ্যাসবশে খোলা থেমেছে %1$d বার। আপনার বুড়ো আঙুল এখন নতুন খেলা শিখছে।</string>
+    <string name="punch_guard_2">%1$d বার ফিরে এসেছেন। অ্যালগরিদম আপনাকে মিস করছে, আপনি অবশ্য তাকে করছেন না।</string>
+    <string name="punch_guard_3">ফিরে আসা এখন ওভাররাইডের চেয়ে বেশি। পাল্লা আস্তে আস্তে আপনার দিকেই ভারী হচ্ছে।</string>
+    <string name="punch_guard_4">%1$d বার ফিরেছেন, %2$d বার এগিয়েছেন। পয়েন্টে এগিয়ে আপনার নিয়ন্ত্রণ।</string>
+    <string name="punch_guard_5">এই সপ্তাহে ওভাররাইড হয়েছে %2$dটি। দোষ নয়, শুধু তথ্য। ধরনগুলো আগে এখানেই চোখে পড়ে।</string>
+    <string name="punch_guard_6">অ্যাপগুলো কয়েক রাউন্ড জিতেছে, তাতে কী! Matrix স্কোর লিখে রাখছে, পরের রাউন্ডের ছক কষে নিন।</string>
     <string name="profile_language">ভাষা</string>
     <string name="profile_language_system">সিস্টেমের ডিফল্ট</string>
 </resources>
