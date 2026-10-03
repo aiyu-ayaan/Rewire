@@ -23,6 +23,7 @@ import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Surface
 import androidx.compose.runtime.DisposableEffect
 import androidx.compose.runtime.SideEffect
 import androidx.compose.runtime.getValue
@@ -92,7 +93,8 @@ class MainActivity : ComponentActivity() {
                 onDispose { }
             }
             RewireTheme(themeMode = mode, dynamicColor = s?.dynamicColor ?: false) {
-                Box(Modifier.fillMaxSize().background(MaterialTheme.colorScheme.surface)) {
+                // Surface (not a bare Box) so LocalContentColor is onSurface for every screen; otherwise text is black on dark.
+                Surface(Modifier.fillMaxSize(), color = MaterialTheme.colorScheme.surface) {
                     // Wait for DataStore (a few ms) so landing vs main is decided once, without flicker.
                     if (s != null) {
                         SideEffect { contentReady = true }
