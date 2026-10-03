@@ -295,8 +295,8 @@ class HabitEngine(
         val launches = events.events.value.count {
             it.type == HabitEventType.APP_OPENED && it.habitId == p.id && Instant.ofEpochMilli(it.timestamp).atZone(zone).toLocalDate() == today
         }
-        // Usage is only needed (and only queried) when a daily limit exists.
-        val minutes = if (p.rule.dailyLimitMinutes != null) usage.minutesToday(p.apps.map { it.packageName }.toSet(), now) else null
+        // Usage is only needed (and only queried) when a daily limit or escalation tiers exist.
+        val minutes = if (p.rule.dailyLimitMinutes != null || p.rule.escalation) usage.minutesToday(p.apps.map { it.packageName }.toSet(), now) else null
         val time = zdt.toLocalTime()
         return RuleInput(
             profile = p,
