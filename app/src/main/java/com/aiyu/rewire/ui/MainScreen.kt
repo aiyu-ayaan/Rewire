@@ -64,9 +64,7 @@ import com.aiyu.rewire.feature.guard.GuardScreen
 import com.aiyu.rewire.feature.matrix.MatrixScreen
 import com.aiyu.rewire.feature.profile.ProfileScreen
 import com.aiyu.rewire.BuildConfig
-import com.aiyu.rewire.feature.focus.FocusHistoryScreen
 import com.aiyu.rewire.feature.guard.HabitDetailScreen
-import com.aiyu.rewire.feature.matrix.MatrixBreakdownScreen
 import com.aiyu.rewire.feature.profile.AboutScreen
 import com.aiyu.rewire.feature.profile.AcknowledgementsScreen
 import com.aiyu.rewire.feature.profile.GoalsScreen
@@ -140,12 +138,9 @@ fun MainScreen(
                 Tab.GUARD -> TabPane(wide, detail, { DetailContent(it, { detail = null }, { k -> detail = k }, onPreviewWarning) }) {
                     GuardScreen(onOpenHabit = { open("habit:$it") { onOpenHabit(it) } }, onStartFocus = { select(Tab.FOCUS) })
                 }
-                Tab.FOCUS -> TabPane(wide, detail, { DetailContent(it, { detail = null }, { k -> detail = k }, onPreviewWarning) }) {
-                    FocusScreen(onFullscreen = onOpenFocusFullscreen, onHistory = { open("history", onOpenFocusHistory) })
-                }
-                Tab.MATRIX -> TabPane(wide, detail, { DetailContent(it, { detail = null }, { k -> detail = k }, onPreviewWarning) }) {
-                    MatrixScreen(onShowAll = { apps -> open("matrix:$apps") { onOpenMatrixBreakdown(apps) } })
-                }
+                // Focus and Matrix use the full width: nothing beside them needs a detail pane.
+                Tab.FOCUS -> FocusScreen(onFullscreen = onOpenFocusFullscreen, onHistory = onOpenFocusHistory)
+                Tab.MATRIX -> MatrixScreen(onShowAll = onOpenMatrixBreakdown)
                 Tab.PROFILE -> TabPane(wide, detail ?: if (wide) "notifications" else null, { DetailContent(it, { detail = null }, { k -> detail = k }, onPreviewWarning) }) {
                     ProfileScreen(
                         onOpenNotificationSettings = { open("notifications", onOpenNotificationSettings) },
@@ -262,8 +257,6 @@ private fun TabPane(wide: Boolean, detail: String?, detailContent: @Composable (
 private fun DetailContent(key: String, onClose: () -> Unit, open: (String) -> Unit, onPreviewWarning: (String) -> Unit) {
     when {
         key.startsWith("habit:") -> HabitDetailScreen(key.removePrefix("habit:"), onBack = onClose, onPreview = onPreviewWarning)
-        key.startsWith("matrix:") -> MatrixBreakdownScreen(key.removePrefix("matrix:").toBoolean(), onBack = onClose)
-        key == "history" -> FocusHistoryScreen(onBack = onClose)
         key == "notifications" -> NotificationSettingsScreen(onBack = onClose)
         key == "warnings" -> WarningLibraryScreen(onBack = onClose)
         key == "about" -> AboutScreen(onBack = onClose, onOpenAcknowledgements = { open("acks") })
