@@ -24,6 +24,7 @@ import androidx.compose.material.icons.rounded.CheckCircle
 import androidx.compose.material.icons.rounded.EditNote
 import androidx.compose.material.icons.rounded.StopCircle
 import androidx.compose.material3.AlertDialog
+import androidx.compose.material3.Button
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.FilterChip
@@ -83,6 +84,16 @@ fun FocusHistoryScreen(onBack: () -> Unit) {
     var filter by rememberSaveable { mutableStateOf(HistoryFilter.ALL) }
     var editing by remember { mutableStateOf<FocusSession?>(null) }
 
+    editing?.let { s ->
+        AchievementScreen(
+            initial = s.note.orEmpty(),
+            completed = s.state.status == FocusSessionStatus.COMPLETED,
+            onSave = { vm.setNote(s.id, it); editing = null },
+            onDismiss = { editing = null },
+        )
+        return
+    }
+
     val all = sessions.orEmpty()
     val completed = all.count { it.state.status == FocusSessionStatus.COMPLETED }
     InnerScreen(
@@ -116,15 +127,6 @@ fun FocusHistoryScreen(onBack: () -> Unit) {
                 shown.forEach { s -> SessionCard(s, onEditNote = { editing = s }, modifier = Modifier.weight(1f)) }
             }
         }
-    }
-
-    editing?.let { s ->
-        AchievementDialog(
-            initial = s.note.orEmpty(),
-            completed = s.state.status == FocusSessionStatus.COMPLETED,
-            onSave = { vm.setNote(s.id, it); editing = null },
-            onDismiss = { editing = null },
-        )
     }
 }
 
@@ -170,36 +172,28 @@ private fun SessionCard(s: FocusSession, onEditNote: () -> Unit, modifier: Modif
     }
 }
 
-/** Optional "what did you achieve?" note. Empty save clears it; skipping is always fine. */
+/** Optional "what did you achieve?" note as a full page. Empty save clears it; skipping is always fine. */
 @Composable
-fun AchievementDialog(initial: String, completed: Boolean, onSave: (String) -> Unit, onDismiss: () -> Unit) {
+fun AchievementScreen(initial: String, completed: Boolean, onSave: (String) -> Unit, onDismiss: () -> Unit) {
     var text by rememberSaveable { mutableStateOf(initial) }
-    AlertDialog(
-        onDismissRequest = onDismiss,
-        icon = { Icon(Icons.Rounded.EditNote, contentDescription = null) },
-        title = { Text(stringResource(if (completed) R.string.focus_achieve_title else R.string.focus_achieve_title_stopped)) },
-        text = {
-            Column(Modifier.verticalScroll(rememberScrollState())) {
-                Text(
-                    stringResource(R.string.focus_achieve_hint),
-                    style = MaterialTheme.typography.bodyMedium, color = MaterialTheme.colorScheme.onSurfaceVariant,
-                )
-                Spacer(Modifier.height(12.dp))
-                OutlinedTextField(
-                    value = text,
-                    onValueChange = { if (it.length <= MAX_NOTE) text = it },
-                    placeholder = { Text(stringResource(R.string.focus_achieve_placeholder)) },
-                    minLines = 2,
-                    maxLines = 5,
-                    keyboardOptions = KeyboardOptions(capitalization = KeyboardCapitalization.Sentences),
-                    supportingText = { Text(stringResource(R.string.focus_char_count, text.length, MAX_NOTE)) },
-                    modifier = Modifier.fillMaxWidth(),
-                )
-            }
-        },
-        confirmButton = { TextButton(onClick = { onSave(text) }) { Text(stringResource(R.string.common_save)) } },
-        dismissButton = { TextButton(onClick = onDismiss) { Text(stringResource(if (initial.isEmpty()) R.string.focus_skip else R.string.common_cancel)) } },
-    )
+    InnerScreen(
+        title = stringResource(if (completed) R.string.focus_achieve_title else R.string.focus_achieve_title_stopped),
+        subtitle = stringResource(R.string.focus_achieve_hint),
+        onBack = onDismiss,
+    ) {
+        OutlinedTextField(
+            value = text,
+            onValueChange = { if (it.length <= MAX_NOTE) text = it },
+            placeholder = { Text(stringResource(R.string.focus_achieve_placeholder)) },
+            minLines = 3,
+            maxLines = 8,
+            keyboardOptions = KeyboardOptions(capitalization = KeyboardCapitalization.Sentences),
+            supportingText = { Text(stringResource(R.string.focus_char_count, text.length, MAX_NOTE)) },
+            modifier = Modifier.fillMaxWidth().padding(top = 8.dp),
+        )
+        Button(onClick = { onSave(text) }, modifier = Modifier.fillMaxWidth().padding(top = 8.dp)) { Text(stringResource(R.string.common_save)) }
+        TextButton(onClick = onDismiss) { Text(stringResource(if (initial.isEmpty()) R.string.focus_skip else R.string.common_cancel)) }
+    }
 }
 
 private const val MAX_NOTE = 280

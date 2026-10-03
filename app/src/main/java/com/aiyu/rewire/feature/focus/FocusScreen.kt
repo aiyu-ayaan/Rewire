@@ -143,7 +143,17 @@ fun FocusScreen(onFullscreen: () -> Unit, onHistory: () -> Unit) {
         else -> 1
     }
     // Setup is the tab's base screen; timer + result are "inside" it, so the bottom bar steps away.
-    HideNavigationBar(hide = mode != 0)
+    HideNavigationBar(hide = mode != 0 || awaitingNote != null)
+    // Optional: Skip (or back) leaves the session in history without a note.
+    awaitingNote?.let { s ->
+        AchievementScreen(
+            initial = "",
+            completed = s.state.status == FocusSessionStatus.COMPLETED,
+            onSave = vm::saveNote,
+            onDismiss = vm::skipNote,
+        )
+        return
+    }
     // The result screen is a step inside Focus: Back returns to setup, like "Back to setup", instead of leaving the app.
     BackHandler(enabled = mode == 2, onBack = vm::reset)
     val motion = MaterialTheme.motionScheme
@@ -176,15 +186,6 @@ fun FocusScreen(onFullscreen: () -> Unit, onHistory: () -> Unit) {
             1 -> FocusRunning(state, now, vm::pause, vm::resume, vm::skipBreak, vm::end, onFullscreen)
             else -> FocusFinished(state, onDone = vm::reset, onHistory = onHistory)
         }
-    }
-    // Optional: Skip (or dismiss) leaves the session in history without a note.
-    awaitingNote?.let { s ->
-        AchievementDialog(
-            initial = "",
-            completed = s.state.status == FocusSessionStatus.COMPLETED,
-            onSave = vm::saveNote,
-            onDismiss = vm::skipNote,
-        )
     }
 }
 
