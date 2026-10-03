@@ -63,10 +63,13 @@ class HabitEngineOutcomeTest {
 
     private class FakeUsageTracker : UsageTracker() {
         var minutes: Int? = null
+        /** When set, usage is per package (summed over the asked-for packages) instead of the flat [minutes]. */
+        var perApp: Map<String, Int>? = null
         var foreground: String? = null
         override fun foregroundApp(now: Long): String? = foreground
         override fun hasPermission(): Boolean = true
-        override fun minutesToday(packages: Set<String>, now: Long, since: Long?): Int? = minutes
+        override fun minutesToday(packages: Set<String>, now: Long, since: Long?): Int? =
+            perApp?.let { m -> packages.sumOf { m[it] ?: 0 } } ?: minutes
     }
 
     private class FakeEnginePlatform : EnginePlatform {
@@ -368,6 +371,52 @@ class HabitEngineOutcomeTest {
 
         assertEquals(listOf(HabitEventType.APP_BLOCKED), eventRepo.logged.map { it.type })
         assertEquals("DAILY_LIMIT", eventRepo.logged.first().metadata["reason"])
+    }
+
+    @Test
+    fun `daily limit is judged per app, not on the habit's apps combined`() {
+        val habit = HabitProfile(
+            habit = Habit("h-social", "Social", null, enabled = true),
+            apps = listOf(
+                ProtectedApp("com.facebook.katana", "h-social", WarningLevel.MAX, enabled = true),
+                ProtectedApp("com.instagram.android", "h-social", WarningLevel.MAX, enabled = true),
+            ),
+            rule = RestrictionRule("r-social", "h-social", dailyLimitMinutes = 60, null, null, null, WarningLevel.MAX, 5),
+        )
+        habitRepo.setHabits(listOf(habit))
+        // Combined 60 min, but Facebook itself is only at 3.
+        usageTracker.perApp = mapOf("com.facebook.katana" to 3, "com.instagram.android" to 57)
+
+        engine.onForeground("com.facebook.katana")
+        assertEquals(0, platform.guardShown.size)
+
+        usageTracker.perApp = mapOf("com.facebook.katana" to 3, "com.instagram.android" to 60)
+        engine.onForeground("com.android.launcher")
+        engine.onForeground("com.instagram.android")
+        assertEquals("DAILY_LIMIT", platform.guardShown.single().blockReason)
+        assertEquals("com.instagram.android", platform.guardShown.single().pkg)
+    }
+
+    @Test
+    fun `launch limit is counted per app`() {
+        val habit = HabitProfile(
+            habit = Habit("h-two", "Two apps", null, enabled = true),
+            apps = listOf(
+                ProtectedApp("com.app.a", "h-two", WarningLevel.MAX, enabled = true),
+                ProtectedApp("com.app.b", "h-two", WarningLevel.MAX, enabled = true),
+            ),
+            rule = RestrictionRule("r-two", "h-two", null, null, null, maxLaunches = 1, WarningLevel.MAX, 5),
+        )
+        habitRepo.setHabits(listOf(habit))
+
+        engine.onForeground("com.app.a")
+        engine.onForeground("com.android.launcher")
+        engine.onForeground("com.app.b") // its own first open, not A's second
+        engine.onForeground("com.android.launcher")
+        assertEquals(0, platform.guardShown.size)
+
+        engine.onForeground("com.app.a") // A's second open
+        assertEquals("LAUNCH_LIMIT", platform.guardShown.single().blockReason)
     }
 
     @Test

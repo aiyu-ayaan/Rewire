@@ -240,14 +240,14 @@ class HabitEngine(
     fun silenceNotificationFrom(pkg: String): Boolean {
         if (pkg == granted) return false
         val profile = profileFor(pkg) ?: return false
-        val blocked = RuleEngine.decide(inputFor(profile)) is RestrictionDecision.Block
+        val blocked = RuleEngine.decide(inputFor(profile, pkg)) is RestrictionDecision.Block
         if (blocked) events.log(HabitEventType.NOTIFICATION_BLOCKED, pkg, profile.id)
         return blocked
     }
 
     private fun evaluate(pkg: String, isRecheck: Boolean) {
         val profile = profileFor(pkg) ?: return
-        val d = RuleEngine.decide(inputFor(profile))
+        val d = RuleEngine.decide(inputFor(profile, pkg))
         if (BuildConfig.DEBUG) Log.d(TAG, "decision=$d recheck=$isRecheck") // no package names in logs
         when (d) {
             RestrictionDecision.Allow -> {
@@ -276,7 +276,7 @@ class HabitEngine(
     private fun scheduleRecheck(pkg: String, profile: HabitProfile) {
         recheck?.cancel()
         if (pkg == granted) return // a granted visit runs until the user leaves
-        val minutes = RuleEngine.minutesUntilNextBoundary(inputFor(profile)) ?: return
+        val minutes = RuleEngine.minutesUntilNextBoundary(inputFor(profile, pkg)) ?: return
         recheck = mainScope.launch {
             delay(minutes * MINUTE + 1_000)
             if (current == pkg && showingFor == null) evaluate(pkg, isRecheck = true)
@@ -286,17 +286,18 @@ class HabitEngine(
     private fun profileFor(pkg: String): HabitProfile? =
         habits.habits.value.firstOrNull { p -> p.habit.enabled && p.apps.any { it.enabled && it.packageName == pkg } }
 
-    private fun inputFor(p: HabitProfile): RuleInput {
+    /** Limits are per app: opens and usage are those of [pkg], not of the habit's other apps. */
+    private fun inputFor(p: HabitProfile, pkg: String): RuleInput {
         val now = clock()
         val zone = ZoneId.systemDefault()
         val zdt = Instant.ofEpochMilli(now).atZone(zone)
         val today = zdt.toLocalDate()
         val s = settings.value
         val launches = events.events.value.count {
-            it.type == HabitEventType.APP_OPENED && it.habitId == p.id && Instant.ofEpochMilli(it.timestamp).atZone(zone).toLocalDate() == today
+            it.type == HabitEventType.APP_OPENED && it.habitId == p.id && it.packageName == pkg && Instant.ofEpochMilli(it.timestamp).atZone(zone).toLocalDate() == today
         }
         // Usage is only needed (and only queried) when a daily limit or escalation tiers exist; with a window it counts window time only.
-        val minutes = if (p.rule.dailyLimitMinutes != null || p.rule.escalation) usage.limitMinutes(p, now) else null
+        val minutes = if (p.rule.dailyLimitMinutes != null || p.rule.escalation) usage.limitMinutes(p, pkg, now) else null
         val time = zdt.toLocalTime()
         return RuleInput(
             profile = p,

@@ -28,12 +28,12 @@ open class UsageTracker(private val context: Context? = null) {
         return (packages.sumOf { millis[it] ?: 0L } / 60_000L).toInt()
     }
 
-    /** Usage the daily limit is judged on: only the current allowed window when the habit has one, else the whole day. */
-    fun limitMinutes(p: HabitProfile, now: Long = System.currentTimeMillis()): Int? {
+    /** Usage the daily limit is judged on: [pkg] alone when given (limits are per app), else every app of the habit. Only the current allowed window when the habit has one, else the whole day. */
+    fun limitMinutes(p: HabitProfile, pkg: String? = null, now: Long = System.currentTimeMillis()): Int? {
         val zdt = Instant.ofEpochMilli(now).atZone(ZoneId.systemDefault())
         val from = RuleEngine.limitCountsFromMinutes(p.rule, zdt.hour * 60 + zdt.minute)
         val since = from?.let { zdt.toLocalDate().atStartOfDay(zdt.zone).toInstant().toEpochMilli() + it * 60_000L }
-        return minutesToday(p.apps.map { it.packageName }.toSet(), now, since)
+        return minutesToday(pkg?.let { setOf(it) } ?: p.apps.map { it.packageName }.toSet(), now, since)
     }
 
     /** Single app foreground minutes today. */
