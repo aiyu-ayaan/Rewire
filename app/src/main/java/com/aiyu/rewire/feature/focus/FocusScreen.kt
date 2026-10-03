@@ -1,6 +1,8 @@
 package com.aiyu.rewire.feature.focus
 
 import androidx.compose.animation.AnimatedContent
+import androidx.compose.ui.res.stringResource
+import com.aiyu.rewire.R
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.core.Animatable
 import androidx.compose.animation.core.LinearEasing
@@ -186,12 +188,12 @@ private fun FocusSetup(
         Modifier.fillMaxSize().statusBarsPadding().verticalScroll(rememberScrollState()).padding(horizontal = 16.dp).padding(bottom = 24.dp),
     ) {
         Row(Modifier.fillMaxWidth().padding(top = 16.dp), verticalAlignment = Alignment.CenterVertically) {
-            Text("Focus", style = MaterialTheme.typography.headlineLarge, modifier = Modifier.weight(1f))
+            Text(stringResource(R.string.nav_focus), style = MaterialTheme.typography.headlineLarge, modifier = Modifier.weight(1f))
             FilledTonalIconButton(onClick = onHistory, shapes = IconButtonDefaults.shapes()) {
-                Icon(Icons.Rounded.History, contentDescription = "Focus history")
+                Icon(Icons.Rounded.History, contentDescription = stringResource(R.string.focus_history))
             }
         }
-        Text("Deep work, then real rest.", style = MaterialTheme.typography.bodyMedium, color = MaterialTheme.colorScheme.onSurfaceVariant)
+        Text(stringResource(R.string.focus_tagline), style = MaterialTheme.typography.bodyMedium, color = MaterialTheme.colorScheme.onSurfaceVariant)
 
         Box(Modifier.fillMaxWidth().padding(vertical = 24.dp), contentAlignment = Alignment.Center) {
             MorphingShape(
@@ -203,7 +205,7 @@ private fun FocusSetup(
             Column(horizontalAlignment = Alignment.CenterHorizontally) {
                 Text("%d:00".format(draft.focusMinutes), style = TimerTextStyle, color = MaterialTheme.colorScheme.onPrimaryContainer)
                 Text(
-                    "${draft.cycles} × ${formatMinutes(draft.focusMinutes)}" + if (draft.breakMinutes > 0) " · ${formatMinutes(draft.breakMinutes)} breaks" else "",
+                    stringResource(R.string.focus_summary, draft.cycles, formatMinutes(draft.focusMinutes)) + if (draft.breakMinutes > 0) stringResource(R.string.focus_summary_breaks, formatMinutes(draft.breakMinutes)) else "",
                     style = MaterialTheme.typography.titleSmall, color = MaterialTheme.colorScheme.onSurfaceVariant,
                 )
             }
@@ -221,16 +223,16 @@ private fun FocusSetup(
         Spacer(Modifier.height(12.dp))
         Card(shape = MaterialTheme.shapes.large, colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surfaceContainerLow)) {
             Column(Modifier.padding(vertical = 8.dp)) {
-                Stepper("Focus", "${draft.focusMinutes} min", { onDraft(draft.copy(focusMinutes = (draft.focusMinutes - 5).coerceAtLeast(5))) }, { onDraft(draft.copy(focusMinutes = (draft.focusMinutes + 5).coerceAtMost(180))) }, draft.focusMinutes > 5, draft.focusMinutes < 180)
-                Stepper("Break", if (draft.breakMinutes == 0) "None" else "${draft.breakMinutes} min", { onDraft(draft.copy(breakMinutes = (draft.breakMinutes - 1).coerceAtLeast(0))) }, { onDraft(draft.copy(breakMinutes = draft.breakMinutes + 1)) }, draft.breakMinutes > 0, draft.breakMinutes < draft.focusMinutes)
-                Stepper("Cycles", "${draft.cycles}", { onDraft(draft.copy(cycles = (draft.cycles - 1).coerceAtLeast(1))) }, { onDraft(draft.copy(cycles = (draft.cycles + 1).coerceAtMost(12))) }, draft.cycles > 1, draft.cycles < 12)
+                Stepper(stringResource(R.string.matrix_stat_focus), stringResource(R.string.focus_minutes_value, draft.focusMinutes), { onDraft(draft.copy(focusMinutes = (draft.focusMinutes - 5).coerceAtLeast(5))) }, { onDraft(draft.copy(focusMinutes = (draft.focusMinutes + 5).coerceAtMost(180))) }, draft.focusMinutes > 5, draft.focusMinutes < 180)
+                Stepper(stringResource(R.string.matrix_stat_break), if (draft.breakMinutes == 0) stringResource(R.string.focus_none) else stringResource(R.string.focus_minutes_value, draft.breakMinutes), { onDraft(draft.copy(breakMinutes = (draft.breakMinutes - 1).coerceAtLeast(0))) }, { onDraft(draft.copy(breakMinutes = draft.breakMinutes + 1)) }, draft.breakMinutes > 0, draft.breakMinutes < draft.focusMinutes)
+                Stepper(stringResource(R.string.focus_cycles), "${draft.cycles}", { onDraft(draft.copy(cycles = (draft.cycles - 1).coerceAtLeast(1))) }, { onDraft(draft.copy(cycles = (draft.cycles + 1).coerceAtMost(12))) }, draft.cycles > 1, draft.cycles < 12)
             }
         }
         Text(
             when (draft.validate()) {
-                FocusConfigError.BREAK_LONGER_THAN_FOCUS -> "Break can't be longer than focus."
-                null -> "Break is always shorter than or equal to focus."
-                else -> "Check your durations."
+                FocusConfigError.BREAK_LONGER_THAN_FOCUS -> stringResource(R.string.focus_error_break_longer)
+                null -> stringResource(R.string.focus_hint_break)
+                else -> stringResource(R.string.focus_error_generic)
             },
             style = MaterialTheme.typography.bodySmall,
             color = if (draft.isValid) MaterialTheme.colorScheme.onSurfaceVariant else MaterialTheme.colorScheme.error,
@@ -245,7 +247,7 @@ private fun FocusSetup(
         ) {
             Icon(Icons.Rounded.PlayArrow, contentDescription = null)
             Spacer(Modifier.width(8.dp))
-            Text("Start focus", style = MaterialTheme.typography.titleMedium)
+            Text(stringResource(R.string.guard_start_focus), style = MaterialTheme.typography.titleMedium)
         }
         if (BuildConfig.DEBUG) {
             OutlinedButton(onClick = onQuickTest, modifier = Modifier.fillMaxWidth().padding(top = 8.dp)) {
@@ -255,7 +257,7 @@ private fun FocusSetup(
 
         NotificationRationaleCard(
             permission,
-            reason = "Rewire tells you when a break starts and when it's time to come back, even with the screen off.",
+            reason = stringResource(R.string.focus_notification_reason),
             modifier = Modifier.padding(top = 16.dp),
         )
         if (bypass != null) {
@@ -278,9 +280,9 @@ private fun Stepper(label: String, value: String, onMinus: () -> Unit, onPlus: (
             Text(label, style = MaterialTheme.typography.labelLarge, color = MaterialTheme.colorScheme.onSurfaceVariant)
             Text(value, style = MaterialTheme.typography.titleLarge)
         }
-        FilledTonalIconButton(onClick = onMinus, enabled = canMinus, shapes = IconButtonDefaults.shapes()) { Icon(Icons.Rounded.Remove, contentDescription = "Decrease $label") }
+        FilledTonalIconButton(onClick = onMinus, enabled = canMinus, shapes = IconButtonDefaults.shapes()) { Icon(Icons.Rounded.Remove, contentDescription = stringResource(R.string.focus_decrease, label)) }
         Spacer(Modifier.width(8.dp))
-        FilledTonalIconButton(onClick = onPlus, enabled = canPlus, shapes = IconButtonDefaults.shapes()) { Icon(Icons.Rounded.Add, contentDescription = "Increase $label") }
+        FilledTonalIconButton(onClick = onPlus, enabled = canPlus, shapes = IconButtonDefaults.shapes()) { Icon(Icons.Rounded.Add, contentDescription = stringResource(R.string.focus_increase, label)) }
     }
 }
 
@@ -295,13 +297,12 @@ private fun BypassCard(
 ) {
     var confirmMax by remember { mutableStateOf(false) }
     var showDndDialog by remember { mutableStateOf(false) }
-    SectionTitle("During focus")
+    SectionTitle(stringResource(R.string.focus_during))
     Card(shape = MaterialTheme.shapes.large, colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surfaceContainerLow)) {
         Column(Modifier.padding(vertical = 8.dp)) {
             BypassRow(
-                "Silence messages (allow calls)",
-                if (!isDndGranted) "Tap to grant Do Not Disturb access. Incoming calls will ring; all messages silenced."
-                else "Mutes notifications & messages from all apps. Incoming calls will still ring.",
+                stringResource(R.string.focus_dnd_title),
+                stringResource(if (!isDndGranted) R.string.focus_dnd_grant else R.string.focus_dnd_body),
                 checked = focusDnd && isDndGranted,
             ) { checked ->
                 if (!isDndGranted) {
@@ -310,27 +311,27 @@ private fun BypassCard(
                     onFocusDnd(checked)
                 }
             }
-            BypassRow("Skip Minor reminders", "Quiet nudges while you work.", bypass.minor) { onChange(bypass.copy(minor = it)) }
-            BypassRow("Skip Major pauses", "Guarded apps open without the full-screen pause.", bypass.major) { onChange(bypass.copy(major = it)) }
-            BypassRow("Lift Max blocks", "Off by default. Blocks protect you most during focus.", bypass.max) { if (it) confirmMax = true else onChange(bypass.copy(max = false)) }
+            BypassRow(stringResource(R.string.focus_skip_minor), stringResource(R.string.focus_skip_minor_body), bypass.minor) { onChange(bypass.copy(minor = it)) }
+            BypassRow(stringResource(R.string.focus_skip_major), stringResource(R.string.focus_skip_major_body), bypass.major) { onChange(bypass.copy(major = it)) }
+            BypassRow(stringResource(R.string.focus_lift_max), stringResource(R.string.focus_lift_max_body), bypass.max) { if (it) confirmMax = true else onChange(bypass.copy(max = false)) }
         }
     }
     if (confirmMax) {
         AlertDialog(
             onDismissRequest = { confirmMax = false },
-            title = { Text("Lift Max blocks during focus?") },
-            text = { Text("Apps you hard-blocked will open freely while a focus session runs. Most people keep this off.") },
-            confirmButton = { TextButton(onClick = { onChange(bypass.copy(max = true)); confirmMax = false }) { Text("Lift blocks") } },
-            dismissButton = { TextButton(onClick = { confirmMax = false }) { Text("Keep blocks") } },
+            title = { Text(stringResource(R.string.focus_lift_max_title)) },
+            text = { Text(stringResource(R.string.focus_lift_max_text)) },
+            confirmButton = { TextButton(onClick = { onChange(bypass.copy(max = true)); confirmMax = false }) { Text(stringResource(R.string.focus_lift_blocks)) } },
+            dismissButton = { TextButton(onClick = { confirmMax = false }) { Text(stringResource(R.string.focus_keep_blocks)) } },
         )
     }
     if (showDndDialog) {
         AlertDialog(
             onDismissRequest = { showDndDialog = false },
-            title = { Text("Grant Do Not Disturb access") },
-            text = { Text("To silence messages and alerts while allowing phone and incoming app calls during focus sessions, Rewire needs Do Not Disturb permission.") },
-            confirmButton = { TextButton(onClick = { showDndDialog = false; onOpenDndSettings() }) { Text("Open settings") } },
-            dismissButton = { TextButton(onClick = { showDndDialog = false }) { Text("Not now") } },
+            title = { Text(stringResource(R.string.focus_dnd_dialog_title)) },
+            text = { Text(stringResource(R.string.focus_dnd_dialog_text)) },
+            confirmButton = { TextButton(onClick = { showDndDialog = false; onOpenDndSettings() }) { Text(stringResource(R.string.focus_open_settings)) } },
+            dismissButton = { TextButton(onClick = { showDndDialog = false }) { Text(stringResource(R.string.focus_not_now)) } },
         )
     }
 }
@@ -356,24 +357,25 @@ private fun FocusRunning(state: FocusState, now: Long, onPause: () -> Unit, onRe
     val c = MaterialTheme.colorScheme
     val ringColor = if (onBreak) c.tertiary else c.primary
     val amplitude by animateFloatAsState(if (paused) 0f else 1f, MaterialTheme.motionScheme.slowEffectsSpec(), label = "amp")
+    val stateDesc = stringResource(if (paused) R.string.focus_paused else if (onBreak) R.string.matrix_stat_break else R.string.focus_state_focusing)
 
     val header: @Composable () -> Unit = {
         Box(Modifier.fillMaxWidth().padding(top = 8.dp), contentAlignment = Alignment.Center) {
             Surface(shape = CircleShape, color = if (onBreak) c.tertiaryContainer else c.primaryContainer) {
                 Text(
-                    when { paused -> "Paused"; onBreak -> "Break"; else -> "Deep work" },
+                    stringResource(when { paused -> R.string.focus_paused; onBreak -> R.string.matrix_stat_break; else -> R.string.notif_focus_title }),
                     style = MaterialTheme.typography.labelLarge,
                     modifier = Modifier.padding(horizontal = 16.dp, vertical = 8.dp),
                 )
             }
             FilledTonalIconButton(onClick = onFullscreen, shapes = IconButtonDefaults.shapes(), modifier = Modifier.align(Alignment.CenterEnd)) {
-                Icon(Icons.Rounded.Fullscreen, contentDescription = "Full screen timer")
+                Icon(Icons.Rounded.Fullscreen, contentDescription = stringResource(R.string.focus_fullscreen))
             }
         }
     }
     val ring: @Composable (Dp) -> Unit = { size ->
         Box(contentAlignment = Alignment.Center, modifier = Modifier.semantics(mergeDescendants = true) {
-            stateDescription = if (paused) "Paused" else if (onBreak) "Break" else "Focusing"
+            stateDescription = stateDesc
         }) {
             CircularWavyProgressIndicator(
                 progress = { state.progress(now) },
@@ -383,13 +385,13 @@ private fun FocusRunning(state: FocusState, now: Long, onPause: () -> Unit, onRe
             )
             Column(horizontalAlignment = Alignment.CenterHorizontally) {
                 RollingTime(state.remaining(now), TimerTextStyle, c.onSurface, Modifier.sharedBoundsOrSelf(TIMER_KEY))
-                Text("Session ${state.cycle} / ${state.config.cycles}", style = MaterialTheme.typography.titleMedium, color = c.onSurfaceVariant)
+                Text(stringResource(R.string.focus_session_of, state.cycle, state.config.cycles), style = MaterialTheme.typography.titleMedium, color = c.onSurfaceVariant)
             }
         }
     }
     val caption: @Composable () -> Unit = {
         Text(
-            if (onBreak) "Step away. Stretch, drink water, look far." else "Deep work mode. Guarded apps follow your focus rules.",
+            stringResource(if (onBreak) R.string.focus_caption_break else R.string.focus_caption_focus),
             style = MaterialTheme.typography.bodyMedium, color = c.onSurfaceVariant, textAlign = TextAlign.Center,
             modifier = Modifier.widthIn(max = 320.dp),
         )
@@ -402,12 +404,12 @@ private fun FocusRunning(state: FocusState, now: Long, onPause: () -> Unit, onRe
                 shapes = IconButtonDefaults.shapes(),
                 modifier = Modifier.size(96.dp),
             ) {
-                Icon(if (paused) Icons.Rounded.PlayArrow else Icons.Rounded.Pause, contentDescription = if (paused) "Resume" else "Pause", modifier = Modifier.size(40.dp))
+                Icon(if (paused) Icons.Rounded.PlayArrow else Icons.Rounded.Pause, contentDescription = stringResource(if (paused) R.string.focus_resume else R.string.focus_pause), modifier = Modifier.size(40.dp))
             }
             Box(Modifier.size(72.dp), contentAlignment = Alignment.Center) {
                 androidx.compose.animation.AnimatedVisibility(onBreak) {
                     FilledTonalIconButton(onClick = onSkipBreak, shapes = IconButtonDefaults.shapes(), modifier = Modifier.size(72.dp)) {
-                        Icon(Icons.Rounded.SkipNext, contentDescription = "Skip break")
+                        Icon(Icons.Rounded.SkipNext, contentDescription = stringResource(R.string.focus_skip_break))
                     }
                 }
             }
@@ -452,12 +454,14 @@ private fun HoldToEnd(onEnd: () -> Unit) {
     val progress = remember { Animatable(0f) }
     val scope = rememberCoroutineScope()
     val haptics = LocalHapticFeedback.current
+    val holdDesc = stringResource(R.string.focus_hold_to_end)
+    val endLabel = stringResource(R.string.focus_end_session)
     Box(
         Modifier
             .size(72.dp)
             .clip(CircleShape)
             .background(MaterialTheme.colorScheme.surfaceContainerHighest)
-            .semantics { contentDescription = "Hold to end session"; onClick("End session") { onEnd(); true } }
+            .semantics { contentDescription = holdDesc; onClick(endLabel) { onEnd(); true } }
             .pointerInput(Unit) {
                 detectTapGestures(onPress = {
                     val job = scope.launch {
@@ -493,19 +497,19 @@ private fun FocusFinished(state: FocusState, onDone: () -> Unit, onHistory: () -
             modifier = Modifier.size(180.dp),
         )
         Spacer(Modifier.height(24.dp))
-        Text(if (completed) "Session complete" else "Session ended early", style = MaterialTheme.typography.displaySmall, textAlign = TextAlign.Center)
+        Text(stringResource(if (completed) R.string.notif_completed_title else R.string.focus_ended_early), style = MaterialTheme.typography.displaySmall, textAlign = TextAlign.Center)
         Spacer(Modifier.height(8.dp))
         Text(
-            if (completed) "${state.config.cycles} blocks · ${formatMinutes(state.config.cycles * state.config.focusMinutes)} of deep work."
-            else "Stopping is a choice too. It's recorded in Matrix.",
+            if (completed) stringResource(R.string.focus_finished_text, state.config.cycles, formatMinutes(state.config.cycles * state.config.focusMinutes))
+            else stringResource(R.string.focus_ended_text),
             style = MaterialTheme.typography.bodyLarge, color = MaterialTheme.colorScheme.onSurfaceVariant, textAlign = TextAlign.Center,
         )
         Spacer(Modifier.height(32.dp))
-        if (completed) Button(onClick = onDone) { Text("Done") } else OutlinedButton(onClick = onDone) { Text("Back to setup") }
+        if (completed) Button(onClick = onDone) { Text(stringResource(R.string.focus_done)) } else OutlinedButton(onClick = onDone) { Text(stringResource(R.string.focus_back_to_setup)) }
         TextButton(onClick = onHistory, modifier = Modifier.padding(top = 8.dp)) {
             Icon(Icons.Rounded.History, contentDescription = null)
             Spacer(Modifier.width(8.dp))
-            Text("Focus history")
+            Text(stringResource(R.string.focus_history))
         }
     }
 }

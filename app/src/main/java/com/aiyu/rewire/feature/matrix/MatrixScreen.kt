@@ -1,6 +1,9 @@
 package com.aiyu.rewire.feature.matrix
 
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.ui.res.pluralStringResource
+import androidx.compose.ui.res.stringResource
+import com.aiyu.rewire.R
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -45,7 +48,6 @@ import com.aiyu.rewire.domain.analytics.MetricsCalculator
 import com.aiyu.rewire.domain.analytics.MonthlyMetrics
 import com.aiyu.rewire.domain.analytics.PeriodMetrics
 import com.aiyu.rewire.domain.analytics.WeeklyMetrics
-import com.aiyu.rewire.R
 import android.content.Context
 import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -77,7 +79,7 @@ import java.util.Locale
 
 enum class MatrixPeriod { DAILY, WEEKLY, MONTHLY }
 
-data class NamedBreakdown(val label: String, val packageName: String?, val stats: GuardBreakdown)
+data class NamedBreakdown(val label: String?, val packageName: String?, val stats: GuardBreakdown)
 
 data class AppMinutes(val label: String, val minutes: Int)
 
@@ -202,7 +204,7 @@ class MatrixViewModel @Inject constructor(
                 ),
             ),
             habits = MetricsCalculator.breakdown(events, since) { it.habitId }
-                .map { NamedBreakdown(names[it.key] ?: "Removed habit", null, it) },
+                .map { NamedBreakdown(names[it.key], null, it) },
             apps = MetricsCalculator.breakdown(events, since) { it.packageName }
                 .map { NamedBreakdown(installedApps.label(it.key), it.key, it) },
             peakHour = MetricsCalculator.peakHour(events, since, zone),
@@ -218,8 +220,8 @@ fun MatrixScreen(onShowAll: (apps: Boolean) -> Unit) {
     val ui by vm.ui.collectAsStateWithLifecycle()
 
     Column(Modifier.fillMaxSize().statusBarsPadding().verticalScroll(rememberScrollState()).padding(horizontal = 16.dp).padding(bottom = 24.dp)) {
-        Text("Matrix", style = MaterialTheme.typography.headlineLarge, modifier = Modifier.padding(top = 16.dp))
-        Text("Focus and Guard, measured together. Stored only on this device.", style = MaterialTheme.typography.bodyMedium, color = MaterialTheme.colorScheme.onSurfaceVariant)
+        Text(stringResource(R.string.matrix_title), style = MaterialTheme.typography.headlineLarge, modifier = Modifier.padding(top = 16.dp))
+        Text(stringResource(R.string.matrix_subtitle), style = MaterialTheme.typography.bodyMedium, color = MaterialTheme.colorScheme.onSurfaceVariant)
 
         PeriodSwitch(ui.period, vm::selectPeriod)
         when (ui.period) {
@@ -234,7 +236,7 @@ internal const val PREVIEW_ROWS = 4
 
 @Composable
 internal fun ShowAll(count: Int, onClick: () -> Unit) {
-    if (count > PREVIEW_ROWS) TextButton(onClick = onClick) { Text("Show all ($count)") }
+    if (count > PREVIEW_ROWS) TextButton(onClick = onClick) { Text(stringResource(R.string.matrix_show_all, count)) }
 }
 
 /** Full habit or app list for the last 7 days, opened from "Show all". */
@@ -248,15 +250,15 @@ fun MatrixBreakdownScreen(apps: Boolean, onBack: () -> Unit) {
         modifier = Modifier.nestedScroll(scroll.nestedScrollConnection),
         topBar = {
             LargeFlexibleTopAppBar(
-                title = { Text(if (apps) "Protected apps" else "Habits") },
-                subtitle = { Text("Last 7 days · busiest first") },
-                navigationIcon = { IconButton(onClick = onBack) { Icon(Icons.AutoMirrored.Rounded.ArrowBack, contentDescription = "Back") } },
+                title = { Text(stringResource(if (apps) R.string.matrix_protected_apps else R.string.matrix_habits)) },
+                subtitle = { Text(stringResource(R.string.matrix_breakdown_subtitle)) },
+                navigationIcon = { IconButton(onClick = onBack) { Icon(Icons.AutoMirrored.Rounded.ArrowBack, contentDescription = stringResource(R.string.warning_back)) } },
                 scrollBehavior = scroll,
             )
         },
     ) { padding ->
         Column(Modifier.padding(padding).verticalScroll(rememberScrollState()).padding(horizontal = 16.dp).padding(bottom = 24.dp)) {
-            if (items.isEmpty()) EmptyState("Nothing here yet", "Guard activity from the last 7 days shows up here.")
+            if (items.isEmpty()) EmptyState(stringResource(R.string.matrix_breakdown_empty_title), stringResource(R.string.matrix_breakdown_empty_text))
             else BreakdownList(items, if (apps) MaterialTheme.colorScheme.tertiary else MaterialTheme.colorScheme.secondary)
         }
     }
@@ -283,17 +285,17 @@ internal fun TodayOverview(m: DailyMetrics) {
                 CircularWavyProgressIndicator(progress = { score ?: 0f }, modifier = Modifier.size(104.dp))
                 Column(horizontalAlignment = Alignment.CenterHorizontally) {
                     Text(score?.let { "${(it * 100).toInt()}%" } ?: "—", style = MaterialTheme.typography.headlineSmall)
-                    Text("control", style = MaterialTheme.typography.labelSmall, color = MaterialTheme.colorScheme.onSurfaceVariant)
+                    Text(stringResource(R.string.matrix_control), style = MaterialTheme.typography.labelSmall, color = MaterialTheme.colorScheme.onSurfaceVariant)
                 }
             }
             Spacer(Modifier.width(20.dp))
             Column(Modifier.weight(1f), verticalArrangement = Arrangement.spacedBy(6.dp)) {
-                Stat("Focus", formatMinutes(m.focusMinutes))
-                Stat("Break", formatMinutes(m.breakMinutes))
-                Stat("Warnings", "${m.warningCount}")
-                Stat("Blocked", "${m.blockedAttempts}")
-                Stat("Went back", "${m.wentBackCount}")
-                Stat("Overrides", "${m.overrideCount}")
+                Stat(stringResource(R.string.matrix_stat_focus), formatMinutes(m.focusMinutes))
+                Stat(stringResource(R.string.matrix_stat_break), formatMinutes(m.breakMinutes))
+                Stat(stringResource(R.string.matrix_stat_warnings), "${m.warningCount}")
+                Stat(stringResource(R.string.matrix_stat_blocked), "${m.blockedAttempts}")
+                Stat(stringResource(R.string.matrix_stat_went_back), "${m.wentBackCount}")
+                Stat(stringResource(R.string.matrix_stat_overrides), "${m.overrideCount}")
             }
         }
     }
@@ -303,18 +305,18 @@ internal fun TodayOverview(m: DailyMetrics) {
 internal fun GuardOutcomes(ui: MatrixUi) {
     val scheme = MaterialTheme.colorScheme
     val slices = listOf(
-        Slice("Went back", ui.weekSum { it.wentBackCount }, scheme.primary),
-        Slice("Continued (minor)", ui.weekSum { it.continuedCount }, scheme.secondary),
-        Slice("Blocked", ui.weekSum { it.blockedAttempts }, scheme.inversePrimary),
-        Slice("Overrides", ui.weekSum { it.overrideCount }, scheme.error),
-        Slice("Notifications held", ui.weekSum { it.notificationsBlocked }, scheme.tertiary),
+        Slice(stringResource(R.string.matrix_stat_went_back), ui.weekSum { it.wentBackCount }, scheme.primary),
+        Slice(stringResource(R.string.matrix_slice_continued), ui.weekSum { it.continuedCount }, scheme.secondary),
+        Slice(stringResource(R.string.matrix_stat_blocked), ui.weekSum { it.blockedAttempts }, scheme.inversePrimary),
+        Slice(stringResource(R.string.matrix_stat_overrides), ui.weekSum { it.overrideCount }, scheme.error),
+        Slice(stringResource(R.string.matrix_slice_notifications_held), ui.weekSum { it.notificationsBlocked }, scheme.tertiary),
     )
     ChartCard {
         Row(verticalAlignment = Alignment.CenterVertically) {
             DonutChart(slices, Modifier.size(132.dp)) {
                 Column(horizontalAlignment = Alignment.CenterHorizontally) {
                     Text("${slices.sumOf { it.value }}", style = MaterialTheme.typography.headlineSmall)
-                    Text("guard events", style = MaterialTheme.typography.labelSmall, color = scheme.onSurfaceVariant)
+                    Text(stringResource(R.string.matrix_guard_events), style = MaterialTheme.typography.labelSmall, color = scheme.onSurfaceVariant)
                 }
             }
             Spacer(Modifier.width(20.dp))
@@ -334,14 +336,14 @@ internal fun BreakdownList(items: List<NamedBreakdown>, color: Color) {
                     item.packageName?.let { AppIcon(it, 32.dp); Spacer(Modifier.width(12.dp)) }
                     Column(Modifier.weight(1f)) {
                         Row {
-                            Text(item.label, style = MaterialTheme.typography.titleSmall, modifier = Modifier.weight(1f))
-                            Text("${s.opens} opens · ${s.moments} caught", style = MaterialTheme.typography.labelMedium, color = MaterialTheme.colorScheme.onSurfaceVariant)
+                            Text(item.label ?: stringResource(R.string.matrix_removed_habit), style = MaterialTheme.typography.titleSmall, modifier = Modifier.weight(1f))
+                            Text(stringResource(R.string.matrix_breakdown_counts, s.opens, s.moments), style = MaterialTheme.typography.labelMedium, color = MaterialTheme.colorScheme.onSurfaceVariant)
                         }
                         Spacer(Modifier.height(6.dp))
                         ShareMeter((s.moments + s.opens).toFloat() / max, color, Modifier.fillMaxWidth().height(8.dp))
                         if (s.wentBack + s.overrides > 0) {
                             Text(
-                                "Went back ${s.wentBack} · overrode ${s.overrides}",
+                                stringResource(R.string.matrix_breakdown_outcomes, s.wentBack, s.overrides),
                                 style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant,
                                 modifier = Modifier.padding(top = 4.dp),
                             )

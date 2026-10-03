@@ -1,6 +1,9 @@
 package com.aiyu.rewire.feature.guard
 
 import androidx.compose.animation.AnimatedVisibility
+import androidx.compose.ui.res.pluralStringResource
+import androidx.compose.ui.res.stringResource
+import com.aiyu.rewire.R
 import androidx.compose.animation.core.animateFloatAsState
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.layout.Arrangement
@@ -93,13 +96,13 @@ fun GuardScreen(onOpenHabit: (String) -> Unit, onStartFocus: () -> Unit) {
             item { Header() }
             if (habits.any { it.habit.enabled }) item { ProtectionBanner() }
             item { TodayCard(today, habits.count { it.habit.enabled }, onStartFocus) }
-            item { SectionTitle("Your habits", trailing = { if (habits.isNotEmpty()) Text("${habits.size}", style = MaterialTheme.typography.labelLarge, color = MaterialTheme.colorScheme.onSurfaceVariant) }) }
+            item { SectionTitle(stringResource(R.string.guard_your_habits), trailing = { if (habits.isNotEmpty()) Text("${habits.size}", style = MaterialTheme.typography.labelLarge, color = MaterialTheme.colorScheme.onSurfaceVariant) }) }
             if (habits.isEmpty()) {
                 item {
                     EmptyState(
-                        title = "Nothing guarded yet",
-                        body = "Group the apps that pull you in into a habit, then choose how much friction it gets.",
-                        action = { FilledTonalButton(onClick = { creating = true }) { Text("Create first habit") } },
+                        title = stringResource(R.string.guard_empty_title),
+                        body = stringResource(R.string.guard_empty_body),
+                        action = { FilledTonalButton(onClick = { creating = true }) { Text(stringResource(R.string.guard_create_first)) } },
                     )
                 }
             }
@@ -117,7 +120,7 @@ fun GuardScreen(onOpenHabit: (String) -> Unit, onStartFocus: () -> Unit) {
             onClick = { creating = true },
             expanded = fabExpanded,
             icon = { Icon(Icons.Rounded.Add, contentDescription = null) },
-            text = { Text("New habit") },
+            text = { Text(stringResource(R.string.guard_new_habit)) },
             modifier = Modifier.align(Alignment.BottomEnd).padding(16.dp),
         )
     }
@@ -145,7 +148,7 @@ private fun Header() {
         )
         Spacer(Modifier.width(12.dp))
         Column {
-            Text("Guard", style = MaterialTheme.typography.headlineLarge)
+            Text(stringResource(R.string.nav_guard), style = MaterialTheme.typography.headlineLarge)
             Text(
                 LocalDate.now().format(DateTimeFormatter.ofPattern("EEEE, d MMMM")),
                 style = MaterialTheme.typography.bodyMedium,
@@ -159,40 +162,41 @@ private fun Header() {
 private fun TodayCard(m: DailyMetrics, activeHabits: Int, onStartFocus: () -> Unit) {
     val score = m.disciplineScore
     val animated by animateFloatAsState(score ?: 0f, MaterialTheme.motionScheme.slowSpatialSpec(), label = "score")
+    val disciplineDesc = score?.let { stringResource(R.string.guard_discipline_desc, (it * 100).toInt()) } ?: stringResource(R.string.guard_discipline_none)
     Card(
         shape = MaterialTheme.shapes.extraLarge,
         colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surfaceContainerHigh),
         modifier = Modifier.fillMaxWidth().padding(top = 8.dp),
     ) {
         Column(Modifier.padding(20.dp)) {
-            Text("TODAY", style = MaterialTheme.typography.labelLarge, color = MaterialTheme.colorScheme.onSurfaceVariant)
+            Text(stringResource(R.string.guard_today_label), style = MaterialTheme.typography.labelLarge, color = MaterialTheme.colorScheme.onSurfaceVariant)
             Spacer(Modifier.height(12.dp))
             Row(verticalAlignment = Alignment.CenterVertically) {
                 Box(contentAlignment = Alignment.Center, modifier = Modifier.semantics {
-                    contentDescription = score?.let { "Discipline ${(it * 100).toInt()} percent" } ?: "Discipline: no data yet"
+                    contentDescription = disciplineDesc
                 }) {
                     CircularWavyProgressIndicator(progress = { animated }, modifier = Modifier.size(112.dp))
                     Column(horizontalAlignment = Alignment.CenterHorizontally) {
                         Text(score?.let { "${(it * 100).toInt()}%" } ?: "—", style = MaterialTheme.typography.headlineMedium)
-                        Text("discipline", style = MaterialTheme.typography.labelSmall, color = MaterialTheme.colorScheme.onSurfaceVariant)
+                        Text(stringResource(R.string.guard_discipline), style = MaterialTheme.typography.labelSmall, color = MaterialTheme.colorScheme.onSurfaceVariant)
                     }
                 }
                 Spacer(Modifier.width(20.dp))
                 Column(Modifier.weight(1f), verticalArrangement = Arrangement.spacedBy(10.dp)) {
-                    Stat("Focus", formatMinutes(m.focusMinutes))
+                    Stat(stringResource(R.string.matrix_stat_focus), formatMinutes(m.focusMinutes))
                     if (m.screenTimeMinutes > 0) {
-                        Stat("Screen time", formatMinutes(m.screenTimeMinutes))
+                        Stat(stringResource(R.string.guard_stat_screen_time), formatMinutes(m.screenTimeMinutes))
                     }
-                    Stat("Warnings", "${m.warningCount}")
-                    Stat("Blocked", "${m.blockedAttempts}")
-                    Stat("Guarding", if (activeHabits == 1) "1 habit" else "$activeHabits habits")
+                    Stat(stringResource(R.string.matrix_stat_warnings), "${m.warningCount}")
+                    Stat(stringResource(R.string.matrix_stat_blocked), "${m.blockedAttempts}")
+                    Stat(stringResource(R.string.guard_stat_guarding), pluralStringResource(R.plurals.guard_habit_count, activeHabits, activeHabits))
                 }
             }
             Spacer(Modifier.height(16.dp))
             FilledTonalButton(onClick = onStartFocus, modifier = Modifier.fillMaxWidth()) {
                 Icon(Icons.Rounded.Timer, contentDescription = null, modifier = Modifier.size(18.dp))
                 Spacer(Modifier.width(8.dp))
-                Text("Start focus")
+                Text(stringResource(R.string.guard_start_focus))
             }
         }
     }
@@ -214,6 +218,7 @@ fun HabitCard(
     onToggle: (Boolean) -> Unit,
     modifier: Modifier = Modifier,
 ) {
+    val toggleDesc = stringResource(R.string.guard_toggle_desc, profile.habit.name)
     Card(
         onClick = onClick,
         shape = MaterialTheme.shapes.large,
@@ -230,7 +235,7 @@ fun HabitCard(
                         if (usageMinutes != null && usageMinutes > 0) {
                             val limit = profile.rule.dailyLimitMinutes
                             Text(
-                                if (limit != null) "${formatMinutes(usageMinutes)} / ${formatMinutes(limit)}" else "${formatMinutes(usageMinutes)} today",
+                                if (limit != null) stringResource(R.string.guard_usage_of_limit, formatMinutes(usageMinutes), formatMinutes(limit)) else stringResource(R.string.guard_usage_today, formatMinutes(usageMinutes)),
                                 style = MaterialTheme.typography.labelMedium,
                                 color = if (limit != null && usageMinutes >= limit) MaterialTheme.colorScheme.error else MaterialTheme.colorScheme.onSurfaceVariant,
                             )
@@ -241,7 +246,7 @@ fun HabitCard(
                     checked = profile.habit.enabled,
                     onCheckedChange = onToggle,
                     thumbContent = if (profile.habit.enabled) { { Icon(Icons.Rounded.Check, null, Modifier.size(SwitchDefaults.IconSize)) } } else null,
-                    modifier = Modifier.semantics { contentDescription = "Guard ${profile.habit.name}" },
+                    modifier = Modifier.semantics { contentDescription = toggleDesc },
                 )
             }
             AnimatedVisibility(profile.apps.isNotEmpty()) {
@@ -253,7 +258,7 @@ fun HabitCard(
                     }
                     val extra = profile.apps.size - 5
                     Text(
-                        if (extra > 0) "+$extra more" else "${profile.apps.size} app${if (profile.apps.size == 1) "" else "s"}",
+                        if (extra > 0) stringResource(R.string.guard_apps_more, extra) else pluralStringResource(R.plurals.guard_app_count, profile.apps.size, profile.apps.size),
                         style = MaterialTheme.typography.labelLarge,
                         color = MaterialTheme.colorScheme.onSurfaceVariant,
                         modifier = Modifier.offset(x = (-10 * profile.apps.take(5).size + 18).dp).widthIn(min = 0.dp),
@@ -289,12 +294,12 @@ private fun ProtectionBanner() {
                 Icon(Icons.Rounded.GppMaybe, contentDescription = null)
                 Spacer(Modifier.width(12.dp))
                 Column(Modifier.weight(1f)) {
-                    Text("Protection is off", style = MaterialTheme.typography.titleMedium)
+                    Text(stringResource(R.string.guard_protection_off), style = MaterialTheme.typography.titleMedium)
                     Text(
-                        if (!BuildConfig.ACCESSIBILITY) "Allow Usage access and Display over apps so Guard can see protected apps."
-                        else if (enabled) "Android stopped Rewire's service. Turn Rewire off and on in Accessibility."
-                        else if (isAndroid13Plus) "Turn on Rewire in Accessibility. If disabled, tap Fix to allow restricted settings."
-                        else "Turn on Rewire in Accessibility so Guard can see protected apps.",
+                        if (!BuildConfig.ACCESSIBILITY) stringResource(R.string.guard_protection_fallback)
+                        else if (enabled) stringResource(R.string.guard_protection_stopped)
+                        else if (isAndroid13Plus) stringResource(R.string.guard_protection_restricted)
+                        else stringResource(R.string.guard_protection_enable),
                         style = MaterialTheme.typography.bodyMedium,
                     )
                 }
@@ -310,7 +315,7 @@ private fun ProtectionBanner() {
                     } else {
                         SystemPermissions.open(context, SystemPermissions.accessibilitySettings())
                     }
-                }) { Text("Fix") }
+                }) { Text(stringResource(R.string.guard_fix)) }
             }
         }
     }
@@ -319,13 +324,13 @@ private fun ProtectionBanner() {
         AlertDialog(
             onDismissRequest = { showRestrictedDialog = false },
             icon = { Icon(Icons.Rounded.GppMaybe, contentDescription = null) },
-            title = { Text("Enable Guard in Accessibility") },
+            title = { Text(stringResource(R.string.guard_restricted_title)) },
             text = {
                 Column {
-                    Text("1. In Accessibility settings, find Rewire and turn it on.")
+                    Text(stringResource(R.string.guard_restricted_step1))
                     Spacer(Modifier.height(8.dp))
                     Text(
-                        "2. If the setting says \"Restricted setting\": tap \"Open App Info\" below, tap the 3 dots (⋮) in the top-right corner, and choose \"Allow restricted settings\".",
+                        stringResource(R.string.guard_restricted_step2),
                         style = MaterialTheme.typography.bodyMedium,
                     )
                 }
@@ -334,15 +339,15 @@ private fun ProtectionBanner() {
                 TextButton(onClick = {
                     showRestrictedDialog = false
                     SystemPermissions.open(context, SystemPermissions.accessibilitySettings())
-                }) { Text("Accessibility") }
+                }) { Text(stringResource(R.string.guard_accessibility)) }
             },
             dismissButton = {
                 Row {
                     TextButton(onClick = {
                         showRestrictedDialog = false
                         SystemPermissions.open(context, SystemPermissions.appDetailsSettings(context))
-                    }) { Text("Open App Info") }
-                    TextButton(onClick = { showRestrictedDialog = false }) { Text("Cancel") }
+                    }) { Text(stringResource(R.string.guard_open_app_info)) }
+                    TextButton(onClick = { showRestrictedDialog = false }) { Text(stringResource(R.string.common_cancel)) }
                 }
             },
         )

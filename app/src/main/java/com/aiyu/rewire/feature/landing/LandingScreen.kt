@@ -1,6 +1,7 @@
 package com.aiyu.rewire.feature.landing
 
 import androidx.compose.animation.core.LinearEasing
+import androidx.annotation.StringRes
 import androidx.compose.animation.core.animateDpAsState
 import androidx.compose.animation.core.animateFloat
 import androidx.compose.animation.core.infiniteRepeatable
@@ -65,12 +66,12 @@ import kotlin.math.sin
 
 const val HERO_KEY = "rewire-hero"
 
-private data class StoryPage(val word: String, val body: String)
+private data class StoryPage(@StringRes val word: Int, @StringRes val body: Int)
 
 private val story = listOf(
-    StoryPage("Friction", "Rewire adds a small pause before the apps that pull you in."),
-    StoryPage("Awareness", "Each pause asks one question: is this a choice or a reflex?"),
-    StoryPage("Choice", "You decide. Rewire measures, so you can see yourself improve."),
+    StoryPage(R.string.landing_friction, R.string.landing_friction_body),
+    StoryPage(R.string.landing_awareness, R.string.landing_awareness_body),
+    StoryPage(R.string.landing_choice, R.string.landing_choice_body),
 )
 
 @Composable
@@ -79,6 +80,7 @@ fun LandingScreen(onGetStarted: () -> Unit) {
     val scope = rememberCoroutineScope()
     val colors = MaterialTheme.colorScheme
     val last = pager.currentPage == story.lastIndex
+    val appName = stringResource(R.string.app_name)
 
     Box(
         Modifier
@@ -90,7 +92,7 @@ fun LandingScreen(onGetStarted: () -> Unit) {
             horizontalAlignment = Alignment.CenterHorizontally,
         ) {
             Text(
-                "REWIRE",
+                stringResource(R.string.app_name).uppercase(),
                 style = MaterialTheme.typography.labelLarge.copy(letterSpacing = 6.sp),
                 color = colors.primary,
                 modifier = Modifier.padding(top = 24.dp),
@@ -104,7 +106,7 @@ fun LandingScreen(onGetStarted: () -> Unit) {
                     modifier = Modifier
                         .size(heroSize)
                         .sharedBoundsOrSelf(HERO_KEY)
-                        .semantics { contentDescription = "Rewire" },
+                        .semantics { contentDescription = appName },
                 )
             }
             Text(
@@ -116,10 +118,10 @@ fun LandingScreen(onGetStarted: () -> Unit) {
             Spacer(Modifier.height(16.dp))
             HorizontalPager(pager, Modifier.fillMaxWidth().heightIn(min = 96.dp)) { page ->
                 Column(horizontalAlignment = Alignment.CenterHorizontally) {
-                    Text(story[page].word, style = MaterialTheme.typography.titleLarge, color = colors.primary)
+                    Text(stringResource(story[page].word), style = MaterialTheme.typography.titleLarge, color = colors.primary)
                     Spacer(Modifier.height(4.dp))
                     Text(
-                        story[page].body,
+                        stringResource(story[page].body),
                         style = MaterialTheme.typography.bodyLarge,
                         color = colors.onSurfaceVariant,
                         textAlign = TextAlign.Center,
@@ -134,12 +136,12 @@ fun LandingScreen(onGetStarted: () -> Unit) {
                 modifier = Modifier.fillMaxWidth().widthIn(max = 420.dp).height(ButtonDefaults.MediumContainerHeight),
                 contentPadding = ButtonDefaults.MediumContentPadding,
             ) {
-                Text(if (last) "Get started" else "Next", style = MaterialTheme.typography.titleMedium)
+                Text(stringResource(if (last) R.string.landing_get_started else R.string.landing_next), style = MaterialTheme.typography.titleMedium)
                 Spacer(Modifier.size(8.dp))
                 Icon(Icons.AutoMirrored.Rounded.ArrowForward, contentDescription = null)
             }
             TextButton(onClick = onGetStarted, modifier = Modifier.alpha(if (last) 0f else 1f), enabled = !last) {
-                Text("Skip")
+                Text(stringResource(R.string.focus_skip))
             }
             Spacer(Modifier.height(8.dp))
         }

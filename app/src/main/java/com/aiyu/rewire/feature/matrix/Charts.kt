@@ -1,6 +1,8 @@
 package com.aiyu.rewire.feature.matrix
 
 import androidx.compose.animation.core.Animatable
+import androidx.compose.ui.res.stringResource
+import com.aiyu.rewire.R
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -109,7 +111,8 @@ fun ActivityHeatmap(days: List<DailyMetrics>, modifier: Modifier = Modifier) {
     val full = MaterialTheme.colorScheme.primary
     val today = MaterialTheme.colorScheme.tertiary
     val active = days.count { it.focusMinutes > 0 }
-    Column(modifier.semantics { contentDescription = "Focused on $active of the last ${days.size} days" }, verticalArrangement = Arrangement.spacedBy(6.dp)) {
+    val heatmapDesc = stringResource(R.string.matrix_heatmap_desc, active, days.size)
+    Column(modifier.semantics { contentDescription = heatmapDesc }, verticalArrangement = Arrangement.spacedBy(6.dp)) {
         days.chunked(7).forEach { week ->
             Row(horizontalArrangement = Arrangement.spacedBy(6.dp)) {
                 week.forEach { d ->

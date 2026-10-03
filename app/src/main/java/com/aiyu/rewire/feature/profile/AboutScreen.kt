@@ -1,6 +1,8 @@
 package com.aiyu.rewire.feature.profile
 
 import android.content.Intent
+import androidx.compose.ui.res.stringResource
+import com.aiyu.rewire.R
 import android.net.Uri
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
@@ -55,49 +57,48 @@ fun AboutScreen(onBack: () -> Unit, onOpenAcknowledgements: () -> Unit) {
         modifier = Modifier.nestedScroll(scroll.nestedScrollConnection),
         topBar = {
             LargeFlexibleTopAppBar(
-                title = { Text("About") },
-                subtitle = { Text("Break habits. Build control.") },
-                navigationIcon = { IconButton(onClick = onBack) { Icon(Icons.AutoMirrored.Rounded.ArrowBack, contentDescription = "Back") } },
+                title = { Text(stringResource(R.string.about_title)) },
+                subtitle = { Text(stringResource(R.string.about_tagline)) },
+                navigationIcon = { IconButton(onClick = onBack) { Icon(Icons.AutoMirrored.Rounded.ArrowBack, contentDescription = stringResource(R.string.warning_back)) } },
                 scrollBehavior = scroll,
             )
         },
     ) { padding ->
         Column(Modifier.padding(padding).verticalScroll(rememberScrollState()).padding(horizontal = 16.dp).padding(bottom = 24.dp)) {
-            SectionTitle("App")
+            SectionTitle(stringResource(R.string.about_app))
             Group {
                 ListItem(
-                    headlineContent = { Text("Rewire") },
-                    supportingContent = { Text("Version ${BuildConfig.VERSION_NAME} (${BuildConfig.VERSION_CODE}) · ${if (BuildConfig.ACCESSIBILITY) "Full" else "Lite"} build") },
+                    headlineContent = { Text(stringResource(R.string.app_name)) },
+                    supportingContent = { Text(stringResource(R.string.about_version, BuildConfig.VERSION_NAME, BuildConfig.VERSION_CODE, stringResource(if (BuildConfig.ACCESSIBILITY) R.string.about_edition_full else R.string.about_edition_lite))) },
                     leadingContent = { Icon(Icons.Rounded.Info, contentDescription = null) },
                     colors = itemColors(),
                 )
                 LinkRow(
                     Icons.Rounded.Info,
-                    if (BuildConfig.ACCESSIBILITY) "Full build" else "Lite build",
-                    if (BuildConfig.ACCESSIBILITY) "Instant detection through Accessibility. If Play Protect blocks the install or a payment app objects, Rewire Lite has the same features without Accessibility."
-                    else "No Accessibility service, so Play Protect allows the install and payment apps keep working. Guard notices apps through Usage access within about a second.",
+                    stringResource(if (BuildConfig.ACCESSIBILITY) R.string.about_build_full else R.string.about_build_lite),
+                    stringResource(if (BuildConfig.ACCESSIBILITY) R.string.about_build_full_desc else R.string.about_build_lite_desc),
                 ) { open(INSTALL_GUIDE_URL) }
                 ListItem(
-                    headlineContent = { Text("Privacy") },
-                    supportingContent = { Text("All data stays on this device.") },
+                    headlineContent = { Text(stringResource(R.string.about_privacy)) },
+                    supportingContent = { Text(stringResource(R.string.about_privacy_desc)) },
                     colors = itemColors(),
                 )
             }
 
-            SectionTitle("Developer")
+            SectionTitle(stringResource(R.string.about_developer))
             Group {
                 Column(Modifier.fillMaxWidth().padding(16.dp), horizontalAlignment = Alignment.CenterHorizontally, verticalArrangement = Arrangement.spacedBy(4.dp)) {
                     UserAvatar("aiyu-ayaan", shapeIndex = 0, size = 96.dp)
                     Text("aiyu-ayaan", style = MaterialTheme.typography.titleLarge, modifier = Modifier.padding(top = 8.dp))
-                    Text("Built Rewire.", style = MaterialTheme.typography.bodyMedium, color = MaterialTheme.colorScheme.onSurfaceVariant, textAlign = TextAlign.Center)
+                    Text(stringResource(R.string.about_built), style = MaterialTheme.typography.bodyMedium, color = MaterialTheme.colorScheme.onSurfaceVariant, textAlign = TextAlign.Center)
                 }
                 LinkRow(Icons.Rounded.Code, "GitHub", GITHUB_URL) { open(GITHUB_URL) }
-                LinkRow(Icons.Rounded.Language, "Portfolio", "aiyu.co.in") { open(PORTFOLIO_URL) }
+                LinkRow(Icons.Rounded.Language, stringResource(R.string.about_portfolio), "aiyu.co.in") { open(PORTFOLIO_URL) }
             }
 
-            SectionTitle("Open source")
+            SectionTitle(stringResource(R.string.about_open_source))
             Group {
-                LinkRow(Icons.Rounded.Description, "Acknowledgements", "Libraries Rewire is built on", onClick = onOpenAcknowledgements, external = false)
+                LinkRow(Icons.Rounded.Description, stringResource(R.string.about_acknowledgements), stringResource(R.string.about_acknowledgements_desc), onClick = onOpenAcknowledgements, external = false)
             }
         }
     }

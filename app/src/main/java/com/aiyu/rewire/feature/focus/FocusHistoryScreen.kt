@@ -1,6 +1,9 @@
 package com.aiyu.rewire.feature.focus
 
 import androidx.compose.foundation.clickable
+import androidx.annotation.StringRes
+import androidx.compose.ui.res.stringResource
+import com.aiyu.rewire.R
 import androidx.compose.runtime.setValue
 import androidx.compose.runtime.getValue
 import androidx.compose.foundation.layout.Arrangement
@@ -64,7 +67,7 @@ class FocusHistoryViewModel @Inject constructor(private val sessions: FocusSessi
     fun setNote(id: String, note: String) = sessions.setNote(id, note)
 }
 
-private enum class HistoryFilter(val label: String) { ALL("All"), COMPLETED("Completed"), STOPPED("Stopped") }
+private enum class HistoryFilter(@StringRes val label: Int) { ALL(R.string.focus_filter_all), COMPLETED(R.string.focus_completed), STOPPED(R.string.focus_stopped) }
 
 /** Every finished focus session, newest first, with its outcome and optional achievement note. */
 @Composable
@@ -77,13 +80,13 @@ fun FocusHistoryScreen(onBack: () -> Unit) {
     val all = sessions.orEmpty()
     val completed = all.count { it.state.status == FocusSessionStatus.COMPLETED }
     InnerScreen(
-        title = "Focus history",
-        subtitle = if (all.isEmpty()) null else "$completed of ${all.size} completed · ${formatFocused(all.sumOf { it.focusedMillis })} focused",
+        title = stringResource(R.string.focus_history),
+        subtitle = if (all.isEmpty()) null else stringResource(R.string.focus_history_subtitle, completed, all.size, formatFocused(all.sumOf { it.focusedMillis })),
         onBack = onBack,
     ) {
         Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(8.dp)) {
             HistoryFilter.entries.forEach { f ->
-                FilterChip(selected = filter == f, onClick = { filter = f }, label = { Text(f.label) })
+                FilterChip(selected = filter == f, onClick = { filter = f }, label = { Text(stringResource(f.label)) })
             }
         }
         Spacer(Modifier.height(12.dp))
@@ -97,8 +100,8 @@ fun FocusHistoryScreen(onBack: () -> Unit) {
         when {
             sessions == null -> Unit // first DB read, a few ms
             shown.isEmpty() -> EmptyState(
-                title = if (all.isEmpty()) "No sessions yet" else "Nothing here",
-                body = if (all.isEmpty()) "Finished and stopped focus sessions land here, with what you achieved." else "No ${filter.label.lowercase()} sessions yet.",
+                title = stringResource(if (all.isEmpty()) R.string.focus_history_empty_title else R.string.focus_history_filtered_title),
+                body = if (all.isEmpty()) stringResource(R.string.focus_history_empty_body) else stringResource(R.string.focus_history_filtered_body, stringResource(filter.label).lowercase()),
                 modifier = Modifier.padding(top = 32.dp),
             )
             else -> Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
@@ -125,24 +128,24 @@ private fun SessionCard(s: FocusSession, onEditNote: () -> Unit) {
     Card(
         shape = MaterialTheme.shapes.large,
         colors = CardDefaults.cardColors(containerColor = c.surfaceContainerLow),
-        modifier = Modifier.fillMaxWidth().clickable(onClickLabel = "Edit achievement", role = Role.Button, onClick = onEditNote),
+        modifier = Modifier.fillMaxWidth().clickable(onClickLabel = stringResource(R.string.focus_edit_achievement), role = Role.Button, onClick = onEditNote),
     ) {
         Column(Modifier.padding(16.dp)) {
             Row(verticalAlignment = Alignment.CenterVertically) {
                 Surface(shape = CircleShape, color = if (done) c.primaryContainer else c.errorContainer) {
                     Row(Modifier.padding(horizontal = 10.dp, vertical = 4.dp), verticalAlignment = Alignment.CenterVertically) {
                         Icon(if (done) Icons.Rounded.CheckCircle else Icons.Rounded.StopCircle, contentDescription = null, modifier = Modifier.padding(end = 4.dp))
-                        Text(if (done) "Completed" else "Stopped", style = MaterialTheme.typography.labelLarge)
+                        Text(stringResource(if (done) R.string.focus_completed else R.string.focus_stopped), style = MaterialTheme.typography.labelLarge)
                     }
                 }
                 Spacer(Modifier.weight(1f))
                 Text(formatWhen(s.state.startedAt), style = MaterialTheme.typography.labelMedium, color = c.onSurfaceVariant)
             }
             Spacer(Modifier.height(10.dp))
-            Text(formatFocused(s.focusedMillis) + " focused", style = MaterialTheme.typography.titleLarge)
+            Text(stringResource(R.string.focus_focused_fmt, formatFocused(s.focusedMillis)), style = MaterialTheme.typography.titleLarge)
             Text(
-                "${if (done) cfg.cycles else s.state.cycle - 1} of ${cfg.cycles} blocks · ${formatFocused(cfg.focusMillis)} + ${formatFocused(cfg.breakMillis)} break" +
-                    (s.state.completedAt?.let { end -> s.state.startedAt?.let { " · ${formatFocused(end - it)} total" } } ?: ""),
+                stringResource(R.string.focus_session_detail, if (done) cfg.cycles else s.state.cycle - 1, cfg.cycles, formatFocused(cfg.focusMillis), formatFocused(cfg.breakMillis)) +
+                    (s.state.completedAt?.let { end -> s.state.startedAt?.let { stringResource(R.string.focus_session_total, formatFocused(end - it)) } } ?: ""),
                 style = MaterialTheme.typography.bodyMedium, color = c.onSurfaceVariant,
             )
             Spacer(Modifier.height(10.dp))
@@ -150,7 +153,7 @@ private fun SessionCard(s: FocusSession, onEditNote: () -> Unit) {
                 Icon(Icons.Rounded.EditNote, contentDescription = null, tint = c.onSurfaceVariant)
                 Spacer(Modifier.width(8.dp))
                 Text(
-                    s.note ?: "Add what you achieved",
+                    s.note ?: stringResource(R.string.focus_add_achievement),
                     style = MaterialTheme.typography.bodyMedium,
                     color = if (s.note == null) c.onSurfaceVariant else c.onSurface,
                 )
@@ -166,28 +169,28 @@ fun AchievementDialog(initial: String, completed: Boolean, onSave: (String) -> U
     AlertDialog(
         onDismissRequest = onDismiss,
         icon = { Icon(Icons.Rounded.EditNote, contentDescription = null) },
-        title = { Text(if (completed) "What did you achieve?" else "What did you get done?") },
+        title = { Text(stringResource(if (completed) R.string.focus_achieve_title else R.string.focus_achieve_title_stopped)) },
         text = {
             Column {
                 Text(
-                    "Optional. A line for future you, shown in Focus history.",
+                    stringResource(R.string.focus_achieve_hint),
                     style = MaterialTheme.typography.bodyMedium, color = MaterialTheme.colorScheme.onSurfaceVariant,
                 )
                 Spacer(Modifier.height(12.dp))
                 OutlinedTextField(
                     value = text,
                     onValueChange = { if (it.length <= MAX_NOTE) text = it },
-                    placeholder = { Text("Finished the chapter 3 draft") },
+                    placeholder = { Text(stringResource(R.string.focus_achieve_placeholder)) },
                     minLines = 2,
                     maxLines = 5,
                     keyboardOptions = KeyboardOptions(capitalization = KeyboardCapitalization.Sentences),
-                    supportingText = { Text("${text.length} / $MAX_NOTE") },
+                    supportingText = { Text(stringResource(R.string.focus_char_count, text.length, MAX_NOTE)) },
                     modifier = Modifier.fillMaxWidth(),
                 )
             }
         },
-        confirmButton = { TextButton(onClick = { onSave(text) }) { Text("Save") } },
-        dismissButton = { TextButton(onClick = onDismiss) { Text(if (initial.isEmpty()) "Skip" else "Cancel") } },
+        confirmButton = { TextButton(onClick = { onSave(text) }) { Text(stringResource(R.string.common_save)) } },
+        dismissButton = { TextButton(onClick = onDismiss) { Text(stringResource(if (initial.isEmpty()) R.string.focus_skip else R.string.common_cancel)) } },
     )
 }
 

@@ -1,6 +1,8 @@
 package com.aiyu.rewire.ui.components
 
 import androidx.compose.animation.AnimatedVisibilityScope
+import androidx.compose.ui.res.stringResource
+import com.aiyu.rewire.R
 import androidx.compose.animation.SharedTransitionScope
 import androidx.compose.animation.core.spring
 import androidx.compose.foundation.Image
@@ -65,9 +67,9 @@ data class LevelStyle(val container: Color, val onContainer: Color, val accent: 
 fun WarningLevel.style(): LevelStyle {
     val c = MaterialTheme.colorScheme
     return when (this) {
-        WarningLevel.MINOR -> LevelStyle(c.secondaryContainer, c.onSecondaryContainer, c.secondary, Icons.Rounded.Lightbulb, "Minor", "Gentle reminder when you cross a boundary, or on every open if none are set. Never blocks.")
-        WarningLevel.MAJOR -> LevelStyle(c.tertiaryContainer, c.onTertiaryContainer, c.tertiary, Icons.Rounded.PanTool, "Major", "Full-screen pause when you cross a boundary, or on every open if none are set. You can still continue.")
-        WarningLevel.MAX -> LevelStyle(c.errorContainer, c.onErrorContainer, c.error, Icons.Rounded.Block, "Max", "Hard block outside your boundaries. Emergency unlock only.")
+        WarningLevel.MINOR -> LevelStyle(c.secondaryContainer, c.onSecondaryContainer, c.secondary, Icons.Rounded.Lightbulb, stringResource(R.string.level_minor), stringResource(R.string.level_minor_summary))
+        WarningLevel.MAJOR -> LevelStyle(c.tertiaryContainer, c.onTertiaryContainer, c.tertiary, Icons.Rounded.PanTool, stringResource(R.string.level_major), stringResource(R.string.level_major_summary))
+        WarningLevel.MAX -> LevelStyle(c.errorContainer, c.onErrorContainer, c.error, Icons.Rounded.Block, stringResource(R.string.level_max), stringResource(R.string.level_max_summary))
     }
 }
 

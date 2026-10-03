@@ -1,6 +1,8 @@
 package com.aiyu.rewire.feature.profile
 
 import android.content.Intent
+import androidx.compose.ui.res.stringResource
+import com.aiyu.rewire.R
 import android.net.Uri
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
@@ -61,9 +63,9 @@ fun AcknowledgementsScreen(onBack: () -> Unit) {
         modifier = Modifier.nestedScroll(scroll.nestedScrollConnection),
         topBar = {
             LargeFlexibleTopAppBar(
-                title = { Text("Acknowledgements") },
-                subtitle = { Text("Open-source libraries behind Rewire") },
-                navigationIcon = { IconButton(onClick = onBack) { Icon(Icons.AutoMirrored.Rounded.ArrowBack, contentDescription = "Back") } },
+                title = { Text(stringResource(R.string.about_acknowledgements)) },
+                subtitle = { Text(stringResource(R.string.about_acknowledgements_subtitle)) },
+                navigationIcon = { IconButton(onClick = onBack) { Icon(Icons.AutoMirrored.Rounded.ArrowBack, contentDescription = stringResource(R.string.warning_back)) } },
                 scrollBehavior = scroll,
             )
         },

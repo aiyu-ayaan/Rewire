@@ -1,6 +1,7 @@
 package com.aiyu.rewire.core.permissions
 
 import android.app.AppOpsManager
+import androidx.annotation.StringRes
 import android.content.ComponentName
 import android.content.Context
 import android.content.Intent
@@ -124,8 +125,8 @@ object SystemPermissions {
 
 private data class PermissionRow(
     val icon: ImageVector,
-    val title: String,
-    val why: String,
+    @StringRes val title: Int,
+    @StringRes val why: Int,
     val granted: Boolean,
     val onAllow: () -> Unit,
 )
@@ -145,35 +146,34 @@ fun PermissionsPanel(containerColor: Color = MaterialTheme.colorScheme.surfaceCo
     val rows = remember(refresh, notifications.status) {
         listOfNotNull(
             PermissionRow(
-                Icons.Rounded.Notifications, "Notifications",
-                "Focus timer, break alerts and important Guard status.",
+                Icons.Rounded.Notifications, R.string.profile_notifications,
+                R.string.perm_notifications_why,
                 notifications.status == PermissionStatus.GRANTED,
                 if (notifications.status == PermissionStatus.ASKABLE) notifications.request else notifications.openSettings,
             ),
             if (BuildConfig.ACCESSIBILITY) PermissionRow(
-                Icons.Rounded.Accessibility, "Accessibility",
-                "Notices when a guarded app opens so Rewire can pause or block it. Reads nothing on screen.",
+                Icons.Rounded.Accessibility, R.string.guard_accessibility,
+                R.string.perm_accessibility_why,
                 SystemPermissions.accessibilityEnabled(context),
             ) { disclosure = true } else null,
             PermissionRow(
-                Icons.Rounded.QueryStats, "Usage access",
-                if (BuildConfig.ACCESSIBILITY) "Counts time in guarded apps for limits and Matrix charts. Stays on this device."
-                else "Notices when a guarded app opens and counts its time for limits and Matrix. Stays on this device.",
+                Icons.Rounded.QueryStats, R.string.perm_usage_access,
+                if (BuildConfig.ACCESSIBILITY) R.string.perm_usage_why_full else R.string.perm_usage_why_lite,
                 SystemPermissions.usageAccessGranted(context),
             ) { SystemPermissions.open(context, SystemPermissions.usageAccessSettings(context)) },
             PermissionRow(
-                Icons.Rounded.Layers, "Display over apps",
-                "Allows Rewire to show the warning and block screen over guarded apps when opened.",
+                Icons.Rounded.Layers, R.string.perm_overlay,
+                R.string.perm_overlay_why,
                 SystemPermissions.systemAlertWindowGranted(context),
             ) { SystemPermissions.open(context, SystemPermissions.systemAlertWindowSettings(context)) },
             PermissionRow(
-                Icons.Rounded.DoNotDisturbOn, "Do Not Disturb access",
-                "Silences all messages and alerts while allowing incoming calls from any app during Focus sessions.",
+                Icons.Rounded.DoNotDisturbOn, R.string.perm_dnd,
+                R.string.perm_dnd_why,
                 SystemPermissions.dndAccessGranted(context),
             ) { SystemPermissions.open(context, SystemPermissions.dndSettings()) },
             PermissionRow(
-                Icons.Rounded.BatteryChargingFull, "Unrestricted battery",
-                "Stops the system from putting protection to sleep. Find Rewire and choose Unrestricted / Don't optimize.",
+                Icons.Rounded.BatteryChargingFull, R.string.perm_battery,
+                R.string.perm_battery_why,
                 SystemPermissions.batteryUnrestricted(context),
             ) { SystemPermissions.open(context, SystemPermissions.batterySettings()) },
         )
@@ -182,8 +182,8 @@ fun PermissionsPanel(containerColor: Color = MaterialTheme.colorScheme.surfaceCo
     Column {
         rows.forEach { row ->
             ListItem(
-                headlineContent = { Text(row.title) },
-                supportingContent = { Text(row.why) },
+                headlineContent = { Text(stringResource(row.title)) },
+                supportingContent = { Text(stringResource(row.why)) },
                 leadingContent = { Icon(row.icon, contentDescription = null) },
                 trailingContent = {
                     AnimatedContent(
@@ -195,10 +195,10 @@ fun PermissionsPanel(containerColor: Color = MaterialTheme.colorScheme.surfaceCo
                             Row(verticalAlignment = Alignment.CenterVertically) {
                                 Icon(Icons.Rounded.CheckCircle, contentDescription = null, tint = MaterialTheme.colorScheme.primary, modifier = Modifier.size(20.dp))
                                 Spacer(Modifier.width(4.dp))
-                                Text("Allowed", style = MaterialTheme.typography.labelLarge, color = MaterialTheme.colorScheme.primary)
+                                Text(stringResource(R.string.common_allowed), style = MaterialTheme.typography.labelLarge, color = MaterialTheme.colorScheme.primary)
                             }
                         } else {
-                            FilledTonalButton(onClick = row.onAllow) { Text("Allow") }
+                            FilledTonalButton(onClick = row.onAllow) { Text(stringResource(R.string.common_allow)) }
                         }
                     }
                 },
@@ -219,11 +219,11 @@ fun PermissionsPanel(containerColor: Color = MaterialTheme.colorScheme.surfaceCo
                     Row(verticalAlignment = Alignment.CenterVertically) {
                         Icon(Icons.Rounded.Info, contentDescription = null, tint = MaterialTheme.colorScheme.primary, modifier = Modifier.size(20.dp))
                         Spacer(Modifier.width(8.dp))
-                        Text("Android 13+ Restricted Settings", style = MaterialTheme.typography.titleSmall)
+                        Text(stringResource(R.string.perm_restricted_title), style = MaterialTheme.typography.titleSmall)
                     }
                     Spacer(Modifier.height(6.dp))
                     Text(
-                        "If Accessibility is greyed out with \"Restricted setting\":\n1. Tap \"Open App Info\" below\n2. Tap the 3 dots (⋮) in the top-right corner\n3. Tap \"Allow restricted settings\"\n4. Return here to turn on Accessibility.",
+                        stringResource(R.string.perm_restricted_steps),
                         style = MaterialTheme.typography.bodySmall,
                         color = MaterialTheme.colorScheme.onSurfaceVariant,
                     )
@@ -232,7 +232,7 @@ fun PermissionsPanel(containerColor: Color = MaterialTheme.colorScheme.surfaceCo
                         onClick = { SystemPermissions.open(context, SystemPermissions.appDetailsSettings(context)) },
                         modifier = Modifier.align(Alignment.End),
                     ) {
-                        Text("Open App Info")
+                        Text(stringResource(R.string.guard_open_app_info))
                         Spacer(Modifier.width(4.dp))
                         Icon(Icons.AutoMirrored.Rounded.OpenInNew, contentDescription = null, modifier = Modifier.size(16.dp))
                     }
@@ -247,19 +247,19 @@ fun PermissionsPanel(containerColor: Color = MaterialTheme.colorScheme.surfaceCo
         AlertDialog(
             onDismissRequest = { disclosure = false },
             icon = { Icon(Icons.Rounded.Accessibility, contentDescription = null) },
-            title = { Text("Turn on Rewire in Accessibility") },
+            title = { Text(stringResource(R.string.perm_disclosure_title)) },
             text = {
                 Column {
                     Text(stringResource(R.string.accessibility_service_description))
                     Spacer(Modifier.height(12.dp))
                     Text(
-                        "In the next screen:\nInstalled apps → Rewire → turn on.",
+                        stringResource(R.string.perm_disclosure_steps),
                         style = MaterialTheme.typography.bodyMedium,
                     )
                     if (isAndroid13Plus) {
                         Spacer(Modifier.height(12.dp))
                         Text(
-                            "Note: If Android says \"Restricted setting\", tap \"Open App Info\", tap the 3 dots (⋮) at top-right, and choose \"Allow restricted settings\".",
+                            stringResource(R.string.perm_disclosure_note),
                             style = MaterialTheme.typography.bodySmall,
                             color = MaterialTheme.colorScheme.primary,
                         )
@@ -267,16 +267,16 @@ fun PermissionsPanel(containerColor: Color = MaterialTheme.colorScheme.surfaceCo
                 }
             },
             confirmButton = {
-                TextButton(onClick = { disclosure = false; SystemPermissions.open(context, SystemPermissions.accessibilitySettings()) }) { Text("Open settings") }
+                TextButton(onClick = { disclosure = false; SystemPermissions.open(context, SystemPermissions.accessibilitySettings()) }) { Text(stringResource(R.string.focus_open_settings)) }
             },
             dismissButton = {
                 Row {
                     if (isAndroid13Plus) {
                         TextButton(onClick = { disclosure = false; SystemPermissions.open(context, SystemPermissions.appDetailsSettings(context)) }) {
-                            Text("Open App Info")
+                            Text(stringResource(R.string.guard_open_app_info))
                         }
                     }
-                    TextButton(onClick = { disclosure = false }) { Text("Not now") }
+                    TextButton(onClick = { disclosure = false }) { Text(stringResource(R.string.focus_not_now)) }
                 }
             },
         )

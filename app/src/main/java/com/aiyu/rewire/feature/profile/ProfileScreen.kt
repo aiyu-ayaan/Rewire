@@ -1,6 +1,8 @@
 package com.aiyu.rewire.feature.profile
 
 import android.os.Build
+import androidx.compose.ui.res.stringResource
+import com.aiyu.rewire.R
 import androidx.compose.runtime.getValue
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
@@ -66,13 +68,13 @@ fun ProfileScreen(onOpenNotificationSettings: () -> Unit, onOpenWarningLibrary: 
     Column(Modifier.fillMaxSize().statusBarsPadding().verticalScroll(rememberScrollState()).padding(horizontal = 16.dp).padding(bottom = 24.dp)) {
         UserCard(s.profile, onEditProfile)
 
-        SectionTitle("Appearance")
+        SectionTitle(stringResource(R.string.profile_appearance))
         Group {
             Column(Modifier.padding(16.dp)) {
                 Row(verticalAlignment = Alignment.CenterVertically) {
                     Icon(Icons.Rounded.Palette, contentDescription = null)
                     Spacer(Modifier.width(16.dp))
-                    Text("Theme", style = MaterialTheme.typography.titleMedium)
+                    Text(stringResource(R.string.profile_theme), style = MaterialTheme.typography.titleMedium)
                 }
                 SingleChoiceSegmentedButtonRow(Modifier.fillMaxWidth().padding(top = 12.dp)) {
                     ThemeMode.entries.forEachIndexed { i, mode ->
@@ -80,38 +82,38 @@ fun ProfileScreen(onOpenNotificationSettings: () -> Unit, onOpenWarningLibrary: 
                             selected = s.themeMode == mode,
                             onClick = { vm.setThemeMode(mode) },
                             shape = SegmentedButtonDefaults.itemShape(i, ThemeMode.entries.size),
-                        ) { Text(mode.name.lowercase().replaceFirstChar { it.uppercase() }) }
+                        ) { Text(stringResource(when (mode) { ThemeMode.SYSTEM -> R.string.profile_theme_system; ThemeMode.LIGHT -> R.string.profile_theme_light; ThemeMode.DARK -> R.string.profile_theme_dark })) }
                     }
                 }
             }
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
                 ListItem(
-                    headlineContent = { Text("Dynamic color") },
-                    supportingContent = { Text("Match your wallpaper instead of Rewire teal.") },
+                    headlineContent = { Text(stringResource(R.string.profile_dynamic_color)) },
+                    supportingContent = { Text(stringResource(R.string.profile_dynamic_color_desc)) },
                     trailingContent = { Switch(s.dynamicColor, vm::setDynamicColor) },
                     colors = groupItemColors(),
                 )
             }
         }
 
-        SectionTitle("Rewire")
+        SectionTitle(stringResource(R.string.app_name))
         Group {
-            NavRow(Icons.Rounded.Notifications, "Notifications", when (permission.status) {
-                PermissionStatus.GRANTED -> "On · ${s.notifications.count { it.value }} of ${s.notifications.size} categories"
-                else -> "Off — tap to fix"
+            NavRow(Icons.Rounded.Notifications, stringResource(R.string.profile_notifications), when (permission.status) {
+                PermissionStatus.GRANTED -> stringResource(R.string.profile_notifications_on, s.notifications.count { it.value }, s.notifications.size)
+                else -> stringResource(R.string.profile_notifications_off)
             }, onOpenNotificationSettings)
-            NavRow(Icons.Rounded.FormatQuote, "Warning library", "${warnings.count { it.enabled }} active · ${warnings.count { it.custom }} custom", onOpenWarningLibrary)
+            NavRow(Icons.Rounded.FormatQuote, stringResource(R.string.profile_warning_library), stringResource(R.string.profile_warning_library_summary, warnings.count { it.enabled }, warnings.count { it.custom }), onOpenWarningLibrary)
             if (BuildConfig.UPDATES) UpdatesRow(s, onOpenUpdates) // gone entirely in the play flavor
-            NavRow(Icons.Rounded.Info, "About Rewire", "Version ${BuildConfig.VERSION_NAME} · developer · open-source licenses", onOpenAbout)
+            NavRow(Icons.Rounded.Info, stringResource(R.string.profile_about), stringResource(R.string.profile_about_summary, BuildConfig.VERSION_NAME), onOpenAbout)
         }
 
         DataSection()
 
-        SectionTitle("Permissions")
+        SectionTitle(stringResource(R.string.profile_permissions))
         Group { PermissionsPanel() }
 
         Text(
-            "Rewire ${BuildConfig.VERSION_NAME} · All data stays on this device.",
+            stringResource(R.string.profile_footer, BuildConfig.VERSION_NAME),
             style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant,
             modifier = Modifier.padding(top = 24.dp, start = 4.dp),
         )
@@ -156,12 +158,12 @@ private fun UserCard(p: UserProfile, onEdit: () -> Unit) {
                 Spacer(Modifier.width(16.dp))
                 Column(Modifier.weight(1f)) {
                     Text(p.displayName, style = MaterialTheme.typography.headlineMedium)
-                    Text(p.goal?.label ?: "Set a goal", style = MaterialTheme.typography.titleSmall, color = MaterialTheme.colorScheme.onPrimaryContainer.copy(alpha = 0.8f))
+                    Text(stringResource(p.goal?.label ?: R.string.profile_set_goal), style = MaterialTheme.typography.titleSmall, color = MaterialTheme.colorScheme.onPrimaryContainer.copy(alpha = 0.8f))
                 }
-                Icon(Icons.Rounded.Edit, contentDescription = "Edit profile")
+                Icon(Icons.Rounded.Edit, contentDescription = stringResource(R.string.profile_edit))
             }
             if (p.reason.isNotBlank()) {
-                Text("\u201C${p.reason}\u201D", style = MaterialTheme.typography.titleMedium, modifier = Modifier.padding(top = 16.dp))
+                Text(stringResource(R.string.profile_reason_quote, p.reason), style = MaterialTheme.typography.titleMedium, modifier = Modifier.padding(top = 16.dp))
             }
         }
     }
@@ -172,11 +174,11 @@ private fun UpdatesRow(s: Settings, onOpenUpdates: () -> Unit) {
     val updates = hiltViewModel<UpdateViewModel>()
     val updateState by updates.state.collectAsStateWithLifecycle()
     NavRow(
-        Icons.Rounded.SystemUpdate, "Updates",
+        Icons.Rounded.SystemUpdate, stringResource(R.string.profile_updates),
         when {
-            updateState is UpdateState.Available || updateState is UpdateState.Ready -> "A newer version is available"
-            !s.updatesEnabled -> "Automatic checks off · ${BuildConfig.VERSION_NAME}"
-            else -> "${BuildConfig.VERSION_NAME} · ${(s.updateChannel ?: updates.channel).label} channel"
+            updateState is UpdateState.Available || updateState is UpdateState.Ready -> stringResource(R.string.profile_update_available)
+            !s.updatesEnabled -> stringResource(R.string.profile_update_checks_off, BuildConfig.VERSION_NAME)
+            else -> stringResource(R.string.profile_update_channel, BuildConfig.VERSION_NAME, (s.updateChannel ?: updates.channel).label)
         },
         onOpenUpdates,
     )

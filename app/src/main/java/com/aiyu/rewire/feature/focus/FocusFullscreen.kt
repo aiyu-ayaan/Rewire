@@ -1,6 +1,8 @@
 package com.aiyu.rewire.feature.focus
 
 import android.content.pm.ActivityInfo
+import androidx.compose.ui.res.stringResource
+import com.aiyu.rewire.R
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.BackHandler
 import androidx.activity.compose.LocalActivity
@@ -150,11 +152,11 @@ fun FocusFullscreenScreen(onExit: () -> Unit) {
                 ) {
                     Column(horizontalAlignment = Alignment.CenterHorizontally) {
                         AnimatedContent(
-                            targetState = when { paused -> "Paused"; onBreak -> "Break"; else -> "Deep work" },
+                            targetState = when { paused -> R.string.focus_paused; onBreak -> R.string.matrix_stat_break; else -> R.string.notif_focus_title },
                             transitionSpec = { (fadeIn() + scaleIn(initialScale = 0.8f)).togetherWith(fadeOut() + scaleOut(targetScale = 1.1f)) },
                             label = "phase",
                         ) { label ->
-                            Text(label.uppercase(), style = MaterialTheme.typography.labelLarge.copy(letterSpacing = 4.sp), color = accent.copy(alpha = 0.8f))
+                            Text(stringResource(label).uppercase(), style = MaterialTheme.typography.labelLarge.copy(letterSpacing = 4.sp), color = accent.copy(alpha = 0.8f))
                         }
                         Spacer(Modifier.height(8.dp))
                         RollingTime(
@@ -171,7 +173,7 @@ fun FocusFullscreenScreen(onExit: () -> Unit) {
                             modifier = Modifier.width(timerWidth * 0.55f).padding(top = 12.dp),
                         )
                         Text(
-                            "Session ${state.cycle} / ${state.config.cycles}",
+                            stringResource(R.string.focus_session_of, state.cycle, state.config.cycles),
                             style = MaterialTheme.typography.titleSmall,
                             color = c.onSurfaceVariant.copy(alpha = 0.6f),
                             modifier = Modifier.padding(top = 16.dp),
@@ -181,18 +183,18 @@ fun FocusFullscreenScreen(onExit: () -> Unit) {
 
                 val buttons: @Composable () -> Unit = {
                     FilledTonalIconButton(onClick = onExit, shapes = IconButtonDefaults.shapes(), modifier = Modifier.size(64.dp)) {
-                        Icon(Icons.Rounded.FullscreenExit, contentDescription = "Exit full screen")
+                        Icon(Icons.Rounded.FullscreenExit, contentDescription = stringResource(R.string.focus_exit_fullscreen))
                     }
                     FilledIconButton(
                         onClick = { if (paused) vm.resume() else vm.pause(); interaction++ },
                         shapes = IconButtonDefaults.shapes(),
                         modifier = Modifier.size(84.dp),
                     ) {
-                        Icon(if (paused) Icons.Rounded.PlayArrow else Icons.Rounded.Pause, contentDescription = if (paused) "Resume" else "Pause", modifier = Modifier.size(36.dp))
+                        Icon(if (paused) Icons.Rounded.PlayArrow else Icons.Rounded.Pause, contentDescription = stringResource(if (paused) R.string.focus_resume else R.string.focus_pause), modifier = Modifier.size(36.dp))
                     }
                     Box(Modifier.size(64.dp)) {
                         if (onBreak) FilledTonalIconButton(onClick = { vm.skipBreak(); interaction++ }, shapes = IconButtonDefaults.shapes(), modifier = Modifier.size(64.dp)) {
-                            Icon(Icons.Rounded.SkipNext, contentDescription = "Skip break")
+                            Icon(Icons.Rounded.SkipNext, contentDescription = stringResource(R.string.focus_skip_break))
                         }
                     }
                 }
@@ -227,12 +229,13 @@ fun RollingTime(
 ) {
     val text = RewireNotifier.formatRemaining(millis)
     val reduced = rememberReducedMotion()
+    val remainingDesc = stringResource(R.string.focus_remaining, text)
     val bounce = spring<IntOffset>(dampingRatio = Spring.DampingRatioMediumBouncy, stiffness = Spring.StiffnessMediumLow)
     val colonAlpha by animateFloatAsState(
         if (blinkColon && (millis / 1000) % 2 == 0L) 0.35f else 1f, tween(300), label = "colon",
     )
     Row(
-        modifier.semantics { contentDescription = "$text remaining"; liveRegion = LiveRegionMode.Polite },
+        modifier.semantics { contentDescription = remainingDesc; liveRegion = LiveRegionMode.Polite },
         verticalAlignment = Alignment.CenterVertically,
     ) {
         text.forEachIndexed { i, ch ->

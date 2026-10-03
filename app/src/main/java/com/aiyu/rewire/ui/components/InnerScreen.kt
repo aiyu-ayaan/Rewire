@@ -1,6 +1,8 @@
 package com.aiyu.rewire.ui.components
 
 import androidx.compose.foundation.layout.ColumnScope
+import androidx.compose.ui.res.stringResource
+import com.aiyu.rewire.R
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.consumeWindowInsets
 import androidx.compose.foundation.layout.fillMaxSize
@@ -41,7 +43,7 @@ fun InnerScreen(
                 title = { Text(title) },
                 subtitle = subtitle?.let { { Text(it) } },
                 navigationIcon = {
-                    if (onBack != null) IconButton(onClick = onBack) { Icon(Icons.AutoMirrored.Rounded.ArrowBack, contentDescription = "Back") }
+                    if (onBack != null) IconButton(onClick = onBack) { Icon(Icons.AutoMirrored.Rounded.ArrowBack, contentDescription = stringResource(R.string.warning_back)) }
                 },
                 scrollBehavior = scroll,
             )

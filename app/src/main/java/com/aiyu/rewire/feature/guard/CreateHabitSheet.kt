@@ -1,6 +1,8 @@
 package com.aiyu.rewire.feature.guard
 
 import androidx.compose.animation.AnimatedContent
+import androidx.compose.ui.res.stringResource
+import com.aiyu.rewire.R
 import androidx.compose.runtime.setValue
 import androidx.compose.runtime.getValue
 import androidx.compose.animation.fadeIn
@@ -85,21 +87,21 @@ fun CreateHabitSheet(onDismiss: () -> Unit, onCreate: (String, WarningLevel, Lis
             label = "step",
         ) { s ->
             Column(Modifier.padding(horizontal = 24.dp).padding(bottom = 24.dp).imePadding()) {
-                Text("Step ${s + 1} of 2", style = MaterialTheme.typography.labelLarge, color = MaterialTheme.colorScheme.primary)
+                Text(stringResource(R.string.guard_sheet_step, s + 1, 2), style = MaterialTheme.typography.labelLarge, color = MaterialTheme.colorScheme.primary)
                 if (s == 0) {
-                    Text("New habit", style = MaterialTheme.typography.headlineSmall, modifier = Modifier.padding(top = 4.dp, bottom = 16.dp))
+                    Text(stringResource(R.string.guard_new_habit), style = MaterialTheme.typography.headlineSmall, modifier = Modifier.padding(top = 4.dp, bottom = 16.dp))
                     OutlinedTextField(
                         value = name,
                         onValueChange = { name = it.take(40) },
-                        label = { Text("Habit name") },
-                        placeholder = { Text("e.g. Doom scrolling") },
-                        supportingText = { Text("Name the pattern, not the app.") },
+                        label = { Text(stringResource(R.string.guard_habit_name)) },
+                        placeholder = { Text(stringResource(R.string.guard_habit_name_hint)) },
+                        supportingText = { Text(stringResource(R.string.guard_habit_name_support)) },
                         singleLine = true,
                         keyboardOptions = KeyboardOptions(capitalization = KeyboardCapitalization.Sentences, imeAction = ImeAction.Next),
                         modifier = Modifier.fillMaxWidth(),
                     )
                     Spacer(Modifier.height(16.dp))
-                    Text("Friction level", style = MaterialTheme.typography.titleSmall)
+                    Text(stringResource(R.string.guard_friction_level), style = MaterialTheme.typography.titleSmall)
                     Spacer(Modifier.height(8.dp))
                     LevelSelector(level, onSelect = { level = it })
                     Text(
@@ -109,16 +111,16 @@ fun CreateHabitSheet(onDismiss: () -> Unit, onCreate: (String, WarningLevel, Lis
                         modifier = Modifier.padding(top = 8.dp),
                     )
                     Spacer(Modifier.height(24.dp))
-                    Button(onClick = { step = 1 }, enabled = name.isNotBlank(), modifier = Modifier.fillMaxWidth()) { Text("Choose apps") }
+                    Button(onClick = { step = 1 }, enabled = name.isNotBlank(), modifier = Modifier.fillMaxWidth()) { Text(stringResource(R.string.guard_choose_apps)) }
                 } else {
-                    Text("Apps for “${name.trim()}”", style = MaterialTheme.typography.headlineSmall, modifier = Modifier.padding(top = 4.dp, bottom = 12.dp))
+                    Text(stringResource(R.string.guard_apps_for, name.trim()), style = MaterialTheme.typography.headlineSmall, modifier = Modifier.padding(top = 4.dp, bottom = 12.dp))
                     AppPicker(selected = selected, modifier = Modifier.heightIn(max = 420.dp))
                     Spacer(Modifier.height(16.dp))
                     Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-                        TextButton(onClick = { step = 0 }) { Text("Back") }
+                        TextButton(onClick = { step = 0 }) { Text(stringResource(R.string.warning_back)) }
                         Spacer(Modifier.weight(1f))
                         Button(onClick = { onCreate(name, level, selected.toList()) }) {
-                            Text(if (selected.isEmpty()) "Create without apps" else "Create · ${selected.size}")
+                            Text(if (selected.isEmpty()) stringResource(R.string.guard_create_no_apps) else stringResource(R.string.guard_create_count, selected.size))
                         }
                     }
                 }
@@ -166,7 +168,7 @@ fun AppPicker(selected: MutableList<String>, modifier: Modifier = Modifier) {
             value = query,
             onValueChange = { query = it },
             leadingIcon = { Icon(Icons.Rounded.Search, contentDescription = null) },
-            placeholder = { Text("Search apps") },
+            placeholder = { Text(stringResource(R.string.guard_search_apps)) },
             singleLine = true,
             shape = MaterialTheme.shapes.extraLarge,
             modifier = Modifier.fillMaxWidth(),
