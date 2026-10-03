@@ -47,6 +47,7 @@ import androidx.compose.ui.unit.dp
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.viewModelScope
+import com.aiyu.rewire.data.ScreenTimeStore
 import com.aiyu.rewire.domain.analytics.DailyMetrics
 import com.aiyu.rewire.domain.analytics.GuardBreakdown
 import com.aiyu.rewire.domain.analytics.HabitEvent
@@ -81,6 +82,7 @@ import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.flow.flowOn
 import kotlinx.coroutines.flow.stateIn
+import kotlinx.coroutines.launch
 import java.time.LocalDate
 import java.time.YearMonth
 import java.time.ZoneId
@@ -146,6 +148,7 @@ class MatrixViewModel @Inject constructor(
     events: EventRepository,
     habits: HabitRepository,
     goals: GoalsRepository,
+    private val screenTimeStore: ScreenTimeStore,
     private val usage: UsageTracker,
     private val installedApps: InstalledAppsSource,
     @ApplicationContext private val context: Context,
@@ -153,22 +156,26 @@ class MatrixViewModel @Inject constructor(
     private val period = MutableStateFlow(MatrixPeriod.DAILY)
     fun selectPeriod(p: MatrixPeriod) { period.value = p }
 
-    val ui: StateFlow<MatrixUi> = combine(events.events, habits.habits, period, goals.goals, ::build)
+    init {
+        viewModelScope.launch(Dispatchers.Default) { screenTimeStore.sync(usage) }
+    }
+
+    val ui: StateFlow<MatrixUi> = combine(events.events, habits.habits, period, goals.goals, screenTimeStore.history, ::build)
         .flowOn(Dispatchers.Default)
-        .stateIn(viewModelScope, SharingStarted.WhileSubscribed(5_000), build(emptyList(), emptyList(), MatrixPeriod.DAILY, Goals()))
+        .stateIn(viewModelScope, SharingStarted.WhileSubscribed(5_000), build(emptyList(), emptyList(), MatrixPeriod.DAILY, Goals(), emptyMap()))
 
     private fun s(id: Int) = context.getString(id)
 
-    private fun build(events: List<HabitEvent>, habits: List<HabitProfile>, period: MatrixPeriod, goals: Goals): MatrixUi {
+    private fun build(events: List<HabitEvent>, habits: List<HabitProfile>, period: MatrixPeriod, goals: Goals, history: Map<LocalDate, Int>): MatrixUi {
         val zone = ZoneId.systemDefault()
         val today = LocalDate.now()
         val since = today.minusDays(6).atStartOfDay(zone).toInstant().toEpochMilli()
         val screenToday = usage.totalScreenTimeToday()
-        val weekRaw = MetricsCalculator.lastDays(events, today, 7, zone)
-        val week = weekRaw.mapIndexed { idx, m -> if (idx == weekRaw.lastIndex) m.copy(screenTimeMinutes = screenToday) else m }
+        // Stored past days + live today; today's live reading wins over the (possibly stale) snapshot.
+        val screen = history + (today to screenToday)
+        val week = MetricsCalculator.lastDays(events, today, 7, zone).map { it.copy(screenTimeMinutes = screen[it.date] ?: 0) }
         val names = habits.associate { it.id to it.habit.name }
         val seed = today.toEpochDay()
-        val screen = mapOf(today to screenToday)
         val dayLabel = { d: LocalDate -> dayName(d, TextStyle.SHORT) }
         val dateLabel = { d: LocalDate -> d.dayOfMonth.toString() }
         val protectedPkgs = habits.flatMap { h -> h.apps.map { it.packageName } }.toSet()

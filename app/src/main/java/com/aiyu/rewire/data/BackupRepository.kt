@@ -21,6 +21,7 @@ class BackupRepository(
     private val events: EventRepository,
     private val presets: FocusPresetRepository,
     private val goals: GoalsRepository,
+    private val screenTime: ScreenTimeStore,
     private val clock: () -> Long = System::currentTimeMillis,
 ) {
     suspend fun export(): BackupSnapshot {
@@ -66,6 +67,7 @@ class BackupRepository(
             db.events().deleteAll()
             db.focusSessions().deleteFinished()
         }
+        screenTime.clear()
         events.reload()
     }
 

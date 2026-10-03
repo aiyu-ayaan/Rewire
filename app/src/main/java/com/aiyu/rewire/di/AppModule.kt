@@ -101,11 +101,14 @@ object AppModule {
     fun focusPresets(@ApplicationContext context: Context): FocusPresetRepository = DataStoreFocusPresetRepository(context)
 
     @Provides @Singleton
+    fun screenTimeStore(@ApplicationContext context: Context) = com.aiyu.rewire.data.ScreenTimeStore(context)
+
+    @Provides @Singleton
     fun goalsRepository(@ApplicationContext context: Context): GoalsRepository = DataStoreGoalsRepository(context)
 
     @Provides @Singleton
-    fun backup(db: RewireDatabase, habits: HabitRepository, warnings: WarningRepository, events: EventRepository, presets: FocusPresetRepository, goals: GoalsRepository) =
-        BackupRepository(db, habits, warnings, events, presets, goals)
+    fun backup(db: RewireDatabase, habits: HabitRepository, warnings: WarningRepository, events: EventRepository, presets: FocusPresetRepository, goals: GoalsRepository, screenTime: com.aiyu.rewire.data.ScreenTimeStore) =
+        BackupRepository(db, habits, warnings, events, presets, goals, screenTime)
 
     // ---- Platform --------------------------------------------------------------------------------
 

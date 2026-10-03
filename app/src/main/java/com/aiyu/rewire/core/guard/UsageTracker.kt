@@ -65,6 +65,21 @@ open class UsageTracker(private val context: Context? = null) {
         if (!SystemPermissions.usageAccessGranted(ctx)) return null
         val usm = ctx.getSystemService(UsageStatsManager::class.java) ?: return null
         val start = since ?: LocalDate.now().atStartOfDay(ZoneId.systemDefault()).toInstant().toEpochMilli()
+        return queryMillis(start, now)
+    }
+
+    /** Total screen minutes on [date] (to [now] for today); null without Usage access. The system keeps only about a week of events. */
+    open fun screenTimeOn(date: LocalDate, now: Long = System.currentTimeMillis()): Int? {
+        val zone = ZoneId.systemDefault()
+        val start = date.atStartOfDay(zone).toInstant().toEpochMilli()
+        val end = minOf(now, date.plusDays(1).atStartOfDay(zone).toInstant().toEpochMilli())
+        if (end <= start) return null
+        return queryMillis(start, end)?.let { (it.values.sum() / 60_000L).toInt() }
+    }
+
+    private fun queryMillis(start: Long, now: Long): Map<String, Long>? {
+        val ctx = context ?: return null
+        val usm = ctx.getSystemService(UsageStatsManager::class.java) ?: return null
         return runCatching {
             val events = usm.queryEvents(start, now)
             val list = ArrayList<Event>()

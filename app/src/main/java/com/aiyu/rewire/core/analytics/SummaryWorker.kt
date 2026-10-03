@@ -7,7 +7,9 @@ import androidx.work.PeriodicWorkRequestBuilder
 import androidx.work.WorkManager
 import androidx.work.WorkerParameters
 import com.aiyu.rewire.core.notifications.RewireNotifier
+import com.aiyu.rewire.core.guard.UsageTracker
 import com.aiyu.rewire.data.EventRepository
+import com.aiyu.rewire.data.ScreenTimeStore
 import com.aiyu.rewire.domain.analytics.DailySummary
 import dagger.hilt.EntryPoint
 import dagger.hilt.InstallIn
@@ -30,11 +32,14 @@ class SummaryWorker(context: Context, params: WorkerParameters) : CoroutineWorke
     interface Deps {
         fun events(): EventRepository
         fun notifier(): RewireNotifier
+        fun screenTime(): ScreenTimeStore
+        fun usage(): UsageTracker
     }
 
     override suspend fun doWork(): Result {
         val deps = EntryPointAccessors.fromApplication(applicationContext, Deps::class.java)
         val zone = ZoneId.systemDefault()
+        deps.screenTime().sync(deps.usage()) // keeps yesterday's screen time before UsageStats forgets it
         DailySummary.forYesterday(deps.events().events.value, LocalDate.now(zone), zone)?.let { deps.notifier().dailySummary(it) }
         return Result.success()
     }
