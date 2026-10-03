@@ -18,6 +18,7 @@ object AppLocale {
     val tags = listOf(
         "en", "hi", "es", "pt-BR", "id", "ar", "fr", "ru", "de",
         "tr", "ja", "ko", "it", "vi", "th", "zh-CN", "zh-TW", "pl", "bn",
+        "ta", "te", "mr", "gu", "kn", "ml", "pa", "ur",
     )
 
     private const val PREFS = "app_locale"

@@ -1,0 +1,290 @@
+[
+  {
+    "id": "d-minor-1",
+    "category": "DISCIPLINE",
+    "level": "MINOR",
+    "title": "આ કેમ ખોલી રહ્યા છો?",
+    "message": "એક ઊંડો શ્વાસ લો. આ પસંદગી છે કે ટેવનો આવેગ?",
+    "motivationalMessage": "નાના વિરામ મોટો કાબૂ બનાવે છે."
+  },
+  {
+    "id": "d-minor-2",
+    "category": "SOCIAL_MEDIA",
+    "level": "MINOR",
+    "title": "એક નાની પૂછપરછ",
+    "message": "તમે કહ્યું હતું કે સ્ક્રોલિંગ ઓછું કરવું છે.",
+    "motivationalMessage": "વધુ ફોકસ. ઓછો વેડફાયેલો સમય."
+  },
+  {
+    "id": "d-minor-3",
+    "category": "PRODUCTIVITY",
+    "level": "MINOR",
+    "title": "શું કરવા આવ્યા હતા?",
+    "message": "જે કામ માટે ફોન હાથમાં લીધો તેનું નામ બોલો.",
+    "motivationalMessage": "પહેલાં હેતુ, પછી એપ."
+  },
+  {
+    "id": "d-minor-4",
+    "category": "SLEEP",
+    "level": "MINOR",
+    "title": "આરામની તૈયારી?",
+    "message": "મોડી રાત્રે સ્ક્રીન જોવાથી ઊંઘ મોડી પડે છે.",
+    "motivationalMessage": "આવતીકાલના તમે આભાર માનશે."
+  },
+  {
+    "id": "d-major-1",
+    "category": "SOCIAL_MEDIA",
+    "level": "MAJOR",
+    "title": "હમણાં આ ટાળવાનું વિચાર્યું હતું",
+    "message": "તમે સુરક્ષિત કરવા પસંદ કરેલી એપ્સમાંની આ એક છે.",
+    "motivationalMessage": "વધુ ફોકસ. ઓછો વેડફાયેલો સમય."
+  },
+  {
+    "id": "d-major-2",
+    "category": "STUDY",
+    "level": "MAJOR",
+    "title": "અભ્યાસનો સમય સુરક્ષિત છે",
+    "message": "દસ મિનિટનું કામ દસ મિનિટના ફીડ કરતાં સારું.",
+    "motivationalMessage": "પ્રગતિ શાંતિથી વધે છે."
+  },
+  {
+    "id": "d-major-3",
+    "category": "GAMING",
+    "level": "MAJOR",
+    "title": "વધુ એક રાઉન્ડ?",
+    "message": "રાઉન્ડ લાગે છે તેના કરતાં ઝડપથી ભેગા થાય છે.",
+    "motivationalMessage": "હેતુથી રમો, ઑટોપાયલટ પર નહીં."
+  },
+  {
+    "id": "d-major-4",
+    "category": "MONEY",
+    "level": "MAJOR",
+    "title": "ખર્ચ કરતાં પહેલાં થોભો",
+    "message": "આવતીકાલે પણ તમને આ જોઈતું હશે?",
+    "motivationalMessage": "છોડેલો દરેક આવેગ બચેલા પૈસા છે."
+  },
+  {
+    "id": "d-major-5",
+    "category": "FITNESS",
+    "level": "MAJOR",
+    "title": "પહેલાં થોડું ચાલીએ?",
+    "message": "થોડું ચાલવું સ્ક્રોલ કરતાં ધ્યાનને વધુ સારી રીતે રીસેટ કરે છે.",
+    "motivationalMessage": "તમારું શરીર જ મૂળ ફોકસ સાધન છે."
+  },
+  {
+    "id": "d-max-1",
+    "category": "DISCIPLINE",
+    "level": "MAX",
+    "title": "આ એપ આરામ કરી રહી છે",
+    "message": "સ્પષ્ટ વિચારતા હતા ત્યારે તમે જ આ મર્યાદા નક્કી કરી હતી.",
+    "motivationalMessage": "મારા સમય પર મારો કાબૂ જોઈએ."
+  },
+  {
+    "id": "d-max-2",
+    "category": "SOCIAL_MEDIA",
+    "level": "MAX",
+    "title": "હમણાં નહીં",
+    "message": "ફીડ પછી પણ ત્યાં જ હશે.",
+    "motivationalMessage": "આજનો સમય પહેલેથી સારી રીતે વપરાઈ રહ્યો છે."
+  },
+  {
+    "id": "d-max-3",
+    "category": "SLEEP",
+    "level": "MAX",
+    "title": "આને હવે આરામ આપીએ",
+    "message": "આરામ પણ યોજનાનો ભાગ છે.",
+    "motivationalMessage": "રાતને સાચવો, સવાર તમારી થશે."
+  },
+  {
+    "id": "d-max-4",
+    "category": "GAMING",
+    "level": "MAX",
+    "title": "ગેમનો સમય થોભ્યો છે",
+    "message": "તમે નક્કી કરેલી મર્યાદાએ પહોંચ્યા.",
+    "motivationalMessage": "પોતાની શરતે અટકવું એ જ સાચી જીત."
+  },
+  {
+    "id": "d-minor-5",
+    "category": "PRODUCTIVITY",
+    "level": "MINOR",
+    "title": "હજી એ જ યોજના છે?",
+    "message": "આજે સવારે તમે એક પ્રાથમિકતા નક્કી કરી હતી. આ જ છે?",
+    "motivationalMessage": "ધમાલ કરતાં સ્પષ્ટતા સારી."
+  },
+  {
+    "id": "d-minor-6",
+    "category": "DISCIPLINE",
+    "level": "MINOR",
+    "title": "પહેલાં ત્રણ શ્વાસ",
+    "message": "અંદર. બહાર. હવે નક્કી કરો.",
+    "motivationalMessage": "થોભવું એ જ કૌશલ્ય."
+  },
+  {
+    "id": "d-minor-7",
+    "category": "SOCIAL_MEDIA",
+    "level": "MINOR",
+    "title": "કંઈ ચોક્કસ શોધો છો?",
+    "message": "કારણ સાથે ખોલો, કામ પતે એટલે બંધ કરો.",
+    "motivationalMessage": "એપ તમે વાપરો. તેને તમને વાપરવા ન દો."
+  },
+  {
+    "id": "d-minor-8",
+    "category": "STUDY",
+    "level": "MINOR",
+    "title": "પ્રકરણની વચ્ચે એક તપાસ",
+    "message": "વધુ એક પાનું, પછી નક્કી કરો.",
+    "motivationalMessage": "ગતિ સાચવવી એ ફરી શરૂ કરવા કરતાં સહેલી છે."
+  },
+  {
+    "id": "d-minor-9",
+    "category": "GAMING",
+    "level": "MINOR",
+    "title": "ટૂંકું સત્ર કે લાંબું?",
+    "message": "શરૂ કરતાં પહેલાં જ કેટલી વાર તે નક્કી કરો.",
+    "motivationalMessage": "યોજના સાથે રમો."
+  },
+  {
+    "id": "d-minor-10",
+    "category": "MONEY",
+    "level": "MINOR",
+    "title": "જોઈ રહ્યા છો કે ખરીદી રહ્યા છો?",
+    "message": "ફક્ત જોવું પણ ખર્ચ તરફ ધકેલે છે.",
+    "motivationalMessage": "તમારા પાકીટને સાદા દિવસો ગમે છે."
+  },
+  {
+    "id": "d-minor-11",
+    "category": "FITNESS",
+    "level": "MINOR",
+    "title": "ઘણી વારથી બેઠા છો?",
+    "message": "સ્ક્રોલ કરતાં પહેલાં ઊભા થઈને શરીર ખેંચો.",
+    "motivationalMessage": "હલનચલન એક રીસેટ બટન છે."
+  },
+  {
+    "id": "d-minor-12",
+    "category": "SLEEP",
+    "level": "MINOR",
+    "title": "મોડી રાતની પૂછપરછ",
+    "message": "આ માટે ગુમાવેલી ઊંઘ યોગ્ય છે?",
+    "motivationalMessage": "સારી સવારની શરૂઆત આગલી રાતે થાય છે."
+  },
+  {
+    "id": "d-minor-13",
+    "category": "PRODUCTIVITY",
+    "level": "MINOR",
+    "title": "કંટાળો કે જરૂર?",
+    "message": "જવા દો તો કંટાળો એક મિનિટમાં જતો રહે છે.",
+    "motivationalMessage": "કંટાળા સાથે બેસવાથી જ વિચારો જન્મે છે."
+  },
+  {
+    "id": "d-major-6",
+    "category": "DISCIPLINE",
+    "level": "MAJOR",
+    "title": "આ લીટી તમે જ દોરી હતી",
+    "message": "અગાઉના તમે એક કારણસર આ મર્યાદા મૂકી હતી.",
+    "motivationalMessage": "તમે પોતાને આપેલું વચન પાળો."
+  },
+  {
+    "id": "d-major-7",
+    "category": "SOCIAL_MEDIA",
+    "level": "MAJOR",
+    "title": "ફીડ અનંત છે. તમારી સાંજ નથી.",
+    "message": "પહોંચવા માટે કોઈ તળિયું જ નથી.",
+    "motivationalMessage": "એવી જગ્યાએ સમય ખર્ચો જે તમને પાછો મળે."
+  },
+  {
+    "id": "d-major-8",
+    "category": "PRODUCTIVITY",
+    "level": "MAJOR",
+    "title": "ઊંડું કામ ચાલુ છે",
+    "message": "હમણાં બદલવું લાગે છે તેના કરતાં વધુ મોંઘું પડે છે.",
+    "motivationalMessage": "વિચાર પૂરો કરો, પછી પોતાને ઇનામ આપો."
+  },
+  {
+    "id": "d-major-9",
+    "category": "STUDY",
+    "level": "MAJOR",
+    "title": "પરીક્ષા વખતના તમે જોઈ રહ્યા છે",
+    "message": "હમણાંનો દરેક એકાગ્ર કલાક એટલે પછી ઓછો તણાવ.",
+    "motivationalMessage": "આજે શિસ્ત, આવતીકાલે આઝાદી."
+  },
+  {
+    "id": "d-major-10",
+    "category": "SLEEP",
+    "level": "MAJOR",
+    "title": "મોડું થઈ રહ્યું છે",
+    "message": "વાદળી પ્રકાશ અને નવી પોસ્ટ મગજને જાગતું રાખે છે.",
+    "motivationalMessage": "ઊંઘ એક પ્રદર્શન સાધન છે."
+  },
+  {
+    "id": "d-major-11",
+    "category": "GAMING",
+    "level": "MAJOR",
+    "title": "ઘડિયાળ જુઓ",
+    "message": "આજે કેટલો સમય રમવાનું નક્કી કર્યું હતું?",
+    "motivationalMessage": "મૅચ પહેલાં દિવસ જીતો."
+  },
+  {
+    "id": "d-major-12",
+    "category": "MONEY",
+    "level": "MAJOR",
+    "title": "કાર્ટ તપાસ",
+    "message": "યાદીમાં ઉમેરો અને 24 કલાક પછી પાછા આવો.",
+    "motivationalMessage": "ઇચ્છા ઝાંખી પડે છે. બચત ટકે છે."
+  },
+  {
+    "id": "d-major-13",
+    "category": "FITNESS",
+    "level": "MAJOR",
+    "title": "આને દસ પુશ-અપ સાથે બદલીએ?",
+    "message": "સ્ક્રોલ કમાઓ, અથવા છોડી દો.",
+    "motivationalMessage": "મજબૂત શરીર, સ્વચ્છ મન."
+  },
+  {
+    "id": "d-max-5",
+    "category": "PRODUCTIVITY",
+    "level": "MAX",
+    "title": "ફોકસ ઝોન",
+    "message": "તમારી સમય વિન્ડો ખૂલે ત્યાં સુધી આ એપ વર્જિત છે.",
+    "motivationalMessage": "મહત્ત્વના કલાકો સાચવો."
+  },
+  {
+    "id": "d-max-6",
+    "category": "STUDY",
+    "level": "MAX",
+    "title": "ફીડ પહેલાં પુસ્તકો",
+    "message": "અભ્યાસનો સમય પૂરો થાય ત્યાં સુધી બ્લોક રહે છે.",
+    "motivationalMessage": "ભવિષ્યના તમે હમણાં જ ઘડાઈ રહ્યા છે."
+  },
+  {
+    "id": "d-max-7",
+    "category": "MONEY",
+    "level": "MAX",
+    "title": "ખર્ચ થોભ્યો છે",
+    "message": "તમારું બજેટ સાચવવા આ લૉક કરવાનું તમે જ પસંદ કર્યું.",
+    "motivationalMessage": "કોઈ ખરીદી લક્ષ્ય સુધી પહોંચવા કરતાં મોટી નથી."
+  },
+  {
+    "id": "d-max-8",
+    "category": "FITNESS",
+    "level": "MAX",
+    "title": "તેના બદલે હલનચલન કરો",
+    "message": "આ એપ પછી ફરી ખૂલશે. તમારી કસરત રાહ નહીં જુએ.",
+    "motivationalMessage": "પોતાના માટે હાજર રહો."
+  },
+  {
+    "id": "d-max-9",
+    "category": "DISCIPLINE",
+    "level": "MAX",
+    "title": "મર્યાદા પહોંચી",
+    "message": "તમે નક્કી કરેલી મર્યાદાએ પહોંચ્યા. વ્યવસ્થા બરાબર કામ કરે છે.",
+    "motivationalMessage": "કાબૂ એક સ્નાયુ છે. તમે હમણાં જ તેને વાપર્યો."
+  },
+  {
+    "id": "d-max-10",
+    "category": "SOCIAL_MEDIA",
+    "level": "MAX",
+    "title": "આજ માટે ફીડ બંધ",
+    "message": "આજનો ડોઝ તમને પહેલેથી મળી ગયો છે.",
+    "motivationalMessage": "સાચા જીવનમાં આનાથી સારી સૂચનાઓ હોય છે."
+  }
+]

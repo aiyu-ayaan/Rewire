@@ -78,7 +78,7 @@ android {
 
     // Ship only the languages Rewire is translated into (see AppLocale.tags); drops other library translations.
     androidResources {
-        localeFilters += listOf("en", "hi", "es", "pt", "in", "ar", "fr", "ru", "de", "tr", "ja", "ko", "it", "vi", "th", "zh", "pl", "bn")
+        localeFilters += listOf("en", "hi", "es", "pt", "in", "ar", "fr", "ru", "de", "tr", "ja", "ko", "it", "vi", "th", "zh", "pl", "bn", "ta", "te", "mr", "gu", "kn", "ml", "pa", "ur")
         generateLocaleConfig = true // manifest localeConfig built from the values-* folders: powers Settings → App languages
     }
 
