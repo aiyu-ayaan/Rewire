@@ -1,14 +1,11 @@
 package com.aiyu.rewire.feature.matrix
 
 import androidx.compose.animation.core.Animatable
-import androidx.compose.ui.res.stringResource
-import com.aiyu.rewire.R
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.aspectRatio
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -29,11 +26,9 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.Path
 import androidx.compose.ui.graphics.StrokeCap
 import androidx.compose.ui.graphics.drawscope.Stroke
-import androidx.compose.ui.graphics.lerp
 import androidx.compose.ui.semantics.contentDescription
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.unit.dp
-import com.aiyu.rewire.domain.analytics.DailyMetrics
 import com.aiyu.rewire.ui.theme.rememberReducedMotion
 
 /** 0 → 1 reveal on first show / data change; static under reduced motion. */
@@ -100,32 +95,6 @@ fun DonutChart(slices: List<Slice>, modifier: Modifier = Modifier, center: @Comp
             }
         }
         center()
-    }
-}
-
-/** Calendar heatmap, one cell per day, weeks as rows, oldest first. Intensity = focus + guard activity. */
-@Composable
-fun ActivityHeatmap(days: List<DailyMetrics>, modifier: Modifier = Modifier) {
-    val max = days.maxOfOrNull { it.focusMinutes }?.coerceAtLeast(1) ?: 1
-    val empty = MaterialTheme.colorScheme.surfaceContainerHighest
-    val full = MaterialTheme.colorScheme.primary
-    val today = MaterialTheme.colorScheme.tertiary
-    val active = days.count { it.focusMinutes > 0 }
-    val heatmapDesc = stringResource(R.string.matrix_heatmap_desc, active, days.size)
-    Column(modifier.semantics { contentDescription = heatmapDesc }, verticalArrangement = Arrangement.spacedBy(6.dp)) {
-        days.chunked(7).forEach { week ->
-            Row(horizontalArrangement = Arrangement.spacedBy(6.dp)) {
-                week.forEach { d ->
-                    val t = d.focusMinutes.toFloat() / max
-                    val c = when {
-                        d == days.last() && d.focusMinutes == 0 -> today.copy(alpha = 0.35f)
-                        d.focusMinutes == 0 -> empty
-                        else -> lerp(full.copy(alpha = 0.3f), full, t)
-                    }
-                    Box(Modifier.weight(1f).aspectRatio(1f).clip(RoundedCornerShape(6.dp)).background(c))
-                }
-            }
-        }
     }
 }
 

@@ -194,7 +194,6 @@
     <string name="matrix_peak_hour">Most guarded hour: %1$s–%2$s</string>
     <string name="matrix_focus_month">Focus · last 4 weeks</string>
     <string name="matrix_focus_month_caption">Focused on %1$d of %2$d days. Darker = longer.</string>
-    <string name="matrix_heatmap_desc">Focused on %1$d of the last %2$d days</string>
     <string name="matrix_show_all">Show all (%1$d)</string>
     <string name="matrix_protected_apps">Protected apps</string>
     <string name="matrix_habits">Habits</string>
