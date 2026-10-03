@@ -1,5 +1,47 @@
 # Changelog
 
+## [1.0.2](https://github.com/aiyu-ayaan/Rewire/compare/v1.0.1-alpha.7...v1.0.2) (2026-10-04)
+
+### Features
+
+* Complete habit-based Guard protection with Minor, Major, and Max warning and restriction levels
+* Smart escalation tiers supporting both continuous usage duration and repeated open attempts
+* Per-app limit overrides for individual app daily limits, launch counts, and allowed time windows
+* Dual-flavor architecture: Rewire Full (instant Accessibility detection) and Rewire Lite (Usage Access without Accessibility, Play Protect and banking app compatible)
+* Fullscreen AMOLED focus timer with rolling digits, landscape orientation, and sensor rotation
+* Focus foreground service ticker with persistent notification controls and live updates
+* Priority call passthrough during focus mode and restriction screens (phone and VoIP calls are never blocked)
+* Matrix analytics dashboard with Daily, Weekly, and Monthly periods
+* Rich data visualization suite: Bar, Line, Stacked Bar, Area, Radar, Scatter, Heatmap, and Timeline charts with accessible data tables
+* Adaptive wide-screen and tablet layouts with list-detail panes and multi-column cards for Guard, Focus, Matrix, and Profile
+* Localisation in 27 languages with in-app language switcher using Android app-locale API
+* Built-in warning library with categorized reflections translated into 18 languages, plus custom warning creator
+* Offline data backup and restore with versioned JSON snapshots, including screen-time history and user presets
+* Daily goals editor, discipline streak tracking, and achievement reflection notes
+* Guided Android 13+ restricted settings, battery optimization, and permission setup flows
+* In-app updater for GitHub release builds
+
+### Bug fixes
+
+* Ensure call ringer and vibration remain active during ringing and active phone/VoIP calls
+* Silence notifications via stream volume during focus DND so incoming calls ring normally
+* Never intercept incoming or active phone and VoIP calls in HabitEngine
+* Guard screen never silently lost after process death; re-judge open apps on resume and unlock
+* Prevent launch limit bypass via System UI recents screen and keep block screens out of recents
+* Wake the focus countdown ticker immediately on UI collection so screen rotation never freezes the timer
+* Fix tablet layout dark theme by using Surface at the root for consistent light-on-dark text contrast
+* Mirror directional send and navigation icons in right-to-left (RTL) language layouts
+* Guard AutomaticZenRule state calls behind API 29 for backward compatibility
+* Accurate Digital Wellbeing usage tracking using UsageEvents instead of overlapping stat buckets
+* Deactivate implicit zen rules and restore interruption filter ALL on call and startup
+
+### Other changes
+
+* First stable release of Rewire, consolidating all major capabilities and hardening from alpha releases
+* Refresh architecture documentation, 9:16 launch videos, and README interactive demos
+* Add baseline profiles and R8 optimization for fast cold startup and smooth Compose rendering
+* Room database migrations (schemas v1 through v4) with full unit and integration test coverage
+
 ## [1.0.1-alpha.7](https://github.com/aiyu-ayaan/Rewire/compare/v1.0.1-alpha.6...v1.0.1-alpha.7) (2026-10-03)
 
 ### Features
