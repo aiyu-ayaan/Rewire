@@ -3,7 +3,7 @@ package com.aiyu.rewire.domain.restriction
 import com.aiyu.rewire.domain.habit.HabitProfile
 import com.aiyu.rewire.domain.habit.WarningLevel
 
-enum class BlockReason { OUTSIDE_WINDOW, LAUNCH_LIMIT, DAILY_LIMIT, ALWAYS }
+enum class BlockReason { OUTSIDE_WINDOW, LAUNCH_LIMIT, DAILY_LIMIT, ALWAYS, ESCALATION }
 
 sealed interface RestrictionDecision {
     data object Allow : RestrictionDecision
@@ -32,7 +32,10 @@ object RuleEngine {
     fun decide(i: RuleInput): RestrictionDecision {
         val rule = i.profile.rule
         if (!i.profile.habit.enabled) return RestrictionDecision.Allow
-        val bypass = i.focusing && when (rule.warningLevel) {
+        // Smart escalation: usage picks the tier; everything below works on the effective level.
+        val level = rule.effectiveLevel(i.usageMinutesToday)
+        val escalating = rule.escalation && i.usageMinutesToday != null
+        val bypass = i.focusing && when (level) {
             WarningLevel.MINOR -> i.bypassMinor
             WarningLevel.MAJOR -> i.bypassMajor
             WarningLevel.MAX -> i.bypassMax
@@ -53,11 +56,13 @@ object RuleEngine {
         }
         // Boundaries are the trigger, the level is the response. No boundaries means "every open".
         val hasBoundary = (start != null && end != null) || limit != null || launches != null
-        return when (rule.warningLevel) {
+        return when (level) {
+            // An active tier is itself the trigger, so it warns on every open even without boundaries.
             WarningLevel.MINOR, WarningLevel.MAJOR ->
-                if (breach != null || !hasBoundary) RestrictionDecision.Warn(rule.warningLevel) else RestrictionDecision.Allow
+                if (breach != null || !hasBoundary || escalating) RestrictionDecision.Warn(level) else RestrictionDecision.Allow
             WarningLevel.MAX -> when {
                 breach != null -> RestrictionDecision.Block(breach)
+                escalating -> RestrictionDecision.Block(BlockReason.ESCALATION)
                 // Max with no boundaries at all means "never": the user asked for a hard block.
                 !hasBoundary -> RestrictionDecision.Block(BlockReason.ALWAYS)
                 else -> RestrictionDecision.Allow
@@ -77,6 +82,11 @@ object RuleEngine {
                 add(Math.floorMod(r.allowedEndMinutes - i.nowMinutes, MINUTES_PER_DAY))
             }
             if (r.dailyLimitMinutes != null && i.usageMinutesToday != null) add((r.dailyLimitMinutes - i.usageMinutesToday).coerceAtLeast(0))
+            if (r.escalation && i.usageMinutesToday != null) {
+                // Next tier boundary strictly ahead of current usage.
+                listOf(r.escalationMajorAfterMinutes, r.escalationMaxAfterMinutes)
+                    .firstOrNull { it > i.usageMinutesToday }?.let { add(it - i.usageMinutesToday) }
+            }
         }
         return candidates.minOrNull()
     }
