@@ -13,7 +13,7 @@ import javax.inject.Inject
 class RewireApp : Application() {
     @Inject lateinit var notifier: RewireNotifier
     @Inject lateinit var focus: FocusController
-    @Inject lateinit var updater: AppUpdater
+    @Inject lateinit var updater: dagger.Lazy<AppUpdater> // Lazy: never built when BuildConfig.UPDATES is off (play)
     // Eager: the engine starts GuardMonitorService once a habit is on. Lite (and Full with Accessibility off)
     // has no accessibility service to create it, so without this nothing ever watched.
     @Inject lateinit var engine: HabitEngine
@@ -24,6 +24,6 @@ class RewireApp : Application() {
         // A previous process may have died mid-session: resume it from Room (or undo its DND).
         focus.restore()
         // Idempotent (KEEP); cancels itself when auto-update is off.
-        UpdateWorker.schedule(this, updater.enabled)
+        if (BuildConfig.UPDATES) UpdateWorker.schedule(this, updater.get().enabled)
     }
 }
