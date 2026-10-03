@@ -52,6 +52,7 @@ import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.FilledTonalButton
+import androidx.compose.material3.FilterChip
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.ListItem
@@ -344,17 +345,23 @@ private fun EscalationSection(p: HabitProfile, vm: HabitDetailViewModel) {
         }
         AnimatedVisibility(r.escalationEnabled) {
             Column(Modifier.padding(top = 12.dp), verticalArrangement = Arrangement.spacedBy(12.dp)) {
+                Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+                    FilterChip(!r.escalationByOpens, { vm.setEscalationByOpens(false) }, { Text(stringResource(R.string.escalation_mode_minutes)) })
+                    FilterChip(r.escalationByOpens, { vm.setEscalationByOpens(true) }, { Text(stringResource(R.string.escalation_mode_opens)) })
+                }
                 SliderSetting(
                     title = stringResource(R.string.escalation_major_after),
-                    value = r.escalationMajorAfterMinutes, range = 5..235, step = 5,
-                    display = { formatMinutes(it) }, onCommit = vm::setEscalationMajor,
+                    value = r.escalationMajorAfterMinutes,
+                    range = if (r.escalationByOpens) 2..49 else 5..235, step = if (r.escalationByOpens) 1 else 5,
+                    display = { if (r.escalationByOpens) stringResource(R.string.escalation_open_n, it) else formatMinutes(it) }, onCommit = vm::setEscalationMajor,
                 )
                 SliderSetting(
                     title = stringResource(R.string.escalation_max_after),
-                    value = r.escalationMaxAfterMinutes, range = 10..240, step = 5,
-                    display = { formatMinutes(it) }, onCommit = vm::setEscalationMax,
+                    value = r.escalationMaxAfterMinutes,
+                    range = if (r.escalationByOpens) 3..50 else 10..240, step = if (r.escalationByOpens) 1 else 5,
+                    display = { if (r.escalationByOpens) stringResource(R.string.escalation_open_n, it) else formatMinutes(it) }, onCommit = vm::setEscalationMax,
                 )
-                Text(stringResource(R.string.escalation_note), style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant)
+                Text(stringResource(if (r.escalationByOpens) R.string.escalation_note_opens else R.string.escalation_note), style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant)
             }
         }
     }

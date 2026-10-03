@@ -568,6 +568,11 @@
     <string name="focus_preset_error_invalid">Break can\'t be longer than focus, so this can\'t be saved.</string>
     <string name="escalation_block_label">Escalation</string>
     <string name="escalation_block_value">%1$d min used today</string>
+    <string name="escalation_block_opens">Open #%1$d of the day reached</string>
+    <string name="escalation_mode_minutes">By minutes used</string>
+    <string name="escalation_mode_opens">By opens</string>
+    <string name="escalation_open_n">Open #%1$d</string>
+    <string name="escalation_note_opens">Counts how many times you open the app today, this open included. Needs no Usage access. Max can always be lifted with an emergency unlock, or by turning this off.</string>
     <string name="escalation_title">Smart escalation</string>
     <string name="escalation_subtitle">Raise the level as today\'s use grows: Minor, then Major, then Max.</string>
     <string name="escalation_major_after">Major from</string>

@@ -86,6 +86,7 @@ class HabitDetailViewModel @AssistedInject constructor(
     fun setMaxLaunches(count: Int?) = edit { it.copy(rule = it.rule.copy(maxLaunches = count)) }
     fun setPause(seconds: Int) = edit { it.copy(rule = it.rule.copy(pauseSeconds = seconds)) }
     fun setEscalation(on: Boolean) = edit { it.copy(rule = it.rule.copy(escalationEnabled = on)) }
+    fun setEscalationByOpens(on: Boolean) = edit { it.copy(rule = RestrictionRule.withByOpens(it.rule, on)) }
     fun setEscalationMajor(minutes: Int) = edit { it.copy(rule = RestrictionRule.withMajor(it.rule, minutes)) }
     fun setEscalationMax(minutes: Int) = edit { it.copy(rule = RestrictionRule.withMax(it.rule, minutes)) }
     fun setWindow(start: Int?, end: Int?) = edit { it.copy(rule = it.rule.copy(allowedStartMinutes = start, allowedEndMinutes = end)) }

@@ -34,8 +34,8 @@ object RuleEngine {
         val rule = i.profile.rule
         if (!i.profile.habit.enabled) return RestrictionDecision.Allow
         // Smart escalation: usage picks the tier; everything below works on the effective level.
-        val level = rule.effectiveLevel(i.usageMinutesToday)
-        val escalating = rule.escalation && i.usageMinutesToday != null
+        val level = rule.effectiveLevel(i.usageMinutesToday, i.launchesToday + 1)
+        val escalating = rule.escalationActive(i.usageMinutesToday)
         val bypass = i.focusing && when (level) {
             WarningLevel.MINOR -> i.bypassMinor
             WarningLevel.MAJOR -> i.bypassMajor
@@ -83,7 +83,7 @@ object RuleEngine {
                 add(Math.floorMod(r.allowedEndMinutes - i.nowMinutes, MINUTES_PER_DAY))
             }
             if (r.dailyLimitMinutes != null && i.usageMinutesToday != null) add((r.dailyLimitMinutes - i.usageMinutesToday).coerceAtLeast(0))
-            if (r.escalation && i.usageMinutesToday != null) {
+            if (r.escalation && !r.escalationByOpens && i.usageMinutesToday != null) {
                 // Next tier boundary strictly ahead of current usage.
                 listOf(r.escalationMajorAfterMinutes, r.escalationMaxAfterMinutes)
                     .firstOrNull { it > i.usageMinutesToday }?.let { add(it - i.usageMinutesToday) }

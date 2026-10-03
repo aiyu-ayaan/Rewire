@@ -92,4 +92,30 @@ class EscalationTest {
         assertTrue(RestrictionRule.isValidEscalation(b.escalationMajorAfterMinutes, b.escalationMaxAfterMinutes))
         assertEquals(10, b.escalationMaxAfterMinutes)
     }
+
+    private fun opens(launches: Int, usage: Int? = null) = RuleInput(
+        HabitProfile(Habit("h", "H", null, true), emptyList(), RestrictionRule("r", "h", null, null, null, null, WarningLevel.MAX, 5, true, 3, 6, true)),
+        nowMinutes = 12 * 60, launchesToday = launches, usageMinutesToday = usage,
+        focusing = false, bypassMinor = false, bypassMajor = false, bypassMax = false,
+    )
+
+    @Test fun opensModeTiersFollowOpenCount() {
+        assertEquals(Warn(WarningLevel.MINOR), RuleEngine.decide(opens(0)))
+        assertEquals(Warn(WarningLevel.MINOR), RuleEngine.decide(opens(1)))
+        assertEquals(Warn(WarningLevel.MAJOR), RuleEngine.decide(opens(2))) // 3rd open
+        assertEquals(Warn(WarningLevel.MAJOR), RuleEngine.decide(opens(4)))
+        assertEquals(Block(BlockReason.ESCALATION), RuleEngine.decide(opens(5))) // 6th open
+    }
+
+    @Test fun opensModeNeedsNoUsageAccessAndSchedulesNoTimer() {
+        assertEquals(Warn(WarningLevel.MAJOR), RuleEngine.decide(opens(2, usage = null)))
+        assertEquals(null, RuleEngine.minutesUntilNextBoundary(opens(2, usage = 10)))
+    }
+
+    @Test fun switchingUnitResetsThresholds() {
+        val r = RestrictionRule.withByOpens(RestrictionRule("r", "h", null, null, null, null, WarningLevel.MINOR, 5), true)
+        assertEquals(3, r.escalationMajorAfterMinutes)
+        assertEquals(6, r.escalationMaxAfterMinutes)
+        assertEquals(20, RestrictionRule.withByOpens(r, false).escalationMajorAfterMinutes)
+    }
 }

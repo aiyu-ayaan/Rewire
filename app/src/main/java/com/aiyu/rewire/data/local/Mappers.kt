@@ -23,7 +23,7 @@ fun HabitWithDetails.toDomain(): HabitProfile? {
             val limits = AppLimits(it.ownDailyLimit, it.dailyLimitMinutes, it.ownLaunchLimit, it.maxLaunches, it.ownWindow, it.allowedStartMinutes, it.allowedEndMinutes)
             ProtectedApp(it.packageName, it.habitId, it.warningLevel, it.enabled, limits)
         },
-        rule = RestrictionRule(r.id, r.habitId, r.dailyLimitMinutes, r.allowedStartMinutes, r.allowedEndMinutes, r.maxLaunches, r.warningLevel, r.pauseSeconds, r.escalationEnabled, r.escalationMajorMinutes, r.escalationMaxMinutes),
+        rule = RestrictionRule(r.id, r.habitId, r.dailyLimitMinutes, r.allowedStartMinutes, r.allowedEndMinutes, r.maxLaunches, r.warningLevel, r.pauseSeconds, r.escalationEnabled, r.escalationMajorMinutes, r.escalationMaxMinutes, r.escalationByOpens),
     )
 }
 
@@ -33,7 +33,7 @@ fun HabitProfile.toAppEntities() = apps.map {
     ProtectedAppEntity(id, it.packageName, it.warningLevel, it.enabled, l.ownDailyLimit, l.dailyLimitMinutes, l.ownLaunchLimit, l.maxLaunches, l.ownWindow, l.allowedStartMinutes, l.allowedEndMinutes)
 }
 fun HabitProfile.toRuleEntity() = with(rule) {
-    RestrictionRuleEntity(this.id, habitId, dailyLimitMinutes, allowedStartMinutes, allowedEndMinutes, maxLaunches, warningLevel, pauseSeconds, escalationEnabled, escalationMajorAfterMinutes, escalationMaxAfterMinutes)
+    RestrictionRuleEntity(this.id, habitId, dailyLimitMinutes, allowedStartMinutes, allowedEndMinutes, maxLaunches, warningLevel, pauseSeconds, escalationEnabled, escalationMajorAfterMinutes, escalationMaxAfterMinutes, escalationByOpens)
 }
 
 fun WarningEntity.toDomain() = Warning(id, category, level, title, message, motivationalMessage, enabled, favorite, custom)

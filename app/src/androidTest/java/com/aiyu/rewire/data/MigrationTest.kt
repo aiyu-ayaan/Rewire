@@ -88,4 +88,20 @@ class MigrationTest {
     private companion object {
         const val DB = "migration-test"
     }
+
+    @Test
+    fun migrate4To5_escalationStaysOnMinutes() {
+        helper.createDatabase(DB, 4).apply {
+            execSQL("INSERT INTO habits (id, name, description, enabled, created_at) VALUES ('h1', 'Scrolling', NULL, 1, 1)")
+            execSQL("INSERT INTO restriction_rules (id, habit_id, daily_limit_minutes, allowed_start_minutes, allowed_end_minutes, max_launches, warning_level, pause_seconds) VALUES ('r1', 'h1', 30, NULL, NULL, NULL, 'MAX', 5)")
+            close()
+        }
+
+        val db = helper.runMigrationsAndValidate(DB, 5, true)
+
+        db.query("SELECT escalation_by_opens FROM restriction_rules WHERE habit_id = 'h1'").use {
+            it.moveToFirst()
+            assertEquals(0, it.getInt(0))
+        }
+    }
 }

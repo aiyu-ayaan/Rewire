@@ -71,6 +71,8 @@ data class RestrictionRuleEntity(
     @ColumnInfo(name = "escalation_enabled", defaultValue = "0") val escalationEnabled: Boolean = false,
     @ColumnInfo(name = "escalation_major_minutes", defaultValue = "20") val escalationMajorMinutes: Int = 20,
     @ColumnInfo(name = "escalation_max_minutes", defaultValue = "40") val escalationMaxMinutes: Int = 40,
+    // v5: repeated-usage mode (thresholds count opens instead of minutes).
+    @ColumnInfo(name = "escalation_by_opens", defaultValue = "0") val escalationByOpens: Boolean = false,
 )
 
 data class HabitWithDetails(

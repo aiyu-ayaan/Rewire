@@ -22,12 +22,13 @@ import kotlinx.serialization.json.Json
         HabitEntity::class, ProtectedAppEntity::class, RestrictionRuleEntity::class,
         WarningEntity::class, HabitEventEntity::class, FocusSessionEntity::class, SettingsEntity::class,
     ],
-    version = 4,
+    version = 5,
     exportSchema = true,
     // 1 -> 2: four settings columns for app updates (defaults declared on the columns).
     // 2 -> 3: three escalation columns on restriction_rules (defaults declared on the columns).
     // 3 -> 4: per-app overrides on protected_apps (own_* switches default to 0, so every app keeps following its habit).
-    autoMigrations = [AutoMigration(from = 1, to = 2), AutoMigration(from = 2, to = 3), AutoMigration(from = 3, to = 4)],
+    // 4 -> 5: escalation_by_opens on restriction_rules (default 0 = minute tiers, as before).
+    autoMigrations = [AutoMigration(from = 1, to = 2), AutoMigration(from = 2, to = 3), AutoMigration(from = 3, to = 4), AutoMigration(from = 4, to = 5)],
 )
 @TypeConverters(Converters::class)
 abstract class RewireDatabase : RoomDatabase() {

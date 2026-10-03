@@ -80,22 +80,32 @@ data class RestrictionRule(
     val escalationMajorAfterMinutes: Int = DEFAULT_ESCALATION_MAJOR_MINUTES,
     /** Usage minutes at which the level rises to Max. Must exceed the Major threshold. */
     val escalationMaxAfterMinutes: Int = DEFAULT_ESCALATION_MAX_MINUTES,
+    /** Repeated-usage mode: the two thresholds count today's opens of the app (this open included) instead of minutes. */
+    val escalationByOpens: Boolean = false,
 ) {
     /** Tiers only apply when switched on and the thresholds are sane; a corrupt row falls back to the plain level. */
     val escalation get() = escalationEnabled && isValidEscalation(escalationMajorAfterMinutes, escalationMaxAfterMinutes)
 
-    /** Level for [usageMinutes]; the configured level when escalation is off or usage is unknown. */
-    fun effectiveLevel(usageMinutes: Int?): WarningLevel = when {
-        !escalation || usageMinutes == null -> warningLevel
-        usageMinutes >= escalationMaxAfterMinutes -> WarningLevel.MAX
-        usageMinutes >= escalationMajorAfterMinutes -> WarningLevel.MAJOR
-        else -> WarningLevel.MINOR
+    /** Level for today's use; the configured level when escalation is off or the measure is unknown. [opensToday] counts this open. */
+    fun effectiveLevel(usageMinutes: Int?, opensToday: Int): WarningLevel {
+        val measure = if (escalationByOpens) opensToday else usageMinutes
+        return when {
+            !escalation || measure == null -> warningLevel
+            measure >= escalationMaxAfterMinutes -> WarningLevel.MAX
+            measure >= escalationMajorAfterMinutes -> WarningLevel.MAJOR
+            else -> WarningLevel.MINOR
+        }
     }
+
+    /** Minute tiers need Usage access; open counts come from our own events. */
+    fun escalationActive(usageMinutes: Int?) = escalation && (escalationByOpens || usageMinutes != null)
 
     companion object {
         const val DEFAULT_ESCALATION_MAJOR_MINUTES = 20
         const val DEFAULT_ESCALATION_MAX_MINUTES = 40
         const val MAX_ESCALATION_MINUTES = 24 * 60
+        const val DEFAULT_ESCALATION_MAJOR_OPENS = 3
+        const val DEFAULT_ESCALATION_MAX_OPENS = 6
 
         /** Three fixed tiers Minor/Major/Max: thresholds strictly increasing, within a day. */
         /** Applies an edit to one threshold and nudges the other so the pair stays valid (editing never fails). */
@@ -108,6 +118,13 @@ data class RestrictionRule(
             val x = max.coerceIn(2, MAX_ESCALATION_MINUTES)
             return rule.copy(escalationMaxAfterMinutes = x, escalationMajorAfterMinutes = minOf(rule.escalationMajorAfterMinutes, x - 1))
         }
+
+        /** Switching what the thresholds count resets them to sane defaults for that unit. */
+        fun withByOpens(rule: RestrictionRule, byOpens: Boolean) = rule.copy(
+            escalationByOpens = byOpens,
+            escalationMajorAfterMinutes = if (byOpens) DEFAULT_ESCALATION_MAJOR_OPENS else DEFAULT_ESCALATION_MAJOR_MINUTES,
+            escalationMaxAfterMinutes = if (byOpens) DEFAULT_ESCALATION_MAX_OPENS else DEFAULT_ESCALATION_MAX_MINUTES,
+        )
 
         fun isValidEscalation(major: Int, max: Int) = major >= 1 && major < max && max <= MAX_ESCALATION_MINUTES
     }

@@ -349,7 +349,7 @@ class HabitEngine(
             it.type == HabitEventType.APP_OPENED && it.habitId == p.id && it.packageName == pkg && Instant.ofEpochMilli(it.timestamp).atZone(zone).toLocalDate() == today
         }
         // Usage is only needed (and only queried) when a daily limit or escalation tiers exist; with a window it counts window time only.
-        val minutes = if (p.rule.dailyLimitMinutes != null || p.rule.escalation) usage.limitMinutes(p, pkg, now) else null
+        val minutes = if (p.rule.dailyLimitMinutes != null || (p.rule.escalation && !p.rule.escalationByOpens)) usage.limitMinutes(p, pkg, now) else null
         val time = zdt.toLocalTime()
         return RuleInput(
             profile = p,
