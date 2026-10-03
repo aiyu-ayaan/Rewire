@@ -524,4 +524,24 @@
     <string name="goal_sleep">Sleep better</string>
     <string name="goal_less_gaming">Game less</string>
     <string name="goal_spend_less">Spend less</string>
+    <string name="focus_preset_save">Save as preset</string>
+    <string name="focus_preset_save_desc">Save the current focus, break and cycles as a preset</string>
+    <string name="focus_preset_chip_desc">%1$s preset, %2$d minutes focus, %3$d minutes break, %4$d cycles</string>
+    <string name="focus_preset_selected">Selected</string>
+    <string name="focus_preset_not_selected">Not selected</string>
+    <string name="focus_preset_manage">Manage %1$s</string>
+    <string name="focus_preset_rename">Rename</string>
+    <string name="focus_preset_rename_title">Rename preset</string>
+    <string name="focus_preset_delete">Delete</string>
+    <string name="focus_preset_delete_title">Delete preset?</string>
+    <string name="focus_preset_delete_body">\"%1$s\" will be removed. Your current settings stay as they are.</string>
+    <string name="focus_preset_name_title">Name this preset</string>
+    <string name="focus_preset_name_label">Preset name</string>
+    <string name="focus_preset_confirm">Save</string>
+    <string name="focus_preset_cancel">Cancel</string>
+    <string name="focus_preset_error_blank">Give the preset a name.</string>
+    <string name="focus_preset_error_too_long">Use %1$d characters or fewer.</string>
+    <string name="focus_preset_error_taken">A preset with that name already exists.</string>
+    <string name="focus_preset_error_too_many">You can keep up to %1$d presets. Delete one first.</string>
+    <string name="focus_preset_error_invalid">Break can\'t be longer than focus, so this can\'t be saved.</string>
 </resources>

@@ -9,7 +9,10 @@ import com.aiyu.rewire.core.settings.SettingsRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 import com.aiyu.rewire.core.settings.FocusBypass
+import com.aiyu.rewire.data.FocusPresetRepository
 import com.aiyu.rewire.domain.focus.FocusConfig
+import com.aiyu.rewire.domain.focus.FocusPreset
+import com.aiyu.rewire.domain.focus.FocusPresetError
 import com.aiyu.rewire.domain.focus.FocusSession
 import com.aiyu.rewire.domain.focus.FocusState
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -26,6 +29,7 @@ class FocusViewModel @Inject constructor(
     private val focus: FocusController,
     private val settingsRepository: SettingsRepository,
     private val dnd: FocusDndManager,
+    private val presets: FocusPresetRepository,
     settings: StateFlow<Settings?>,
 ) : ViewModel() {
 
@@ -46,6 +50,13 @@ class FocusViewModel @Inject constructor(
         // Keep break <= focus while the user drags focus down.
         _draft.value = config.copy(breakMinutes = config.breakMinutes.coerceAtMost(config.focusMinutes))
     }
+
+    val userPresets: StateFlow<List<FocusPreset>> = presets.userPresets.stateIn(viewModelScope, SharingStarted.Eagerly, emptyList())
+
+    /** Each returns the rule violation (shown in the dialog) or null once saved. */
+    suspend fun savePreset(name: String): FocusPresetError? = presets.add(name, _draft.value)
+    suspend fun renamePreset(id: String, name: String): FocusPresetError? = presets.rename(id, name)
+    fun deletePreset(id: String) = viewModelScope.launch { presets.delete(id) }
 
     fun setBypass(b: FocusBypass) = viewModelScope.launch { settingsRepository.setFocusBypass(b) }
 

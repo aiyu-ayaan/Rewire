@@ -93,6 +93,8 @@ import com.aiyu.rewire.core.notifications.RewireNotifier
 import com.aiyu.rewire.core.notifications.rememberNotificationPermission
 import com.aiyu.rewire.domain.focus.FocusConfig
 import com.aiyu.rewire.domain.focus.FocusConfigError
+import com.aiyu.rewire.domain.focus.FocusPreset
+import com.aiyu.rewire.domain.focus.FocusPresetError
 import com.aiyu.rewire.domain.focus.FocusSessionStatus
 import com.aiyu.rewire.domain.focus.FocusState
 import com.aiyu.rewire.ui.components.MorphingShape
@@ -112,6 +114,7 @@ fun FocusScreen(onFullscreen: () -> Unit, onHistory: () -> Unit) {
     val now by vm.now.collectAsStateWithLifecycle()
     val draft by vm.draft.collectAsStateWithLifecycle()
     val bypass by vm.bypass.collectAsStateWithLifecycle()
+    val userPresets by vm.userPresets.collectAsStateWithLifecycle()
     val focusDnd by vm.focusDndEnabled.collectAsStateWithLifecycle()
     val awaitingNote by vm.awaitingNote.collectAsStateWithLifecycle()
 
@@ -141,6 +144,10 @@ fun FocusScreen(onFullscreen: () -> Unit, onHistory: () -> Unit) {
                 bypass = bypass,
                 focusDnd = focusDnd ?: true,
                 isDndGranted = isDndGranted,
+                userPresets = userPresets,
+                onSavePreset = vm::savePreset,
+                onRenamePreset = vm::renamePreset,
+                onDeletePreset = { vm.deletePreset(it) },
                 onDraft = vm::setDraft,
                 onBypass = vm::setBypass,
                 onFocusDnd = vm::setFocusDndEnabled,
@@ -166,15 +173,16 @@ fun FocusScreen(onFullscreen: () -> Unit, onHistory: () -> Unit) {
 
 // ---- Setup --------------------------------------------------------------------------------------
 
-private data class Preset(val focus: Int, val brk: Int)
-private val presets = listOf(Preset(25, 5), Preset(50, 10), Preset(90, 20))
-
 @Composable
 private fun FocusSetup(
     draft: FocusConfig,
     bypass: FocusBypass?,
     focusDnd: Boolean,
     isDndGranted: Boolean,
+    userPresets: List<FocusPreset>,
+    onSavePreset: suspend (String) -> FocusPresetError?,
+    onRenamePreset: suspend (String, String) -> FocusPresetError?,
+    onDeletePreset: (String) -> Unit,
     onDraft: (FocusConfig) -> Unit,
     onBypass: (FocusBypass) -> Unit,
     onFocusDnd: (Boolean) -> Unit,
@@ -211,15 +219,14 @@ private fun FocusSetup(
             }
         }
 
-        Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-            presets.forEach { p ->
-                FilterChip(
-                    selected = draft.focusMinutes == p.focus && draft.breakMinutes == p.brk,
-                    onClick = { onDraft(draft.copy(focusMinutes = p.focus, breakMinutes = p.brk)) },
-                    label = { Text("${p.focus} / ${p.brk}") },
-                )
-            }
-        }
+        FocusPresetRow(
+            draft = draft,
+            userPresets = userPresets,
+            onApply = onDraft,
+            onSave = onSavePreset,
+            onRename = onRenamePreset,
+            onDelete = onDeletePreset,
+        )
         Spacer(Modifier.height(12.dp))
         Card(shape = MaterialTheme.shapes.large, colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surfaceContainerLow)) {
             Column(Modifier.padding(vertical = 8.dp)) {
