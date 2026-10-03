@@ -78,7 +78,7 @@ internal fun DailyView(ui: MatrixUi) {
     }
     SectionTitle(stringResource(R.string.matrix_today))
     TodayOverview(d.today)
-    GoalChips(d.progress, Modifier.padding(top = 12.dp))
+    GoalChips(d.progress, Modifier.padding(vertical = 12.dp))
     ChartCard {
         Stat(stringResource(R.string.matrix_screen_time), formatMinutes(d.today.screenTimeMinutes))
     }
