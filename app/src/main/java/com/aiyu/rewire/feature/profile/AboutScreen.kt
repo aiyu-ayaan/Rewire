@@ -1,5 +1,7 @@
 package com.aiyu.rewire.feature.profile
 
+import com.aiyu.rewire.ui.components.readableWidth
+
 import android.content.Intent
 import androidx.compose.ui.res.stringResource
 import com.aiyu.rewire.R
@@ -64,7 +66,7 @@ fun AboutScreen(onBack: () -> Unit, onOpenAcknowledgements: () -> Unit) {
             )
         },
     ) { padding ->
-        Column(Modifier.padding(padding).verticalScroll(rememberScrollState()).padding(horizontal = 16.dp).padding(bottom = 24.dp)) {
+        Column(Modifier.padding(padding).readableWidth().verticalScroll(rememberScrollState()).padding(horizontal = 16.dp).padding(bottom = 24.dp)) {
             SectionTitle(stringResource(R.string.about_app))
             Group {
                 ListItem(

@@ -13,9 +13,16 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.widthIn
+import androidx.compose.foundation.layout.wrapContentWidth
+import androidx.compose.foundation.layout.ColumnScope
+import androidx.compose.runtime.CompositionLocalProvider
+import androidx.compose.ui.platform.LocalDensity
+import androidx.compose.ui.unit.Density
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.rounded.Block
@@ -131,3 +138,38 @@ fun formatMinutes(total: Int): String = when {
 }
 
 fun formatClock(minutesOfDay: Int): String = "%02d:%02d".format(minutesOfDay / 60, minutesOfDay % 60)
+
+/** Caps line length on wide windows (tablets, foldables, landscape): centered, never wider than [max]. */
+fun Modifier.readableWidth(max: Dp = 640.dp): Modifier =
+    fillMaxWidth().wrapContentWidth(Alignment.CenterHorizontally).widthIn(max = max).fillMaxWidth()
+
+/** True once the user's font scale is large enough that side-by-side layouts get too narrow for text. */
+@Composable
+fun isLargeFont(): Boolean = LocalDensity.current.fontScale > 1.3f
+
+/**
+ * [leading] (ring, donut) next to [trailing]; stacks vertically at large font scale so text keeps
+ * its width. [trailing] receives the modifier it must apply (weight in the row, full width stacked).
+ */
+@Composable
+fun BesideOrStacked(leading: @Composable () -> Unit, trailing: @Composable (Modifier) -> Unit) {
+    if (isLargeFont()) {
+        Column(Modifier.fillMaxWidth(), horizontalAlignment = Alignment.CenterHorizontally, verticalArrangement = Arrangement.spacedBy(16.dp)) {
+            leading()
+            trailing(Modifier.fillMaxWidth())
+        }
+    } else {
+        Row(verticalAlignment = Alignment.CenterVertically) {
+            leading()
+            Spacer(Modifier.width(20.dp))
+            trailing(Modifier.weight(1f))
+        }
+    }
+}
+
+/** Big timer digits would overflow their ring at 200% text; cap the scale for them only (the rest still scales). */
+@Composable
+fun CappedFontScale(max: Float = 1.3f, content: @Composable () -> Unit) {
+    val d = LocalDensity.current
+    CompositionLocalProvider(LocalDensity provides Density(d.density, d.fontScale.coerceAtMost(max)), content = content)
+}

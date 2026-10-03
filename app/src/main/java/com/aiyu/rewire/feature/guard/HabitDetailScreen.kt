@@ -1,5 +1,7 @@
 package com.aiyu.rewire.feature.guard
 
+import com.aiyu.rewire.ui.components.readableWidth
+
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.ui.res.pluralStringResource
 import androidx.compose.ui.res.stringResource
@@ -117,7 +119,7 @@ fun HabitDetailScreen(habitId: String, onBack: () -> Unit, onPreview: (String) -
             LazyColumn(contentPadding = PaddingValues(bottom = 32.dp), modifier = Modifier.padding(padding)) {
                 item {
                     Surface(color = container, contentColor = levelStyle.onContainer, shape = MaterialTheme.shapes.extraLarge.copy(topStart = androidx.compose.foundation.shape.CornerSize(0), topEnd = androidx.compose.foundation.shape.CornerSize(0))) {
-                        Column(Modifier.fillMaxWidth().padding(start = 24.dp, end = 24.dp, bottom = 28.dp)) {
+                        Column(Modifier.readableWidth().padding(start = 24.dp, end = 24.dp, bottom = 28.dp)) {
                             Icon(levelStyle.icon, contentDescription = null, modifier = Modifier.size(32.dp))
                             Spacer(Modifier.height(12.dp))
                             Text(p.habit.name, style = MaterialTheme.typography.displaySmall)
@@ -129,7 +131,7 @@ fun HabitDetailScreen(habitId: String, onBack: () -> Unit, onPreview: (String) -
                     }
                 }
                 item {
-                    Column(Modifier.padding(horizontal = 16.dp)) {
+                    Column(Modifier.readableWidth().padding(horizontal = 16.dp)) {
                         SectionTitle(stringResource(R.string.guard_friction_level))
                         LevelSelector(p.level, vm::setLevel)
                         Text(levelStyle.summary, style = MaterialTheme.typography.bodyMedium, color = MaterialTheme.colorScheme.onSurfaceVariant, modifier = Modifier.padding(top = 8.dp))
@@ -160,14 +162,14 @@ fun HabitDetailScreen(habitId: String, onBack: () -> Unit, onPreview: (String) -
                         leadingContent = { AppIcon(app.packageName) },
                         trailingContent = { IconButton(onClick = { vm.removeApp(app.packageName) }) { Icon(Icons.Rounded.Close, contentDescription = stringResource(R.string.guard_remove_app, label)) } },
                         colors = ListItemDefaults.colors(containerColor = MaterialTheme.colorScheme.surface),
-                        modifier = Modifier.animateItem().padding(horizontal = 4.dp),
+                        modifier = Modifier.animateItem().readableWidth().padding(horizontal = 4.dp),
                     )
                 }
                 item {
                     OutlinedButton(
                         onClick = { confirmDelete = true },
                         colors = ButtonDefaults.outlinedButtonColors(contentColor = MaterialTheme.colorScheme.error),
-                        modifier = Modifier.padding(horizontal = 16.dp, vertical = 32.dp).fillMaxWidth(),
+                        modifier = Modifier.readableWidth().padding(horizontal = 16.dp, vertical = 32.dp),
                     ) {
                         Icon(Icons.Rounded.DeleteOutline, contentDescription = null); Spacer(Modifier.width(8.dp)); Text(stringResource(R.string.guard_delete_habit))
                     }

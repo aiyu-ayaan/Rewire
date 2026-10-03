@@ -1,5 +1,7 @@
 package com.aiyu.rewire.feature.focus
 
+import com.aiyu.rewire.ui.components.readableWidth
+
 import androidx.compose.animation.AnimatedContent
 import androidx.compose.ui.res.stringResource
 import com.aiyu.rewire.R
@@ -193,7 +195,7 @@ private fun FocusSetup(
 ) {
     val permission = rememberNotificationPermission()
     Column(
-        Modifier.fillMaxSize().statusBarsPadding().verticalScroll(rememberScrollState()).padding(horizontal = 16.dp).padding(bottom = 24.dp),
+        Modifier.fillMaxSize().statusBarsPadding().readableWidth(720.dp).verticalScroll(rememberScrollState()).padding(horizontal = 16.dp).padding(bottom = 24.dp),
     ) {
         Row(Modifier.fillMaxWidth().padding(top = 16.dp), verticalAlignment = Alignment.CenterVertically) {
             Text(stringResource(R.string.nav_focus), style = MaterialTheme.typography.headlineLarge, modifier = Modifier.weight(1f))

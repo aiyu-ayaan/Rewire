@@ -1,5 +1,7 @@
 package com.aiyu.rewire.feature.profile
 
+import com.aiyu.rewire.ui.components.readableWidth
+
 import android.os.Build
 import androidx.compose.ui.res.stringResource
 import com.aiyu.rewire.R
@@ -65,7 +67,7 @@ fun ProfileScreen(onOpenNotificationSettings: () -> Unit, onOpenWarningLibrary: 
     val s = settings ?: return
     val permission = rememberNotificationPermission()
 
-    Column(Modifier.fillMaxSize().statusBarsPadding().verticalScroll(rememberScrollState()).padding(horizontal = 16.dp).padding(bottom = 24.dp)) {
+    Column(Modifier.fillMaxSize().statusBarsPadding().readableWidth(720.dp).verticalScroll(rememberScrollState()).padding(horizontal = 16.dp).padding(bottom = 24.dp)) {
         UserCard(s.profile, onEditProfile)
 
         SectionTitle(stringResource(R.string.profile_appearance))

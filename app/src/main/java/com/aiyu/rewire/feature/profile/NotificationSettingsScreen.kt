@@ -1,5 +1,7 @@
 package com.aiyu.rewire.feature.profile
 
+import com.aiyu.rewire.ui.components.readableWidth
+
 import androidx.compose.foundation.layout.Column
 import androidx.annotation.StringRes
 import androidx.compose.ui.res.stringResource
@@ -93,7 +95,7 @@ fun NotificationSettingsScreen(onBack: () -> Unit) {
         },
         snackbarHost = { SnackbarHost(snackbar) },
     ) { padding ->
-        Column(Modifier.padding(padding).verticalScroll(rememberScrollState()).padding(horizontal = 16.dp).padding(bottom = 24.dp)) {
+        Column(Modifier.padding(padding).readableWidth().verticalScroll(rememberScrollState()).padding(horizontal = 16.dp).padding(bottom = 24.dp)) {
             NotificationRationaleCard(
                 permission,
                 reason = stringResource(R.string.notif_settings_reason),

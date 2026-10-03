@@ -1,5 +1,7 @@
 package com.aiyu.rewire.feature.guard
 
+import com.aiyu.rewire.ui.components.readableWidth
+
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.ui.res.pluralStringResource
 import androidx.compose.ui.res.stringResource
@@ -93,7 +95,7 @@ fun GuardScreen(onOpenHabit: (String) -> Unit, onStartFocus: () -> Unit) {
     Box(Modifier.fillMaxSize()) {
         LazyColumn(
             state = list,
-            modifier = Modifier.fillMaxSize().statusBarsPadding(),
+            modifier = Modifier.fillMaxSize().statusBarsPadding().readableWidth(720.dp),
             contentPadding = PaddingValues(start = 16.dp, end = 16.dp, bottom = 112.dp),
         ) {
             item { Header() }

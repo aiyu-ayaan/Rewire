@@ -1,5 +1,7 @@
 package com.aiyu.rewire.feature.matrix
 
+import com.aiyu.rewire.ui.components.readableWidth
+
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.ui.res.pluralStringResource
 import androidx.compose.ui.res.stringResource
@@ -225,7 +227,7 @@ fun MatrixScreen(onShowAll: (apps: Boolean) -> Unit) {
     val vm = hiltViewModel<MatrixViewModel>()
     val ui by vm.ui.collectAsStateWithLifecycle()
 
-    Column(Modifier.fillMaxSize().statusBarsPadding().verticalScroll(rememberScrollState()).padding(horizontal = 16.dp).padding(bottom = 24.dp)) {
+    Column(Modifier.fillMaxSize().statusBarsPadding().readableWidth(720.dp).verticalScroll(rememberScrollState()).padding(horizontal = 16.dp).padding(bottom = 24.dp)) {
         Text(stringResource(R.string.matrix_title), style = MaterialTheme.typography.headlineLarge, modifier = Modifier.padding(top = 16.dp))
         Text(stringResource(R.string.matrix_subtitle), style = MaterialTheme.typography.bodyMedium, color = MaterialTheme.colorScheme.onSurfaceVariant)
 
@@ -263,7 +265,7 @@ fun MatrixBreakdownScreen(apps: Boolean, onBack: () -> Unit) {
             )
         },
     ) { padding ->
-        Column(Modifier.padding(padding).verticalScroll(rememberScrollState()).padding(horizontal = 16.dp).padding(bottom = 24.dp)) {
+        Column(Modifier.padding(padding).readableWidth().verticalScroll(rememberScrollState()).padding(horizontal = 16.dp).padding(bottom = 24.dp)) {
             if (items.isEmpty()) EmptyState(stringResource(R.string.matrix_breakdown_empty_title), stringResource(R.string.matrix_breakdown_empty_text))
             else BreakdownList(items, if (apps) MaterialTheme.colorScheme.tertiary else MaterialTheme.colorScheme.secondary)
         }

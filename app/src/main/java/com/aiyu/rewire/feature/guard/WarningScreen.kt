@@ -1,5 +1,7 @@
 package com.aiyu.rewire.feature.guard
 
+import androidx.compose.foundation.layout.wrapContentWidth
+
 import androidx.compose.animation.core.animateFloatAsState
 import androidx.compose.runtime.setValue
 import androidx.compose.runtime.getValue
@@ -120,7 +122,7 @@ fun WarningScreen(
             modifier = Modifier.size(360.dp).align(Alignment.TopEnd).padding(start = 120.dp),
         )
         Column(
-            Modifier.fillMaxSize().safeDrawingPadding().padding(24.dp).verticalScroll(rememberScrollState()),
+            Modifier.fillMaxSize().safeDrawingPadding().wrapContentWidth(Alignment.CenterHorizontally).widthIn(max = 600.dp).padding(24.dp).verticalScroll(rememberScrollState()),
             horizontalAlignment = Alignment.Start,
         ) {
             if (preview) {
