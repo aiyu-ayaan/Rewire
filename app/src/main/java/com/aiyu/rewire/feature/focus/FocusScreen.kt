@@ -1,5 +1,6 @@
 package com.aiyu.rewire.feature.focus
 
+import androidx.activity.compose.BackHandler
 import androidx.compose.ui.semantics.Role
 
 import androidx.compose.ui.semantics.role
@@ -143,6 +144,8 @@ fun FocusScreen(onFullscreen: () -> Unit, onHistory: () -> Unit) {
     }
     // Setup is the tab's base screen; timer + result are "inside" it, so the bottom bar steps away.
     HideNavigationBar(hide = mode != 0)
+    // The result screen is a step inside Focus: Back returns to setup, like "Back to setup", instead of leaving the app.
+    BackHandler(enabled = mode == 2, onBack = vm::reset)
     val motion = MaterialTheme.motionScheme
     val effects = motion.defaultEffectsSpec<Float>()
     val spatial = motion.defaultSpatialSpec<Float>()
