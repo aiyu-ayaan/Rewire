@@ -2,6 +2,8 @@ package com.aiyu.rewire.core.guard
 
 import android.content.Context
 import android.content.Intent
+import android.media.AudioManager
+import android.telecom.TelecomManager
 import android.util.Log
 import android.view.inputmethod.InputMethodManager
 import com.aiyu.rewire.BuildConfig
@@ -34,6 +36,8 @@ enum class GuardOutcome { CONTINUED, EMERGENCY_ONCE, WENT_BACK, ABANDONED }
 interface EnginePlatform {
     val packageName: String
     fun isKeyboard(pkg: String): Boolean
+    fun isCallUi(pkg: String, className: String?): Boolean
+    fun isCallRinging(): Boolean
     fun showGuard(pkg: String, habitId: String, level: WarningLevel, blockReason: String?)
     /** A guard screen exists right now (created, not yet destroyed). */
     fun isGuardOpen(): Boolean
@@ -42,11 +46,29 @@ interface EnginePlatform {
 }
 
 class DefaultEnginePlatform(private val context: Context) : EnginePlatform {
+    private val audioManager by lazy { context.getSystemService(AudioManager::class.java) }
+    private val telecomManager by lazy { context.getSystemService(TelecomManager::class.java) }
+
     override val packageName: String
         get() = context.packageName
 
     override fun isKeyboard(pkg: String): Boolean =
         context.getSystemService(InputMethodManager::class.java)?.enabledInputMethodList?.map { it.packageName }?.contains(pkg) == true
+
+    override fun isCallRinging(): Boolean =
+        runCatching { audioManager?.mode == AudioManager.MODE_RINGTONE }.getOrDefault(false)
+
+    override fun isCallUi(pkg: String, className: String?): Boolean {
+        val defaultDialer = runCatching { telecomManager?.defaultDialerPackage }.getOrNull()
+        if (defaultDialer != null && pkg == defaultDialer) return true
+        if (pkg in HabitEngine.CALL_PACKAGES) return true
+        if (className != null && HabitEngine.CALL_CLASS_KEYWORDS.any { className.contains(it, ignoreCase = true) }) return true
+        val mode = runCatching { audioManager?.mode }.getOrNull()
+        if (mode == AudioManager.MODE_IN_CALL || mode == AudioManager.MODE_IN_COMMUNICATION) {
+            if (className?.contains("call", ignoreCase = true) == true) return true
+        }
+        return false
+    }
 
     /**
      * Home and the guard in one call, so the guard always lands on top of Home. A separate global HOME
@@ -157,7 +179,7 @@ class HabitEngine(
             }
             return
         }
-        if (isIgnored(pkg)) return
+        if (isIgnored(pkg) || platform.isCallRinging() || platform.isCallUi(pkg, className)) return
         if (pkg == current) {
             if (stale) {
                 stale = false
@@ -246,6 +268,7 @@ class HabitEngine(
     }
 
     private fun evaluate(pkg: String, isRecheck: Boolean) {
+        if (platform.isCallRinging()) return
         val profile = profileFor(pkg) ?: return
         val d = RuleEngine.decide(inputFor(profile, pkg))
         if (BuildConfig.DEBUG) Log.d(TAG, "decision=$d recheck=$isRecheck") // no package names in logs
@@ -318,10 +341,28 @@ class HabitEngine(
     private fun isIgnored(pkg: String): Boolean =
         pkg == platform.packageName || pkg == SYSTEM_UI || platform.isKeyboard(pkg)
 
-    private companion object {
+    internal companion object {
         const val TAG = "RewireGuard"
         const val MINUTE = 60_000L
         const val GUARD_START_GRACE_MS = 3_000L
         const val SYSTEM_UI = "com.android.systemui"
+        val CALL_PACKAGES = setOf(
+            "com.android.phone",
+            "com.android.server.telecom",
+            "com.android.incallui",
+            "com.google.android.dialer",
+            "com.samsung.android.incallui",
+            "com.samsung.android.dialer",
+            "com.oneplus.dialer",
+            "com.coloros.phoneno",
+        )
+        val CALL_CLASS_KEYWORDS = listOf(
+            "Voip",
+            "InCall",
+            "CallActivity",
+            "CallingActivity",
+            "OngoingCall",
+            "RtcCall",
+        )
     }
 }

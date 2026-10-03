@@ -83,6 +83,15 @@ class HabitEngineOutcomeTest {
         data class GuardCall(val pkg: String, val habitId: String, val level: WarningLevel, val blockReason: String?)
 
         var guardOpen = true
+        var ringing = false
+        val callUiPackages = mutableSetOf(HabitEngine.CALL_PACKAGES.first())
+        val callUiClasses = mutableSetOf<String>()
+
+        override fun isCallRinging(): Boolean = ringing
+
+        override fun isCallUi(pkg: String, className: String?): Boolean =
+            pkg in callUiPackages || pkg in HabitEngine.CALL_PACKAGES ||
+                (className != null && (callUiClasses.contains(className) || HabitEngine.CALL_CLASS_KEYWORDS.any { className.contains(it, ignoreCase = true) }))
 
         override fun isKeyboard(pkg: String): Boolean = pkg in keyboards
 
@@ -669,6 +678,68 @@ class HabitEngineOutcomeTest {
         platform.guardServiceSynced = null
         engine.ensureMonitoring()
         assertEquals(true, platform.guardServiceSynced)
+    }
+
+    @Test
+    fun `incoming call ringing does not show guard even for guarded app`() {
+        platform.ringing = true
+        engine.onForeground("com.supercell.clashroyale")
+
+        assertTrue(platform.guardShown.isEmpty())
+        assertTrue(eventRepo.logged.isEmpty())
+    }
+
+    @Test
+    fun `incoming WhatsApp VoIP call screen is not intercepted by habit engine`() {
+        habitRepo.setHabits(listOf(
+            HabitProfile(
+                habit = Habit("h-whatsapp", "Social", null, enabled = true),
+                apps = listOf(ProtectedApp("com.whatsapp", "h-whatsapp", WarningLevel.MAX, enabled = true)),
+                rule = RestrictionRule("r-wa", "h-whatsapp", dailyLimitMinutes = null, allowedStartMinutes = null, allowedEndMinutes = null, maxLaunches = null, WarningLevel.MAX, 5),
+            )
+        ))
+
+        // WhatsApp call activity comes to the foreground
+        engine.onForeground("com.whatsapp", "com.whatsapp.voipcalling.VoipActivityV2")
+
+        assertTrue(platform.guardShown.isEmpty())
+        assertTrue(eventRepo.logged.isEmpty())
+    }
+
+    @Test
+    fun `after WhatsApp call ends, returning to chat shows guard`() {
+        habitRepo.setHabits(listOf(
+            HabitProfile(
+                habit = Habit("h-whatsapp", "Social", null, enabled = true),
+                apps = listOf(ProtectedApp("com.whatsapp", "h-whatsapp", WarningLevel.MAX, enabled = true)),
+                rule = RestrictionRule("r-wa", "h-whatsapp", dailyLimitMinutes = null, allowedStartMinutes = null, allowedEndMinutes = null, maxLaunches = null, WarningLevel.MAX, 5),
+            )
+        ))
+
+        // Call active / ringing
+        engine.onForeground("com.whatsapp", "com.whatsapp.voipcalling.VoipActivityV2")
+        assertTrue(platform.guardShown.isEmpty())
+
+        // Call ended, user enters regular WhatsApp chat interface
+        engine.onForeground("com.whatsapp", "com.whatsapp.HomeActivity")
+        assertEquals(1, platform.guardShown.size)
+        assertEquals("com.whatsapp", platform.guardShown.single().pkg)
+        assertEquals(WarningLevel.MAX, platform.guardShown.single().level)
+    }
+
+    @Test
+    fun `system phone dialer and in-call UI is never blocked`() {
+        habitRepo.setHabits(listOf(
+            HabitProfile(
+                habit = Habit("h-phone", "Phone", null, enabled = true),
+                apps = listOf(ProtectedApp("com.google.android.dialer", "h-phone", WarningLevel.MAX, enabled = true)),
+                rule = RestrictionRule("r-phone", "h-phone", dailyLimitMinutes = null, allowedStartMinutes = null, allowedEndMinutes = null, maxLaunches = null, WarningLevel.MAX, 5),
+            )
+        ))
+
+        engine.onForeground("com.google.android.dialer", "com.android.incallui.InCallActivity")
+        assertTrue(platform.guardShown.isEmpty())
+        assertTrue(eventRepo.logged.isEmpty())
     }
 
     private companion object {
