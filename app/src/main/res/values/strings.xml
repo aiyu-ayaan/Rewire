@@ -10,6 +10,8 @@
     <string name="channel_focus_alerts_desc">Break started, focus resumed and session complete.</string>
     <string name="channel_updates">App updates</string>
     <string name="channel_updates_desc">A newer Rewire release is available.</string>
+    <string name="notif_summary_title">Yesterday in Rewire</string>
+    <string name="notif_summary_text">%1$d min focus, went back %2$d times, %3$d overrides.</string>
     <string name="notif_update_title">Rewire %1$s is available</string>
     <string name="notif_update_text">You are on %1$s. Tap to see what changed.</string>
     <string name="channel_focus_minimised">Focus running in background</string>

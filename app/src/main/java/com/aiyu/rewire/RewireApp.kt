@@ -3,6 +3,7 @@ package com.aiyu.rewire
 import android.app.Application
 import com.aiyu.rewire.core.focus.FocusController
 import com.aiyu.rewire.core.guard.HabitEngine
+import com.aiyu.rewire.core.analytics.SummaryWorker
 import com.aiyu.rewire.core.update.AppUpdater
 import com.aiyu.rewire.core.update.UpdateWorker
 import com.aiyu.rewire.core.notifications.RewireNotifier
@@ -25,5 +26,6 @@ class RewireApp : Application() {
         focus.restore()
         // Idempotent (KEEP); cancels itself when auto-update is off.
         UpdateWorker.schedule(this, updater.enabled)
+        SummaryWorker.schedule(this)
     }
 }
