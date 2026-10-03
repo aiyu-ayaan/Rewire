@@ -91,15 +91,7 @@ class DefaultEnginePlatform(private val context: Context) : EnginePlatform {
 
     private fun unmuteCallRingerIfSilent() {
         runCatching {
-            audioManager?.adjustStreamVolume(AudioManager.STREAM_RING, AudioManager.ADJUST_UNMUTE, 0)
-            if (audioManager?.ringerMode == AudioManager.RINGER_MODE_SILENT) {
-                audioManager?.ringerMode = AudioManager.RINGER_MODE_NORMAL
-            }
-            context.getSystemService(NotificationManager::class.java)?.let { nm ->
-                if (nm.isNotificationPolicyAccessGranted && nm.currentInterruptionFilter != NotificationManager.INTERRUPTION_FILTER_ALL) {
-                    nm.setInterruptionFilter(NotificationManager.INTERRUPTION_FILTER_ALL)
-                }
-            }
+            com.aiyu.rewire.core.notifications.FocusDndManager(context).ensureCallRinging()
         }
     }
 

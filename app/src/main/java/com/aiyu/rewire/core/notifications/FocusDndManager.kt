@@ -4,7 +4,9 @@ import android.app.NotificationManager
 import android.content.Context
 import android.content.Intent
 import android.media.AudioManager
+import android.net.Uri
 import android.provider.Settings
+import android.service.notification.Condition
 import android.util.Log
 
 /**
@@ -29,6 +31,37 @@ class FocusDndManager(private val context: Context) {
         private const val KEY_SAVED_RING_VOL = "saved_ring_vol"
         private const val KEY_SAVED_RINGER_MODE = "saved_ringer_mode"
         private const val KEY_SAVED_NOTIF_MUTED = "saved_notif_muted"
+    }
+
+    init {
+        clearZenRulesAndEnsureFilterAll()
+    }
+
+    fun clearZenRulesAndEnsureFilterAll(manager: NotificationManager? = nm) {
+        val mgr = manager ?: return
+        runCatching {
+            if (!mgr.isNotificationPolicyAccessGranted) {
+                Log.w(TAG, "clearZenRules: policy access NOT granted")
+                return
+            }
+            mgr.automaticZenRules?.forEach { (ruleId, rule) ->
+                if (!ruleId.startsWith("implicit_")) {
+                    runCatching { mgr.removeAutomaticZenRule(ruleId) }
+                } else {
+                    runCatching {
+                        val condUri = rule.conditionId ?: Uri.parse("condition://android/implicit/${context.packageName}")
+                        val offCondition = Condition(condUri, "Off", Condition.STATE_FALSE)
+                        mgr.setAutomaticZenRuleState(ruleId, offCondition)
+                    }
+                }
+            }
+            val filter = mgr.currentInterruptionFilter
+            Log.i(TAG, "Current interruption filter: $filter")
+            if (filter != NotificationManager.INTERRUPTION_FILTER_ALL) {
+                mgr.setInterruptionFilter(NotificationManager.INTERRUPTION_FILTER_ALL)
+                Log.i(TAG, "Called setInterruptionFilter(ALL)")
+            }
+        }.onFailure { Log.e(TAG, "clearZenRulesAndEnsureFilterAll failed", it) }
     }
 
     val isAccessGranted: Boolean
@@ -111,44 +144,10 @@ class FocusDndManager(private val context: Context) {
                 }
             }
 
-            // 4. Ensure Interruption Filter is INTERRUPTION_FILTER_ALL so ZenModeHelper does not
-            // force mRingerModeExternal into SILENT (which kills Telecom vibration and WhatsApp audio).
-            runCatching {
-                if (manager.currentInterruptionFilter != NotificationManager.INTERRUPTION_FILTER_ALL) {
-                    manager.setInterruptionFilter(NotificationManager.INTERRUPTION_FILTER_ALL)
-                }
-            }
-
-            // 5. Keep priority policy configured as a fallback
-            var priorityCategories = NotificationManager.Policy.PRIORITY_CATEGORY_CALLS or
-                NotificationManager.Policy.PRIORITY_CATEGORY_REPEAT_CALLERS
-            if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.P) {
-                priorityCategories = priorityCategories or
-                    NotificationManager.Policy.PRIORITY_CATEGORY_ALARMS or
-                    NotificationManager.Policy.PRIORITY_CATEGORY_MEDIA or
-                    NotificationManager.Policy.PRIORITY_CATEGORY_SYSTEM
-            }
-            if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.R) {
-                priorityCategories = priorityCategories or
-                    NotificationManager.Policy.PRIORITY_CATEGORY_CONVERSATIONS
-            }
-
-            val focusPolicy = if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.R) {
-                NotificationManager.Policy(
-                    priorityCategories,
-                    NotificationManager.Policy.PRIORITY_SENDERS_ANY,
-                    NotificationManager.Policy.PRIORITY_SENDERS_ANY,
-                    0,
-                    NotificationManager.Policy.CONVERSATION_SENDERS_ANYONE,
-                )
-            } else {
-                NotificationManager.Policy(
-                    priorityCategories,
-                    NotificationManager.Policy.PRIORITY_SENDERS_ANY,
-                    NotificationManager.Policy.PRIORITY_SENDERS_ANY,
-                )
-            }
-            runCatching { manager.notificationPolicy = focusPolicy }
+            // 4. Ensure Interruption Filter is INTERRUPTION_FILTER_ALL and remove any
+            // automatic Zen rules so ZenModeHelper does not force mRingerModeExternal
+            // into SILENT (which kills Telecom vibration and WhatsApp call audio).
+            clearZenRulesAndEnsureFilterAll(manager)
 
             Log.i(TAG, "Focus muting applied: notifications silenced, calls audible with vibration")
             return true
@@ -169,11 +168,7 @@ class FocusDndManager(private val context: Context) {
             if (audio.ringerMode == AudioManager.RINGER_MODE_SILENT) {
                 audio.ringerMode = AudioManager.RINGER_MODE_NORMAL
             }
-            nm?.let { m ->
-                if (m.isNotificationPolicyAccessGranted && m.currentInterruptionFilter != NotificationManager.INTERRUPTION_FILTER_ALL) {
-                    m.setInterruptionFilter(NotificationManager.INTERRUPTION_FILTER_ALL)
-                }
-            }
+            nm?.let { clearZenRulesAndEnsureFilterAll(it) }
             true
         }.getOrDefault(false)
     }
@@ -187,7 +182,10 @@ class FocusDndManager(private val context: Context) {
         if (!manager.isNotificationPolicyAccessGranted) return false
 
         try {
-            if (!prefs.getBoolean(KEY_APPLIED, false)) return false
+            clearZenRulesAndEnsureFilterAll(manager)
+            if (!prefs.getBoolean(KEY_APPLIED, false)) {
+                return false
+            }
 
             val audio = audioManager
 
