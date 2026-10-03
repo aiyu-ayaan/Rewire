@@ -42,6 +42,13 @@ import com.aiyu.rewire.domain.analytics.DailyMetrics
 import com.aiyu.rewire.domain.analytics.GuardBreakdown
 import com.aiyu.rewire.domain.analytics.HabitEvent
 import com.aiyu.rewire.domain.analytics.MetricsCalculator
+import com.aiyu.rewire.domain.analytics.MonthlyMetrics
+import com.aiyu.rewire.domain.analytics.PeriodMetrics
+import com.aiyu.rewire.domain.analytics.WeeklyMetrics
+import com.aiyu.rewire.R
+import android.content.Context
+import dagger.hilt.android.qualifiers.ApplicationContext
+import kotlinx.coroutines.flow.MutableStateFlow
 import com.aiyu.rewire.domain.analytics.Punchlines
 import com.aiyu.rewire.domain.habit.HabitProfile
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
@@ -63,23 +70,60 @@ import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.flow.flowOn
 import kotlinx.coroutines.flow.stateIn
 import java.time.LocalDate
+import java.time.YearMonth
 import java.time.ZoneId
 import java.time.format.TextStyle
 import java.util.Locale
 
+enum class MatrixPeriod { DAILY, WEEKLY, MONTHLY }
+
 data class NamedBreakdown(val label: String, val packageName: String?, val stats: GuardBreakdown)
+
+data class AppMinutes(val label: String, val minutes: Int)
+
+/** Chart-ready Daily view. */
+data class DailyUi(val today: DailyMetrics, val timeline: List<TimelineItem>, val appUsage: List<AppMinutes>) {
+    val hasData get() = today.focusMinutes > 0 || today.frictionMoments > 0 || today.appOpens > 0 || timeline.isNotEmpty()
+}
+
+/** Chart-ready Weekly view (calendar week). */
+data class WeeklyUi(
+    val metrics: WeeklyMetrics,
+    val focusBars: List<ChartPoint>,
+    val screenBars: List<ChartPoint>,
+    val guardStack: StackedBarData,
+    val mostOpenedLabel: String?,
+) {
+    val hasData get() = metrics.focusMinutes > 0 || metrics.habitAttempts > 0 || metrics.distractedMinutes > 0 || metrics.mostOpenedApp != null
+}
+
+/** Chart-ready Monthly view. */
+data class MonthlyUi(
+    val metrics: MonthlyMetrics,
+    val trendLines: List<LineSeries>,
+    val overrideTrend: List<ChartPoint>,
+    val heat: List<HeatCell>,
+    /** Weekday column (0 = Monday) of the 1st, so the heatmap lines up with a calendar. */
+    val firstColumn: Int,
+    val scatter: List<ScatterPoint>,
+    val radar: List<RadarAxis>,
+) {
+    val hasData get() = metrics.days.any { it.focusMinutes > 0 || it.frictionMoments > 0 || it.screenTimeMinutes > 0 }
+}
 
 /** Everything Matrix draws, already aggregated. UI never touches raw events. */
 data class MatrixUi(
+    val period: MatrixPeriod,
     val week: List<DailyMetrics>,
-    val month: List<DailyMetrics>,
+    val daily: DailyUi,
+    val weekly: WeeklyUi,
+    val monthly: MonthlyUi,
     val habits: List<NamedBreakdown>,
     val apps: List<NamedBreakdown>,
     val peakHour: Int?,
     val focusLine: String?,
     val guardLine: String?,
 ) {
-    val today get() = week.last()
     fun weekSum(f: (DailyMetrics) -> Int) = week.sumOf(f)
     val hasFocus get() = week.any { it.focusMinutes > 0 }
     val hasGuard get() = week.any { it.frictionMoments > 0 || it.appOpens > 0 }
@@ -91,24 +135,72 @@ class MatrixViewModel @Inject constructor(
     habits: HabitRepository,
     private val usage: UsageTracker,
     private val installedApps: InstalledAppsSource,
+    @ApplicationContext private val context: Context,
 ) : ViewModel() {
-    val ui: StateFlow<MatrixUi> = combine(events.events, habits.habits, ::build)
-        .flowOn(Dispatchers.Default)
-        .stateIn(viewModelScope, SharingStarted.WhileSubscribed(5_000), build(emptyList(), emptyList()))
+    private val period = MutableStateFlow(MatrixPeriod.DAILY)
+    fun selectPeriod(p: MatrixPeriod) { period.value = p }
 
-    private fun build(events: List<HabitEvent>, habits: List<HabitProfile>): MatrixUi {
+    val ui: StateFlow<MatrixUi> = combine(events.events, habits.habits, period, ::build)
+        .flowOn(Dispatchers.Default)
+        .stateIn(viewModelScope, SharingStarted.WhileSubscribed(5_000), build(emptyList(), emptyList(), MatrixPeriod.DAILY))
+
+    private fun s(id: Int) = context.getString(id)
+
+    private fun build(events: List<HabitEvent>, habits: List<HabitProfile>, period: MatrixPeriod): MatrixUi {
         val zone = ZoneId.systemDefault()
         val today = LocalDate.now()
         val since = today.minusDays(6).atStartOfDay(zone).toInstant().toEpochMilli()
+        val screenToday = usage.totalScreenTimeToday()
         val weekRaw = MetricsCalculator.lastDays(events, today, 7, zone)
-        val week = weekRaw.mapIndexed { idx, m ->
-            if (idx == weekRaw.lastIndex) m.copy(screenTimeMinutes = usage.totalScreenTimeToday()) else m
-        }
+        val week = weekRaw.mapIndexed { idx, m -> if (idx == weekRaw.lastIndex) m.copy(screenTimeMinutes = screenToday) else m }
         val names = habits.associate { it.id to it.habit.name }
         val seed = today.toEpochDay()
+        val screen = mapOf(today to screenToday)
+        val dayLabel = { d: LocalDate -> dayName(d, TextStyle.SHORT) }
+        val dateLabel = { d: LocalDate -> d.dayOfMonth.toString() }
+        val protectedPkgs = habits.flatMap { h -> h.apps.map { it.packageName } }.toSet()
+
+        val w = PeriodMetrics.weekly(events, PeriodMetrics.weekStart(today), zone, screen)
+        val ym = YearMonth.from(today)
+        val m = PeriodMetrics.monthly(events, ym, today, zone, screen)
+        val opened = w.mostOpenedApp
         return MatrixUi(
+            period = period,
             week = week,
-            month = MetricsCalculator.lastDays(events, today, 28, zone),
+            daily = DailyUi(
+                today = week.last(),
+                timeline = ChartMapper.timeline(events, today, zone),
+                appUsage = usage.allAppsMinutesToday().filterKeys { it in protectedPkgs }
+                    .map { AppMinutes(installedApps.label(it.key), it.value) }.sortedByDescending { it.minutes },
+            ),
+            weekly = WeeklyUi(
+                metrics = w,
+                focusBars = ChartMapper.trend(w.days, dayLabel) { it.focusMinutes },
+                screenBars = ChartMapper.trend(w.days, dayLabel) { it.screenTimeMinutes },
+                guardStack = ChartMapper.stackedGuard(
+                    w.days, dayLabel,
+                    listOf(s(R.string.matrix_went_back), s(R.string.matrix_continued), s(R.string.matrix_blocked), s(R.string.matrix_overrides)),
+                ),
+                mostOpenedLabel = opened?.let { installedApps.label(it.packageName) },
+            ),
+            monthly = MonthlyUi(
+                metrics = m,
+                trendLines = listOf(
+                    LineSeries(s(R.string.matrix_focus), m.focusTrend.map { ChartPoint(dateLabel(it.date), it.value.toFloat()) }),
+                    LineSeries(s(R.string.matrix_screen_time), m.screenTimeTrend.map { ChartPoint(dateLabel(it.date), it.value.toFloat()) }),
+                ),
+                overrideTrend = m.overrideTrend.map { ChartPoint(dateLabel(it.date), it.value.toFloat()) },
+                heat = ChartMapper.heat(m.days, dateLabel) { it.focusMinutes },
+                firstColumn = ym.atDay(1).dayOfWeek.value - 1,
+                scatter = ChartMapper.scatter(m.days, dateLabel),
+                radar = ChartMapper.radar(
+                    m,
+                    listOf(
+                        s(R.string.matrix_radar_consistency), s(R.string.matrix_radar_goals), s(R.string.matrix_radar_reduction),
+                        s(R.string.matrix_radar_discipline), s(R.string.matrix_radar_focus_days),
+                    ),
+                ),
+            ),
             habits = MetricsCalculator.breakdown(events, since) { it.habitId }
                 .map { NamedBreakdown(names[it.key] ?: "Removed habit", null, it) },
             apps = MetricsCalculator.breakdown(events, since) { it.packageName }
@@ -124,74 +216,24 @@ class MatrixViewModel @Inject constructor(
 fun MatrixScreen(onShowAll: (apps: Boolean) -> Unit) {
     val vm = hiltViewModel<MatrixViewModel>()
     val ui by vm.ui.collectAsStateWithLifecycle()
-    val scheme = MaterialTheme.colorScheme
 
     Column(Modifier.fillMaxSize().statusBarsPadding().verticalScroll(rememberScrollState()).padding(horizontal = 16.dp).padding(bottom = 24.dp)) {
         Text("Matrix", style = MaterialTheme.typography.headlineLarge, modifier = Modifier.padding(top = 16.dp))
-        Text("Focus and Guard, measured together. Stored only on this device.", style = MaterialTheme.typography.bodyMedium, color = scheme.onSurfaceVariant)
+        Text("Focus and Guard, measured together. Stored only on this device.", style = MaterialTheme.typography.bodyMedium, color = MaterialTheme.colorScheme.onSurfaceVariant)
 
-        if (!ui.hasFocus && !ui.hasGuard) {
-            EmptyState("No data yet", "Finish a focus block or let Guard catch an app. Your week shows up here.")
-            return@Column
-        }
-
-        listOfNotNull(ui.focusLine, ui.guardLine).forEach { Punchline(it) }
-
-        SectionTitle("Today")
-        TodayOverview(ui.today)
-
-        SectionTitle("Focus · last 7 days")
-        if (!ui.hasFocus) Caption("No focus sessions this week. Start one from the Focus tab and it lands here.")
-        else ChartCard {
-            AreaLineChart(
-                ui.week.map { it.focusMinutes }, scheme.primary,
-                "Focus minutes per day: " + ui.week.joinToString { "${dayName(it.date, TextStyle.SHORT)} ${it.focusMinutes}" },
-                Modifier.fillMaxWidth().height(160.dp),
-            )
-            DayLabels(ui.week)
-            Caption("Total ${formatMinutes(ui.weekSum { it.focusMinutes })} · best day ${formatMinutes(ui.week.maxOf { it.focusMinutes })} · ${ui.weekSum { it.sessionsCompleted }} sessions")
-        }
-
-        SectionTitle("Guard · last 7 days")
-        if (!ui.hasGuard) {
-            Caption("Guard hasn't stepped in this week. Either you're in control, or no habit is active yet.")
-        } else {
-            GuardOutcomes(ui)
-            Spacer(Modifier.height(12.dp))
-            ChartCard {
-                Text("Friction moments per day", style = MaterialTheme.typography.labelLarge, color = scheme.onSurfaceVariant)
-                Spacer(Modifier.height(8.dp))
-                AreaLineChart(
-                    ui.week.map { it.frictionMoments }, scheme.tertiary,
-                    "Guard warnings and blocks per day: " + ui.week.joinToString { "${dayName(it.date, TextStyle.SHORT)} ${it.frictionMoments}" },
-                    Modifier.fillMaxWidth().height(120.dp),
-                )
-                DayLabels(ui.week)
-                ui.peakHour?.let { Caption("Most guarded hour: ${formatClock(it * 60)}–${formatClock((it + 1) % 24 * 60)}") }
-            }
-        }
-
-        if (ui.habits.isNotEmpty()) {
-            SectionTitle("By habit", trailing = { ShowAll(ui.habits.size) { onShowAll(false) } })
-            BreakdownList(ui.habits.take(PREVIEW_ROWS), scheme.secondary)
-        }
-        if (ui.apps.isNotEmpty()) {
-            SectionTitle("Most opened protected apps", trailing = { ShowAll(ui.apps.size) { onShowAll(true) } })
-            BreakdownList(ui.apps.take(PREVIEW_ROWS), scheme.tertiary)
-        }
-
-        SectionTitle("Focus · last 4 weeks")
-        ChartCard {
-            ActivityHeatmap(ui.month, Modifier.fillMaxWidth())
-            Caption("Focused on ${ui.month.count { it.focusMinutes > 0 }} of ${ui.month.size} days. Darker = longer.")
+        PeriodSwitch(ui.period, vm::selectPeriod)
+        when (ui.period) {
+            MatrixPeriod.DAILY -> DailyView(ui)
+            MatrixPeriod.WEEKLY -> WeeklyView(ui, onShowAll)
+            MatrixPeriod.MONTHLY -> MonthlyView(ui.monthly)
         }
     }
 }
 
-private const val PREVIEW_ROWS = 4
+internal const val PREVIEW_ROWS = 4
 
 @Composable
-private fun ShowAll(count: Int, onClick: () -> Unit) {
+internal fun ShowAll(count: Int, onClick: () -> Unit) {
     if (count > PREVIEW_ROWS) TextButton(onClick = onClick) { Text("Show all ($count)") }
 }
 
@@ -222,7 +264,7 @@ fun MatrixBreakdownScreen(apps: Boolean, onBack: () -> Unit) {
 
 /** Big friendly line, in the spirit of "your tokens ≈ 18 copies of Monte Cristo". */
 @Composable
-private fun Punchline(text: String) {
+internal fun Punchline(text: String) {
     Card(
         shape = MaterialTheme.shapes.large,
         colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.primaryContainer, contentColor = MaterialTheme.colorScheme.onPrimaryContainer),
@@ -233,7 +275,7 @@ private fun Punchline(text: String) {
 }
 
 @Composable
-private fun TodayOverview(m: DailyMetrics) {
+internal fun TodayOverview(m: DailyMetrics) {
     val score = m.disciplineScore
     ChartCard {
         Row(verticalAlignment = Alignment.CenterVertically) {
@@ -258,7 +300,7 @@ private fun TodayOverview(m: DailyMetrics) {
 }
 
 @Composable
-private fun GuardOutcomes(ui: MatrixUi) {
+internal fun GuardOutcomes(ui: MatrixUi) {
     val scheme = MaterialTheme.colorScheme
     val slices = listOf(
         Slice("Went back", ui.weekSum { it.wentBackCount }, scheme.primary),
@@ -282,7 +324,7 @@ private fun GuardOutcomes(ui: MatrixUi) {
 }
 
 @Composable
-private fun BreakdownList(items: List<NamedBreakdown>, color: Color) {
+internal fun BreakdownList(items: List<NamedBreakdown>, color: Color) {
     val max = items.maxOf { it.stats.moments + it.stats.opens }.coerceAtLeast(1)
     ChartCard {
         Column(verticalArrangement = Arrangement.spacedBy(14.dp)) {
@@ -312,14 +354,14 @@ private fun BreakdownList(items: List<NamedBreakdown>, color: Color) {
 }
 
 @Composable
-private fun ChartCard(content: @Composable () -> Unit) {
+internal fun ChartCard(content: @Composable () -> Unit) {
     Card(shape = MaterialTheme.shapes.large, colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surfaceContainerLow), modifier = Modifier.fillMaxWidth()) {
         Column(Modifier.padding(16.dp)) { content() }
     }
 }
 
 @Composable
-private fun DayLabels(week: List<DailyMetrics>) {
+internal fun DayLabels(week: List<DailyMetrics>) {
     Row(Modifier.fillMaxWidth().padding(top = 8.dp)) {
         week.forEachIndexed { i, d ->
             Text(
@@ -334,15 +376,15 @@ private fun DayLabels(week: List<DailyMetrics>) {
 }
 
 @Composable
-private fun Caption(text: String) =
+internal fun Caption(text: String) =
     Text(text, style = MaterialTheme.typography.bodyMedium, color = MaterialTheme.colorScheme.onSurfaceVariant, modifier = Modifier.padding(top = 8.dp))
 
 @Composable
-private fun Stat(label: String, value: String) {
+internal fun Stat(label: String, value: String) {
     Row(verticalAlignment = Alignment.CenterVertically) {
         Text(label, style = MaterialTheme.typography.bodyMedium, color = MaterialTheme.colorScheme.onSurfaceVariant, modifier = Modifier.weight(1f))
         Text(value, style = MaterialTheme.typography.titleSmall)
     }
 }
 
-private fun dayName(d: LocalDate, style: TextStyle) = d.dayOfWeek.getDisplayName(style, Locale.getDefault())
+internal fun dayName(d: LocalDate, style: TextStyle) = d.dayOfWeek.getDisplayName(style, Locale.getDefault())
