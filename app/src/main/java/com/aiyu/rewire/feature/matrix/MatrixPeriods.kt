@@ -17,6 +17,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import com.aiyu.rewire.ui.components.GoalChips
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import com.aiyu.rewire.R
@@ -67,6 +68,7 @@ internal fun DailyView(ui: MatrixUi) {
     }
     SectionTitle(stringResource(R.string.matrix_today))
     TodayOverview(d.today)
+    GoalChips(d.progress, Modifier.padding(top = 12.dp))
     ChartCard {
         Stat(stringResource(R.string.matrix_screen_time), formatMinutes(d.today.screenTimeMinutes))
     }

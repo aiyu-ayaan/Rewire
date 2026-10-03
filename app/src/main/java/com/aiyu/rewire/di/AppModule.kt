@@ -13,6 +13,8 @@ import com.aiyu.rewire.core.settings.SettingsRepository
 import com.aiyu.rewire.data.DbWriter
 import com.aiyu.rewire.data.BackupRepository
 import com.aiyu.rewire.data.DataStoreFocusPresetRepository
+import com.aiyu.rewire.data.DataStoreGoalsRepository
+import com.aiyu.rewire.data.GoalsRepository
 import com.aiyu.rewire.data.EventRepository
 import com.aiyu.rewire.data.FocusPresetRepository
 import com.aiyu.rewire.data.FocusSessionRepository
@@ -96,11 +98,14 @@ object AppModule {
     fun focusSessions(db: RewireDatabase, writer: DbWriter): FocusSessionRepository = RoomFocusSessionRepository(db.focusSessions(), writer)
 
     @Provides @Singleton
-    fun backup(db: RewireDatabase, habits: HabitRepository, warnings: WarningRepository, events: EventRepository, presets: FocusPresetRepository) =
-        BackupRepository(db, habits, warnings, events, presets)
+    fun focusPresets(@ApplicationContext context: Context): FocusPresetRepository = DataStoreFocusPresetRepository(context)
 
     @Provides @Singleton
-    fun focusPresets(@ApplicationContext context: Context): FocusPresetRepository = DataStoreFocusPresetRepository(context)
+    fun goalsRepository(@ApplicationContext context: Context): GoalsRepository = DataStoreGoalsRepository(context)
+
+    @Provides @Singleton
+    fun backup(db: RewireDatabase, habits: HabitRepository, warnings: WarningRepository, events: EventRepository, presets: FocusPresetRepository, goals: GoalsRepository) =
+        BackupRepository(db, habits, warnings, events, presets, goals)
 
     // ---- Platform --------------------------------------------------------------------------------
 

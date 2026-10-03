@@ -5,7 +5,11 @@ import androidx.lifecycle.viewModelScope
 import com.aiyu.rewire.core.apps.InstalledAppsSource
 import com.aiyu.rewire.core.guard.UsageTracker
 import com.aiyu.rewire.data.EventRepository
+import com.aiyu.rewire.data.GoalsRepository
 import com.aiyu.rewire.data.HabitRepository
+import com.aiyu.rewire.domain.goals.DayProgress
+import com.aiyu.rewire.domain.goals.Streaks
+import kotlinx.coroutines.flow.combine
 import dagger.assisted.Assisted
 import dagger.assisted.AssistedFactory
 import dagger.assisted.AssistedInject
@@ -28,6 +32,7 @@ class GuardViewModel @Inject constructor(
     private val habitRepo: HabitRepository,
     events: EventRepository,
     private val usage: UsageTracker,
+    goals: GoalsRepository,
 ) : ViewModel() {
     val habits: StateFlow<List<HabitProfile>> = habitRepo.habits
 
@@ -37,6 +42,10 @@ class GuardViewModel @Inject constructor(
                 .copy(screenTimeMinutes = usage.totalScreenTimeToday())
         }
         .stateIn(viewModelScope, SharingStarted.WhileSubscribed(5_000), MetricsCalculator.daily(emptyList(), LocalDate.now(), ZoneId.systemDefault()))
+
+    val progress: StateFlow<DayProgress> = combine(events.events, goals.goals) { e, g ->
+        Streaks.progress(e, LocalDate.now(), ZoneId.systemDefault(), g)
+    }.stateIn(viewModelScope, SharingStarted.WhileSubscribed(5_000), DayProgress.EMPTY)
 
     fun usageMinutesFor(profile: HabitProfile): Int? =
         usage.minutesToday(profile.apps.map { it.packageName }.toSet())

@@ -20,6 +20,7 @@ class BackupRepository(
     private val warnings: WarningRepository,
     private val events: EventRepository,
     private val presets: FocusPresetRepository,
+    private val goals: GoalsRepository,
     private val clock: () -> Long = System::currentTimeMillis,
 ) {
     suspend fun export(): BackupSnapshot {
@@ -36,6 +37,7 @@ class BackupRepository(
             focusSessions = db.focusSessions().finished().map { it.toDomain() },
             settings = (db.settings().get() ?: SettingsEntity()).toDomain(),
             focusPresets = presetsSnapshot,
+            goals = goals.current(),
         )
     }
 
@@ -54,6 +56,7 @@ class BackupRepository(
             db.settings().upsert(snapshot.settings.toEntity())
         }
         snapshot.focusPresets?.let { presets.replaceAll(it) }
+        snapshot.goals?.let { goals.set(it) } // DataStore is outside the Room transaction; validated by the codec
         reloadCaches()
     }
 

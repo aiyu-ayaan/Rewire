@@ -11,6 +11,7 @@ import com.aiyu.rewire.domain.analytics.HabitEventType
 import com.aiyu.rewire.domain.backup.BackupCodec
 import com.aiyu.rewire.domain.backup.BackupException
 import com.aiyu.rewire.domain.backup.BackupSnapshot
+import com.aiyu.rewire.domain.goals.Goals
 import com.aiyu.rewire.domain.focus.FocusConfig
 import com.aiyu.rewire.domain.focus.FocusPreset
 import com.aiyu.rewire.domain.focus.FocusSession
@@ -69,6 +70,14 @@ class BackupCodecTest {
     @Test fun `unknown keys from a newer minor writer are ignored`() {
         val text = BackupCodec.encode(snapshot).replaceFirst("{", "{\"future\":1,")
         assertEquals(snapshot, BackupCodec.decode(text))
+    }
+
+    @Test fun `goals round trip and older files without goals still load`() {
+        val withGoals = snapshot.copy(goals = Goals(45, 2))
+        assertEquals(Goals(45, 2), BackupCodec.decode(BackupCodec.encode(withGoals)).goals)
+        val legacy = BackupCodec.encode(snapshot).replace(Regex(",\"goals\":null"), "")
+        assertEquals(null, BackupCodec.decode(legacy).goals)
+        assertEquals(BackupException.Reason.INCONSISTENT, reason(BackupCodec.encode(snapshot.copy(goals = Goals(dailyFocusMinutes = 1)))))
     }
 
     @Test fun `garbage is malformed`() {

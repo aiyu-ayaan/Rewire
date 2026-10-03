@@ -98,6 +98,7 @@ fun ProfileScreen(onOpenNotificationSettings: () -> Unit, onOpenWarningLibrary: 
 
         SectionTitle(stringResource(R.string.app_name))
         Group {
+            GoalsRow(MaterialTheme.colorScheme.surfaceContainerLow)
             NavRow(Icons.Rounded.Notifications, stringResource(R.string.profile_notifications), when (permission.status) {
                 PermissionStatus.GRANTED -> stringResource(R.string.profile_notifications_on, s.notifications.count { it.value }, s.notifications.size)
                 else -> stringResource(R.string.profile_notifications_off)
