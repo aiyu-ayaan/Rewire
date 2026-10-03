@@ -154,7 +154,7 @@ service off -> banner + notification.
 - [x] Room schema v2 (`AutoMigration`), device-verified on a populated v1 DB
 - [x] Verified on emulator against the real v1.0.1-alpha.1 release (offer, notes, download, refusal message)
 - Emulator pass 2026-10-03 (Lite + Full, API 37): onboarding, create habit, Max block, escalation UI, Matrix daily/weekly/monthly with real events, focus presets + quick-test session + note, export -> clear -> import round trip, Room 1->2 and 2->3 migration androidTests (2/2 pass), landscape 200% font rail, 800dp rail, `assemblePlayRelease` (no INTERNET / INSTALL permission, no update receiver)
-- Found on emulator, fixed 2026-10-03: import dialog plurals, chips spacing in Matrix daily, discipline label at 200% font, New-habit button hidden over the empty state (code-level; not re-checked with zero habits)
+- Found on emulator, fixed 2026-10-03: import dialog plurals, chips spacing in Matrix daily, discipline label at 200% font, New-habit button hidden over the empty state (re-checked on emulator with zero habits 2026-10-04: no FAB, "Create first habit" reachable by scroll)
 - [ ] Real install end to end needs two signed releases (emulator only had a debug build)
 - [x] Play build: `play` flavor, updates compiled out (UPDATES flag, no REQUEST_INSTALL_PACKAGES/INTERNET/receiver) (2026-10-03). Confirm `assemblePlayRelease` R8 result before submitting
 
@@ -192,7 +192,7 @@ service off -> banner + notification.
 ## Phase 4 — Usage analytics
 - [x] UsageStatsManager adapter synced with Digital Wellbeing data
 - [x] WorkManager daily aggregation + daily summary notification (2026-10-03)
-- [x] DailyMetrics / weekly / monthly aggregator + tests (`PeriodMetrics`) (2026-10-03). Past-day screen time not stored yet (only today's)
+- [x] DailyMetrics / weekly / monthly aggregator + tests (`PeriodMetrics`) (2026-10-03). Past-day screen time stored via `ScreenTimeStore` (2026-10-04)
 
 ## Phase 5 — Matrix full
 - [x] Chart set: line, area, stacked bar, bar, donut, radar, heatmap, timeline, scatter (2026-10-03)
@@ -200,10 +200,10 @@ service off -> banner + notification.
 
 ## Phase 6 (V2) — Escalation, streaks, presets, goals  (2026-10-03)
 - [x] Smart escalation: configurable Minor/Major/Max minute tiers, off by default, in `RuleEngine`; Room schema v3 (AutoMigration 2->3)
-- [ ] Escalation: "repeated usage" mode (only minute tiers built)
+- [x] Escalation: "repeated usage" mode: thresholds count today's opens, no Usage access needed; Room schema v5 (AutoMigration 4->5, migration test) (2026-10-04)
 - [x] Goals (daily focus target, max overrides) + streaks, Profile editor, chips on Guard/Matrix daily, in backup
 - [x] Focus presets (built-in + user presets, DataStore, in backup)
-- [ ] Built-in preset names to strings.xml (English literals in domain now)
-- [ ] Snapshot daily screen time so weekly/monthly screen-time charts have past days
-- [ ] Remove unused `ActivityHeatmap` in Charts.kt
+- [x] Built-in preset names in strings.xml, resolved by preset id in the UI (2026-10-04)
+- [x] Daily screen time snapshots (`ScreenTimeStore`, 62 days, DataStore) synced on Matrix open + daily worker; cleared with history; not in backup export (2026-10-04)
+- [x] Removed unused `ActivityHeatmap` in Charts.kt (2026-10-04)
 ## Phase 7 (V3) — External data adapters, backup, AI insights (read-only)
