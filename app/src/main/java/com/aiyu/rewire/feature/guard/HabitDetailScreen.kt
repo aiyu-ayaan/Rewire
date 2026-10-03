@@ -1,6 +1,9 @@
 package com.aiyu.rewire.feature.guard
 
 import androidx.compose.animation.AnimatedVisibility
+import androidx.compose.ui.res.pluralStringResource
+import androidx.compose.ui.res.stringResource
+import com.aiyu.rewire.R
 import androidx.compose.runtime.setValue
 import androidx.compose.runtime.getValue
 import androidx.compose.animation.animateColorAsState
@@ -91,18 +94,19 @@ fun HabitDetailScreen(habitId: String, onBack: () -> Unit, onPreview: (String) -
     var confirmDelete by rememberSaveable { mutableStateOf(false) }
     val levelStyle = p.level.style()
     val container by animateColorAsState(levelStyle.container, MaterialTheme.motionScheme.defaultEffectsSpec(), label = "c")
+    val enabledDesc = stringResource(R.string.guard_habit_enabled_desc)
 
     Surface(Modifier.fillMaxSize().sharedBoundsOrSelf("habit-${p.id}"), color = MaterialTheme.colorScheme.surface) {
         Scaffold(
             topBar = {
                 TopAppBar(
                     title = {},
-                    navigationIcon = { IconButton(onClick = onBack) { Icon(Icons.AutoMirrored.Rounded.ArrowBack, contentDescription = "Back") } },
+                    navigationIcon = { IconButton(onClick = onBack) { Icon(Icons.AutoMirrored.Rounded.ArrowBack, contentDescription = stringResource(R.string.warning_back)) } },
                     actions = {
                         Switch(
                             checked = p.habit.enabled,
                             onCheckedChange = vm::setEnabled,
-                            modifier = Modifier.padding(end = 12.dp).semantics { contentDescription = "Habit enabled" },
+                            modifier = Modifier.padding(end = 12.dp).semantics { contentDescription = enabledDesc },
                         )
                     },
                     colors = TopAppBarDefaults.topAppBarColors(containerColor = container),
@@ -117,7 +121,7 @@ fun HabitDetailScreen(habitId: String, onBack: () -> Unit, onPreview: (String) -
                             Spacer(Modifier.height(12.dp))
                             Text(p.habit.name, style = MaterialTheme.typography.displaySmall)
                             Text(
-                                "${levelStyle.label} friction · ${p.apps.size} app${if (p.apps.size == 1) "" else "s"}" + if (!p.habit.enabled) " · paused" else "",
+                                stringResource(R.string.guard_detail_summary, levelStyle.label, pluralStringResource(R.plurals.guard_app_count, p.apps.size, p.apps.size)) + if (!p.habit.enabled) stringResource(R.string.guard_detail_paused) else "",
                                 style = MaterialTheme.typography.titleMedium,
                             )
                         }
@@ -125,23 +129,23 @@ fun HabitDetailScreen(habitId: String, onBack: () -> Unit, onPreview: (String) -
                 }
                 item {
                     Column(Modifier.padding(horizontal = 16.dp)) {
-                        SectionTitle("Friction level")
+                        SectionTitle(stringResource(R.string.guard_friction_level))
                         LevelSelector(p.level, vm::setLevel)
                         Text(levelStyle.summary, style = MaterialTheme.typography.bodyMedium, color = MaterialTheme.colorScheme.onSurfaceVariant, modifier = Modifier.padding(top = 8.dp))
                         FilledTonalButton(onClick = { onPreview(p.id) }, modifier = Modifier.padding(top = 12.dp)) {
                             Icon(Icons.Rounded.Visibility, contentDescription = null, modifier = Modifier.size(18.dp))
                             Spacer(Modifier.width(8.dp))
-                            Text("Preview ${levelStyle.label} screen")
+                            Text(stringResource(R.string.guard_preview_screen, levelStyle.label))
                         }
-                        SectionTitle("Boundaries")
+                        SectionTitle(stringResource(R.string.guard_boundaries))
                         BoundariesCard(p, vm)
-                        SectionTitle("Protected apps", trailing = {
+                        SectionTitle(stringResource(R.string.matrix_protected_apps), trailing = {
                             TextButton(onClick = { pickingApps = true }) {
-                                Icon(Icons.Rounded.Add, contentDescription = null, modifier = Modifier.size(18.dp)); Spacer(Modifier.width(4.dp)); Text("Edit")
+                                Icon(Icons.Rounded.Add, contentDescription = null, modifier = Modifier.size(18.dp)); Spacer(Modifier.width(4.dp)); Text(stringResource(R.string.guard_edit))
                             }
                         })
                         if (p.apps.isEmpty()) {
-                            Text("No apps yet. Add the apps this habit lives in.", style = MaterialTheme.typography.bodyMedium, color = MaterialTheme.colorScheme.onSurfaceVariant)
+                            Text(stringResource(R.string.guard_no_apps), style = MaterialTheme.typography.bodyMedium, color = MaterialTheme.colorScheme.onSurfaceVariant)
                         }
                     }
                 }
@@ -151,9 +155,9 @@ fun HabitDetailScreen(habitId: String, onBack: () -> Unit, onPreview: (String) -
                     val used = rememberLiveUsage(app.packageName) { vm.appUsageMinutesToday(app.packageName) }
                     ListItem(
                         headlineContent = { Text(label) },
-                        supportingContent = used?.let { { Text("${formatMinutes(it)} today") } },
+                        supportingContent = used?.let { { Text(stringResource(R.string.guard_usage_today, formatMinutes(it))) } },
                         leadingContent = { AppIcon(app.packageName) },
-                        trailingContent = { IconButton(onClick = { vm.removeApp(app.packageName) }) { Icon(Icons.Rounded.Close, contentDescription = "Remove $label") } },
+                        trailingContent = { IconButton(onClick = { vm.removeApp(app.packageName) }) { Icon(Icons.Rounded.Close, contentDescription = stringResource(R.string.guard_remove_app, label)) } },
                         colors = ListItemDefaults.colors(containerColor = MaterialTheme.colorScheme.surface),
                         modifier = Modifier.animateItem().padding(horizontal = 4.dp),
                     )
@@ -164,7 +168,7 @@ fun HabitDetailScreen(habitId: String, onBack: () -> Unit, onPreview: (String) -
                         colors = ButtonDefaults.outlinedButtonColors(contentColor = MaterialTheme.colorScheme.error),
                         modifier = Modifier.padding(horizontal = 16.dp, vertical = 32.dp).fillMaxWidth(),
                     ) {
-                        Icon(Icons.Rounded.DeleteOutline, contentDescription = null); Spacer(Modifier.width(8.dp)); Text("Delete habit")
+                        Icon(Icons.Rounded.DeleteOutline, contentDescription = null); Spacer(Modifier.width(8.dp)); Text(stringResource(R.string.guard_delete_habit))
                     }
                 }
             }
@@ -175,9 +179,9 @@ fun HabitDetailScreen(habitId: String, onBack: () -> Unit, onPreview: (String) -
         val selected = remember { mutableStateListOf<String>().apply { addAll(p.apps.map { it.packageName }) } }
         ModalBottomSheet(onDismissRequest = { vm.setApps(selected.toList()); pickingApps = false }, sheetState = rememberModalBottomSheetState(skipPartiallyExpanded = true)) {
             Column(Modifier.padding(horizontal = 24.dp).padding(bottom = 24.dp)) {
-                Text("Protected apps", style = MaterialTheme.typography.headlineSmall, modifier = Modifier.padding(bottom = 12.dp))
+                Text(stringResource(R.string.matrix_protected_apps), style = MaterialTheme.typography.headlineSmall, modifier = Modifier.padding(bottom = 12.dp))
                 AppPicker(selected, Modifier.weight(1f, fill = false))
-                Button(onClick = { vm.setApps(selected.toList()); pickingApps = false }, modifier = Modifier.fillMaxWidth().padding(top = 16.dp)) { Text("Save · ${selected.size}") }
+                Button(onClick = { vm.setApps(selected.toList()); pickingApps = false }, modifier = Modifier.fillMaxWidth().padding(top = 16.dp)) { Text(stringResource(R.string.guard_save_count, selected.size)) }
             }
         }
     }
@@ -186,10 +190,10 @@ fun HabitDetailScreen(habitId: String, onBack: () -> Unit, onPreview: (String) -
         AlertDialog(
             onDismissRequest = { confirmDelete = false },
             icon = { Icon(Icons.Rounded.DeleteOutline, contentDescription = null) },
-            title = { Text("Delete “${p.habit.name}”?") },
-            text = { Text("Its rules stop immediately. Past history stays in Matrix.") },
-            confirmButton = { TextButton(onClick = { confirmDelete = false; onBack(); vm.delete() }) { Text("Delete", color = MaterialTheme.colorScheme.error) } },
-            dismissButton = { TextButton(onClick = { confirmDelete = false }) { Text("Cancel") } },
+            title = { Text(stringResource(R.string.guard_delete_title, p.habit.name)) },
+            text = { Text(stringResource(R.string.guard_delete_text)) },
+            confirmButton = { TextButton(onClick = { confirmDelete = false; onBack(); vm.delete() }) { Text(stringResource(R.string.common_delete), color = MaterialTheme.colorScheme.error) } },
+            dismissButton = { TextButton(onClick = { confirmDelete = false }) { Text(stringResource(R.string.common_cancel)) } },
         )
     }
 }
@@ -218,15 +222,15 @@ private fun BoundariesCard(p: HabitProfile, vm: HabitDetailViewModel) {
         Column(Modifier.padding(20.dp), verticalArrangement = Arrangement.spacedBy(20.dp)) {
             if (usage != null && usage > 0) {
                 Row(verticalAlignment = Alignment.CenterVertically) {
-                    Text(if (p.apps.size > 1) "Today's usage, all apps combined" else "Today's usage (Digital Wellbeing)", style = MaterialTheme.typography.titleSmall, modifier = Modifier.weight(1f))
+                    Text(stringResource(if (p.apps.size > 1) R.string.guard_usage_combined else R.string.guard_usage_single), style = MaterialTheme.typography.titleSmall, modifier = Modifier.weight(1f))
                     Text(formatMinutes(usage), style = MaterialTheme.typography.titleMedium, color = MaterialTheme.colorScheme.primary)
                 }
             }
             // 0 on slider = no limit
             SliderSetting(
-                title = "Daily limit",
+                title = stringResource(R.string.guard_daily_limit),
                 value = p.rule.dailyLimitMinutes ?: 0, range = 0..240, step = 15,
-                display = { if (it == 0) "No limit" else formatMinutes(it) },
+                display = { if (it == 0) stringResource(R.string.guard_no_limit) else formatMinutes(it) },
                 onCommit = { vm.setDailyLimit(it.takeIf { v -> v > 0 }) },
             )
             if (p.rule.dailyLimitMinutes != null && !vm.hasUsageAccess) {
@@ -249,12 +253,12 @@ private fun BoundariesCard(p: HabitProfile, vm: HabitDetailViewModel) {
                         Spacer(Modifier.width(10.dp))
                         Column(Modifier.weight(1f)) {
                             Text(
-                                "Usage access required",
+                                stringResource(R.string.guard_usage_access_required),
                                 style = MaterialTheme.typography.titleSmall,
                                 color = MaterialTheme.colorScheme.onErrorContainer,
                             )
                             Text(
-                                "Daily limit tracking needs Usage access to count screen time. Tap to grant.",
+                                stringResource(R.string.guard_usage_access_text),
                                 style = MaterialTheme.typography.bodySmall,
                                 color = MaterialTheme.colorScheme.onErrorContainer,
                             )
@@ -269,22 +273,22 @@ private fun BoundariesCard(p: HabitProfile, vm: HabitDetailViewModel) {
                             },
                             contentPadding = PaddingValues(horizontal = 12.dp, vertical = 4.dp),
                         ) {
-                            Text("Grant")
+                            Text(stringResource(R.string.guard_grant))
                         }
                     }
                 }
             }
             SliderSetting(
-                title = "Launch limit",
+                title = stringResource(R.string.guard_launch_limit),
                 value = p.rule.maxLaunches ?: 0, range = 0..30, step = 1,
-                display = { if (it == 0) "No limit" else "$it opens / day" },
+                display = { if (it == 0) stringResource(R.string.guard_no_limit) else stringResource(R.string.guard_opens_per_day, it) },
                 onCommit = { vm.setMaxLaunches(it.takeIf { v -> v > 0 }) },
             )
             AnimatedVisibility(p.level == WarningLevel.MAJOR) {
                 SliderSetting(
-                    title = "Pause before continue",
+                    title = stringResource(R.string.guard_pause_before_continue),
                     value = p.rule.pauseSeconds, range = 0..30, step = 1,
-                    display = { if (it == 0) "Instant" else "${it}s" },
+                    display = { if (it == 0) stringResource(R.string.guard_instant) else stringResource(R.string.guard_seconds, it) },
                     onCommit = vm::setPause,
                 )
             }
@@ -294,7 +298,7 @@ private fun BoundariesCard(p: HabitProfile, vm: HabitDetailViewModel) {
 }
 
 @Composable
-private fun SliderSetting(title: String, value: Int, range: IntRange, step: Int, display: (Int) -> String, onCommit: (Int) -> Unit) {
+private fun SliderSetting(title: String, value: Int, range: IntRange, step: Int, display: @Composable (Int) -> String, onCommit: (Int) -> Unit) {
     var local by remember(value) { mutableFloatStateOf(value.toFloat()) }
     Column {
         Row(verticalAlignment = Alignment.CenterVertically) {
@@ -317,17 +321,16 @@ private fun AllowedWindow(start: Int?, end: Int?, onChange: (Int?, Int?) -> Unit
     var editing by remember { mutableStateOf<Boolean?>(null) } // true = start, false = end
     Column {
         Row(verticalAlignment = Alignment.CenterVertically) {
-            Text("Allowed window", style = MaterialTheme.typography.titleSmall, modifier = Modifier.weight(1f))
-            if (start != null) TextButton(onClick = { onChange(null, null) }) { Text("Clear") }
+            Text(stringResource(R.string.guard_allowed_window), style = MaterialTheme.typography.titleSmall, modifier = Modifier.weight(1f))
+            if (start != null) TextButton(onClick = { onChange(null, null) }) { Text(stringResource(R.string.guard_clear)) }
         }
         Text(
-            if (start == null) "Any time. Set a window to only allow use between two times."
-            else "Allowed only between these times.",
+            stringResource(if (start == null) R.string.guard_window_any else R.string.guard_window_set),
             style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant,
         )
         Row(horizontalArrangement = Arrangement.spacedBy(8.dp), modifier = Modifier.padding(top = 8.dp)) {
-            AssistChip(onClick = { editing = true }, label = { Text("From ${start?.let(::formatClock) ?: "--:--"}") })
-            AssistChip(onClick = { editing = false }, label = { Text("To ${end?.let(::formatClock) ?: "--:--"}") })
+            AssistChip(onClick = { editing = true }, label = { Text(stringResource(R.string.guard_window_from, start?.let(::formatClock) ?: "--:--")) })
+            AssistChip(onClick = { editing = false }, label = { Text(stringResource(R.string.guard_window_to, end?.let(::formatClock) ?: "--:--")) })
         }
     }
     val which = editing ?: return
@@ -335,7 +338,7 @@ private fun AllowedWindow(start: Int?, end: Int?, onChange: (Int?, Int?) -> Unit
     val state = rememberTimePickerState(initialHour = initial / 60, initialMinute = initial % 60)
     AlertDialog(
         onDismissRequest = { editing = null },
-        title = { Text(if (which) "Allowed from" else "Allowed until") },
+        title = { Text(stringResource(if (which) R.string.guard_allowed_from else R.string.guard_allowed_until)) },
         text = { TimePicker(state) },
         confirmButton = {
             TextButton(onClick = {
@@ -343,8 +346,8 @@ private fun AllowedWindow(start: Int?, end: Int?, onChange: (Int?, Int?) -> Unit
                 // Choosing one side fills the other with a sensible 30 min window.
                 if (which) onChange(picked, end ?: ((picked + 30) % (24 * 60))) else onChange(start ?: ((picked - 30 + 24 * 60) % (24 * 60)), picked)
                 editing = null
-            }) { Text("Set") }
+            }) { Text(stringResource(R.string.guard_set)) }
         },
-        dismissButton = { TextButton(onClick = { editing = null }) { Text("Cancel") } },
+        dismissButton = { TextButton(onClick = { editing = null }) { Text(stringResource(R.string.common_cancel)) } },
     )
 }

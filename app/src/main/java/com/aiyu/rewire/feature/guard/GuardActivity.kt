@@ -1,6 +1,7 @@
 package com.aiyu.rewire.feature.guard
 
 import android.content.Context
+import com.aiyu.rewire.R
 import android.content.Intent
 import android.os.Bundle
 import android.view.ViewTreeObserver
@@ -124,8 +125,8 @@ class GuardActivity : FragmentActivity() {
         })
         prompt.authenticate(
             BiometricPrompt.PromptInfo.Builder()
-                .setTitle("Confirm emergency unlock")
-                .setSubtitle("Opens this app once and records an override")
+                .setTitle(getString(R.string.warning_confirm_unlock))
+                .setSubtitle(getString(R.string.warning_confirm_unlock_subtitle))
                 .setAllowedAuthenticators(authenticators)
                 .build()
         )

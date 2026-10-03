@@ -167,19 +167,19 @@ fun WarningScreen(
                 val start = r.allowedStartMinutes
                 val end = r.allowedEndMinutes
                 when (blockReason) {
-                    "LAUNCH_LIMIT" -> InfoRow("Opens today", "${r.maxLaunches} of ${r.maxLaunches} used")
-                    "DAILY_LIMIT" -> InfoRow("Daily limit", "${r.dailyLimitMinutes} min reached")
-                    "ALWAYS" -> InfoRow("Boundary", "Always blocked")
+                    "LAUNCH_LIMIT" -> InfoRow(stringResource(R.string.warning_opens_today), stringResource(R.string.warning_opens_used, r.maxLaunches ?: 0, r.maxLaunches ?: 0))
+                    "DAILY_LIMIT" -> InfoRow(stringResource(R.string.guard_daily_limit), stringResource(R.string.warning_limit_reached, r.dailyLimitMinutes ?: 0))
+                    "ALWAYS" -> InfoRow(stringResource(R.string.warning_boundary), stringResource(R.string.warning_always_blocked))
                 }
                 if (start != null && end != null) InfoRow(stringResource(R.string.warning_allowed_time), "${formatClock(start)} – ${formatClock(end)}")
                 val nowMinutes = remember { java.time.LocalTime.now().let { it.hour * 60 + it.minute } }
                 InfoRow(
                     stringResource(R.string.warning_next_available),
                     when {
-                        blockReason == "ALWAYS" -> "When you change this habit"
-                        blockReason == "OUTSIDE_WINDOW" && start != null && start > nowMinutes -> "Today at ${formatClock(start)}"
-                        start != null -> "Tomorrow at ${formatClock(start)}"
-                        else -> "Tomorrow"
+                        blockReason == "ALWAYS" -> stringResource(R.string.warning_next_on_change)
+                        blockReason == "OUTSIDE_WINDOW" && start != null && start > nowMinutes -> stringResource(R.string.warning_next_today, formatClock(start))
+                        start != null -> stringResource(R.string.warning_next_tomorrow_at, formatClock(start))
+                        else -> stringResource(R.string.warning_next_tomorrow)
                     },
                 )
             }
@@ -192,9 +192,9 @@ fun WarningScreen(
         AlertDialog(
             onDismissRequest = { unlockDialog = false },
             title = { Text(stringResource(R.string.warning_emergency_unlock)) },
-            text = { Text("Opens the app this one time and records an override. Next time it's blocked again. Use it for real emergencies." + if (preview) "\n\n(Preview: nothing will unlock.)" else "") },
-            confirmButton = { TextButton(onClick = { unlockDialog = false; if (!preview) onContinue() }) { Text("Unlock") } },
-            dismissButton = { TextButton(onClick = { unlockDialog = false }) { Text("Stay blocked") } },
+            text = { Text(stringResource(R.string.warning_unlock_text) + if (preview) "\n\n" + stringResource(R.string.warning_unlock_preview) else "") },
+            confirmButton = { TextButton(onClick = { unlockDialog = false; if (!preview) onContinue() }) { Text(stringResource(R.string.warning_unlock)) } },
+            dismissButton = { TextButton(onClick = { unlockDialog = false }) { Text(stringResource(R.string.warning_stay_blocked)) } },
         )
     }
 }
@@ -249,7 +249,7 @@ private fun Actions(
                     }) {
                         Icon(Icons.Rounded.DoNotDisturbOn, contentDescription = null, modifier = Modifier.size(18.dp))
                         Spacer(Modifier.width(6.dp))
-                        Text("Mute app notifications")
+                        Text(stringResource(R.string.warning_mute_notifications))
                     }
                 }
                 TextButton(onClick = onEmergency) { Text(stringResource(R.string.warning_emergency_unlock), textAlign = TextAlign.Center) }
