@@ -48,6 +48,25 @@ class MigrationTest {
         }
     }
 
+    @Test
+    fun migrate2To3_addsEscalationOffByDefault() {
+        helper.createDatabase(DB, 2).apply {
+            execSQL("INSERT INTO habits (id, name, description, enabled, created_at) VALUES ('h1', 'Scrolling', NULL, 1, 1)")
+            execSQL("INSERT INTO restriction_rules (id, habit_id, daily_limit_minutes, allowed_start_minutes, allowed_end_minutes, max_launches, warning_level, pause_seconds) VALUES ('r1', 'h1', 30, NULL, NULL, NULL, 'MAX', 5)")
+            close()
+        }
+
+        val db = helper.runMigrationsAndValidate(DB, 3, true)
+
+        db.query("SELECT daily_limit_minutes, escalation_enabled, escalation_major_minutes, escalation_max_minutes FROM restriction_rules WHERE habit_id = 'h1'").use {
+            it.moveToFirst()
+            assertEquals(30, it.getInt(0))
+            assertEquals(0, it.getInt(1)) // existing rules keep escalation off
+            assertEquals(20, it.getInt(2))
+            assertEquals(40, it.getInt(3))
+        }
+    }
+
     private companion object {
         const val DB = "migration-test"
     }
