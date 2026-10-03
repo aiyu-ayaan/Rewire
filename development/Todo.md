@@ -154,7 +154,7 @@ service off -> banner + notification.
 - [x] Room schema v2 (`AutoMigration`), device-verified on a populated v1 DB
 - [x] Verified on emulator against the real v1.0.1-alpha.1 release (offer, notes, download, refusal message)
 - Emulator pass 2026-10-03 (Lite + Full, API 37): onboarding, create habit, Max block, escalation UI, Matrix daily/weekly/monthly with real events, focus presets + quick-test session + note, export -> clear -> import round trip, Room 1->2 and 2->3 migration androidTests (2/2 pass), landscape 200% font rail, 800dp rail, `assemblePlayRelease` (no INTERNET / INSTALL permission, no update receiver)
-- Found on emulator, not fixed: import dialog says '1 habits' / '1 focus sessions' (needs plurals); New-habit FAB overlaps empty-state text on Guard; streak/goal chips sit flush on the Screen time card in Matrix daily; 'discipline' label touches the ring at 200% font
+- Found on emulator, fixed 2026-10-03: import dialog plurals, chips spacing in Matrix daily, discipline label at 200% font, New-habit button hidden over the empty state (code-level; not re-checked with zero habits)
 - [ ] Real install end to end needs two signed releases (emulator only had a debug build)
 - [x] Play build: `play` flavor, updates compiled out (UPDATES flag, no REQUEST_INSTALL_PACKAGES/INTERNET/receiver) (2026-10-03). Confirm `assemblePlayRelease` R8 result before submitting
 
