@@ -63,4 +63,12 @@
     <string name="guard_shield_text">This app is guarded right now.</string>
     <string name="guard_shield_open">Open Rewire</string>
     <string name="guard_shield_back">Go back</string>
+
+    <string name="escalation_block_label">Escalation</string>
+    <string name="escalation_block_value">%1$d min used today</string>
+    <string name="escalation_title">Smart escalation</string>
+    <string name="escalation_subtitle">Raise the level as today\'s use grows: Minor, then Major, then Max.</string>
+    <string name="escalation_major_after">Major from</string>
+    <string name="escalation_max_after">Max from</string>
+    <string name="escalation_note">Based on today\'s combined usage; needs Usage access. Without it your chosen level applies. Max can always be lifted with an emergency unlock, or by turning this off.</string>
 </resources>

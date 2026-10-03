@@ -14,6 +14,7 @@ import javax.inject.Inject
 import com.aiyu.rewire.domain.analytics.DailyMetrics
 import com.aiyu.rewire.domain.analytics.MetricsCalculator
 import com.aiyu.rewire.domain.habit.HabitProfile
+import com.aiyu.rewire.domain.habit.RestrictionRule
 import com.aiyu.rewire.domain.habit.WarningLevel
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
@@ -74,6 +75,9 @@ class HabitDetailViewModel @AssistedInject constructor(
     fun setDailyLimit(minutes: Int?) = edit { it.copy(rule = it.rule.copy(dailyLimitMinutes = minutes)) }
     fun setMaxLaunches(count: Int?) = edit { it.copy(rule = it.rule.copy(maxLaunches = count)) }
     fun setPause(seconds: Int) = edit { it.copy(rule = it.rule.copy(pauseSeconds = seconds)) }
+    fun setEscalation(on: Boolean) = edit { it.copy(rule = it.rule.copy(escalationEnabled = on)) }
+    fun setEscalationMajor(minutes: Int) = edit { it.copy(rule = RestrictionRule.withMajor(it.rule, minutes)) }
+    fun setEscalationMax(minutes: Int) = edit { it.copy(rule = RestrictionRule.withMax(it.rule, minutes)) }
     fun setWindow(start: Int?, end: Int?) = edit { it.copy(rule = it.rule.copy(allowedStartMinutes = start, allowedEndMinutes = end)) }
     fun removeApp(pkg: String) = edit { p -> p.copy(apps = p.apps.filterNot { it.packageName == pkg }) }
     fun setApps(packages: List<String>) = edit { p ->

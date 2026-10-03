@@ -56,6 +56,17 @@ data class RestrictionRule(
         const val MAX_ESCALATION_MINUTES = 24 * 60
 
         /** Three fixed tiers Minor/Major/Max: thresholds strictly increasing, within a day. */
+        /** Applies an edit to one threshold and nudges the other so the pair stays valid (editing never fails). */
+        fun withMajor(rule: RestrictionRule, major: Int): RestrictionRule {
+            val m = major.coerceIn(1, MAX_ESCALATION_MINUTES - 1)
+            return rule.copy(escalationMajorAfterMinutes = m, escalationMaxAfterMinutes = maxOf(rule.escalationMaxAfterMinutes, m + 1))
+        }
+
+        fun withMax(rule: RestrictionRule, max: Int): RestrictionRule {
+            val x = max.coerceIn(2, MAX_ESCALATION_MINUTES)
+            return rule.copy(escalationMaxAfterMinutes = x, escalationMajorAfterMinutes = minOf(rule.escalationMajorAfterMinutes, x - 1))
+        }
+
         fun isValidEscalation(major: Int, max: Int) = major >= 1 && major < max && max <= MAX_ESCALATION_MINUTES
     }
 }

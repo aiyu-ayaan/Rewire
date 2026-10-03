@@ -83,4 +83,13 @@ class EscalationTest {
         assertFalse(RestrictionRule.isValidEscalation(0, 20))
         assertFalse(RestrictionRule.isValidEscalation(20, RestrictionRule.MAX_ESCALATION_MINUTES + 1))
     }
+
+    @Test fun editingKeepsThresholdsValid() {
+        val r = RestrictionRule("r", "h", null, null, null, null, WarningLevel.MINOR, 5)
+        val a = RestrictionRule.withMajor(r, 60) // pushes Max above it
+        assertTrue(RestrictionRule.isValidEscalation(a.escalationMajorAfterMinutes, a.escalationMaxAfterMinutes))
+        val b = RestrictionRule.withMax(r, 10) // pulls Major below it
+        assertTrue(RestrictionRule.isValidEscalation(b.escalationMajorAfterMinutes, b.escalationMaxAfterMinutes))
+        assertEquals(10, b.escalationMaxAfterMinutes)
+    }
 }
