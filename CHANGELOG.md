@@ -1,5 +1,46 @@
 # Changelog
 
+## [1.0.2](https://github.com/aiyu-ayaan/Rewire/compare/v1.0.1-alpha.7...v1.0.2) (2026-10-03)
+
+### Features
+
+* List-detail panes on wide screens, language and goals pages
+* Daily goals editor is a page instead of a dialog
+* Achievement note is a full page instead of a dialog
+* Show restricted-settings guidance above the permission list
+* Two-column Profile on wide screens
+* Add AdaptiveColumns and use it for two-column Matrix on wide screens
+* Two-column focus history on tablets, InnerScreen max width param
+* Show warning library as adaptive grid on wide screens
+* Lay out Guard habit cards in adaptive columns on wide screens
+* Add Tamil, Telugu, Marathi, Gujarati, Kannada, Malayalam, Punjabi and Urdu
+* Translate the built-in warning library into 18 languages
+* Show built-in warnings in the app language and refresh channel names
+* Add translations for 18 languages
+* Per-app language switcher using the Android app-locale API
+* Include screen-time history in backup export and import
+* Snapshot daily screen time for weekly and monthly charts
+* Repeated-usage smart escalation mode
+
+### Bug fixes
+
+* Release v1.0.2 stable with consolidated changelog across all alpha releases
+* Use Surface at the app root so text is light on dark theme in the tablet layout
+* Re-polish Hindi, Arabic and Bengali punchlines
+* Mirror the send icon in right-to-left layouts
+* Guard setAutomaticZenRuleState behind API 29
+
+### Other changes
+
+* New launch video with device and language support, refresh README gif (#10)
+* Keep Focus and Matrix full width, panes only for Guard and Profile
+* Refresh README and architecture, document localisation (27 languages)
+* Move remaining hardcoded UI strings into strings.xml
+* Note screen-time backup and clean Play release build
+* Tick off phase 6 follow-ups in tracker
+* Move built-in focus preset names to strings.xml
+* Remove unused ActivityHeatmap
+
 ## [1.0.2](https://github.com/aiyu-ayaan/Rewire/compare/v1.0.1-alpha.7...v1.0.2) (2026-10-04)
 
 ### Features
