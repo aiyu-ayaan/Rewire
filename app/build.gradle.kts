@@ -58,10 +58,18 @@ android {
             dimension = "detection"
             isDefault = true
             buildConfigField("boolean", "ACCESSIBILITY", "true")
+            buildConfigField("boolean", "UPDATES", "true")
         }
         create("lite") {
             dimension = "detection"
             buildConfigField("boolean", "ACCESSIBILITY", "false")
+            buildConfigField("boolean", "UPDATES", "true")
+        }
+        // play = Full detection without the GitHub self-updater (no INTERNET, no REQUEST_INSTALL_PACKAGES): the Play build.
+        create("play") {
+            dimension = "detection"
+            buildConfigField("boolean", "ACCESSIBILITY", "true")
+            buildConfigField("boolean", "UPDATES", "false")
         }
     }
 
