@@ -13,6 +13,11 @@ applicationId, same signing key. Only how Guard notices a protected app differs.
 | Payment / UPI apps | refuse to run while the service is on | unaffected |
 | Release asset | `Rewire-<v>.apk` (+ `.aab` for Play) | `Rewire-Lite-<v>.apk` |
 
+A third flavor, `play`, is Full detection with the self-updater compiled out (no `INTERNET` or
+`REQUEST_INSTALL_PACKAGES`, no Updates UI): `BuildConfig.UPDATES = false`, overlay `src/play/AndroidManifest.xml`.
+Build it with `./gradlew bundlePlayRelease`; details in [UPDATES.md](UPDATES.md). It is not part of the
+GitHub release assets.
+
 Why: Play Protect blocks sideloaded installs (browser, file manager, messaging) of any app that
 declares an accessibility service. Payment apps refuse to run while a non-Play accessibility service is
 enabled. A manifest without the service is the only way past both without Play distribution.
@@ -29,6 +34,7 @@ CLI:
 ```bash
 ./gradlew installFullDebug      # main flavor
 ./gradlew installLiteDebug      # lite
+./gradlew installPlayDebug      # play (no self-update)
 ./run.sh                        # Full by default
 REWIRE_FLAVOR=Lite ./run.sh     # Lite
 ```

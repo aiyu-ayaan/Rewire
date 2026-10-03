@@ -23,6 +23,7 @@ import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import com.aiyu.rewire.core.notifications.DeepLink
 import com.aiyu.rewire.feature.focus.FocusFullscreenScreen
 import com.aiyu.rewire.feature.focus.FocusHistoryScreen
+import com.aiyu.rewire.BuildConfig
 import com.aiyu.rewire.feature.update.UpdateScreen
 import com.aiyu.rewire.feature.guard.HabitDetailScreen
 import com.aiyu.rewire.feature.onboarding.PermissionsSetupScreen
@@ -181,7 +182,7 @@ fun RewireNavHost(
                 composable<Routes.NotificationSettings> {
                     NotificationSettingsScreen(onBack = { nav.popBackStack() })
                 }
-                composable<Routes.Updates> {
+                if (BuildConfig.UPDATES) composable<Routes.Updates> {
                     UpdateScreen(onBack = { nav.popBackStack() })
                 }
                 composable<Routes.About> {

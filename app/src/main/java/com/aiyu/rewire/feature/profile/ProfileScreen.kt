@@ -42,6 +42,7 @@ import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.aiyu.rewire.BuildConfig
+import com.aiyu.rewire.core.settings.Settings
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import com.aiyu.rewire.ui.SettingsViewModel
 import com.aiyu.rewire.core.settings.ThemeMode
@@ -59,8 +60,6 @@ fun ProfileScreen(onOpenNotificationSettings: () -> Unit, onOpenWarningLibrary: 
     val vm = hiltViewModel<SettingsViewModel>()
     val settings by vm.settings.collectAsStateWithLifecycle()
     val warnings by hiltViewModel<WarningLibraryViewModel>().warnings.collectAsStateWithLifecycle()
-    val updates = hiltViewModel<UpdateViewModel>()
-    val updateState by updates.state.collectAsStateWithLifecycle()
     val s = settings ?: return
     val permission = rememberNotificationPermission()
 
@@ -102,15 +101,7 @@ fun ProfileScreen(onOpenNotificationSettings: () -> Unit, onOpenWarningLibrary: 
                 else -> "Off — tap to fix"
             }, onOpenNotificationSettings)
             NavRow(Icons.Rounded.FormatQuote, "Warning library", "${warnings.count { it.enabled }} active · ${warnings.count { it.custom }} custom", onOpenWarningLibrary)
-            NavRow(
-                Icons.Rounded.SystemUpdate, "Updates",
-                when {
-                    updateState is UpdateState.Available || updateState is UpdateState.Ready -> "A newer version is available"
-                    !s.updatesEnabled -> "Automatic checks off · ${BuildConfig.VERSION_NAME}"
-                    else -> "${BuildConfig.VERSION_NAME} · ${(s.updateChannel ?: updates.channel).label} channel"
-                },
-                onOpenUpdates,
-            )
+            if (BuildConfig.UPDATES) UpdatesRow(s, onOpenUpdates) // gone entirely in the play flavor
             NavRow(Icons.Rounded.Info, "About Rewire", "Version ${BuildConfig.VERSION_NAME} · developer · open-source licenses", onOpenAbout)
         }
 
@@ -174,4 +165,19 @@ private fun UserCard(p: UserProfile, onEdit: () -> Unit) {
             }
         }
     }
+}
+
+@Composable
+private fun UpdatesRow(s: Settings, onOpenUpdates: () -> Unit) {
+    val updates = hiltViewModel<UpdateViewModel>()
+    val updateState by updates.state.collectAsStateWithLifecycle()
+    NavRow(
+        Icons.Rounded.SystemUpdate, "Updates",
+        when {
+            updateState is UpdateState.Available || updateState is UpdateState.Ready -> "A newer version is available"
+            !s.updatesEnabled -> "Automatic checks off · ${BuildConfig.VERSION_NAME}"
+            else -> "${BuildConfig.VERSION_NAME} · ${(s.updateChannel ?: updates.channel).label} channel"
+        },
+        onOpenUpdates,
+    )
 }

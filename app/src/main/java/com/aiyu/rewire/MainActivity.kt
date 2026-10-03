@@ -42,7 +42,7 @@ class MainActivity : ComponentActivity() {
     @Inject lateinit var settingsState: StateFlow<Settings?>
     @Inject lateinit var notifier: RewireNotifier
     @Inject lateinit var focus: FocusController
-    @Inject lateinit var updater: AppUpdater
+    @Inject lateinit var updater: dagger.Lazy<AppUpdater> // Lazy: never built when BuildConfig.UPDATES is off (play)
     @Inject lateinit var engine: HabitEngine
 
     private var deepLink by mutableStateOf<DeepLink?>(null)
@@ -70,7 +70,7 @@ class MainActivity : ComponentActivity() {
         if (savedInstanceState == null) {
             deepLink = intent.deepLink()
             // Silent unless something newer exists; skipped when auto-update is off, snoozed or checked within the hour.
-            lifecycleScope.launch { updater.check() }
+            if (BuildConfig.UPDATES) lifecycleScope.launch { updater.get().check() }
         }
         setContent {
             val settings by settingsState.collectAsStateWithLifecycle()
@@ -95,7 +95,7 @@ class MainActivity : ComponentActivity() {
                             deepLink = deepLink,
                             onDeepLinkConsumed = { deepLink = null },
                         )
-                        if (s.onboardingDone) UpdateHost()
+                        if (BuildConfig.UPDATES && s.onboardingDone) UpdateHost()
                     }
                 }
             }
@@ -105,7 +105,7 @@ class MainActivity : ComponentActivity() {
     override fun onStart() {
         super.onStart()
         notifier.cancelFocusMinimised()
-        notifier.cancelUpdateAvailable() // the app is about to show the offer itself
+        if (BuildConfig.UPDATES) notifier.cancelUpdateAvailable() // the app is about to show the offer itself
         // Android refuses a foreground-service start from the background (process restarted by the system):
         // Rewire in front is the moment it is always allowed.
         engine.ensureMonitoring()
