@@ -1,5 +1,13 @@
 package com.aiyu.rewire.feature.guard
 
+import androidx.compose.foundation.layout.ExperimentalLayoutApi
+
+import androidx.compose.foundation.layout.FlowRow
+
+import androidx.compose.foundation.verticalScroll
+
+import androidx.compose.foundation.rememberScrollState
+
 import com.aiyu.rewire.ui.components.readableWidth
 
 import androidx.compose.animation.AnimatedVisibility
@@ -265,18 +273,17 @@ private fun BoundariesCard(p: HabitProfile, vm: HabitDetailViewModel) {
                                 style = MaterialTheme.typography.bodySmall,
                                 color = MaterialTheme.colorScheme.onErrorContainer,
                             )
-                        }
-                        Spacer(Modifier.width(8.dp))
-                        FilledTonalButton(
-                            onClick = {
-                                SystemPermissions.open(
-                                    context,
-                                    SystemPermissions.usageAccessSettings(context),
-                                )
-                            },
-                            contentPadding = PaddingValues(horizontal = 12.dp, vertical = 4.dp),
-                        ) {
-                            Text(stringResource(R.string.guard_grant))
+                            FilledTonalButton(
+                                onClick = {
+                                    SystemPermissions.open(
+                                        context,
+                                        SystemPermissions.usageAccessSettings(context),
+                                    )
+                                },
+                                modifier = Modifier.padding(top = 8.dp),
+                            ) {
+                                Text(stringResource(R.string.guard_grant))
+                            }
                         }
                     }
                 }
@@ -350,6 +357,7 @@ private fun SliderSetting(title: String, value: Int, range: IntRange, step: Int,
 }
 
 @Composable
+@OptIn(ExperimentalLayoutApi::class)
 private fun AllowedWindow(start: Int?, end: Int?, onChange: (Int?, Int?) -> Unit) {
     var editing by remember { mutableStateOf<Boolean?>(null) } // true = start, false = end
     Column {
@@ -361,7 +369,7 @@ private fun AllowedWindow(start: Int?, end: Int?, onChange: (Int?, Int?) -> Unit
             stringResource(if (start == null) R.string.guard_window_any else R.string.guard_window_set),
             style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant,
         )
-        Row(horizontalArrangement = Arrangement.spacedBy(8.dp), modifier = Modifier.padding(top = 8.dp)) {
+        FlowRow(horizontalArrangement = Arrangement.spacedBy(8.dp), modifier = Modifier.padding(top = 8.dp)) {
             AssistChip(onClick = { editing = true }, label = { Text(stringResource(R.string.guard_window_from, start?.let(::formatClock) ?: "--:--")) })
             AssistChip(onClick = { editing = false }, label = { Text(stringResource(R.string.guard_window_to, end?.let(::formatClock) ?: "--:--")) })
         }
@@ -372,7 +380,7 @@ private fun AllowedWindow(start: Int?, end: Int?, onChange: (Int?, Int?) -> Unit
     AlertDialog(
         onDismissRequest = { editing = null },
         title = { Text(stringResource(if (which) R.string.guard_allowed_from else R.string.guard_allowed_until)) },
-        text = { TimePicker(state) },
+        text = { Column(Modifier.verticalScroll(rememberScrollState())) { TimePicker(state) } },
         confirmButton = {
             TextButton(onClick = {
                 val picked = state.hour * 60 + state.minute

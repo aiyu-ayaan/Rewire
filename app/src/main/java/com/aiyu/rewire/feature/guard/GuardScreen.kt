@@ -1,5 +1,13 @@
 package com.aiyu.rewire.feature.guard
 
+import com.aiyu.rewire.ui.components.CappedFontScale
+
+import com.aiyu.rewire.ui.components.BesideOrStacked
+
+import androidx.compose.foundation.layout.ExperimentalLayoutApi
+
+import androidx.compose.foundation.layout.FlowRow
+
 import com.aiyu.rewire.ui.components.readableWidth
 
 import androidx.compose.animation.AnimatedVisibility
@@ -176,18 +184,18 @@ private fun TodayCard(m: DailyMetrics, progress: DayProgress, activeHabits: Int,
         Column(Modifier.padding(20.dp)) {
             Text(stringResource(R.string.guard_today_label), style = MaterialTheme.typography.labelLarge, color = MaterialTheme.colorScheme.onSurfaceVariant)
             Spacer(Modifier.height(12.dp))
-            Row(verticalAlignment = Alignment.CenterVertically) {
+            BesideOrStacked(leading = {
                 Box(contentAlignment = Alignment.Center, modifier = Modifier.semantics {
                     contentDescription = disciplineDesc
                 }) {
                     CircularWavyProgressIndicator(progress = { animated }, modifier = Modifier.size(112.dp))
                     Column(horizontalAlignment = Alignment.CenterHorizontally) {
-                        Text(score?.let { "${(it * 100).toInt()}%" } ?: "—", style = MaterialTheme.typography.headlineMedium)
+                        CappedFontScale { Text(score?.let { "${(it * 100).toInt()}%" } ?: "—", style = MaterialTheme.typography.headlineMedium) }
                         Text(stringResource(R.string.guard_discipline), style = MaterialTheme.typography.labelSmall, color = MaterialTheme.colorScheme.onSurfaceVariant)
                     }
                 }
-                Spacer(Modifier.width(20.dp))
-                Column(Modifier.weight(1f), verticalArrangement = Arrangement.spacedBy(10.dp)) {
+            }) { mod ->
+                Column(mod, verticalArrangement = Arrangement.spacedBy(10.dp)) {
                     Stat(stringResource(R.string.matrix_stat_focus), formatMinutes(m.focusMinutes))
                     if (m.screenTimeMinutes > 0) {
                         Stat(stringResource(R.string.guard_stat_screen_time), formatMinutes(m.screenTimeMinutes))
@@ -217,6 +225,7 @@ private fun Stat(label: String, value: String) {
     }
 }
 
+@OptIn(ExperimentalLayoutApi::class)
 @Composable
 fun HabitCard(
     profile: HabitProfile,
@@ -237,7 +246,7 @@ fun HabitCard(
                 Column(Modifier.weight(1f)) {
                     Text(profile.habit.name, style = MaterialTheme.typography.titleLarge, maxLines = 2, overflow = TextOverflow.Ellipsis)
                     Spacer(Modifier.height(6.dp))
-                    Row(verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+                    FlowRow(verticalArrangement = Arrangement.spacedBy(4.dp), horizontalArrangement = Arrangement.spacedBy(8.dp), itemVerticalAlignment = Alignment.CenterVertically) {
                         LevelBadge(profile.level)
                         if (usageMinutes != null && usageMinutes > 0) {
                             val limit = profile.rule.dailyLimitMinutes
@@ -309,8 +318,7 @@ private fun ProtectionBanner() {
                         else stringResource(R.string.guard_protection_enable),
                         style = MaterialTheme.typography.bodyMedium,
                     )
-                }
-                FilledTonalButton(onClick = {
+                    FilledTonalButton(modifier = Modifier.padding(top = 8.dp), onClick = {
                     if (!BuildConfig.ACCESSIBILITY) {
                         SystemPermissions.open(
                             context,
@@ -322,7 +330,8 @@ private fun ProtectionBanner() {
                     } else {
                         SystemPermissions.open(context, SystemPermissions.accessibilitySettings())
                     }
-                }) { Text(stringResource(R.string.guard_fix)) }
+                    }) { Text(stringResource(R.string.guard_fix)) }
+                }
             }
         }
     }

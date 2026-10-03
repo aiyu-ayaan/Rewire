@@ -1,5 +1,9 @@
 package com.aiyu.rewire.feature.focus
 
+import com.aiyu.rewire.ui.components.CappedFontScale
+
+import androidx.compose.foundation.layout.heightIn
+
 import com.aiyu.rewire.ui.components.readableWidth
 
 import androidx.compose.animation.AnimatedContent
@@ -213,7 +217,7 @@ private fun FocusSetup(
                 rotationMillis = 60_000,
             )
             Column(horizontalAlignment = Alignment.CenterHorizontally) {
-                Text("%d:00".format(draft.focusMinutes), style = TimerTextStyle, color = MaterialTheme.colorScheme.onPrimaryContainer)
+                CappedFontScale { Text("%d:00".format(draft.focusMinutes), style = TimerTextStyle, color = MaterialTheme.colorScheme.onPrimaryContainer) }
                 Text(
                     stringResource(R.string.focus_summary, draft.cycles, formatMinutes(draft.focusMinutes)) + if (draft.breakMinutes > 0) stringResource(R.string.focus_summary_breaks, formatMinutes(draft.breakMinutes)) else "",
                     style = MaterialTheme.typography.titleSmall, color = MaterialTheme.colorScheme.onSurfaceVariant,
@@ -251,7 +255,7 @@ private fun FocusSetup(
         Button(
             onClick = onStart,
             enabled = draft.isValid,
-            modifier = Modifier.fillMaxWidth().height(ButtonDefaults.MediumContainerHeight),
+            modifier = Modifier.fillMaxWidth().heightIn(min = ButtonDefaults.MediumContainerHeight),
             contentPadding = ButtonDefaults.MediumContentPadding,
         ) {
             Icon(Icons.Rounded.PlayArrow, contentDescription = null)
@@ -393,7 +397,7 @@ private fun FocusRunning(state: FocusState, now: Long, onPause: () -> Unit, onRe
                 modifier = Modifier.size(size),
             )
             Column(horizontalAlignment = Alignment.CenterHorizontally) {
-                RollingTime(state.remaining(now), TimerTextStyle, c.onSurface, Modifier.sharedBoundsOrSelf(TIMER_KEY))
+                CappedFontScale { RollingTime(state.remaining(now), TimerTextStyle, c.onSurface, Modifier.sharedBoundsOrSelf(TIMER_KEY)) }
                 Text(stringResource(R.string.focus_session_of, state.cycle, state.config.cycles), style = MaterialTheme.typography.titleMedium, color = c.onSurfaceVariant)
             }
         }
@@ -426,6 +430,7 @@ private fun FocusRunning(state: FocusState, now: Long, onPause: () -> Unit, onRe
     }
 
     BoxWithConstraints(Modifier.fillMaxSize().statusBarsPadding().navigationBarsPadding().displayCutoutPadding().padding(16.dp)) {
+        val areaHeight = maxHeight
         val ringInLandscape = min(300.dp, maxHeight - 16.dp)
         if (maxWidth > maxHeight) {
             // Landscape: two panes. The ring takes the short side (never squashed); header, caption and controls
@@ -433,7 +438,7 @@ private fun FocusRunning(state: FocusState, now: Long, onPause: () -> Unit, onRe
             Row(Modifier.fillMaxSize(), verticalAlignment = Alignment.CenterVertically) {
                 Box(Modifier.weight(1f), contentAlignment = Alignment.Center) { ring(ringInLandscape) }
                 Column(
-                    Modifier.weight(1f).fillMaxHeight(),
+                    Modifier.weight(1f).fillMaxHeight().verticalScroll(rememberScrollState()).heightIn(min = areaHeight),
                     horizontalAlignment = Alignment.CenterHorizontally,
                     verticalArrangement = Arrangement.SpaceEvenly,
                 ) {
@@ -443,15 +448,20 @@ private fun FocusRunning(state: FocusState, now: Long, onPause: () -> Unit, onRe
                 }
             }
         } else {
-            Column(Modifier.fillMaxSize(), horizontalAlignment = Alignment.CenterHorizontally) {
+            // Scrolls when text is large; spreads out evenly when there is room.
+            Column(
+                Modifier.fillMaxWidth().verticalScroll(rememberScrollState()).heightIn(min = areaHeight),
+                horizontalAlignment = Alignment.CenterHorizontally,
+                verticalArrangement = Arrangement.SpaceEvenly,
+            ) {
                 header()
-                Spacer(Modifier.weight(1f))
+                Spacer(Modifier.height(16.dp))
                 ring(300.dp)
-                Spacer(Modifier.weight(1f))
+                Spacer(Modifier.height(16.dp))
                 caption()
                 Spacer(Modifier.height(24.dp))
                 controls()
-                Spacer(Modifier.height(32.dp))
+                Spacer(Modifier.height(16.dp))
             }
         }
     }

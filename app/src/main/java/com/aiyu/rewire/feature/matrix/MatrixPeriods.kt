@@ -1,5 +1,13 @@
 package com.aiyu.rewire.feature.matrix
 
+import androidx.compose.ui.platform.LocalConfiguration
+
+import com.aiyu.rewire.ui.components.isLargeFont
+
+import com.aiyu.rewire.ui.components.CappedFontScale
+
+import com.aiyu.rewire.ui.components.BesideOrStacked
+
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -34,11 +42,13 @@ internal fun PeriodSwitch(selected: MatrixPeriod, onSelect: (MatrixPeriod) -> Un
         MatrixPeriod.WEEKLY to R.string.matrix_period_weekly,
         MatrixPeriod.MONTHLY to R.string.matrix_period_monthly,
     )
+    val large = isLargeFont()
     SingleChoiceSegmentedButtonRow(Modifier.fillMaxWidth().padding(top = 16.dp)) {
         MatrixPeriod.entries.forEachIndexed { i, p ->
             SegmentedButton(
                 selected = p == selected, onClick = { onSelect(p) },
                 shape = SegmentedButtonDefaults.itemShape(i, MatrixPeriod.entries.size),
+                icon = if (large) ({}) else ({ SegmentedButtonDefaults.Icon(p == selected) }),
             ) { Text(stringResource(labels.getValue(p))) }
         }
     }
@@ -82,13 +92,11 @@ internal fun DailyView(ui: MatrixUi) {
             if (rest > 0) listOf(Slice(stringResource(R.string.matrix_other_apps), rest, palette[4])) else emptyList()
         ChartCard {
             ChartWithTable(d.appUsage.map { it.label to formatMinutes(it.minutes) }) {
-                Row(verticalAlignment = Alignment.CenterVertically) {
+                BesideOrStacked(leading = {
                     DonutChart(slices, Modifier.size(132.dp)) {
-                        Text(formatMinutes(d.appUsage.sumOf { it.minutes }), style = MaterialTheme.typography.titleMedium)
+                        CappedFontScale { Text(formatMinutes(d.appUsage.sumOf { it.minutes }), style = MaterialTheme.typography.titleMedium) }
                     }
-                    Spacer(Modifier.width(20.dp))
-                    Legend(slices.map { it.copy(value = it.value) }, Modifier.weight(1f))
-                }
+                }) { mod -> Legend(slices.map { it.copy(value = it.value) }, mod) }
             }
         }
     }
@@ -108,6 +116,7 @@ internal fun DailyView(ui: MatrixUi) {
 @Composable
 internal fun WeeklyView(ui: MatrixUi, onShowAll: (apps: Boolean) -> Unit) {
     val w = ui.weekly
+    val locale = LocalConfiguration.current.locales[0]
     val m = w.metrics
     val scheme = MaterialTheme.colorScheme
     if (!w.hasData) {
@@ -119,8 +128,8 @@ internal fun WeeklyView(ui: MatrixUi, onShowAll: (apps: Boolean) -> Unit) {
     SectionTitle(stringResource(R.string.matrix_week_summary))
     ChartCard {
         Column(verticalArrangement = Arrangement.spacedBy(6.dp)) {
-            Stat(stringResource(R.string.matrix_focus_hours), "%.1f h".format(Locale.getDefault(), m.focusHours))
-            Stat(stringResource(R.string.matrix_distracted_hours), "%.1f h".format(Locale.getDefault(), m.distractedHours))
+            Stat(stringResource(R.string.matrix_focus_hours), "%.1f h".format(locale, m.focusHours))
+            Stat(stringResource(R.string.matrix_distracted_hours), "%.1f h".format(locale, m.distractedHours))
             Stat(stringResource(R.string.matrix_habit_attempts), "${m.habitAttempts}")
             Stat(stringResource(R.string.matrix_successful_blocks), "${m.successfulBlocks}")
             Stat(stringResource(R.string.matrix_most_opened), w.mostOpenedLabel?.let { "$it (${m.mostOpenedApp?.opens})" } ?: "—")
@@ -192,11 +201,9 @@ internal fun MonthlyView(mo: MonthlyUi) {
     SectionTitle(stringResource(R.string.matrix_month_summary))
     ChartCard {
         ChartWithTable(mo.radar.map { it.label to it.display }) {
-            Row(verticalAlignment = Alignment.CenterVertically) {
+            BesideOrStacked(leading = {
                 RadarChart(mo.radar, stringResource(R.string.matrix_desc_radar, mo.radar.joinToString { "${it.label} ${it.display}" }), Modifier.size(170.dp))
-                Spacer(Modifier.width(12.dp))
-                RadarLegend(mo.radar, Modifier.weight(1f))
-            }
+            }) { mod -> RadarLegend(mo.radar, mod) }
         }
         Caption(
             m.habitReduction?.let { stringResource(R.string.matrix_reduction_caption, (it * 100).toInt()) }

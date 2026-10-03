@@ -1,5 +1,9 @@
 package com.aiyu.rewire.feature.focus
 
+import androidx.compose.foundation.verticalScroll
+
+import androidx.compose.foundation.rememberScrollState
+
 import androidx.compose.foundation.clickable
 import androidx.annotation.StringRes
 import androidx.compose.ui.res.stringResource
@@ -171,7 +175,7 @@ fun AchievementDialog(initial: String, completed: Boolean, onSave: (String) -> U
         icon = { Icon(Icons.Rounded.EditNote, contentDescription = null) },
         title = { Text(stringResource(if (completed) R.string.focus_achieve_title else R.string.focus_achieve_title_stopped)) },
         text = {
-            Column {
+            Column(Modifier.verticalScroll(rememberScrollState())) {
                 Text(
                     stringResource(R.string.focus_achieve_hint),
                     style = MaterialTheme.typography.bodyMedium, color = MaterialTheme.colorScheme.onSurfaceVariant,

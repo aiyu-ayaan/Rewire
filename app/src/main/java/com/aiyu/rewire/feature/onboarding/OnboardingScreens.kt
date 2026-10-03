@@ -1,5 +1,7 @@
 package com.aiyu.rewire.feature.onboarding
 
+import androidx.compose.foundation.layout.heightIn
+
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.ui.res.stringResource
 import com.aiyu.rewire.R
@@ -142,7 +144,7 @@ fun ProfileSetupScreen(onboarding: Boolean, onDone: () -> Unit, onBack: (() -> U
                 onClick = {
                     vm.setProfile(UserProfile(name, goal, reason, shape), then = onDone)
                 },
-                modifier = Modifier.fillMaxWidth().height(ButtonDefaults.MediumContainerHeight),
+                modifier = Modifier.fillMaxWidth().heightIn(min = ButtonDefaults.MediumContainerHeight),
                 contentPadding = ButtonDefaults.MediumContentPadding,
             ) {
                 Text(stringResource(if (onboarding) R.string.warning_continue else R.string.common_save), style = MaterialTheme.typography.titleMedium)
@@ -181,7 +183,7 @@ fun PermissionsSetupScreen(onFinish: () -> Unit, onBack: () -> Unit) {
         Spacer(Modifier.height(16.dp))
         OutlinedButton(
             onClick = { testProtection = true },
-            modifier = Modifier.widthIn(max = 520.dp).fillMaxWidth().height(ButtonDefaults.MediumContainerHeight),
+            modifier = Modifier.widthIn(max = 520.dp).fillMaxWidth().heightIn(min = ButtonDefaults.MediumContainerHeight),
             contentPadding = ButtonDefaults.MediumContentPadding,
         ) {
             Icon(
@@ -196,7 +198,7 @@ fun PermissionsSetupScreen(onFinish: () -> Unit, onBack: () -> Unit) {
         Box(Modifier.widthIn(max = 520.dp)) {
             Button(
                 onClick = onFinish,
-                modifier = Modifier.fillMaxWidth().height(ButtonDefaults.MediumContainerHeight),
+                modifier = Modifier.fillMaxWidth().heightIn(min = ButtonDefaults.MediumContainerHeight),
                 contentPadding = ButtonDefaults.MediumContentPadding,
             ) {
                 Text(stringResource(if (granted == totalPermissions) R.string.onboarding_start else R.string.onboarding_continue_now), style = MaterialTheme.typography.titleMedium)
