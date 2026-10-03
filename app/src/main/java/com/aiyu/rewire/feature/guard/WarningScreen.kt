@@ -23,6 +23,8 @@ import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.layout.widthIn
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
+import androidx.compose.foundation.BorderStroke
+import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.rounded.DoNotDisturbOn
 import androidx.compose.material.icons.rounded.Info
@@ -65,6 +67,7 @@ import com.aiyu.rewire.domain.habit.WarningLevel
 import com.aiyu.rewire.domain.warning.Warning
 import com.aiyu.rewire.domain.warning.WarningPicker
 import com.aiyu.rewire.ui.components.AppIcon
+import com.aiyu.rewire.ui.components.LevelStyle
 import com.aiyu.rewire.ui.components.MorphingShape
 import com.aiyu.rewire.ui.components.formatClock
 import com.aiyu.rewire.ui.components.style
@@ -110,10 +113,10 @@ fun WarningScreen(
     val s = level.style()
     var unlockDialog by remember { mutableStateOf(false) }
 
-    Box(Modifier.fillMaxSize().background(s.container)) {
-        // Decorative slow morph in the corner — same visual language as the landing hero.
+    Box(Modifier.fillMaxSize().background(MaterialTheme.colorScheme.background)) {
+        // Decorative slow morph in the corner — subtle warning tint.
         MorphingShape(
-            brush = SolidColor(s.accent.copy(alpha = 0.18f)),
+            brush = SolidColor(s.accent.copy(alpha = 0.08f)),
             shapes = when (level) {
                 WarningLevel.MINOR -> listOf(MaterialShapes.Sunny, MaterialShapes.Cookie6Sided)
                 WarningLevel.MAJOR -> listOf(MaterialShapes.Gem, MaterialShapes.SoftBurst)
@@ -128,11 +131,18 @@ fun WarningScreen(
             horizontalAlignment = Alignment.Start,
         ) {
             if (preview) {
-                Surface(shape = MaterialTheme.shapes.extraLarge, color = MaterialTheme.colorScheme.surface.copy(alpha = 0.7f)) {
+                Surface(
+                    shape = MaterialTheme.shapes.extraLarge,
+                    color = MaterialTheme.colorScheme.surfaceContainerHigh,
+                ) {
                     Row(Modifier.padding(horizontal = 12.dp, vertical = 6.dp), verticalAlignment = Alignment.CenterVertically) {
-                        Icon(Icons.Rounded.Info, contentDescription = null, modifier = Modifier.size(16.dp))
+                        Icon(Icons.Rounded.Info, contentDescription = null, tint = s.accent, modifier = Modifier.size(16.dp))
                         Spacer(Modifier.width(6.dp))
-                        Text(stringResource(R.string.warning_preview_note), style = MaterialTheme.typography.labelMedium)
+                        Text(
+                            stringResource(R.string.warning_preview_note),
+                            style = MaterialTheme.typography.labelMedium,
+                            color = MaterialTheme.colorScheme.onSurface,
+                        )
                     }
                 }
             }
@@ -140,7 +150,15 @@ fun WarningScreen(
             Row(verticalAlignment = Alignment.CenterVertically) {
                 if (packageName != null) AppIcon(packageName, size = 48.dp)
                 Spacer(Modifier.width(12.dp))
-                Icon(s.icon, contentDescription = s.label, tint = s.onContainer)
+                Surface(
+                    shape = CircleShape,
+                    color = s.container,
+                    modifier = Modifier.size(44.dp)
+                ) {
+                    Box(contentAlignment = Alignment.Center) {
+                        Icon(s.icon, contentDescription = s.label, tint = s.onContainer, modifier = Modifier.size(24.dp))
+                    }
+                }
             }
             Spacer(Modifier.height(20.dp))
             Text(
@@ -150,18 +168,36 @@ fun WarningScreen(
                     WarningLevel.MAX -> stringResource(R.string.warning_max_title, appLabel)
                 },
                 style = MaterialTheme.typography.titleMedium,
-                color = s.onContainer,
+                color = s.accent,
             )
             Spacer(Modifier.height(8.dp))
-            Text(warning?.title.orEmpty(), style = MaterialTheme.typography.displaySmall, color = s.onContainer)
+            Text(
+                warning?.title.orEmpty(),
+                style = MaterialTheme.typography.displaySmall,
+                color = MaterialTheme.colorScheme.onBackground,
+            )
             Spacer(Modifier.height(12.dp))
             val reasonText = userReason ?: warning?.motivationalMessage
             if (!reasonText.isNullOrBlank()) {
                 Spacer(Modifier.height(20.dp))
-                Surface(shape = MaterialTheme.shapes.large, color = MaterialTheme.colorScheme.surface.copy(alpha = 0.6f), modifier = Modifier.fillMaxWidth()) {
+                Surface(
+                    shape = MaterialTheme.shapes.large,
+                    color = MaterialTheme.colorScheme.surfaceContainer,
+                    border = BorderStroke(1.dp, MaterialTheme.colorScheme.outlineVariant.copy(alpha = 0.5f)),
+                    modifier = Modifier.fillMaxWidth()
+                ) {
                     Column(Modifier.padding(16.dp)) {
-                        Text(stringResource(R.string.warning_reason), style = MaterialTheme.typography.labelLarge, color = MaterialTheme.colorScheme.onSurfaceVariant)
-                        Text(stringResource(R.string.profile_reason_quote, reasonText), style = MaterialTheme.typography.titleLarge, color = MaterialTheme.colorScheme.onSurface)
+                        Text(
+                            stringResource(R.string.warning_reason),
+                            style = MaterialTheme.typography.labelLarge,
+                            color = s.accent,
+                        )
+                        Spacer(Modifier.height(4.dp))
+                        Text(
+                            stringResource(R.string.profile_reason_quote, reasonText),
+                            style = MaterialTheme.typography.titleLarge,
+                            color = MaterialTheme.colorScheme.onSurface,
+                        )
                     }
                 }
             }
@@ -189,7 +225,7 @@ fun WarningScreen(
                 )
             }
             Spacer(Modifier.weight(1.2f))
-            Actions(level, profile.rule.pauseSeconds, packageName, onGoBack, onContinue, onEmergency = { unlockDialog = true })
+            Actions(level, profile.rule.pauseSeconds, packageName, s, onGoBack, onContinue, onEmergency = { unlockDialog = true })
         }
     }
 
@@ -207,8 +243,17 @@ fun WarningScreen(
 @Composable
 private fun InfoRow(label: String, value: String) {
     Row(Modifier.fillMaxWidth().padding(vertical = 4.dp)) {
-        Text(label, style = MaterialTheme.typography.bodyLarge, modifier = Modifier.weight(1f))
-        Text(value, style = MaterialTheme.typography.titleMedium)
+        Text(
+            label,
+            style = MaterialTheme.typography.bodyLarge,
+            color = MaterialTheme.colorScheme.onSurfaceVariant,
+            modifier = Modifier.weight(1f)
+        )
+        Text(
+            value,
+            style = MaterialTheme.typography.titleMedium,
+            color = MaterialTheme.colorScheme.onSurface,
+        )
     }
 }
 
@@ -217,6 +262,7 @@ private fun Actions(
     level: WarningLevel,
     pauseSeconds: Int,
     packageName: String?,
+    s: LevelStyle,
     onGoBack: () -> Unit,
     onContinue: () -> Unit,
     onEmergency: () -> Unit,
@@ -224,40 +270,68 @@ private fun Actions(
     val context = LocalContext.current
     Column(Modifier.fillMaxWidth().widthIn(max = 480.dp), verticalArrangement = Arrangement.spacedBy(8.dp), horizontalAlignment = Alignment.CenterHorizontally) {
         when (level) {
-            WarningLevel.MINOR -> Button(onClick = onContinue, modifier = Modifier.fillMaxWidth().heightIn(min = ButtonDefaults.MediumContainerHeight)) {
+            WarningLevel.MINOR -> Button(
+                onClick = onContinue,
+                colors = ButtonDefaults.buttonColors(containerColor = MaterialTheme.colorScheme.primary, contentColor = MaterialTheme.colorScheme.onPrimary),
+                modifier = Modifier.fillMaxWidth().heightIn(min = ButtonDefaults.MediumContainerHeight)
+            ) {
                 Text(stringResource(R.string.warning_continue), style = MaterialTheme.typography.titleMedium)
             }
             WarningLevel.MAJOR -> {
                 var left by remember { mutableIntStateOf(pauseSeconds) }
                 LaunchedEffect(Unit) { while (left > 0) { delay(1000); left-- } }
                 val progress by animateFloatAsState(if (pauseSeconds == 0) 1f else 1f - left / pauseSeconds.toFloat(), label = "pause")
-                Button(onClick = onGoBack, modifier = Modifier.fillMaxWidth().heightIn(min = ButtonDefaults.MediumContainerHeight)) {
+                Button(
+                    onClick = onGoBack,
+                    colors = ButtonDefaults.buttonColors(containerColor = s.accent, contentColor = MaterialTheme.colorScheme.onTertiary),
+                    modifier = Modifier.fillMaxWidth().heightIn(min = ButtonDefaults.MediumContainerHeight)
+                ) {
                     Text(stringResource(R.string.warning_go_back), style = MaterialTheme.typography.titleMedium)
                 }
                 // Always laid out (alpha only) so buttons don't jump when the pause ends.
-                LinearWavyProgressIndicator(progress = { progress }, modifier = Modifier.fillMaxWidth().padding(top = 4.dp).alpha(if (left > 0) 1f else 0f))
-                TextButton(onClick = onContinue, enabled = left == 0) {
+                LinearWavyProgressIndicator(
+                    progress = { progress },
+                    color = s.accent,
+                    modifier = Modifier.fillMaxWidth().padding(top = 4.dp).alpha(if (left > 0) 1f else 0f)
+                )
+                TextButton(
+                    onClick = onContinue,
+                    enabled = left == 0,
+                    colors = ButtonDefaults.textButtonColors(contentColor = s.accent)
+                ) {
                     Text(if (left > 0) stringResource(R.string.warning_continue_in, left) else stringResource(R.string.warning_continue_anyway))
                 }
             }
             WarningLevel.MAX -> {
-                Button(onClick = onGoBack, modifier = Modifier.fillMaxWidth().heightIn(min = ButtonDefaults.MediumContainerHeight)) {
+                Button(
+                    onClick = onGoBack,
+                    colors = ButtonDefaults.buttonColors(containerColor = s.accent, contentColor = MaterialTheme.colorScheme.onError),
+                    modifier = Modifier.fillMaxWidth().heightIn(min = ButtonDefaults.MediumContainerHeight)
+                ) {
                     Text(stringResource(R.string.warning_back), style = MaterialTheme.typography.titleMedium)
                 }
                 if (packageName != null) {
-                    TextButton(onClick = {
-                        val intent = android.content.Intent(android.provider.Settings.ACTION_APP_NOTIFICATION_SETTINGS).apply {
-                            putExtra(android.provider.Settings.EXTRA_APP_PACKAGE, packageName)
-                            addFlags(android.content.Intent.FLAG_ACTIVITY_NEW_TASK)
-                        }
-                        runCatching { context.startActivity(intent) }
-                    }) {
+                    TextButton(
+                        onClick = {
+                            val intent = android.content.Intent(android.provider.Settings.ACTION_APP_NOTIFICATION_SETTINGS).apply {
+                                putExtra(android.provider.Settings.EXTRA_APP_PACKAGE, packageName)
+                                addFlags(android.content.Intent.FLAG_ACTIVITY_NEW_TASK)
+                            }
+                            runCatching { context.startActivity(intent) }
+                        },
+                        colors = ButtonDefaults.textButtonColors(contentColor = MaterialTheme.colorScheme.onSurfaceVariant)
+                    ) {
                         Icon(Icons.Rounded.DoNotDisturbOn, contentDescription = null, modifier = Modifier.size(18.dp))
                         Spacer(Modifier.width(6.dp))
                         Text(stringResource(R.string.warning_mute_notifications))
                     }
                 }
-                TextButton(onClick = onEmergency) { Text(stringResource(R.string.warning_emergency_unlock), textAlign = TextAlign.Center) }
+                TextButton(
+                    onClick = onEmergency,
+                    colors = ButtonDefaults.textButtonColors(contentColor = MaterialTheme.colorScheme.outline)
+                ) {
+                    Text(stringResource(R.string.warning_emergency_unlock), textAlign = TextAlign.Center)
+                }
             }
         }
     }
