@@ -12,7 +12,9 @@ import com.aiyu.rewire.core.settings.Settings
 import com.aiyu.rewire.core.settings.SettingsRepository
 import com.aiyu.rewire.data.DbWriter
 import com.aiyu.rewire.data.BackupRepository
+import com.aiyu.rewire.data.DataStoreFocusPresetRepository
 import com.aiyu.rewire.data.EventRepository
+import com.aiyu.rewire.data.FocusPresetRepository
 import com.aiyu.rewire.data.FocusSessionRepository
 import com.aiyu.rewire.data.HabitRepository
 import com.aiyu.rewire.data.RoomEventRepository
@@ -94,8 +96,11 @@ object AppModule {
     fun focusSessions(db: RewireDatabase, writer: DbWriter): FocusSessionRepository = RoomFocusSessionRepository(db.focusSessions(), writer)
 
     @Provides @Singleton
-    fun backup(db: RewireDatabase, habits: HabitRepository, warnings: WarningRepository, events: EventRepository) =
-        BackupRepository(db, habits, warnings, events)
+    fun backup(db: RewireDatabase, habits: HabitRepository, warnings: WarningRepository, events: EventRepository, presets: FocusPresetRepository) =
+        BackupRepository(db, habits, warnings, events, presets)
+
+    @Provides @Singleton
+    fun focusPresets(@ApplicationContext context: Context): FocusPresetRepository = DataStoreFocusPresetRepository(context)
 
     // ---- Platform --------------------------------------------------------------------------------
 

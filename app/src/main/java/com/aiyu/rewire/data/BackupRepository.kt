@@ -10,6 +10,8 @@ import com.aiyu.rewire.data.local.toRuleEntity
 import com.aiyu.rewire.domain.backup.BackupException
 import com.aiyu.rewire.domain.backup.BackupSnapshot
 import com.aiyu.rewire.data.local.SettingsEntity
+import com.aiyu.rewire.domain.focus.FocusPreset
+import kotlinx.coroutines.flow.first
 
 /** Export / import / clear for the whole database. Room is touched in one transaction, caches reload after. */
 class BackupRepository(
@@ -17,9 +19,15 @@ class BackupRepository(
     private val habits: HabitRepository,
     private val warnings: WarningRepository,
     private val events: EventRepository,
+    private val presets: FocusPresetRepository,
     private val clock: () -> Long = System::currentTimeMillis,
 ) {
-    suspend fun export(): BackupSnapshot = db.withTransaction {
+    suspend fun export(): BackupSnapshot {
+        val presetsSnapshot = presets.userPresets.first()
+        return exportRoom(presetsSnapshot)
+    }
+
+    private suspend fun exportRoom(presetsSnapshot: List<FocusPreset>): BackupSnapshot = db.withTransaction {
         BackupSnapshot(
             exportedAt = clock(),
             habits = db.habits().all().mapNotNull { it.toDomain() },
@@ -27,6 +35,7 @@ class BackupRepository(
             events = db.events().all().map { it.toDomain() },
             focusSessions = db.focusSessions().finished().map { it.toDomain() },
             settings = (db.settings().get() ?: SettingsEntity()).toDomain(),
+            focusPresets = presetsSnapshot,
         )
     }
 
@@ -44,6 +53,7 @@ class BackupRepository(
             snapshot.focusSessions.forEach { db.focusSessions().upsert(it.toEntity()) }
             db.settings().upsert(snapshot.settings.toEntity())
         }
+        snapshot.focusPresets?.let { presets.replaceAll(it) }
         reloadCaches()
     }
 

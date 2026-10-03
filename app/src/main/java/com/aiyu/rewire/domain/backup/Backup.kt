@@ -2,6 +2,7 @@ package com.aiyu.rewire.domain.backup
 
 import com.aiyu.rewire.core.settings.Settings
 import com.aiyu.rewire.domain.analytics.HabitEvent
+import com.aiyu.rewire.domain.focus.FocusPreset
 import com.aiyu.rewire.domain.focus.FocusSession
 import com.aiyu.rewire.domain.habit.HabitProfile
 import com.aiyu.rewire.domain.warning.Warning
@@ -20,6 +21,8 @@ data class BackupSnapshot(
     val events: List<HabitEvent>,
     val focusSessions: List<FocusSession>,
     val settings: Settings,
+    /** Optional: absent in older backups, in which case restore leaves the user's presets untouched. */
+    val focusPresets: List<FocusPreset>? = null,
 )
 
 class BackupException(val reason: Reason, cause: Throwable? = null) : Exception(reason.name, cause) {

@@ -12,6 +12,7 @@ import com.aiyu.rewire.domain.backup.BackupCodec
 import com.aiyu.rewire.domain.backup.BackupException
 import com.aiyu.rewire.domain.backup.BackupSnapshot
 import com.aiyu.rewire.domain.focus.FocusConfig
+import com.aiyu.rewire.domain.focus.FocusPreset
 import com.aiyu.rewire.domain.focus.FocusSession
 import com.aiyu.rewire.domain.focus.FocusSessionStatus
 import com.aiyu.rewire.domain.focus.FocusState
@@ -55,6 +56,14 @@ class BackupCodecTest {
 
     @Test fun `round trip keeps everything`() {
         assertEquals(snapshot, BackupCodec.decode(BackupCodec.encode(snapshot)))
+    }
+
+    @Test fun `focus presets round trip and are optional`() {
+        val withPresets = snapshot.copy(focusPresets = listOf(FocusPreset("p1", "Mine", 30, 5, 2)))
+        assertEquals(withPresets, BackupCodec.decode(BackupCodec.encode(withPresets)))
+        // A backup written before presets existed has no key: decodes to null (restore leaves presets alone).
+        val legacy = BackupCodec.encode(snapshot).replace(",\"focusPresets\":null", "")
+        assertEquals(null, BackupCodec.decode(legacy).focusPresets)
     }
 
     @Test fun `unknown keys from a newer minor writer are ignored`() {
