@@ -11,7 +11,9 @@ import com.aiyu.rewire.domain.backup.BackupException
 import com.aiyu.rewire.domain.backup.BackupSnapshot
 import com.aiyu.rewire.data.local.SettingsEntity
 import com.aiyu.rewire.domain.focus.FocusPreset
+import com.aiyu.rewire.domain.analytics.ScreenTimeHistory
 import kotlinx.coroutines.flow.first
+import java.time.LocalDate
 
 /** Export / import / clear for the whole database. Room is touched in one transaction, caches reload after. */
 class BackupRepository(
@@ -26,10 +28,10 @@ class BackupRepository(
 ) {
     suspend fun export(): BackupSnapshot {
         val presetsSnapshot = presets.userPresets.first()
-        return exportRoom(presetsSnapshot)
+        return exportRoom(presetsSnapshot, screenTime.history.first())
     }
 
-    private suspend fun exportRoom(presetsSnapshot: List<FocusPreset>): BackupSnapshot = db.withTransaction {
+    private suspend fun exportRoom(presetsSnapshot: List<FocusPreset>, screenTimeSnapshot: Map<LocalDate, Int>): BackupSnapshot = db.withTransaction {
         BackupSnapshot(
             exportedAt = clock(),
             habits = db.habits().all().mapNotNull { it.toDomain() },
@@ -39,6 +41,7 @@ class BackupRepository(
             settings = (db.settings().get() ?: SettingsEntity()).toDomain(),
             focusPresets = presetsSnapshot,
             goals = goals.current(),
+            screenTime = screenTimeSnapshot.mapKeys { it.key.toString() },
         )
     }
 
@@ -58,6 +61,7 @@ class BackupRepository(
         }
         snapshot.focusPresets?.let { presets.replaceAll(it) }
         snapshot.goals?.let { goals.set(it) } // DataStore is outside the Room transaction; validated by the codec
+        snapshot.screenTime?.let { screenTime.replaceAll(ScreenTimeHistory.sanitize(it, LocalDate.now())) }
         reloadCaches()
     }
 

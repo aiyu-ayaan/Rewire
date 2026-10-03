@@ -35,6 +35,9 @@ class ScreenTimeStore(private val store: DataStore<Preferences>) {
         }
     }
 
+    /** Backup restore: replaces the stored days with [days] (already sanitised). */
+    suspend fun replaceAll(days: Map<LocalDate, Int>) { store.edit { it[KEY] = encode(days) } }
+
     /** Clear-history support. */
     suspend fun clear() { store.edit { it.remove(KEY) } }
 

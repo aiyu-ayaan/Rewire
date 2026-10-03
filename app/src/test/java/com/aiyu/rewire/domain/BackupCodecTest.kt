@@ -91,6 +91,13 @@ class BackupCodecTest {
         assertEquals(BackupException.Reason.INCONSISTENT, reason(BackupCodec.encode(snapshot.copy(goals = Goals(dailyFocusMinutes = 1)))))
     }
 
+    @Test fun `screen time round trips and older files without it still load`() {
+        val with = snapshot.copy(screenTime = mapOf("2026-10-03" to 95))
+        assertEquals(mapOf("2026-10-03" to 95), BackupCodec.decode(BackupCodec.encode(with)).screenTime)
+        val legacy = BackupCodec.encode(snapshot).replace(Regex(",\"screenTime\":null"), "")
+        assertEquals(null, BackupCodec.decode(legacy).screenTime)
+    }
+
     @Test fun `garbage is malformed`() {
         assertEquals(BackupException.Reason.MALFORMED, reason("not json"))
         assertEquals(BackupException.Reason.MALFORMED, reason("{}"))

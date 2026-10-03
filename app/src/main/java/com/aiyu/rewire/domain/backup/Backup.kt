@@ -26,6 +26,8 @@ data class BackupSnapshot(
     val focusPresets: List<FocusPreset>? = null,
     /** Added after v1: absent in older files (leave current goals alone on import). */
     val goals: Goals? = null,
+    /** Added after v1: ISO date -> screen minutes. Absent in older files (leave stored history alone on import). */
+    val screenTime: Map<String, Int>? = null,
 )
 
 class BackupException(val reason: Reason, cause: Throwable? = null) : Exception(reason.name, cause) {

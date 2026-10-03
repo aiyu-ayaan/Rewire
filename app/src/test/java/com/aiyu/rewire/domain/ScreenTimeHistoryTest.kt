@@ -27,4 +27,13 @@ class ScreenTimeHistoryTest {
         assertEquals(false, today.minusDays(1) in days)
         assertEquals(6, days.size) // 5 missing past days + today
     }
+
+    @Test fun sanitizeKeepsOnlyValidRecentDaysWithClampedMinutes() {
+        val raw = mapOf(
+            "2026-10-03" to 95, "2026-10-02" to 5000, "2026-10-01" to -4,
+            "nonsense" to 10, "2026-10-05" to 10, "2020-01-01" to 10,
+        )
+        val m = ScreenTimeHistory.sanitize(raw, today)
+        assertEquals(mapOf(today.minusDays(1) to 95, today.minusDays(2) to 24 * 60, today.minusDays(3) to 0), m)
+    }
 }
