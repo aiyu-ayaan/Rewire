@@ -87,8 +87,10 @@ object AppModule {
 
     @Provides @Singleton
     fun warnings(@ApplicationContext context: Context, db: RewireDatabase, writer: DbWriter): WarningRepository {
-        val defaults = RoomWarningRepository.defaults(context.resources.openRawResource(R.raw.default_warnings).bufferedReader().use { it.readText() })
-        return RoomWarningRepository(db.warnings(), writer, defaults)
+        fun read(c: Context) = RoomWarningRepository.defaults(c.resources.openRawResource(R.raw.default_warnings).bufferedReader().use { it.readText() })
+        // Room keeps the English baseline; the current language's file (res/raw-xx) only changes how an unedited built-in reads.
+        val english = read(context.createConfigurationContext(android.content.res.Configuration().apply { setLocale(java.util.Locale.ENGLISH) }))
+        return RoomWarningRepository(db.warnings(), writer, english) { read(com.aiyu.rewire.core.settings.AppLocale.wrap(context)) }
     }
 
     @Provides @Singleton

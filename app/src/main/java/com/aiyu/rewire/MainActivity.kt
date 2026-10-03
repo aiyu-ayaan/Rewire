@@ -44,6 +44,7 @@ class MainActivity : ComponentActivity() {
     @Inject lateinit var focus: FocusController
     @Inject lateinit var updater: dagger.Lazy<AppUpdater> // Lazy: never built when BuildConfig.UPDATES is off (play)
     @Inject lateinit var engine: HabitEngine
+    @Inject lateinit var warnings: com.aiyu.rewire.data.WarningRepository
 
     private var deepLink by mutableStateOf<DeepLink?>(null)
 
@@ -55,6 +56,9 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         val splash = installSplashScreen()
         super.onCreate(savedInstanceState)
+        // This activity is recreated on every language change: re-word built-in warnings and channel names.
+        warnings.relocalize()
+        notifier.createChannels(this)
         splash.setKeepOnScreenCondition { !contentReady }
         splash.setOnExitAnimationListener { provider ->
             // Let Pause → Turn finish (API 31+; start is 0 below, so no wait), then exit.

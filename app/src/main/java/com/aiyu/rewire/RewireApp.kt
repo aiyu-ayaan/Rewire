@@ -22,6 +22,13 @@ class RewireApp : Application() {
 
     override fun attachBaseContext(base: android.content.Context) = super.attachBaseContext(com.aiyu.rewire.core.settings.AppLocale.wrap(base))
 
+    @Inject lateinit var warnings: com.aiyu.rewire.data.WarningRepository
+
+    override fun onConfigurationChanged(newConfig: android.content.res.Configuration) {
+        super.onConfigurationChanged(newConfig)
+        warnings.relocalize() // API 33+: the system changed the app language
+    }
+
     override fun onCreate() {
         super.onCreate()
         notifier.createChannels()

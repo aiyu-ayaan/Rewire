@@ -108,39 +108,73 @@ interface WarningRepository {
     fun addCustom(level: WarningLevel, title: String, message: String, motivation: String): Warning
     fun delete(id: String)
     suspend fun reload()
+    /** Re-picks built-in wording after the app language changed. */
+    fun relocalize()
 }
 
-/** Seeds from bundled JSON (res/raw/default_warnings.json), then keeps the user's edits. */
+/**
+ * Seeds from bundled JSON (res/raw/default_warnings.json), then keeps the user's edits.
+ *
+ * Room always stores the English [defaults]; a built-in the user hasn't edited is shown in the current language's
+ * [localized] wording instead (res/raw-xx/default_warnings.json), so switching language re-words it and an edited one stays as written.
+ */
 class RoomWarningRepository(
     private val dao: WarningDao,
     private val writer: DbWriter,
     defaults: List<Warning> = emptyList(),
+    private val localized: () -> List<Warning> = { defaults },
 ) : WarningRepository {
+    private val english = defaults.associateBy { it.id }
+
     // Built-ins added in app updates reach existing libraries (insert-ignore); user edits to old ones are kept.
-    private val state = MutableStateFlow(loadNow { dao.insertMissing(defaults.map { it.toEntity() }); dao.all() }.map { it.toDomain() })
+    @Volatile private var stored = loadNow { dao.insertMissing(defaults.map { it.toEntity() }); dao.all() }.map { it.toDomain() }
+    private val state = MutableStateFlow(localize(stored))
     override val warnings: StateFlow<List<Warning>> = state.asStateFlow()
 
-    override fun update(warning: Warning) {
-        state.update { list -> list.map { if (it.id == warning.id) warning else it } }
-        writer.write { dao.update(warning.toEntity()) }
+    private fun Warning.sameText(o: Warning) = title == o.title && message == o.message && motivationalMessage == o.motivationalMessage
+    private fun Warning.withTextOf(o: Warning) = copy(title = o.title, message = o.message, motivationalMessage = o.motivationalMessage)
+
+    private fun localize(list: List<Warning>): List<Warning> {
+        val local = localized().associateBy { it.id }
+        return list.map { w ->
+            val en = english[w.id]; val l = local[w.id]
+            if (!w.custom && en != null && l != null && w.sameText(en)) w.withTextOf(l) else w
+        }
     }
+
+    /** Undoes [localize] for a row the user hasn't reworded, so Room keeps the English baseline. */
+    private fun delocalize(w: Warning): Warning {
+        val en = english[w.id]; val l = localized().firstOrNull { it.id == w.id }
+        return if (!w.custom && en != null && l != null && w.sameText(l)) w.withTextOf(en) else w
+    }
+
+    override fun update(warning: Warning) {
+        val row = delocalize(warning)
+        stored = stored.map { if (it.id == row.id) row else it }
+        state.value = localize(stored)
+        writer.write { dao.update(row.toEntity()) }
+    }
+
+    override fun relocalize() { state.value = localize(stored) }
 
     override fun addCustom(level: WarningLevel, title: String, message: String, motivation: String): Warning {
         val w = Warning(
             id = "custom-${UUID.randomUUID()}", category = WarningCategory.CUSTOM, level = level,
             title = title.trim(), message = message.trim(), motivationalMessage = motivation.trim(), custom = true,
         )
-        state.update { it + w }
+        stored = stored + w
+        state.value = localize(stored)
         writer.write { dao.insertMissing(listOf(w.toEntity())) }
         return w
     }
 
     override fun delete(id: String) {
-        state.update { list -> list.filterNot { it.id == id && it.custom } }
+        stored = stored.filterNot { it.id == id && it.custom }
+        state.value = localize(stored)
         writer.write { dao.deleteCustom(id) }
     }
 
-    override suspend fun reload() { state.value = dao.all().map { it.toDomain() } }
+    override suspend fun reload() { stored = dao.all().map { it.toDomain() }; state.value = localize(stored) }
 
     companion object {
         private val json = Json { ignoreUnknownKeys = true }

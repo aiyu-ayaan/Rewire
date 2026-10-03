@@ -60,11 +60,12 @@ class RewireNotifier(
         const val PROTECTION_OFF = 1500
     }
 
-    fun createChannels() {
+    /** [ui] supplies the strings; pass a language-wrapped context after the app language changed. */
+    fun createChannels(ui: Context = context) {
         fun channel(id: String, importance: Int, name: Int, desc: Int, silent: Boolean = false) =
             NotificationChannelCompat.Builder(id, importance)
-                .setName(context.getString(name))
-                .setDescription(context.getString(desc))
+                .setName(ui.getString(name))
+                .setDescription(ui.getString(desc))
                 .apply { if (silent) setSound(null, null).setVibrationEnabled(false) }
                 .build()
         manager.createNotificationChannelsCompat(

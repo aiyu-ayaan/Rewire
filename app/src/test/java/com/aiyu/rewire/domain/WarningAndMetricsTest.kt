@@ -65,6 +65,24 @@ class WarningAndMetricsTest {
         assertEquals(false, repo.warnings.value.first().enabled) // user's edit kept
     }
 
+    @Test fun unedited_builtins_read_in_the_current_language_and_room_keeps_english() {
+        val en = w("a", WarningLevel.MINOR).copy(title = "Hello")
+        val hi = en.copy(title = "Namaste")
+        val dao = FakeWarningDao(emptyList())
+        var lang = hi
+        val repo = RoomWarningRepository(dao, DbWriter(CoroutineScope(Dispatchers.Unconfined)), listOf(en)) { listOf(lang) }
+        assertEquals("Namaste", repo.warnings.value.single().title)
+
+        repo.update(repo.warnings.value.single().copy(favorite = true)) // not a rewording
+        assertEquals("Hello", dao.rows.single().title) // English baseline stored, so it can re-localize
+        lang = en.copy(title = "Bonjour"); repo.relocalize()
+        assertEquals("Bonjour", repo.warnings.value.single().title)
+
+        repo.update(repo.warnings.value.single().copy(title = "Mine")) // user's own wording wins in every language
+        lang = hi; repo.relocalize()
+        assertEquals("Mine", repo.warnings.value.single().title)
+    }
+
     @Test fun bundledDefaultsParseWithUniqueIds() {
         val list = RoomWarningRepository.defaults(File("src/main/res/raw/default_warnings.json").readText())
         assertEquals(list.size, list.map { it.id }.toSet().size)
