@@ -19,9 +19,12 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
-import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.LazyRow
-import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.lazy.items as rowItems
+import androidx.compose.foundation.lazy.grid.GridCells
+import androidx.compose.foundation.lazy.grid.GridItemSpan
+import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
+import androidx.compose.foundation.lazy.grid.items
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.rounded.ArrowBack
 import androidx.compose.material.icons.rounded.Add
@@ -93,11 +96,18 @@ fun WarningLibraryScreen(onBack: () -> Unit) {
             ExtendedFloatingActionButton(onClick = { adding = true }, icon = { Icon(Icons.Rounded.Add, null) }, text = { Text(stringResource(R.string.wlib_custom)) })
         },
     ) { padding ->
-        LazyColumn(Modifier.padding(padding).readableWidth(), contentPadding = PaddingValues(start = 16.dp, end = 16.dp, bottom = 104.dp), verticalArrangement = Arrangement.spacedBy(12.dp)) {
-            item {
+        // One column on phones, two or more once the window is wide.
+        LazyVerticalGrid(
+            columns = GridCells.Adaptive(340.dp),
+            modifier = Modifier.padding(padding).readableWidth(1000.dp),
+            contentPadding = PaddingValues(start = 16.dp, end = 16.dp, bottom = 104.dp),
+            verticalArrangement = Arrangement.spacedBy(12.dp),
+            horizontalArrangement = Arrangement.spacedBy(12.dp),
+        ) {
+            item(span = { GridItemSpan(maxLineSpan) }) {
                 LazyRow(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
                     item { FilterChip(selected = filter == null, onClick = { filter = null }, label = { Text(stringResource(R.string.focus_filter_all)) }) }
-                    items(WarningLevel.entries) { l ->
+                    rowItems(WarningLevel.entries) { l ->
                         FilterChip(selected = filter == l, onClick = { filter = if (filter == l) null else l }, label = { Text(l.style().label) }, leadingIcon = { Icon(l.style().icon, null, Modifier.size(FilterChipDefaults.IconSize)) })
                     }
                 }
