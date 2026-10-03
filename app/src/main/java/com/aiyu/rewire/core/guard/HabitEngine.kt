@@ -1,5 +1,6 @@
 package com.aiyu.rewire.core.guard
 
+import android.app.NotificationManager
 import android.content.Context
 import android.content.Intent
 import android.media.AudioManager
@@ -55,19 +56,51 @@ class DefaultEnginePlatform(private val context: Context) : EnginePlatform {
     override fun isKeyboard(pkg: String): Boolean =
         context.getSystemService(InputMethodManager::class.java)?.enabledInputMethodList?.map { it.packageName }?.contains(pkg) == true
 
-    override fun isCallRinging(): Boolean =
-        runCatching { audioManager?.mode == AudioManager.MODE_RINGTONE }.getOrDefault(false)
+    override fun isCallRinging(): Boolean {
+        val ringing = runCatching { audioManager?.mode == AudioManager.MODE_RINGTONE }.getOrDefault(false)
+        if (ringing) {
+            unmuteCallRingerIfSilent()
+        }
+        return ringing
+    }
 
     override fun isCallUi(pkg: String, className: String?): Boolean {
         val defaultDialer = runCatching { telecomManager?.defaultDialerPackage }.getOrNull()
-        if (defaultDialer != null && pkg == defaultDialer) return true
-        if (pkg in HabitEngine.CALL_PACKAGES) return true
-        if (className != null && HabitEngine.CALL_CLASS_KEYWORDS.any { className.contains(it, ignoreCase = true) }) return true
+        if (defaultDialer != null && pkg == defaultDialer) {
+            unmuteCallRingerIfSilent()
+            return true
+        }
+        if (pkg in HabitEngine.CALL_PACKAGES) {
+            unmuteCallRingerIfSilent()
+            return true
+        }
+        if (className != null && HabitEngine.CALL_CLASS_KEYWORDS.any { className.contains(it, ignoreCase = true) }) {
+            unmuteCallRingerIfSilent()
+            return true
+        }
         val mode = runCatching { audioManager?.mode }.getOrNull()
         if (mode == AudioManager.MODE_IN_CALL || mode == AudioManager.MODE_IN_COMMUNICATION) {
-            if (className?.contains("call", ignoreCase = true) == true) return true
+            if (pkg in HabitEngine.CALL_PACKAGES || pkg.contains("whatsapp", ignoreCase = true) ||
+                className?.let { c -> HabitEngine.CALL_CLASS_KEYWORDS.any { c.contains(it, ignoreCase = true) } } == true) {
+                unmuteCallRingerIfSilent()
+                return true
+            }
         }
         return false
+    }
+
+    private fun unmuteCallRingerIfSilent() {
+        runCatching {
+            audioManager?.adjustStreamVolume(AudioManager.STREAM_RING, AudioManager.ADJUST_UNMUTE, 0)
+            if (audioManager?.ringerMode == AudioManager.RINGER_MODE_SILENT) {
+                audioManager?.ringerMode = AudioManager.RINGER_MODE_NORMAL
+            }
+            context.getSystemService(NotificationManager::class.java)?.let { nm ->
+                if (nm.isNotificationPolicyAccessGranted && nm.currentInterruptionFilter != NotificationManager.INTERRUPTION_FILTER_ALL) {
+                    nm.setInterruptionFilter(NotificationManager.INTERRUPTION_FILTER_ALL)
+                }
+            }
+        }
     }
 
     /**

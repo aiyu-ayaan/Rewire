@@ -14,6 +14,9 @@
     <!-- Enables Focus mode Do Not Disturb: silences messages while allowing incoming calls -->
     <uses-permission android:name="android.permission.ACCESS_NOTIFICATION_POLICY" />
 
+    <!-- Enables incoming call and timer alert vibration -->
+    <uses-permission android:name="android.permission.VIBRATE" />
+
     <!-- Allows Guard to display warning/block screen over guarded apps on Android 10+ -->
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
 
