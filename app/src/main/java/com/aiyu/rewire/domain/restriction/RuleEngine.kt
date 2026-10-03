@@ -19,7 +19,7 @@ data class RuleInput(
     val nowMinutes: Int,
     /** Opens let through today (APP_OPENED events for this habit). */
     val launchesToday: Int,
-    /** Foreground minutes today across the habit's apps; null = usage access not granted. */
+    /** Foreground minutes the daily limit counts (window time only when a window is set) across the habit's apps; null = usage access not granted. */
     val usageMinutesToday: Int?,
     val focusing: Boolean,
     val bypassMinor: Boolean,

@@ -4,6 +4,9 @@ import android.app.usage.UsageEvents
 import android.app.usage.UsageStatsManager
 import android.content.Context
 import com.aiyu.rewire.core.permissions.SystemPermissions
+import com.aiyu.rewire.domain.habit.HabitProfile
+import com.aiyu.rewire.domain.restriction.RuleEngine
+import java.time.Instant
 import java.time.LocalDate
 import java.time.ZoneId
 
@@ -19,10 +22,18 @@ open class UsageTracker(private val context: Context? = null) {
      * Total foreground minutes today across [packages].
      * Returns null when Usage access isn't granted.
      */
-    open fun minutesToday(packages: Set<String>, now: Long = System.currentTimeMillis()): Int? {
+    open fun minutesToday(packages: Set<String>, now: Long = System.currentTimeMillis(), since: Long? = null): Int? {
         if (packages.isEmpty()) return null
-        val millis = foregroundMillisToday(now) ?: return null
+        val millis = foregroundMillisToday(now, since) ?: return null
         return (packages.sumOf { millis[it] ?: 0L } / 60_000L).toInt()
+    }
+
+    /** Usage the daily limit is judged on: only the current allowed window when the habit has one, else the whole day. */
+    fun limitMinutes(p: HabitProfile, now: Long = System.currentTimeMillis()): Int? {
+        val zdt = Instant.ofEpochMilli(now).atZone(ZoneId.systemDefault())
+        val from = RuleEngine.limitCountsFromMinutes(p.rule, zdt.hour * 60 + zdt.minute)
+        val since = from?.let { zdt.toLocalDate().atStartOfDay(zdt.zone).toInstant().toEpochMilli() + it * 60_000L }
+        return minutesToday(p.apps.map { it.packageName }.toSet(), now, since)
     }
 
     /** Single app foreground minutes today. */
@@ -49,11 +60,11 @@ open class UsageTracker(private val context: Context? = null) {
      * Wellbeing. The aggregated UsageStats buckets aren't aligned to midnight and overlap the query
      * range, so they leak yesterday's usage into today.
      */
-    private fun foregroundMillisToday(now: Long): Map<String, Long>? {
+    private fun foregroundMillisToday(now: Long, since: Long? = null): Map<String, Long>? {
         val ctx = context ?: return null
         if (!SystemPermissions.usageAccessGranted(ctx)) return null
         val usm = ctx.getSystemService(UsageStatsManager::class.java) ?: return null
-        val start = LocalDate.now().atStartOfDay(ZoneId.systemDefault()).toInstant().toEpochMilli()
+        val start = since ?: LocalDate.now().atStartOfDay(ZoneId.systemDefault()).toInstant().toEpochMilli()
         return runCatching {
             val events = usm.queryEvents(start, now)
             val list = ArrayList<Event>()
