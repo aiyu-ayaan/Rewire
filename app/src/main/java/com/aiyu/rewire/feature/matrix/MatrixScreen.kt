@@ -52,6 +52,10 @@ import android.content.Context
 import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.flow.MutableStateFlow
 import com.aiyu.rewire.domain.analytics.Punchlines
+import com.aiyu.rewire.data.GoalsRepository
+import com.aiyu.rewire.domain.goals.DayProgress
+import com.aiyu.rewire.domain.goals.Goals
+import com.aiyu.rewire.domain.goals.Streaks
 import com.aiyu.rewire.domain.habit.HabitProfile
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import com.aiyu.rewire.core.apps.InstalledAppsSource
@@ -84,7 +88,7 @@ data class NamedBreakdown(val label: String?, val packageName: String?, val stat
 data class AppMinutes(val label: String, val minutes: Int)
 
 /** Chart-ready Daily view. */
-data class DailyUi(val today: DailyMetrics, val timeline: List<TimelineItem>, val appUsage: List<AppMinutes>) {
+data class DailyUi(val today: DailyMetrics, val timeline: List<TimelineItem>, val appUsage: List<AppMinutes>, val progress: DayProgress = DayProgress.EMPTY) {
     val hasData get() = today.focusMinutes > 0 || today.frictionMoments > 0 || today.appOpens > 0 || timeline.isNotEmpty()
 }
 
@@ -135,6 +139,7 @@ data class MatrixUi(
 class MatrixViewModel @Inject constructor(
     events: EventRepository,
     habits: HabitRepository,
+    goals: GoalsRepository,
     private val usage: UsageTracker,
     private val installedApps: InstalledAppsSource,
     @ApplicationContext private val context: Context,
@@ -142,13 +147,13 @@ class MatrixViewModel @Inject constructor(
     private val period = MutableStateFlow(MatrixPeriod.DAILY)
     fun selectPeriod(p: MatrixPeriod) { period.value = p }
 
-    val ui: StateFlow<MatrixUi> = combine(events.events, habits.habits, period, ::build)
+    val ui: StateFlow<MatrixUi> = combine(events.events, habits.habits, period, goals.goals, ::build)
         .flowOn(Dispatchers.Default)
-        .stateIn(viewModelScope, SharingStarted.WhileSubscribed(5_000), build(emptyList(), emptyList(), MatrixPeriod.DAILY))
+        .stateIn(viewModelScope, SharingStarted.WhileSubscribed(5_000), build(emptyList(), emptyList(), MatrixPeriod.DAILY, Goals()))
 
     private fun s(id: Int) = context.getString(id)
 
-    private fun build(events: List<HabitEvent>, habits: List<HabitProfile>, period: MatrixPeriod): MatrixUi {
+    private fun build(events: List<HabitEvent>, habits: List<HabitProfile>, period: MatrixPeriod, goals: Goals): MatrixUi {
         val zone = ZoneId.systemDefault()
         val today = LocalDate.now()
         val since = today.minusDays(6).atStartOfDay(zone).toInstant().toEpochMilli()
@@ -164,7 +169,7 @@ class MatrixViewModel @Inject constructor(
 
         val w = PeriodMetrics.weekly(events, PeriodMetrics.weekStart(today), zone, screen)
         val ym = YearMonth.from(today)
-        val m = PeriodMetrics.monthly(events, ym, today, zone, screen)
+        val m = PeriodMetrics.monthly(events, ym, today, zone, screen, goals)
         val opened = w.mostOpenedApp
         return MatrixUi(
             period = period,
@@ -172,6 +177,7 @@ class MatrixViewModel @Inject constructor(
             daily = DailyUi(
                 today = week.last(),
                 timeline = ChartMapper.timeline(events, today, zone),
+                progress = Streaks.progress(events, today, zone, goals),
                 appUsage = usage.allAppsMinutesToday().filterKeys { it in protectedPkgs }
                     .map { AppMinutes(installedApps.label(it.key), it.value) }.sortedByDescending { it.minutes },
             ),

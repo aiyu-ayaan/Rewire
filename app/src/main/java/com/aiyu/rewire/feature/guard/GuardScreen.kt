@@ -63,6 +63,8 @@ import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import com.aiyu.rewire.domain.goals.DayProgress
+import com.aiyu.rewire.ui.components.GoalChips
 import com.aiyu.rewire.domain.analytics.DailyMetrics
 import com.aiyu.rewire.domain.habit.HabitProfile
 import com.aiyu.rewire.feature.landing.HERO_KEY
@@ -83,6 +85,7 @@ fun GuardScreen(onOpenHabit: (String) -> Unit, onStartFocus: () -> Unit) {
     val vm = hiltViewModel<GuardViewModel>()
     val habits by vm.habits.collectAsStateWithLifecycle()
     val today by vm.today.collectAsStateWithLifecycle()
+    val progress by vm.progress.collectAsStateWithLifecycle()
     var creating by rememberSaveable { mutableStateOf(false) }
     val list = rememberLazyListState()
     val fabExpanded by remember { derivedStateOf { list.firstVisibleItemIndex == 0 } }
@@ -95,7 +98,7 @@ fun GuardScreen(onOpenHabit: (String) -> Unit, onStartFocus: () -> Unit) {
         ) {
             item { Header() }
             if (habits.any { it.habit.enabled }) item { ProtectionBanner() }
-            item { TodayCard(today, habits.count { it.habit.enabled }, onStartFocus) }
+            item { TodayCard(today, progress, habits.count { it.habit.enabled }, onStartFocus) }
             item { SectionTitle(stringResource(R.string.guard_your_habits), trailing = { if (habits.isNotEmpty()) Text("${habits.size}", style = MaterialTheme.typography.labelLarge, color = MaterialTheme.colorScheme.onSurfaceVariant) }) }
             if (habits.isEmpty()) {
                 item {
@@ -159,7 +162,7 @@ private fun Header() {
 }
 
 @Composable
-private fun TodayCard(m: DailyMetrics, activeHabits: Int, onStartFocus: () -> Unit) {
+private fun TodayCard(m: DailyMetrics, progress: DayProgress, activeHabits: Int, onStartFocus: () -> Unit) {
     val score = m.disciplineScore
     val animated by animateFloatAsState(score ?: 0f, MaterialTheme.motionScheme.slowSpatialSpec(), label = "score")
     val disciplineDesc = score?.let { stringResource(R.string.guard_discipline_desc, (it * 100).toInt()) } ?: stringResource(R.string.guard_discipline_none)
@@ -192,6 +195,8 @@ private fun TodayCard(m: DailyMetrics, activeHabits: Int, onStartFocus: () -> Un
                     Stat(stringResource(R.string.guard_stat_guarding), pluralStringResource(R.plurals.guard_habit_count, activeHabits, activeHabits))
                 }
             }
+            Spacer(Modifier.height(16.dp))
+            GoalChips(progress)
             Spacer(Modifier.height(16.dp))
             FilledTonalButton(onClick = onStartFocus, modifier = Modifier.fillMaxWidth()) {
                 Icon(Icons.Rounded.Timer, contentDescription = null, modifier = Modifier.size(18.dp))
