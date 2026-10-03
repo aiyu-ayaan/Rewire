@@ -156,7 +156,7 @@ service off -> banner + notification.
 - Emulator pass 2026-10-03 (Lite + Full, API 37): onboarding, create habit, Max block, escalation UI, Matrix daily/weekly/monthly with real events, focus presets + quick-test session + note, export -> clear -> import round trip, Room 1->2 and 2->3 migration androidTests (2/2 pass), landscape 200% font rail, 800dp rail, `assemblePlayRelease` (no INTERNET / INSTALL permission, no update receiver)
 - Found on emulator, fixed 2026-10-03: import dialog plurals, chips spacing in Matrix daily, discipline label at 200% font, New-habit button hidden over the empty state (re-checked on emulator with zero habits 2026-10-04: no FAB, "Create first habit" reachable by scroll)
 - [ ] Real install end to end needs two signed releases (emulator only had a debug build)
-- [x] Play build: `play` flavor, updates compiled out (UPDATES flag, no REQUEST_INSTALL_PACKAGES/INTERNET/receiver) (2026-10-03). Confirm `assemblePlayRelease` R8 result before submitting
+- [x] Play build: `play` flavor, updates compiled out (UPDATES flag, no REQUEST_INSTALL_PACKAGES/INTERNET/receiver) (2026-10-03). `assemblePlayRelease` (R8) builds clean 2026-10-04
 
 ## Phase 2 — Persistence + DI  (DONE 2026-10-02 except items below)
 - [x] Extract remaining inline UI copy to strings.xml (~330 strings; domain-layer text, update errors, debug button left inline on purpose) (2026-10-03)
@@ -204,6 +204,6 @@ service off -> banner + notification.
 - [x] Goals (daily focus target, max overrides) + streaks, Profile editor, chips on Guard/Matrix daily, in backup
 - [x] Focus presets (built-in + user presets, DataStore, in backup)
 - [x] Built-in preset names in strings.xml, resolved by preset id in the UI (2026-10-04)
-- [x] Daily screen time snapshots (`ScreenTimeStore`, 62 days, DataStore) synced on Matrix open + daily worker; cleared with history; not in backup export (2026-10-04)
+- [x] Daily screen time snapshots (`ScreenTimeStore`, 62 days, DataStore) synced on Matrix open + daily worker; cleared with history, included in backup export/import (2026-10-04)
 - [x] Removed unused `ActivityHeatmap` in Charts.kt (2026-10-04)
 ## Phase 7 (V3) — External data adapters, backup, AI insights (read-only)
