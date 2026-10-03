@@ -1,40 +1,72 @@
-# Architecture (Phase 1 snapshot)
+# Architecture
+
+Current as of 2026-10-04 (Room schema v5, 27 languages). Rationale for choices lives in [DECISIONS.md](DECISIONS.md).
 
 ```
 app/src/main/java/com/aiyu/rewire/
-├── RewireApp.kt              Application; owns AppContainer, creates notification channels
-├── MainActivity.kt           setContent only; reads deep-link tab extra
-├── di/AppModule.kt          Hilt singleton graph (Room, repos, settings flow, engines)
+├── RewireApp.kt              Application: channels, focus restore, workers, wrapped in AppLocale
+├── MainActivity.kt           setContent, splash, deep links; recreated on language change
+├── di/AppModule.kt           Hilt singleton graph (Room, repos, settings flow, engines)
 ├── core/
-│   ├── settings/             Settings model + SettingsRepository (Room single-row table)
-│   ├── update/               AppUpdater, UpdateWorker, UpdateInstallReceiver (GitHub self-update)
+│   ├── analytics/            SummaryWorker (daily summary)
+│   ├── apps/                 InstalledAppsSource (PackageManager launcher query)
 │   ├── focus/                FocusController: app-scoped timer, persists every transition
-│   ├── notifications/        Channels, RewireNotifier, permission helpers
-│   └── apps/                 InstalledAppsSource (PackageManager launcher query)
-├── domain/
-│   ├── habit/                Habit, ProtectedApp, RestrictionRule, WarningLevel
-│   ├── warning/              Warning, WarningCategory, WarningPicker
-│   ├── update/               Version, UpdateChannel, Releases, ReleaseNotes (pure)
-│   ├── focus/                FocusConfig (+validation), FocusTimer state machine
-│   └── analytics/            HabitEvent, DailyMetrics, MetricsCalculator
+│   ├── guard/                HabitEngine, UsageTracker, GuardShield (overlay)
+│   ├── notifications/        Channels, RewireNotifier, FocusDndManager, permission helpers
+│   ├── permissions/          Accessibility / usage / overlay / battery checks
+│   ├── settings/             Settings + SettingsRepository (Room single row), AppLocale (per-app language)
+│   └── update/               AppUpdater, UpdateWorker, UpdateInstallReceiver (GitHub self-update)
+├── domain/                   Pure Kotlin, no Android imports
+│   ├── habit/  restriction/  warning/  focus/  goals/  analytics/  backup/  update/
 ├── data/
 │   ├── Repositories.kt       Habit / Warning / Event / FocusSession repos: Room + write-through cache
-│   └── local/                RewireDatabase, entities, DAOs, mappers, LegacyImport (JSON + DataStore -> Room, once)
+│   ├── BackupRepository, FocusPresetRepository, GoalsRepository, ScreenTimeStore   (DataStore-backed where noted below)
+│   └── local/                RewireDatabase, entities, DAOs, mappers, LegacyImport
 ├── service/
-│   ├── accessibility/  monitoring/  boot/
-│   └── focus/                FocusTimerService: FGS + wake lock for the running phase
-├── feature/
-│   ├── landing/  guard/  focus/  matrix/  profile/
-└── ui/
-    ├── theme/                Color, Type, Shape, Motion, Theme
-    ├── components/           shared composables (LevelBadge, MorphingShape, StatCard…)
-    └── RewireNavHost.kt      landing -> main, tabs, shared transition scope
+│   ├── accessibility/        RewireAccessibilityService (Full, Play)
+│   ├── monitoring/           GuardMonitorService (usage watch, ongoing notification)
+│   ├── focus/                FocusTimerService: FGS + wake lock for the running phase
+│   └── boot/                 BootReceiver
+├── feature/                  landing, onboarding, guard, focus, matrix, profile, update
+└── ui/                       theme, shared components, RewireNavHost
+app/src/main/res/             values-xx/strings.xml, raw/ + raw-xx/default_warnings.json
 ```
 
-Flow: `Composable -> ViewModel -> Repository/UseCase -> source`.
-Domain has zero Android imports (enforced by keeping it in plain Kotlin; tests run on JVM).
+Flow: `Composable -> ViewModel -> Repository/UseCase -> source`. Domain has zero Android imports (tests run on the JVM).
 
-## Phase 1 ceilings (marked `ponytail:` in code)
+## Runtime overview
+
+```mermaid
+flowchart TD
+    A11y["RewireAccessibilityService"] --> Engine["HabitEngine"]
+    Usage["GuardMonitorService<br/>usage watch"] --> Engine
+    Boot["BootReceiver"] -->|restore monitoring| Usage
+    Engine --> Rules["RuleEngine"]
+    Rules --> Decision{"RestrictionDecision"}
+    Decision -->|Allow| Open["app opens"]
+    Decision -->|Warn / Block| GuardUI["GuardActivity"]
+    GuardUI --> Events["EventRepository"]
+    Engine --> Events
+    Focus["FocusController<br/>FocusTimerService"] --> Events
+    Focus -. bypass levels .-> Rules
+    Events --> Room[("Room v5")]
+    Worker["WorkManager<br/>SummaryWorker, UpdateWorker"] --> Room
+    Room --> Metrics["MetricsCalculator, PeriodMetrics"]
+    Metrics --> Matrix["Matrix UI"]
+```
+
+## Persistence map
+| Data | Store |
+|---|---|
+| Habits, rules, per-app limits, warnings, events, focus sessions, settings | Room (`rewire.db`) |
+| Daily goals, focus presets, past-day screen-time snapshots (62 days) | DataStore Preferences |
+| App language below API 33 | SharedPreferences `app_locale` (API 33+: system `LocaleManager`) |
+| Backup | One versioned JSON from Room + DataStore (`BackupRepository`) |
+
+## Localisation
+Strings in `values-xx/`, built-in warning wording in `raw-xx/`. Room stores the English warning text; `RoomWarningRepository` shows the current language's wording only for unedited built-ins. Full design: [LOCALIZATION.md](LOCALIZATION.md).
+
+## Known ceilings (marked `ponytail:` in code)
 - Repos cache whole tables in memory (sync reads for the a11y hot path) -> page from Room if it grows
 - Focus wake lock per running phase -> exact AlarmManager alarms if battery vitals complain
 

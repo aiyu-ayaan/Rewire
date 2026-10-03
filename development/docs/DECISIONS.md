@@ -2,6 +2,12 @@
 
 Newest first. Format: date — decision — why.
 
+- 2026-10-04 — Built-in warnings: Room always stores the English baseline; an unedited built-in is displayed from the current language's `res/raw-xx/default_warnings.json`, an edited one is shown as written. — Seeding in the install language would freeze built-ins in that language and make every switch look like a user edit. Comparing against the English text keeps edits safe with no schema change; `update()` converts shown text back to English so a favourite/enable toggle never counts as an edit. Backup reads Room directly, so exports stay language-neutral.
+- 2026-10-04 — Language switching is hand-rolled on `LocaleManager` (API 33+) / prefs + `attachBaseContext` (below), not `AppCompatDelegate`. — The activities are `ComponentActivity`/`FragmentActivity` on a framework Material theme; AppCompatActivity would need an AppCompat theme parent, which risks the splash/edge-to-edge setup for no gain. `AppLocale` is ~50 lines and the system App languages screen works through `generateLocaleConfig`.
+- 2026-10-04 — Play AAB sets `language.enableSplit = false`. — Runtime language switching without Play Core downloads needs every language in the base install; extra size is small (text only).
+- 2026-10-04 — Matrix punchlines return data (`FocusPunch`, `GuardPunch`), wording in strings.xml/plurals. — Keeps the domain Android-free and testable while every language can phrase it (plural rules differ).
+- 2026-10-04 — Charts are left to draw in absolute coordinates (LTR) under RTL. — Time axes read left to right in Arabic too; only directional icons mirror (`AutoMirrored`).
+
 - 2026-10-02 — `GuardShield` starts blank in the guard window's colour (`canvas`), shows text/buttons only after 1.5 s, has no FLAG_SECURE, and is removed after the guard's first frame. — On device a teal "Paused by Rewire" screen flashed before every block (unrecordable: FLAG_SECURE), and removing it at resume could show Home for a frame.
 - 2026-10-02 — Screen off marks the open app stale; its next report is re-judged as a re-check (no launch counted). — Unlocking back into the same app sends no app change, so a boundary crossed while the screen was off (window ended, new day) left the app open until the user switched away.
 - 2026-10-02 — Opening Rewire (re)starts `GuardMonitorService`; a refused start posts "Guard protection is off". — Android 12+ refuses foreground-service starts from the background (system-restarted process); the failure was swallowed, so Lite watched nothing with no sign.

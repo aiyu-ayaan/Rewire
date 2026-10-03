@@ -206,4 +206,18 @@ service off -> banner + notification.
 - [x] Built-in preset names in strings.xml, resolved by preset id in the UI (2026-10-04)
 - [x] Daily screen time snapshots (`ScreenTimeStore`, 62 days, DataStore) synced on Matrix open + daily worker; cleared with history, included in backup export/import (2026-10-04)
 - [x] Removed unused `ActivityHeatmap` in Charts.kt (2026-10-04)
+## Phase 6b — Localisation  (2026-10-04)
+- [x] Last hardcoded UI strings moved to `strings.xml`; Matrix punchlines are data from the domain (`FocusPunch`/`GuardPunch`), wording in resources
+- [x] 26 translations in `values-xx/`: hi, es, pt-BR, id, ar, fr, ru, de, tr, ja, ko, it, vi, th, zh-CN, zh-TW, pl, bn (plural quantities per CLDR; lint clean)
+- [x] Batch 3 (Indian languages): ta, te, mr, gu, kn, ml, pa, ur incl. Urdu RTL (2026-10-04)
+- [x] Per-app language: Profile > Language (`AppLocale`); API 33+ via `LocaleManager` (shows in system App languages), below via prefs + `attachBaseContext`; `generateLocaleConfig`, `localeFilters`, Play `bundle.language.enableSplit = false`
+- [x] Built-in warnings localised per language (`res/raw-xx/default_warnings.json`); Room keeps the English baseline, an unedited built-in is shown in the current language, an edited one stays as written (`RoomWarningRepository`, tested)
+- [x] Notification channel names/descriptions refreshed on language change (`MainActivity` recreate + `onConfigurationChanged`)
+- [x] Hindi, Arabic, Bengali punchlines re-polished; `Send` icon mirrors in RTL (charts are Canvas, stay LTR on purpose)
+- [ ] Native-speaker review of all translations before release (esp. punch_* lines and warnings); machine translation only so far
+- [ ] Device pass in Arabic (RTL), a CJK language and a long-text language (de/ru) for clipping; test language switch on API < 33 and >= 33
+- [ ] `formatMinutes` unit suffixes (`5m`, `1h`) still English; `Locale`-aware date/number formatting not audited
+- [ ] Release notes pulled from GitHub stay English (not app strings)
+- [x] README (languages, feature list, permissions, tech stack, roadmap, current mermaid diagrams), ARCHITECTURE.md and ROADMAP.md refreshed to the real code (2026-10-04)
+
 ## Phase 7 (V3) — External data adapters, backup, AI insights (read-only)
