@@ -1,6 +1,8 @@
 package com.aiyu.rewire.core.notifications
 
 import android.Manifest
+import androidx.compose.ui.res.stringResource
+import com.aiyu.rewire.R
 import androidx.compose.runtime.setValue
 import androidx.compose.runtime.getValue
 import android.os.Build
@@ -95,16 +97,16 @@ fun NotificationRationaleCard(state: NotificationPermissionState, reason: String
                     Icon(Icons.Rounded.NotificationsActive, contentDescription = null)
                     Spacer(Modifier.width(12.dp))
                     Text(
-                        if (state.status == PermissionStatus.BLOCKED) "Notifications are off" else "Allow notifications?",
+                        stringResource(if (state.status == PermissionStatus.BLOCKED) R.string.perm_notifications_off else R.string.perm_allow_notifications),
                         style = MaterialTheme.typography.titleMedium,
                     )
                 }
                 Text(reason, style = MaterialTheme.typography.bodyMedium)
                 Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.End) {
                     if (state.status == PermissionStatus.BLOCKED) {
-                        TextButton(onClick = state.openSettings) { Text("Open settings") }
+                        TextButton(onClick = state.openSettings) { Text(stringResource(R.string.focus_open_settings)) }
                     } else {
-                        Button(onClick = state.request) { Text("Allow") }
+                        Button(onClick = state.request) { Text(stringResource(R.string.common_allow)) }
                     }
                 }
             }

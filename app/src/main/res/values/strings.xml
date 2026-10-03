@@ -348,4 +348,35 @@
     <string name="notif_send_test">Send test notification</string>
     <string name="notif_system_settings">System notification settings</string>
     <string name="notif_system_settings_note">Sound, vibration and lock-screen detail for each category live in system settings. Focus timers stay silent.</string>
+    <!-- Warning library screen (chrome only; warning content is data) -->
+    <string name="wlib_subtitle">Words that help you pause. A random enabled one is shown each time.</string>
+    <string name="wlib_custom">Custom warning</string>
+    <string name="wlib_favorite">Favorite</string>
+    <string name="wlib_unfavorite">Unfavorite</string>
+    <string name="wlib_delete">Delete warning</string>
+    <string name="wlib_enabled">Enabled</string>
+    <string name="wlib_field_title">Title</string>
+    <string name="wlib_field_message">Message</string>
+    <string name="wlib_field_reason">Your reason</string>
+    <string name="wlib_field_reason_hint">Shown as the quote. Keep it kind.</string>
+    <!-- Permissions -->
+    <string name="common_allowed">Allowed</string>
+    <string name="perm_notifications_off">Notifications are off</string>
+    <string name="perm_allow_notifications">Allow notifications?</string>
+    <string name="perm_notifications_why">Focus timer, break alerts and important Guard status.</string>
+    <string name="perm_accessibility_why">Notices when a guarded app opens so Rewire can pause or block it. Reads nothing on screen.</string>
+    <string name="perm_usage_access">Usage access</string>
+    <string name="perm_usage_why_full">Counts time in guarded apps for limits and Matrix charts. Stays on this device.</string>
+    <string name="perm_usage_why_lite">Notices when a guarded app opens and counts its time for limits and Matrix. Stays on this device.</string>
+    <string name="perm_overlay">Display over apps</string>
+    <string name="perm_overlay_why">Allows Rewire to show the warning and block screen over guarded apps when opened.</string>
+    <string name="perm_dnd">Do Not Disturb access</string>
+    <string name="perm_dnd_why">Silences all messages and alerts while allowing incoming calls from any app during Focus sessions.</string>
+    <string name="perm_battery">Unrestricted battery</string>
+    <string name="perm_battery_why">Stops the system from putting protection to sleep. Find Rewire and choose Unrestricted / Don\'t optimize.</string>
+    <string name="perm_restricted_title">Android 13+ Restricted Settings</string>
+    <string name="perm_restricted_steps">If Accessibility is greyed out with \"Restricted setting\":\n1. Tap \"Open App Info\" below\n2. Tap the 3 dots (⋮) in the top-right corner\n3. Tap \"Allow restricted settings\"\n4. Return here to turn on Accessibility.</string>
+    <string name="perm_disclosure_title">Turn on Rewire in Accessibility</string>
+    <string name="perm_disclosure_steps">In the next screen:\nInstalled apps → Rewire → turn on.</string>
+    <string name="perm_disclosure_note">Note: If Android says \"Restricted setting\", tap \"Open App Info\", tap the 3 dots (⋮) at top-right, and choose \"Allow restricted settings\".</string>
 </resources>

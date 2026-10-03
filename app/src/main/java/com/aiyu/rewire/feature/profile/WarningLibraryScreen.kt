@@ -1,6 +1,8 @@
 package com.aiyu.rewire.feature.profile
 
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.ui.res.stringResource
+import com.aiyu.rewire.R
 import androidx.compose.runtime.setValue
 import androidx.compose.runtime.getValue
 import androidx.compose.foundation.layout.Column
@@ -75,20 +77,20 @@ fun WarningLibraryScreen(onBack: () -> Unit) {
         modifier = Modifier.nestedScroll(scroll.nestedScrollConnection),
         topBar = {
             LargeFlexibleTopAppBar(
-                title = { Text("Warning library") },
-                subtitle = { Text("Words that help you pause. A random enabled one is shown each time.") },
-                navigationIcon = { IconButton(onClick = onBack) { Icon(Icons.AutoMirrored.Rounded.ArrowBack, contentDescription = "Back") } },
+                title = { Text(stringResource(R.string.profile_warning_library)) },
+                subtitle = { Text(stringResource(R.string.wlib_subtitle)) },
+                navigationIcon = { IconButton(onClick = onBack) { Icon(Icons.AutoMirrored.Rounded.ArrowBack, contentDescription = stringResource(R.string.warning_back)) } },
                 scrollBehavior = scroll,
             )
         },
         floatingActionButton = {
-            ExtendedFloatingActionButton(onClick = { adding = true }, icon = { Icon(Icons.Rounded.Add, null) }, text = { Text("Custom warning") })
+            ExtendedFloatingActionButton(onClick = { adding = true }, icon = { Icon(Icons.Rounded.Add, null) }, text = { Text(stringResource(R.string.wlib_custom)) })
         },
     ) { padding ->
         LazyColumn(Modifier.padding(padding), contentPadding = PaddingValues(start = 16.dp, end = 16.dp, bottom = 104.dp), verticalArrangement = Arrangement.spacedBy(12.dp)) {
             item {
                 LazyRow(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-                    item { FilterChip(selected = filter == null, onClick = { filter = null }, label = { Text("All") }) }
+                    item { FilterChip(selected = filter == null, onClick = { filter = null }, label = { Text(stringResource(R.string.focus_filter_all)) }) }
                     items(WarningLevel.entries) { l ->
                         FilterChip(selected = filter == l, onClick = { filter = if (filter == l) null else l }, label = { Text(l.style().label) }, leadingIcon = { Icon(l.style().icon, null, Modifier.size(FilterChipDefaults.IconSize)) })
                     }
@@ -107,6 +109,7 @@ fun WarningLibraryScreen(onBack: () -> Unit) {
 
 @Composable
 private fun WarningCard(w: Warning, onChange: (Warning) -> Unit, onDelete: () -> Unit, modifier: Modifier = Modifier) {
+    val enabledDesc = stringResource(R.string.wlib_enabled)
     Card(
         modifier.fillMaxWidth(),
         shape = MaterialTheme.shapes.large,
@@ -118,10 +121,10 @@ private fun WarningCard(w: Warning, onChange: (Warning) -> Unit, onDelete: () ->
                 Spacer(Modifier.padding(4.dp))
                 Text(w.category.name.lowercase().replace('_', ' ').replaceFirstChar { it.uppercase() }, style = MaterialTheme.typography.labelMedium, color = MaterialTheme.colorScheme.onSurfaceVariant, modifier = Modifier.weight(1f))
                 IconToggleButton(checked = w.favorite, onCheckedChange = { onChange(w.copy(favorite = it)) }) {
-                    Icon(if (w.favorite) Icons.Rounded.Favorite else Icons.Rounded.FavoriteBorder, contentDescription = if (w.favorite) "Unfavorite" else "Favorite")
+                    Icon(if (w.favorite) Icons.Rounded.Favorite else Icons.Rounded.FavoriteBorder, contentDescription = stringResource(if (w.favorite) R.string.wlib_unfavorite else R.string.wlib_favorite))
                 }
-                if (w.custom) IconButton(onClick = onDelete) { Icon(Icons.Rounded.DeleteOutline, contentDescription = "Delete warning") }
-                Switch(w.enabled, { onChange(w.copy(enabled = it)) }, modifier = Modifier.semantics { contentDescription = "Enabled" })
+                if (w.custom) IconButton(onClick = onDelete) { Icon(Icons.Rounded.DeleteOutline, contentDescription = stringResource(R.string.wlib_delete)) }
+                Switch(w.enabled, { onChange(w.copy(enabled = it)) }, modifier = Modifier.semantics { contentDescription = enabledDesc })
             }
             Text(w.title, style = MaterialTheme.typography.titleMedium, modifier = Modifier.padding(top = 8.dp, end = 8.dp))
             Text(w.message, style = MaterialTheme.typography.bodyMedium, color = MaterialTheme.colorScheme.onSurfaceVariant, modifier = Modifier.padding(end = 8.dp))
@@ -138,17 +141,17 @@ private fun CustomWarningDialog(onDismiss: () -> Unit, onSave: (WarningLevel, St
     var why by rememberSaveable { mutableStateOf("") }
     AlertDialog(
         onDismissRequest = onDismiss,
-        title = { Text("Custom warning") },
+        title = { Text(stringResource(R.string.wlib_custom)) },
         text = {
             Column(verticalArrangement = Arrangement.spacedBy(12.dp)) {
                 LevelSelector(level, { level = it })
-                OutlinedTextField(title, { title = it.take(60) }, label = { Text("Title") }, singleLine = true, modifier = Modifier.fillMaxWidth())
-                OutlinedTextField(message, { message = it.take(140) }, label = { Text("Message") }, modifier = Modifier.fillMaxWidth())
-                OutlinedTextField(why, { why = it.take(80) }, label = { Text("Your reason") }, supportingText = { Text("Shown as the quote. Keep it kind.") }, modifier = Modifier.fillMaxWidth())
+                OutlinedTextField(title, { title = it.take(60) }, label = { Text(stringResource(R.string.wlib_field_title)) }, singleLine = true, modifier = Modifier.fillMaxWidth())
+                OutlinedTextField(message, { message = it.take(140) }, label = { Text(stringResource(R.string.wlib_field_message)) }, modifier = Modifier.fillMaxWidth())
+                OutlinedTextField(why, { why = it.take(80) }, label = { Text(stringResource(R.string.wlib_field_reason)) }, supportingText = { Text(stringResource(R.string.wlib_field_reason_hint)) }, modifier = Modifier.fillMaxWidth())
                 Spacer(Modifier.height(0.dp))
             }
         },
-        confirmButton = { TextButton(onClick = { onSave(level, title, message, why) }, enabled = title.isNotBlank() && message.isNotBlank()) { Text("Save") } },
-        dismissButton = { TextButton(onClick = onDismiss) { Text("Cancel") } },
+        confirmButton = { TextButton(onClick = { onSave(level, title, message, why) }, enabled = title.isNotBlank() && message.isNotBlank()) { Text(stringResource(R.string.common_save)) } },
+        dismissButton = { TextButton(onClick = onDismiss) { Text(stringResource(R.string.common_cancel)) } },
     )
 }
