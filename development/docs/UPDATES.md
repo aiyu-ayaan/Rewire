@@ -56,7 +56,31 @@ Only the public release list and the APK are fetched; nothing about the user or 
 the user still grants "install unknown apps" in system settings and confirms on Android's own screen.
 
 **Trade-off:** `INTERNET` was removed earlier to avoid Play Protect flags, and `REQUEST_INSTALL_PACKAGES` is
-restricted on Google Play. A Play build should compile this feature out (flavor) rather than ship it.
+restricted on Google Play, so the `play` flavor ships without the feature (next section).
+
+## Play build (`play` flavor)
+
+`play` is a third flavor in the `detection` dimension: Full detection (Accessibility) with updates removed.
+
+```bash
+./gradlew bundlePlayRelease     # the Play .aab
+./gradlew assemblePlayRelease   # or an APK to inspect
+```
+
+What it removes:
+
+- Manifest (`app/src/play/AndroidManifest.xml`, `tools:node="remove"`): `REQUEST_INSTALL_PACKAGES`, `INTERNET`
+  (nothing else uses it) and `UpdateInstallReceiver`.
+- `BuildConfig.UPDATES = false`: no launch check, no daily `UpdateWorker` schedule, no update sheet
+  (`UpdateHost`), no Updates route, and the Profile -> Updates row is not composed (gone, not disabled).
+  `AppUpdater` is injected as `dagger.Lazy` so it is never constructed.
+
+What it keeps: the classes in `core/update`, `feature/update`, `domain/update` (R8 drops what is unreachable)
+and the v2 `settings` update columns, so the Room schema is identical across flavors.
+
+Check the merged manifest: `grep -c "REQUEST_INSTALL_PACKAGES\|permission.INTERNET\|UpdateInstallReceiver"
+app/build/intermediates/merged_manifests/playRelease/processPlayReleaseManifest/AndroidManifest.xml` must print 0.
+`.github/workflows/release.yml` builds only Full and Lite; the Play upload is manual from `bundlePlayRelease`.
 
 ## What it can't do
 
