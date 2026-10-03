@@ -128,7 +128,7 @@ private fun WarningCard(w: Warning, onChange: (Warning) -> Unit, onDelete: () ->
             }
             Text(w.title, style = MaterialTheme.typography.titleMedium, modifier = Modifier.padding(top = 8.dp, end = 8.dp))
             Text(w.message, style = MaterialTheme.typography.bodyMedium, color = MaterialTheme.colorScheme.onSurfaceVariant, modifier = Modifier.padding(end = 8.dp))
-            Text("“${w.motivationalMessage}”", style = MaterialTheme.typography.bodyMedium, color = MaterialTheme.colorScheme.primary, modifier = Modifier.padding(top = 4.dp, end = 8.dp))
+            Text(stringResource(R.string.profile_reason_quote, w.motivationalMessage), style = MaterialTheme.typography.bodyMedium, color = MaterialTheme.colorScheme.primary, modifier = Modifier.padding(top = 4.dp, end = 8.dp))
         }
     }
 }

@@ -1,6 +1,8 @@
 package com.aiyu.rewire.core.settings
 
 import com.aiyu.rewire.data.local.SettingsDao
+import com.aiyu.rewire.R
+import androidx.annotation.StringRes
 import com.aiyu.rewire.domain.update.UpdateChannel
 import com.aiyu.rewire.data.local.SettingsEntity
 import com.aiyu.rewire.data.local.toDomain
@@ -14,13 +16,13 @@ enum class ThemeMode { SYSTEM, LIGHT, DARK }
 enum class NotificationCategory { FOCUS, GUARD, SUMMARY }
 
 /** What the user is working on. Drives copy now, warning suggestions later. */
-enum class UserGoal(val label: String) {
-    LESS_SCROLLING("Scroll less"),
-    DEEP_WORK("Deep work"),
-    STUDY("Study more"),
-    SLEEP("Sleep better"),
-    LESS_GAMING("Game less"),
-    SPEND_LESS("Spend less"),
+enum class UserGoal(@StringRes val label: Int) {
+    LESS_SCROLLING(R.string.goal_less_scrolling),
+    DEEP_WORK(R.string.notif_focus_title),
+    STUDY(R.string.goal_study),
+    SLEEP(R.string.goal_sleep),
+    LESS_GAMING(R.string.goal_less_gaming),
+    SPEND_LESS(R.string.goal_spend_less),
 }
 
 data class UserProfile(

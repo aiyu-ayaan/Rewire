@@ -165,7 +165,7 @@ private fun UserCard(p: UserProfile, onEdit: () -> Unit) {
                 Spacer(Modifier.width(16.dp))
                 Column(Modifier.weight(1f)) {
                     Text(p.displayName, style = MaterialTheme.typography.headlineMedium)
-                    Text(p.goal?.label ?: stringResource(R.string.profile_set_goal), style = MaterialTheme.typography.titleSmall, color = MaterialTheme.colorScheme.onPrimaryContainer.copy(alpha = 0.8f))
+                    Text(stringResource(p.goal?.label ?: R.string.profile_set_goal), style = MaterialTheme.typography.titleSmall, color = MaterialTheme.colorScheme.onPrimaryContainer.copy(alpha = 0.8f))
                 }
                 Icon(Icons.Rounded.Edit, contentDescription = stringResource(R.string.profile_edit))
             }

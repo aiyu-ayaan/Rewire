@@ -427,4 +427,10 @@
     <string name="update_install">Install</string>
     <string name="update_install_permission">Android needs your permission before Rewire can install an update. You\'ll still confirm on the system screen.</string>
     <string name="update_allow_installs">Allow installs</string>
+    <!-- Goals -->
+    <string name="goal_less_scrolling">Scroll less</string>
+    <string name="goal_study">Study more</string>
+    <string name="goal_sleep">Sleep better</string>
+    <string name="goal_less_gaming">Game less</string>
+    <string name="goal_spend_less">Spend less</string>
 </resources>

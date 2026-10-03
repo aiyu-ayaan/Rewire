@@ -126,7 +126,7 @@ fun ProfileSetupScreen(onboarding: Boolean, onDone: () -> Unit, onBack: (() -> U
                 Text(stringResource(R.string.onboarding_main_goal), style = MaterialTheme.typography.titleSmall)
                 FlowRow(Modifier.padding(top = 8.dp), horizontalArrangement = Arrangement.spacedBy(8.dp)) {
                     UserGoal.entries.forEach { g ->
-                        FilterChip(selected = goal == g, onClick = { goal = if (goal == g) null else g }, label = { Text(g.label) })
+                        FilterChip(selected = goal == g, onClick = { goal = if (goal == g) null else g }, label = { Text(stringResource(g.label)) })
                     }
                 }
             }
