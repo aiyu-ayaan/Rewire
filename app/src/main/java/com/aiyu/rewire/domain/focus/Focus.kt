@@ -1,9 +1,12 @@
 package com.aiyu.rewire.domain.focus
 
+import kotlinx.serialization.Serializable
+
 enum class FocusSessionStatus { IDLE, FOCUSING, BREAK, PAUSED, COMPLETED, CANCELLED }
 
 enum class FocusConfigError { FOCUS_TOO_SHORT, BREAK_TOO_SHORT, BREAK_LONGER_THAN_FOCUS, CYCLES_TOO_FEW }
 
+@Serializable
 data class FocusConfig(
     val focusMinutes: Int,
     val breakMinutes: Int,
@@ -29,6 +32,7 @@ data class FocusConfig(
  * Immutable focus session state. All transitions are pure and take `now` (epoch millis),
  * so the same machine can later run inside a ForegroundService and be restored from storage.
  */
+@Serializable
 data class FocusState(
     val status: FocusSessionStatus = FocusSessionStatus.IDLE,
     val config: FocusConfig = FocusConfig(25, 5, 4),
@@ -129,6 +133,7 @@ data class FocusState(
 }
 
 /** One focus session as stored: live while active, history once COMPLETED / CANCELLED. */
+@Serializable
 data class FocusSession(
     val id: String,
     val state: FocusState,
