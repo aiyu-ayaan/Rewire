@@ -17,6 +17,7 @@ import com.aiyu.rewire.domain.focus.FocusPreset
 import com.aiyu.rewire.domain.focus.FocusSession
 import com.aiyu.rewire.domain.focus.FocusSessionStatus
 import com.aiyu.rewire.domain.focus.FocusState
+import com.aiyu.rewire.domain.habit.AppLimits
 import com.aiyu.rewire.domain.habit.Habit
 import com.aiyu.rewire.domain.habit.HabitProfile
 import com.aiyu.rewire.domain.habit.ProtectedApp
@@ -65,6 +66,16 @@ class BackupCodecTest {
         // A backup written before presets existed has no key: decodes to null (restore leaves presets alone).
         val legacy = BackupCodec.encode(snapshot).replace(",\"focusPresets\":null", "")
         assertEquals(null, BackupCodec.decode(legacy).focusPresets)
+    }
+
+    @Test fun `per-app limits round trip and older files without them still load`() {
+        val own = habit.copy(apps = listOf(ProtectedApp("com.a", "h1", WarningLevel.MAJOR, true, AppLimits(ownDailyLimit = true, dailyLimitMinutes = 10, ownWindow = true, allowedStartMinutes = 1200, allowedEndMinutes = 1260))))
+        val withLimits = snapshot.copy(habits = listOf(own))
+        assertEquals(withLimits, BackupCodec.decode(BackupCodec.encode(withLimits)))
+        // Written before per-app limits existed: no key, the app follows its habit.
+        val legacy = BackupCodec.encode(snapshot).replace(Regex(",\"limits\":\\{[^}]*\\}"), "")
+        assertEquals(false, "\"limits\"" in legacy)
+        assertEquals(snapshot, BackupCodec.decode(legacy))
     }
 
     @Test fun `unknown keys from a newer minor writer are ignored`() {

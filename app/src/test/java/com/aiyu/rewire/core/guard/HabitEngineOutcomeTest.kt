@@ -403,7 +403,7 @@ class HabitEngineOutcomeTest {
         val habit = HabitProfile(
             habit = Habit("h-own", "Social", null, enabled = true),
             apps = listOf(
-                ProtectedApp("com.facebook.katana", "h-own", WarningLevel.MAX, enabled = true, limits = AppLimits(dailyLimitMinutes = 10)),
+                ProtectedApp("com.facebook.katana", "h-own", WarningLevel.MAX, enabled = true, limits = AppLimits(ownDailyLimit = true, dailyLimitMinutes = 10)),
                 ProtectedApp("com.instagram.android", "h-own", WarningLevel.MAX, enabled = true),
             ),
             rule = RestrictionRule("r-own", "h-own", dailyLimitMinutes = 60, null, null, null, WarningLevel.MAX, 5),
