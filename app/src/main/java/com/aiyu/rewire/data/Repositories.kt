@@ -52,6 +52,8 @@ interface HabitRepository {
     fun create(name: String, level: WarningLevel, packages: List<String>): HabitProfile
     fun update(profile: HabitProfile)
     fun delete(id: String)
+    /** Re-reads the cache from Room after a bulk replace (backup import). */
+    suspend fun reload()
 }
 
 class RoomHabitRepository(
@@ -92,6 +94,8 @@ class RoomHabitRepository(
         writer.write { dao.delete(id) } // apps + rule cascade
     }
 
+    override suspend fun reload() { state.value = dao.all().mapNotNull { it.toDomain() } }
+
     companion object {
         /** Initial Major pause for new habits; user edits per habit. */
         const val DEFAULT_PAUSE_SECONDS = 5
@@ -103,6 +107,7 @@ interface WarningRepository {
     fun update(warning: Warning)
     fun addCustom(level: WarningLevel, title: String, message: String, motivation: String): Warning
     fun delete(id: String)
+    suspend fun reload()
 }
 
 /** Seeds from bundled JSON (res/raw/default_warnings.json), then keeps the user's edits. */
@@ -135,6 +140,8 @@ class RoomWarningRepository(
         writer.write { dao.deleteCustom(id) }
     }
 
+    override suspend fun reload() { state.value = dao.all().map { it.toDomain() } }
+
     companion object {
         private val json = Json { ignoreUnknownKeys = true }
         fun defaults(defaultsJson: String) = json.decodeFromString<List<Warning>>(defaultsJson)
@@ -144,6 +151,8 @@ class RoomWarningRepository(
 interface EventRepository {
     val events: StateFlow<List<HabitEvent>>
     fun log(type: HabitEventType, packageName: String? = null, habitId: String? = null, metadata: Map<String, String> = emptyMap())
+    /** Re-reads the cache from Room after history was cleared or replaced. */
+    suspend fun reload()
 }
 
 /** Full history stays in Room; memory holds the recent window Matrix and the engine read. */
@@ -160,6 +169,8 @@ class RoomEventRepository(
         state.update { it + e }
         writer.write { dao.insert(listOf(e.toEntity())) }
     }
+
+    override suspend fun reload() { state.value = dao.since(clock() - CACHE_WINDOW_MILLIS).map { it.toDomain() } }
 
     private companion object {
         const val CACHE_WINDOW_MILLIS = 90L * 24 * 60 * 60 * 1000

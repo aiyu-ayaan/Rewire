@@ -41,6 +41,7 @@ class HabitEngineOutcomeTest {
         override fun delete(id: String) {
             _habits.value = _habits.value.filterNot { it.id == id }
         }
+        override suspend fun reload() = Unit
         fun setHabits(list: List<HabitProfile>) {
             _habits.value = list
         }
@@ -56,6 +57,8 @@ class HabitEngineOutcomeTest {
             logged.add(event)
             _events.value = _events.value + event
         }
+
+        override suspend fun reload() = Unit
     }
 
     private class FakeUsageTracker : UsageTracker() {
