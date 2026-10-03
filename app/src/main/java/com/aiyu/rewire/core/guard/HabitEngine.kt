@@ -286,8 +286,12 @@ class HabitEngine(
     private fun profileFor(pkg: String): HabitProfile? =
         habits.habits.value.firstOrNull { p -> p.habit.enabled && p.apps.any { it.enabled && it.packageName == pkg } }
 
-    /** Limits are per app: opens and usage are those of [pkg], not of the habit's other apps. */
-    private fun inputFor(p: HabitProfile, pkg: String): RuleInput {
+    /**
+     * Limits are per app: opens and usage are those of [pkg], not of the habit's other apps, and the boundaries
+     * are the app's own when it has them (else the habit's).
+     */
+    private fun inputFor(profile: HabitProfile, pkg: String): RuleInput {
+        val p = profile.forApp(pkg)
         val now = clock()
         val zone = ZoneId.systemDefault()
         val zdt = Instant.ofEpochMilli(now).atZone(zone)

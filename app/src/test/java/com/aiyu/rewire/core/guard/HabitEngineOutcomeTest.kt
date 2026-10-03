@@ -10,6 +10,7 @@ import com.aiyu.rewire.domain.analytics.HabitEvent
 import com.aiyu.rewire.domain.analytics.HabitEventType
 import com.aiyu.rewire.domain.focus.FocusSessionStatus
 import com.aiyu.rewire.domain.focus.FocusState
+import com.aiyu.rewire.domain.habit.AppLimits
 import com.aiyu.rewire.domain.habit.Habit
 import com.aiyu.rewire.domain.habit.HabitProfile
 import com.aiyu.rewire.domain.habit.ProtectedApp
@@ -395,6 +396,28 @@ class HabitEngineOutcomeTest {
         engine.onForeground("com.instagram.android")
         assertEquals("DAILY_LIMIT", platform.guardShown.single().blockReason)
         assertEquals("com.instagram.android", platform.guardShown.single().pkg)
+    }
+
+    @Test
+    fun `an app with its own limits is judged by them, the others by the habit`() {
+        val habit = HabitProfile(
+            habit = Habit("h-own", "Social", null, enabled = true),
+            apps = listOf(
+                ProtectedApp("com.facebook.katana", "h-own", WarningLevel.MAX, enabled = true, limits = AppLimits(dailyLimitMinutes = 10)),
+                ProtectedApp("com.instagram.android", "h-own", WarningLevel.MAX, enabled = true),
+            ),
+            rule = RestrictionRule("r-own", "h-own", dailyLimitMinutes = 60, null, null, null, WarningLevel.MAX, 5),
+        )
+        habitRepo.setHabits(listOf(habit))
+        usageTracker.perApp = mapOf("com.facebook.katana" to 12, "com.instagram.android" to 30)
+
+        engine.onForeground("com.instagram.android") // 30 of the habit's 60: allowed
+        engine.onForeground("com.android.launcher")
+        assertEquals(0, platform.guardShown.size)
+
+        engine.onForeground("com.facebook.katana") // 12 of its own 10: blocked
+        assertEquals("DAILY_LIMIT", platform.guardShown.single().blockReason)
+        assertEquals("com.facebook.katana", platform.guardShown.single().pkg)
     }
 
     @Test
