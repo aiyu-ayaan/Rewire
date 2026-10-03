@@ -19,14 +19,14 @@ fun HabitWithDetails.toDomain(): HabitProfile? {
     return HabitProfile(
         habit = Habit(habit.id, habit.name, habit.description, habit.enabled),
         apps = apps.map { ProtectedApp(it.packageName, it.habitId, it.warningLevel, it.enabled) },
-        rule = RestrictionRule(r.id, r.habitId, r.dailyLimitMinutes, r.allowedStartMinutes, r.allowedEndMinutes, r.maxLaunches, r.warningLevel, r.pauseSeconds),
+        rule = RestrictionRule(r.id, r.habitId, r.dailyLimitMinutes, r.allowedStartMinutes, r.allowedEndMinutes, r.maxLaunches, r.warningLevel, r.pauseSeconds, r.escalationEnabled, r.escalationMajorMinutes, r.escalationMaxMinutes),
     )
 }
 
 fun HabitProfile.toHabitEntity(createdAt: Long) = HabitEntity(habit.id, habit.name, habit.description, habit.enabled, createdAt)
 fun HabitProfile.toAppEntities() = apps.map { ProtectedAppEntity(id, it.packageName, it.warningLevel, it.enabled) }
 fun HabitProfile.toRuleEntity() = with(rule) {
-    RestrictionRuleEntity(this.id, habitId, dailyLimitMinutes, allowedStartMinutes, allowedEndMinutes, maxLaunches, warningLevel, pauseSeconds)
+    RestrictionRuleEntity(this.id, habitId, dailyLimitMinutes, allowedStartMinutes, allowedEndMinutes, maxLaunches, warningLevel, pauseSeconds, escalationEnabled, escalationMajorAfterMinutes, escalationMaxAfterMinutes)
 }
 
 fun WarningEntity.toDomain() = Warning(id, category, level, title, message, motivationalMessage, enabled, favorite, custom)

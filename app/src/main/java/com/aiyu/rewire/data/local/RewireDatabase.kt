@@ -22,10 +22,11 @@ import kotlinx.serialization.json.Json
         HabitEntity::class, ProtectedAppEntity::class, RestrictionRuleEntity::class,
         WarningEntity::class, HabitEventEntity::class, FocusSessionEntity::class, SettingsEntity::class,
     ],
-    version = 2,
+    version = 3,
     exportSchema = true,
     // 1 -> 2: four settings columns for app updates (defaults declared on the columns).
-    autoMigrations = [AutoMigration(from = 1, to = 2)],
+    // 2 -> 3: three escalation columns on restriction_rules (defaults declared on the columns).
+    autoMigrations = [AutoMigration(from = 1, to = 2), AutoMigration(from = 2, to = 3)],
 )
 @TypeConverters(Converters::class)
 abstract class RewireDatabase : RoomDatabase() {
