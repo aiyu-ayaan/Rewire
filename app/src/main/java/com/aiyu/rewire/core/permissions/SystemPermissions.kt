@@ -180,6 +180,7 @@ fun PermissionsPanel(containerColor: Color = MaterialTheme.colorScheme.surfaceCo
     }
 
     Column {
+        if (BuildConfig.ACCESSIBILITY && Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU && !SystemPermissions.accessibilityEnabled(context)) RestrictedSettingsCard()
         rows.forEach { row ->
             ListItem(
                 headlineContent = { Text(stringResource(row.title)) },
@@ -204,40 +205,6 @@ fun PermissionsPanel(containerColor: Color = MaterialTheme.colorScheme.surfaceCo
                 },
                 colors = ListItemDefaults.colors(containerColor = containerColor),
             )
-        }
-
-        val isAndroid13Plus = Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU
-        val accessibilityAllowed = SystemPermissions.accessibilityEnabled(context)
-        if (BuildConfig.ACCESSIBILITY && isAndroid13Plus && !accessibilityAllowed) {
-            Spacer(Modifier.height(8.dp))
-            Card(
-                shape = MaterialTheme.shapes.medium,
-                colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surfaceVariant),
-                modifier = Modifier.fillMaxWidth().padding(horizontal = 16.dp, vertical = 8.dp),
-            ) {
-                Column(Modifier.padding(16.dp)) {
-                    Row(verticalAlignment = Alignment.CenterVertically) {
-                        Icon(Icons.Rounded.Info, contentDescription = null, tint = MaterialTheme.colorScheme.primary, modifier = Modifier.size(20.dp))
-                        Spacer(Modifier.width(8.dp))
-                        Text(stringResource(R.string.perm_restricted_title), style = MaterialTheme.typography.titleSmall)
-                    }
-                    Spacer(Modifier.height(6.dp))
-                    Text(
-                        stringResource(R.string.perm_restricted_steps),
-                        style = MaterialTheme.typography.bodySmall,
-                        color = MaterialTheme.colorScheme.onSurfaceVariant,
-                    )
-                    Spacer(Modifier.height(10.dp))
-                    FilledTonalButton(
-                        onClick = { SystemPermissions.open(context, SystemPermissions.appDetailsSettings(context)) },
-                        modifier = Modifier.align(Alignment.End),
-                    ) {
-                        Text(stringResource(R.string.guard_open_app_info))
-                        Spacer(Modifier.width(4.dp))
-                        Icon(Icons.AutoMirrored.Rounded.OpenInNew, contentDescription = null, modifier = Modifier.size(16.dp))
-                    }
-                }
-            }
         }
     }
 
@@ -280,6 +247,40 @@ fun PermissionsPanel(containerColor: Color = MaterialTheme.colorScheme.surfaceCo
                 }
             },
         )
+    }
+}
+
+/** Android 13+ greys out Accessibility for sideloaded apps until "Allow restricted settings" is ticked, so it comes first. */
+@Composable
+private fun RestrictedSettingsCard() {
+    val context = LocalContext.current
+    Card(
+        shape = MaterialTheme.shapes.medium,
+        colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surfaceVariant),
+        modifier = Modifier.fillMaxWidth().padding(horizontal = 16.dp, vertical = 8.dp),
+    ) {
+        Column(Modifier.padding(16.dp)) {
+            Row(verticalAlignment = Alignment.CenterVertically) {
+                Icon(Icons.Rounded.Info, contentDescription = null, tint = MaterialTheme.colorScheme.primary, modifier = Modifier.size(20.dp))
+                Spacer(Modifier.width(8.dp))
+                Text(stringResource(R.string.perm_restricted_title), style = MaterialTheme.typography.titleSmall)
+            }
+            Spacer(Modifier.height(6.dp))
+            Text(
+                stringResource(R.string.perm_restricted_steps),
+                style = MaterialTheme.typography.bodySmall,
+                color = MaterialTheme.colorScheme.onSurfaceVariant,
+            )
+            Spacer(Modifier.height(10.dp))
+            FilledTonalButton(
+                onClick = { SystemPermissions.open(context, SystemPermissions.appDetailsSettings(context)) },
+                modifier = Modifier.align(Alignment.End),
+            ) {
+                Text(stringResource(R.string.guard_open_app_info))
+                Spacer(Modifier.width(4.dp))
+                Icon(Icons.AutoMirrored.Rounded.OpenInNew, contentDescription = null, modifier = Modifier.size(16.dp))
+            }
+        }
     }
 }
 
