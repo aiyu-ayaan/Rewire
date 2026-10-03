@@ -2,7 +2,7 @@ package com.aiyu.rewire.domain.focus
 
 import kotlinx.serialization.Serializable
 
-/** A named focus/break/cycles combination. Built-ins ship as data; user presets are persisted. */
+/** A named focus/break/cycles combination. Built-ins ship as data (display names come from strings.xml by id); user presets are persisted. */
 @Serializable
 data class FocusPreset(
     val id: String,

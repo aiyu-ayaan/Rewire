@@ -58,12 +58,18 @@ internal fun FocusPresetRow(
     Row(Modifier.horizontalScroll(rememberScrollState()), horizontalArrangement = Arrangement.spacedBy(8.dp), verticalAlignment = Alignment.CenterVertically) {
         (FocusPresets.builtIn + userPresets).forEach { p ->
             val selected = p.matches(draft)
-            val desc = stringResource(R.string.focus_preset_chip_desc, p.name, p.focusMinutes, p.breakMinutes, p.cycles)
+            val name = when (p.id) {
+                "builtin_pomodoro" -> stringResource(R.string.focus_preset_pomodoro)
+                "builtin_deep_work" -> stringResource(R.string.focus_preset_deep_work)
+                "builtin_sprint" -> stringResource(R.string.focus_preset_sprint)
+                else -> p.name
+            }
+            val desc = stringResource(R.string.focus_preset_chip_desc, name, p.focusMinutes, p.breakMinutes, p.cycles)
             val state = stringResource(if (selected) R.string.focus_preset_selected else R.string.focus_preset_not_selected)
             FilterChip(
                 selected = selected,
                 onClick = { onApply(p.toConfig()) },
-                label = { Text(p.name) },
+                label = { Text(name) },
                 modifier = Modifier.semantics { contentDescription = desc; stateDescription = state },
             )
         }

@@ -545,6 +545,9 @@
     <string name="goal_spend_less">Spend less</string>
     <string name="focus_preset_save">Save as preset</string>
     <string name="focus_preset_save_desc">Save the current focus, break and cycles as a preset</string>
+    <string name="focus_preset_pomodoro">Pomodoro</string>
+    <string name="focus_preset_deep_work">Deep work</string>
+    <string name="focus_preset_sprint">Sprint</string>
     <string name="focus_preset_chip_desc">%1$s preset, %2$d minutes focus, %3$d minutes break, %4$d cycles</string>
     <string name="focus_preset_selected">Selected</string>
     <string name="focus_preset_not_selected">Not selected</string>
