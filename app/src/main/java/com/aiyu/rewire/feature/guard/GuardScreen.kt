@@ -129,7 +129,8 @@ fun GuardScreen(onOpenHabit: (String) -> Unit, onStartFocus: () -> Unit) {
                 )
             }
         }
-        ExtendedFloatingActionButton(
+        // The empty state already offers "Create first habit"; a second button would cover its text.
+        if (habits.isNotEmpty()) ExtendedFloatingActionButton(
             onClick = { creating = true },
             expanded = fabExpanded,
             icon = { Icon(Icons.Rounded.Add, contentDescription = null) },
@@ -190,8 +191,10 @@ private fun TodayCard(m: DailyMetrics, progress: DayProgress, activeHabits: Int,
                 }) {
                     CircularWavyProgressIndicator(progress = { animated }, modifier = Modifier.size(112.dp))
                     Column(horizontalAlignment = Alignment.CenterHorizontally) {
-                        CappedFontScale { Text(score?.let { "${(it * 100).toInt()}%" } ?: "—", style = MaterialTheme.typography.headlineMedium) }
-                        Text(stringResource(R.string.guard_discipline), style = MaterialTheme.typography.labelSmall, color = MaterialTheme.colorScheme.onSurfaceVariant)
+                        CappedFontScale {
+                            Text(score?.let { "${(it * 100).toInt()}%" } ?: "—", style = MaterialTheme.typography.headlineMedium)
+                            Text(stringResource(R.string.guard_discipline), style = MaterialTheme.typography.labelSmall, color = MaterialTheme.colorScheme.onSurfaceVariant)
+                        }
                     }
                 }
             }) { mod ->
