@@ -1,5 +1,9 @@
 package com.aiyu.rewire.ui.components
 
+import androidx.compose.ui.semantics.heading
+
+import androidx.compose.ui.semantics.semantics
+
 import androidx.compose.animation.AnimatedVisibilityScope
 import androidx.compose.ui.res.stringResource
 import com.aiyu.rewire.R
@@ -111,7 +115,7 @@ fun AppIcon(packageName: String, size: Dp = 40.dp, modifier: Modifier = Modifier
 @Composable
 fun SectionTitle(text: String, modifier: Modifier = Modifier, trailing: @Composable (() -> Unit)? = null) {
     Row(modifier.fillMaxWidth().padding(top = 24.dp, bottom = 8.dp), verticalAlignment = Alignment.CenterVertically) {
-        Text(text, style = MaterialTheme.typography.titleMedium, color = MaterialTheme.colorScheme.primary, modifier = Modifier.weight(1f))
+        Text(text, style = MaterialTheme.typography.titleMedium, color = MaterialTheme.colorScheme.primary, modifier = Modifier.weight(1f).semantics { heading() })
         trailing?.invoke()
     }
 }

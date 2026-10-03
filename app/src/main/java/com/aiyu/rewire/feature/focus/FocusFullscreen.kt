@@ -135,7 +135,7 @@ fun FocusFullscreenScreen(onExit: () -> Unit) {
             Modifier
                 .fillMaxSize()
                 .background(Color.Black)
-                .clickable(remember { MutableInteractionSource() }, indication = null) { controlsVisible = !controlsVisible; interaction++ }
+                .clickable(remember { MutableInteractionSource() }, indication = null, onClickLabel = stringResource(R.string.a11y_toggle_controls)) { controlsVisible = !controlsVisible; interaction++ }
                 .safeDrawingPadding(),
         ) {
             BoxWithConstraints(Modifier.fillMaxSize()) {
@@ -235,7 +235,8 @@ fun RollingTime(
         if (blinkColon && (millis / 1000) % 2 == 0L) 0.35f else 1f, tween(300), label = "colon",
     )
     Row(
-        modifier.semantics { contentDescription = remainingDesc; liveRegion = LiveRegionMode.Polite },
+        // No live region: it would make TalkBack read the countdown every second.
+        modifier.semantics { contentDescription = remainingDesc },
         verticalAlignment = Alignment.CenterVertically,
     ) {
         text.forEachIndexed { i, ch ->

@@ -1,5 +1,7 @@
 package com.aiyu.rewire.feature.guard
 
+import androidx.compose.ui.semantics.stateDescription
+
 import androidx.compose.foundation.layout.ExperimentalLayoutApi
 
 import androidx.compose.foundation.layout.FlowRow
@@ -317,7 +319,8 @@ private fun EscalationSection(p: HabitProfile, vm: HabitDetailViewModel) {
                 Text(stringResource(R.string.escalation_title), style = MaterialTheme.typography.titleSmall)
                 Text(stringResource(R.string.escalation_subtitle), style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant)
             }
-            Switch(checked = r.escalationEnabled, onCheckedChange = vm::setEscalation)
+            val escalationDesc = stringResource(R.string.escalation_title)
+            Switch(checked = r.escalationEnabled, onCheckedChange = vm::setEscalation, modifier = Modifier.semantics { contentDescription = escalationDesc })
         }
         AnimatedVisibility(r.escalationEnabled) {
             Column(Modifier.padding(top = 12.dp), verticalArrangement = Arrangement.spacedBy(12.dp)) {
@@ -340,10 +343,11 @@ private fun EscalationSection(p: HabitProfile, vm: HabitDetailViewModel) {
 @Composable
 private fun SliderSetting(title: String, value: Int, range: IntRange, step: Int, display: @Composable (Int) -> String, onCommit: (Int) -> Unit) {
     var local by remember(value) { mutableFloatStateOf(value.toFloat()) }
+    val shown = display(local.roundToInt())
     Column {
         Row(verticalAlignment = Alignment.CenterVertically) {
             Text(title, style = MaterialTheme.typography.titleSmall, modifier = Modifier.weight(1f))
-            Text(display(local.roundToInt()), style = MaterialTheme.typography.labelLarge, color = MaterialTheme.colorScheme.primary)
+            Text(shown, style = MaterialTheme.typography.labelLarge, color = MaterialTheme.colorScheme.primary)
         }
         Slider(
             value = local,
@@ -351,7 +355,7 @@ private fun SliderSetting(title: String, value: Int, range: IntRange, step: Int,
             onValueChange = { local = ((it / step).roundToInt() * step).toFloat() },
             onValueChangeFinished = { onCommit(local.roundToInt()) },
             valueRange = range.first.toFloat()..range.last.toFloat(),
-            modifier = Modifier.semantics { contentDescription = title },
+            modifier = Modifier.semantics { contentDescription = title; stateDescription = shown },
         )
     }
 }

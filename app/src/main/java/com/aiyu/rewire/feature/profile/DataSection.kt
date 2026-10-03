@@ -1,5 +1,7 @@
 package com.aiyu.rewire.feature.profile
 
+import androidx.compose.ui.semantics.Role
+
 import android.widget.Toast
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
@@ -84,7 +86,7 @@ private fun DataRow(icon: ImageVector, title: Int, subtitle: Int, enabled: Boole
         supportingContent = { Text(stringResource(subtitle)) },
         leadingContent = { Icon(icon, contentDescription = null) },
         colors = ListItemDefaults.colors(containerColor = MaterialTheme.colorScheme.surfaceContainerLow),
-        modifier = Modifier.clickable(enabled = enabled, onClick = onClick),
+        modifier = Modifier.clickable(enabled = enabled, role = Role.Button, onClick = onClick),
     )
 }
 

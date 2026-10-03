@@ -1,5 +1,7 @@
 package com.aiyu.rewire.feature.profile
 
+import androidx.compose.ui.semantics.Role
+
 import com.aiyu.rewire.ui.components.readableWidth
 
 import android.content.Intent
@@ -114,7 +116,7 @@ private fun LinkRow(icon: androidx.compose.ui.graphics.vector.ImageVector, title
         leadingContent = { Icon(icon, contentDescription = null) },
         trailingContent = { Icon(if (external) Icons.AutoMirrored.Rounded.OpenInNew else Icons.AutoMirrored.Rounded.KeyboardArrowRight, contentDescription = null) },
         colors = itemColors(),
-        modifier = Modifier.clickable(onClick = onClick),
+        modifier = Modifier.clickable(role = Role.Button, onClick = onClick),
     )
 }
 

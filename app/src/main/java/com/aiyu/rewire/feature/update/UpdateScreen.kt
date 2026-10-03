@@ -1,5 +1,9 @@
 package com.aiyu.rewire.feature.update
 
+import androidx.compose.ui.semantics.contentDescription
+
+import androidx.compose.ui.semantics.semantics
+
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.ui.res.stringResource
 import com.aiyu.rewire.R
@@ -79,12 +83,13 @@ fun UpdateScreen(onBack: () -> Unit) {
 
         SectionTitle(stringResource(R.string.update_automatic), Modifier.fillMaxWidth())
         Card(Modifier.fillMaxWidth(), shape = MaterialTheme.shapes.large, colors = CardDefaults.cardColors(containerColor = c.surfaceContainerLow)) {
+            val autoDesc = stringResource(R.string.update_check_automatically)
             ListItem(
                 headlineContent = { Text(stringResource(R.string.update_check_automatically)) },
                 supportingContent = {
                     Text(stringResource(R.string.update_automatic_desc))
                 },
-                trailingContent = { Switch(s.updatesEnabled, vm::setEnabled) },
+                trailingContent = { Switch(s.updatesEnabled, vm::setEnabled, modifier = Modifier.semantics { contentDescription = autoDesc }) },
                 colors = ListItemDefaults.colors(containerColor = c.surfaceContainerLow),
             )
         }

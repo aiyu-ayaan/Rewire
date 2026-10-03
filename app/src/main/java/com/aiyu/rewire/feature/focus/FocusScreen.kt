@@ -1,5 +1,13 @@
 package com.aiyu.rewire.feature.focus
 
+import androidx.compose.ui.semantics.Role
+
+import androidx.compose.ui.semantics.role
+
+import androidx.compose.ui.semantics.LiveRegionMode
+
+import androidx.compose.ui.semantics.liveRegion
+
 import com.aiyu.rewire.ui.components.CappedFontScale
 
 import androidx.compose.foundation.layout.heightIn
@@ -378,7 +386,8 @@ private fun FocusRunning(state: FocusState, now: Long, onPause: () -> Unit, onRe
                 Text(
                     stringResource(when { paused -> R.string.focus_paused; onBreak -> R.string.matrix_stat_break; else -> R.string.notif_focus_title }),
                     style = MaterialTheme.typography.labelLarge,
-                    modifier = Modifier.padding(horizontal = 16.dp, vertical = 8.dp),
+                    // Phase changes (focus / break / paused) are announced once; the countdown itself is not live.
+                    modifier = Modifier.padding(horizontal = 16.dp, vertical = 8.dp).semantics { liveRegion = LiveRegionMode.Polite },
                 )
             }
             FilledTonalIconButton(onClick = onFullscreen, shapes = IconButtonDefaults.shapes(), modifier = Modifier.align(Alignment.CenterEnd)) {
@@ -480,7 +489,7 @@ private fun HoldToEnd(onEnd: () -> Unit) {
             .size(72.dp)
             .clip(CircleShape)
             .background(MaterialTheme.colorScheme.surfaceContainerHighest)
-            .semantics { contentDescription = holdDesc; onClick(endLabel) { onEnd(); true } }
+            .semantics { role = Role.Button; contentDescription = holdDesc; onClick(endLabel) { onEnd(); true } }
             .pointerInput(Unit) {
                 detectTapGestures(onPress = {
                     val job = scope.launch {
