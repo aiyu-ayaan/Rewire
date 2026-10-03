@@ -1,6 +1,7 @@
 package com.aiyu.rewire.domain
 
 import com.aiyu.rewire.domain.habit.AppLimits
+import com.aiyu.rewire.domain.habit.summaryParts
 import com.aiyu.rewire.domain.habit.Habit
 import com.aiyu.rewire.domain.habit.HabitProfile
 import com.aiyu.rewire.domain.habit.ProtectedApp
@@ -48,5 +49,33 @@ class AppLimitsTest {
         assertEquals(true, p.ruleFor("fb").escalationEnabled)
         assertEquals(habitRule, p.ruleFor("ig"))
         assertEquals(habitRule, p.ruleFor("not-in-habit"))
+    }
+
+    @Test fun summaryPartsIsEmptyWhenNoOverrides() {
+        val limits = AppLimits()
+        val parts = limits.summaryParts("30m / day", "no daily", "2 opens / day", "no launch", "09:00 – 17:00", "any time")
+        assertEquals(emptyList<String>(), parts)
+    }
+
+    @Test fun summaryPartsIncludesOnlyOverriddenBoundaries() {
+        val limits = AppLimits(ownLaunchLimit = true, maxLaunches = 1)
+        val parts = limits.summaryParts("30m / day", "no daily", "1 open / day", "no launch", "09:00 – 17:00", "any time")
+        assertEquals(listOf("1 open / day"), parts)
+    }
+
+    @Test fun summaryPartsFormatsNullOverridesAsNoLimit() {
+        val limits = AppLimits(ownDailyLimit = true, dailyLimitMinutes = null, ownLaunchLimit = true, maxLaunches = null)
+        val parts = limits.summaryParts(null, "no daily limit", null, "no launch limit", null, "any time")
+        assertEquals(listOf("no daily limit", "no launch limit"), parts)
+    }
+
+    @Test fun summaryPartsCombinesMultipleOverridesInOrder() {
+        val limits = AppLimits(
+            ownDailyLimit = true, dailyLimitMinutes = 45,
+            ownLaunchLimit = true, maxLaunches = 3,
+            ownWindow = true, allowedStartMinutes = 540, allowedEndMinutes = 600,
+        )
+        val parts = limits.summaryParts("45m / day", "no daily", "3 opens / day", "no launch", "09:00 – 10:00", "any time")
+        assertEquals(listOf("45m / day", "3 opens / day", "09:00 – 10:00"), parts)
     }
 }

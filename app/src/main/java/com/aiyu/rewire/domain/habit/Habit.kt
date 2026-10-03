@@ -39,6 +39,29 @@ data class AppLimits(
     val any get() = ownDailyLimit || ownLaunchLimit || ownWindow
 }
 
+/** Formats the active per-app overrides into summary tokens for display. Empty when no boundaries are overridden. */
+fun AppLimits.summaryParts(
+    dailyFormatted: String?,
+    noDaily: String,
+    launchesFormatted: String?,
+    noLaunches: String,
+    windowFormatted: String?,
+    anyWindow: String,
+): List<String> {
+    if (!any) return emptyList()
+    val parts = mutableListOf<String>()
+    if (ownDailyLimit) {
+        parts += dailyFormatted ?: noDaily
+    }
+    if (ownLaunchLimit) {
+        parts += launchesFormatted ?: noLaunches
+    }
+    if (ownWindow) {
+        parts += windowFormatted ?: anyWindow
+    }
+    return parts
+}
+
 /** Times are minutes from midnight. Null = no boundary. */
 @Serializable
 data class RestrictionRule(
