@@ -26,6 +26,7 @@ import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.res.pluralStringResource
 import androidx.compose.ui.res.stringResource
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
@@ -63,7 +64,16 @@ fun DataSection(vm: DataViewModel = hiltViewModel()) {
         AlertDialog(
             onDismissRequest = vm::dismissDialogs,
             title = { Text(stringResource(R.string.data_import_title)) },
-            text = { Text(stringResource(R.string.data_import_body, s.habits.size, s.warnings.size, s.events.size, s.focusSessions.size)) },
+            text = {
+                val counts = stringResource(
+                    R.string.data_import_counts,
+                    pluralStringResource(R.plurals.data_import_habits, s.habits.size, s.habits.size),
+                    pluralStringResource(R.plurals.data_import_warnings, s.warnings.size, s.warnings.size),
+                    pluralStringResource(R.plurals.data_import_events, s.events.size, s.events.size),
+                    pluralStringResource(R.plurals.data_import_sessions, s.focusSessions.size, s.focusSessions.size),
+                )
+                Text(stringResource(R.string.data_import_body, counts))
+            },
             confirmButton = { TextButton(vm::confirmImport) { Text(stringResource(R.string.data_import_confirm)) } },
             dismissButton = { TextButton(vm::dismissDialogs) { Text(stringResource(R.string.data_cancel)) } },
         )

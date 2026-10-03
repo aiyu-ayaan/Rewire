@@ -75,7 +75,24 @@
     <string name="data_clear">Clear history</string>
     <string name="data_clear_desc">Delete events and finished focus sessions. Habits and rules stay.</string>
     <string name="data_import_title">Replace your data?</string>
-    <string name="data_import_body">This file has %1$d habits, %2$d warnings, %3$d events and %4$d focus sessions. Importing replaces everything currently on this device. Export first if you want a copy.</string>
+    <string name="data_import_body">This file has %1$s. Importing replaces everything currently on this device. Export first if you want a copy.</string>
+    <string name="data_import_counts">%1$s, %2$s, %3$s and %4$s</string>
+    <plurals name="data_import_habits">
+        <item quantity="one">%1$d habit</item>
+        <item quantity="other">%1$d habits</item>
+    </plurals>
+    <plurals name="data_import_warnings">
+        <item quantity="one">%1$d warning</item>
+        <item quantity="other">%1$d warnings</item>
+    </plurals>
+    <plurals name="data_import_events">
+        <item quantity="one">%1$d event</item>
+        <item quantity="other">%1$d events</item>
+    </plurals>
+    <plurals name="data_import_sessions">
+        <item quantity="one">%1$d focus session</item>
+        <item quantity="other">%1$d focus sessions</item>
+    </plurals>
     <string name="data_import_confirm">Replace</string>
     <string name="data_clear_title">Clear history?</string>
     <string name="data_clear_body">All logged events and finished focus sessions are deleted, so Matrix starts empty. This cannot be undone.</string>
