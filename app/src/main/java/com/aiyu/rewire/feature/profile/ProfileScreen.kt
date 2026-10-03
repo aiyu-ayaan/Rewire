@@ -11,6 +11,8 @@ import com.aiyu.rewire.ui.components.readableWidth
 import android.os.Build
 import androidx.compose.ui.res.stringResource
 import com.aiyu.rewire.R
+import com.aiyu.rewire.ui.components.AdaptiveColumns
+import com.aiyu.rewire.ui.components.TWO_PANE_MAX_WIDTH
 import androidx.compose.material.icons.rounded.Language
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -80,7 +82,8 @@ fun ProfileScreen(onOpenNotificationSettings: () -> Unit, onOpenWarningLibrary: 
     val s = settings ?: return
     val permission = rememberNotificationPermission()
 
-    Column(Modifier.fillMaxSize().statusBarsPadding().readableWidth(720.dp).verticalScroll(rememberScrollState()).padding(horizontal = 16.dp).padding(bottom = 24.dp)) {
+    Column(Modifier.fillMaxSize().statusBarsPadding().readableWidth(TWO_PANE_MAX_WIDTH).verticalScroll(rememberScrollState()).padding(horizontal = 16.dp).padding(bottom = 24.dp)) {
+        AdaptiveColumns(first = {
         UserCard(s.profile, onEditProfile)
 
         SectionTitle(stringResource(R.string.profile_appearance))
@@ -129,6 +132,7 @@ fun ProfileScreen(onOpenNotificationSettings: () -> Unit, onOpenWarningLibrary: 
             NavRow(Icons.Rounded.Info, stringResource(R.string.profile_about), stringResource(R.string.profile_about_summary, BuildConfig.VERSION_NAME), onOpenAbout)
         }
 
+        }, second = {
         DataSection()
 
         SectionTitle(stringResource(R.string.profile_permissions))
@@ -139,6 +143,7 @@ fun ProfileScreen(onOpenNotificationSettings: () -> Unit, onOpenWarningLibrary: 
             style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant,
             modifier = Modifier.padding(top = 24.dp, start = 4.dp),
         )
+        })
     }
 }
 
