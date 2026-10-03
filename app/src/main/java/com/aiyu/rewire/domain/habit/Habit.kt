@@ -18,7 +18,26 @@ data class ProtectedApp(
     val habitId: String,
     val warningLevel: WarningLevel,
     val enabled: Boolean,
+    /** This app's own boundaries; null = it follows the habit's. */
+    val limits: AppLimits? = null,
 )
+
+/**
+ * Boundaries one app uses instead of its habit's. All of them replace the habit's together, so the rule
+ * for an app is never a mix of two sources. Times are minutes from midnight; null = no boundary.
+ */
+@Serializable
+data class AppLimits(
+    val dailyLimitMinutes: Int? = null,
+    val maxLaunches: Int? = null,
+    val allowedStartMinutes: Int? = null,
+    val allowedEndMinutes: Int? = null,
+) {
+    companion object {
+        /** Starting point when an app gets its own limits: a copy of the habit's, so nothing changes until edited. */
+        fun from(rule: RestrictionRule) = AppLimits(rule.dailyLimitMinutes, rule.maxLaunches, rule.allowedStartMinutes, rule.allowedEndMinutes)
+    }
+}
 
 /** Times are minutes from midnight. Null = no boundary. */
 @Serializable
@@ -80,4 +99,18 @@ data class HabitProfile(
 ) {
     val id get() = habit.id
     val level get() = rule.warningLevel
+
+    /** The rule [pkg] is judged by: the habit's, with the app's own boundaries swapped in when it has them. */
+    fun ruleFor(pkg: String): RestrictionRule {
+        val l = apps.firstOrNull { it.packageName == pkg }?.limits ?: return rule
+        return rule.copy(
+            dailyLimitMinutes = l.dailyLimitMinutes,
+            maxLaunches = l.maxLaunches,
+            allowedStartMinutes = l.allowedStartMinutes,
+            allowedEndMinutes = l.allowedEndMinutes,
+        )
+    }
+
+    /** This profile as seen from [pkg]: same habit, level and escalation; boundaries resolved for that app. */
+    fun forApp(pkg: String) = copy(rule = ruleFor(pkg))
 }
