@@ -22,6 +22,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.input.nestedscroll.nestedScroll
+import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 
 /**
@@ -33,6 +34,7 @@ fun InnerScreen(
     title: String,
     subtitle: String? = null,
     onBack: (() -> Unit)? = null,
+    maxWidth: Dp = 640.dp,
     content: @Composable ColumnScope.() -> Unit,
 ) {
     val scroll = TopAppBarDefaults.exitUntilCollapsedScrollBehavior()
@@ -58,7 +60,7 @@ fun InnerScreen(
                 .verticalScroll(rememberScrollState())
                 .padding(start = 16.dp, end = 16.dp, bottom = 24.dp),
             horizontalAlignment = Alignment.CenterHorizontally,
-            content = { Column(Modifier.readableWidth(), horizontalAlignment = Alignment.CenterHorizontally, content = content) },
+            content = { Column(Modifier.readableWidth(maxWidth), horizontalAlignment = Alignment.CenterHorizontally, content = content) },
         )
     }
 }

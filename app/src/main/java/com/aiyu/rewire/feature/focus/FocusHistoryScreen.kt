@@ -42,6 +42,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.text.input.KeyboardCapitalization
 import androidx.compose.foundation.text.KeyboardOptions
+import androidx.compose.foundation.layout.FlowRow
+import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
@@ -87,6 +89,7 @@ fun FocusHistoryScreen(onBack: () -> Unit) {
         title = stringResource(R.string.focus_history),
         subtitle = if (all.isEmpty()) null else stringResource(R.string.focus_history_subtitle, completed, all.size, formatFocused(all.sumOf { it.focusedMillis })),
         onBack = onBack,
+        maxWidth = 960.dp,
     ) {
         Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(8.dp)) {
             HistoryFilter.entries.forEach { f ->
@@ -108,8 +111,9 @@ fun FocusHistoryScreen(onBack: () -> Unit) {
                 body = if (all.isEmpty()) stringResource(R.string.focus_history_empty_body) else stringResource(R.string.focus_history_filtered_body, stringResource(filter.label).lowercase()),
                 modifier = Modifier.padding(top = 32.dp),
             )
-            else -> Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
-                shown.forEach { s -> SessionCard(s, onEditNote = { editing = s }) }
+            // Cards sit side by side once the window is wide (InnerScreen caps width, so this only matters beyond ~640dp).
+            else -> FlowRow(horizontalArrangement = Arrangement.spacedBy(8.dp), verticalArrangement = Arrangement.spacedBy(8.dp), maxItemsInEachRow = if (LocalConfiguration.current.screenWidthDp >= 840) 2 else 1) {
+                shown.forEach { s -> SessionCard(s, onEditNote = { editing = s }, modifier = Modifier.weight(1f)) }
             }
         }
     }
@@ -125,14 +129,14 @@ fun FocusHistoryScreen(onBack: () -> Unit) {
 }
 
 @Composable
-private fun SessionCard(s: FocusSession, onEditNote: () -> Unit) {
+private fun SessionCard(s: FocusSession, onEditNote: () -> Unit, modifier: Modifier = Modifier) {
     val c = MaterialTheme.colorScheme
     val done = s.state.status == FocusSessionStatus.COMPLETED
     val cfg = s.state.config
     Card(
         shape = MaterialTheme.shapes.large,
         colors = CardDefaults.cardColors(containerColor = c.surfaceContainerLow),
-        modifier = Modifier.fillMaxWidth().clickable(onClickLabel = stringResource(R.string.focus_edit_achievement), role = Role.Button, onClick = onEditNote),
+        modifier = modifier.fillMaxWidth().clickable(onClickLabel = stringResource(R.string.focus_edit_achievement), role = Role.Button, onClick = onEditNote),
     ) {
         Column(Modifier.padding(16.dp)) {
             Row(verticalAlignment = Alignment.CenterVertically) {
