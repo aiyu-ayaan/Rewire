@@ -58,6 +58,10 @@ data class RestrictionRuleEntity(
     @ColumnInfo(name = "max_launches") val maxLaunches: Int?,
     @ColumnInfo(name = "warning_level") val warningLevel: WarningLevel,
     @ColumnInfo(name = "pause_seconds") val pauseSeconds: Int,
+    // v3: smart escalation. Defaults live in the columns so the 2 -> 3 auto-migration can add them.
+    @ColumnInfo(name = "escalation_enabled", defaultValue = "0") val escalationEnabled: Boolean = false,
+    @ColumnInfo(name = "escalation_major_minutes", defaultValue = "20") val escalationMajorMinutes: Int = 20,
+    @ColumnInfo(name = "escalation_max_minutes", defaultValue = "40") val escalationMaxMinutes: Int = 40,
 )
 
 data class HabitWithDetails(

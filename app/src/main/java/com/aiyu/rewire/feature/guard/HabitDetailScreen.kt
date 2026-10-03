@@ -46,6 +46,7 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Slider
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Switch
+import androidx.compose.ui.res.stringResource
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
 import androidx.compose.material3.TimePicker
@@ -293,6 +294,36 @@ private fun BoundariesCard(p: HabitProfile, vm: HabitDetailViewModel) {
                 )
             }
             AllowedWindow(p.rule.allowedStartMinutes, p.rule.allowedEndMinutes, vm::setWindow)
+            EscalationSection(p, vm)
+        }
+    }
+}
+
+@Composable
+private fun EscalationSection(p: HabitProfile, vm: HabitDetailViewModel) {
+    val r = p.rule
+    Column {
+        Row(verticalAlignment = Alignment.CenterVertically) {
+            Column(Modifier.weight(1f)) {
+                Text(stringResource(R.string.escalation_title), style = MaterialTheme.typography.titleSmall)
+                Text(stringResource(R.string.escalation_subtitle), style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant)
+            }
+            Switch(checked = r.escalationEnabled, onCheckedChange = vm::setEscalation)
+        }
+        AnimatedVisibility(r.escalationEnabled) {
+            Column(Modifier.padding(top = 12.dp), verticalArrangement = Arrangement.spacedBy(12.dp)) {
+                SliderSetting(
+                    title = stringResource(R.string.escalation_major_after),
+                    value = r.escalationMajorAfterMinutes, range = 5..235, step = 5,
+                    display = { formatMinutes(it) }, onCommit = vm::setEscalationMajor,
+                )
+                SliderSetting(
+                    title = stringResource(R.string.escalation_max_after),
+                    value = r.escalationMaxAfterMinutes, range = 10..240, step = 5,
+                    display = { formatMinutes(it) }, onCommit = vm::setEscalationMax,
+                )
+                Text(stringResource(R.string.escalation_note), style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant)
+            }
         }
     }
 }

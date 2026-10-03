@@ -170,6 +170,7 @@ fun WarningScreen(
                     "LAUNCH_LIMIT" -> InfoRow(stringResource(R.string.warning_opens_today), stringResource(R.string.warning_opens_used, r.maxLaunches ?: 0, r.maxLaunches ?: 0))
                     "DAILY_LIMIT" -> InfoRow(stringResource(R.string.guard_daily_limit), stringResource(R.string.warning_limit_reached, r.dailyLimitMinutes ?: 0))
                     "ALWAYS" -> InfoRow(stringResource(R.string.warning_boundary), stringResource(R.string.warning_always_blocked))
+                    "ESCALATION" -> InfoRow(stringResource(R.string.escalation_block_label), stringResource(R.string.escalation_block_value, r.escalationMaxAfterMinutes))
                 }
                 if (start != null && end != null) InfoRow(stringResource(R.string.warning_allowed_time), "${formatClock(start)} – ${formatClock(end)}")
                 val nowMinutes = remember { java.time.LocalTime.now().let { it.hour * 60 + it.minute } }

@@ -32,7 +32,44 @@ data class RestrictionRule(
     val warningLevel: WarningLevel,
     /** Seconds the Major warning holds "Continue" disabled. */
     val pauseSeconds: Int,
-)
+    /** Smart escalation (CLAUDE.md §4): off by default; when on, usage minutes pick the effective level. */
+    val escalationEnabled: Boolean = false,
+    /** Usage minutes at which the level rises to Major (below it: Minor). */
+    val escalationMajorAfterMinutes: Int = DEFAULT_ESCALATION_MAJOR_MINUTES,
+    /** Usage minutes at which the level rises to Max. Must exceed the Major threshold. */
+    val escalationMaxAfterMinutes: Int = DEFAULT_ESCALATION_MAX_MINUTES,
+) {
+    /** Tiers only apply when switched on and the thresholds are sane; a corrupt row falls back to the plain level. */
+    val escalation get() = escalationEnabled && isValidEscalation(escalationMajorAfterMinutes, escalationMaxAfterMinutes)
+
+    /** Level for [usageMinutes]; the configured level when escalation is off or usage is unknown. */
+    fun effectiveLevel(usageMinutes: Int?): WarningLevel = when {
+        !escalation || usageMinutes == null -> warningLevel
+        usageMinutes >= escalationMaxAfterMinutes -> WarningLevel.MAX
+        usageMinutes >= escalationMajorAfterMinutes -> WarningLevel.MAJOR
+        else -> WarningLevel.MINOR
+    }
+
+    companion object {
+        const val DEFAULT_ESCALATION_MAJOR_MINUTES = 20
+        const val DEFAULT_ESCALATION_MAX_MINUTES = 40
+        const val MAX_ESCALATION_MINUTES = 24 * 60
+
+        /** Three fixed tiers Minor/Major/Max: thresholds strictly increasing, within a day. */
+        /** Applies an edit to one threshold and nudges the other so the pair stays valid (editing never fails). */
+        fun withMajor(rule: RestrictionRule, major: Int): RestrictionRule {
+            val m = major.coerceIn(1, MAX_ESCALATION_MINUTES - 1)
+            return rule.copy(escalationMajorAfterMinutes = m, escalationMaxAfterMinutes = maxOf(rule.escalationMaxAfterMinutes, m + 1))
+        }
+
+        fun withMax(rule: RestrictionRule, max: Int): RestrictionRule {
+            val x = max.coerceIn(2, MAX_ESCALATION_MINUTES)
+            return rule.copy(escalationMaxAfterMinutes = x, escalationMajorAfterMinutes = minOf(rule.escalationMajorAfterMinutes, x - 1))
+        }
+
+        fun isValidEscalation(major: Int, max: Int) = major >= 1 && major < max && max <= MAX_ESCALATION_MINUTES
+    }
+}
 
 /** Aggregate the UI works with: one habit + its apps + its rule. */
 @Serializable
