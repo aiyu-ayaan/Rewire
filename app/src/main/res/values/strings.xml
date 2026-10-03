@@ -286,4 +286,66 @@
     <string name="focus_achieve_placeholder">Finished the chapter 3 draft</string>
     <string name="focus_char_count">%1$d / %2$d</string>
     <string name="focus_skip">Skip</string>
+    <!-- Profile -->
+    <string name="common_allow">Allow</string>
+    <string name="profile_appearance">Appearance</string>
+    <string name="profile_theme">Theme</string>
+    <string name="profile_theme_system">System</string>
+    <string name="profile_theme_light">Light</string>
+    <string name="profile_theme_dark">Dark</string>
+    <string name="profile_dynamic_color">Dynamic color</string>
+    <string name="profile_dynamic_color_desc">Match your wallpaper instead of Rewire teal.</string>
+    <string name="profile_notifications">Notifications</string>
+    <string name="profile_notifications_on">On · %1$d of %2$d categories</string>
+    <string name="profile_notifications_off">Off — tap to fix</string>
+    <string name="profile_warning_library">Warning library</string>
+    <string name="profile_warning_library_summary">%1$d active · %2$d custom</string>
+    <string name="profile_updates">Updates</string>
+    <string name="profile_update_available">A newer version is available</string>
+    <string name="profile_update_checks_off">Automatic checks off · %1$s</string>
+    <string name="profile_update_channel">%1$s · %2$s channel</string>
+    <string name="profile_about">About Rewire</string>
+    <string name="profile_about_summary">Version %1$s · developer · open-source licenses</string>
+    <string name="profile_permissions">Permissions</string>
+    <string name="profile_footer">Rewire %1$s · All data stays on this device.</string>
+    <string name="profile_set_goal">Set a goal</string>
+    <string name="profile_edit">Edit profile</string>
+    <string name="profile_reason_quote">“%1$s”</string>
+
+    <!-- About -->
+    <string name="about_title">About</string>
+    <string name="about_tagline">Break habits. Build control.</string>
+    <string name="about_app">App</string>
+    <string name="about_version">Version %1$s (%2$d) · %3$s build</string>
+    <string name="about_edition_full">Full</string>
+    <string name="about_edition_lite">Lite</string>
+    <string name="about_build_full">Full build</string>
+    <string name="about_build_lite">Lite build</string>
+    <string name="about_build_full_desc">Instant detection through Accessibility. If Play Protect blocks the install or a payment app objects, Rewire Lite has the same features without Accessibility.</string>
+    <string name="about_build_lite_desc">No Accessibility service, so Play Protect allows the install and payment apps keep working. Guard notices apps through Usage access within about a second.</string>
+    <string name="about_privacy">Privacy</string>
+    <string name="about_privacy_desc">All data stays on this device.</string>
+    <string name="about_developer">Developer</string>
+    <string name="about_built">Built Rewire.</string>
+    <string name="about_portfolio">Portfolio</string>
+    <string name="about_open_source">Open source</string>
+    <string name="about_acknowledgements">Acknowledgements</string>
+    <string name="about_acknowledgements_desc">Libraries Rewire is built on</string>
+    <string name="about_acknowledgements_subtitle">Open-source libraries behind Rewire</string>
+
+    <!-- Notification settings screen -->
+    <string name="notif_settings_subtitle">Only what helps. Nothing else.</string>
+    <string name="notif_settings_reason">Rewire uses notifications for focus timers and important Guard status. No marketing, no streak nagging.</string>
+    <string name="notif_cat_focus">Focus sessions</string>
+    <string name="notif_cat_focus_desc">Silent running timer, break started, session complete.</string>
+    <string name="notif_cat_guard_desc">Important restriction status. Never one per app open.</string>
+    <string name="notif_cat_summary_desc">One short recap in the evening (arrives with analytics).</string>
+    <string name="notif_off_in_system">Turned off in system settings</string>
+    <string name="notif_silence_during_focus">Silence during Focus</string>
+    <string name="notif_silence_body">Silences messages &amp; alerts from all apps during focus sessions. Incoming calls still ring.</string>
+    <string name="notif_test_sent">Test sent. Check your shade.</string>
+    <string name="notif_test_failed">Can\'t send — notifications are off.</string>
+    <string name="notif_send_test">Send test notification</string>
+    <string name="notif_system_settings">System notification settings</string>
+    <string name="notif_system_settings_note">Sound, vibration and lock-screen detail for each category live in system settings. Focus timers stay silent.</string>
 </resources>

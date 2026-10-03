@@ -1,6 +1,9 @@
 package com.aiyu.rewire.feature.profile
 
 import androidx.compose.foundation.layout.Column
+import androidx.annotation.StringRes
+import androidx.compose.ui.res.stringResource
+import com.aiyu.rewire.R
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
@@ -54,12 +57,12 @@ import com.aiyu.rewire.core.notifications.RewireNotifier.Channels
 import com.aiyu.rewire.core.notifications.rememberNotificationPermission
 import kotlinx.coroutines.launch
 
-private data class CategoryInfo(val category: NotificationCategory, val icon: ImageVector, val title: String, val body: String, val channels: List<String>)
+private data class CategoryInfo(val category: NotificationCategory, val icon: ImageVector, @StringRes val title: Int, @StringRes val body: Int, val channels: List<String>)
 
 private val categories = listOf(
-    CategoryInfo(NotificationCategory.FOCUS, Icons.Rounded.Timer, "Focus sessions", "Silent running timer, break started, session complete.", listOf(Channels.FOCUS_SESSION, Channels.FOCUS_ALERTS)),
-    CategoryInfo(NotificationCategory.GUARD, Icons.Rounded.Shield, "Guard", "Important restriction status. Never one per app open.", listOf(Channels.GUARD)),
-    CategoryInfo(NotificationCategory.SUMMARY, Icons.Rounded.Insights, "Daily summary", "One short recap in the evening (arrives with analytics).", listOf(Channels.SUMMARY)),
+    CategoryInfo(NotificationCategory.FOCUS, Icons.Rounded.Timer, R.string.notif_cat_focus, R.string.notif_cat_focus_desc, listOf(Channels.FOCUS_SESSION, Channels.FOCUS_ALERTS)),
+    CategoryInfo(NotificationCategory.GUARD, Icons.Rounded.Shield, R.string.nav_guard, R.string.notif_cat_guard_desc, listOf(Channels.GUARD)),
+    CategoryInfo(NotificationCategory.SUMMARY, Icons.Rounded.Insights, R.string.channel_summary, R.string.notif_cat_summary_desc, listOf(Channels.SUMMARY)),
 )
 
 @Composable
@@ -73,14 +76,18 @@ fun NotificationSettingsScreen(onBack: () -> Unit) {
     val scope = rememberCoroutineScope()
     val snackbar = remember { SnackbarHostState() }
     val scroll = TopAppBarDefaults.exitUntilCollapsedScrollBehavior()
+    val testSentText = stringResource(R.string.notif_test_sent)
+    val testFailedText = stringResource(R.string.notif_test_failed)
+    val silenceDesc = stringResource(R.string.notif_silence_during_focus)
+    val categoryTitles = categories.associate { it.category to stringResource(it.title) }
 
     Scaffold(
         modifier = Modifier.nestedScroll(scroll.nestedScrollConnection),
         topBar = {
             LargeFlexibleTopAppBar(
-                title = { Text("Notifications") },
-                subtitle = { Text("Only what helps. Nothing else.") },
-                navigationIcon = { IconButton(onClick = onBack) { Icon(Icons.AutoMirrored.Rounded.ArrowBack, contentDescription = "Back") } },
+                title = { Text(stringResource(R.string.profile_notifications)) },
+                subtitle = { Text(stringResource(R.string.notif_settings_subtitle)) },
+                navigationIcon = { IconButton(onClick = onBack) { Icon(Icons.AutoMirrored.Rounded.ArrowBack, contentDescription = stringResource(R.string.warning_back)) } },
                 scrollBehavior = scroll,
             )
         },
@@ -89,15 +96,15 @@ fun NotificationSettingsScreen(onBack: () -> Unit) {
         Column(Modifier.padding(padding).verticalScroll(rememberScrollState()).padding(horizontal = 16.dp).padding(bottom = 24.dp)) {
             NotificationRationaleCard(
                 permission,
-                reason = "Rewire uses notifications for focus timers and important Guard status. No marketing, no streak nagging.",
+                reason = stringResource(R.string.notif_settings_reason),
                 modifier = Modifier.padding(bottom = 16.dp),
             )
             Card(shape = MaterialTheme.shapes.large, colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surfaceContainerLow)) {
                 categories.forEach { info ->
                     val systemOff = granted && info.channels.all { !vm.channelEnabled(it) }
                     ListItem(
-                        headlineContent = { Text(info.title) },
-                        supportingContent = { Text(if (systemOff) "Turned off in system settings" else info.body) },
+                        headlineContent = { Text(stringResource(info.title)) },
+                        supportingContent = { Text(stringResource(if (systemOff) R.string.notif_off_in_system else info.body)) },
                         leadingContent = { Icon(info.icon, contentDescription = null) },
                         trailingContent = {
                             Switch(
@@ -107,7 +114,7 @@ fun NotificationSettingsScreen(onBack: () -> Unit) {
                                     else vm.setNotification(info.category, on)
                                 },
                                 enabled = granted,
-                                modifier = Modifier.semantics { contentDescription = info.title },
+                                modifier = Modifier.semantics { contentDescription = categoryTitles.getValue(info.category) },
                             )
                         },
                         colors = ListItemDefaults.colors(containerColor = MaterialTheme.colorScheme.surfaceContainerLow),
@@ -118,24 +125,23 @@ fun NotificationSettingsScreen(onBack: () -> Unit) {
             Card(shape = MaterialTheme.shapes.large, colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surfaceContainerLow)) {
                 val dndGranted = vm.isDndAccessGranted
                 ListItem(
-                    headlineContent = { Text("Silence during Focus") },
+                    headlineContent = { Text(stringResource(R.string.notif_silence_during_focus)) },
                     supportingContent = {
                         Text(
-                            if (!dndGranted) "Tap to grant Do Not Disturb access. Incoming calls will ring; all messages silenced."
-                            else "Silences messages & alerts from all apps during focus sessions. Incoming calls still ring."
+                            stringResource(if (!dndGranted) R.string.focus_dnd_grant else R.string.notif_silence_body)
                         )
                     },
                     leadingContent = { Icon(Icons.Rounded.DoNotDisturbOn, contentDescription = null) },
                     trailingContent = {
                         if (!dndGranted) {
                             FilledTonalButton(onClick = { context.startActivity(vm.dndSettingsIntent()) }) {
-                                Text("Allow")
+                                Text(stringResource(R.string.common_allow))
                             }
                         } else {
                             Switch(
                                 checked = s.focusDndEnabled,
                                 onCheckedChange = vm::setFocusDnd,
-                                modifier = Modifier.semantics { contentDescription = "Silence during Focus" },
+                                modifier = Modifier.semantics { contentDescription = silenceDesc },
                             )
                         }
                     },
@@ -146,21 +152,21 @@ fun NotificationSettingsScreen(onBack: () -> Unit) {
             FilledTonalButton(
                 onClick = {
                     val sent = vm.sendTestNotification()
-                    scope.launch { snackbar.showSnackbar(if (sent) "Test sent. Check your shade." else "Can't send — notifications are off.") }
+                    scope.launch { snackbar.showSnackbar(if (sent) testSentText else testFailedText) }
                 },
                 modifier = Modifier.fillMaxWidth(),
             ) {
                 Icon(Icons.Rounded.Send, contentDescription = null, modifier = Modifier.size(18.dp))
                 Spacer(Modifier.width(8.dp))
-                Text("Send test notification")
+                Text(stringResource(R.string.notif_send_test))
             }
             TextButton(onClick = { context.startActivity(vm.appNotificationSettingsIntent()) }, modifier = Modifier.fillMaxWidth()) {
-                Text("System notification settings")
+                Text(stringResource(R.string.notif_system_settings))
                 Spacer(Modifier.width(6.dp))
                 Icon(Icons.AutoMirrored.Rounded.OpenInNew, contentDescription = null, modifier = Modifier.size(16.dp))
             }
             Text(
-                "Sound, vibration and lock-screen detail for each category live in system settings. Focus timers stay silent.",
+                stringResource(R.string.notif_system_settings_note),
                 style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant,
                 modifier = Modifier.padding(top = 8.dp, start = 4.dp),
             )
