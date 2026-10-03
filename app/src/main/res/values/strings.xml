@@ -379,4 +379,34 @@
     <string name="perm_disclosure_title">Turn on Rewire in Accessibility</string>
     <string name="perm_disclosure_steps">In the next screen:\nInstalled apps → Rewire → turn on.</string>
     <string name="perm_disclosure_note">Note: If Android says \"Restricted setting\", tap \"Open App Info\", tap the 3 dots (⋮) at top-right, and choose \"Allow restricted settings\".</string>
+    <!-- Onboarding -->
+    <string name="onboarding_make_yours">Make it yours</string>
+    <string name="onboarding_step1_subtitle">Step 1 of 2 · stays on this device</string>
+    <string name="onboarding_stays_on_device">Stays on this device</string>
+    <string name="onboarding_your_name">Your name</string>
+    <string name="onboarding_avatar">Avatar</string>
+    <string name="onboarding_avatar_shape">Avatar shape %1$d</string>
+    <string name="onboarding_main_goal">Main goal</string>
+    <string name="onboarding_why">Why it matters to you</string>
+    <string name="onboarding_reason_hint">More focus. Less wasted time.</string>
+    <string name="onboarding_why_support">Rewire shows this back to you when you need it.</string>
+    <string name="onboarding_let_help">Let Rewire help</string>
+    <string name="onboarding_permissions_intro">Each one has a single job, explained below. Data never leaves your phone. Change any of them later in Profile.</string>
+    <string name="onboarding_granted_count">%1$d of %2$d allowed</string>
+    <string name="onboarding_test_again">Test protection again</string>
+    <string name="onboarding_test">Test protection</string>
+    <string name="onboarding_start">Start using Rewire</string>
+    <string name="onboarding_continue_now">Continue for now</string>
+    <string name="onboarding_test_title">Pause and reflect</string>
+    <string name="onboarding_test_message">This is what happens when you open a guarded app. Rewire creates a deliberate moment to choose.</string>
+    <string name="onboarding_sample_app">Sample App</string>
+    <!-- Landing -->
+    <string name="landing_friction">Friction</string>
+    <string name="landing_friction_body">Rewire adds a small pause before the apps that pull you in.</string>
+    <string name="landing_awareness">Awareness</string>
+    <string name="landing_awareness_body">Each pause asks one question: is this a choice or a reflex?</string>
+    <string name="landing_choice">Choice</string>
+    <string name="landing_choice_body">You decide. Rewire measures, so you can see yourself improve.</string>
+    <string name="landing_get_started">Get started</string>
+    <string name="landing_next">Next</string>
 </resources>

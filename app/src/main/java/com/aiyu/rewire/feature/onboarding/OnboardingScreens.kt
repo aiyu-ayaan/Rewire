@@ -1,6 +1,8 @@
 package com.aiyu.rewire.feature.onboarding
 
 import androidx.compose.foundation.BorderStroke
+import androidx.compose.ui.res.stringResource
+import com.aiyu.rewire.R
 import androidx.compose.runtime.setValue
 import androidx.compose.runtime.getValue
 import androidx.compose.foundation.layout.Arrangement
@@ -89,8 +91,8 @@ fun ProfileSetupScreen(onboarding: Boolean, onDone: () -> Unit, onBack: (() -> U
     var shape by rememberSaveable { mutableIntStateOf(initial.avatarShape) }
 
     InnerScreen(
-        title = if (onboarding) "Make it yours" else "Edit profile",
-        subtitle = if (onboarding) "Step 1 of 2 · stays on this device" else "Stays on this device",
+        title = stringResource(if (onboarding) R.string.onboarding_make_yours else R.string.profile_edit),
+        subtitle = stringResource(if (onboarding) R.string.onboarding_step1_subtitle else R.string.onboarding_stays_on_device),
         onBack = onBack,
     ) {
         // Onboarding: the landing hero lands here and becomes your avatar. Edit: avatar flies in from Profile.
@@ -99,28 +101,29 @@ fun ProfileSetupScreen(onboarding: Boolean, onDone: () -> Unit, onBack: (() -> U
         Column(Modifier.widthIn(max = 520.dp).padding(top = 24.dp), verticalArrangement = Arrangement.spacedBy(20.dp)) {
             OutlinedTextField(
                 value = name, onValueChange = { name = it.take(30) },
-                label = { Text("Your name") },
+                label = { Text(stringResource(R.string.onboarding_your_name)) },
                 singleLine = true,
                 keyboardOptions = KeyboardOptions(capitalization = KeyboardCapitalization.Words, imeAction = ImeAction.Next),
                 modifier = Modifier.fillMaxWidth(),
             )
             Column {
-                Text("Avatar", style = MaterialTheme.typography.titleSmall)
+                Text(stringResource(R.string.onboarding_avatar), style = MaterialTheme.typography.titleSmall)
                 FlowRow(Modifier.padding(top = 8.dp), horizontalArrangement = Arrangement.spacedBy(10.dp), verticalArrangement = Arrangement.spacedBy(10.dp)) {
                     AvatarShapes.forEachIndexed { i, polygon ->
                         val selected = i == shape
+                        val shapeDesc = stringResource(R.string.onboarding_avatar_shape, i + 1)
                         Surface(
                             onClick = { shape = i },
                             shape = polygon.toShape(),
                             color = if (selected) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.surfaceContainerHighest,
                             border = if (selected) BorderStroke(3.dp, MaterialTheme.colorScheme.primaryContainer) else null,
-                            modifier = Modifier.size(48.dp).semantics { role = Role.RadioButton; this.selected = selected; contentDescription = "Avatar shape ${i + 1}" },
+                            modifier = Modifier.size(48.dp).semantics { role = Role.RadioButton; this.selected = selected; contentDescription = shapeDesc },
                         ) {}
                     }
                 }
             }
             Column {
-                Text("Main goal", style = MaterialTheme.typography.titleSmall)
+                Text(stringResource(R.string.onboarding_main_goal), style = MaterialTheme.typography.titleSmall)
                 FlowRow(Modifier.padding(top = 8.dp), horizontalArrangement = Arrangement.spacedBy(8.dp)) {
                     UserGoal.entries.forEach { g ->
                         FilterChip(selected = goal == g, onClick = { goal = if (goal == g) null else g }, label = { Text(g.label) })
@@ -129,9 +132,9 @@ fun ProfileSetupScreen(onboarding: Boolean, onDone: () -> Unit, onBack: (() -> U
             }
             OutlinedTextField(
                 value = reason, onValueChange = { reason = it.take(80) },
-                label = { Text("Why it matters to you") },
-                placeholder = { Text("More focus. Less wasted time.") },
-                supportingText = { Text("Rewire shows this back to you when you need it.") },
+                label = { Text(stringResource(R.string.onboarding_why)) },
+                placeholder = { Text(stringResource(R.string.onboarding_reason_hint)) },
+                supportingText = { Text(stringResource(R.string.onboarding_why_support)) },
                 keyboardOptions = KeyboardOptions(capitalization = KeyboardCapitalization.Sentences, imeAction = ImeAction.Done),
                 modifier = Modifier.fillMaxWidth(),
             )
@@ -142,7 +145,7 @@ fun ProfileSetupScreen(onboarding: Boolean, onDone: () -> Unit, onBack: (() -> U
                 modifier = Modifier.fillMaxWidth().height(ButtonDefaults.MediumContainerHeight),
                 contentPadding = ButtonDefaults.MediumContentPadding,
             ) {
-                Text(if (onboarding) "Continue" else "Save", style = MaterialTheme.typography.titleMedium)
+                Text(stringResource(if (onboarding) R.string.warning_continue else R.string.common_save), style = MaterialTheme.typography.titleMedium)
                 if (onboarding) { Spacer(Modifier.size(8.dp)); Icon(Icons.AutoMirrored.Rounded.ArrowForward, contentDescription = null) }
             }
         }
@@ -157,11 +160,11 @@ fun PermissionsSetupScreen(onFinish: () -> Unit, onBack: () -> Unit) {
     var testProtection by remember { mutableStateOf(false) }
     var testedProtection by remember { mutableStateOf(false) }
 
-    InnerScreen(title = "Let Rewire help", subtitle = "Step 2 of 2", onBack = onBack) {
+    InnerScreen(title = stringResource(R.string.onboarding_let_help), subtitle = stringResource(R.string.guard_sheet_step, 2, 2), onBack = onBack) {
         MorphingShape(brush = heroBrush(), modifier = Modifier.size(88.dp).sharedBoundsOrSelf(HERO_KEY), rotationMillis = 30_000)
         Spacer(Modifier.height(16.dp))
         Text(
-            "Each one has a single job, explained below. Data never leaves your phone. Change any of them later in Profile.",
+            stringResource(R.string.onboarding_permissions_intro),
             style = MaterialTheme.typography.bodyMedium, color = MaterialTheme.colorScheme.onSurfaceVariant, textAlign = TextAlign.Center,
             modifier = Modifier.widthIn(max = 480.dp),
         )
@@ -171,7 +174,7 @@ fun PermissionsSetupScreen(onFinish: () -> Unit, onBack: () -> Unit) {
             modifier = Modifier.widthIn(max = 560.dp).padding(top = 24.dp),
         ) { PermissionsPanel() }
         Text(
-            "$granted of $totalPermissions allowed",
+            stringResource(R.string.onboarding_granted_count, granted, totalPermissions),
             style = MaterialTheme.typography.labelLarge, color = MaterialTheme.colorScheme.primary,
             modifier = Modifier.padding(top = 12.dp),
         )
@@ -187,7 +190,7 @@ fun PermissionsSetupScreen(onFinish: () -> Unit, onBack: () -> Unit) {
                 tint = if (testedProtection) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.onSurface,
             )
             Spacer(Modifier.size(8.dp))
-            Text(if (testedProtection) "Test protection again" else "Test protection")
+            Text(stringResource(if (testedProtection) R.string.onboarding_test_again else R.string.onboarding_test))
         }
         Spacer(Modifier.height(12.dp))
         Box(Modifier.widthIn(max = 520.dp)) {
@@ -196,7 +199,7 @@ fun PermissionsSetupScreen(onFinish: () -> Unit, onBack: () -> Unit) {
                 modifier = Modifier.fillMaxWidth().height(ButtonDefaults.MediumContainerHeight),
                 contentPadding = ButtonDefaults.MediumContentPadding,
             ) {
-                Text(if (granted == totalPermissions) "Start using Rewire" else "Continue for now", style = MaterialTheme.typography.titleMedium)
+                Text(stringResource(if (granted == totalPermissions) R.string.onboarding_start else R.string.onboarding_continue_now), style = MaterialTheme.typography.titleMedium)
             }
         }
     }
@@ -208,6 +211,10 @@ fun PermissionsSetupScreen(onFinish: () -> Unit, onBack: () -> Unit) {
         ) {
             val settings by hiltViewModel<SettingsViewModel>().settings.collectAsStateWithLifecycle()
             val userReason = settings?.profile?.reason?.takeIf { it.isNotBlank() }
+            val testTitle = stringResource(R.string.onboarding_test_title)
+            val testMessage = stringResource(R.string.onboarding_test_message)
+            val testDefaultReason = stringResource(R.string.onboarding_reason_hint)
+            val sampleApp = stringResource(R.string.onboarding_sample_app)
             val testProfile = remember {
                 HabitProfile(
                     habit = Habit("test-onboarding", "Doom Scrolling", null, enabled = true),
@@ -220,9 +227,9 @@ fun PermissionsSetupScreen(onFinish: () -> Unit, onBack: () -> Unit) {
                     id = "test-w",
                     category = WarningCategory.CUSTOM,
                     level = WarningLevel.MAJOR,
-                    title = "Pause and reflect",
-                    message = "This is what happens when you open a guarded app. Rewire creates a deliberate moment to choose.",
-                    motivationalMessage = userReason ?: "More focus. Less wasted time.",
+                    title = testTitle,
+                    message = testMessage,
+                    motivationalMessage = userReason ?: testDefaultReason,
                     custom = false,
                 )
             }
@@ -230,7 +237,7 @@ fun PermissionsSetupScreen(onFinish: () -> Unit, onBack: () -> Unit) {
                 profile = testProfile,
                 warning = testWarning,
                 packageName = null,
-                appLabel = "Sample App",
+                appLabel = sampleApp,
                 preview = true,
                 userReason = userReason,
                 onGoBack = { testProtection = false; testedProtection = true },
