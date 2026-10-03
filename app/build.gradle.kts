@@ -65,6 +65,9 @@ android {
         }
     }
 
+    // MigrationTestHelper reads the exported schemas as assets.
+    sourceSets.getByName("androidTest").assets.srcDir("$projectDir/schemas")
+
     // English-only UI: drop library translations from the APK.
     androidResources {
         localeFilters += "en"
@@ -174,4 +177,8 @@ dependencies {
     implementation(libs.kotlinx.serialization.json)
 
     testImplementation(libs.junit)
+
+    androidTestImplementation(libs.androidx.room.testing)
+    androidTestImplementation(libs.androidx.test.ext.junit)
+    androidTestImplementation(libs.androidx.test.runner)
 }

@@ -65,4 +65,31 @@
     <string name="guard_shield_text">This app is guarded right now.</string>
     <string name="guard_shield_open">Open Rewire</string>
     <string name="guard_shield_back">Go back</string>
+
+    <!-- Profile: your data -->
+    <string name="data_section">Your data</string>
+    <string name="data_export">Export data</string>
+    <string name="data_export_desc">Save habits, rules, warnings, history and settings to a file you choose.</string>
+    <string name="data_import">Import data</string>
+    <string name="data_import_desc">Restore from a Rewire export. Replaces what is on this device.</string>
+    <string name="data_clear">Clear history</string>
+    <string name="data_clear_desc">Delete events and finished focus sessions. Habits and rules stay.</string>
+    <string name="data_import_title">Replace your data?</string>
+    <string name="data_import_body">This file has %1$d habits, %2$d warnings, %3$d events and %4$d focus sessions. Importing replaces everything currently on this device. Export first if you want a copy.</string>
+    <string name="data_import_confirm">Replace</string>
+    <string name="data_clear_title">Clear history?</string>
+    <string name="data_clear_body">All logged events and finished focus sessions are deleted, so Matrix starts empty. This cannot be undone.</string>
+    <string name="data_clear_confirm">Clear</string>
+    <string name="data_cancel">Cancel</string>
+    <string name="data_msg_exported">Data exported.</string>
+    <string name="data_msg_imported">Data imported.</string>
+    <string name="data_msg_cleared">History cleared.</string>
+    <string name="data_msg_export_failed">Could not write the file. Nothing was changed.</string>
+    <string name="data_msg_file_unreadable">Could not read that file.</string>
+    <string name="data_msg_not_a_backup">That is not a Rewire export.</string>
+    <string name="data_msg_unsupported_version">That export is from a newer Rewire. Update the app and try again.</string>
+    <string name="data_msg_inconsistent">That export is damaged. Nothing was changed.</string>
+    <string name="data_msg_focus_active">End your focus session first, then import.</string>
+    <string name="data_msg_import_failed">Import failed. Your current data is untouched.</string>
+    <string name="data_msg_clear_failed">Could not clear history.</string>
 </resources>

@@ -59,6 +59,9 @@ interface HabitDao {
     @Query("SELECT * FROM habits ORDER BY created_at")
     suspend fun all(): List<HabitWithDetails>
 
+    @Query("DELETE FROM habits")
+    suspend fun deleteAll()
+
     @Insert suspend fun insertHabit(habit: HabitEntity)
     @Upsert suspend fun upsertRule(rule: RestrictionRuleEntity)
     @Insert suspend fun insertApps(apps: List<ProtectedAppEntity>)
@@ -101,6 +104,9 @@ interface WarningDao {
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     suspend fun insertMissing(warnings: List<WarningEntity>)
 
+    @Query("DELETE FROM warnings")
+    suspend fun deleteAll()
+
     @Update suspend fun update(warning: WarningEntity)
 
     @Query("DELETE FROM warnings WHERE id = :id AND custom = 1")
@@ -111,6 +117,12 @@ interface WarningDao {
 interface EventDao {
     @Query("SELECT * FROM habit_events WHERE timestamp >= :since ORDER BY timestamp")
     suspend fun since(since: Long): List<HabitEventEntity>
+
+    @Query("SELECT * FROM habit_events ORDER BY timestamp")
+    suspend fun all(): List<HabitEventEntity>
+
+    @Query("DELETE FROM habit_events")
+    suspend fun deleteAll()
 
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     suspend fun insert(events: List<HabitEventEntity>)
@@ -123,6 +135,13 @@ interface FocusSessionDao {
 
     @Query("SELECT * FROM focus_sessions WHERE status IN ('FOCUSING', 'BREAK', 'PAUSED') ORDER BY started_at DESC LIMIT 1")
     suspend fun active(): FocusSessionEntity?
+
+    @Query("SELECT * FROM focus_sessions WHERE status IN ('COMPLETED', 'CANCELLED') ORDER BY started_at")
+    suspend fun finished(): List<FocusSessionEntity>
+
+    /** History only: a running session is live state, never cleared. */
+    @Query("DELETE FROM focus_sessions WHERE status IN ('COMPLETED', 'CANCELLED')")
+    suspend fun deleteFinished()
 
     @Upsert suspend fun upsert(session: FocusSessionEntity)
 

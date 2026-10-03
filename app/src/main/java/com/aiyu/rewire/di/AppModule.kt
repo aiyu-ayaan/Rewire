@@ -11,6 +11,7 @@ import com.aiyu.rewire.core.notifications.RewireNotifier
 import com.aiyu.rewire.core.settings.Settings
 import com.aiyu.rewire.core.settings.SettingsRepository
 import com.aiyu.rewire.data.DbWriter
+import com.aiyu.rewire.data.BackupRepository
 import com.aiyu.rewire.data.EventRepository
 import com.aiyu.rewire.data.FocusSessionRepository
 import com.aiyu.rewire.data.HabitRepository
@@ -91,6 +92,10 @@ object AppModule {
 
     @Provides @Singleton
     fun focusSessions(db: RewireDatabase, writer: DbWriter): FocusSessionRepository = RoomFocusSessionRepository(db.focusSessions(), writer)
+
+    @Provides @Singleton
+    fun backup(db: RewireDatabase, habits: HabitRepository, warnings: WarningRepository, events: EventRepository) =
+        BackupRepository(db, habits, warnings, events)
 
     // ---- Platform --------------------------------------------------------------------------------
 

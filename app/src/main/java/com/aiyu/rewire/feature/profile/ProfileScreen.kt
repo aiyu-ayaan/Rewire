@@ -114,6 +114,8 @@ fun ProfileScreen(onOpenNotificationSettings: () -> Unit, onOpenWarningLibrary: 
             NavRow(Icons.Rounded.Info, "About Rewire", "Version ${BuildConfig.VERSION_NAME} · developer · open-source licenses", onOpenAbout)
         }
 
+        DataSection()
+
         SectionTitle("Permissions")
         Group { PermissionsPanel() }
 

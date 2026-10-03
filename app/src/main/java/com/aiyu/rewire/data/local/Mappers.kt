@@ -94,3 +94,25 @@ fun SettingsEntity.withNotification(c: NotificationCategory, on: Boolean) = when
     NotificationCategory.GUARD -> copy(notifyGuard = on)
     NotificationCategory.SUMMARY -> copy(notifySummary = on)
 }
+
+fun Settings.toEntity() = SettingsEntity(
+    onboardingDone = onboardingDone,
+    themeMode = themeMode,
+    dynamicColor = dynamicColor,
+    notifyFocus = notifications[NotificationCategory.FOCUS] ?: true,
+    notifyGuard = notifications[NotificationCategory.GUARD] ?: true,
+    notifySummary = notifications[NotificationCategory.SUMMARY] ?: true,
+    bypassMinor = focusBypass.minor,
+    bypassMajor = focusBypass.major,
+    bypassMax = focusBypass.max,
+    focusDndEnabled = focusDndEnabled,
+    notificationPermissionAsked = notificationPermissionAsked,
+    userName = profile.name,
+    userGoal = profile.goal,
+    userReason = profile.reason,
+    avatarShape = profile.avatarShape,
+    updatesEnabled = updatesEnabled,
+    updateChannel = updateChannel,
+    updateSnoozedUntil = updateSnoozedUntil,
+    updateLastChecked = updateLastChecked,
+)

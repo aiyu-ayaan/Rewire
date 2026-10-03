@@ -112,4 +112,5 @@ private class FakeWarningDao(initial: List<WarningEntity>) : WarningDao {
     override suspend fun insertMissing(warnings: List<WarningEntity>) { warnings.filter { w -> rows.none { it.id == w.id } }.forEach { rows += it } }
     override suspend fun update(warning: WarningEntity) { rows.replaceAll { if (it.id == warning.id) warning else it } }
     override suspend fun deleteCustom(id: String) { rows.removeAll { it.id == id && it.custom } }
+    override suspend fun deleteAll() { rows.clear() }
 }

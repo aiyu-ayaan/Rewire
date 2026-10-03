@@ -7,6 +7,7 @@ import com.aiyu.rewire.data.local.toDomain
 import com.aiyu.rewire.data.local.withNotification
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
+import kotlinx.serialization.Serializable
 
 enum class ThemeMode { SYSTEM, LIGHT, DARK }
 
@@ -23,6 +24,7 @@ enum class UserGoal(val label: String) {
     SPEND_LESS("Spend less"),
 }
 
+@Serializable
 data class UserProfile(
     val name: String,
     val goal: UserGoal?,
@@ -34,8 +36,10 @@ data class UserProfile(
     val displayName get() = name.ifBlank { "You" }
 }
 
+@Serializable
 data class FocusBypass(val minor: Boolean, val major: Boolean, val max: Boolean)
 
+@Serializable
 data class Settings(
     val onboardingDone: Boolean,
     val themeMode: ThemeMode,
