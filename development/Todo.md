@@ -153,6 +153,8 @@ service off -> banner + notification.
 - [x] Release notes rendered as headings / bullets; update sheet + Profile -> Updates screen
 - [x] Room schema v2 (`AutoMigration`), device-verified on a populated v1 DB
 - [x] Verified on emulator against the real v1.0.1-alpha.1 release (offer, notes, download, refusal message)
+- Emulator pass 2026-10-03 (Lite + Full, API 37): onboarding, create habit, Max block, escalation UI, Matrix daily/weekly/monthly with real events, focus presets + quick-test session + note, export -> clear -> import round trip, Room 1->2 and 2->3 migration androidTests (2/2 pass), landscape 200% font rail, 800dp rail, `assemblePlayRelease` (no INTERNET / INSTALL permission, no update receiver)
+- Found on emulator, not fixed: import dialog says '1 habits' / '1 focus sessions' (needs plurals); New-habit FAB overlaps empty-state text on Guard; streak/goal chips sit flush on the Screen time card in Matrix daily; 'discipline' label touches the ring at 200% font
 - [ ] Real install end to end needs two signed releases (emulator only had a debug build)
 - [x] Play build: `play` flavor, updates compiled out (UPDATES flag, no REQUEST_INSTALL_PACKAGES/INTERNET/receiver) (2026-10-03). Confirm `assemblePlayRelease` R8 result before submitting
 
@@ -185,7 +187,7 @@ service off -> banner + notification.
 - [x] Lite: Max not blocking on a real device fixed: overlay shield before the guard start, every usage resume judged (2026-10-02)
 - [x] Lite: re-judge open app after unlock, restart monitoring when Rewire opens, warn on refused start / missing grants, 15 s usage lookback (2026-10-02)
 - [ ] Device-test Lite release on a real phone (OEM skin) after the shield fix: Max daily limit, window, launch limit
-- [ ] Device-test Full flavor end to end after the flavor split (only Lite was run on the emulator)
+- [x] Full flavor tested on emulator (API 37) 2026-10-03: Accessibility service bound, Camera intercepted, Minor tier via escalation, Max block, emergency unlock offered
 
 ## Phase 4 — Usage analytics
 - [x] UsageStatsManager adapter synced with Digital Wellbeing data
