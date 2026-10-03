@@ -33,6 +33,7 @@ import androidx.compose.material.icons.rounded.Block
 import androidx.compose.material.icons.rounded.Lightbulb
 import androidx.compose.material.icons.rounded.PanTool
 import androidx.compose.material3.Icon
+import androidx.compose.foundation.layout.BoxWithConstraints
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
@@ -177,3 +178,31 @@ fun CappedFontScale(max: Float = 1.3f, content: @Composable () -> Unit) {
     val d = LocalDensity.current
     CompositionLocalProvider(LocalDensity provides Density(d.density, d.fontScale.coerceAtMost(max)), content = content)
 }
+
+/**
+ * Two side-by-side columns when the space is wide (tablets, unfolded foldables, landscape), one stacked
+ * column otherwise. Decided from the real available width, so a fold/unfold or split-screen re-lays out live.
+ */
+@Composable
+fun AdaptiveColumns(
+    modifier: Modifier = Modifier,
+    first: @Composable ColumnScope.() -> Unit,
+    second: @Composable ColumnScope.() -> Unit,
+) {
+    BoxWithConstraints(modifier.fillMaxWidth()) {
+        if (maxWidth >= TWO_PANE_MIN_WIDTH) {
+            Row(horizontalArrangement = Arrangement.spacedBy(16.dp)) {
+                Column(Modifier.weight(1f), content = first)
+                Column(Modifier.weight(1f), content = second)
+            }
+        } else {
+            Column { first(); second() }
+        }
+    }
+}
+
+/** Widest a single column may get before a screen should split in two. */
+val TWO_PANE_MIN_WIDTH = 680.dp
+
+/** Outer width cap for screens built from [AdaptiveColumns]. */
+val TWO_PANE_MAX_WIDTH = 1200.dp

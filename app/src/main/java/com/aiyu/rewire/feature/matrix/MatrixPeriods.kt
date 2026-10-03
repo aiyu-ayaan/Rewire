@@ -29,6 +29,7 @@ import com.aiyu.rewire.ui.components.GoalChips
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import com.aiyu.rewire.R
+import com.aiyu.rewire.ui.components.AdaptiveColumns
 import com.aiyu.rewire.ui.components.EmptyState
 import com.aiyu.rewire.ui.components.SectionTitle
 import com.aiyu.rewire.ui.components.formatClock
@@ -76,12 +77,14 @@ internal fun DailyView(ui: MatrixUi) {
         EmptyState(stringResource(R.string.matrix_empty_day_title), stringResource(R.string.matrix_empty_day_body))
         return
     }
+    AdaptiveColumns(first = {
     SectionTitle(stringResource(R.string.matrix_today))
     TodayOverview(d.today)
     GoalChips(d.progress, Modifier.padding(vertical = 12.dp))
     ChartCard {
         Stat(stringResource(R.string.matrix_screen_time), formatMinutes(d.today.screenTimeMinutes))
     }
+    }, second = {
 
     if (d.appUsage.isNotEmpty()) {
         SectionTitle(stringResource(R.string.matrix_protected_usage))
@@ -111,6 +114,7 @@ internal fun DailyView(ui: MatrixUi) {
             }
         }
     }
+    })
 }
 
 @Composable
@@ -123,6 +127,7 @@ internal fun WeeklyView(ui: MatrixUi, onShowAll: (apps: Boolean) -> Unit) {
         EmptyState(stringResource(R.string.matrix_empty_week_title), stringResource(R.string.matrix_empty_week_body))
         return
     }
+    AdaptiveColumns(first = {
     listOfNotNull(ui.focusLine, ui.guardLine).forEach { Punchline(it) }
 
     SectionTitle(stringResource(R.string.matrix_week_summary))
@@ -161,6 +166,7 @@ internal fun WeeklyView(ui: MatrixUi, onShowAll: (apps: Boolean) -> Unit) {
         }
     }
 
+    }, second = {
     if (!w.guardStack.isEmpty) {
         SectionTitle(stringResource(R.string.matrix_guard_per_day))
         val colors = listOf(scheme.primary, scheme.secondary, scheme.tertiary, scheme.error)
@@ -187,6 +193,7 @@ internal fun WeeklyView(ui: MatrixUi, onShowAll: (apps: Boolean) -> Unit) {
         SectionTitle(stringResource(R.string.matrix_top_apps), trailing = { ShowAll(ui.apps.size) { onShowAll(true) } })
         BreakdownList(ui.apps.take(PREVIEW_ROWS), scheme.tertiary)
     }
+    })
 }
 
 @Composable
@@ -198,6 +205,7 @@ internal fun MonthlyView(mo: MonthlyUi) {
         return
     }
 
+    AdaptiveColumns(first = {
     SectionTitle(stringResource(R.string.matrix_month_summary))
     ChartCard {
         ChartWithTable(mo.radar.map { it.label to it.display }) {
@@ -234,6 +242,7 @@ internal fun MonthlyView(mo: MonthlyUi) {
         }
     }
 
+    }, second = {
     SectionTitle(stringResource(R.string.matrix_calendar))
     ChartCard {
         val active = mo.heat.count { it.value > 0 }
@@ -262,4 +271,5 @@ internal fun MonthlyView(mo: MonthlyUi) {
             Stat(stringResource(R.string.matrix_radar_goals), "${(m.goalCompletion * 100).toInt()}%")
         }
     }
+    })
 }
