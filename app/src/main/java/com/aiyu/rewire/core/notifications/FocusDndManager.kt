@@ -66,13 +66,16 @@ class FocusDndManager(private val context: Context) {
                 }
             }
 
-            // Only notifications go quiet: calls from ANY sender, alarms (incl. Rewire's own timer chime)
-            // and media keep working; messages and conversations are silenced completely.
+            // Only notifications go quiet: calls from ANY sender, alarms (incl. Rewire's own timer chime),
+            // system sounds and media keep working. Incoming calls (cellular & VoIP like WhatsApp) ring;
+            // messages are silenced because PRIORITY_CATEGORY_MESSAGES is omitted.
             var priorityCategories = NotificationManager.Policy.PRIORITY_CATEGORY_CALLS or
                 NotificationManager.Policy.PRIORITY_CATEGORY_REPEAT_CALLERS
             if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.P) {
-                priorityCategories = priorityCategories or NotificationManager.Policy.PRIORITY_CATEGORY_ALARMS or
-                    NotificationManager.Policy.PRIORITY_CATEGORY_MEDIA
+                priorityCategories = priorityCategories or
+                    NotificationManager.Policy.PRIORITY_CATEGORY_ALARMS or
+                    NotificationManager.Policy.PRIORITY_CATEGORY_MEDIA or
+                    NotificationManager.Policy.PRIORITY_CATEGORY_SYSTEM
             }
 
             val focusPolicy = if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.R) {
@@ -81,7 +84,7 @@ class FocusDndManager(private val context: Context) {
                     NotificationManager.Policy.PRIORITY_SENDERS_ANY,
                     NotificationManager.Policy.PRIORITY_SENDERS_ANY,
                     0,
-                    NotificationManager.Policy.CONVERSATION_SENDERS_NONE,
+                    NotificationManager.Policy.CONVERSATION_SENDERS_ANYONE,
                 )
             } else {
                 NotificationManager.Policy(
@@ -129,7 +132,7 @@ class FocusDndManager(private val context: Context) {
                         savedCallSenders,
                         savedMsgSenders,
                         0,
-                        prefs.getInt(KEY_SAVED_CONV_SENDERS, NotificationManager.Policy.CONVERSATION_SENDERS_NONE),
+                        prefs.getInt(KEY_SAVED_CONV_SENDERS, NotificationManager.Policy.CONVERSATION_SENDERS_ANYONE),
                     )
                 } else {
                     NotificationManager.Policy(
