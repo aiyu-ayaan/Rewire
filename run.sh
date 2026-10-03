@@ -4,6 +4,17 @@ set -e
 # Rewire Runner Script
 # Builds, installs, and launches the app on a connected Android device or emulator.
 
+# Usage: ./run.sh [--lite] [--logs|-l]   (no flags = Full)
+FLAVOR=Full
+LOGS=0
+for arg in "$@"; do
+    case "$arg" in
+        --lite) FLAVOR=Lite ;;
+        --logs|-l) LOGS=1 ;;
+        *) echo "Unknown option: $arg (use --lite, --logs)"; exit 1 ;;
+    esac
+done
+
 ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 cd "$ROOT_DIR"
 
@@ -29,8 +40,8 @@ if [ "$DEVICE_COUNT" -eq 0 ]; then
     exit 1
 fi
 
-echo "==> Device detected. Building and installing ${REWIRE_FLAVOR:-Full} debug build..."
-./gradlew "install${REWIRE_FLAVOR:-Full}Debug"
+echo "==> Device detected. Building and installing $FLAVOR debug build..."
+./gradlew "install${FLAVOR}Debug"
 
 echo "==> Launching $PACKAGE_NAME..."
 adb shell am start -n "$PACKAGE_NAME/$ACTIVITY_NAME" -a android.intent.action.MAIN -c android.intent.category.LAUNCHER
@@ -38,7 +49,7 @@ adb shell am start -n "$PACKAGE_NAME/$ACTIVITY_NAME" -a android.intent.action.MA
 echo "==> App launched successfully!"
 
 # Optional logcat streaming
-if [ "$1" == "--logs" ] || [ "$1" == "-l" ]; then
+if [ "$LOGS" -eq 1 ]; then
     echo "==> Streaming logcat for $PACKAGE_NAME (Ctrl+C to stop)..."
     adb logcat -v color --pid="$(adb shell pidof -s $PACKAGE_NAME)"
 fi
