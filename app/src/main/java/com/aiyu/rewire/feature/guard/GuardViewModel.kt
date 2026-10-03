@@ -17,6 +17,7 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 import com.aiyu.rewire.domain.analytics.DailyMetrics
 import com.aiyu.rewire.domain.analytics.MetricsCalculator
+import com.aiyu.rewire.domain.habit.AppLimits
 import com.aiyu.rewire.domain.habit.HabitProfile
 import com.aiyu.rewire.domain.habit.RestrictionRule
 import com.aiyu.rewire.domain.habit.WarningLevel
@@ -88,6 +89,9 @@ class HabitDetailViewModel @AssistedInject constructor(
     fun setEscalationMajor(minutes: Int) = edit { it.copy(rule = RestrictionRule.withMajor(it.rule, minutes)) }
     fun setEscalationMax(minutes: Int) = edit { it.copy(rule = RestrictionRule.withMax(it.rule, minutes)) }
     fun setWindow(start: Int?, end: Int?) = edit { it.copy(rule = it.rule.copy(allowedStartMinutes = start, allowedEndMinutes = end)) }
+    fun setAppLimits(pkg: String, limits: AppLimits) = edit { p ->
+        p.copy(apps = p.apps.map { if (it.packageName == pkg) it.copy(limits = limits) else it })
+    }
     fun removeApp(pkg: String) = edit { p -> p.copy(apps = p.apps.filterNot { it.packageName == pkg }) }
     fun setApps(packages: List<String>) = edit { p ->
         val existing = p.apps.associateBy { it.packageName }

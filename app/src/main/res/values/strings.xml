@@ -587,4 +587,14 @@
     <string name="streak_chip_start">Start a streak today</string>
     <string name="streak_best">Best %1$d</string>
     <string name="a11y_toggle_controls">Show or hide timer controls</string>
+    <string name="guard_app_limits_title">Limits for %1$s</string>
+    <string name="guard_app_limits_hint">Each limit follows the habit unless you set one for this app. Changing the habit\'s limit still applies to every app you haven\'t set.</string>
+    <string name="guard_app_limits_open">Set limits for %1$s</string>
+    <string name="guard_app_own_daily">Own daily limit</string>
+    <string name="guard_app_own_launch">Own launch limit</string>
+    <string name="guard_app_own_window">Own allowed window</string>
+    <string name="guard_app_habit_value">Habit: %1$s</string>
+    <string name="guard_app_own_limits">own limits</string>
+    <string name="guard_app_habit_limits">habit limits</string>
+    <string name="guard_app_window_any">Any time</string>
 </resources>

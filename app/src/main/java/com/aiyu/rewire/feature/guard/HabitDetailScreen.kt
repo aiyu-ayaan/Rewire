@@ -1,6 +1,10 @@
 package com.aiyu.rewire.feature.guard
 
 import androidx.compose.ui.semantics.stateDescription
+import com.aiyu.rewire.domain.habit.AppLimits
+import androidx.compose.ui.semantics.Role
+import androidx.compose.foundation.selection.toggleable
+import androidx.compose.foundation.clickable
 
 import androidx.compose.foundation.layout.ExperimentalLayoutApi
 
@@ -105,6 +109,7 @@ fun HabitDetailScreen(habitId: String, onBack: () -> Unit, onPreview: (String) -
     val p = profile ?: return // deleted -> caller already popped
     var pickingApps by rememberSaveable { mutableStateOf(false) }
     var confirmDelete by rememberSaveable { mutableStateOf(false) }
+    var limitsFor by rememberSaveable { mutableStateOf<String?>(null) }
     val levelStyle = p.level.style()
     val container by animateColorAsState(levelStyle.container, MaterialTheme.motionScheme.defaultEffectsSpec(), label = "c")
     val enabledDesc = stringResource(R.string.guard_habit_enabled_desc)
@@ -166,13 +171,19 @@ fun HabitDetailScreen(habitId: String, onBack: () -> Unit, onPreview: (String) -
                     val ctx = LocalContext.current
                     val label = remember(app.packageName) { vm.appLabel(app.packageName) }
                     val used = rememberLiveUsage(app.packageName) { vm.appUsageMinutesToday(app.packageName) }
+                    val own = app.limits.any
                     ListItem(
                         headlineContent = { Text(label) },
-                        supportingContent = used?.let { { Text(stringResource(R.string.guard_usage_today, formatMinutes(it))) } },
+                        supportingContent = {
+                            val usedText = used?.let { stringResource(R.string.guard_usage_today, formatMinutes(it)) }
+                            val text = listOfNotNull(usedText, stringResource(if (own) R.string.guard_app_own_limits else R.string.guard_app_habit_limits)).joinToString(" · ")
+                            Text(text)
+                        },
                         leadingContent = { AppIcon(app.packageName) },
                         trailingContent = { IconButton(onClick = { vm.removeApp(app.packageName) }) { Icon(Icons.Rounded.Close, contentDescription = stringResource(R.string.guard_remove_app, label)) } },
                         colors = ListItemDefaults.colors(containerColor = MaterialTheme.colorScheme.surface),
-                        modifier = Modifier.animateItem().readableWidth().padding(horizontal = 4.dp),
+                        modifier = Modifier.animateItem().readableWidth().padding(horizontal = 4.dp)
+                            .clickable(onClickLabel = stringResource(R.string.guard_app_limits_open, label), role = Role.Button) { limitsFor = app.packageName },
                     )
                 }
                 item {
@@ -185,6 +196,14 @@ fun HabitDetailScreen(habitId: String, onBack: () -> Unit, onPreview: (String) -
                     }
                 }
             }
+        }
+    }
+
+    limitsFor?.let { pkg ->
+        val app = p.apps.firstOrNull { it.packageName == pkg }
+        if (app == null) limitsFor = null
+        else ModalBottomSheet(onDismissRequest = { limitsFor = null }, sheetState = rememberModalBottomSheetState(skipPartiallyExpanded = true)) {
+            AppLimitsSheet(p, app.packageName, app.limits, vm.appLabel(pkg)) { vm.setAppLimits(pkg, it) }
         }
     }
 
@@ -395,4 +414,73 @@ private fun AllowedWindow(start: Int?, end: Int?, onChange: (Int?, Int?) -> Unit
         },
         dismissButton = { TextButton(onClick = { editing = null }) { Text(stringResource(R.string.common_cancel)) } },
     )
+}
+
+/**
+ * One app's limits. Each boundary follows the habit (global) until the user switches it to this app's own value;
+ * switching one on starts from the habit's value, so nothing changes until it is edited.
+ */
+@Composable
+private fun AppLimitsSheet(p: HabitProfile, pkg: String, limits: AppLimits, label: String, onChange: (AppLimits) -> Unit) {
+    val r = p.rule
+    val noLimit = stringResource(R.string.guard_no_limit)
+    val habitDaily = r.dailyLimitMinutes?.let { formatMinutes(it) } ?: noLimit
+    val habitLaunches = r.maxLaunches?.let { stringResource(R.string.guard_opens_per_day, it) } ?: noLimit
+    val habitWindow = if (r.allowedStartMinutes != null && r.allowedEndMinutes != null) "${formatClock(r.allowedStartMinutes)} – ${formatClock(r.allowedEndMinutes)}" else stringResource(R.string.guard_app_window_any)
+    Column(
+        Modifier.verticalScroll(rememberScrollState()).padding(horizontal = 24.dp).padding(bottom = 32.dp),
+        verticalArrangement = Arrangement.spacedBy(16.dp),
+    ) {
+        Row(verticalAlignment = Alignment.CenterVertically) {
+            AppIcon(pkg)
+            Spacer(Modifier.width(12.dp))
+            Text(stringResource(R.string.guard_app_limits_title, label), style = MaterialTheme.typography.headlineSmall)
+        }
+        Text(stringResource(R.string.guard_app_limits_hint), style = MaterialTheme.typography.bodyMedium, color = MaterialTheme.colorScheme.onSurfaceVariant)
+
+        OverrideRow(stringResource(R.string.guard_app_own_daily), stringResource(R.string.guard_app_habit_value, habitDaily), limits.ownDailyLimit) { on ->
+            onChange(limits.copy(ownDailyLimit = on, dailyLimitMinutes = if (on) r.dailyLimitMinutes else null))
+        }
+        AnimatedVisibility(limits.ownDailyLimit) {
+            SliderSetting(
+                title = stringResource(R.string.guard_daily_limit),
+                value = limits.dailyLimitMinutes ?: 0, range = 0..240, step = 15,
+                display = { if (it == 0) stringResource(R.string.guard_no_limit) else formatMinutes(it) },
+                onCommit = { onChange(limits.copy(dailyLimitMinutes = it.takeIf { v -> v > 0 })) },
+            )
+        }
+
+        OverrideRow(stringResource(R.string.guard_app_own_launch), stringResource(R.string.guard_app_habit_value, habitLaunches), limits.ownLaunchLimit) { on ->
+            onChange(limits.copy(ownLaunchLimit = on, maxLaunches = if (on) r.maxLaunches else null))
+        }
+        AnimatedVisibility(limits.ownLaunchLimit) {
+            SliderSetting(
+                title = stringResource(R.string.guard_launch_limit),
+                value = limits.maxLaunches ?: 0, range = 0..30, step = 1,
+                display = { if (it == 0) stringResource(R.string.guard_no_limit) else stringResource(R.string.guard_opens_per_day, it) },
+                onCommit = { onChange(limits.copy(maxLaunches = it.takeIf { v -> v > 0 })) },
+            )
+        }
+
+        OverrideRow(stringResource(R.string.guard_app_own_window), stringResource(R.string.guard_app_habit_value, habitWindow), limits.ownWindow) { on ->
+            onChange(limits.copy(ownWindow = on, allowedStartMinutes = if (on) r.allowedStartMinutes else null, allowedEndMinutes = if (on) r.allowedEndMinutes else null))
+        }
+        AnimatedVisibility(limits.ownWindow) {
+            AllowedWindow(limits.allowedStartMinutes, limits.allowedEndMinutes) { s, e -> onChange(limits.copy(allowedStartMinutes = s, allowedEndMinutes = e)) }
+        }
+    }
+}
+
+@Composable
+private fun OverrideRow(title: String, habitValue: String, checked: Boolean, onCheckedChange: (Boolean) -> Unit) {
+    Row(
+        verticalAlignment = Alignment.CenterVertically,
+        modifier = Modifier.fillMaxWidth().toggleable(value = checked, role = Role.Switch, onValueChange = onCheckedChange),
+    ) {
+        Column(Modifier.weight(1f)) {
+            Text(title, style = MaterialTheme.typography.titleSmall)
+            Text(habitValue, style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant)
+        }
+        Switch(checked = checked, onCheckedChange = null)
+    }
 }
