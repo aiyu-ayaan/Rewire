@@ -17,9 +17,11 @@ import kotlinx.coroutines.Job
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.isActive
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.withTimeoutOrNull
 import java.util.UUID
 
 /**
@@ -145,8 +147,11 @@ class FocusController(
         ticker = scope.launch {
             while (isActive) {
                 // Nobody watching the digits: sleep straight to the phase boundary instead of ticking.
-                val watched = _now.subscriptionCount.value > 0
-                delay(if (watched) TICK_MILLIS else state.value.remaining(clock()).coerceIn(TICK_MILLIS, IDLE_TICK_MILLIS))
+                // The idle sleep ends early when a collector returns (rotation, back to the app), so the digits never lag.
+                if (_now.subscriptionCount.value > 0) delay(TICK_MILLIS)
+                else withTimeoutOrNull(state.value.remaining(clock()).coerceIn(TICK_MILLIS, IDLE_TICK_MILLIS)) {
+                    _now.subscriptionCount.first { it > 0 }
+                }
                 val now = clock()
                 _now.value = now
                 val next = state.value.advance(now)
