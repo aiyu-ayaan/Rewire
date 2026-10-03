@@ -56,6 +56,15 @@ class RuleEngineTest {
         assertEquals(Allow, RuleEngine.decide(input(WarningLevel.MAX, daily = 30, usage = null)))
     }
 
+    @Test fun limitCountsOnlyFromWindowStart() {
+        fun from(start: Int?, end: Int?, now: Int) = RuleEngine.limitCountsFromMinutes(RestrictionRule("r", "h", 60, start, end, null, WarningLevel.MAX, 5), now)
+        assertNull(from(null, null, 600))
+        assertNull(from(540, 540, 600)) // start == end means any time
+        assertEquals(540, from(540, 600, 570))
+        assertEquals(22 * 60 - 24 * 60, from(22 * 60, 6 * 60, 60)) // overnight, after midnight: window began yesterday
+        assertEquals(22 * 60, from(22 * 60, 6 * 60, 23 * 60))
+    }
+
     @Test fun focusBypassFollowsSettings() {
         assertEquals(Allow, RuleEngine.decide(input(WarningLevel.MINOR, focusing = true)))
         assertEquals(Warn(WarningLevel.MAJOR), RuleEngine.decide(input(WarningLevel.MAJOR, focusing = true)))

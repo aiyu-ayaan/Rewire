@@ -1,6 +1,7 @@
 package com.aiyu.rewire.domain.restriction
 
 import com.aiyu.rewire.domain.habit.HabitProfile
+import com.aiyu.rewire.domain.habit.RestrictionRule
 import com.aiyu.rewire.domain.habit.WarningLevel
 
 enum class BlockReason { OUTSIDE_WINDOW, LAUNCH_LIMIT, DAILY_LIMIT, ALWAYS }
@@ -79,6 +80,17 @@ object RuleEngine {
             if (r.dailyLimitMinutes != null && i.usageMinutesToday != null) add((r.dailyLimitMinutes - i.usageMinutesToday).coerceAtLeast(0))
         }
         return candidates.minOrNull()
+    }
+
+    /**
+     * Where daily-limit usage starts counting, as minutes since local midnight (negative = yesterday).
+     * With an allowed window it is the latest window start at or before [nowMinutes], so only time
+     * spent inside the window counts; otherwise null = the whole day.
+     */
+    fun limitCountsFromMinutes(rule: RestrictionRule, nowMinutes: Int): Int? {
+        val start = rule.allowedStartMinutes ?: return null
+        if (rule.allowedEndMinutes == null || rule.allowedEndMinutes == start) return null
+        return if (start <= nowMinutes) start else start - MINUTES_PER_DAY
     }
 
     /** [start, end) in minutes; supports overnight windows like 22:00–06:00. */
