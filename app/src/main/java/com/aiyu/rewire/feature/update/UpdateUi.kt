@@ -1,6 +1,8 @@
 package com.aiyu.rewire.feature.update
 
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.ui.res.stringResource
+import com.aiyu.rewire.R
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -66,8 +68,8 @@ fun UpdateOffer(state: UpdateState, vm: UpdateViewModel, modifier: Modifier = Mo
         Row(verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(12.dp)) {
             Icon(Icons.Rounded.SystemUpdate, contentDescription = null, tint = MaterialTheme.colorScheme.primary)
             Column {
-                Text("Rewire ${release.name} is available", style = MaterialTheme.typography.titleMedium)
-                Text("You're on ${vm.installedName}", style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant)
+                Text(stringResource(R.string.notif_update_title, release.name), style = MaterialTheme.typography.titleMedium)
+                Text(stringResource(R.string.update_youre_on, vm.installedName), style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant)
             }
         }
         if (release.notes.isNotBlank()) {
@@ -75,23 +77,23 @@ fun UpdateOffer(state: UpdateState, vm: UpdateViewModel, modifier: Modifier = Mo
         }
         when (state) {
             is UpdateState.Available -> Button(onClick = { vm.download(state) }, Modifier.fillMaxWidth()) {
-                Text("Download" + if (state.apk.size > 0) " · ${state.apk.size / 1_000_000} MB" else "")
+                Text(stringResource(R.string.update_download) + if (state.apk.size > 0) stringResource(R.string.update_download_size, state.apk.size / 1_000_000) else "")
             }
             is UpdateState.Downloading -> {
                 LinearWavyProgressIndicator(progress = { state.progress }, modifier = Modifier.fillMaxWidth())
-                Text("Downloading… ${(state.progress * 100).toInt()}%", style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant)
+                Text(stringResource(R.string.update_downloading, (state.progress * 100).toInt()), style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant)
             }
             is UpdateState.Ready -> if (canInstall) {
-                Button(onClick = { vm.install(state) }, Modifier.fillMaxWidth()) { Text("Install") }
+                Button(onClick = { vm.install(state) }, Modifier.fillMaxWidth()) { Text(stringResource(R.string.update_install)) }
             } else {
                 Text(
-                    "Android needs your permission before Rewire can install an update. You'll still confirm on the system screen.",
+                    stringResource(R.string.update_install_permission),
                     style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant,
                 )
-                Button(onClick = { context.startActivity(vm.installPermissionIntent()) }, Modifier.fillMaxWidth()) { Text("Allow installs") }
+                Button(onClick = { context.startActivity(vm.installPermissionIntent()) }, Modifier.fillMaxWidth()) { Text(stringResource(R.string.update_allow_installs)) }
             }
             else -> Unit
         }
-        if (state !is UpdateState.Downloading) OutlinedButton(onClick = vm::notNow, Modifier.fillMaxWidth()) { Text("Not now") }
+        if (state !is UpdateState.Downloading) OutlinedButton(onClick = vm::notNow, Modifier.fillMaxWidth()) { Text(stringResource(R.string.focus_not_now)) }
     }
 }

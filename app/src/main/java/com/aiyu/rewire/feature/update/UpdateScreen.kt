@@ -1,6 +1,8 @@
 package com.aiyu.rewire.feature.update
 
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.ui.res.stringResource
+import com.aiyu.rewire.R
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
@@ -54,7 +56,7 @@ fun UpdateScreen(onBack: () -> Unit) {
     val busy = state is UpdateState.Checking || state is UpdateState.Downloading
     val channel = s.updateChannel ?: vm.channel
 
-    InnerScreen(title = "Updates", subtitle = "Rewire ${vm.installedName} · ${if (BuildConfig.ACCESSIBILITY) "Full" else "Lite"}", onBack = onBack) {
+    InnerScreen(title = stringResource(R.string.profile_updates), subtitle = stringResource(R.string.update_subtitle, vm.installedName, stringResource(if (BuildConfig.ACCESSIBILITY) R.string.about_edition_full else R.string.about_edition_lite)), onBack = onBack) {
         Card(Modifier.fillMaxWidth(), shape = MaterialTheme.shapes.large, colors = CardDefaults.cardColors(containerColor = c.surfaceContainerLow)) {
             Column(Modifier.padding(16.dp), verticalArrangement = Arrangement.spacedBy(12.dp)) {
                 when (val st = state) {
@@ -62,32 +64,32 @@ fun UpdateScreen(onBack: () -> Unit) {
                     UpdateState.Checking -> Row(verticalAlignment = Alignment.CenterVertically) {
                         CircularWavyProgressIndicator(Modifier.size(28.dp))
                         Spacer(Modifier.width(12.dp))
-                        Text("Checking GitHub for a newer release…", style = MaterialTheme.typography.bodyMedium)
+                        Text(stringResource(R.string.update_checking), style = MaterialTheme.typography.bodyMedium)
                     }
-                    UpdateState.UpToDate -> Text("You're up to date.", style = MaterialTheme.typography.titleMedium)
+                    UpdateState.UpToDate -> Text(stringResource(R.string.update_up_to_date), style = MaterialTheme.typography.titleMedium)
                     is UpdateState.Failed -> Text(st.message, style = MaterialTheme.typography.bodyMedium, color = c.error)
                     UpdateState.Idle -> Text(
-                        if (s.updateLastChecked > 0) "Last checked ${formatWhen(s.updateLastChecked)}." else "Not checked yet.",
+                        if (s.updateLastChecked > 0) stringResource(R.string.update_last_checked, formatWhen(s.updateLastChecked)) else stringResource(R.string.update_not_checked),
                         style = MaterialTheme.typography.bodyMedium, color = c.onSurfaceVariant,
                     )
                 }
-                Button(onClick = vm::check, enabled = !busy, modifier = Modifier.fillMaxWidth()) { Text("Check for updates") }
+                Button(onClick = vm::check, enabled = !busy, modifier = Modifier.fillMaxWidth()) { Text(stringResource(R.string.update_check)) }
             }
         }
 
-        SectionTitle("Automatic checks", Modifier.fillMaxWidth())
+        SectionTitle(stringResource(R.string.update_automatic), Modifier.fillMaxWidth())
         Card(Modifier.fillMaxWidth(), shape = MaterialTheme.shapes.large, colors = CardDefaults.cardColors(containerColor = c.surfaceContainerLow)) {
             ListItem(
-                headlineContent = { Text("Check automatically") },
+                headlineContent = { Text(stringResource(R.string.update_check_automatically)) },
                 supportingContent = {
-                    Text("Looks for a newer release on GitHub when you open Rewire and once a day on Wi-Fi. Only the public release list is read; nothing about you or your usage is sent.")
+                    Text(stringResource(R.string.update_automatic_desc))
                 },
                 trailingContent = { Switch(s.updatesEnabled, vm::setEnabled) },
                 colors = ListItemDefaults.colors(containerColor = c.surfaceContainerLow),
             )
         }
 
-        SectionTitle("Release channel", Modifier.fillMaxWidth())
+        SectionTitle(stringResource(R.string.update_channel), Modifier.fillMaxWidth())
         SingleChoiceSegmentedButtonRow(Modifier.fillMaxWidth()) {
             UpdateChannel.entries.forEachIndexed { i, ch ->
                 SegmentedButton(

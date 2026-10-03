@@ -409,4 +409,22 @@
     <string name="landing_choice_body">You decide. Rewire measures, so you can see yourself improve.</string>
     <string name="landing_get_started">Get started</string>
     <string name="landing_next">Next</string>
+    <!-- Updates -->
+    <string name="update_subtitle">Rewire %1$s · %2$s</string>
+    <string name="update_checking">Checking GitHub for a newer release…</string>
+    <string name="update_up_to_date">You\'re up to date.</string>
+    <string name="update_last_checked">Last checked %1$s.</string>
+    <string name="update_not_checked">Not checked yet.</string>
+    <string name="update_check">Check for updates</string>
+    <string name="update_automatic">Automatic checks</string>
+    <string name="update_check_automatically">Check automatically</string>
+    <string name="update_automatic_desc">Looks for a newer release on GitHub when you open Rewire and once a day on Wi-Fi. Only the public release list is read; nothing about you or your usage is sent.</string>
+    <string name="update_channel">Release channel</string>
+    <string name="update_youre_on">You\'re on %1$s</string>
+    <string name="update_download">Download</string>
+    <string name="update_download_size"> · %1$d MB</string>
+    <string name="update_downloading">Downloading… %1$d%%</string>
+    <string name="update_install">Install</string>
+    <string name="update_install_permission">Android needs your permission before Rewire can install an update. You\'ll still confirm on the system screen.</string>
+    <string name="update_allow_installs">Allow installs</string>
 </resources>
