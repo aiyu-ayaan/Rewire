@@ -51,7 +51,7 @@ class FocusDndManager(private val context: Context) {
                     runCatching {
                         val condUri = rule.conditionId ?: Uri.parse("condition://android/implicit/${context.packageName}")
                         val offCondition = Condition(condUri, "Off", Condition.STATE_FALSE)
-                        mgr.setAutomaticZenRuleState(ruleId, offCondition)
+                        if (android.os.Build.VERSION.SDK_INT >= 29) mgr.setAutomaticZenRuleState(ruleId, offCondition)
                     }
                 }
             }
