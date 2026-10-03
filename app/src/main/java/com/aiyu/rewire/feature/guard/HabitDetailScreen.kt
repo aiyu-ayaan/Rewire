@@ -1,5 +1,17 @@
 package com.aiyu.rewire.feature.guard
 
+import androidx.compose.ui.semantics.stateDescription
+
+import androidx.compose.foundation.layout.ExperimentalLayoutApi
+
+import androidx.compose.foundation.layout.FlowRow
+
+import androidx.compose.foundation.verticalScroll
+
+import androidx.compose.foundation.rememberScrollState
+
+import com.aiyu.rewire.ui.components.readableWidth
+
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.ui.res.pluralStringResource
 import androidx.compose.ui.res.stringResource
@@ -117,7 +129,7 @@ fun HabitDetailScreen(habitId: String, onBack: () -> Unit, onPreview: (String) -
             LazyColumn(contentPadding = PaddingValues(bottom = 32.dp), modifier = Modifier.padding(padding)) {
                 item {
                     Surface(color = container, contentColor = levelStyle.onContainer, shape = MaterialTheme.shapes.extraLarge.copy(topStart = androidx.compose.foundation.shape.CornerSize(0), topEnd = androidx.compose.foundation.shape.CornerSize(0))) {
-                        Column(Modifier.fillMaxWidth().padding(start = 24.dp, end = 24.dp, bottom = 28.dp)) {
+                        Column(Modifier.readableWidth().padding(start = 24.dp, end = 24.dp, bottom = 28.dp)) {
                             Icon(levelStyle.icon, contentDescription = null, modifier = Modifier.size(32.dp))
                             Spacer(Modifier.height(12.dp))
                             Text(p.habit.name, style = MaterialTheme.typography.displaySmall)
@@ -129,7 +141,7 @@ fun HabitDetailScreen(habitId: String, onBack: () -> Unit, onPreview: (String) -
                     }
                 }
                 item {
-                    Column(Modifier.padding(horizontal = 16.dp)) {
+                    Column(Modifier.readableWidth().padding(horizontal = 16.dp)) {
                         SectionTitle(stringResource(R.string.guard_friction_level))
                         LevelSelector(p.level, vm::setLevel)
                         Text(levelStyle.summary, style = MaterialTheme.typography.bodyMedium, color = MaterialTheme.colorScheme.onSurfaceVariant, modifier = Modifier.padding(top = 8.dp))
@@ -160,14 +172,14 @@ fun HabitDetailScreen(habitId: String, onBack: () -> Unit, onPreview: (String) -
                         leadingContent = { AppIcon(app.packageName) },
                         trailingContent = { IconButton(onClick = { vm.removeApp(app.packageName) }) { Icon(Icons.Rounded.Close, contentDescription = stringResource(R.string.guard_remove_app, label)) } },
                         colors = ListItemDefaults.colors(containerColor = MaterialTheme.colorScheme.surface),
-                        modifier = Modifier.animateItem().padding(horizontal = 4.dp),
+                        modifier = Modifier.animateItem().readableWidth().padding(horizontal = 4.dp),
                     )
                 }
                 item {
                     OutlinedButton(
                         onClick = { confirmDelete = true },
                         colors = ButtonDefaults.outlinedButtonColors(contentColor = MaterialTheme.colorScheme.error),
-                        modifier = Modifier.padding(horizontal = 16.dp, vertical = 32.dp).fillMaxWidth(),
+                        modifier = Modifier.readableWidth().padding(horizontal = 16.dp, vertical = 32.dp),
                     ) {
                         Icon(Icons.Rounded.DeleteOutline, contentDescription = null); Spacer(Modifier.width(8.dp)); Text(stringResource(R.string.guard_delete_habit))
                     }
@@ -263,18 +275,17 @@ private fun BoundariesCard(p: HabitProfile, vm: HabitDetailViewModel) {
                                 style = MaterialTheme.typography.bodySmall,
                                 color = MaterialTheme.colorScheme.onErrorContainer,
                             )
-                        }
-                        Spacer(Modifier.width(8.dp))
-                        FilledTonalButton(
-                            onClick = {
-                                SystemPermissions.open(
-                                    context,
-                                    SystemPermissions.usageAccessSettings(context),
-                                )
-                            },
-                            contentPadding = PaddingValues(horizontal = 12.dp, vertical = 4.dp),
-                        ) {
-                            Text(stringResource(R.string.guard_grant))
+                            FilledTonalButton(
+                                onClick = {
+                                    SystemPermissions.open(
+                                        context,
+                                        SystemPermissions.usageAccessSettings(context),
+                                    )
+                                },
+                                modifier = Modifier.padding(top = 8.dp),
+                            ) {
+                                Text(stringResource(R.string.guard_grant))
+                            }
                         }
                     }
                 }
@@ -308,7 +319,8 @@ private fun EscalationSection(p: HabitProfile, vm: HabitDetailViewModel) {
                 Text(stringResource(R.string.escalation_title), style = MaterialTheme.typography.titleSmall)
                 Text(stringResource(R.string.escalation_subtitle), style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant)
             }
-            Switch(checked = r.escalationEnabled, onCheckedChange = vm::setEscalation)
+            val escalationDesc = stringResource(R.string.escalation_title)
+            Switch(checked = r.escalationEnabled, onCheckedChange = vm::setEscalation, modifier = Modifier.semantics { contentDescription = escalationDesc })
         }
         AnimatedVisibility(r.escalationEnabled) {
             Column(Modifier.padding(top = 12.dp), verticalArrangement = Arrangement.spacedBy(12.dp)) {
@@ -331,10 +343,11 @@ private fun EscalationSection(p: HabitProfile, vm: HabitDetailViewModel) {
 @Composable
 private fun SliderSetting(title: String, value: Int, range: IntRange, step: Int, display: @Composable (Int) -> String, onCommit: (Int) -> Unit) {
     var local by remember(value) { mutableFloatStateOf(value.toFloat()) }
+    val shown = display(local.roundToInt())
     Column {
         Row(verticalAlignment = Alignment.CenterVertically) {
             Text(title, style = MaterialTheme.typography.titleSmall, modifier = Modifier.weight(1f))
-            Text(display(local.roundToInt()), style = MaterialTheme.typography.labelLarge, color = MaterialTheme.colorScheme.primary)
+            Text(shown, style = MaterialTheme.typography.labelLarge, color = MaterialTheme.colorScheme.primary)
         }
         Slider(
             value = local,
@@ -342,12 +355,13 @@ private fun SliderSetting(title: String, value: Int, range: IntRange, step: Int,
             onValueChange = { local = ((it / step).roundToInt() * step).toFloat() },
             onValueChangeFinished = { onCommit(local.roundToInt()) },
             valueRange = range.first.toFloat()..range.last.toFloat(),
-            modifier = Modifier.semantics { contentDescription = title },
+            modifier = Modifier.semantics { contentDescription = title; stateDescription = shown },
         )
     }
 }
 
 @Composable
+@OptIn(ExperimentalLayoutApi::class)
 private fun AllowedWindow(start: Int?, end: Int?, onChange: (Int?, Int?) -> Unit) {
     var editing by remember { mutableStateOf<Boolean?>(null) } // true = start, false = end
     Column {
@@ -359,7 +373,7 @@ private fun AllowedWindow(start: Int?, end: Int?, onChange: (Int?, Int?) -> Unit
             stringResource(if (start == null) R.string.guard_window_any else R.string.guard_window_set),
             style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant,
         )
-        Row(horizontalArrangement = Arrangement.spacedBy(8.dp), modifier = Modifier.padding(top = 8.dp)) {
+        FlowRow(horizontalArrangement = Arrangement.spacedBy(8.dp), modifier = Modifier.padding(top = 8.dp)) {
             AssistChip(onClick = { editing = true }, label = { Text(stringResource(R.string.guard_window_from, start?.let(::formatClock) ?: "--:--")) })
             AssistChip(onClick = { editing = false }, label = { Text(stringResource(R.string.guard_window_to, end?.let(::formatClock) ?: "--:--")) })
         }
@@ -370,7 +384,7 @@ private fun AllowedWindow(start: Int?, end: Int?, onChange: (Int?, Int?) -> Unit
     AlertDialog(
         onDismissRequest = { editing = null },
         title = { Text(stringResource(if (which) R.string.guard_allowed_from else R.string.guard_allowed_until)) },
-        text = { TimePicker(state) },
+        text = { Column(Modifier.verticalScroll(rememberScrollState())) { TimePicker(state) } },
         confirmButton = {
             TextButton(onClick = {
                 val picked = state.hour * 60 + state.minute

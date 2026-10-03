@@ -1,5 +1,11 @@
 package com.aiyu.rewire.feature.guard
 
+import com.aiyu.rewire.ui.components.isLargeFont
+
+import androidx.compose.foundation.verticalScroll
+
+import androidx.compose.foundation.rememberScrollState
+
 import androidx.compose.animation.AnimatedContent
 import androidx.compose.ui.res.stringResource
 import com.aiyu.rewire.R
@@ -73,6 +79,7 @@ fun CreateHabitSheet(onDismiss: () -> Unit, onCreate: (String, WarningLevel, Lis
     var name by rememberSaveable { mutableStateOf("") }
     var level by rememberSaveable { mutableStateOf(WarningLevel.MAJOR) }
     val selected = remember { mutableStateListOf<String>() }
+    val sheetScroll = rememberScrollState()
 
     val slideIn = MaterialTheme.motionScheme.defaultSpatialSpec<androidx.compose.ui.unit.IntOffset>()
     val slideOut = MaterialTheme.motionScheme.fastSpatialSpec<androidx.compose.ui.unit.IntOffset>()
@@ -86,7 +93,7 @@ fun CreateHabitSheet(onDismiss: () -> Unit, onCreate: (String, WarningLevel, Lis
             },
             label = "step",
         ) { s ->
-            Column(Modifier.padding(horizontal = 24.dp).padding(bottom = 24.dp).imePadding()) {
+            Column(Modifier.padding(horizontal = 24.dp).padding(bottom = 24.dp).imePadding().then(if (s == 0) Modifier.verticalScroll(sheetScroll) else Modifier)) {
                 Text(stringResource(R.string.guard_sheet_step, s + 1, 2), style = MaterialTheme.typography.labelLarge, color = MaterialTheme.colorScheme.primary)
                 if (s == 0) {
                     Text(stringResource(R.string.guard_new_habit), style = MaterialTheme.typography.headlineSmall, modifier = Modifier.padding(top = 4.dp, bottom = 16.dp))
@@ -132,6 +139,7 @@ fun CreateHabitSheet(onDismiss: () -> Unit, onCreate: (String, WarningLevel, Lis
 /** Expressive connected button group: Minor / Major / Max with icon + label. */
 @Composable
 fun LevelSelector(level: WarningLevel, onSelect: (WarningLevel) -> Unit, modifier: Modifier = Modifier) {
+    val large = isLargeFont()
     Row(modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(ButtonGroupDefaults.ConnectedSpaceBetween)) {
         WarningLevel.entries.forEachIndexed { i, l ->
             val s = l.style()
@@ -146,8 +154,10 @@ fun LevelSelector(level: WarningLevel, onSelect: (WarningLevel) -> Unit, modifie
                 colors = ToggleButtonDefaults.toggleButtonColors(checkedContainerColor = s.accent, checkedContentColor = MaterialTheme.colorScheme.surface),
                 modifier = Modifier.weight(1f).semantics { role = Role.RadioButton },
             ) {
-                Icon(s.icon, contentDescription = null, modifier = Modifier.size(18.dp))
-                Spacer(Modifier.width(6.dp))
+                if (!large) {
+                    Icon(s.icon, contentDescription = null, modifier = Modifier.size(18.dp))
+                    Spacer(Modifier.width(6.dp))
+                }
                 Text(s.label)
             }
         }

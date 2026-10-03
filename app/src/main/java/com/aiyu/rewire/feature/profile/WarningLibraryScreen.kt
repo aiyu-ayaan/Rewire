@@ -1,5 +1,11 @@
 package com.aiyu.rewire.feature.profile
 
+import androidx.compose.foundation.verticalScroll
+
+import androidx.compose.foundation.rememberScrollState
+
+import com.aiyu.rewire.ui.components.readableWidth
+
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.ui.res.stringResource
 import com.aiyu.rewire.R
@@ -87,7 +93,7 @@ fun WarningLibraryScreen(onBack: () -> Unit) {
             ExtendedFloatingActionButton(onClick = { adding = true }, icon = { Icon(Icons.Rounded.Add, null) }, text = { Text(stringResource(R.string.wlib_custom)) })
         },
     ) { padding ->
-        LazyColumn(Modifier.padding(padding), contentPadding = PaddingValues(start = 16.dp, end = 16.dp, bottom = 104.dp), verticalArrangement = Arrangement.spacedBy(12.dp)) {
+        LazyColumn(Modifier.padding(padding).readableWidth(), contentPadding = PaddingValues(start = 16.dp, end = 16.dp, bottom = 104.dp), verticalArrangement = Arrangement.spacedBy(12.dp)) {
             item {
                 LazyRow(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
                     item { FilterChip(selected = filter == null, onClick = { filter = null }, label = { Text(stringResource(R.string.focus_filter_all)) }) }
@@ -143,7 +149,7 @@ private fun CustomWarningDialog(onDismiss: () -> Unit, onSave: (WarningLevel, St
         onDismissRequest = onDismiss,
         title = { Text(stringResource(R.string.wlib_custom)) },
         text = {
-            Column(verticalArrangement = Arrangement.spacedBy(12.dp)) {
+            Column(Modifier.verticalScroll(rememberScrollState()), verticalArrangement = Arrangement.spacedBy(12.dp)) {
                 LevelSelector(level, { level = it })
                 OutlinedTextField(title, { title = it.take(60) }, label = { Text(stringResource(R.string.wlib_field_title)) }, singleLine = true, modifier = Modifier.fillMaxWidth())
                 OutlinedTextField(message, { message = it.take(140) }, label = { Text(stringResource(R.string.wlib_field_message)) }, modifier = Modifier.fillMaxWidth())

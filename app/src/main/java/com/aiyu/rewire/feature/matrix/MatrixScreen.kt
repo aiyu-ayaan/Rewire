@@ -1,5 +1,11 @@
 package com.aiyu.rewire.feature.matrix
 
+import com.aiyu.rewire.ui.components.CappedFontScale
+
+import com.aiyu.rewire.ui.components.BesideOrStacked
+
+import com.aiyu.rewire.ui.components.readableWidth
+
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.ui.res.pluralStringResource
 import androidx.compose.ui.res.stringResource
@@ -225,7 +231,7 @@ fun MatrixScreen(onShowAll: (apps: Boolean) -> Unit) {
     val vm = hiltViewModel<MatrixViewModel>()
     val ui by vm.ui.collectAsStateWithLifecycle()
 
-    Column(Modifier.fillMaxSize().statusBarsPadding().verticalScroll(rememberScrollState()).padding(horizontal = 16.dp).padding(bottom = 24.dp)) {
+    Column(Modifier.fillMaxSize().statusBarsPadding().readableWidth(720.dp).verticalScroll(rememberScrollState()).padding(horizontal = 16.dp).padding(bottom = 24.dp)) {
         Text(stringResource(R.string.matrix_title), style = MaterialTheme.typography.headlineLarge, modifier = Modifier.padding(top = 16.dp))
         Text(stringResource(R.string.matrix_subtitle), style = MaterialTheme.typography.bodyMedium, color = MaterialTheme.colorScheme.onSurfaceVariant)
 
@@ -263,7 +269,7 @@ fun MatrixBreakdownScreen(apps: Boolean, onBack: () -> Unit) {
             )
         },
     ) { padding ->
-        Column(Modifier.padding(padding).verticalScroll(rememberScrollState()).padding(horizontal = 16.dp).padding(bottom = 24.dp)) {
+        Column(Modifier.padding(padding).readableWidth().verticalScroll(rememberScrollState()).padding(horizontal = 16.dp).padding(bottom = 24.dp)) {
             if (items.isEmpty()) EmptyState(stringResource(R.string.matrix_breakdown_empty_title), stringResource(R.string.matrix_breakdown_empty_text))
             else BreakdownList(items, if (apps) MaterialTheme.colorScheme.tertiary else MaterialTheme.colorScheme.secondary)
         }
@@ -286,16 +292,16 @@ internal fun Punchline(text: String) {
 internal fun TodayOverview(m: DailyMetrics) {
     val score = m.disciplineScore
     ChartCard {
-        Row(verticalAlignment = Alignment.CenterVertically) {
+        BesideOrStacked(leading = {
             Box(contentAlignment = Alignment.Center) {
                 CircularWavyProgressIndicator(progress = { score ?: 0f }, modifier = Modifier.size(104.dp))
                 Column(horizontalAlignment = Alignment.CenterHorizontally) {
-                    Text(score?.let { "${(it * 100).toInt()}%" } ?: "—", style = MaterialTheme.typography.headlineSmall)
+                    CappedFontScale { Text(score?.let { "${(it * 100).toInt()}%" } ?: "—", style = MaterialTheme.typography.headlineSmall) }
                     Text(stringResource(R.string.matrix_control), style = MaterialTheme.typography.labelSmall, color = MaterialTheme.colorScheme.onSurfaceVariant)
                 }
             }
-            Spacer(Modifier.width(20.dp))
-            Column(Modifier.weight(1f), verticalArrangement = Arrangement.spacedBy(6.dp)) {
+        }) { mod ->
+            Column(mod, verticalArrangement = Arrangement.spacedBy(6.dp)) {
                 Stat(stringResource(R.string.matrix_stat_focus), formatMinutes(m.focusMinutes))
                 Stat(stringResource(R.string.matrix_stat_break), formatMinutes(m.breakMinutes))
                 Stat(stringResource(R.string.matrix_stat_warnings), "${m.warningCount}")
@@ -318,16 +324,14 @@ internal fun GuardOutcomes(ui: MatrixUi) {
         Slice(stringResource(R.string.matrix_slice_notifications_held), ui.weekSum { it.notificationsBlocked }, scheme.tertiary),
     )
     ChartCard {
-        Row(verticalAlignment = Alignment.CenterVertically) {
+        BesideOrStacked(leading = {
             DonutChart(slices, Modifier.size(132.dp)) {
                 Column(horizontalAlignment = Alignment.CenterHorizontally) {
-                    Text("${slices.sumOf { it.value }}", style = MaterialTheme.typography.headlineSmall)
+                    CappedFontScale { Text("${slices.sumOf { it.value }}", style = MaterialTheme.typography.headlineSmall) }
                     Text(stringResource(R.string.matrix_guard_events), style = MaterialTheme.typography.labelSmall, color = scheme.onSurfaceVariant)
                 }
             }
-            Spacer(Modifier.width(20.dp))
-            Legend(slices, Modifier.weight(1f))
-        }
+        }) { mod -> Legend(slices, mod) }
     }
 }
 

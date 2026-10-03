@@ -1,5 +1,9 @@
 package com.aiyu.rewire.feature.profile
 
+import androidx.compose.ui.semantics.Role
+
+import com.aiyu.rewire.ui.components.readableWidth
+
 import android.content.Intent
 import androidx.compose.ui.res.stringResource
 import com.aiyu.rewire.R
@@ -70,7 +74,7 @@ fun AcknowledgementsScreen(onBack: () -> Unit) {
             )
         },
     ) { padding ->
-        Column(Modifier.padding(padding).verticalScroll(rememberScrollState()).padding(horizontal = 16.dp).padding(bottom = 24.dp)) {
+        Column(Modifier.padding(padding).readableWidth().verticalScroll(rememberScrollState()).padding(horizontal = 16.dp).padding(bottom = 24.dp)) {
             Card(shape = MaterialTheme.shapes.large, colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surfaceContainerLow)) {
                 Column {
                     libraries.forEach { lib ->
@@ -79,7 +83,7 @@ fun AcknowledgementsScreen(onBack: () -> Unit) {
                             supportingContent = { Text("${lib.license}\n${lib.url.removePrefix("https://")}") },
                             trailingContent = { Icon(Icons.AutoMirrored.Rounded.OpenInNew, contentDescription = null) },
                             colors = ListItemDefaults.colors(containerColor = MaterialTheme.colorScheme.surfaceContainerLow),
-                            modifier = Modifier.clickable { open(lib.url) },
+                            modifier = Modifier.clickable(role = Role.Button) { open(lib.url) },
                         )
                     }
                 }

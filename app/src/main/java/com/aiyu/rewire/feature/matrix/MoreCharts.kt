@@ -1,5 +1,13 @@
 package com.aiyu.rewire.feature.matrix
 
+import androidx.compose.foundation.layout.width
+
+import androidx.compose.foundation.layout.fillMaxHeight
+
+import androidx.compose.foundation.layout.heightIn
+
+import androidx.compose.foundation.layout.IntrinsicSize
+
 import androidx.compose.animation.core.Animatable
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.background
@@ -264,13 +272,13 @@ fun TimelineView(items: List<TimelineItem>, kindLabel: (TimelineKind) -> String,
     val dot = MaterialTheme.colorScheme.primary
     Column(modifier) {
         items.forEach { item ->
-            Row(Modifier.fillMaxWidth().height(36.dp), verticalAlignment = Alignment.CenterVertically) {
+            Row(Modifier.fillMaxWidth().height(IntrinsicSize.Min).heightIn(min = 36.dp), verticalAlignment = Alignment.CenterVertically) {
                 Text(formatClock(item.minuteOfDay), style = MaterialTheme.typography.labelLarge, color = MaterialTheme.colorScheme.onSurfaceVariant, modifier = Modifier.padding(end = 12.dp))
-                Canvas(Modifier.size(width = 14.dp, height = 36.dp).clearAndSetSemantics {}) {
+                Canvas(Modifier.width(14.dp).fillMaxHeight().clearAndSetSemantics {}) {
                     drawLine(rail, Offset(size.width / 2, 0f), Offset(size.width / 2, size.height), 2.dp.toPx())
                     drawCircle(dot, 5.dp.toPx(), center)
                 }
-                Text(kindLabel(item.kind), style = MaterialTheme.typography.bodyMedium, modifier = Modifier.padding(start = 12.dp))
+                Text(kindLabel(item.kind), style = MaterialTheme.typography.bodyMedium, modifier = Modifier.weight(1f).padding(start = 12.dp, top = 4.dp, bottom = 4.dp))
             }
         }
     }

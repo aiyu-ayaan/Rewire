@@ -1,5 +1,9 @@
 package com.aiyu.rewire.feature.landing
 
+import androidx.compose.foundation.verticalScroll
+
+import androidx.compose.foundation.rememberScrollState
+
 import androidx.compose.animation.core.LinearEasing
 import androidx.annotation.StringRes
 import androidx.compose.animation.core.animateDpAsState
@@ -82,13 +86,13 @@ fun LandingScreen(onGetStarted: () -> Unit) {
     val last = pager.currentPage == story.lastIndex
     val appName = stringResource(R.string.app_name)
 
-    Box(
+    BoxWithConstraints(
         Modifier
             .fillMaxSize()
             .background(Brush.verticalGradient(listOf(colors.primaryContainer.copy(alpha = 0.55f), colors.surface, colors.surface)))
     ) {
         Column(
-            Modifier.fillMaxSize().safeDrawingPadding().padding(horizontal = 24.dp),
+            Modifier.fillMaxSize().safeDrawingPadding().verticalScroll(rememberScrollState()).padding(horizontal = 24.dp),
             horizontalAlignment = Alignment.CenterHorizontally,
         ) {
             Text(
@@ -98,7 +102,8 @@ fun LandingScreen(onGetStarted: () -> Unit) {
                 modifier = Modifier.padding(top = 24.dp),
             )
             // Hero: orbiting shapes around a continuously morphing blob.
-            BoxWithConstraints(Modifier.weight(1f).fillMaxWidth(), contentAlignment = Alignment.Center) {
+            // Fixed share of the window (min 200dp) so the page scrolls instead of clipping in landscape / at large text.
+            BoxWithConstraints(Modifier.height((this@BoxWithConstraints.maxHeight * 0.4f).coerceAtLeast(200.dp)).fillMaxWidth(), contentAlignment = Alignment.Center) {
                 val heroSize = minOf(maxWidth, maxHeight) * 0.62f
                 Orbit(Modifier.size(heroSize * 1.55f))
                 MorphingShape(
@@ -133,7 +138,7 @@ fun LandingScreen(onGetStarted: () -> Unit) {
             Spacer(Modifier.height(24.dp))
             Button(
                 onClick = { if (last) onGetStarted() else scope.launch { pager.animateScrollToPage(pager.currentPage + 1) } },
-                modifier = Modifier.fillMaxWidth().widthIn(max = 420.dp).height(ButtonDefaults.MediumContainerHeight),
+                modifier = Modifier.fillMaxWidth().widthIn(max = 420.dp).heightIn(min = ButtonDefaults.MediumContainerHeight),
                 contentPadding = ButtonDefaults.MediumContentPadding,
             ) {
                 Text(stringResource(if (last) R.string.landing_get_started else R.string.landing_next), style = MaterialTheme.typography.titleMedium)

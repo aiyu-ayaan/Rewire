@@ -1,5 +1,9 @@
 package com.aiyu.rewire.feature.guard
 
+import androidx.compose.foundation.layout.heightIn
+
+import androidx.compose.foundation.layout.wrapContentWidth
+
 import androidx.compose.animation.core.animateFloatAsState
 import androidx.compose.runtime.setValue
 import androidx.compose.runtime.getValue
@@ -120,7 +124,7 @@ fun WarningScreen(
             modifier = Modifier.size(360.dp).align(Alignment.TopEnd).padding(start = 120.dp),
         )
         Column(
-            Modifier.fillMaxSize().safeDrawingPadding().padding(24.dp).verticalScroll(rememberScrollState()),
+            Modifier.fillMaxSize().safeDrawingPadding().wrapContentWidth(Alignment.CenterHorizontally).widthIn(max = 600.dp).padding(24.dp).verticalScroll(rememberScrollState()),
             horizontalAlignment = Alignment.Start,
         ) {
             if (preview) {
@@ -220,14 +224,14 @@ private fun Actions(
     val context = LocalContext.current
     Column(Modifier.fillMaxWidth().widthIn(max = 480.dp), verticalArrangement = Arrangement.spacedBy(8.dp), horizontalAlignment = Alignment.CenterHorizontally) {
         when (level) {
-            WarningLevel.MINOR -> Button(onClick = onContinue, modifier = Modifier.fillMaxWidth().height(ButtonDefaults.MediumContainerHeight)) {
+            WarningLevel.MINOR -> Button(onClick = onContinue, modifier = Modifier.fillMaxWidth().heightIn(min = ButtonDefaults.MediumContainerHeight)) {
                 Text(stringResource(R.string.warning_continue), style = MaterialTheme.typography.titleMedium)
             }
             WarningLevel.MAJOR -> {
                 var left by remember { mutableIntStateOf(pauseSeconds) }
                 LaunchedEffect(Unit) { while (left > 0) { delay(1000); left-- } }
                 val progress by animateFloatAsState(if (pauseSeconds == 0) 1f else 1f - left / pauseSeconds.toFloat(), label = "pause")
-                Button(onClick = onGoBack, modifier = Modifier.fillMaxWidth().height(ButtonDefaults.MediumContainerHeight)) {
+                Button(onClick = onGoBack, modifier = Modifier.fillMaxWidth().heightIn(min = ButtonDefaults.MediumContainerHeight)) {
                     Text(stringResource(R.string.warning_go_back), style = MaterialTheme.typography.titleMedium)
                 }
                 // Always laid out (alpha only) so buttons don't jump when the pause ends.
@@ -237,7 +241,7 @@ private fun Actions(
                 }
             }
             WarningLevel.MAX -> {
-                Button(onClick = onGoBack, modifier = Modifier.fillMaxWidth().height(ButtonDefaults.MediumContainerHeight)) {
+                Button(onClick = onGoBack, modifier = Modifier.fillMaxWidth().heightIn(min = ButtonDefaults.MediumContainerHeight)) {
                     Text(stringResource(R.string.warning_back), style = MaterialTheme.typography.titleMedium)
                 }
                 if (packageName != null) {

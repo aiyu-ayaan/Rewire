@@ -1,5 +1,13 @@
 package com.aiyu.rewire.feature.profile
 
+import androidx.compose.ui.semantics.Role
+
+import androidx.compose.ui.semantics.contentDescription
+
+import androidx.compose.ui.semantics.semantics
+
+import com.aiyu.rewire.ui.components.readableWidth
+
 import android.os.Build
 import androidx.compose.ui.res.stringResource
 import com.aiyu.rewire.R
@@ -65,7 +73,7 @@ fun ProfileScreen(onOpenNotificationSettings: () -> Unit, onOpenWarningLibrary: 
     val s = settings ?: return
     val permission = rememberNotificationPermission()
 
-    Column(Modifier.fillMaxSize().statusBarsPadding().verticalScroll(rememberScrollState()).padding(horizontal = 16.dp).padding(bottom = 24.dp)) {
+    Column(Modifier.fillMaxSize().statusBarsPadding().readableWidth(720.dp).verticalScroll(rememberScrollState()).padding(horizontal = 16.dp).padding(bottom = 24.dp)) {
         UserCard(s.profile, onEditProfile)
 
         SectionTitle(stringResource(R.string.profile_appearance))
@@ -87,10 +95,11 @@ fun ProfileScreen(onOpenNotificationSettings: () -> Unit, onOpenWarningLibrary: 
                 }
             }
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
+                val dynamicDesc = stringResource(R.string.profile_dynamic_color)
                 ListItem(
                     headlineContent = { Text(stringResource(R.string.profile_dynamic_color)) },
                     supportingContent = { Text(stringResource(R.string.profile_dynamic_color_desc)) },
-                    trailingContent = { Switch(s.dynamicColor, vm::setDynamicColor) },
+                    trailingContent = { Switch(s.dynamicColor, vm::setDynamicColor, modifier = Modifier.semantics { contentDescription = dynamicDesc }) },
                     colors = groupItemColors(),
                 )
             }
@@ -139,7 +148,7 @@ private fun NavRow(icon: ImageVector, title: String, subtitle: String, onClick: 
         leadingContent = { Icon(icon, contentDescription = null) },
         trailingContent = { Icon(Icons.AutoMirrored.Rounded.KeyboardArrowRight, contentDescription = null) },
         colors = groupItemColors(),
-        modifier = Modifier.clickable(onClick = onClick),
+        modifier = Modifier.clickable(role = Role.Button, onClick = onClick),
     )
 }
 

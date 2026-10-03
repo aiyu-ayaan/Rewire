@@ -1,5 +1,9 @@
 package com.aiyu.rewire.feature.profile
 
+import androidx.compose.ui.semantics.Role
+
+import com.aiyu.rewire.ui.components.readableWidth
+
 import android.content.Intent
 import androidx.compose.ui.res.stringResource
 import com.aiyu.rewire.R
@@ -64,7 +68,7 @@ fun AboutScreen(onBack: () -> Unit, onOpenAcknowledgements: () -> Unit) {
             )
         },
     ) { padding ->
-        Column(Modifier.padding(padding).verticalScroll(rememberScrollState()).padding(horizontal = 16.dp).padding(bottom = 24.dp)) {
+        Column(Modifier.padding(padding).readableWidth().verticalScroll(rememberScrollState()).padding(horizontal = 16.dp).padding(bottom = 24.dp)) {
             SectionTitle(stringResource(R.string.about_app))
             Group {
                 ListItem(
@@ -112,7 +116,7 @@ private fun LinkRow(icon: androidx.compose.ui.graphics.vector.ImageVector, title
         leadingContent = { Icon(icon, contentDescription = null) },
         trailingContent = { Icon(if (external) Icons.AutoMirrored.Rounded.OpenInNew else Icons.AutoMirrored.Rounded.KeyboardArrowRight, contentDescription = null) },
         colors = itemColors(),
-        modifier = Modifier.clickable(onClick = onClick),
+        modifier = Modifier.clickable(role = Role.Button, onClick = onClick),
     )
 }
 

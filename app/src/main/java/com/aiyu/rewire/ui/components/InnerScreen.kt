@@ -58,7 +58,7 @@ fun InnerScreen(
                 .verticalScroll(rememberScrollState())
                 .padding(start = 16.dp, end = 16.dp, bottom = 24.dp),
             horizontalAlignment = Alignment.CenterHorizontally,
-            content = content,
+            content = { Column(Modifier.readableWidth(), horizontalAlignment = Alignment.CenterHorizontally, content = content) },
         )
     }
 }

@@ -1,5 +1,7 @@
 package com.aiyu.rewire.feature.profile
 
+import androidx.compose.ui.semantics.Role
+
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -62,7 +64,7 @@ fun GoalsRow(containerColor: androidx.compose.ui.graphics.Color) {
         leadingContent = { Icon(Icons.Rounded.Flag, contentDescription = null) },
         trailingContent = { Icon(Icons.AutoMirrored.Rounded.KeyboardArrowRight, contentDescription = null) },
         colors = ListItemDefaults.colors(containerColor = containerColor),
-        modifier = Modifier.clickable { editing = true },
+        modifier = Modifier.clickable(role = Role.Button) { editing = true },
     )
     if (editing) GoalsDialog(goals, onSave = { vm.save(it); editing = false }, onDismiss = { editing = false })
 }

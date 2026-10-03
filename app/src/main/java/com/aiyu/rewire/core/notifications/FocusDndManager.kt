@@ -79,7 +79,7 @@ class FocusDndManager(private val context: Context) {
                 NotificationManager.Policy(
                     priorityCategories,
                     NotificationManager.Policy.PRIORITY_SENDERS_ANY,
-                    0,
+                    NotificationManager.Policy.PRIORITY_SENDERS_ANY,
                     0,
                     NotificationManager.Policy.CONVERSATION_SENDERS_NONE,
                 )
@@ -87,7 +87,7 @@ class FocusDndManager(private val context: Context) {
                 NotificationManager.Policy(
                     priorityCategories,
                     NotificationManager.Policy.PRIORITY_SENDERS_ANY,
-                    0,
+                    NotificationManager.Policy.PRIORITY_SENDERS_ANY,
                 )
             }
 
