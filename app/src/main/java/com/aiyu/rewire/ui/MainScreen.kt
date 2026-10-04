@@ -51,6 +51,8 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.outlined.Insights
 import androidx.compose.material.icons.outlined.Person
 import androidx.compose.material.icons.outlined.Shield
+import androidx.compose.material.icons.outlined.Spa
+import androidx.compose.material.icons.rounded.Spa
 import androidx.compose.material.icons.outlined.Timer
 import androidx.compose.material.icons.rounded.Insights
 import androidx.compose.material.icons.rounded.Person
@@ -83,6 +85,7 @@ import com.aiyu.rewire.core.notifications.DeepLink
 import com.aiyu.rewire.feature.focus.FocusScreen
 import com.aiyu.rewire.feature.guard.GuardScreen
 import com.aiyu.rewire.feature.matrix.MatrixScreen
+import com.aiyu.rewire.feature.quit.QuitScreen
 import com.aiyu.rewire.feature.profile.ProfileScreen
 import com.aiyu.rewire.BuildConfig
 import com.aiyu.rewire.feature.guard.HabitDetailScreen
@@ -106,6 +109,7 @@ import androidx.compose.ui.draw.alpha
 enum class Tab(@StringRes val label: Int, val icon: ImageVector, val selectedIcon: ImageVector, val link: DeepLink) {
     GUARD(R.string.nav_guard, Icons.Outlined.Shield, Icons.Rounded.Shield, DeepLink.GUARD),
     FOCUS(R.string.nav_focus, Icons.Outlined.Timer, Icons.Rounded.Timer, DeepLink.FOCUS),
+    QUIT(R.string.nav_quit, Icons.Outlined.Spa, Icons.Rounded.Spa, DeepLink.QUIT),
     MATRIX(R.string.matrix_title, Icons.Outlined.Insights, Icons.Rounded.Insights, DeepLink.MATRIX),
     PROFILE(R.string.nav_profile, Icons.Outlined.Person, Icons.Rounded.Person, DeepLink.PROFILE),
 }
@@ -161,6 +165,7 @@ fun MainScreen(
                 }
                 // Focus and Matrix use the full width: nothing beside them needs a detail pane.
                 Tab.FOCUS -> FocusScreen(onFullscreen = onOpenFocusFullscreen, onHistory = onOpenFocusHistory)
+                Tab.QUIT -> QuitScreen()
                 Tab.MATRIX -> MatrixScreen(onShowAll = onOpenMatrixBreakdown)
                 Tab.PROFILE -> TabPane(wide, detail ?: if (wide) "notifications" else null, { DetailContent(it, { detail = null }, { k -> detail = k }, onPreviewWarning) }) {
                     ProfileScreen(

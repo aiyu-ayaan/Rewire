@@ -654,4 +654,76 @@
     <!-- Language -->
     <string name="profile_language">Language</string>
     <string name="profile_language_system">System default</string>
+
+    <!-- Quit tracker (neutral wording on purpose: the user names what they quit) -->
+    <string name="nav_quit">Quit</string>
+    <string name="quit_subtitle">One day at a time</string>
+    <string name="quit_thought_title">Thought for today</string>
+    <string name="quit_thought_another">Another thought</string>
+    <string name="quit_urge_title">Feeling an urge?</string>
+    <string name="quit_urge_body">It rises, peaks and passes. Breathe with it for two minutes.</string>
+    <string name="quit_urge_start">Ride the wave</string>
+    <plurals name="quit_urges_ridden">
+        <item quantity="one">%d wave ridden out</item>
+        <item quantity="other">%d waves ridden out</item>
+    </plurals>
+    <string name="quit_section">Your journeys</string>
+    <string name="quit_empty_title">Start something new</string>
+    <string name="quit_empty_body">Add anything you want to leave behind. Only you see the name you give it.</string>
+    <string name="quit_add_first">Add a tracker</string>
+    <string name="quit_new">New tracker</string>
+    <string name="quit_edit_title">Edit tracker</string>
+    <plurals name="quit_days_word">
+        <item quantity="one">day</item>
+        <item quantity="other">days</item>
+    </plurals>
+    <string name="quit_run_today">+ %1$d h %2$d min</string>
+    <string name="quit_best">Best: %s</string>
+    <string name="quit_next">Next: %s</string>
+    <string name="quit_days_short">%d d</string>
+    <string name="quit_days_hours">%1$d d %2$d h</string>
+    <string name="quit_hours_minutes">%1$d h %2$d min</string>
+    <string name="quit_ring_desc">%1$d days, %2$d%% of the way to %3$d days</string>
+    <string name="quit_slipped">I slipped</string>
+    <string name="quit_slip_title">Start again?</string>
+    <string name="quit_slip_body">It happens. A slip is information, not the end. Your best run stays saved.</string>
+    <string name="quit_slip_confirm">Start again</string>
+    <plurals name="quit_recent_slips">
+        <item quantity="one">%d restart in the last 30 days</item>
+        <item quantity="other">%d restarts in the last 30 days</item>
+    </plurals>
+    <string name="quit_more">More options</string>
+    <string name="quit_edit">Edit</string>
+    <string name="quit_delete_title">Delete this tracker?</string>
+    <string name="quit_delete_body">Its history is removed from this device.</string>
+    <string name="quit_name">Name</string>
+    <string name="quit_name_hint">Any name works. Only you see it.</string>
+    <string name="quit_reason">Why it matters (optional)</string>
+    <string name="quit_started">Started</string>
+    <string name="quit_started_now">Right now</string>
+    <string name="quit_started_pick">Pick a date</string>
+    <string name="quit_private_note">Stays on this device. Not in Matrix, backups or exports.</string>
+    <string name="quit_breathe_in">Breathe in</string>
+    <string name="quit_breathe_hold">Hold</string>
+    <string name="quit_breathe_out">Breathe out</string>
+    <string name="quit_urge_left">%1$d:%2$02d left</string>
+    <string name="quit_urge_done_title">The wave passed</string>
+    <string name="quit_urge_done_body">You noticed it, stayed with it and let it go.</string>
+    <string name="quit_urge_done">Done</string>
+    <string name="quit_urge_leave">Leave</string>
+    <string name="quit_urge_idea_title">Then try one thing</string>
+    <string-array name="quit_urge_ideas">
+        <item>Drink a glass of water.</item>
+        <item>Step outside for five minutes.</item>
+        <item>Do ten slow squats.</item>
+        <item>Wash your face with cold water.</item>
+        <item>Message someone you trust.</item>
+        <item>Change rooms and turn the lights on.</item>
+        <item>Leave your device in another room for a while.</item>
+        <item>Write down what you feel right now.</item>
+        <item>Tidy one small thing near you.</item>
+        <item>Stretch slowly for two minutes.</item>
+        <item>Make yourself a warm drink.</item>
+        <item>If it is late, go to sleep.</item>
+    </string-array>
 </resources>

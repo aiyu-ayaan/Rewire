@@ -25,7 +25,7 @@ import com.aiyu.rewire.domain.focus.FocusSessionStatus
 import com.aiyu.rewire.domain.focus.FocusState
 
 /** Top-level destinations a notification can open. */
-enum class DeepLink { GUARD, FOCUS, MATRIX, PROFILE }
+enum class DeepLink { GUARD, FOCUS, QUIT, MATRIX, PROFILE }
 
 enum class FocusAlert { BREAK_STARTED, FOCUS_RESUMED, COMPLETED }
 

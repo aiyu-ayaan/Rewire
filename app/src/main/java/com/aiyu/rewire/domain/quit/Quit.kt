@@ -72,9 +72,12 @@ object Quit {
 
     fun urgeRidden(data: QuitData) = data.copy(urgesRidden = data.urgesRidden + 1)
 
-    /** Same thought all day, a new one tomorrow; [offset] lets the user ask for another. */
+    /**
+     * Same thought all day, a new one tomorrow; [offset] lets the user ask for another. The stride
+     * hops between themes (the list is grouped by theme) and, being prime, still visits every line.
+     */
     fun thoughtIndex(epochDay: Long, offset: Int, size: Int): Int =
-        if (size == 0) 0 else Math.floorMod(epochDay + offset, size.toLong()).toInt()
+        if (size == 0) 0 else Math.floorMod((epochDay + offset) * 131, size.toLong()).toInt()
 
     private fun QuitData.map(id: String, f: (QuitHabit) -> QuitHabit) = copy(habits = habits.map { if (it.id == id) f(it) else it })
 }
