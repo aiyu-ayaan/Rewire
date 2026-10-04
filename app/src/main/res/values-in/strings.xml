@@ -621,4 +621,74 @@
     <string name="punch_guard_6">Aplikasi menang beberapa ronde. Matrix mencatat skor agar Anda bisa merencanakan pertandingan ulang.</string>
     <string name="profile_language">Bahasa</string>
     <string name="profile_language_system">Default sistem</string>
+
+    <!-- Quit tracker -->
+    <string name="nav_quit">Berhenti</string>
+    <string name="quit_subtitle">Satu hari setiap waktu</string>
+    <string name="quit_thought_title">Pikiran untuk hari ini</string>
+    <string name="quit_thought_another">Pikiran lain</string>
+    <string name="quit_urge_title">Merasakan dorongan?</string>
+    <string name="quit_urge_body">Ia naik, mencapai puncak, lalu berlalu. Bernapaslah bersamanya selama dua menit.</string>
+    <string name="quit_urge_start">Ikuti gelombang</string>
+    <plurals name="quit_urges_ridden">
+        <item quantity="other">%d gelombang berhasil dilalui</item>
+    </plurals>
+    <string name="quit_section">Perjalanan Anda</string>
+    <string name="quit_empty_title">Mulai sesuatu yang baru</string>
+    <string name="quit_empty_body">Tambahkan apa pun yang ingin Anda tinggalkan. Hanya Anda yang melihat nama yang Anda berikan.</string>
+    <string name="quit_add_first">Tambahkan pelacak</string>
+    <string name="quit_new">Pelacak baru</string>
+    <string name="quit_edit_title">Ubah pelacak</string>
+    <plurals name="quit_days_word" xmlns:tools="http://schemas.android.com/tools" tools:ignore="ImpliedQuantity">
+        <item quantity="other">hari</item>
+    </plurals>
+    <string name="quit_run_today">+ %1$d j %2$d mnt</string>
+    <string name="quit_best">Terbaik: %s</string>
+    <string name="quit_next">Berikutnya: %s</string>
+    <string name="quit_days_short">%d h</string>
+    <string name="quit_days_hours">%1$d h %2$d j</string>
+    <string name="quit_hours_minutes">%1$d j %2$d mnt</string>
+    <string name="quit_ring_desc">%1$d hari, %2$d%% menuju %3$d hari</string>
+    <string name="quit_slipped">Saya terpeleset</string>
+    <string name="quit_slip_title">Mulai lagi?</string>
+    <string name="quit_slip_body">Hal itu bisa terjadi. Terpeleset adalah informasi, bukan akhir. Catatan terbaik Anda tetap tersimpan.</string>
+    <string name="quit_slip_confirm">Mulai lagi</string>
+    <plurals name="quit_recent_slips">
+        <item quantity="other">%d kali mulai ulang dalam 30 hari terakhir</item>
+    </plurals>
+    <string name="quit_more">Opsi lainnya</string>
+    <string name="quit_edit">Ubah</string>
+    <string name="quit_delete_title">Hapus pelacak ini?</string>
+    <string name="quit_delete_body"> Riwayatnya akan dihapus dari perangkat ini.</string>
+    <string name="quit_name">Nama</string>
+    <string name="quit_name_hint">Nama apa pun bisa. Hanya Anda yang melihatnya.</string>
+    <string name="quit_reason">Alasan mengapa ini penting (opsional)</string>
+    <string name="quit_started">Dimulai</string>
+    <string name="quit_started_now">Baru saja</string>
+    <string name="quit_started_pick">Pilih tanggal</string>
+    <string name="quit_private_note">Tetap di perangkat ini. Tidak masuk Matrix, cadangan, atau ekspor.</string>
+    <string name="quit_breathe_in">Tarik napas</string>
+    <string name="quit_breathe_hold">Tahan</string>
+    <string name="quit_breathe_out">Hmbuskan</string>
+    <string name="quit_urge_left">tersisa %1$d:%2$02d</string>
+    <string name="quit_urge_done_title">Gelombang telah berlalu</string>
+    <string name="quit_urge_done_body">Anda menyadarinya, bertahan dengannya, dan melepaskannya.</string>
+    <string name="quit_urge_done">Selesai</string>
+    <string name="quit_urge_leave">Keluar</string>
+    <string name="quit_urge_idea_title">Lalu coba satu hal ini</string>
+    <string-array name="quit_urge_ideas">
+        <item>Minum segelas air putih.</item>
+        <item>Keluar ruangan selama lima menit.</item>
+        <item>Lakukan sepuluh kali jongkok perlahan.</item>
+        <item>Basuh wajah Anda dengan air dingin.</item>
+        <item>Kirim pesan ke seseorang yang Anda percaya.</item>
+        <item>Pindah ruangan dan nyalakan lampu.</item>
+        <item>Tinggalkan perangkat Anda di ruangan lain untuk sementara waktu.</item>
+        <item>Tuliskan apa yang Anda rasakan saat ini.</item>
+        <item>Rapikan satu hal kecil di dekat Anda.</item>
+        <item>Regangkan tubuh secara perlahan selama dua menit.</item>
+        <item>Buatkan diri Anda minuman hangat.</item>
+        <item>Jika sudah larut, tidurlah.</item>
+    </string-array>
+    <!-- /Quit tracker -->
 </resources>

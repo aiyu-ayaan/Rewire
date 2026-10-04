@@ -1,0 +1,1012 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generated: one line per item. Calm, neutral; never names a specific habit. -->
+<resources>
+    <string-array name="quit_thoughts">
+        <item>Dorongan adalah sebuah gelombang. Ia mencapai puncaknya. Ia berlalu. Anda bisa mengikutinya.</item>
+        <item>Saat ini, rasakan tanpa harus melawannya. Momen ini bersifat sementara.</item>
+        <item>Apa yang Anda rasakan di balik dorongan ini? Bosan? Kesepian? Lelah? Sebutkan itu.</item>
+        <item>Anda tidak harus bertindak menuruti setiap perasaan. Rasakan dan biarkan ia mengalir.</item>
+        <item>Dorongan bukanlah sebuah perintah. Itu hanyalah pikiran di benak Anda.</item>
+        <item>Berhenti sejenak selama 10 menit. Rasa ingin tahu akan mereda.</item>
+        <item>Saat dorongan datang, bernapaslah perlahan. Tarik napas selama empat detik, tahan, hembuskan selama enam detik.</item>
+        <item>Apa yang memicu momen ini? Sadari tanpa menghakiminya.</item>
+        <item>Dorongan paling kuat di awal. Setelah 15 menit, ia akan memudar.</item>
+        <item>Bangkitlah. Berjalanlah ke ruangan lain. Putuskan polanya.</item>
+        <item>Ini bukanlah kelemahan. Ini adalah cara Anda mempelajari jalan baru.</item>
+        <item>Dorongan itu berbohong. Ia mengatakan Anda membutuhkannya. Tidak. Anda aman tanpa itu.</item>
+        <item>Daripada menuruti dorongan tersebut, tuliskan apa yang sedang Anda rasakan saat ini.</item>
+        <item>Terkadang dorongan hanyalah kebosanan yang mengenakan topeng. Temukan sesuatu untuk dilakukan.</item>
+        <item>Anda bukanlah dorongan itu. Dorongan adalah penumpang, bukan pengemudi.</item>
+        <item>Berbaringlah selama lima menit dan perhatikan: dorongan itu akan berlalu saat Anda beristirahat.</item>
+        <item>Apakah sudah larut? Apakah Anda lelah? Dorongan mengelabui Anda saat pertahanan Anda melemah.</item>
+        <item>Dorongan yang Anda abaikan kemarin membuat Anda bangga. Lakukan itu lagi.</item>
+        <item>Otak Anda sedang menyusun ulang dirinya sendiri saat ini. Ini adalah bagian yang sulit. Anda bisa melakukannya.</item>
+        <item>Dorongan paling kuat saat Anda sendirian. Hubungi seseorang. Berbicaralah.</item>
+        <item>Anda selamat dari yang sebelumnya. Anda akan selamat dari yang satu ini juga.</item>
+        <item>Apa yang akan dilakukan oleh versi terbaik diri Anda saat ini? Dengarkan suara itu.</item>
+        <item>Puncak rasa ingin tahu berlangsung dalam hitungan menit, bukan jam. Anda bisa melampauinya.</item>
+        <item>Duduklah bersama dorongan tersebut bagaikan gelombang di lautan. Biarkan ia bergulir melewati Anda.</item>
+        <item>Ini tidak selamanya. Ini hanya untuk saat ini.</item>
+        <item>Dorongan itu membisikkan kebohongan. Anda lebih kuat dari kebohongan itu.</item>
+        <item>Regangkan tubuh Anda. Alirkan darah ke seluruh anggota tubuh Anda. Dorongan memudar dengan gerakan.</item>
+        <item>Anda sedang membangun sesuatu. Setiap momen Anda berhenti sejenak adalah sebuah bata dalam fondasi.</item>
+        <item>Saat Anda ingin melarikan diri, temukan perasaan yang sebenarnya di balik itu dan hadapi alih-alih melarikan diri.</item>
+        <item>Dorongan adalah kebiasaan, bukan kebutuhan. Tubuh Anda akan menyesuaikan diri.</item>
+        <item>Perhatikan dorongan tanpa menghakimi. Jangan menambahkan rasa malu di atas rasa ingin tahu.</item>
+        <item>Anda bisa duduk dengan ini selama lima menit dan melihat apa yang terjadi.</item>
+        <item>Dorongan ingin membuat Anda percaya bahwa itu permanen. Tidak. Itu hanyalah awan yang berlalu.</item>
+        <item>Apa yang Anda lakukan terakhir kali saat Anda menolaknya? Lakukan itu lagi.</item>
+        <item>Dorongan adalah informasi. Itu memberi tahu Anda bahwa sesuatu hal penting bagi Anda. Dengarkan, lalu pilihlah.</item>
+        <item>Larut malam membawa dorongan. Tidur lebih awal mencegahnya.</item>
+        <item>Anda tidak gagal saat merasakan dorongan. Anda gagal hanya jika Anda mempercayainya.</item>
+        <item>Dorongan adalah gelombang yang membawa nama Anda. Anda telah belajar berselancar.</item>
+        <item>Saat merasa kesepian, dorongan menjanjikan koneksi. Carilah koneksi yang nyata sebagai gantinya.</item>
+        <item>Dorongan bukanlah cinta. Jangan keliru menganggapnya sebagai sesuatu yang bukan dirinya.</item>
+        <item>Anda telah mengalami banyak dorongan dan berhasil melaluinya. Ini hanyalah satu lagi.</item>
+        <item>Kebosanan adalah pemicu. Miliki daftar hal-hal yang penting bagi Anda.</item>
+        <item>Dorongan menyuruh Anda untuk terburu-buru. Anda bisa melambat sebagai gantinya.</item>
+        <item>Sistem saraf Anda sedang belajar bahwa Anda aman tanpa kebiasaan tersebut.</item>
+        <item>Duduklah. Bernapaslah. Hitung sampai 100. Dorongan akan melunak.</item>
+        <item>Dorongan paling kuat ketika Anda melawan dengan rasa takut. Bernapaslah dengan penerimaan sebagai gantinya.</item>
+        <item>Anda memilih untuk berhenti. Ingatlah itu. Andalkan pilihan itu.</item>
+        <item>Stres memicu dorongan. Sebutkan stres tersebut. Tangani secara terpisah dari rasa ingin tahu.</item>
+        <item>Dorongan akan datang. Itu tidak berarti Anda harus mengundangnya masuk.</item>
+        <item>Anda sedang menyusun ulang bawaan Anda. Ini butuh waktu dan kebaikan.</item>
+        <item>Dorongan adalah penumpang di bus yang Anda kendarai. Biarkan ia duduk. Teruslah berjalan.</item>
+        <item>Dorongan mencapai puncak dengan cepat dan turun dengan cepat. Jangan samakan puncak dengan selamanya.</item>
+        <item>Apa kebutuhan yang sebenarnya? Tidur? Koneksi? Kesenangan? Temukan tanpa kebiasaan tersebut.</item>
+        <item>Anda tidak harus memahami dorongan untuk bertahan darinya.</item>
+        <item>Dorongan bukanlah salah Anda. Respons Anda adalah pilihan Anda.</item>
+        <item>Ketika dorongan datang pukul 11 malam, itu adalah informasi. Tidurlah lebih awal.</item>
+        <item>Anda bisa duduk di lantai dan bernapas serta membiarkan dorongan itu ada bersama Anda.</item>
+        <item>Dorongan akan kembali. Itu normal. Anda akan mengatasinya seperti yang sudah-sudah.</item>
+        <item>Pola lama menginginkan perhatian Anda. Anda diizinkan untuk mengabaikannya.</item>
+        <item>Kesepian memperkuat dorongan. Bahkan pesan singkat kepada seorang teman pun melemahkannya.</item>
+        <item>Dorongan adalah pengunjung. Anda memilih apakah akan membukakan pintu.</item>
+        <item>Anda sedang membangun jalur baru di otak Anda setiap kali Anda berhenti sejenak.</item>
+        <item>Dorongan paling kuat saat Anda memikirkannya. Alihkan perhatian Anda dengan lembut.</item>
+        <item>Apa yang akan Anda lakukan jika dorongan itu tidak ada? Lakukan itu sekarang juga.</item>
+        <item>Dorongan bukanlah keadaan darurat. Perlakukan itu seperti pikiran yang berlalu.</item>
+        <item>Anda pernah berada di sini sebelumnya. Tubuh Anda tahu cara melewati ini.</item>
+        <item>Kebiasaan butuh waktu untuk terbentuk. Melepaskannya butuh waktu untuk bertahan. Bersabarlah.</item>
+        <item>Ketika dorongan datang, itu berarti otak Anda masih menyesuaikan diri. Itu adalah proses penyembuhan.</item>
+        <item>Anda tidak harus sempurna. Anda hanya harus terus memilih.</item>
+        <item>Dorongan paling kuat saat Anda lelah. Tidur adalah alat yang ampuh.</item>
+        <item>Dorongan datang dalam gelombang. Beberapa besar. Beberapa kecil. Semuanya berlalu.</item>
+        <item>Rasa ingin tahu adalah tanda tubuh Anda sedang berubah. Itu kabar baik.</item>
+        <item>Anda diizinkan untuk merasakan dorongan dan tidak menurutinya. Keduanya benar.</item>
+        <item>Apa yang mengisi ruang yang tadinya digunakan oleh kebiasaan? Bangun itu sekarang.</item>
+        <item>Dorongan berbisik lembut pada awalnya, lalu lebih keras jika Anda mendengarkan. Jangan dengarkan.</item>
+        <item>Berdiri. Dorongan mereda saat Anda menggerakkan tubuh Anda.</item>
+        <item>Anda tidak rusak karena menginginkan pola lama. Anda manusia.</item>
+        <item>Dorongan adalah lingkaran kebiasaan. Anda memutus lingkaran tersebut dengan setiap jeda.</item>
+        <item>Larut malam dan kesepian adalah kombinasi terburuk. Rencanakan untuk menghadapinya.</item>
+        <item>Anda bisa berkata kepada dorongan itu: Aku melihatmu. Aku merasakanmu. Aku tetap tidak melakukannya.</item>
+        <item>Dorongan bagaikan awan. Amati. Ia akan berlalu.</item>
+        <item>Anda telah selamat dari hari-hari terberat. Hari ini sudah tidak asing lagi.</item>
+        <item>Dorongan bisa duduk bersama Anda saat Anda melakukan hal lain. Tidak apa-apa.</item>
+        <item>Apa yang Anda hindari dengan kembali pada kebiasaan? Hadapi itu sebagai gantinya.</item>
+        <item>Dorongan paling kuat saat Anda duduk diam. Gerakan memecah mantra.</item>
+        <item>Anda lebih kuat dari yang Anda kira. Momen ini membuktikannya.</item>
+        <item>Kebiasaan menjanjikan kelegaan. Ia memberikan kekosongan. Ingatlah itu.</item>
+        <item>Dorongan adalah otak Anda yang meminta dopamin. Temukan sumber lain.</item>
+        <item>Anda bisa merasakan dorongan dan tetap memegang kendali. Keduanya bisa benar.</item>
+        <item>Dorongan berasal dari pola yang dipelajari, bukan dari siapa diri Anda sebenarnya.</item>
+        <item>Saat lelah, semuanya terasa lebih sulit. Dorongan itu tidak spesial. Istirahatlah.</item>
+        <item>Anda tidak harus memahami mengapa Anda merasakan dorongan untuk bertahan darinya.</item>
+        <item>Rasa ingin tahu adalah data. Kebosanan? Stres? Kesepian? Pelajari polanya.</item>
+        <item>Dorongan akan kembali. Itu bukan kegagalan. Itu adalah pemulihan yang normal.</item>
+        <item>Anda memilih jalan ini. Jalannya sempit saat ini. Jalan itu akan melebar.</item>
+        <item>Dorongan adalah pembohong. Ia mengatakan Anda tidak bisa hidup tanpanya. Anda bisa dan Anda mampu.</item>
+        <item>Duduklah dalam ketidaknyamanan Anda selama lima menit. Itu tidak akan menghancurkan Anda.</item>
+        <item>Dorongan paling kuat saat Anda lengah. Tetaplah waspada.</item>
+        <item>Anda bukanlah dorongan itu. Andalah yang menyadari dorongan itu dan bernapas.</item>
+        <item>Bagaimana rasanya melewati hari ini tanpa itu? Itulah hadiahnya.</item>
+        <item>Dorongan adalah sebuah gelombang. Andalah pantainya. Biarkan ia pecah menimpa Anda dan surut.</item>
+        <item>Minum air putih, melakukan peregangan, membasuh wajah dengan air dingin, berpindah ruangan. Pilih salah satu.</item>
+        <item>Kebiasaan butuh waktu berbulan-bulan atau bertahun-tahun untuk terbentuk. Melepaskannya juga butuh waktu. Itu wajar.</item>
+        <item>Dorongan bukanlah sebuah kemunduran kecuali Anda mempercayainya sebagai sebuah perintah.</item>
+        <item>Anda dapat duduk bersama dorongan tersebut seperti Anda duduk dengan tamu yang tidak diundang.</item>
+        <item>Larut malam adalah saat dorongan terasa paling kejam. Rencanakan malam Anda.</item>
+        <item>Dorongan berbicara dengan kata \"seharusnya\" dan \"harus\". Abaikan itu. Buat pilihan Anda sendiri.</item>
+        <item>Anda memiliki tekad yang lebih besar dari yang Anda kira sekarang. Momen ini membuktikannya.</item>
+        <item>Dorongan adalah sebuah perasaan, bukan fakta. Perasaan bisa berubah.</item>
+        <item>Apa yang sedang Anda ratapi yang dulunya diisi oleh kebiasaan itu? Ratapi itu. Hargai itu. Lanjutkan hidup.</item>
+        <item>Dorongan akan menguji Anda. Anda akan lulus ujian itu. Anda sudah pernah lulus sebelumnya.</item>
+        <item>Kebiasaan menjanjikan kebahagiaan. Kebiasaan itu memberikan penyesalan. Pilihlah jalan yang bebas penyesalan.</item>
+        <item>Anda tidak harus melawan dorongan tersebut. Anda bisa sekadar menyadarinya dan terus menjalani hidup.</item>
+        <item>Dorongan adalah perangkat lunak yang berjalan di otak Anda. Andalah pemrogramnya sekarang.</item>
+        <item>Kebosanan memicu dorongan. Makna memadamkannya.</item>
+        <item>Rasa ingin tahu adalah sinyal bahwa ada sesuatu yang tidak seimbang. Perbaiki keseimbangan tersebut.</item>
+        <item>Anda diizinkan untuk berjuang. Perjuangan adalah bagian dari jalan ini.</item>
+        <item>Dorongan paling kuat dalam keheningan. Isilah keheningan dengan musik, suara, aktivitas.</item>
+        <item>Anda telah sampai sejauh ini. Itulah buktinya. Percayalah pada buktinya.</item>
+        <item>Kebiasaan itu adalah pelarian. Anda tidak perlu melarikan diri lagi.</item>
+        <item>Dorongan adalah anggota tubuh yang hilang. Itu terasa nyata tetapi sebenarnya tidak ada.</item>
+        <item>Apa yang Anda sukai dari diri Anda sebelum kebiasaan itu ada? Bangun kembali hal itu.</item>
+        <item>Dorongan akan memudar jika Anda menolak untuk memberinya cerita-cerita.</item>
+        <item>Anda sedang menulis ulang kisah Anda sekarang. Setiap jeda adalah bab baru.</item>
+        <item>Dorongan paling kuat saat Anda rentan. Lindungi diri Anda dengan beristirahat.</item>
+        <item>Anda bisa merasa tidak nyaman dan tidak menuruti dorongan tersebut secara bersamaan.</item>
+        <item>Rasa ingin tahu adalah otak Anda yang sedang mengalami sakau. Itu bersifat sementara dan sedang menyembuhkan diri.</item>
+        <item>Kebiasaan itu membuat Anda kecil. Pilihan ini membuat Anda lebih besar.</item>
+        <item>Dorongan itu seperti alarm kebakaran yang berbunyi. Suaranya kencang tetapi rumahnya tidak terbakar.</item>
+        <item>Anda tidak harus merasa percaya diri untuk menolak. Anda hanya harus memilih.</item>
+        <item>Larut malam, lelah, sendiri, bosan. Saat itulah dorongan menyerang. Kenali pola Anda.</item>
+        <item>Dorongan bukanlah diri Anda. Respons Andalah yang merupakan diri Anda.</item>
+        <item>Pola lama ingin terasa familier. Anda sedang mempelajari kenalan baru.</item>
+        <item>Anda bisa mengakui dorongan tersebut, berterima kasih karena telah muncul, dan melanjutkan langkah.</item>
+        <item>Rasa ingin tahu adalah sebuah badai. Badai itu akan berlalu. Anda tidak harus melangkah keluar ke dalam badai itu.</item>
+        <item>Anda diizinkan untuk merasakan dorongan tanpa rasa malu.</item>
+        <item>Apa yang memberi Anda kegembiraan selain kebiasaan itu? Lakukan itu. Bangun itu.</item>
+        <item>Dorongan paling kuat ketika Anda memusatkan seluruh perhatian Anda padanya. Alihkan perhatian.</item>
+        <item>Anda telah bertahan dari setiap momen sebelum ini. Anda akan bertahan dari momen ini juga.</item>
+        <item>Kebiasaan menjanjikan kendali. Kebiasaan itu memberikan sebaliknya. Ingatlah itu.</item>
+        <item>Dorongan adalah ujian atas komitmen Anda, bukan tanda bahwa Anda gagal.</item>
+        <item>Kesepian memicu dorongan. Jangkau orang lain sebelum dorongan itu menjadi keras.</item>
+        <item>Anda dapat duduk dengan ketidaknyamanan selama 10 menit. Itu waktu yang lama.</item>
+        <item>Dorongan akan datang kembali. Setiap kali ia kembali, Anda menjadi semakin kuat.</item>
+        <item>Cara lama ingin Anda percaya bahwa Anda tidak punya pilihan. Anda punya pilihan.</item>
+        <item>Rasa ingin tahu bukanlah keadaan darurat. Ia hanya terasa seperti itu.</item>
+        <item>Anda sedang membangun kehidupan yang berbeda, bukan sekadar menghentikan kebiasaan.</item>
+        <item>Dorongan berbisik lembut pada awalnya. Saat itulah waktu yang tepat untuk berpaling.</item>
+        <item>Apa yang akan membuat Anda bangga pada diri sendiri hari ini? Mulailah dari sana.</item>
+        <item>Dorongan adalah informasi bahwa kebosanan, stres, atau kelelahan sedang hadir.</item>
+        <item>Anda bisa merasa kosong dan tidak beralih ke kebiasaan tersebut pada saat yang bersamaan.</item>
+        <item>Kebiasaan itu membisikkan kebohongan. Anda sedang belajar mendengar kebenaran sebagai gantinya.</item>
+        <item>Dorongan akan kembali besok. Itu bukan kegagalan. Itu adalah penyembuhan.</item>
+        <item>Anda diizinkan untuk tidak sempurna dalam hal ini. Kemajuan yang tidak sempurna tetaplah kemajuan.</item>
+        <item>Dorongan itu seperti gangguan suara di radio. Anda bisa memindah stasiunnya.</item>
+        <item>Apa yang akan diminta oleh diri masa depan Anda untuk Anda lakukan sekarang? Dengarkan itu.</item>
+        <item>Rasa ingin tahu adalah bayangan dari sebuah pola. Hantu tidak bisa menyakiti Anda.</item>
+        <item>Anda sedang menyusun ulang otak Anda dengan setiap momen di mana Anda memilih secara berbeda.</item>
+        <item>Larut malam sangatlah berbahaya. Tidurlah lebih awal. Pencegahan adalah pertahanan terbaik.</item>
+        <item>Dorongan adalah kebiasaan yang mencoba melanggengkan dirinya sendiri. Anda sedang memutus lingkaran itu.</item>
+        <item>Anda bisa merasa lelah dan menolak serta tetap berhasil.</item>
+        <item>Apa yang ingin membuat Anda lupa oleh dorongan tersebut? Pertahankan ingatan itu sebagai gantinya.</item>
+        <item>Kebiasaan itu menjauhkan Anda dari diri Anda sendiri. Jalur ini membawa Anda kembali.</item>
+        <item>Dorongan paling kuat saat Anda duduk diam. Bergeraklah.</item>
+        <item>Anda tidak harus ingin menolak. Anda hanya harus melakukannya tetap saja.</item>
+        <item>Rasa ingin tahu adalah sebuah gelombang. Anda pernah menaiki gelombang sebelumnya. Anda bisa menaiki yang satu ini.</item>
+        <item>Apa yang mengisi diri Anda selain kebiasaan itu? Investasikan diri pada hal itu.</item>
+        <item>Dorongan akan berbohong dan mengatakan Anda membutuhkannya. Tidak. Anda menginginkannya. Itu berbeda.</item>
+        <item>Kebosanan adalah pemicu. Miliki rencana untuk saat-saat bosan.</item>
+        <item>Anda dapat bertahan dari dorongan dengan pernapasan dan kesabaran.</item>
+        <item>Pola lama sedang mengetuk pintu. Anda tidak harus menjawabnya.</item>
+        <item>Dorongan adalah informasi. Kesepian? Stres? Kebosanan? Sebutkan dan atasi.</item>
+        <item>Anda diizinkan untuk merasa tidak enak badan dan tidak menuruti dorongan tersebut.</item>
+        <item>Kebiasaan adalah mekanisme koping. Anda sedang mempelajari mekanisme koping baru sekarang.</item>
+        <item>Dorongan bukanlah cerminan dari tekad Anda. Itu adalah cerminan dari kebiasaan.</item>
+        <item>Apa yang memberi Anda ketenangan selain kebiasaan itu? Gunakan itu sekarang.</item>
+        <item>Rasa ingin tahu adalah tubuh Anda yang sedang menyesuaikan diri. Itu bukan kelemahan. Itu perubahan.</item>
+        <item>Anda bisa merasa tidak nyaman tanpa harus diselamatkan dari kebiasaan itu.</item>
+        <item>Dorongan larut malam itu nyata. Rencanakan untuk sudah berada di tempat tidur sebelum mereka tiba.</item>
+        <item>Dorongan paling keras saat Anda terisolasi. Carilah koneksi.</item>
+        <item>Anda telah memilih jalan yang lebih sulit karena Anda menginginkan sesuatu yang lebih baik. Hargailah itu.</item>
+        <item>Kebiasaan menjanjikan kegembiraan. Kebiasaan itu memberikan kekosongan. Pilihlah secara berbeda sekarang.</item>
+        <item>Dorongan adalah sebuah ujian. Anda sedang melewatinya sekarang.</item>
+        <item>Seperti apa rasanya pikiran yang tenang? Bergeraklah menuju perasaan itu.</item>
+        <item>Rasa ingin tahu akan berkunjung. Anda tidak harus menyambutnya masuk.</item>
+        <item>Anda sedang membangun ketahanan dengan setiap momen penolakan.</item>
+        <item>Dorongan menginginkan perhatian Anda. Berikan perhatian itu kepada sesuatu yang layak mendapatkannya.</item>
+        <item>Kebosanan, kesepian, stres, kelelahan. Kenali pemicu Anda dan rencanakan ke depan.</item>
+        <item>Anda bisa merasa sedih dan tidak beralih ke kebiasaan tersebut.</item>
+        <item>Kebiasaan itu adalah jalan pintas. Anda mengambil jalan yang panjang. Itu adalah kebijaksanaan.</item>
+        <item>Dorongan bukanlah musuh. Ia hanyalah seorang tamu. Andalah Tuan Rumahnya.</item>
+        <item>Apa yang akan Anda katakan kepada sahabat Anda jika mereka merasakan dorongan ini? Katakan itu pada diri sendiri.</item>
+        <item>Rasa ingin tahu bersifat sementara. Pilihan Anda bersifat permanen.</item>
+        <item>Anda diizinkan untuk berjuang. Perjuangan membangun kekuatan.</item>
+        <item>Dorongan adalah gelombang yang mencapai puncaknya dalam hitungan menit, bukan jam.</item>
+        <item>Apa yang ingin Anda kenal darinya? Hal itu, bukan kebiasaannya.</item>
+        <item>Larut malam ditambah lelah ditambah sendirian sama dengan bahaya. Cegah kombinasi itu.</item>
+        <item>Dorongan adalah sinyal bahwa pola lama Anda masih terhubung. Anda sedang menyusun ulang sambungannya.</item>
+        <item>Anda dapat merasakan kebutuhan tersebut dan tidak menuruti tindakan itu. Itulah seluruh pertarungannya.</item>
+        <item>Kebiasaan itu berbohong tentang apa yang akan dilakukannya. Kebenaran akan membebaskan Anda.</item>
+        <item>Dorongan adalah informasi. Dengarkan. Lalu pilih jalur Anda sendiri.</item>
+        <item>Anda lebih kuat dari dorongan Anda. Momen ini membuktikannya.</item>
+        <item>Rasa ingin tahu akan memudar jika Anda memberinya waktu alih-alih tindakan.</item>
+        <item>Apa yang membawa kedamaian bagi pikiran Anda? Pergilah ke sana saat dorongan itu tiba.</item>
+        <item>Dorongan bukanlah sebuah kegagalan. Respons Andalah ukuran Anda.</item>
+        <item>Anda telah selamat dari momen-momen yang lebih sulit dari ini. Anda akan selamat dari ini juga.</item>
+        <item>Kebiasaan itu ingin menjadi identitas Anda. Anda lebih dari itu.</item>
+        <item>Dorongan adalah sebuah bayangan. Ia tidak memiliki kekuatan kecuali Anda memberinya kekuatan.</item>
+        <item>Apa yang akan terasa menyenangkan yang tidak melibatkan kebiasaan itu? Lakukan itu.</item>
+        <item>Kesepian adalah pemicu. Hubungi seseorang sebelum pemicu itu ditarik.</item>
+        <item>Anda bisa merasa frustrasi dan tidak menuruti dorongan tersebut.</item>
+        <item>Pola lama sudah familier. Pola baru akan menjadi familier juga.</item>
+        <item>Dorongan itu seperti anak kecil yang menginginkan permen. Anda dapat mengakuinya dan berkata tidak.</item>
+        <item>Apa yang sedang Anda bangun dengan penolakan Anda? Bangunlah itu secara sadar.</item>
+        <item>Rasa ingin tahu adalah otak Anda yang sedang menyembuhkan diri. Terasa sakit karena penyembuhan itu nyata.</item>
+        <item>Anda diizinkan untuk beristirahat. Istirahat bukanlah kelemahan.</item>
+        <item>Dorongan akan kembali lagi. Setiap kembalinya adalah bukti bahwa Anda telah membuat kemajuan.</item>
+        <item>Kebiasaan itu adalah rute pelarian. Anda memilih tinggal dan menghadapinya sebagai gantinya.</item>
+        <item>Dorongan adalah informasi tentang kebutuhan Anda, bukan perintah tentang tindakan Anda.</item>
+        <item>Apa yang mengisi waktu yang penting? Isilah waktu dengan hal tersebut.</item>
+        <item>Larut malam adalah saat dorongan terasa paling kejam. Tidurlah lebih awal.</item>
+        <item>Dorongan adalah sebuah gelombang. Andalah daratan yang kokoh. Biarkan ia membasuh Anda.</item>
+        <item>Anda bisa merasa bosan dan tidak beralih ke kebiasaan tersebut.</item>
+        <item>Kebiasaan menjanjikan kendali. Anda sedang memegang kendali yang sesungguhnya sekarang.</item>
+        <item>Dorongan bukanlah diri Anda. Itu adalah pola yang dipelajari otak Anda. Anda sedang melupakannya.</item>
+        <item>Apa yang akan Anda lakukan jika Anda tidak takut? Lakukan itu.</item>
+        <item>Rasa ingin tahu adalah tanda bahwa sistem Anda sedang menyeimbangkan kembali. Itulah penyembuhan.</item>
+        <item>Anda sedang membangun kehidupan yang tidak bisa disentuh oleh dorongan tersebut.</item>
+        <item>Dorongan itu berbisik. Jangan didengarkan.</item>
+        <item>Apa yang memberi Anda kegembiraan sejati? Bangun hari-hari Anda di sekitar hal itu.</item>
+        <item>Stres adalah pemicu. Hadapi stres tersebut tanpa kebiasaan itu.</item>
+        <item>Anda bisa duduk bersama dorongan tersebut, bernapas, dan menunggu.</item>
+        <item>Pola lama ingin terasa nyaman. Ketidaknyamanan adalah jembatan menuju kenyamanan baru.</item>
+        <item>Dorongan paling kuat saat Anda rentan. Lindungi diri Anda.</item>
+        <item>Anda diizinkan untuk merasa lemah dan tetap memilih kekuatan.</item>
+        <item>Kebiasaan itu adalah sebuah kebohongan. Kebenarannya adalah Anda bisa hidup tanpanya.</item>
+        <item>Dorongan adalah ujian atas niat Anda. Anda lulus.</item>
+        <item>Apa yang dibutuhkan oleh kehidupan terbaik Anda? Menghentikan kebiasaan ini. Teruslah melangkah.</item>
+        <item>Dorongan adalah sinyal tanpa pesan. Berhenti mencari makna. Bernapaslah saja.</item>
+        <item>Anda dapat berhenti sejenak tanpa harus mengerti. Pemahaman akan datang kemudian.</item>
+        <item>Rasa ingin tahu mencapai puncaknya, mendatar, dan akhirnya memudar. Naiki ketiga tahap tersebut.</item>
+        <item>Apa yang akan mengejutkan diri masa lalu Anda tentang kekuatan Anda? Anda sedang menjalani kejutan itu.</item>
+        <item>Dorongan adalah ujian yang tidak memberi Anda nilai. Anda selalu lulus.</item>
+        <item>Anda bukanlah jumlah dari dorongan-dorongan Anda. Andalah yang mengamatinya.</item>
+        <item>Kebiasaan itu menginginkan keabadian. Anda memilih ketidakkekalan. Anda sedang menang.</item>
+        <item>Apa yang akan membuat hari ini menjadi hari yang baik? Definisikan tanpa kebiasaan itu.</item>
+        <item>Dorongan adalah tamu yang tinggal terlalu lama. Anda diizinkan untuk memintanya pergi.</item>
+        <item>Anda bisa takut akan kambuh dan tetap bebas dari kambuh saat ini.</item>
+        <item>Rasa ingin tahu berbicara dalam bahasa urgensi. Anda berbicara dalam bahasa waktu.</item>
+        <item>Larut malam adalah saat tekad berada di titik terendah. Cegah waktunya, bukan hanya pilihannya.</item>
+        <item>Dorongan adalah pola yang Anda pelajari. Anda sedang mempelajari pola baru sekarang.</item>
+        <item>Anda sedang membangun bukti, bukan sekadar membuat janji.</item>
+        <item>Kebiasaan itu berbohong tentang memberi Anda apa yang Anda butuhkan. Anda sedang menemukan kebenaran sekarang.</item>
+        <item>Dorongan adalah pengingat tentang siapa diri Anda dulu. Anda adalah seseorang yang berbeda sekarang.</item>
+        <item>Apa yang akan terasa seperti kebebasan? Bergeraklah menuju hal itu sebagai gantinya.</item>
+        <item>Rasa ingin tahu adalah utang yang diciptakan oleh kebiasaan. Anda membayarnya dari hari ke hari.</item>
+        <item>Anda dapat duduk dalam kebersamaan dengan diri sendiri tanpa beralih ke kebiasaan itu.</item>
+        <item>Dorongan akan menguji integritas Anda. Setiap momen penolakan membuktikannya.</item>
+        <item>Identifikasikan apa yang dicuri oleh kebiasaan itu dari Anda. Rebut kembali.</item>
+        <item>Pola lama adalah jalan yang telah berhenti Anda lewati. Jangan melihat ke belakang.</item>
+        <item>Dorongan adalah kebisingan. Anda bisa berada di ruangan yang bising dan tetap tenang.</item>
+        <item>Apa yang diperlukan untuk memaafkan diri sendiri atas waktu yang Anda habiskan? Mulailah sekarang.</item>
+        <item>Anda tidak menyembuhkan diri dengan cara yang salah. Anda menyembuhkan diri dengan cara yang sangat tepat.</item>
+        <item>Kebiasaan itu ingin menjadi solusi Anda. Anda sedang menemukan solusi yang nyata.</item>
+        <item>Rasa ingin tahu adalah sakau. Sakau adalah proses penyembuhan yang sedang terjadi.</item>
+        <item>Larut malam akan selalu terasa sulit. Tidur lebih awal adalah sahabat terbaik Anda.</item>
+        <item>Anda sedang menulis kisah tentang siapa diri Anda. Jadikan itu kisah yang bagus.</item>
+        <item>Dorongan itu akan berlalu. Anda akan tetap ada. Itulah seluruh perbedaannya.</item>
+        <item>Anda tidak sedang melarikan diri dari sesuatu. Anda sedang berjalan menuju diri Anda sendiri.</item>
+        <item>Orang yang ingin Anda tuju sedang menunggu Anda memilihnya hari ini.</item>
+        <item>Momen inilah tempat di mana diri masa depan Anda dibangun.</item>
+        <item>Anda menepati janji pada diri sendiri. Dimulai dari sekarang.</item>
+        <item>Kebebasan berarti membuat pilihan Anda sendiri. Anda sedang membuat satu pilihan sekarang.</item>
+        <item>Apa yang akan dilakukan oleh versi terbaik diri Anda? Itulah orang yang sedang Anda tuju.</item>
+        <item>Kebiasaan tidak mendefinisikan Anda. Pilihan-pilihan Andalah yang mendefinisikannya.</item>
+        <item>Anda layak untuk mempercayai diri sendiri. Bangun kepercayaan itu sehari demi sehari.</item>
+        <item>Diri masa depan Anda sudah bangga pada Anda karena telah mencoba.</item>
+        <item>Kehadiran adalah hadiah yang Anda berikan untuk diri sendiri dan semua orang di sekitar Anda.</item>
+        <item>Koneksi yang nyata terjadi ketika Anda hadir sebagai diri Anda apa adanya.</item>
+        <item>Anda memilih martabat hari ini. Itu sudah cukup.</item>
+        <item>Dorongan itu akan berlalu. Integritas Anda bersifat permanen.</item>
+        <item>Nilai-nilai apa yang paling penting bagi Anda? Jalani nilai-nilai itu hari ini.</item>
+        <item>Anda tidak sedang memperbaiki diri sendiri. Anda sedang menghormati diri sendiri.</item>
+        <item>Hidup Anda terlalu berharga untuk perhatian setengah-setengah.</item>
+        <item>Pola lama tidak memiliki Anda.</item>
+        <item>Rasa hormat pada diri sendiri tidak diperoleh melalui kesempurnaan. Itu berasal dari usaha yang jujur.</item>
+        <item>Andalah penulis dari siapa diri Anda kelak.</item>
+        <item>Hari ini Anda memilih kehadiran di atas ketiadaan.</item>
+        <item>Setiap pilihan untuk diri sendiri adalah janji yang ditepati.</item>
+        <item>Orang yang ada pada diri Anda saat ini bisa melakukan ini.</item>
+        <item>Anda lebih kuat dari yang Anda kira. Lebih tenang dari yang Anda yakini.</item>
+        <item>Identitas bukanlah apa yang telah Anda lakukan. Identitas adalah apa yang Anda lakukan selanjutnya.</item>
+        <item>Beginilah cara Anda menjadi andal bagi diri sendiri.</item>
+        <item>Anda tidak memerlukan izin untuk menghormati diri sendiri.</item>
+        <item>Dorongan hanyalah kebisingan. Andalah sinyalnya.</item>
+        <item>Kehidupan seperti apa yang ingin Anda jalani? Anda sedang membangunnya sekarang.</item>
+        <item>Perhatian Anda adalah sesuatu yang suci. Lindungi itu.</item>
+        <item>Percayalah pada diri sendiri. Anda telah membuktikan bahwa Anda bisa melakukannya.</item>
+        <item>Kepercayaan diri yang sejati berasal dari menepati janji pada diri sendiri.</item>
+        <item>Anda menulis kisah Anda dengan setiap pilihan.</item>
+        <item>Kebiasaan berkembang biak pada perhatian Anda yang terbagi. Rebut kembali.</item>
+        <item>Kebebasan bukanlah ketiadaan aturan. Kebebasan adalah memilih aturan Anda sendiri.</item>
+        <item>Anda layak untuk hadir sepenuhnya dalam kehidupan Anda sendiri.</item>
+        <item>Apa yang dikatakan oleh nurani Anda? Dengarkan itu.</item>
+        <item>Versi diri Anda yang Anda hormati adalah siapa diri Anda sekarang.</item>
+        <item>Niat membuat momen-momen biasa menjadi bermakna.</item>
+        <item>Anda tidak rusak. Anda sedang memilih diri Anda sendiri.</item>
+        <item>Setiap hari adalah kesempatan untuk membuktikan siapa diri Anda sebenarnya.</item>
+        <item>Dorongan itu semakin melemah. Tekad Anda semakin kuat.</item>
+        <item>Anda adalah seseorang yang menepati janji. Terutama kepada diri sendiri.</item>
+        <item>Apa yang akan Anda katakan kepada seorang teman di posisi Anda? Katakan itu pada diri sendiri.</item>
+        <item>Identitas dimulai dengan satu pilihan. Anda sedang membuatnya sekarang.</item>
+        <item>Diri masa depan Anda bukanlah orang asing. Itu adalah diri Anda.</item>
+        <item>Kehadiran adalah cara Anda mencintai orang-orang dalam hidup Anda.</item>
+        <item>Anda sedang membangun diri yang dapat Anda percaya. Itu butuh waktu. Anda memilikinya.</item>
+        <item>Kebiasaan itu bersifat sementara. Siapa diri Anda yang sebenarnya adalah permanen.</item>
+        <item>Kekuatan yang sejati itu tenang. Ia tidak perlu mengumumkan dirinya sendiri.</item>
+        <item>Anda sedang memilih jenis orang seperti apa yang Anda inginkan.</item>
+        <item>Inilah arti menjaga diri Anda yang sebenarnya.</item>
+        <item>Nilai-nilai Anda tidak abstrak. Nilai-nilai itu hidup dalam pilihan Anda hari ini.</item>
+        <item>Dorongan itu ingin Anda lupa siapa diri Anda. Ingatlah.</item>
+        <item>Anda layak untuk merasa bangga pada diri sendiri.</item>
+        <item>Setiap momen adalah kesempatan baru untuk menghormati hidup Anda sendiri.</item>
+        <item>Martabat tidaklah rapuh. Ia tumbuh lebih kuat ketika Anda memberinya makan.</item>
+        <item>Andalah orang yang selama ini Anda tunggu-tunggu.</item>
+        <item>Bagaimana rasanya mempercayai diri sendiri sepenuhnya?</item>
+        <item>Pola lama sudah usang. Anda adalah hal yang baru.</item>
+        <item>Kehadiran bukan tentang melakukannya dengan benar. Kehadiran adalah tentang menunjukkan diri.</item>
+        <item>Anda sedang belajar mencintai diri sendiri dengan cara yang berbeda.</item>
+        <item>Perhatian Anda adalah hal yang terbatas. Gunakan dengan baik.</item>
+        <item>Kebiasaan itu tidak menentukan kapasitas Anda. Pilihan Andalah yang menentukannya.</item>
+        <item>Anda sedang menjadi seseorang yang Anda hormati.</item>
+        <item>Kebebasan yang sejati terasa seperti memilih jalan Anda sendiri.</item>
+        <item>Versi diri Anda yang ingin Anda temui sedang terbentuk saat ini.</item>
+        <item>Anda sedang membangun hubungan dengan diri sendiri yang penting.</item>
+        <item>Identitas tidaklah tetap. Itu adalah sesuatu yang Anda pilih setiap hari.</item>
+        <item>Dorongan itu memudar. Rasa hormat yang Anda bangun bertahan lama.</item>
+        <item>Anda sedang belajar menepati janji paling penting dari semuanya.</item>
+        <item>Apa yang ingin Anda ingat ketika menengok ke belakang tentang diri Anda?</item>
+        <item>Kebiasaan itu ingin Anda kecil. Anda sedang memilih diri Anda untuk menjadi besar.</item>
+        <item>Kehadiran berarti Anda dapat menikmati momen nyata tempat Anda berada.</item>
+        <item>Diri masa depan Anda tidak meminta kesempurnaan. Hanya kejujuran.</item>
+        <item>Anda adalah seseorang yang selalu hadir untuk diri mereka sendiri.</item>
+        <item>Hadiah untuk semua ini sangat sederhana: diri Anda sendiri.</item>
+        <item>Rasa hormat pada diri sendiri bukanlah sebuah kemewahan. Itulah cara Anda hidup.</item>
+        <item>Anda sedang menulis ulang hubungan Anda dengan diri sendiri.</item>
+        <item>Setiap pilihan adalah kesempatan untuk membuktikan sesuatu pada diri sendiri.</item>
+        <item>Dorongan tidak berhak menentukan siapa diri Anda.</item>
+        <item>Nilai-nilai Anda lebih penting daripada tarikan sementara tersebut.</item>
+        <item>Anda sedang belajar apa artinya mempercayai diri sendiri sepenuhnya.</item>
+        <item>Orang yang ingin Anda tuju adalah orang yang sabar. Mereka sedang menunggu.</item>
+        <item>Kehadiran adalah hadiah terhebat bagi diri sendiri dan orang lain.</item>
+        <item>Anda memilih niat di atas mode otomatis.</item>
+        <item>Kebiasaan menjanjikan sesuatu. Anda menjanjikan sesuatu yang lebih baik untuk diri sendiri.</item>
+        <item>Identitas dibangun dalam momen-momen seperti ini.</item>
+        <item>Kekuatan sejati adalah memilih diri sendiri saat tidak ada seorang pun yang melihat.</item>
+        <item>Anda sedang menjadi seseorang yang ingin Anda kenal.</item>
+        <item>Versi diri Anda yang Anda hormati hidup dalam pilihan-pilihan Anda.</item>
+        <item>Anda tidak sedang melarikan diri dari sesuatu. Anda sedang memilih sesuatu.</item>
+        <item>Martabat tumbuh setiap kali Anda memilih diri Anda sendiri.</item>
+        <item>Dorongan itu bersifat sementara. Integritas Anda tidak.</item>
+        <item>Anda sedang belajar menjadi sahabat terbaik bagi diri sendiri.</item>
+        <item>Apa yang lebih penting bagi Anda daripada kebiasaan itu?</item>
+        <item>Pola lama tidak berhak memberikan suara dalam siapa diri Anda kelak.</item>
+        <item>Anda sedang membangun kehidupan yang mencerminkan nilai-nilai nyata Anda.</item>
+        <item>Perhatian Anda adalah milik kehidupan yang sebenarnya Anda inginkan.</item>
+        <item>Orang yang sedang Anda tuju layak mendapatkan usaha ini.</item>
+        <item>Anda memilih untuk menjadi seseorang yang dapat Anda percaya.</item>
+        <item>Kehadiran adalah cara Anda merebut kembali kehidupan Anda sendiri.</item>
+        <item>Setiap momen Anda menolak adalah momen Anda memilih diri sendiri.</item>
+        <item>Kebiasaan berkembang biak pada kelengahan. Anda menjadi hadir.</item>
+        <item>Anda sedang belajar seperti apa rasanya kebebasan sejati.</item>
+        <item>Identitas bukanlah sesuatu yang Anda temukan. Itu adalah sesuatu yang Anda bangun.</item>
+        <item>Diri masa depan Anda akan tahu bahwa Anda menepati janji ini.</item>
+        <item>Anda layak menyukai orang yang sedang Anda tuju.</item>
+        <item>Dorongan itu memudar. Orang yang sedang Anda bangun menjadi semakin kuat.</item>
+        <item>Anda adalah seseorang yang tahu apa yang mereka hargai dan menjalaninya.</item>
+        <item>Kepercayaan diri yang sejati berasal dari menyelaraskan tindakan dengan siapa yang Anda inginkan.</item>
+        <item>Versi diri Anda yang Anda hormati sudah berada dalam jangkauan.</item>
+        <item>Anda memilih untuk berada sepenuhnya dalam kehidupan Anda sendiri.</item>
+        <item>Orang seperti apa yang hadir untuk diri mereka sendiri seperti ini? Andalah orangnya.</item>
+        <item>Kejelasan datang ketika Anda berhenti mengaburkan pikiran Anda sendiri.</item>
+        <item>Pilihan yang Anda buat sekarang menentukan siapa diri Anda kelak.</item>
+        <item>Inilah kerja dari kebebasan. Anda sedang melakukannya.</item>
+        <item>Hidup Anda adalah satu-satunya kehidupan yang bisa Anda jalani sepenuhnya.</item>
+        <item>Anda sedang belajar bahwa kekuatan sejati hidup dalam kata tidak.</item>
+        <item>Orang di dalam diri Anda yang tahu lebih baik sedang memimpin sekarang.</item>
+        <item>Setiap momen Anda memilih diri Anda sendiri lebih penting dari yang Anda kira.</item>
+        <item>Apa yang Anda lindungi hari ini membentuk siapa Anda esok hari.</item>
+        <item>Cara lama tidak lagi memegang kendali. Andalah yang memegangnya.</item>
+        <item>Anda sedang belajar bergerak melalui dunia sebagai diri Anda sendiri.</item>
+        <item>Niat adalah cinta yang dibuat nyata dalam cara Anda hidup.</item>
+        <item>Kebiasaan menutupi siapa diri Anda sebenarnya. Anda sedang melepaskan topeng itu.</item>
+        <item>Kedamaian sejati datang dari keyakinan bahwa Anda bersikap jujur.</item>
+        <item>Anda sedang menjadi jenis orang yang dapat Anda kagumi.</item>
+        <item>Ini bukan tentang hukuman. Ini tentang rasa hormat.</item>
+        <item>Dorongan adalah kebohongan tentang apa yang Anda butuhkan. Anda tahu lebih baik.</item>
+        <item>Anda sedang membangun sesuatu yang tidak bisa diguncang.</item>
+        <item>Diri masa depan Anda mendukung Anda saat ini.</item>
+        <item>Kehadiran adalah cara Anda tetap terhubung dengan hal yang penting.</item>
+        <item>Anda sedang belajar menjadi orang yang dapat dipercayai orang lain karena Anda mempercayai diri sendiri.</item>
+        <item>Setiap penolakan adalah kata ya untuk sesuatu yang lebih baik.</item>
+        <item>Versi diri Anda yang utuh sedang muncul.</item>
+        <item>Anda layak mendapatkan kehidupan di mana Anda merasa seperti diri sendiri.</item>
+        <item>Apa yang Anda lakukan membutuhkan keberanian sejati. Sebutkan itu.</item>
+        <item>Kebiasaan mencuri waktu. Anda mengambil kembali waktu Anda.</item>
+        <item>Anda memilih kejelasan di atas kebingungan.</item>
+        <item>Kemenangan sejati itu tenang. Ia hidup di dalam diri.</item>
+        <item>Identitas terbentuk dalam pilihan-pilihan yang tidak dilihat orang lain saat Anda membuatnya.</item>
+        <item>Anda sedang belajar apa artinya menghormati diri sendiri sepenuhnya.</item>
+        <item>Dorongan itu menjadi lebih mudah. Rasa hormat pada diri sendiri menjadi lebih kuat.</item>
+        <item>Anda sedang menjadi seseorang dengan batasan yang tulus.</item>
+        <item>Apa yang sedang Anda lindungi adalah sesuatu yang suci. Diri Anda sendiri.</item>
+        <item>Pola lama sedang runtuh. Sesuatu yang baru sedang tumbuh.</item>
+        <item>Anda sedang belajar mendengarkan kebijaksanaan Anda sendiri.</item>
+        <item>Kebebasan bukanlah sebuah tujuan. Kebebasan adalah cara Anda menjalani setiap hari.</item>
+        <item>Anda sedang membangun fondasi yang mendukung perubahan nyata.</item>
+        <item>Setiap momen kehadiran adalah momen kekuatan.</item>
+        <item>Orang yang ingin Anda tuju membutuhkan Anda untuk melakukan ini.</item>
+        <item>Anda sedang belajar bahwa menepati janji Anda adalah hal yang paling penting.</item>
+        <item>Martabat sejati tidak pernah bisa ditawar.</item>
+        <item>Andalah satu-satunya yang menjalani hidup Anda. Miliki itu sepenuhnya.</item>
+        <item>Kebiasaan itu tidak memiliki masa depan Anda. Andalah pemiliknya.</item>
+        <item>Anda sedang menjadi seseorang yang membuat pilihan alih-alih alasan.</item>
+        <item>Apa yang sedang Anda bangun adalah untuk diri Anda sendiri.</item>
+        <item>Kehadiran menghubungkan Anda dengan kehidupan yang sebenarnya adalah milik Anda.</item>
+        <item>Anda sedang belajar untuk menginginkan diri Anda sendiri lebih daripada dorongan itu.</item>
+        <item>Versi diri Anda tanpa beban ini sedang menunggu.</item>
+        <item>Setiap hari Anda memilih diri sendiri adalah hari di mana Anda menang.</item>
+        <item>Anda menjadi andal bagi satu orang yang paling penting.</item>
+        <item>Kekuatan sejati adalah memilih diri sendiri saat itu sulit.</item>
+        <item>Kejelasan yang datang sepadan dengan setiap momen dari semua ini.</item>
+        <item>Anda sedang belajar bahwa kebebasan itu bersifat internal terlebih dahulu.</item>
+        <item>Apa yang Anda hormati dalam diri Anda akan tumbuh ketika Anda memberinya makan.</item>
+        <item>Anda tidak sedang menunggu untuk menjadi layak. Anda sudah layak sekarang.</item>
+        <item>Kebiasaan adalah kisah lama. Anda sedang menulis kisah yang baru.</item>
+        <item>Anda memilih untuk hadir dalam kehidupan Anda sendiri.</item>
+        <item>Setiap momen penolakan adalah momen pertumbuhan.</item>
+        <item>Orang yang sedang Anda tuju akan mengerti mengapa Anda melakukan ini.</item>
+        <item>Anda sedang belajar mencintai diri sendiri dalam tindakan.</item>
+        <item>Kedamaian sejati datang dari hidup selaras dengan nilai-nilai Anda.</item>
+        <item>Anda sedang membangun diri yang tidak pernah harus Anda bohongi.</item>
+        <item>Dorongan itu memudar seperti semua hal yang bersifat sementara.</item>
+        <item>Anda layak untuk merasa nyaman dengan pilihan Anda sendiri.</item>
+        <item>Identitas ditulis dalam apa yang Anda lakukan ketika diuji.</item>
+        <item>Anda sedang belajar bahwa kehadiran adalah bentuk kepedulian yang paling dalam.</item>
+        <item>Versi diri Anda yang bebas lebih dekat dari yang Anda tahu.</item>
+        <item>Apa yang Anda lindungi hari ini menjadi siapa Anda esok hari.</item>
+        <item>Anda memilih untuk menjadi seseorang yang dapat Anda Andalkan.</item>
+        <item>Setiap momen jujur berarti. Anda sedang mengumpulkannya.</item>
+        <item>Kekuatan sejati bersifat internal. Ia hidup di tulang belakang Anda.</item>
+        <item>Anda sedang menjadi seseorang yang menghormati janji mereka sendiri.</item>
+        <item>Kejelasan yang Anda bangun akan menopang Anda.</item>
+        <item>Anda tidak sedang melarikan diri. Anda sedang tiba.</item>
+        <item>Apa yang Anda lakukan membuktikan sesuatu pada diri sendiri.</item>
+        <item>Kebiasaan menginginkan kepasrahan. Anda memilih kedaulatan.</item>
+        <item>Anda sedang belajar bahwa kehidupan terbaik adalah kehidupan yang Anda pilih.</item>
+        <item>Kehadiran adalah penawar bagi kebohongan yang diceritakan oleh kebiasaan itu.</item>
+        <item>Setiap momen Anda bertahan adalah momen Anda tetap setia.</item>
+        <item>Anda menjadi jenis orang yang layak untuk dibanggakan.</item>
+        <item>Kebebasan sejati terasa seperti melakukan apa yang Anda yakini.</item>
+        <item>Versi diri Anda yang mempercayai diri sendiri sedang muncul.</item>
+        <item>Anda sedang belajar bahwa martabat tidak diberikan. Martabat dipilih.</item>
+        <item>Yang penting adalah Anda sedang memilih. Teruslah memilih.</item>
+        <item>Kisah lama tidak memiliki bab berikutnya.</item>
+        <item>Anda sedang membangun hubungan dengan diri sendiri yang bertahan lama.</item>
+        <item>Setiap momen pilihan adalah momen kekuatan.</item>
+        <item>Orang yang sedang Anda tuju tidak jauh.</item>
+        <item>Anda sedang belajar hidup dengan penuh niat.</item>
+        <item>Rasa hormat sejati berasal dari menepati janji Anda sendiri.</item>
+        <item>Dorongan itu bersifat sementara. Karakter Anda bersifat permanen.</item>
+        <item>Anda memilih untuk sepenuhnya hidup dalam kehidupan Anda sendiri.</item>
+        <item>Identitas dibangun dari seribu kata ya kecil untuk diri sendiri.</item>
+        <item>Anda layak menatap mata Anda sendiri tanpa rasa malu.</item>
+        <item>Kejelasan yang datang akan menjadi rumah baru Anda.</item>
+        <item>Anda tidak sedang menunggu izin. Anda memberikannya pada diri sendiri.</item>
+        <item>Apa yang Anda lakukan sekarang adalah awal dari segalanya.</item>
+        <item>Anda sedang belajar mempercayai apa yang Anda tahu benar.</item>
+        <item>Kebiasaan berbisik. Nurani Anda berbicara. Dengarkan lebih keras.</item>
+        <item>Pilihan sejati berarti hidup dengan apa yang telah Anda putuskan.</item>
+        <item>Anda sedang menjadi seseorang dengan keyakinan yang nyata.</item>
+        <item>Setiap momen Anda bertahan adalah momen Anda membangun diri sendiri.</item>
+        <item>Orang di dalam yang tahu lebih baik sudah memimpin.</item>
+        <item>Apa yang Anda bangun hanya untuk mereka yang menginginkannya.</item>
+        <item>Kehebohan berarti Anda tidak lagi menjawab dorongan itu.</item>
+        <item>Anda sedang belajar bahwa rasa hormat Anda sendiri lebih berharga.</item>
+        <item>Versi diri Anda yang utuh sedang tumbuh kembali.</item>
+        <item>Apa yang Anda lindungi dalam momen-momen ini adalah masa depan Anda.</item>
+        <item>Anda memilih untuk menjadi seseorang yang Anda kenali.</item>
+        <item>Kekuatan sejati adalah memilih apa yang penting dan menjalaninya.</item>
+        <item>Kejelasan yang Anda bangun menjadi permanen.</item>
+        <item>Anda sedang belajar bahwa kehadiran adalah tempat di mana kehidupan benar-benar berada.</item>
+        <item>Setiap pilihan yang jujur membawa Anda lebih dekat pada diri sendiri.</item>
+        <item>Kebiasaan tidak dapat menyentuh siapa yang Anda pilih untuk menjadi.</item>
+        <item>Anda layak merasa utuh dalam keputusan Anda sendiri.</item>
+        <item>Anda sedang membangun sesuatu yang tidak akan pernah diambil oleh dorongan itu.</item>
+        <item>Apa yang mendefinisikan Anda adalah apa yang Anda pilih saat itu sulit.</item>
+        <item>Pola lama kehilangan cengkeramannya. Anda berdiri teguh.</item>
+        <item>Kekuatan sejati adalah menepati janji Anda pada diri sendiri di dalam gelap.</item>
+        <item>Anda sedang menjadi seseorang yang kata ya-nya memiliki arti.</item>
+        <item>Setiap momen Anda memilih diri sendiri adalah momen kemenangan.</item>
+        <item>Orang yang sedang Anda tuju akan berterima kasih.</item>
+        <item>Anda sedang belajar apa yang sebenarnya dibutuhkan oleh kebebasan.</item>
+        <item>Kehadiran adalah pemberontakan Anda melawan mode otomatis.</item>
+        <item>Anda sedang membangun kehidupan yang selaras dengan jiwa Anda.</item>
+        <item>Versi diri Anda yang autentik sedang terbentuk.</item>
+        <item>Apa yang Anda lakukan saat ini berdampak pada segalanya.</item>
+        <item>Anda layak untuk berdamai dengan pilihan Anda sendiri.</item>
+        <item>Kejelasan yang Anda dapatkan adalah fondasi untuk segalanya.</item>
+        <item>Anda sedang belajar membuat pilihan yang mencerminkan siapa diri Anda.</item>
+        <item>Rasa hormat yang sejati datang dari melakukan hal yang sulit saat hal itu penting.</item>
+        <item>Setiap hari tanpa kebiasaan lama adalah hari pembuktian.</item>
+        <item>Anda sedang menjadi seseorang yang dapat mempercayai diri sendiri.</item>
+        <item>Dorongan tersebut tidak memahami siapa diri Anda yang sedang terbentuk.</item>
+        <item>Anda memilih untuk hidup dengan niat dan kesadaran.</item>
+        <item>Apa yang Anda lindungi menjadi apa yang Anda lestarikan.</item>
+        <item>Identitas tidak diwariskan. Identitas dipilih dan dibangun kembali setiap hari.</item>
+        <item>Anda sedang belajar bahwa kebebasan adalah pekerjaan internal.</item>
+        <item>Versi diri Anda yang bebas sedang menunggu untuk ditemukan.</item>
+        <item>Setiap saat Anda melawan adalah saat kekuatan.</item>
+        <item>Anda layak mengenal diri sendiri sebagai seseorang yang menepati janji.</item>
+        <item>Kebiasaan tersebut memudar. Anda semakin jernih.</item>
+        <item>Anda sedang menjadi seseorang yang nilai-nilainya dihidupkan.</item>
+        <item>Keredaan sejati datang dari mengetahui bahwa Anda memilih dengan benar.</item>
+        <item>Apa yang Anda bangun akan menopang Anda melalui segalanya.</item>
+        <item>Setiap pilihan adalah suara untuk siapa yang ingin Anda tuju.</item>
+        <item>Anda sedang belajar menghormati orang yang Anda inginkan.</item>
+        <item>Kejelasan pilihan Anda adalah kekuatan terbesar Anda.</item>
+        <item>Anda tidak sedang menjadi seseorang yang baru. Anda menjadi lebih diri Anda.</item>
+        <item>Yang penting adalah Anda ada di sini. Anda sedang memilih.</item>
+        <item>Kisah lama berakhir. Kisah baru dimulai dengan Anda.</item>
+        <item>Setiap momen kehadiran adalah momen keutuhan.</item>
+        <item>Anda sedang menjadi seseorang yang benar-benar Anda sukai.</item>
+        <item>Kebebasan sejati terasa seperti menjalani kebenaran Anda sendiri.</item>
+        <item>Versi diri Anda yang Anda percayai sedang terbentuk sekarang.</item>
+        <item>Anda layak menoleh ke belakang tanpa penyesalan tentang hari ini.</item>
+        <item>Apa yang Anda bangun dibuat untuk bertahan.</item>
+        <item>Anda berada tepat di tempat yang Anda butuhkan.</item>
+        <item>Setiap saat Anda tidak menyerah adalah saat kekuatan.</item>
+        <item>Anda sedang membangun sesuatu yang baru dengan setiap hari yang berlalu.</item>
+        <item>Langkah kecil ke depan tetap dihitung sebagai ke depan.</item>
+        <item>Kemajuan tidak selalu terlihat, tetapi Anda sedang melakukannya.</item>
+        <item>Hari ini, Anda memilih diri Anda sendiri. Itulah yang penting.</item>
+        <item>Anda tidak melakukan hal tersebut. Itu segalanya.</item>
+        <item>Jalan menuju perubahan dimulai dengan satu keputusan.</item>
+        <item>Bahkan saat itu sulit, Anda tetap bergerak.</item>
+        <item>Momen perlawanan ini adalah kekuatan Anda.</item>
+        <item>Anda tidak harus menang selamanya, cukup hari ini.</item>
+        <item>Satu hari pada satu waktu adalah cara paling lembut untuk melaluinya.</item>
+        <item>Melepaskan diri butuh waktu. Anda memilikinya.</item>
+        <item>Jangan khawatir tentang minggu depan. Tangani saja hari ini.</item>
+        <item>Perjalanannya panjang, tetapi Anda hanya berjalan satu hari dalam satu waktu.</item>
+        <item>Anda tidak sedang berlari. Anda sedang membangun kehidupan.</item>
+        <item>Biarkan hari esok mengkhawatirkan dirinya sendiri.</item>
+        <item>Hari ini adalah semua yang perlu Anda kelola saat ini.</item>
+        <item>Waktu bergerak lebih lambat dari yang Anda pikirkan.</item>
+        <item>Sebuah ketergelinciran bukanlah kegagalan, itu adalah informasi.</item>
+        <item>Anda tersandung. Itu tidak menghapus kemajuan Anda.</item>
+        <item>Satu momen tidak mendefinisikan perjalanan Anda.</item>
+        <item>Anda dapat mulai lagi sekarang juga. Tidak perlu menunggu.</item>
+        <item>Ketergelinciran terjadi. Yang penting adalah apa yang terjadi berikutnya.</item>
+        <item>Anda telah belajar sesuatu. Gunakan itu.</item>
+        <item>Momen perjuangan ini akan mengajari Anda sesuatu.</item>
+        <item>Jatuh kembali sekali bukan berarti Anda gagal.</item>
+        <item>Pilihan berikutnya selalu tersedia untuk Anda.</item>
+        <item>Anda dapat mulai lagi sebanyak yang Anda butuhkan.</item>
+        <item>Bersikaplah baik pada diri sendiri seperti Anda bersikap pada seorang teman.</item>
+        <item>Anda layak mendapatkan kelembutan saat Anda menyembuhkan.</item>
+        <item>Kata-kata kasar tidak akan membantu. Kebaikan akan membantu.</item>
+        <item>Anda sedang melakukan pekerjaan berat. Perlakukan diri Anda dengan lembut.</item>
+        <item>Perjalanan ini tidak butuh hukuman, hanya kesabaran.</item>
+        <item>Rasa malu tidak akan membantu Anda. Belas kasih akan membantu.</item>
+        <item>Anda diizinkan untuk tidak sempurna saat berubah.</item>
+        <item>Memaafkan diri sendiri secepat yang Anda bisa.</item>
+        <item>Kemajuan Anda layak mendapatkan perayaan yang tenang.</item>
+        <item>Jadilah suara yang mengangkat Anda, bukan merendahkan Anda.</item>
+        <item>Garis yang terputus tidak menghapus kekuatan Anda.</item>
+        <item>Konsistensi lebih penting daripada kesempurnaan.</item>
+        <item>Apa yang Anda lakukan di sebagian besar hari lebih penting daripada satu hari.</item>
+        <item>Ukuran sebenarnya adalah bagaimana Anda hadir secara teratur.</item>
+        <item>Satu ketergelinciran tidak membatalkan pola Anda dalam mengatakan tidak.</item>
+        <item>Kebiasaan Anda terbentuk melalui pilihan kecil yang diulang.</item>
+        <item>Yang dihitung adalah ritme yang Anda bangun, bukan garis yang sempurna.</item>
+        <item>Garis putus. Karakter tidak.</item>
+        <item>Anda melatih diri sendiri melalui pengulangan.</item>
+        <item>Setiap hari adalah kesempatan untuk memperkuat siapa diri Anda yang sedang terbentuk.</item>
+        <item>Hari-hari pertama adalah yang paling sulit. Ini menjadi lebih mudah.</item>
+        <item>Di awal, segala sesuatunya terasa mendesak. Itu memudar.</item>
+        <item>Saat ini, rasanya tidak mungkin. Tidak akan selalu begitu.</item>
+        <item>Keinginan tersebut akan melemah. Percayalah itu akan terjadi.</item>
+        <item>Apa yang menyala terang sekarang akan mendingin.</item>
+        <item>Tubuh dan pikiran Anda akan menyesuaikan diri lebih cepat dari yang Anda pikirkan.</item>
+        <item>Minggu pertama adalah pendakian curam.</item>
+        <item>Setiap hari menjadi sedikit lebih ringan dari hari sebelumnya.</item>
+        <item>Anda berada di bagian yang paling sulit. Ini akan berubah.</item>
+        <item>Intensitas yang Anda rasakan sekarang bersifat sementara.</item>
+        <item>Setelah beberapa saat, pilihan menjadi lebih mudah dibuat.</item>
+        <item>Dorongan tersebut kehilangan cengkeramannya seiring waktu.</item>
+        <item>Anda akan menyadari suatu hari bahwa Anda bahkan tidak memikirkannya.</item>
+        <item>Pemulihan membangun momentum saat Anda berjalan.</item>
+        <item>Setiap hari perlawanan membuat hari berikutnya lebih lembut.</item>
+        <item>Otak Anda sedang menyambung ulang dirinya sendiri. Itu butuh waktu, lalu terjadi.</item>
+        <item>Apa yang membutuhkan usaha sekarang menjadi alami.</item>
+        <item>Jalan menjadi lebih mulus semakin sering Anda berjalan di atasnya.</item>
+        <item>Anda akan bangun suatu hari dan merasa berbeda.</item>
+        <item>Kekuatan terbangun dengan tenang, lalu Anda menyadari Anda memilikinya.</item>
+        <item>Satu hari adalah tonggak sejarah. Satu minggu juga.</item>
+        <item>Tandai kemenangan Anda secara pribadi. Itu tetaplah kemenangan.</item>
+        <item>Anda tidak harus menyiarkannya untuk menghormati kemajuan Anda.</item>
+        <item>Kebanggaan yang tenang sama berartinya dengan perayaan apa pun.</item>
+        <item>Rayakan tanpa keriuhan. Kemenangan itu nyata.</item>
+        <item>Setiap tonggak sejarah, berapa pun ukurannya, layak untuk diakui.</item>
+        <item>Terobosan Anda tidak butuh penonton agar berarti.</item>
+        <item>Kekuatan diam-diam tetaplah kekuatan.</item>
+        <item>Perhatikan apa yang telah Anda lakukan, bahkan jika orang lain tidak.</item>
+        <item>Anda tahu berapa besar pengorbanan untuk sampai ke sini. Itu sudah cukup.</item>
+        <item>Berpikirlah melampaui hari esok. Anda sedang membangun sesuatu yang bertahan lama.</item>
+        <item>Pilihan hari ini membentuk seluruh hidup Anda.</item>
+        <item>Anda tidak hanya melewati hari ini, Anda berubah selamanya.</item>
+        <item>Diri Anda di masa depan akan berterima kasih atas apa yang dilakukan diri Anda saat ini.</item>
+        <item>Orang yang sedang Anda tuju sangat layak diperjuangkan.</item>
+        <item>Diri masa depan Anda mengandalkan Anda.</item>
+        <item>Apa yang Anda lakukan sekarang terakumulasi seiring waktu.</item>
+        <item>Anda berinvestasi dalam kehidupan yang benar-benar Anda inginkan.</item>
+        <item>Ini bukan tentang hari ini. Ini tentang siapa diri Anda yang sedang terbentuk.</item>
+        <item>Segala sesuatu yang Anda lakukan sekarang bergelombang ke depan.</item>
+        <item>Ketika dorongan itu muncul, ingatlah mengapa Anda mulai.</item>
+        <item>Pola lama ingin kembali. Anda berhak mengatakan tidak.</item>
+        <item>Apa yang Anda hancurkan butuh waktu untuk terbentuk. Melepaskannya juga butuh waktu.</item>
+        <item>Anda menyambung ulang perilaku bertahun-tahun. Itu pekerjaan yang sabar.</item>
+        <item>Kebiasaan itu berbisik. Anda dapat memilih untuk tidak mendengarkan.</item>
+        <item>Setiap kali Anda mengatakan tidak, Anda melatih diri untuk mengatakan tidak lain kali.</item>
+        <item>Anda tidak sedang dirampas. Anda sedang dibebaskan.</item>
+        <item>Ini adalah tentang siapa yang Anda inginkan, bukan apa yang tidak dapat Anda miliki.</item>
+        <item>Alasan Anda berhenti lebih besar daripada dorongan untuk kembali.</item>
+        <item>Kehidupan tanpa itu sebanding dengan apa yang Anda lepaskan untuk mendapatkannya.</item>
+        <item>Hari ini Anda lebih kuat daripada kebiasaan itu. Percayalah.</item>
+        <item>Menginginkan sesuatu bukan berarti Anda harus melakukannya.</item>
+        <item>Anda dapat merasakan dorongan itu dan tetap berjalan melewatinya.</item>
+        <item>Perasaan itu akan berlalu. Anda tidak harus menindaklanjuti setiap perasaan.</item>
+        <item>Dorongan datang dan pergi seperti ombak. Anda belajar melihatnya berlalu.</item>
+        <item>Keinginan ini bukanlah perintah. Ini hanyalah sebuah pikiran.</item>
+        <item>Anda menjadi orang yang bisa menginginkan sesuatu dan menolaknya.</item>
+        <item>Setiap penolakan membuktikan Anda memiliki kekuatan yang Anda ragukan.</item>
+        <item>Pola lama tidak lagi menguasai Anda.</item>
+        <item>Anda mengambil kembali hidup Anda, satu pilihan pada satu waktu.</item>
+        <item>Ketika Anda lelah, ingatlah seberapa jauh Anda telah datang.</item>
+        <item>Bagian tersulit tidak ada di belakang Anda, tetapi Anda telah melewati yang terburuk.</item>
+        <item>Anda telah melakukan hal tersulit. Tetap stabil lebih mudah.</item>
+        <item>Anda telah membuktikan dapat melakukannya. Anda tidak perlu membuktikannya lagi.</item>
+        <item>Beristirahatlah saat Anda membutuhkannya. Pekerjaan tetap berlanjut.</item>
+        <item>Kelelahan itu nyata. Itu tidak berarti Anda gagal.</item>
+        <item>Anda bisa merasa lelah dan tetap bergerak maju.</item>
+        <item>Hari esok adalah hari baru. Hari ini tidak harus sempurna.</item>
+        <item>Jika hari ini sulit, hari esok akan lebih mudah.</item>
+        <item>Tidak ada yang Anda lakukan hari ini yang merusak semua yang telah Anda bangun.</item>
+        <item>Satu hari yang berat tidak menghapus kemajuan berminggu-minggu.</item>
+        <item>Hari buruk tidak menentukan seluruh minggu.</item>
+        <item>Anda diizinkan mengalami momen berat dan tetap baik-baik saja.</item>
+        <item>Pemulihan bukanlah garis lurus. Garisnya tetap naik.</item>
+        <item>Beberapa hari akan terasa seperti mulai dari awal. Itu normal.</item>
+        <item>Anda tidak mulai dari awal. Anda melanjutkan. Bahkan hari-hari sulit adalah bagian darinya.</item>
+        <item>Ketika segala sesuatunya terasa hancur, Anda seringkali hanya kelelahan.</item>
+        <item>Nilai Anda tidak ditentukan oleh garis kemenangan Anda.</item>
+        <item>Siapa diri Anda tidak diukur oleh satu momen kelemahan.</item>
+        <item>Anda lebih dari satu pilihan. Anda adalah gabungan semuanya.</item>
+        <item>Kebiasaan itu adalah satu bab. Anda sedang menulis buku baru sekarang.</item>
+        <item>Versi diri Anda ini masih terbentuk. Beri diri Anda waktu.</item>
+        <item>Anda diizinkan untuk berubah secara perlahan.</item>
+        <item>Penyembuhan tidak memiliki batas waktu.</item>
+        <item>Pemulihan terjadi dengan kecepatannya sendiri, dan itu tidak apa-apa.</item>
+        <item>Jalan ke depan tidak selalu jelas. Anda tidak perlu melihat seluruh jalan.</item>
+        <item>Hanya langkah berikutnya saja sudah cukup.</item>
+        <item>Anda tidak harus memecahkan semuanya hari ini.</item>
+        <item>Percayai prosesnya bahkan ketika Anda tidak dapat melihat kemajuannya.</item>
+        <item>Pekerjaan yang Anda lakukan sekarang tidak langsung menunjukkan hasil. Tidak apa-apa.</item>
+        <item>Kemajuan tak kasat mata tetaplah kemajuan.</item>
+        <item>Anda berubah bahkan ketika Anda tidak dapat melihatnya.</item>
+        <item>Tubuh dan pikiran Anda menyesuaikan diri secara diam-diam.</item>
+        <item>Imbalan dari berhenti tidak selalu langsung terlihat.</item>
+        <item>Apa yang Anda peroleh dari ini butuh waktu untuk muncul.</item>
+        <item>Bersabarlah pada diri sendiri seperti Anda bersabar pada seseorang yang Anda kasihi.</item>
+        <item>Jika Anda berjuang, itu tidak berarti Anda lemah.</item>
+        <item>Perjuangan adalah tanda Anda sedang tumbuh.</item>
+        <item>Ketidaknyamanan adalah bukti bahwa sesuatu sedang berubah.</item>
+        <item>Anda sedang melakukan sesuatu yang sangat sulit. Hargai itu.</item>
+        <item>Anda memilih ini, setiap hari, bahkan ketika itu menyakitkan.</item>
+        <item>Tidak ada yang bisa merampas kebebasan Anda. Anda sedang memperjuangkannya.</item>
+        <item>Anda tidak sedang merampas diri sendiri. Anda sedang merebut kembali diri Anda.</item>
+        <item>Ini adalah tindakan penghormatan diri.</item>
+        <item>Perlakukan ini seperti Anda memperlakukan sesuatu yang sangat Anda cintai.</item>
+        <item>Anda layak mendapatkan usaha yang Anda curahkan.</item>
+        <item>Anda layak dipertahankan. Anda layak diperjuangkan.</item>
+        <item>Berhenti mempertanyakan apakah Anda layak.</item>
+        <item>Keraguan akan datang. Biarkan saja. Anda tidak harus mempercayainya.</item>
+        <item>Anda bisa merasa tidak yakin dan tetap bergerak maju.</item>
+        <item>Keyakinan akan mengikuti tindakan. Bertindaklah dulu.</item>
+        <item>Anda tidak harus merasa percaya diri untuk melakukan hal tersebut.</item>
+        <item>Lakukan hal tersebut. Rasa percaya diri akan datang.</item>
+        <item>Beberapa hari Anda akan merasa kuat. Beberapa hari Anda akan merasa rapuh.</item>
+        <item>Hari-hari rapuh adalah tempat kekuatan sejati tinggal.</item>
+        <item>Ketika Anda lemah, tampil adalah keberanian.</item>
+        <item>Kebiasaan itu subur dalam kesunyian dan rasa malu. Kesunyian dan rasa malu adalah bahan bakarnya.</item>
+        <item>Berbicara tentang hal itu, menerimanya, dan melangkah maju memadamkannya.</item>
+        <item>Anda tidak harus menyembunyikan ini. Tidak ada yang perlu disembunyikan.</item>
+        <item>Apa yang Anda lakukan adalah penyembuhan. Itu kebalikan dari memalukan.</item>
+        <item>Setiap orang yang berhenti melakukan sesuatu merasakan apa yang Anda rasakan.</item>
+        <item>Orang lain telah berjalan di jalur ini sebelum Anda.</item>
+        <item>Kisah Anda belum berakhir. Ini baru memulai babak baru.</item>
+        <item>Akhir yang Anda inginkan masih mungkin terjadi. Lebih dari sekadar mungkin.</item>
+        <item>Tidak peduli berapa kali Anda mencoba sebelumnya, kali ini berbeda.</item>
+        <item>Upaya masa lalu Anda bukanlah kegagalan. Itu adalah latihan.</item>
+        <item>Setiap kali Anda mencoba, Anda mempelajari sesuatu.</item>
+        <item>Pengetahuan ini sekarang milik Anda. Gunakan itu.</item>
+        <item>Dorongan itu akan menguji Anda. Begitulah cara kerja dorongan.</item>
+        <item>Setiap ujian yang Anda lewati membawa Anda lebih dekat pada kedamaian.</item>
+        <item>Pikiran obsesif itu akan memudar.</item>
+        <item>Pemutaran ulang mental yang konstan akan mereda.</item>
+        <item>Suatu hari Anda akan menyadari Anda tidak memikirkannya selama berjam-jam.</item>
+        <item>Anda diizinkan menginginkan ini. Inginkan sepenuhnya.</item>
+        <item>Inginkan kebebasan itu. Inginkan kedamaiannya. Inginkan versi baru diri Anda.</item>
+        <item>Ketika motivasi memudar, biarkan alasan Anda membawa Anda.</item>
+        <item>Ketika alasan memudar, biarkan rutinitas membawa Anda.</item>
+        <item>Ketika rutinitas rusak, ambil kembali.</item>
+        <item>Ini tidak rapuh. Ini fleksibel.</item>
+        <item>Anda sedang membangun sesuatu yang tangguh.</item>
+        <item>Pola lama akan mencoba sekali lagi. Anda tahu itu akan terjadi.</item>
+        <item>Anda akan siap, karena Anda telah bersiap.</item>
+        <item>Setiap hari mengatakan tidak adalah latihan untuk momen itu.</item>
+        <item>Masa depan Anda belum ditulis. Anda berhak menulisnya.</item>
+        <item>Setiap pilihan yang Anda buat sekarang adalah kata dalam masa depan itu.</item>
+        <item>Kisah seperti apa yang ingin Anda ceritakan?</item>
+        <item>Hal tersulit yang pernah Anda lakukan adalah apa yang Anda lakukan sekarang.</item>
+        <item>Anda tidak hanya bertahan hidup. Anda sedang mempelajari siapa diri Anda yang diinginkan.</item>
+        <item>Orang yang sedang Anda tuju tidak lagi membutuhkan kebiasaan itu.</item>
+        <item>Pertumbuhan itu lambat. Pertumbuhan itu nyata. Pertumbuhan sedang terjadi.</item>
+        <item>Otak Anda itu plastis. Otak itu bisa berubah. Otak itu sedang berubah.</item>
+        <item>Apa yang terasa tidak mungkin hari ini akan terasa normal segera.</item>
+        <item>Kenormalan baru sedang menunggu Anda.</item>
+        <item>Diri Anda yang terus mencoba layak untuk dirayakan.</item>
+        <item>Kedamaian yang sedang Anda bangun ini tidak datang sekaligus.</item>
+        <item>Anda termasuk di sini. Anda termasuk dalam pemulihan ini.</item>
+        <item>Pagi ini Anda memiliki waktu tambahan satu jam. Apa yang akan Anda lakukan dengannya?</item>
+        <item>Pikiran Anda lebih jernih daripada kemarin. Perhatikan itu.</item>
+        <item>Anda memilih diri Anda sendiri hari ini. Itulah yang penting.</item>
+        <item>Kebiasaan itu sekarang lebih tenang. Anda sedang mempelajari ritmenya.</item>
+        <item>Satu jalan-jalan di pagi hari dapat mengatur ulang seluruh hari Anda.</item>
+        <item>Anda sedang membangun sesuatu yang nyata dengan waktu yang Anda hemat.</item>
+        <item>Tidur malam ini akan terasa berbeda. Biarkan itu terjadi.</item>
+        <item>Air dingin bukanlah hukuman. Itu adalah bukti bahwa Anda dapat memilih ketidaknyamanan dengan syarat Anda sendiri.</item>
+        <item>Tangan Anda bebas untuk sesuatu yang lebih baik.</item>
+        <item>Dorongan itu akan datang. Anda tahu cara duduk bersamanya sekarang.</item>
+        <item>Fokus tumbuh ketika Anda berhenti memberi makan pola lama.</item>
+        <item>Anda tidak lagi melawan kebiasaan itu. Anda hanya berbalik darinya.</item>
+        <item>Disiplin hari ini adalah kebebasan hari esok. Selalu begitu.</item>
+        <item>Kemerosotan sore hari lebih kecil. Apakah Anda menyadarinya?</item>
+        <item>Rasa syukur atas kemenangan kecil membangun momentum lebih cepat daripada rasa malu tentang masa lalu.</item>
+        <item>Anda sedang mengajari tubuh Anda ritme baru.</item>
+        <item>Kebiasaan itu berbisik. Komitmen Anda berbicara lebih keras.</item>
+        <item>Energi yang Anda rasakan ini milik Anda untuk dihabiskan sekarang.</item>
+        <item>Tetap tenang ketika dorongan datang adalah kekuatan super.</item>
+        <item>Apa yang akan Anda katakan kepada seorang teman dalam posisi Anda?</item>
+        <item>Rutinitas pagi Anda adalah jangkar Anda.</item>
+        <item>Dorongan adalah data, bukan takdir.</item>
+        <item>Anda tidak sedang merampas diri sendiri. Anda sedang melindungi diri sendiri.</item>
+        <item>Sepuluh menit di luar adalah sepuluh menit pikiran Anda tidak mengejarnya.</item>
+        <item>Minggu ini berbeda dari minggu lalu. Lihatlah perbedaannya.</item>
+        <item>Keluarga Anda menyadarinya. Mereka belum mengatakannya, tetapi mereka menyadarinya.</item>
+        <item>Kebiasaan itu memelihara kecemasan Anda. Perhatikan ia menyusut saat Anda tetap stabil.</item>
+        <item>Anda sedang menjadi seseorang yang bisa duduk diam.</item>
+        <item>Satu hari pada satu waktu bukanlah kelemahan. Itu adalah strategi.</item>
+        <item>Tidur Anda adalah cara tubuh Anda menyembuhkan. Hargai itu.</item>
+        <item>Dorongan itu melemah ketika Anda tidak berdebat dengannya.</item>
+        <item>Anda tidak mulai dari awal. Anda melanjutkan.</item>
+        <item>Kebiasaan pengganti butuh waktu. Bersabarlah pada diri sendiri.</item>
+        <item>Momen ini lebih mudah daripada momen sebelumnya.</item>
+        <item>Pikiran Anda tidak begitu padat sekarang. Rasakan ruang itu.</item>
+        <item>Pekerjaan menjadi lebih jernih ketika kebiasaan itu tidak menghalangi.</item>
+        <item>Pola lama memiliki harga. Anda bebas darinya sekarang.</item>
+        <item>Anda sedang belajar merasa bosan. Itu adalah keterampilan nyata.</item>
+        <item>Pagi adalah milik Anda. Apa yang akan Anda ciptakan dengannya?</item>
+        <item>Tangan Anda tidak terlalu gemetar sekarang. Apakah Anda menyadarinya?</item>
+        <item>Beginilah rasanya ketenangan.</item>
+        <item>Anda tidak butuh izin untuk berhenti. Anda sudah memilikinya.</item>
+        <item>Dorongan itu berlalu. Setiap kali, itu berlalu.</item>
+        <item>Tubuh Anda mengingat kebiasaan itu. Pikiran Anda tahu lebih baik.</item>
+        <item>Disiplin kecil hari ini membangun kebebasan besar besok.</item>
+        <item>Anda tidak rusak. Anda hanya mengarahkan kembali kekuatan Anda.</item>
+        <item>Sepuluh ribu momen pilihan kecil membawa Anda ke sini.</item>
+        <item>Kebiasaan itu akan tetap ada jika Anda memberinya makan. Anda tidak melakukannya.</item>
+        <item>Teman-teman Anda ingin melihat Anda seperti ini. Jernih dan hadir.</item>
+        <item>Rutinitas malam adalah hadiah Anda, bukan ujian Anda.</item>
+        <item>Anda bernapas lebih dalam sekarang.</item>
+        <item>Dorongan itu telah kehilangan kekuatannya untuk membuat keputusan bagi Anda.</item>
+        <item>Hari ini Anda memiliki energi untuk sesuatu yang nyata.</item>
+        <item>Rasa syukur atas apa yang Anda peroleh mengalahkan penyesalan tentang apa yang Anda hilangkan.</item>
+        <item>Anda tidak sedang memaksakan diri. Anda sedang memilih.</item>
+        <item>Kebiasaan itu subur dalam kegelapan. Terang adalah sekutu Anda.</item>
+        <item>Fokus Anda menjadi tajam ketika Anda berhenti membakar energi untuk itu.</item>
+        <item>Air dingin membangunkan Anda seperti kebiasaan itu dulu. Tanpa harus membayar mahal.</item>
+        <item>Anda tidak sedang merampas diri sendiri. Anda sedang berinvestasi pada diri sendiri.</item>
+        <item>Dorongan itu kencang di beberapa hari, tenang di hari lain. Keduanya baik-baik saja.</item>
+        <item>Utang tidur Anda menyusut.</item>
+        <item>Jalan-jalan yang Anda ambil pagi ini memiliki tujuan: untuk mengingat bahwa Anda bisa tenang.</item>
+        <item>Anda tidak sempurna. Anda gigih.</item>
+        <item>Kebiasaan itu hidup dalam kebiasaan. Putuskan kebiasaannya, hancurkan kekuatannya.</item>
+        <item>Pikiran Anda adalah alat lagi, bukan medan perang.</item>
+        <item>Pagi hari adalah lembaran kosong Anda.</item>
+        <item>Anda sedang mengajari sistem saraf Anda cara baru untuk merasa aman.</item>
+        <item>Inilah yang Anda pilih. Teruslah memilihnya.</item>
+        <item>Pola lama ingin terasa seperti kebebasan. Kebebasan sejati terasa seperti ini.</item>
+        <item>Energi Anda tidak lagi dipinjam dari hari esok.</item>
+        <item>Dorongan itu akan menguji Anda. Biarkan saja. Anda telah melewati setiap ujian sejauh ini.</item>
+        <item>Disiplin adalah cinta yang diterapkan pada diri sendiri.</item>
+        <item>Anda tidak sedang lari dari kebiasaan itu. Anda sedang berlari menuju sesuatu yang lebih baik.</item>
+        <item>Kejelasan yang Anda rasakan sekarang layak untuk dilindungi.</item>
+        <item>Satu malam yang tenang membuktikan Anda bisa memiliki banyak malam tenang.</item>
+        <item>Tubuh Anda sedang menyembuhkan. Percayai prosesnya.</item>
+        <item>Saat Anda berhenti melawan adalah saat Anda mulai menang.</item>
+        <item>Anda sedang membangun kehidupan yang tidak memiliki tempat bagi kebiasaan itu.</item>
+        <item>Dorongan itu memakan kerahasiaan. Bawa ke dalam terang dan saksikan ia menyusut.</item>
+        <item>Tidur adalah tempat tubuh Anda menepati janjinya.</item>
+        <item>Kebiasaan pengganti menjadi nyata sekarang.</item>
+        <item>Anda tidak merindukan kebiasaan itu. Anda sedang mengingat diri Anda sendiri.</item>
+        <item>Rutinitas pagi adalah suara harian Anda untuk diri sendiri.</item>
+        <item>Rasa syukur atas momen yang Anda jalani mengalahkan kekhawatiran tentang momen di depan.</item>
+        <item>Pikiran Anda memiliki ruang untuk sesuatu yang baru sekarang.</item>
+        <item>Berjalan-jalan di hutan adalah obat yang disamar-samar oleh kebiasaan itu.</item>
+        <item>Anda sedang belajar bahwa Anda dapat duduk dengan ketidaknyamanan tanpa memberinya makan.</item>
+        <item>Kebiasaan itu subur dalam urgensi. Ketenangan adalah musuhnya.</item>
+        <item>Fokus Anda kembali saat Anda berhenti membaginya.</item>
+        <item>Setiap kemenangan kecil adalah izin untuk percaya pada kemenangan yang lebih besar.</item>
+        <item>Anda tidak sedang merampas diri sendiri. Anda sedang mempraktikkan kebebasan.</item>
+        <item>Dorongan adalah seorang tamu, bukan pemilik rumah.</item>
+        <item>Energi Anda membersihkan jalan untuk sesuatu yang nyata.</item>
+        <item>Pola lama lebih tenang karena Anda tidak memberinya makan.</item>
+        <item>Anda sedang membangun kerajinan sekarang, bukan sekadar menghabiskan waktu.</item>
+        <item>Disiplin tanpa belas kasih adalah hukuman. Anda tahu perbedaannya.</item>
+        <item>Malam lebih tenang. Tidur lebih mudah. Anda merasakannya.</item>
+        <item>Teman-teman Anda menginginkan versi diri Anda ini. Yang jernih.</item>
+        <item>Kebiasaan itu menjanjikan pelarian. Anda menemukan sesuatu yang lebih baik: kehadiran.</item>
+        <item>Dorongan itu akan datang besok. Anda tahu cara menanganinya.</item>
+        <item>Rutinitas pagi menyambung ulang otak Anda satu hari pada satu waktu.</item>
+        <item>Anda tidak kuat karena Anda tidak merasakan dorongan. Anda kuat karena Anda merasakannya dan tetap memilihnya.</item>
+        <item>Pikiran Anda tidak begitu padat. Apa yang akan Anda lakukan dengan ruang itu?</item>
+        <item>Kebiasaan itu memakan kebosanan. Anda sedang belajar bosan dan tetap hidup.</item>
+        <item>Rasa syukur untuk tubuh Anda, yang sedang menyembuhkan, yang sedang mencoba.</item>
+        <item>Jalan-jalan pagi ini adalah latihan. Teruslah berlatih.</item>
+        <item>Tidur Anda lebih nyenyak ketika pikiran Anda tidak terbagi.</item>
+        <item>Dorongan kehilangan kekuatannya saat Anda berhenti mempercayai keharusannya.</item>
+        <item>Anda tidak mulai dari nol. Anda mulai dari sekarang.</item>
+        <item>Pola lama menjanjikan kelegaan. Kelegaan sejati adalah hidup tanpa itu.</item>
+        <item>Fokus Anda menjadi tajam dengan setiap pilihan untuk berbalik.</item>
+        <item>Air dingin mengingatkan Anda: ketidaknyamanan tidak memerlukan kebiasaan itu.</item>
+        <item>Anda tidak lagi melawan. Anda hanya tidak memberi makan api itu.</item>
+        <item>Kebiasaan itu menginginkan pagi Anda. Rebut kembali.</item>
+        <item>Tangan Anda tersedia untuk bekerja sekarang.</item>
+        <item>Dorongan itu nyata. Pilihan Anda lebih nyata.</item>
+        <item>Disiplin yang diterapkan pada diri sendiri adalah bentuk cinta tertinggi.</item>
+        <item>Malam adalah milik Anda. Tanpa negosiasi. Tanpa dorongan. Hanya malam.</item>
+        <item>Pikiran Anda sedang belajar untuk diam. Biarkan ia belajar.</item>
+        <item>Kebiasaan itu berisik. Ketenangan Anda lebih berisik.</item>
+        <item>Kebiasaan pengganti menjadi rumah sekarang.</item>
+        <item>Anda sedang mengajari sistem saraf Anda bahwa Anda aman tanpa itu.</item>
+        <item>Jalan-jalan pagi adalah pengingat harian Anda: Anda dapat memilih arah Anda sendiri.</item>
+        <item>Rasa syukur atas momen yang membawa Anda ke sini, apa pun itu.</item>
+        <item>Fokus Anda retak. Fokus itu kembali.</item>
+        <item>Dorongan akan mencapai puncaknya dan turun. Itu selalu turun.</item>
+        <item>Tidur bukanlah kemanjaan. Itu adalah infrastruktur.</item>
+        <item>Pola lama adalah pintu yang tidak harus Anda buka.</item>
+        <item>Energi Anda tidak lagi dihabiskan untuk bersembunyi.</item>
+        <item>Saat Anda menerima dorongan adalah saat ia kehilangan kekuatannya.</item>
+        <item>Kebiasaan itu menjanjikan keseruan. Anda menemukan kedamaian. Itu lebih baik.</item>
+        <item>Anda tidak sempurna. Anda jujur. Itu sudah cukup.</item>
+        <item>Hari di depan adalah milik Anda. Gunakan itu.</item>
+        <item>Tubuh Anda tahu ia sedang menyembuhkan. Percayailah.</item>
+        <item>Dorongan itu adalah bisikan, bukan teriakan, karena Anda tidak memberinya makan.</item>
+        <item>Disiplin adalah jembatan antara siapa Anda dan siapa yang Anda inginkan.</item>
+        <item>Jalan-jalan yang Anda ambil adalah jawaban yang Anda cari.</item>
+        <item>Anda tidak lari dari kesenangan. Anda berlari menuju kehadiran.</item>
+        <item>Pagi adalah awal dari segalanya.</item>
+        <item>Kebiasaan itu akan menguji Anda. Anda akan lulus.</item>
+        <item>Fokus Anda adalah otot. Anda sedang melatihnya.</item>
+        <item>Tidur yang Anda dapatkan adalah tubuh Anda berkata: terima kasih.</item>
+        <item>Anda sedang membangun sesuatu yang tidak ada bagian dari kebiasaan itu.</item>
+        <item>Dorongan berasal dari ingatan, bukan kebutuhan.</item>
+        <item>Rasa syukur untuk bagian dari diri Anda yang ingin berubah.</item>
+        <item>Air dingin adalah sekutu Anda.</item>
+        <item>Anda tidak kuat terlepas dari perjuangan. Anda kuat karenanya.</item>
+        <item>Pola lama memudar karena Anda tidak memperkuatinya.</item>
+        <item>Pikiran Anda mengosongkan ruangan untuk bekerja, belajar, berkarya.</item>
+        <item>Rutinitas malam adalah janji Anda yang ditepati pada diri sendiri.</item>
+        <item>Dorongan akan datang ketika Anda lelah. Anda tahu apa yang harus dilakukan.</item>
+        <item>Anda tidak sedang merampas diri sendiri. Anda sedang mengajari diri sendiri sesuatu yang benar.</item>
+        <item>Kebiasaan itu memelihara kecemasan Anda. Perhatikan bagaimana ketenangan tumbuh tanpa itu.</item>
+        <item>Tidur adalah tempat pekerjaan penyembuhan terjadi.</item>
+        <item>Energi Anda tidak lagi dipinjam dari minggu depan.</item>
+        <item>Kebiasaan pengganti menjadi bagian dari diri Anda sekarang.</item>
+        <item>Jalan-jalan bukanlah olahraga. Itu adalah pengingat.</item>
+        <item>Anda sedang belajar bahwa Anda bisa baik-baik saja tanpa izin kebiasaan itu.</item>
+        <item>Disiplin bukanlah hukuman. Itu adalah perlindungan.</item>
+        <item>Rutinitas pagi adalah surat cinta yang Anda tulis untuk diri sendiri setiap hari.</item>
+        <item>Fokus yang kembali adalah milik Anda.</item>
+        <item>Dorongan itu kencang di hari-hari sulit. Itu normal. Anda baik-baik saja.</item>
+        <item>Rasa syukur untuk tangan Anda, yang sekarang bebas.</item>
+        <item>Kebiasaan itu berbisik di telinga Anda. Suara Anda sendiri lebih keras sekarang.</item>
+        <item>Pola lama menjanjikan kelegaan. Anda sedang membangun hal yang nyata.</item>
+        <item>Tubuh Anda sedang mengajari Anda tentang ketenangan.</item>
+        <item>Saat Anda berhenti melawannya adalah saat Anda menang.</item>
+        <item>Anda tidak kehilangan apa pun. Anda mendapatkan segalanya.</item>
+        <item>Dorongan adalah ujian yang telah Anda lewati ribuan kali.</item>
+        <item>Malam lebih tenang karena hari Anda berada di tangan Anda sendiri.</item>
+        <item>Pikiran Anda tidak begitu terpecah-pecah.</item>
+        <item>Air dingin adalah bukti bahwa Anda dapat memilih ketidaknyamanan.</item>
+        <item>Kebiasaan itu memakan kerahasiaan. Kejujuran Anda adalah musuhnya.</item>
+        <item>Tidur adalah penyembuhan. Biarkan itu terjadi.</item>
+        <item>Jalan-jalan pagi adalah tombol reset harian Anda.</item>
+        <item>Anda tidak lemah karena Anda merasakan dorongan. Anda kuat karena Anda menghadapinya.</item>
+        <item>Disiplin adalah rasa hormat diri dalam tindakan.</item>
+        <item>Fokus kembali karena Anda berhenti memencarnya.</item>
+        <item>Teman-teman Anda melihat seseorang yang mereka kenal. Itu adalah Anda.</item>
+        <item>Pola lama adalah sejarah. Anda berada di masa kini sekarang.</item>
+        <item>Kebiasaan itu menginginkan waktu Anda. Anda merebutnya kembali.</item>
+        <item>Rasa syukur atas kejelasan yang akan datang.</item>
+        <item>Dorongan akan berkunjung. Anda tahu jalan ke pintu.</item>
+        <item>Anda tidak lari dari kesenangan. Anda berlari menuju kebenaran.</item>
+        <item>Rutinitas malam adalah struktur tanpa hukuman.</item>
+        <item>Tubuh Anda sedang menyembuhkan karena Anda mendengarkannya.</item>
+        <item>Kebiasaan pengganti menjadi nyata hari ini.</item>
+        <item>Saat dorongan berlalu adalah bukti bahwa ia selalu berlalu.</item>
+        <item>Anda tidak sempurna. Anda gigih. Itu sama dengan kekuatan.</item>
+        <item>Kebiasaan itu berisik. Ketenangan Anda adalah revolusi.</item>
+        <item>Tidur bukanlah kemalasan. Itu adalah pekerjaan terpenting yang Anda lakukan.</item>
+        <item>Pagi adalah hadiah yang Anda berikan pada diri sendiri setiap hari.</item>
+        <item>Fokus Anda menjadi tajam karena tidak lagi terbagi.</item>
+        <item>Air dingin adalah seorang guru. Dengarkan apa yang dikatakannya.</item>
+        <item>Dorongan adalah kejujuran. Itu memberi tahu Anda apa yang masih perlu Anda selesaikan.</item>
+        <item>Disiplin adalah percakapan antara Anda dan diri Anda sendiri.</item>
+        <item>Pola lama memiliki daya tarik gravitasi. Anda meninggalkan orbitnya.</item>
+        <item>Energi Anda terbangun alih-alih terkuras.</item>
+        <item>Rasa syukur untuk bagian dari diri Anda yang memilih ini.</item>
+        <item>Kebiasaan itu menjanjikan pelarian. Anda menemukan sesuatu yang lebih baik: diri Anda sendiri.</item>
+        <item>Malam yang Anda jalani adalah yang Anda peroleh.</item>
+        <item>Anda sedang belajar bosan dan baik-baik saja dengan itu.</item>
+        <item>Dorongan adalah pengingat. Itu mengingatkan Anda mengapa Anda mulai.</item>
+        <item>Pikiran Anda menjadi rumah lagi.</item>
+        <item>Kebiasaan pengganti menjadi identitas.</item>
+        <item>Jalan-jalan pagi adalah percakapan Anda dengan diri sendiri.</item>
+        <item>Anda tidak lagi melawan kebiasaan itu. Anda mengabaikannya.</item>
+        <item>Disiplin adalah cinta. Cinta diri, khususnya.</item>
+        <item>Fokus yang kembali selalu milik Anda.</item>
+        <item>Kebiasaan itu mencuri tidur Anda. Perhatikan bagaimana ia kembali.</item>
+        <item>Rasa syukur untuk sistem saraf Anda, yang sedang belajar tenang.</item>
+        <item>Pola lama menjadi orang asing.</item>
+        <item>Tangan Anda tersedia untuk bekerja, belajar, berkarya, koneksi.</item>
+        <item>Air dingin adalah kemenangan kecil yang Anda pilih setiap hari.</item>
+        <item>Dorongan datang. Dorongan pergi. Anda tinggal.</item>
+        <item>Tidur adalah arsitektur. Bangunlah dengan kokoh.</item>
+        <item>Rutinitas pagi adalah latihan harian Anda dalam memilih diri sendiri.</item>
+        <item>Malam adalah tempat perlindungan yang Anda bangun batu demi batu.</item>
+        <item>Kejelasan Anda bukan kebetulan. Itu adalah hasil dari pilihan-pilihan kecil.</item>
+        <item>Kebiasaan pengganti menjadi lebih mudah.</item>
+        <item>Kebiasaan itu memakan stres. Perhatikan stres Anda berkurang.</item>
+        <item>Disiplin tanpa kegembiraan hanyalah penderitaan. Anda tahu perbedaannya.</item>
+        <item>Jalan-jalan bukanlah pelarian. Itu adalah kepulangan.</item>
+        <item>Fokus Anda adalah alat yang mengasah dirinya sendiri.</item>
+        <item>Rasa syukur atas momen Anda memutuskan untuk berubah.</item>
+        <item>Dorongan adalah gelombang. Anda telah belajar untuk tidak menyelam ke dalamnya.</item>
+        <item>Pola lama kehilangan kekuatan naratifnya atas Anda.</item>
+        <item>Anda tidak sedang lari dari kebiasaan itu. Anda sedang berlari menuju diri Anda sendiri.</item>
+        <item>Tubuh Anda mengingat seperti apa rasanya istirahat.</item>
+        <item>Pagi adalah kanvas. Hari ini Anda melukis sesuatu yang nyata.</item>
+        <item>Air dingin mengingatkan Anda: ketidaknyamanan tidak sama dengan bahaya.</item>
+        <item>Tidur tidak lagi menjadi kelegaan. Itu adalah bagian normal dari kehidupan.</item>
+        <item>Pikiran Anda menjernih karena Anda berhenti memberi makan kabut itu.</item>
+        <item>Kebiasaan itu menginginkan perhatian Anda. Anda memberikannya pada sesuatu yang nyata.</item>
+        <item>Disiplin adalah tindakan menepati janji pada diri sendiri.</item>
+        <item>Rutinitas malam adalah ritual, bukan sangkar.</item>
+        <item>Dorongan akan mencapai puncaknya. Anda akan melihatnya turun. Anda akan baik-baik saja.</item>
+        <item>Rasa syukur atas kekuatan yang tidak Anda ketahui Anda miliki.</item>
+        <item>Kebiasaan pengganti menjadi mulus sekarang.</item>
+        <item>Fokus Anda kembali karena Anda berhenti membaginya.</item>
+        <item>Pola lama adalah pintu yang telah Anda pelajari untuk dilewati.</item>
+        <item>Anda sedang belajar bahwa ketenangan lebih kuat daripada pelarian apa pun.</item>
+        <item>Kebiasaan itu adalah kehidupan pinjaman. Yang ini adalah milik Anda.</item>
+        <item>Jalan-jalan pagi adalah percakapan harian Anda dengan kejelasan.</item>
+        <item>Tidur adalah fondasinya. Segala sesuatu yang lain dibangun di atasnya.</item>
+        <item>Disiplin adalah arsitektur kebebasan.</item>
+        <item>Dorongan adalah kejujuran. Itu memberi tahu Anda di mana pekerjaan masih berada.</item>
+        <item>Energi Anda milik Anda lagi. Apa yang akan Anda bangun dengannya?</item>
+        <item>Malam lebih tenang karena hari Anda berada di tangan Anda.</item>
+        <item>Air dingin adalah janji kecil: Anda dapat melakukan hal-hal sulit.</item>
+        <item>Fokus akan kembali, satu hari pada satu waktu.</item>
+        <item>Rasa syukur untuk tubuh Anda, yang terus mencoba.</item>
+        <item>Pola lama adalah sejarah. Sejarah Anda adalah sekarang.</item>
+        <item>Kebiasaan pengganti menjadi siapa diri Anda.</item>
+        <item>Kebiasaan itu menjanjikan keseruan. Anda menemukan makna. Itu lebih baik.</item>
+        <item>Pikiran Anda tidak begitu padat. Apa yang akan Anda undang masuk?</item>
+        <item>Rutinitas pagi adalah bukti harian Anda bahwa Anda dapat memilih.</item>
+        <item>Dorongan akan datang dan pergi. Anda akan tinggal.</item>
+        <item>Tidur adalah pekerjaan terbaik yang Anda lakukan.</item>
+        <item>Disiplin yang diterapkan dengan belas kasih tak terhentikan.</item>
+        <item>Jalan-jalan bukanlah berlari. Ini adalah kepulangan.</item>
+        <item>Fokus Anda menjadi tajam dengan setiap momen Anda tetap jernih.</item>
+        <item>Rasa syukur untuk orang yang sedang Anda tuju.</item>
+        <item>Pola lama memiliki saatnya. Momen ini adalah milik Anda.</item>
+    </string-array>
+</resources>

@@ -621,4 +621,74 @@
     <string name="punch_guard_6">แอปชนะไปสองสามยก Matrix จดคะแนนไว้ให้ คุณจะได้วางแผนแก้มือ</string>
     <string name="profile_language">ภาษา</string>
     <string name="profile_language_system">ค่าเริ่มต้นของระบบ</string>
+
+    <!-- Quit tracker -->
+    <string name="nav_quit">เลิก</string>
+    <string name="quit_subtitle">ทีละวัน</string>
+    <string name="quit_thought_title">ข้อคิดสำหรับวันนี้</string>
+    <string name="quit_thought_another">ข้อคิดอื่น</string>
+    <string name="quit_urge_title">รู้สึกมีความอยากหรือ?</string>
+    <string name="quit_urge_body">มันก่อตัวขึ้น ขึ้นถึงจุดสูงสุดแล้วก็ผ่านไป หายใจไปพร้อมกับมันเป็นเวลาสองนาที</string>
+    <string name="quit_urge_start">โต้คลื่น</string>
+    <plurals name="quit_urges_ridden">
+        <item quantity="other">โต้คลื่นผ่านไปแล้ว %d ครั้ง</item>
+    </plurals>
+    <string name="quit_section">การเดินทางของคุณ</string>
+    <string name="quit_empty_title">เริ่มต้นสิ่งใหม่</string>
+    <string name="quit_empty_body">เพิ่มอะไรก็ได้ที่คุณต้องการทิ้งไว้ข้างหลัง มีเพียงคุณเท่านั้นที่เห็นชื่อที่คุณตั้งให้มัน</string>
+    <string name="quit_add_first">เพิ่มตัวติดตาม</string>
+    <string name="quit_new">ตัวติดตามใหม่</string>
+    <string name="quit_edit_title">แก้ไขตัวติดตาม</string>
+    <plurals name="quit_days_word" xmlns:tools="http://schemas.android.com/tools" tools:ignore="ImpliedQuantity">
+        <item quantity="other">วัน</item>
+    </plurals>
+    <string name="quit_run_today">+ %1$d ชม. %2$d นาที</string>
+    <string name="quit_best">ดีที่สุด: %s</string>
+    <string name="quit_next">ถัดไป: %s</string>
+    <string name="quit_days_short">%d วัน</string>
+    <string name="quit_days_hours">%1$d วัน %2$d ชม.</string>
+    <string name="quit_hours_minutes">%1$d ชม. %2$d นาที</string>
+    <string name="quit_ring_desc">%1$d วัน, คิดเป็น %2$d%% ไปสู่เป้าหมาย %3$d วัน</string>
+    <string name="quit_slipped">ฉันพลาดไป</string>
+    <string name="quit_slip_title">เริ่มต้นใหม่อีกครั้งไหม?</string>
+    <string name="quit_slip_body">เกิดขึ้นได้ การพลาดคือข้อมูล ไม่ใช่จุดจบ สถิติที่ดีที่สุดของคุณยังคงถูกบันทึกไว้</string>
+    <string name="quit_slip_confirm">เริ่มต้นใหม่อีกครั้ง</string>
+    <plurals name="quit_recent_slips">
+        <item quantity="other">เริ่มใหม่ %d ครั้ง ในช่วง 30 วันที่ผ่านมา</item>
+    </plurals>
+    <string name="quit_more">ตัวเลือกเพิ่มเติม</string>
+    <string name="quit_edit">แก้ไข</string>
+    <string name="quit_delete_title">ลบตัวติดตามนี้หรือไม่?</string>
+    <string name="quit_delete_body">ประวัติของมันถูกลบออกจากอุปกรณ์นี้แล้ว</string>
+    <string name="quit_name">ชื่อ</string>
+    <string name="quit_name_hint">ชื่ออะไรก็ได้ มีเพียงคุณเท่านั้นที่เห็น</string>
+    <string name="quit_reason">ทำไมมันถึงสำคัญ (ไม่บังคับ)</string>
+    <string name="quit_started">เริ่มตั้งแต่</string>
+    <string name="quit_started_now">ตอนนี้</string>
+    <string name="quit_started_pick">เลือกวันที่</string>
+    <string name="quit_private_note">อยู่ในอุปกรณ์นี้เท่านั้น ไม่อยู่ใน Matrix สำรองข้อมูล หรือการส่งออก</string>
+    <string name="quit_breathe_in">หายใจเข้า</string>
+    <string name="quit_breathe_hold">กลั้นหายใจ</string>
+    <string name="quit_breathe_out">หายใจออก</string>
+    <string name="quit_urge_left">เหลือเวลา %1$d:%2$02d นาที</string>
+    <string name="quit_urge_done_title">คลื่นผ่านไปแล้ว</string>
+    <string name="quit_urge_done_body">คุณสังเกตเห็นมัน อยู่กับมัน และปล่อยมันไป</string>
+    <string name="quit_urge_done">เสร็จสิ้น</string>
+    <string name="quit_urge_leave">ออก</string>
+    <string name="quit_urge_idea_title">งั้นลองทำสิ่งเหล่านี้ดู</string>
+    <string-array name="quit_urge_ideas">
+        <item>ดื่มน้ำสักแก้ว</item>
+        <item>ออกไปข้างนอกสักห้านาที</item>
+        <item>ลุกนั่งช้าๆ สิบครั้ง</item>
+        <item>ล้างหน้าด้วยน้ำเย็น</item>
+        <item>ส่งข้อความหาคนที่คุณไว้วางใจ</item>
+        <item>เปลี่ยนห้องและเปิดไฟ</item>
+        <item>วางอุปกรณ์ของคุณไว้ในห้องอื่นสักพัก</item>
+        <item>เขียนสิ่งที่คุณรู้สึกตอนนี้ลงไป</item>
+        <item>จัดระเบียบสิ่งของเล็กๆ น้อยๆ ใกล้ตัวคุณ</item>
+        <item>ยืดเหยียดร่างกายช้าๆ เป็นเวลาสองนาที</item>
+        <item>ทำเครื่องดื่มอุ่นๆ ให้ตัวเอง</item>
+        <item>ถ้าดึกแล้ว เข้านอนซะ</item>
+    </string-array>
+    <!-- /Quit tracker -->
 </resources>

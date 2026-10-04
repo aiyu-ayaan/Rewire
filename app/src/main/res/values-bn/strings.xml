@@ -637,4 +637,77 @@
     <string name="punch_guard_6">অ্যাপগুলো কয়েক রাউন্ড জিতেছে, তাতে কী! Matrix স্কোর লিখে রাখছে, পরের রাউন্ডের ছক কষে নিন।</string>
     <string name="profile_language">ভাষা</string>
     <string name="profile_language_system">সিস্টেমের ডিফল্ট</string>
+
+    <!-- Quit tracker -->
+    <string name="nav_quit">ছাড়ুন</string>
+    <string name="quit_subtitle">এক দিনে এক ধাপ</string>
+    <string name="quit_thought_title">আজকের চিন্তা</string>
+    <string name="quit_thought_another">অন্য চিন্তা</string>
+    <string name="quit_urge_title">তাগিদ অনুভব করছেন?</string>
+    <string name="quit_urge_body">এটি ওঠে, শীর্ষে ওঠে এবং কেটে যায়। দুই মিনিট এর সাথে শ্বাস নিন।</string>
+    <string name="quit_urge_start">ঢেউয়ের সাথে চলুন</string>
+    <plurals name="quit_urges_ridden">
+        <item quantity="one">%dটি ঢেউ পার করা হয়েছে</item>
+        <item quantity="other">%dটি ঢেউ পার করা হয়েছে</item>
+    </plurals>
+    <string name="quit_section">আপনার যাত্রা</string>
+    <string name="quit_empty_title">নতুন কিছু শুরু করুন</string>
+    <string name="quit_empty_body">যে অভ্যাসটি আপনি পেছনে ফেলে যেতে চান তা যোগ করুন। আপনি যে নাম দেন তা কেবল আপনিই দেখেন।</string>
+    <string name="quit_add_first">একটি ট্র্যাকার যোগ করুন</string>
+    <string name="quit_new">নতুন ট্র্যাকার</string>
+    <string name="quit_edit_title">ট্র্যাকার সম্পাদনা করুন</string>
+    <plurals name="quit_days_word" xmlns:tools="http://schemas.android.com/tools" tools:ignore="ImpliedQuantity">
+        <item quantity="one">দিন</item>
+        <item quantity="other">দিন</item>
+    </plurals>
+    <string name="quit_run_today">+ %1$d ঘণ্টা %2$d মিনিট</string>
+    <string name="quit_best">সেরা: %s</string>
+    <string name="quit_next">পরবর্তী: %s</string>
+    <string name="quit_days_short">%d দিন</string>
+    <string name="quit_days_hours">%1$d দিন %2$d ঘণ্টা</string>
+    <string name="quit_hours_minutes">%1$d ঘণ্টা %2$d মিনিট</string>
+    <string name="quit_ring_desc">%1$d দিন, %3$d দিনের লক্ষ্যের দিকে %2$d%% সম্পন্ন</string>
+    <string name="quit_slipped">স্লিপ করেছি</string>
+    <string name="quit_slip_title">আবার শুরু করবেন?</string>
+    <string name="quit_slip_body">এমনটা হতেই পারে। স্লিপ করা মানে তথ্য, শেষ নয়। আপনার সেরা রান সংরক্ষিত থাকে।</string>
+    <string name="quit_slip_confirm">আবার শুরু করুন</string>
+    <plurals name="quit_recent_slips">
+        <item quantity="one">গত ৩০ দিনে %dটি রিস্টার্ট</item>
+        <item quantity="other">গত ৩০ দিনে %dটি রিস্টার্ট</item>
+    </plurals>
+    <string name="quit_more">আরও বিকল্প</string>
+    <string name="quit_edit">সম্পাদনা</string>
+    <string name="quit_delete_title">এই ট্র্যাকারটি মুছে ফেলবেন?</string>
+    <string name="quit_delete_body">এর ইতিহাস এই ডিভাইস থেকে সরিয়ে ফেলা হবে।</string>
+    <string name="quit_name">নাম</string>
+    <string name="quit_name_hint">যেকোনো নাম কাজ করবে। শুধু আপনিই এটি দেখতে পান।</string>
+    <string name="quit_reason">কেন এটি গুরুত্বপূর্ণ (ঐচ্ছিক)</string>
+    <string name="quit_started">শুরু হয়েছে</string>
+    <string name="quit_started_now">এই মুহূর্তে</string>
+    <string name="quit_started_pick">একটি তারিখ বেছে নিন</string>
+    <string name="quit_private_note">এই ডিভাইসেই থাকে। ম্যাট্রিক্স, ব্যাকআপ বা এক্সপোর্টে যায় না।</string>
+    <string name="quit_breathe_in">শ্বাস নিন</string>
+    <string name="quit_breathe_hold">ধরে রাখুন</string>
+    <string name="quit_breathe_out">শ্বাস ছাড়ুন</string>
+    <string name="quit_urge_left">%1$d:%2$02d বাকি</string>
+    <string name="quit_urge_done_title">ঢেউ কেটে গেছে</string>
+    <string name="quit_urge_done_body">আপনি এটি লক্ষ্য করেছেন, এর সাথে থেকেছেন এবং এটি চলে যেতে দিয়েছেন।</string>
+    <string name="quit_urge_done">সম্পন্ন</string>
+    <string name="quit_urge_leave">বেরিয়ে যান</string>
+    <string name="quit_urge_idea_title">তাহলে একটি জিনিস চেষ্টা করুন</string>
+    <string-array name="quit_urge_ideas">
+        <item>এক গ্লাস জল পান করুন।</item>
+        <item>পাঁচ মিনিটের জন্য বাইরে যান।</item>
+        <item>দশটি ধীর স্কোয়াট করুন।</item>
+        <item>ঠান্ডা জল দিয়ে মুখ ধুয়ে নিন।</item>
+        <item>আপনার বিশ্বস্ত কাউকে বার্তা পাঠান।</item>
+        <item>ঘর বদল করুন এবং লাইট চালু করুন।</item>
+        <item>কিছুক্ষণের জন্য আপনার ডিভাইসটি অন্য ঘরে রেখে যান।</item>
+        <item>এই মুহূর্তে আপনি যা অনুভব করছেন তা লিখে রাখুন।</item>
+        <item>আপনার কাছের ছোট একটি জিনিস গুছিয়ে রাখুন।</item>
+        <item>দুই মিনিট ধরে ধীরে ধীরে স্ট্রেচ করুন।</item>
+        <item>নিজের জন্য একটি গরম পানীয় তৈরি করুন।</item>
+        <item>অনেক রাত হয়ে থাকলে, ঘুমাতে যান।</item>
+    </string-array>
+    <!-- /Quit tracker -->
 </resources>
