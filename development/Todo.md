@@ -221,4 +221,14 @@ service off -> banner + notification.
 - [ ] Release notes pulled from GitHub stay English (not app strings)
 - [x] README (languages, feature list, permissions, tech stack, roadmap, current mermaid diagrams), ARCHITECTURE.md and ROADMAP.md refreshed to the real code (2026-10-04)
 
+## Phase 6c — Quit tracker  (2026-10-04)
+- [x] Quit tab (5th tab): several private trackers at once, live run (days + h/min), best run kept, milestone ring (1, 3, 7, 14, 21, 30, 60, 90, 180, 365 days, then yearly), milestone chips
+- [x] Calm slip flow: "I slipped" -> "Start again?" (no shame), keeps best run, logs slip time; restarts in last 30 days shown
+- [x] Ride the wave: 2 min paced breathing (4-4-6) with a thought per breath, then one practical idea; finished sessions counted
+- [x] Thought of the day + "Another thought" from 1006 lines (`quit_thoughts`), all 27 languages
+- [x] Private by design: own DataStore, not in Room / Matrix / events / backup; neutral wording everywhere
+- [x] Domain tests (`QuitTest`)
+- [x] Device pass: phone + tablet (upright nav pill on >= 600dp rail), RTL (ar/ur), large font scale (200%), dark theme, 5-tab pill at 360dp in de/ru (2026-10-05)
+- [ ] Optional: hide Quit tab / app-lock for it; include in backup only if the user opts in
+
 ## Phase 7 (V3) — External data adapters, backup, AI insights (read-only)

@@ -7,6 +7,7 @@ Languages (`AppLocale.tags`, must match the `values-*` folders): en, hi, es, pt-
 |---|---|---|
 | UI strings, plurals | `res/values-xx/strings.xml` | English in `values/`. `app_name` is untranslatable. |
 | Built-in warnings | `res/raw-xx/default_warnings.json` | Same ids/order as `raw/default_warnings.json` (English baseline). |
+| Quit thoughts (1006) | `res/values-xx/quit_thoughts.xml` | `string-array`, generated from one-line-per-item text. Counts may differ slightly per language; the index wraps. |
 | Matrix punchlines | `punch_*` strings/plurals | Domain returns `FocusPunch`/`GuardPunch` data. |
 
 ## Switching

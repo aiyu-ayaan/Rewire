@@ -59,6 +59,13 @@ Friction → Awareness → Choice → Action → Measurement → Improvement
 - Hold-to-end so escaping is not too easy. Focus can bypass selected Guard levels (Minor on, Major configurable, Max off by default).
 - Full-screen timer with landscape layout, session notes and history.
 
+### Quit: private habit counters
+- Multiple independent counters with live progress (days, hours, minutes), best streak preserved, and milestone ring (1, 3, 7, 14, 21, 30, 60, 90, 180, 365 days, then yearly).
+- Calm slip recovery: "I slipped" flow records the moment, keeps your best run saved, and displays restarts in the last 30 days without shame.
+- "Ride the wave" urge surfing: 2-minute paced breathing (4-4-6 rhythm) with a grounding thought per breath, followed by actionable ideas.
+- Thought of the day and browseable reflections from a 1,006-thought collection localized across all 27 languages.
+- Private by design: kept in its own dedicated DataStore, strictly isolated from Room, analytics events, Matrix, and exports.
+
 ### Matrix: analytics
 - Daily, weekly and monthly views built from the event log and Usage access screen time.
 - Nine chart types: line, area, bar, stacked bar, donut, radar, calendar heatmap, timeline and scatter. Each has an accessible table alternative.

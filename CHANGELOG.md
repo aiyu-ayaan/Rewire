@@ -1,5 +1,15 @@
 # Changelog
 
+## [Unreleased]
+
+### Features
+
+* Quit tracker tab (5th navigation tab) with multiple private counters, milestone rings, and calm slip flow
+* "Ride the wave" 2-minute paced breathing (4-4-6 rhythm) with urge surfing thoughts and practical ideas
+* Curated collection of 1,006 quit thoughts translated across all 27 supported languages
+* Floating navigation pill with responsive upright pill rail on wide screens and tablets (>= 600dp)
+* Dedicated private DataStore for quit tracking, isolated from Room, analytics events, Matrix, and backups
+
 ## [1.0.2](https://github.com/aiyu-ayaan/Rewire/compare/v1.0.1-alpha.7...v1.0.2) (2026-10-03)
 
 ### Features
