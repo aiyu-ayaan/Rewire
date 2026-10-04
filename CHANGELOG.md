@@ -1,5 +1,38 @@
 # Changelog
 
+## [1.1.0](https://github.com/aiyu-ayaan/Rewire/compare/v1.0.2...v1.1.0) (2026-10-04)
+
+### Features
+
+* Quit tracker tab, floating pill navigation, and tablet container transforms
+* Focus history two-pane layout with note editor growing out of the session card
+* Tablet detail pane grows out of the tapped card with a container transform
+* Quit detail as nav destination with shared element, large app bar and two-pane tablet layout
+* Floating nav pill hides on scroll and lifts screen FABs
+* Quit journey detail screen with milestones, story and encouragement in all languages
+* Quit tracker strings and thoughts in kn, ml, pa, ur
+* Quit tracker strings and thoughts in ta, te, mr, gu
+* Quit tracker strings and thoughts in hi, in, bn, th
+* Quit tracker strings and thoughts in ar, tr; add quit-i18n merge scripts
+* Quit tracker strings and thoughts in zh-CN, zh-TW, ja, ko, pl, vi
+* Quit tracker strings and thoughts in es, fr, it, de, pt-BR, ru
+* Quit tab with live runs, milestones, calm slip flow and ride-the-wave breathing
+* 1006 quit thoughts as a string array
+* Quit tracker domain and private DataStore repository
+* Floating pill navigation, upright pill rail on wide screens
+
+### Bug fixes
+
+* Back closes the open tablet detail pane before leaving the app
+* Fade detail pane as it shrinks into the card so closing does not blink
+* Trim list bottom padding so content clears the nav bar without dead space
+* Scope ImpliedQuantity ignore to word-only day plural, German typo
+
+### Other changes
+
+* Update roadmap, decisions, localization guide, readme, changelog, and handoff
+* New 9:16 launch video with blueprint-to-device demo and 27-language switch, refresh README gif
+
 ## [Unreleased]
 
 ### Features
