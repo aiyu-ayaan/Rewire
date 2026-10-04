@@ -77,6 +77,15 @@ import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.geometry.Offset
+import androidx.compose.ui.input.nestedscroll.NestedScrollConnection
+import androidx.compose.ui.input.nestedscroll.NestedScrollSource
+import androidx.compose.ui.input.nestedscroll.nestedScroll
+import androidx.compose.ui.layout.onSizeChanged
+import androidx.compose.ui.platform.LocalDensity
+import androidx.compose.ui.unit.Dp
+import androidx.compose.animation.core.animateDpAsState
+import androidx.compose.runtime.compositionLocalOf
 import androidx.compose.ui.unit.IntOffset
 import androidx.compose.ui.unit.IntSize
 import androidx.compose.ui.graphics.vector.ImageVector
@@ -85,6 +94,7 @@ import com.aiyu.rewire.core.notifications.DeepLink
 import com.aiyu.rewire.feature.focus.FocusScreen
 import com.aiyu.rewire.feature.guard.GuardScreen
 import com.aiyu.rewire.feature.matrix.MatrixScreen
+import com.aiyu.rewire.feature.quit.QuitDetailScreen
 import com.aiyu.rewire.feature.quit.QuitScreen
 import com.aiyu.rewire.feature.profile.ProfileScreen
 import com.aiyu.rewire.BuildConfig
@@ -119,6 +129,7 @@ fun MainScreen(
     deepLink: DeepLink?,
     onDeepLinkConsumed: () -> Unit,
     onOpenHabit: (String) -> Unit,
+    onOpenQuit: (String) -> Unit,
     onOpenNotificationSettings: () -> Unit,
     onOpenWarningLibrary: () -> Unit,
     onOpenMatrixBreakdown: (apps: Boolean) -> Unit,
@@ -163,9 +174,11 @@ fun MainScreen(
                 Tab.GUARD -> TabPane(wide, detail, { DetailContent(it, { detail = null }, { k -> detail = k }, onPreviewWarning) }) {
                     GuardScreen(onOpenHabit = { open("habit:$it") { onOpenHabit(it) } }, onStartFocus = { select(Tab.FOCUS) })
                 }
-                // Focus and Matrix use the full width: nothing beside them needs a detail pane.
+                // Focus and Matrix use the full width: nothing beside them needs a detail pane. Guard, Quit and Profile open theirs beside the list.
                 Tab.FOCUS -> FocusScreen(onFullscreen = onOpenFocusFullscreen, onHistory = onOpenFocusHistory)
-                Tab.QUIT -> QuitScreen()
+                Tab.QUIT -> TabPane(wide, detail, { DetailContent(it, { detail = null }, { k -> detail = k }, onPreviewWarning) }) {
+                    QuitScreen(onOpen = { open("quit:$it") { onOpenQuit(it) } })
+                }
                 Tab.MATRIX -> MatrixScreen(onShowAll = onOpenMatrixBreakdown)
                 Tab.PROFILE -> TabPane(wide, detail ?: if (wide) "notifications" else null, { DetailContent(it, { detail = null }, { k -> detail = k }, onPreviewWarning) }) {
                     ProfileScreen(
@@ -184,8 +197,6 @@ fun MainScreen(
     }
     val barSpatial = motion.defaultSpatialSpec<IntOffset>()
     val barSize = motion.defaultSpatialSpec<IntSize>()
-    val barEnter = slideInVertically(barSpatial) { it } + expandVertically(barSize, expandFrom = Alignment.Top) + fadeIn(effects)
-    val barExit = slideOutVertically(barSpatial) { it } + shrinkVertically(barSize, shrinkTowards = Alignment.Top) + fadeOut(fastEffects)
 
     BoxWithConstraints(Modifier.fillMaxSize()) {
         // Content width left of the rail: list + detail only when both panes get a comfortable size.
@@ -202,19 +213,44 @@ fun MainScreen(
                 Box(Modifier.weight(1f)) { content(Modifier.fillMaxSize(), widePane) }
             }
         } else {
-            Scaffold(
-                contentWindowInsets = WindowInsets(0),
-                bottomBar = {
-                    AnimatedVisibility(!navBar.hidden, enter = barEnter, exit = barExit) {
-                        FloatingNavBar(tab, select)
+            // The pill floats over content (no reserved strip). Scrolling content down tucks it away, scrolling up
+            // brings it back; only real scrolls count, so screens that can't scroll keep it. Screens read
+            // LocalBottomBarInsets to keep their last item and FAB clear of it.
+            var scrolledAway by remember { mutableStateOf(false) }
+            LaunchedEffect(tab) { scrolledAway = false }
+            val hideOnScroll = remember {
+                object : NestedScrollConnection {
+                    override fun onPostScroll(consumed: Offset, available: Offset, source: NestedScrollSource): Offset {
+                        if (consumed.y < -1f) scrolledAway = true else if (consumed.y > 1f) scrolledAway = false
+                        return Offset.Zero
                     }
-                },
-            ) { padding ->
-                content(Modifier.fillMaxSize().padding(padding).consumeWindowInsets(padding), false)
+                }
+            }
+            val density = LocalDensity.current
+            var pill by remember { mutableStateOf(0.dp) }
+            val shown = !navBar.hidden && !scrolledAway
+            val fab by animateDpAsState(if (shown) pill else 0.dp, motion.defaultSpatialSpec(), label = "fabLift")
+            Box(Modifier.fillMaxSize().nestedScroll(hideOnScroll)) {
+                CompositionLocalProvider(LocalBottomBarInsets provides BottomBarInsets(content = pill, fab = fab)) {
+                    content(Modifier.fillMaxSize(), false)
+                }
+                AnimatedVisibility(
+                    shown,
+                    modifier = Modifier.align(Alignment.BottomCenter),
+                    enter = slideInVertically(barSpatial) { it } + fadeIn(effects),
+                    exit = slideOutVertically(barSpatial) { it } + fadeOut(fastEffects),
+                ) {
+                    FloatingNavBar(tab, select, Modifier.onSizeChanged { pill = with(density) { it.height.toDp() } })
+                }
             }
         }
     }
 }
+
+/** Space the floating pill covers at the bottom: [content] for scroll padding (fixed), [fab] follows the pill as it hides. */
+data class BottomBarInsets(val content: Dp = 0.dp, val fab: Dp = 0.dp)
+
+val LocalBottomBarInsets = compositionLocalOf { BottomBarInsets() }
 
 /**
  * Bottom bar / rail show only on a tab's base screen. Any in-tab "deeper" state (running focus timer, etc.)
@@ -264,6 +300,7 @@ private fun TabPane(wide: Boolean, detail: String?, detailContent: @Composable (
 @Composable
 private fun DetailContent(key: String, onClose: () -> Unit, open: (String) -> Unit, onPreviewWarning: (String) -> Unit) {
     when {
+        key.startsWith("quit:") -> QuitDetailScreen(key.removePrefix("quit:"), onBack = onClose)
         key.startsWith("habit:") -> HabitDetailScreen(key.removePrefix("habit:"), onBack = onClose, onPreview = onPreviewWarning)
         key == "notifications" -> NotificationSettingsScreen(onBack = onClose)
         key == "warnings" -> WarningLibraryScreen(onBack = onClose)
@@ -280,8 +317,8 @@ private fun DetailContent(key: String, onClose: () -> Unit, open: (String) -> Un
  * others stay icon-only so five tabs fit in every language at 360dp.
  */
 @Composable
-private fun FloatingNavBar(tab: Tab, onSelect: (Tab) -> Unit) {
-    Box(Modifier.fillMaxWidth().navigationBarsPadding().padding(bottom = 12.dp), contentAlignment = Alignment.Center) {
+private fun FloatingNavBar(tab: Tab, onSelect: (Tab) -> Unit, modifier: Modifier = Modifier) {
+    Box(modifier.fillMaxWidth().navigationBarsPadding().padding(bottom = 12.dp), contentAlignment = Alignment.Center) {
         Surface(
             shape = CircleShape,
             color = MaterialTheme.colorScheme.surfaceContainerHigh,

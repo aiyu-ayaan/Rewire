@@ -1,6 +1,7 @@
 package com.aiyu.rewire.feature.profile
 
 import androidx.compose.ui.semantics.Role
+import com.aiyu.rewire.ui.LocalBottomBarInsets
 
 import androidx.compose.ui.semantics.contentDescription
 
@@ -82,7 +83,7 @@ fun ProfileScreen(onOpenNotificationSettings: () -> Unit, onOpenWarningLibrary: 
     val s = settings ?: return
     val permission = rememberNotificationPermission()
 
-    Column(Modifier.fillMaxSize().statusBarsPadding().readableWidth(TWO_PANE_MAX_WIDTH).verticalScroll(rememberScrollState()).padding(horizontal = 16.dp).padding(bottom = 24.dp)) {
+    Column(Modifier.fillMaxSize().statusBarsPadding().readableWidth(TWO_PANE_MAX_WIDTH).verticalScroll(rememberScrollState()).padding(horizontal = 16.dp).padding(bottom = 24.dp + LocalBottomBarInsets.current.content)) {
         AdaptiveColumns(first = {
         UserCard(s.profile, onEditProfile)
 

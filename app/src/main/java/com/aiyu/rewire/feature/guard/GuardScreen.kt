@@ -1,6 +1,7 @@
 package com.aiyu.rewire.feature.guard
 
 import com.aiyu.rewire.ui.components.CappedFontScale
+import com.aiyu.rewire.ui.LocalBottomBarInsets
 
 import com.aiyu.rewire.ui.components.BesideOrStacked
 
@@ -109,7 +110,7 @@ fun GuardScreen(onOpenHabit: (String) -> Unit, onStartFocus: () -> Unit) {
             columns = GridCells.Adaptive(340.dp),
             state = list,
             modifier = Modifier.fillMaxSize().statusBarsPadding().readableWidth(1200.dp),
-            contentPadding = PaddingValues(start = 16.dp, end = 16.dp, bottom = 88.dp),
+            contentPadding = PaddingValues(start = 16.dp, end = 16.dp, bottom = 88.dp + LocalBottomBarInsets.current.content),
             horizontalArrangement = Arrangement.spacedBy(12.dp),
         ) {
             val full: LazyGridItemSpanScope.() -> GridItemSpan = { GridItemSpan(maxLineSpan) }
@@ -142,7 +143,7 @@ fun GuardScreen(onOpenHabit: (String) -> Unit, onStartFocus: () -> Unit) {
             expanded = fabExpanded,
             icon = { Icon(Icons.Rounded.Add, contentDescription = null) },
             text = { Text(stringResource(R.string.guard_new_habit)) },
-            modifier = Modifier.align(Alignment.BottomEnd).padding(16.dp),
+            modifier = Modifier.align(Alignment.BottomEnd).padding(16.dp).padding(bottom = LocalBottomBarInsets.current.fab),
         )
     }
 

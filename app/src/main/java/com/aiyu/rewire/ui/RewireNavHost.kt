@@ -23,6 +23,7 @@ import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import com.aiyu.rewire.core.notifications.DeepLink
 import com.aiyu.rewire.feature.focus.FocusFullscreenScreen
 import com.aiyu.rewire.feature.focus.FocusHistoryScreen
+import com.aiyu.rewire.feature.quit.QuitDetailScreen
 import com.aiyu.rewire.BuildConfig
 import com.aiyu.rewire.feature.update.UpdateScreen
 import com.aiyu.rewire.feature.guard.HabitDetailScreen
@@ -45,6 +46,7 @@ object Routes {
     @Serializable data object Landing
     @Serializable data object Main
     @Serializable data class HabitDetail(val id: String)
+    @Serializable data class QuitDetail(val id: String)
     @Serializable data class WarningPreview(val habitId: String)
     @Serializable data object NotificationSettings
     @Serializable data object WarningLibrary
@@ -129,11 +131,11 @@ fun RewireNavHost(
                     enterTransition = { fadeIn(tween(500, delayMillis = 120)) + scaleIn(tween(500, delayMillis = 120), initialScale = 0.96f) },
                     // Card -> detail is a container transform: the shared card carries motion, screens only fade.
                     exitTransition = {
-                        if (targetState.destination.hasRoute(Routes.HabitDetail::class) || targetState.destination.hasRoute(Routes.FocusFullscreen::class) || targetState.destination.hasRoute(Routes.EditProfile::class)) fadeOut(effects)
+                        if (targetState.destination.hasRoute(Routes.HabitDetail::class) || targetState.destination.hasRoute(Routes.QuitDetail::class) || targetState.destination.hasRoute(Routes.FocusFullscreen::class) || targetState.destination.hasRoute(Routes.EditProfile::class)) fadeOut(effects)
                         else slideOutHorizontally(spatial) { -it / 8 } + fadeOut(effects)
                     },
                     popEnterTransition = {
-                        if (initialState.destination.hasRoute(Routes.HabitDetail::class) || initialState.destination.hasRoute(Routes.FocusFullscreen::class) || initialState.destination.hasRoute(Routes.EditProfile::class)) fadeIn(effects)
+                        if (initialState.destination.hasRoute(Routes.HabitDetail::class) || initialState.destination.hasRoute(Routes.QuitDetail::class) || initialState.destination.hasRoute(Routes.FocusFullscreen::class) || initialState.destination.hasRoute(Routes.EditProfile::class)) fadeIn(effects)
                         else slideInHorizontally(spatial) { -it / 8 } + fadeIn(effects)
                     },
                 ) {
@@ -142,6 +144,7 @@ fun RewireNavHost(
                             deepLink = deepLink,
                             onDeepLinkConsumed = onDeepLinkConsumed,
                             onOpenHabit = { nav.navigate(Routes.HabitDetail(it)) },
+                            onOpenQuit = { nav.navigate(Routes.QuitDetail(it)) { launchSingleTop = true } },
                             onOpenNotificationSettings = { nav.navigate(Routes.NotificationSettings) },
                             onOpenWarningLibrary = { nav.navigate(Routes.WarningLibrary) },
                             onOpenMatrixBreakdown = { nav.navigate(Routes.MatrixBreakdown(it)) },
@@ -166,6 +169,15 @@ fun RewireNavHost(
                             onBack = { nav.popBackStack() },
                             onPreview = { nav.navigate(Routes.WarningPreview(it)) },
                         )
+                    }
+                }
+                // Same container transform as habits: the journey card grows into this screen.
+                composable<Routes.QuitDetail>(
+                    enterTransition = { fadeIn(effects) },
+                    popExitTransition = { fadeOut(effects) },
+                ) { entry ->
+                    CompositionLocalProvider(LocalNavAnimatedScope provides this) {
+                        QuitDetailScreen(id = entry.toRoute<Routes.QuitDetail>().id, onBack = { nav.popBackStack() })
                     }
                 }
                 composable<Routes.WarningPreview>(

@@ -1,6 +1,7 @@
 package com.aiyu.rewire.feature.focus
 
 import androidx.activity.compose.BackHandler
+import com.aiyu.rewire.ui.LocalBottomBarInsets
 import androidx.compose.ui.semantics.Role
 
 import androidx.compose.ui.semantics.role
@@ -211,7 +212,7 @@ private fun FocusSetup(
 ) {
     val permission = rememberNotificationPermission()
     Column(
-        Modifier.fillMaxSize().statusBarsPadding().readableWidth(720.dp).verticalScroll(rememberScrollState()).padding(horizontal = 16.dp).padding(bottom = 24.dp),
+        Modifier.fillMaxSize().statusBarsPadding().readableWidth(720.dp).verticalScroll(rememberScrollState()).padding(horizontal = 16.dp).padding(bottom = 24.dp + LocalBottomBarInsets.current.content),
     ) {
         Row(Modifier.fillMaxWidth().padding(top = 16.dp), verticalAlignment = Alignment.CenterVertically) {
             Text(stringResource(R.string.nav_focus), style = MaterialTheme.typography.headlineLarge, modifier = Modifier.weight(1f))

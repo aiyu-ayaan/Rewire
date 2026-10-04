@@ -1,6 +1,7 @@
 package com.aiyu.rewire.feature.matrix
 
 import com.aiyu.rewire.ui.components.CappedFontScale
+import com.aiyu.rewire.ui.LocalBottomBarInsets
 
 import com.aiyu.rewire.ui.components.BesideOrStacked
 
@@ -249,7 +250,7 @@ fun MatrixScreen(onShowAll: (apps: Boolean) -> Unit) {
     val vm = hiltViewModel<MatrixViewModel>()
     val ui by vm.ui.collectAsStateWithLifecycle()
 
-    Column(Modifier.fillMaxSize().statusBarsPadding().readableWidth(TWO_PANE_MAX_WIDTH).verticalScroll(rememberScrollState()).padding(horizontal = 16.dp).padding(bottom = 24.dp)) {
+    Column(Modifier.fillMaxSize().statusBarsPadding().readableWidth(TWO_PANE_MAX_WIDTH).verticalScroll(rememberScrollState()).padding(horizontal = 16.dp).padding(bottom = 24.dp + LocalBottomBarInsets.current.content)) {
         Text(stringResource(R.string.matrix_title), style = MaterialTheme.typography.headlineLarge, modifier = Modifier.padding(top = 16.dp))
         Text(stringResource(R.string.matrix_subtitle), style = MaterialTheme.typography.bodyMedium, color = MaterialTheme.colorScheme.onSurfaceVariant)
 
