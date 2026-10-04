@@ -637,4 +637,77 @@
     <string name="punch_guard_6">ایپس نے کچھ راؤنڈ جیتے۔ Matrix اسکور رکھتا ہے تاکہ آپ اگلے مقابلے کی منصوبہ بندی کر سکیں۔</string>
     <string name="profile_language">زبان</string>
     <string name="profile_language_system">سسٹم ڈیفالٹ</string>
+
+    <!-- Quit tracker -->
+    <string name="nav_quit">چھوڑیں</string>
+    <string name="quit_subtitle">ایک وقت میں ایک دن</string>
+    <string name="quit_thought_title">آج کا خیال</string>
+    <string name="quit_thought_another">ایک اور خیال</string>
+    <string name="quit_urge_title">شدید خواہش محسوس ہو رہی ہے؟</string>
+    <string name="quit_urge_body">یہ بڑھتی ہے، عروج پر پہنچتی ہے اور گزر جاتی ہے۔ دو منٹ تک اس کے ساتھ سانس لیں۔</string>
+    <string name="quit_urge_start">لہر کے ساتھ چلیں</string>
+    <plurals name="quit_urges_ridden">
+        <item quantity="one">%d لہر کا کامیابی سے سامنا کیا</item>
+        <item quantity="other">%d لہروں کا کامیابی سے سامنا کیا</item>
+    </plurals>
+    <string name="quit_section">آپ کے سفر</string>
+    <string name="quit_empty_title">کچھ نیا شروع کریں</string>
+    <string name="quit_empty_body">کوئی بھی ایسی چیز شامل کریں جسے آپ چھوڑنا چاہتے ہیں۔ صرف آپ کو وہ نام نظر آتا ہے جو آپ اسے دیتے ہیں۔</string>
+    <string name="quit_add_first">ایک ٹریکر شامل کریں</string>
+    <string name="quit_new">نیا ٹریکر</string>
+    <string name="quit_edit_title">ٹریکر میں ترمیم کریں</string>
+    <plurals name="quit_days_word" xmlns:tools="http://schemas.android.com/tools" tools:ignore="ImpliedQuantity">
+        <item quantity="one">دن</item>
+        <item quantity="other">دن</item>
+    </plurals>
+    <string name="quit_run_today">+ %1$d گھنٹے %2$d منٹ</string>
+    <string name="quit_best">بہترین: %s</string>
+    <string name="quit_next">اگلا: %s</string>
+    <string name="quit_days_short">%d دن</string>
+    <string name="quit_days_hours">%1$d دن %2$d گھنٹے</string>
+    <string name="quit_hours_minutes">%1$d گھنٹے %2$d منٹ</string>
+    <string name="quit_ring_desc">%1$d دن، %3$d دن تک کے راستے کا %2$d%%</string>
+    <string name="quit_slipped">مجھ سے چوک ہو گئی</string>
+    <string name="quit_slip_title">دوبارہ شروع کریں؟</string>
+    <string name="quit_slip_body">ایسا ہو جاتا ہے۔ چوک ہونا ایک معلومات ہے، انجام نہیں۔ آپ کا بہترین ریکارڈ محفوظ رہتا ہے۔</string>
+    <string name="quit_slip_confirm">دوبارہ شروع کریں</string>
+    <plurals name="quit_recent_slips">
+        <item quantity="one">پچھلے 30 دنوں میں %d بار دوبارہ آغاز</item>
+        <item quantity="other">پچھلے 30 دنوں میں %d بار دوبارہ آغاز</item>
+    </plurals>
+    <string name="quit_more">مزید اختیارات</string>
+    <string name="quit_edit">ترمیم</string>
+    <string name="quit_delete_title">اس ٹریکر کو حذف کریں؟</string>
+    <string name="quit_delete_body">اس کی سرگزشت اس آلے سے ہٹا دی گئی ہے۔</string>
+    <string name="quit_name">نام</string>
+    <string name="quit_name_hint">کوئی بھی نام کام کرتا ہے۔ صرف آپ کو نظر آتا ہے۔</string>
+    <string name="quit_reason">یہ کیوں اہم ہے (اختیاری)</string>
+    <string name="quit_started">شروع کیا گیا</string>
+    <string name="quit_started_now">ابھی</string>
+    <string name="quit_started_pick">ایک تاریخ منتخب کریں</string>
+    <string name="quit_private_note">اسی آلے پر رہتا ہے۔ میٹرکس، بیک اپ یا ایکسپورٹ میں نہیں۔</string>
+    <string name="quit_breathe_in">سانس اندر کھینچیں</string>
+    <string name="quit_breathe_hold">روکے رکھیں</string>
+    <string name="quit_breathe_out">سانس باہر نکالیں</string>
+    <string name="quit_urge_left">%1$d:%2$02d باقی</string>
+    <string name="quit_urge_done_title">لہر گزر گئی</string>
+    <string name="quit_urge_done_body">آپ نے اس کا نوٹس لیا، اس کے ساتھ رہے اور اسے جانے دیا۔</string>
+    <string name="quit_urge_done">مکمل</string>
+    <string name="quit_urge_leave">چھوڑیں</string>
+    <string name="quit_urge_idea_title">پھر ایک چیز آزما کر دیکھیں</string>
+    <string-array name="quit_urge_ideas">
+        <item>ایک گلاس پانی پئیں</item>
+        <item>پانچ منٹ کے لیے باہر قدم رکھیں۔</item>
+        <item>دس آہستہ بیٹھک (اسکوٹس) لگائیں۔</item>
+        <item>اپنا چہرہ ٹھنڈے پانی سے دھوائیں۔</item>
+        <item>جس شخص پر آپ بھروسہ کرتے ہیں اسے پیغام بھیجیں۔</item>
+        <item>کمرے کو تبدیل کریں اور لائٹس آن کریں۔</item>
+        <item>کچھ دیر کے لیے اپنا آلہ دوسرے کمرے میں چھوڑ دیں۔</item>
+        <item>لکھیں کہ آپ اس وقت کیا محسوس کر رہے ہیں۔</item>
+        <item>اپنے قریب کی کسی ایک چھوٹی چیز کو ترتیب دیں۔</item>
+        <item>دو منٹ کے لیے آہستہ سے کھینچیں (اسٹریچ کریں)۔</item>
+        <item>اپنے لیے کوئی گرم مشروب بنائیں۔</item>
+        <item>اگر دیر ہو چکی ہے تو سو جائیں۔</item>
+    </string-array>
+    <!-- /Quit tracker -->
 </resources>

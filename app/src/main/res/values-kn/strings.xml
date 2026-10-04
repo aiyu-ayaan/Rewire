@@ -637,4 +637,77 @@
     <string name="punch_guard_6">ಆ್ಯಪ್‌ಗಳು ಕೆಲವು ಸುತ್ತು ಗೆದ್ದವು. Matrix ಅಂಕ ಇಡುತ್ತದೆ, ಮರುಪಂದ್ಯಕ್ಕೆ ನೀವು ಯೋಜಿಸಿ.</string>
     <string name="profile_language">ಭಾಷೆ</string>
     <string name="profile_language_system">ಸಿಸ್ಟಮ್ ಡೀಫಾಲ್ಟ್</string>
+
+    <!-- Quit tracker -->
+    <string name="nav_quit">ಬಿಡಿ</string>
+    <string name="quit_subtitle">ಪ್ರತಿ ಬಾರಿ ಒಂದು ದಿನ</string>
+    <string name="quit_thought_title">ಇಂದಿನ ಆಲೋಚನೆ</string>
+    <string name="quit_thought_another">ಮತ್ತೊಂದು ಆಲೋಚನೆ</string>
+    <string name="quit_urge_title">ತೀವ್ರ ಇಚ್ಛೆ ಕಾಡುತ್ತಿದೆಯೇ?</string>
+    <string name="quit_urge_body">ಇದು ಏರುತ್ತದೆ, ಉತ್ತುಂಗಕ್ಕೇರುತ್ತದೆ ಮತ್ತು ಕಳೆದುಹೋಗುತ್ತದೆ. ಎರಡು ನಿಮಿಷಗಳ ಕಾಲ ಇದರೊಂದಿಗೆ ಉಸಿರಾಡಿ.</string>
+    <string name="quit_urge_start">ಅಲೆಯೊಂದಿಗೆ ಸಾಗಿ</string>
+    <plurals name="quit_urges_ridden">
+        <item quantity="one">%d ಅಲೆ ದಾಟಲಾಗಿದೆ</item>
+        <item quantity="other">%d ಅಲೆಗಳನ್ನು ದಾಟಲಾಗಿದೆ</item>
+    </plurals>
+    <string name="quit_section">ನಿಮ್ಮ ಪ್ರಯಾಣಗಳು</string>
+    <string name="quit_empty_title">ಹೊಸದನ್ನು ಪ್ರಾರಂಭಿಸಿ</string>
+    <string name="quit_empty_body">ನೀವು ಬಿಟ್ಟುಹೋಗಲು ಬಯಸುವ ಯಾವುದನ್ನಾದರೂ ಸೇರಿಸಿ. ನೀವು ನೀಡುವ ಹೆಸರನ್ನು ನೀವಷ್ಟೇ ನೋಡುತ್ತೀರಿ.</string>
+    <string name="quit_add_first">ಟ್ರ್ಯಾಕರ್ ಸೇರಿಸಿ</string>
+    <string name="quit_new">ಹೊಸ ಟ್ರ್ಯಾಕರ್</string>
+    <string name="quit_edit_title">ಟ್ರ್ಯಾಕರ್ ಸಂಪಾದಿಸಿ</string>
+    <plurals name="quit_days_word" xmlns:tools="http://schemas.android.com/tools" tools:ignore="ImpliedQuantity">
+        <item quantity="one">ದಿನ</item>
+        <item quantity="other">ದಿನಗಳು</item>
+    </plurals>
+    <string name="quit_run_today">+ %1$d ಗಂ %2$d ನಿಮಿಷ</string>
+    <string name="quit_best">ಅತ್ಯುತ್ತಮ: %s</string>
+    <string name="quit_next">ಮುಂದೆ: %s</string>
+    <string name="quit_days_short">%d ದಿ</string>
+    <string name="quit_days_hours">%1$d ದಿ %2$d ಗಂ</string>
+    <string name="quit_hours_minutes">%1$d ಗಂ %2$d ನಿಮಿಷ</string>
+    <string name="quit_ring_desc">%1$d ದಿನಗಳು, %3$d ದಿನಗಳ ಕಡೆಗೆ %2$d%% ರಷ್ಟು ಹಾದಿ</string>
+    <string name="quit_slipped">ನಾನು ಜಾರಿದೆ</string>
+    <string name="quit_slip_title">ಮತ್ತೆ ಪ್ರಾರಂಭಿಸೇ?</string>
+    <string name="quit_slip_body">ಇದು ಸಂಭವಿಸುತ್ತದೆ. ಜಾರುವುದು ಒಂದು ಮಾಹಿತಿ, ಅಂತ್ಯವಲ್ಲ. ನಿಮ್ಮ ಅತ್ಯುತ್ತಮ ಓಟವು ಉಳಿಸಲ್ಪಡುತ್ತದೆ.</string>
+    <string name="quit_slip_confirm">ಮತ್ತೆ ಪ್ರಾರಂಭಿಸಿ</string>
+    <plurals name="quit_recent_slips">
+        <item quantity="one">ಕಳೆದ 30 ದಿನಗಳಲ್ಲಿ %d ಮರುಪ್ರಾರಂಭ</item>
+        <item quantity="other">ಕಳೆದ 30 ದಿನಗಳಲ್ಲಿ %d ಮರುಪ್ರಾರಂಭಗಳು</item>
+    </plurals>
+    <string name="quit_more">ಹೆಚ್ಚಿನ ಆಯ್ಕೆಗಳು</string>
+    <string name="quit_edit">ಸಂಪಾದಿಸಿ</string>
+    <string name="quit_delete_title">ಈ ಟ್ರ್ಯಾಕರ್ ಅನ್ನು ಅಳಿಸಬೇಕೆ?</string>
+    <string name="quit_delete_body">ಇದರ ಇತಿಹಾಸವನ್ನು ಈ ಸಾಧನದಿಂದ ತೆಗೆದುಹಾಕಲಾಗುತ್ತದೆ.</string>
+    <string name="quit_name">ಹೆಸರು</string>
+    <string name="quit_name_hint">ಯಾವುದೇ ಹೆಸರು ಕೆಲಸ ಮಾಡುತ್ತದೆ. ನೀವಷ್ಟೇ ಅದನ್ನು ನೋಡುತ್ತೀರಿ.</string>
+    <string name="quit_reason">ಇದುೇಕೆ ಮುಖ್ಯ (ঐಚ್ಛಿಕ)</string>
+    <string name="quit_started">ಪ್ರಾರಂಭಿಸಲಾಗಿದೆ</string>
+    <string name="quit_started_now">ಈಗಷ್ಟೇ</string>
+    <string name="quit_started_pick"> ದಿನಾಂಕವನ್ನು ಆರಿಸಿ</string>
+    <string name="quit_private_note">ಈ ಸಾಧನದಲ್ಲಿಯೇ ಉಳಿಯುತ್ತದೆ. ಮ್ಯಾಟ್ರಿಕ್ಸ್, ಬ್ಯಾಕಪ್ ಅಥವಾ ಎಕ್ಸ್‌ಪೋರ್ಟ್‌ಗಳಲ್ಲಿ ಇರುವುದಿಲ್ಲ.</string>
+    <string name="quit_breathe_in">ಒಳಗೆ ಉಸಿರಾಡಿ</string>
+    <string name="quit_breathe_hold">ಹಿಡಿದುಕೊಳ್ಳಿ</string>
+    <string name="quit_breathe_out">ಹೊರಗೆ ಉಸಿರಾಡಿ</string>
+    <string name="quit_urge_left">%1$d:%2$02d ಬಾಕಿ ಇದೆ</string>
+    <string name="quit_urge_done_title">ಅಲೆಯು ದಾಟಿಹೋಯಿತು</string>
+    <string name="quit_urge_done_body">ನೀವು ಅದನ್ನು ಗಮನಿಸಿದ್ದೀರಿ, ಅದರೊಂದಿಗೆ ಇದ್ದೀರಿ ಮತ್ತು ಅದನ್ನು ಹೋಗಲು ಬಿಟ್ಟಿದ್ದೀರಿ.</string>
+    <string name="quit_urge_done">ಮುಗಿದಿದೆ</string>
+    <string name="quit_urge_leave">ಬಿಟ್ಟುಹೋಗಿ</string>
+    <string name="quit_urge_idea_title">ಹಾಗಾದರೆ ಒಂದು ವಿಷಯವನ್ನು ಪ್ರಯತ್ನಿಸಿ</string>
+    <string-array name="quit_urge_ideas">
+        <item>ಒಂದು ಲೋಟ ನೀರು ಕುಡಿಯಿರಿ.</item>
+        <item>ಐದು ನಿಮಿಷಗಳ ಕಾಲ ಹೊರಗೆ ಹೋಗಿ.</item>
+        <item>ಹತ್ತು ನಿಧಾನವಾದ ಸ್ಕ್ವಾಟ್‌ಗಳನ್ನು ಮಾಡಿ.</item>
+        <item>ತಣ್ಣೀರಿನಿಂದ ನಿಮ್ಮ ಮುಖವನ್ನು ತೊಳೆಯಿರಿ.</item>
+        <item>ನೀವು ನಂಬುವ ಯಾರಿಗಾದರೂ ಸಂದೇಶ ಕಳುಹಿಸಿ.</item>
+        <item>ಕೋಣೆಗಳನ್ನು ಬದಲಾಯಿಸಿ ಮತ್ತು ದೀಪಗಳನ್ನು ಆನ್ ಮಾಡಿ.</item>
+        <item>ನಿಮ್ಮ ಸಾಧನವನ್ನು ಸ್ವಲ್ಪ ಸಮಯದವರೆಗೆ ಬೇರೆ ಕೋಣೆಯಲ್ಲಿ ಬಿಡಿ.</item>
+        <item>ಈಗ ನಿಮಗೆ ಏನು ಅನಿಸುತ್ತಿದೆ ಎಂಬುದನ್ನು ಬರೆದಿಡಿ.</item>
+        <item>ನಿಮ್ಮ ಹತ್ತಿರವಿರುವ ಒಂದು ಸಣ್ಣ ವಸ್ತುವನ್ನು ಅಚ್ಚುಕಟ್ಟಾಗಿರಿಸಿ.</item>
+        <item>ಎರಡು ನಿಮಿಷಗಳ ಕಾಲ ನಿಧಾನವಾಗಿ ಸ್ಟ್ರೆಚ್ ಮಾಡಿ.</item>
+        <item>ನಿಮಗಾಗಿ ಒಂದು ಬೆಚ್ಚಗಿನ ಪಾನೀಯವನ್ನು ತಯಾರಿಸಿ.</item>
+        <item>ತಡವಾಗಿದ್ದರೆ, ನಿದ್ರೆ ಮಾಡಿ.</item>
+    </string-array>
+    <!-- /Quit tracker -->
 </resources>

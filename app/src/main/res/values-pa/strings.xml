@@ -637,4 +637,77 @@
     <string name="punch_guard_6">ਐਪਾਂ ਨੇ ਕੁਝ ਦੌਰ ਜਿੱਤੇ। Matrix ਅੰਕ ਰੱਖਦਾ ਹੈ ਤਾਂ ਜੋ ਤੁਸੀਂ ਅਗਲੇ ਮੁਕਾਬਲੇ ਦੀ ਯੋਜਨਾ ਬਣਾ ਸਕੋ।</string>
     <string name="profile_language">ਭਾਸ਼ਾ</string>
     <string name="profile_language_system">ਸਿਸਟਮ ਡਿਫੌਲਟ</string>
+
+    <!-- Quit tracker -->
+    <string name="nav_quit">ਛੱਡੋ</string>
+    <string name="quit_subtitle">ਇੱਕ ਵਾਰ ਵਿੱਚ ਇੱਕ ਦਿਨ</string>
+    <string name="quit_thought_title">ਅਜੋके ਲਈ ਵਿਚਾਰ</string>
+    <string name="quit_thought_another">ਹੋਰ ਵਿਚਾਰ</string>
+    <string name="quit_urge_title">ਤਲਬ ਮਹਿਸੂਸ ਹੋ ਰਹੀ ਹੈ?</string>
+    <string name="quit_urge_body">ਇਹ ਉੱਠਦੀ ਹੈ, ਸਿਖਰ \'ਤੇ ਜਾਂਦੀ ਹੈ ਅਤੇ ਲੰਘ ਜਾਂਦੀ ਹੈ। ਇਸ ਦੇ ਨਾਲ ਦੋ ਮਿੰਟ ਸਾਹ ਲਓ।</string>
+    <string name="quit_urge_start">ਲਹਿਰ ਦੇ ਨਾਲ ਚੱਲੋ</string>
+    <plurals name="quit_urges_ridden">
+        <item quantity="one">%d ਲਹਿਰ ਪਾਰ ਕੀਤੀ</item>
+        <item quantity="other">%d ਲਹਿਰਾਂ ਪਾਰ ਕੀਤੀਆਂ</item>
+    </plurals>
+    <string name="quit_section">ਤੁਹਾਡੀਆਂ ਯਾਤਰਾਵਾਂ</string>
+    <string name="quit_empty_title">ਕੁਝ ਨਵਾਂ ਸ਼ੁਰੂ ਕਰੋ</string>
+    <string name="quit_empty_body">ਕੋਈ ਵੀ ਚੀਜ਼ ਜੋ ਤੁਸੀਂ ਪਿੱਛੇ ਛੱਡਣਾ ਚਾਹੁੰਦੇ ਹੋ, ਸ਼ਾਮਲ ਕਰੋ। ਸਿਰਫ਼ ਤੁਸੀਂ ਉਸ ਦਾ ਨਾਮ ਦੇਖਦੇ ਹੋ ਜੋ ਤੁਸੀਂ ਦਿੰਦੇ ਹੋ।</string>
+    <string name="quit_add_first">ਟਰੈਕਰ ਸ਼ਾਮਲ ਕਰੋ</string>
+    <string name="quit_new">ਨਵਾਂ ਟਰੈਕਰ</string>
+    <string name="quit_edit_title">ਟਰੈਕਰ ਸੋਧੋ</string>
+    <plurals name="quit_days_word" xmlns:tools="http://schemas.android.com/tools" tools:ignore="ImpliedQuantity">
+        <item quantity="one">ਦਿਨ</item>
+        <item quantity="other">ਦਿਨ</item>
+    </plurals>
+    <string name="quit_run_today">+ %1$d ਘੰਟੇ %2$d ਮਿੰਟ</string>
+    <string name="quit_best">ਸਭ ਤੋਂ ਵਧੀਆ: %s</string>
+    <string name="quit_next">ਅੱਗੇ: %s</string>
+    <string name="quit_days_short">%d ਦਿਨ</string>
+    <string name="quit_days_hours">%1$d ਦਿਨ %2$d ਘੰਟੇ</string>
+    <string name="quit_hours_minutes">%1$d ਘੰਟੇ %2$d ਮਿੰਟ</string>
+    <string name="quit_ring_desc">%1$d ਦਿਨ, %3$d ਦਿਨਾਂ ਤੱਕ ਪਹੁੰਚਣ ਦਾ %2$d%% ਰਸਤਾ</string>
+    <string name="quit_slipped">ਮੈਂ ਤਿਲਕ ਗਿਆ</string>
+    <string name="quit_slip_title">ਦੁਬਾਰਾ ਸ਼ੁਰੂ ਕਰੀਏ?</string>
+    <string name="quit_slip_body">ਅਜਿਹਾ ਹੁੰਦਾ ਹੈ। ਤਿਲਕਣਾ ਜਾਣਕਾਰੀ ਹੈ, ਅੰਤ ਨਹੀਂ। ਤੁਹਾਡਾ ਸਭ ਤੋਂ ਵਧੀਆ ਦੌਰ ਸੁਰੱਖਿਅਤ ਰਹਿੰਦਾ ਹੈ।</string>
+    <string name="quit_slip_confirm">ਦੁਬਾਰਾ ਸ਼ੁਰੂ ਕਰੋ</string>
+    <plurals name="quit_recent_slips">
+        <item quantity="one">ਪਿਛਲੇ 30 ਦਿਨਾਂ ਵਿੱਚ %d ਵਾਰ ਮੁੜ ਸ਼ੁਰੂਆਤ</item>
+        <item quantity="other">ਪਿਛਲੇ 30 ਦਿਨਾਂ ਵਿੱਚ %d ਵਾਰ ਮੁੜ ਸ਼ੁਰੂਆਤ</item>
+    </plurals>
+    <string name="quit_more">ਹੋਰ ਵਿਕਲਪ</string>
+    <string name="quit_edit">ਸੋਧੋ</string>
+    <string name="quit_delete_title">ਇਸ ਟਰੈਕਰ ਨੂੰ ਹਟਾਉਣਾ ਹੈ?</string>
+    <string name="quit_delete_body">ਇਸ ਦਾ ਇਤਿਹਾਸ ਇਸ ਡਿਵਾਈਸ ਤੋਂ ਹਟਾ ਦਿੱਤਾ ਗਿਆ ਹੈ।</string>
+    <string name="quit_name">ਨਾਮ</string>
+    <string name="quit_name_hint">ਕੋਈ ਵੀ ਨਾਮ ਕੰਮ ਕਰਦਾ ਹੈ। ਸਿਰਫ਼ ਤੁਸੀਂ ਇਸਨੂੰ ਦੇਖਦੇ ਹੋ।</string>
+    <string name="quit_reason">ਇਹ ਕਿਉਂ ਮਾਇਨੇ ਰੱਖਦਾ ਹੈ (ਵਿਕਲਪਕ)</string>
+    <string name="quit_started">ਸ਼ੁਰੂ ਕੀਤਾ</string>
+    <string name="quit_started_now">ਹੁਣੇ</string>
+    <string name="quit_started_pick">ਇੱਕ ਮਿਤੀ ਚੁਣੋ</string>
+    <string name="quit_private_note">ਇਸ ਡਿਵਾਈਸ \'ਤੇ ਰਹਿੰਦਾ ਹੈ। ਮੈਟਰਿਕਸ, ਬੈਕਅਪ ਜਾਂ ਐਕਸਪੋਰਟ ਵਿੱਚ ਨਹੀਂ।</string>
+    <string name="quit_breathe_in">ਸਾਹ ਅੰਦਰ ਲਓ</string>
+    <string name="quit_breathe_hold">ਰੋਕੋ</string>
+    <string name="quit_breathe_out">ਸਾਹ ਬਾਹਰ ਛੱਡੋ</string>
+    <string name="quit_urge_left">%1$d:%2$02d ਬਾਕੀ</string>
+    <string name="quit_urge_done_title">ਲਹਿਰ ਲੰਘ ਗਈ</string>
+    <string name="quit_urge_done_body">ਤੁ نے ਇਸਨੂੰ ਨੋਟ ਕੀਤਾ, ਇਸਦੇ ਨਾਲ ਰਹੇ ਅਤੇ ਇਸਨੂੰ ਜਾਣ ਦਿੱਤਾ।</string>
+    <string name="quit_urge_done">ਹੋ ਗਿਆ</string>
+    <string name="quit_urge_leave">ਛੱਡੋ</string>
+    <string name="quit_urge_idea_title">ਫਿਰ ਇੱਕ ਚੀਜ਼ ਦੀ ਕੋਸ਼िश ਕਰੋ</string>
+    <string-array name="quit_urge_ideas">
+        <item>ਇੱਕ ਗਲਾਸ ਪਾਣੀ ਪੀਓ।</item>
+        <item>ਪੰਜ ਮਿੰਟ ਲਈ ਬਾਹਰ ਜਾਓ।</item>
+        <item>ਦੱਸ ਹੌਲੀ ਉਠਕ-ਬੈਠਕ ਕਰੋ।</item>
+        <item>ਆਪਣੇ ਚਿਹਰੇ ਨੂੰ ਠੰਡੇ ਪਾਣੀ ਨਾਲ ਧੋਓ।</item>
+        <item>ਕਿਸੇ ਅਜਿਹੇ ਵਿਅਕਤੀ ਨੂੰ ਸੁਨੇਹਾ ਭੇਜੋ ਜਿਸ \'ਤੇ ਤੁਸੀਂ ਭਰੋਸਾ ਕਰਦੇ ਹੋ।</item>
+        <item>ਕਮਰੇ ਬਦਲੋ ਅਤੇ ਲਾਈਟਾਂ ਚਾਲੂ ਕਰੋ।</item>
+        <item>ਆਪਣੀ ਡਿਵਾਈਸ ਨੂੰ ਕੁਝ ਸਮੇਂ ਲਈ ਕਿਸੇ ਹੋਰ ਕਮਰੇ ਵਿੱਚ ਛੱਡ ਦਿਓ।</item>
+        <item>ਲਿਖੋ ਕਿ ਤੁਸੀਂ ਹੁਣ ਕੀ ਮਹਿਸੂਸ ਕਰ ਰਹੇ ਹੋ।</item>
+        <item>ਆਪਣੇ ਨੇੜੇ ਦੀ ਇੱਕ ਛੋਟੀ ਜਿਹੀ ਚੀਜ਼ ਨੂੰ ਸਾਫ਼ ਕਰੋ।</item>
+        <item>ਦੋ ਮਿੰਟ ਲਈ ਹੌਲੀ-ਹੌਲੀ ਖਿੱਚੋ।</item>
+        <item>ਆਪਣੇ ਲਈ ਗਰਮ ਪੀਣ ਵਾਲਾ ਪਦਾਰਥ ਬਣਾਓ।</item>
+        <item>ਜੇ ਦੇਰ ਹੋ ਗਈ ਹੈ, ਤਾਂ ਸੌਂ ਜਾਓ।</item>
+    </string-array>
+    <!-- /Quit tracker -->
 </resources>
