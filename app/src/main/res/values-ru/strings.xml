@@ -669,4 +669,83 @@
     <string name="punch_guard_6">Приложения выиграли пару раундов. Matrix ведёт счёт, чтобы вы могли спланировать реванш.</string>
     <string name="profile_language">Язык</string>
     <string name="profile_language_system">Как в системе</string>
+
+    <!-- Quit tracker -->
+    <string name="nav_quit">Отказ</string>
+    <string name="quit_subtitle">День за днём</string>
+    <string name="quit_thought_title">Мысль на сегодня</string>
+    <string name="quit_thought_another">Ещё одна мысль</string>
+    <string name="quit_urge_title">Чувствуешь желание?</string>
+    <string name="quit_urge_body">Оно нарастает, достигает пика и проходит. Дыши с ним две минуты.</string>
+    <string name="quit_urge_start">Переноси волну</string>
+    <plurals name="quit_urges_ridden">
+        <item quantity="one">%d волна перенесена</item>
+        <item quantity="few">%d волны перенесены</item>
+        <item quantity="many">%d волн перенесено</item>
+        <item quantity="other">%d волны перенесены</item>
+    </plurals>
+    <string name="quit_section">Твои пути</string>
+    <string name="quit_empty_title">Начни что-то новое</string>
+    <string name="quit_empty_body">Добавь что угодно, от чего ты хочешь отказаться. Только ты видишь имя, которое ты ему даёшь.</string>
+    <string name="quit_add_first">Добавить трекер</string>
+    <string name="quit_new">Новый трекер</string>
+    <string name="quit_edit_title">Отредактировать трекер</string>
+    <plurals name="quit_days_word">
+        <item quantity="one">день</item>
+        <item quantity="few">дня</item>
+        <item quantity="many">дней</item>
+        <item quantity="other">дней</item>
+    </plurals>
+    <string name="quit_run_today">+ %1$d ч %2$d мин</string>
+    <string name="quit_best">Лучшее: %s</string>
+    <string name="quit_next">Дальше: %s</string>
+    <string name="quit_days_short">%d д</string>
+    <string name="quit_days_hours">%1$d д %2$d ч</string>
+    <string name="quit_hours_minutes">%1$d ч %2$d мин</string>
+    <string name="quit_ring_desc">%1$d дней, %2$d%% пути к %3$d дням</string>
+    <string name="quit_slipped">Я поскользнулся</string>
+    <string name="quit_slip_title">Начать заново?</string>
+    <string name="quit_slip_body">Это случается. Скольжение — информация, а не конец. Твой лучший результат сохранён.</string>
+    <string name="quit_slip_confirm">Начать заново</string>
+    <plurals name="quit_recent_slips">
+        <item quantity="one">%d перезагрузка за последние 30 дней</item>
+        <item quantity="few">%d перезагрузки за последние 30 дней</item>
+        <item quantity="many">%d перезагрузок за последние 30 дней</item>
+        <item quantity="other">%d перезагрузки за последние 30 дней</item>
+    </plurals>
+    <string name="quit_more">Ещё опции</string>
+    <string name="quit_edit">Отредактировать</string>
+    <string name="quit_delete_title">Удалить этот трекер?</string>
+    <string name="quit_delete_body">Его история удаляется с этого устройства.</string>
+    <string name="quit_name">Имя</string>
+    <string name="quit_name_hint">Любое имя подойдёт. Только ты его видишь.</string>
+    <string name="quit_reason">Почему это важно (необязательно)</string>
+    <string name="quit_started">Начато</string>
+    <string name="quit_started_now">Прямо сейчас</string>
+    <string name="quit_started_pick">Выбери дату</string>
+    <string name="quit_private_note">Остаётся на этом устройстве. Не в Matrix, резервных копиях или экспортах.</string>
+    <string name="quit_breathe_in">Вдох</string>
+    <string name="quit_breathe_hold">Задержи</string>
+    <string name="quit_breathe_out">Выдох</string>
+    <string name="quit_urge_left">%1$d:%2$02d осталось</string>
+    <string name="quit_urge_done_title">Волна прошла</string>
+    <string name="quit_urge_done_body">Ты её заметил, остался с ней и отпустил.</string>
+    <string name="quit_urge_done">Готово</string>
+    <string name="quit_urge_leave">Выйти</string>
+    <string name="quit_urge_idea_title">Потом попробуй одно</string>
+    <string-array name="quit_urge_ideas">
+        <item>Выпей стакан воды.</item>
+        <item>Выйди на пять минут.</item>
+        <item>Сделай десять медленных приседаний.</item>
+        <item>Помой лицо холодной водой.</item>
+        <item>Напиши кому-то, кому ты доверяешь.</item>
+        <item>Смени комнату и включи свет.</item>
+        <item>Оставь своё устройство в другой комнате на время.</item>
+        <item>Запиши, что ты чувствуешь прямо сейчас.</item>
+        <item>Приберись в одном маленьком месте рядом с тобой.</item>
+        <item>Медленно растягивайся две минуты.</item>
+        <item>Сделай себе тёплый напиток.</item>
+        <item>Если поздно, иди спать.</item>
+    </string-array>
+    <!-- /Quit tracker -->
 </resources>

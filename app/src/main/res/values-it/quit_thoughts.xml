@@ -1,0 +1,1012 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generated: one line per item. Calm, neutral; never names a specific habit. -->
+<resources>
+    <string-array name="quit_thoughts">
+        <item>L\'impulso è un\'onda. Sale. Passa. Puoi cavalcarla.</item>
+        <item>Adesso sentilo senza combatterlo. Questo momento è temporaneo.</item>
+        <item>Cosa senti sotto l\'impulso? Noioso? Solo? Stanco? Nominalo.</item>
+        <item>Non devi agire su ogni sensazione. Sentila e lasciala fluire.</item>
+        <item>L\'impulso non è un comando. È solo un pensiero nella tua mente.</item>
+        <item>Pausa per 10 minuti. La voglia cambierà.</item>
+        <item>Quando arriva l\'impulso, respira lentamente. Inspira per quattro, trattieni, espira per sei.</item>
+        <item>Cosa ha innescato questo momento? Notalo senza giudizio.</item>
+        <item>L\'impulso è più forte all\'inizio. Dopo 15 minuti svanisce.</item>
+        <item>Alzati. Vai in un\'altra stanza. Interrompi il modello.</item>
+        <item>Questo non è debolezza. Sei tu che stai imparando un nuovo modo.</item>
+        <item>L\'impulso mente. Dice che ne hai bisogno. Non è vero. Sei al sicuro senza.</item>
+        <item>Invece di agirvi sopra, scrivi quello che senti adesso.</item>
+        <item>A volte l\'impulso è noia mascherata. Trova qualcosa da fare.</item>
+        <item>Non sei l\'impulso. L\'impulso è un passeggero, non il conducente.</item>
+        <item>Sdraiati per cinque minuti e nota: l\'impulso passerà mentre riposi.</item>
+        <item>È tardi? Sei stanco? Gli impulsi ti ingannano quando la guardia è bassa.</item>
+        <item>L\'impulso che hai ignorato ieri ti ha reso orgoglioso. Fallo di nuovo.</item>
+        <item>Il tuo cervello si sta ricablando proprio ora. Questa è la parte difficile. Lo stai facendo.</item>
+        <item>L\'impulso è più forte quando sei solo. Chiama qualcuno. Parla.</item>
+        <item>Ce l\'hai fatta con l\'ultimo. Ce la farai anche con questo.</item>
+        <item>Cosa farebbe il tuo migliore io adesso? Ascolta quella voce.</item>
+        <item>Il picco della voglia dura minuti, non ore. Puoi superarlo.</item>
+        <item>Siedi con l\'impulso come un\'onda nell\'oceano. Lasciala passare.</item>
+        <item>Questo non è per sempre. È solo adesso.</item>
+        <item>L\'impulso sussurra bugie. Sei più forte della bugia.</item>
+        <item>Stira il corpo. Muovi il sangue nelle tue membra. Gli impulsi svaniscono con il movimento.</item>
+        <item>Stai costruendo qualcosa. Ogni momento in cui fai pausa è un mattone della fondazione.</item>
+        <item>Quando vuoi scappare, trova il vero sentimento sotto e incontalo.</item>
+        <item>L\'impulso è un\'abitudine, non una necessità. Il tuo corpo si adatterà.</item>
+        <item>Nota l\'impulso senza giudizio. Non aggiungere vergogna sopra la voglia.</item>
+        <item>Puoi stare con questo per cinque minuti e vedere cosa succede.</item>
+        <item>L\'impulso vuole farti credere che è permanente. Non lo è. Sono nuvole che passano.</item>
+        <item>Cosa hai fatto l\'ultima volta quando hai resistito? Fallo di nuovo.</item>
+        <item>L\'impulso è informazione. Ti dice che qualcosa ti importa. Ascolta, poi scegli.</item>
+        <item>Le notti late portano impulsi. Il letto presto li previene.</item>
+        <item>Non stai fallendo quando senti l\'impulso. Fallisci solo se ci credi.</item>
+        <item>L\'impulso è un\'onda con il tuo nome. Hai imparato a navigarla.</item>
+        <item>Da solo, l\'impulso promette connessione. Cerca una vera connessione.</item>
+        <item>L\'impulso non è amore. Non confonderlo con qualcosa che non è.</item>
+        <item>Hai avuto molti impulsi e li hai superati tutti. Questo è solo uno in più.</item>
+        <item>La noia è un trigger. Avere una lista di cose che ti importano.</item>
+        <item>L\'impulso ti dice di affrettarti. Puoi andare piano invece.</item>
+        <item>Il tuo sistema nervoso sta imparando che sei al sicuro senza l\'abitudine.</item>
+        <item>Siedi. Respira. Conta fino a 100. L\'impulso si addolcirà.</item>
+        <item>L\'impulso è più forte quando resisti con paura. Respira con accettazione invece.</item>
+        <item>Hai scelto di smettere. Ricordalo. Appoggiati a quella scelta.</item>
+        <item>Lo stress scatena impulsi. Nomina lo stress. Affrontalo separatamente dalla voglia.</item>
+        <item>L\'impulso ti visiterà. Non significa che devi invitarlo.</item>
+        <item>Stai ricablando il tuo predefinito. Questo richiede tempo e gentilezza.</item>
+        <item>L\'impulso è un passeggero su un autobus che stai guidando. Lascialo sedere. Continua.</item>
+        <item>Gli impulsi raggiungono il picco veloce e calano veloce. Non confondere un picco con il per sempre.</item>
+        <item>Qual è il vero bisogno? Sonno? Connessione? Divertimento? Trovalo senza l\'abitudine.</item>
+        <item>Non devi capire l\'impulso per sopravvivere.</item>
+        <item>L\'impulso non è colpa tua. La tua risposta è la tua scelta.</item>
+        <item>Quando l\'impulso viene alle 23, quello è informazione. Vai a letto prima.</item>
+        <item>Puoi stare sul pavimento e respirare e lasciare che l\'impulso sia lì con te.</item>
+        <item>L\'impulso tornerà. È normale. Lo gestirai come hai gestito gli altri.</item>
+        <item>Il vecchio modello vuole la tua attenzione. Sei permesso ignorarlo.</item>
+        <item>La solitudine amplifica gli impulsi. Anche un messaggio a un amico lo indebolisce.</item>
+        <item>L\'impulso è un visitatore. Tu scegli se aprire la porta.</item>
+        <item>Stai costruendo nuovi percorsi nel tuo cervello ogni volta che fai pausa.</item>
+        <item>L\'impulso è più forte quando ci pensi. Distrai te stesso dolcemente.</item>
+        <item>Cosa faresti se l\'impulso non esistesse? Fallo proprio adesso.</item>
+        <item>L\'impulso non è un\'emergenza. Trattalo come un pensiero che passa.</item>
+        <item>Sei stato qui prima. Il tuo corpo sa come passarci.</item>
+        <item>L\'abitudine ha richiesto tempo per formarsi. La pausa richiederà tempo per stare. Sii paziente.</item>
+        <item>Quando arriva l\'impulso, significa che il tuo cervello si sta ancora adattando. Quella è guarigione.</item>
+        <item>Non devi essere perfetto. Devi solo continuare a scegliere.</item>
+        <item>L\'impulso è più forte quando sei stanco. Il sonno è uno strumento potente.</item>
+        <item>Gli impulsi vengono in onde. Alcuni sono grandi. Alcuni sono piccoli. Tutti passano.</item>
+        <item>La voglia è un segno che il tuo corpo sta cambiando. Che buone notizie.</item>
+        <item>Sei permesso sentire l\'impulso e non agirvi sopra. Entrambi sono veri.</item>
+        <item>Cosa riempie lo spazio che l\'abitudine usava? Costruiscilo adesso.</item>
+        <item>L\'impulso sussurra piano all\'inizio, poi più forte se ascolti. Non ascoltare.</item>
+        <item>Alzati. L\'impulso si calma quando muovi il corpo.</item>
+        <item>Non sei spezzato per volere il vecchio modello. Sei umano.</item>
+        <item>L\'impulso è un ciclo di abitudine. Stai rompendo il ciclo con ogni pausa.</item>
+        <item>Notti late e solitudine sono la peggiore combinazione. Pianifica intorno a loro.</item>
+        <item>Puoi dire all\'impulso: ti vedo. Ti sento. Non lo sto facendo comunque.</item>
+        <item>L\'impulso è come una nuvola. Osservala. Galleggerà via.</item>
+        <item>Hai già superato i giorni più difficili. Questo è familiare adesso.</item>
+        <item>L\'impulso può stare con te mentre fai altro. Va bene così.</item>
+        <item>Cosa stai evitando raggiungendo l\'abitudine? Affronta quello invece.</item>
+        <item>L\'impulso è più forte quando stai seduto. Il movimento rompe l\'incantesimo.</item>
+        <item>Sei più forte di quanto pensi. Questo momento lo dimostra.</item>
+        <item>L\'abitudine ha promesso sollievo. Ha consegnato vuoto. Ricordalo.</item>
+        <item>L\'impulso è il tuo cervello che chiede dopamina. Trova un\'altra fonte.</item>
+        <item>Puoi sentire l\'impulso e stare in controllo. Entrambi possono essere veri.</item>
+        <item>L\'impulso viene da modelli appresi, non da chi sei.</item>
+        <item>Quando sei stanco, tutto sembra più difficile. L\'impulso non è speciale. Riposa.</item>
+        <item>Non devi capire perché hai l\'impulso per superarlo.</item>
+        <item>La voglia è data. Noia? Stress? Solitudine? Impara il modello.</item>
+        <item>L\'impulso tornerà. Quello non è fallimento. È la guarigione che è normale.</item>
+        <item>Hai scelto questo percorso. Il percorso è stretto adesso. Si allargherà.</item>
+        <item>L\'impulso è un bugiardo. Dice che non puoi vivere senza. Puoi e vivi.</item>
+        <item>Siedi nel tuo disagio per cinque minuti. Non ti distruggerà.</item>
+        <item>L\'impulso è più forte quando sei colto di sorpresa. Stai consapevole.</item>
+        <item>Non sei l\'impulso. Sei chi nota l\'impulso e respira.</item>
+        <item>Com\'è superare oggi senza? Quello è il premio.</item>
+        <item>L\'impulso è un\'onda. Tu sei la riva. Lascialo infrangerti contro e ritirarsi.</item>
+        <item>Bevi acqua, stira, acqua fredda in faccia, cambia stanza. Scegline una.</item>
+        <item>L\'abitudine ha richiesto mesi o anni per formarsi. La tua pausa richiederà tempo. È normale.</item>
+        <item>L\'impulso non è un passo indietro a meno che non credi che sia un comando.</item>
+        <item>Puoi stare con l\'impulso come staresti con un ospite non invitato.</item>
+        <item>La notte tarda è quando gli impulsi sono più crudeli. Pianifica le serate.</item>
+        <item>L\'impulso parla in dover e devi. Ignoralo. Fai la tua scelta.</item>
+        <item>Hai più forza di volontà di quanto pensi. Questo momento lo dimostra.</item>
+        <item>L\'impulso è un sentimento, non un fatto. I sentimenti cambiano.</item>
+        <item>Cosa stai soffrendo che l\'abitudine ha riempito? Soffri. Onoralo. Vai avanti.</item>
+        <item>L\'impulso ti testerà. Passerai il test. Li hai superati prima.</item>
+        <item>L\'abitudine ha promesso felicità. Ha consegnato rimpianto. Scegli il percorso senza rimpianto.</item>
+        <item>Non devi combattere l\'impulso. Puoi solo notarlo e continuare a vivere.</item>
+        <item>L\'impulso è software che corre nel tuo cervello. Tu sei il programmatore adesso.</item>
+        <item>La noia nutre l\'impulso. Il significato lo affama.</item>
+        <item>La voglia è un segnale che qualcosa è fuori equilibrio. Ripristina l\'equilibrio.</item>
+        <item>Sei permesso lottare. La lotta è parte del percorso.</item>
+        <item>L\'impulso è più forte nel silenzio. Riempi il silenzio con musica, voci, attività.</item>
+        <item>Sei arrivato fin qui. Quella è prova. Fidati della prova.</item>
+        <item>L\'abitudine era una fuga. Non devi scappare più.</item>
+        <item>L\'impulso è un arto fantasma. Sembra reale ma non lo è davvero.</item>
+        <item>Cosa ti è piaciuto di te stesso prima l\'abitudine? Riconstruiscilo.</item>
+        <item>L\'impulso svanirà se ti rifiuti di alimentare storie.</item>
+        <item>Stai riscrivendo la tua storia proprio adesso. Ogni pausa è un nuovo capitolo.</item>
+        <item>L\'impulso è più forte quando sei vulnerabile. Proteggiti riposando.</item>
+        <item>Puoi essere scomodo e non agire sull\'impulso allo stesso tempo.</item>
+        <item>La voglia è il tuo cervello in astinenza. È temporaneo e sta guarendo.</item>
+        <item>L\'abitudine ti ha mantenuto piccolo. Questa scelta ti rende più grande.</item>
+        <item>L\'impulso è come un allarme antincendio che suona. È forte ma la casa non sta bruciando.</item>
+        <item>Non devi essere fiducioso per resistere. Devi solo scegliere.</item>
+        <item>Tardi, stanco, solo, annoiato. È quando gli impulsi attaccano. Conosci il tuo modello.</item>
+        <item>L\'impulso non sei tu. La tua risposta sei tu.</item>
+        <item>Il vecchio modello vuole essere familiare. Stai imparando una nuova familiarità.</item>
+        <item>Puoi riconoscere l\'impulso, ringraziarlo per essersi presentato, e andare avanti.</item>
+        <item>La voglia è una tempesta. Passerà. Non devi uscire fuori in essa.</item>
+        <item>Sei permesso sentire l\'impulso senza vergogna.</item>
+        <item>Cosa ti porta gioia che non è l\'abitudine? Fallo. Costruiscilo.</item>
+        <item>L\'impulso è più forte quando concentri tutta la tua attenzione su di esso. Reindirizza.</item>
+        <item>Hai superato ogni momento prima di questo. Supererai questo.</item>
+        <item>L\'abitudine ha promesso controllo. Ha consegnato il contrario. Ricordalo.</item>
+        <item>L\'impulso è una prova del tuo impegno, non un segno che stai fallendo.</item>
+        <item>La solitudine nutre gli impulsi. Contatta qualcuno prima che l\'impulso diventi forte.</item>
+        <item>Puoi stare con il disagio per 10 minuti. È un lungo tempo.</item>
+        <item>L\'impulso tornerà. Ogni volta che torna, sei più forte.</item>
+        <item>Il vecchio modo ti voleva far credere che non avevi scelta. L\'hai.</item>
+        <item>La voglia non è un\'emergenza. Sembra solo una.</item>
+        <item>Stai costruendo una vita diversa, non solo smettendo un\'abitudine.</item>
+        <item>L\'impulso parla piano all\'inizio. È il momento di allontanarti.</item>
+        <item>Cosa ti renderebbe orgoglioso di te stesso oggi? Comincia da lì.</item>
+        <item>L\'impulso è informazione che la noia o lo stress o la stanchezza sono presenti.</item>
+        <item>Puoi sentirti vuoto e non raggiungere l\'abitudine allo stesso tempo.</item>
+        <item>L\'abitudine sussurrava bugie. Stai imparando a sentire la verità.</item>
+        <item>L\'impulso tornerà domani. Quello non è fallimento. È guarigione.</item>
+        <item>Sei permesso essere imperfetto in questo. Il progresso imperfetto è ancora progresso.</item>
+        <item>L\'impulso è come la statica sulla radio. Puoi cambiare stazione.</item>
+        <item>Cosa chiederebbe il tuo futuro io di fare adesso? Ascolta.</item>
+        <item>La voglia è il fantasma di un modello. I fantasmi non possono farti male.</item>
+        <item>Stai ricablando il tuo cervello con ogni momento in cui scegli diversamente.</item>
+        <item>Le notti late sono pericolose. Dormi presto. La prevenzione è la miglior difesa.</item>
+        <item>L\'impulso è un\'abitudine che cerca perpetuarsi. Stai rompendo il ciclo.</item>
+        <item>Puoi essere stanco e resistente e comunque avere successo.</item>
+        <item>Cosa vuole farti dimenticare l\'impulso? Tieni quel ricordo.</item>
+        <item>L\'abitudine ti ha allontanato da te stesso. Questo percorso ti riporta.</item>
+        <item>L\'impulso è più forte quando stai seduto. Muoviti.</item>
+        <item>Non devi voler resistere. Devi solo farlo comunque.</item>
+        <item>La voglia è un\'onda. Hai cavalcato onde prima. Puoi cavalcare questa.</item>
+        <item>Cosa ti riempie che non è l\'abitudine? Investi in questo.</item>
+        <item>L\'impulso mentirà e dirà che ne hai bisogno. Non è vero. Lo vuoi. È diverso.</item>
+        <item>La noia è un trigger. Avere un piano per i momenti annoiati.</item>
+        <item>Puoi superare l\'impulso con respiro e pazienza.</item>
+        <item>Il vecchio modello sta bussando. Non devi rispondere.</item>
+        <item>L\'impulso è informazione. Solitudine? Stress? Noia? Nominalo e affrontalo.</item>
+        <item>Sei permesso sentirti male e non agire sull\'impulso.</item>
+        <item>L\'abitudine era un meccanismo di coping. Stai imparando nuovi meccanismi adesso.</item>
+        <item>L\'impulso non è un riflesso della tua forza di volontà. È un riflesso dell\'abitudine.</item>
+        <item>Cosa ti porta calma che non è l\'abitudine? Usalo adesso.</item>
+        <item>La voglia è il tuo corpo che si adatta. Non è debolezza. È cambiamento.</item>
+        <item>Puoi essere scomodo senza aver bisogno di essere salvato dall\'abitudine.</item>
+        <item>Gli impulsi tardi sono reali. Pianifica di essere a letto prima che arrivino.</item>
+        <item>L\'impulso è più forte quando sei isolato. Cerca connessione.</item>
+        <item>Hai scelto un percorso più difficile perché vuoi qualcosa di meglio. Onoralo.</item>
+        <item>L\'abitudine ha promesso gioia. Ha consegnato vuoto. Scegli diversamente adesso.</item>
+        <item>L\'impulso è una prova. La stai superando proprio adesso.</item>
+        <item>Com\'è una mente calma? Muoviti verso quel sentimento.</item>
+        <item>La voglia ti visiterà. Non devi darle il benvenuto.</item>
+        <item>Stai costruendo resilienza con ogni momento di resistenza.</item>
+        <item>L\'impulso vuole la tua attenzione. Dallo a qualcosa che ti merita.</item>
+        <item>Noia, solitudine, stress, stanchezza. Conosci i tuoi trigger e pianifica.</item>
+        <item>Puoi essere triste e non raggiungere l\'abitudine.</item>
+        <item>L\'abitudine era una scorciatoia. Stai prendendo la strada lunga. È saggezza.</item>
+        <item>L\'impulso non è il nemico. È solo un visitatore. Tu sei l\'ospite.</item>
+        <item>Cosa diresti al tuo migliore amico se sentisse questo impulso? Dillo a te stesso.</item>
+        <item>La voglia è temporanea. La tua scelta è permanente.</item>
+        <item>Sei permesso lottare. La lotta costruisce forza.</item>
+        <item>L\'impulso è un\'onda che raggiunge il picco in minuti, non ore.</item>
+        <item>Cosa vuoi essere noto? Quello, non l\'abitudine.</item>
+        <item>Tardi più stanco più solo uguale pericolo. Previeni quella combinazione.</item>
+        <item>L\'impulso è un segnale che il tuo vecchio modello è ancora cablato. Lo stai ricablando.</item>
+        <item>Puoi sentire il bisogno e non agirvi sopra. Quella è tutta la battaglia.</item>
+        <item>L\'abitudine ha mentito su quello che avrebbe fatto. La verità ti libererà.</item>
+        <item>L\'impulso è informazione. Ascolta. Poi scegli il tuo percorso.</item>
+        <item>Sei più forte dei tuoi impulsi. Questo momento lo dimostra.</item>
+        <item>La voglia svanirà se le dai tempo invece di azione.</item>
+        <item>Cosa porta pace alla tua mente? Vai lì quando arriva l\'impulso.</item>
+        <item>L\'impulso non è un fallimento. La tua risposta è la tua misura.</item>
+        <item>Hai superato momenti più difficili di questo. Supererai anche questo.</item>
+        <item>L\'abitudine voleva essere la tua identità. Sei più di quello.</item>
+        <item>L\'impulso è un fantasma. Non ha potere a meno che non glielo dia.</item>
+        <item>Cosa sentirebbe bene che non coinvolge l\'abitudine? Fallo.</item>
+        <item>La solitudine è un trigger. Contatta qualcuno prima che il trigger spari.</item>
+        <item>Puoi essere frustrato e non agire sull\'impulso.</item>
+        <item>Il vecchio modello è familiare. Il nuovo modello diventerà familiare.</item>
+        <item>L\'impulso è come un bambino che vuole le caramelle. Puoi riconoscerlo e dire no.</item>
+        <item>Cosa stai costruendo con il tuo rifiuto? Costruiscilo consapevolmente.</item>
+        <item>La voglia è il tuo cervello che guarisce. Fa male perché la guarigione è reale.</item>
+        <item>Sei permesso riposare. Il riposo non è debolezza.</item>
+        <item>L\'impulso tornerà. Ogni ritorno è prova che hai fatto progresso.</item>
+        <item>L\'abitudine era una via di fuga. Stai restando e affrontandolo.</item>
+        <item>L\'impulso è informazione sui tuoi bisogni, non un comando sulle tue azioni.</item>
+        <item>Cosa riempie il tempo che importa? Riempilo con quello.</item>
+        <item>La notte tarda è quando gli impulsi sono più crudeli. Vai a letto prima.</item>
+        <item>L\'impulso è un\'onda. Tu sei terra solida. Lascialo passare sopra.</item>
+        <item>Puoi essere annoiato e non raggiungere l\'abitudine.</item>
+        <item>L\'abitudine ha promesso controllo. Stai prendendo il vero controllo adesso.</item>
+        <item>L\'impulso non sei tu. È un modello che il tuo cervello ha imparato. Lo stai disimparando.</item>
+        <item>Cosa faresti se non avessi paura? Fallo.</item>
+        <item>La voglia è un segno che il tuo sistema si sta ribilanciando. Quella è guarigione.</item>
+        <item>Stai costruendo una vita che l\'impulso non può toccare.</item>
+        <item>L\'impulso sussurra. Non ascoltare.</item>
+        <item>Cosa ti porta vera gioia? Costruisci il tuo giorno intorno a quello.</item>
+        <item>Lo stress è un trigger. Affronta lo stress senza l\'abitudine.</item>
+        <item>Puoi stare con l\'impulso e respirare e aspettare.</item>
+        <item>Il vecchio modello vuole sentirsi comodo. Il disagio è il ponte verso il nuovo comfort.</item>
+        <item>L\'impulso è più forte quando sei vulnerabile. Proteggiti.</item>
+        <item>Sei permesso sentirti debole e comunque scegliere la forza.</item>
+        <item>L\'abitudine era una bugia. La verità è che puoi vivere senza.</item>
+        <item>L\'impulso è una prova del tuo intento. Lo stai superando.</item>
+        <item>Cosa richiede la tua vita migliore? Smettere questa abitudine. Continua.</item>
+        <item>L\'impulso è un segnale senza messaggio. Smetti di cercare significato. Respira.</item>
+        <item>Puoi fare pausa senza capire. La comprensione arriva dopo.</item>
+        <item>La voglia sale e si ferma e infine svanisce. Cavalca tutte e tre le fasi.</item>
+        <item>Cosa sorprenderebbe il tuo passato io sulla tua forza? Stai vivendo quella sorpresa.</item>
+        <item>L\'impulso è una prova che non ti giudica. Stai sempre superando.</item>
+        <item>Non sei la somma dei tuoi impulsi. Sei chi li osserva.</item>
+        <item>L\'abitudine voleva permanenza. Stai scegliendo impermanenza. Stai vincendo.</item>
+        <item>Cosa renderebbe oggi un buon giorno? Definiscilo senza l\'abitudine.</item>
+        <item>L\'impulso è un visitatore che rimane troppo. Sei permesso chiedergli di andare.</item>
+        <item>Puoi avere paura di una ricaduta e essere comunque libero da ricaduta proprio adesso.</item>
+        <item>La voglia parla il linguaggio dell\'urgenza. Tu parli il linguaggio del tempo.</item>
+        <item>La notte tarda è quando la forza di volontà è più bassa. Previeni il momento, non solo la scelta.</item>
+        <item>L\'impulso è un modello che hai imparato. Stai imparando un nuovo modello adesso.</item>
+        <item>Stai costruendo prova, non solo facendo promesse.</item>
+        <item>L\'abitudine ha mentito su darti quello che ti serviva. Stai trovando verità adesso.</item>
+        <item>L\'impulso è un ricordo di chi eri. Sei qualcuno di diverso adesso.</item>
+        <item>Cosa si sentirebbe come libertà? Muoviti verso quello.</item>
+        <item>La voglia è un debito che l\'abitudine ha creato. Lo stai ripagando giorno per giorno.</item>
+        <item>Puoi stare nella tua stessa compagnia senza raggiungere l\'abitudine.</item>
+        <item>L\'impulso testerà la tua integrità. Ogni momento di resistenza lo dimostra.</item>
+        <item>Identifica cosa l\'abitudine ha rubato da te. Riprendilo.</item>
+        <item>Il vecchio modello è una strada che hai smesso di camminare. Non guardare indietro.</item>
+        <item>L\'impulso è rumore. Puoi essere in una stanza rumorosa e stare calmo.</item>
+        <item>Cosa ci vorrebbe per perdonarti del tempo che hai speso? Cominci adesso.</item>
+        <item>Non stai guarendo male. Stai guarendo esattamente bene.</item>
+        <item>L\'abitudine voleva essere la tua soluzione. Stai trovando soluzioni reali.</item>
+        <item>La voglia è astinenza. L\'astinenza è guarigione che sta accadendo.</item>
+        <item>Le notti late saranno sempre difficili. Il letto presto è il tuo migliore amico.</item>
+        <item>Stai scrivendo una storia su chi stai diventando. Rendila una buona.</item>
+        <item>L\'impulso passerà. Tu rimani. Quello è tutta la differenza.</item>
+        <item>Non stai scappando da qualcosa. Stai camminando verso te stesso.</item>
+        <item>La persona che vuoi essere ti sta aspettando per sceglierla oggi.</item>
+        <item>Questo momento è dove il tuo futuro io è costruito.</item>
+        <item>Mantieni promesse a te stesso. Cominciando adesso.</item>
+        <item>La libertà significa fare le tue scelte. Ne stai facendo una proprio adesso.</item>
+        <item>Cosa farebbe la miglior versione di te? Quello è chi stai diventando.</item>
+        <item>L\'abitudine non ti definisce. Le tue scelte lo fanno.</item>
+        <item>Meriti di fidarti di te stesso. Costruisci quella fiducia un giorno alla volta.</item>
+        <item>Il tuo futuro io è già orgoglioso di te per aver provato.</item>
+        <item>La presenza è un dono che dai a te stesso e a tutti intorno.</item>
+        <item>La vera connessione avviene quando ti presenti come sei.</item>
+        <item>Stai scegliendo dignità oggi. Quello è abbastanza.</item>
+        <item>L\'impulso passerà. La tua integrità è permanente.</item>
+        <item>Quali valori importano di più? Vivili oggi.</item>
+        <item>Non stai aggiustando te stesso. Stai onorando te stesso.</item>
+        <item>La tua vita è troppo preziosa per mezza attenzione.</item>
+        <item>Il vecchio modello non ti possiede.</item>
+        <item>L\'auto-rispetto non è guadagnato attraverso la perfezione. Viene dallo sforzo onesto.</item>
+        <item>Sei l\'autore di chi diventi.</item>
+        <item>Oggi scegli la presenza sopra l\'assenza.</item>
+        <item>Ogni scelta per te stesso è una promessa mantenuta.</item>
+        <item>La persona che sei proprio adesso può fare questo.</item>
+        <item>Sei più forte di quanto pensi. Più calmo di quanto credi.</item>
+        <item>L\'identità non è quello che hai fatto. È quello che fai dopo.</item>
+        <item>Questo è come diventi affidabile a te stesso.</item>
+        <item>Non hai bisogno di permesso per rispettarti.</item>
+        <item>L\'impulso è solo rumore. Tu sei il segnale.</item>
+        <item>Che tipo di vita vuoi vivere? La stai costruendo adesso.</item>
+        <item>La tua attenzione è sacra. Proteggila.</item>
+        <item>Fiducia in te stesso. Hai già provato che puoi.</item>
+        <item>La vera fiducia viene dal tenere la tua parola a te stesso.</item>
+        <item>Stai scrivendo la tua storia con ogni scelta.</item>
+        <item>L\'abitudine prospera sulla tua attenzione divisa. Riprendila.</item>
+        <item>La libertà non è l\'assenza di regole. È scegliere le tue.</item>
+        <item>Meriti di essere pienamente presente nella tua vita.</item>
+        <item>Cosa ti dice la tua coscienza? Ascoltala.</item>
+        <item>La versione di te che rispetti è chi stai diventando.</item>
+        <item>L\'intento rende momenti ordinari significativi.</item>
+        <item>Non sei spezzato. Stai scegliendo te stesso.</item>
+        <item>Ogni giorno è una possibilità di provare chi sei veramente.</item>
+        <item>L\'impulso si indebolisce. La tua determinazione si rafforza.</item>
+        <item>Sei qualcuno che mantiene promesse. Soprattutto a te stesso.</item>
+        <item>Cosa diresti a un amico nella tua posizione? Dillo a te stesso.</item>
+        <item>L\'identità inizia con una scelta. La stai facendo adesso.</item>
+        <item>Il tuo futuro io non è uno sconosciuto. È te.</item>
+        <item>La presenza è come ami le persone nella tua vita.</item>
+        <item>Stai costruendo un io in cui puoi fidarti. Richiede tempo. Lo hai.</item>
+        <item>L\'abitudine è temporanea. Chi stai diventando è permanente.</item>
+        <item>La vera forza è tranquilla. Non ha bisogno di annunciarsi.</item>
+        <item>Stai scegliendo il tipo di persona che vuoi essere.</item>
+        <item>Questo è quello che mantiene te stesso importa.</item>
+        <item>I tuoi valori non sono astratti. Vivono nelle tue scelte oggi.</item>
+        <item>L\'impulso vuole che dimentichi chi sei. Ricorda.</item>
+        <item>Meriti di essere orgoglioso di te stesso.</item>
+        <item>Ogni momento è una nuova possibilità di onorare la tua vita.</item>
+        <item>La dignità non è fragile. Diventa più forte quando la nutre.</item>
+        <item>Sei la persona che stai aspettando.</item>
+        <item>Com\'è fidarsi completamente di te stesso?</item>
+        <item>Il vecchio modello è vecchio. Tu sei nuovo.</item>
+        <item>La presenza non riguarda il fatto di prenderla giusta. Riguarda il presentarsi.</item>
+        <item>Stai imparando ad amarti diversamente.</item>
+        <item>La tua attenzione è una cosa finita. Spendila bene.</item>
+        <item>L\'abitudine non definisce la tua capacità. Le tue scelte lo fanno.</item>
+        <item>Stai diventando qualcuno che rispetti.</item>
+        <item>La vera libertà ha il sapore di scegliere il tuo percorso.</item>
+        <item>La versione di te che vuoi incontrare si sta formando proprio adesso.</item>
+        <item>Stai costruendo una relazione con te stesso che importa.</item>
+        <item>L\'identità non è fissa. È qualcosa che scegli ogni giorno.</item>
+        <item>L\'impulso svanisce. Il rispetto che costruisci dura.</item>
+        <item>Stai imparando a mantenere la più importante promessa di tutte.</item>
+        <item>Cosa vuoi ricordare di te quando guardi indietro?</item>
+        <item>L\'abitudine ti voleva piccolo. Ti stai scegliendo grande.</item>
+        <item>La presenza significa che puoi goderti il momento vero in cui sei.</item>
+        <item>Il tuo futuro io non chiede perfezione. Solo onestà.</item>
+        <item>Sei qualcuno che si presenta per se stesso.</item>
+        <item>Il premio per questo è semplice: tu.</item>
+        <item>L\'auto-rispetto non è un lusso. È come vivi.</item>
+        <item>Stai riscrivendo la tua relazione con te stesso.</item>
+        <item>Ogni scelta è una possibilità di provare qualcosa a te stesso.</item>
+        <item>L\'impulso non decide chi sei.</item>
+        <item>I tuoi valori importano più del tiramento temporaneo.</item>
+        <item>Stai imparando a fidarti completamente di te stesso.</item>
+        <item>La persona che vuoi essere è paziente. Ti sta aspettando.</item>
+        <item>La presenza è il più grande dono a te stesso e agli altri.</item>
+        <item>Stai scegliendo l\'intento sopra l\'automatico.</item>
+        <item>L\'abitudine ha promesso qualcosa. Hai promesso qualcosa di meglio a te stesso.</item>
+        <item>L\'identità è costruita in momenti come questo.</item>
+        <item>La vera forza è scegliere te stesso quando nessuno sta guardando.</item>
+        <item>Stai diventando qualcuno che vuoi conoscere.</item>
+        <item>La versione di te che rispetti vive nelle tue scelte.</item>
+        <item>Non stai scappando da qualcosa. Stai scegliendo qualcosa.</item>
+        <item>La dignità cresce ogni volta che scegli te stesso.</item>
+        <item>L\'impulso è temporaneo. La tua integrità non lo è.</item>
+        <item>Stai imparando ad essere il tuo migliore amico.</item>
+        <item>Cosa importa di più per te dell\'abitudine?</item>
+        <item>Il vecchio modello non ottiene un voto in chi diventi.</item>
+        <item>Stai costruendo una vita che riflette i tuoi veri valori.</item>
+        <item>La tua attenzione appartiene alla vita che veramente vuoi.</item>
+        <item>La persona che stai diventando vale lo sforzo.</item>
+        <item>Stai scegliendo di essere qualcuno in cui puoi fidarti.</item>
+        <item>La presenza è come rivendica la tua vita.</item>
+        <item>Ogni momento in cui resisti è un momento in cui stai scegliendo te stesso.</item>
+        <item>L\'abitudine prospera su assenza di consapevolezza. Stai diventando presente.</item>
+        <item>Stai imparando com\'è la vera libertà.</item>
+        <item>L\'identità non è qualcosa che trovi. È qualcosa che costruisci.</item>
+        <item>Il tuo futuro io saprà che hai mantenuto questa promessa.</item>
+        <item>Meriti di piacerti la persona che stai diventando.</item>
+        <item>L\'impulso svanisce. La persona che stai costruendo diventa più forte.</item>
+        <item>Sei qualcuno che sa cosa valuta e lo vive.</item>
+        <item>La vera fiducia viene dall\'allineare l\'azione con chi vuoi essere.</item>
+        <item>La versione di te che rispetti è a portata di mano.</item>
+        <item>Stai scegliendo di essere pienamente nella tua vita.</item>
+        <item>Che tipo di persona si presenta per se stessa come questa? Sei quella persona.</item>
+        <item>La chiarezza arriva quando smetti di offuscare la tua mente.</item>
+        <item>La scelta che stai facendo proprio adesso definisce chi stai diventando.</item>
+        <item>Questo è il lavoro della libertà. Lo stai facendo.</item>
+        <item>La tua vita è l\'unica che ottieni di vivere pienamente.</item>
+        <item>Stai imparando che la vera forza vive nel dire no.</item>
+        <item>La persona dentro di te che sa meglio è già guidando.</item>
+        <item>Ogni momento in cui scegli te stesso importa più di quanto pensi.</item>
+        <item>Quello che proteggi oggi forma chi sei domani.</item>
+        <item>Il vecchio modo non chiama più i colpi. Tu lo fai.</item>
+        <item>Stai imparando a muoverti nel mondo come te stesso.</item>
+        <item>L\'intento è amore reso visibile nel modo in cui vivi.</item>
+        <item>L\'abitudine maschera chi potresti essere. La stai togliendo.</item>
+        <item>La vera pace arriva da sapere che stai essendo vera.</item>
+        <item>Stai diventando il tipo di persona che puoi ammirare.</item>
+        <item>Questo non riguarda la punizione. Riguarda il rispetto.</item>
+        <item>L\'impulso è una bugia su quello che ti serve. Lo sai meglio.</item>
+        <item>Stai costruendo qualcosa che non può essere scosso.</item>
+        <item>Il tuo futuro io sta tifo per te proprio adesso.</item>
+        <item>La presenza è come rimani connesso a quello che importa.</item>
+        <item>Stai imparando ad essere la persona che gli altri possono fidarsi perché ti fidi di te.</item>
+        <item>Ogni rifiuto è un sì a qualcosa di meglio.</item>
+        <item>La versione di te che è intera sta emergendo.</item>
+        <item>Meriti una vita dove ti senti come te stesso.</item>
+        <item>Quello che stai facendo richiede vero coraggio. Nominalo.</item>
+        <item>L\'abitudine ruba il tempo. Stai prendendo il tuo indietro.</item>
+        <item>Stai scegliendo la chiarezza sopra la confusione.</item>
+        <item>La vera vittoria è tranquilla. Vive dentro.</item>
+        <item>L\'identità si forma nelle scelte che nessuno ti vede fare.</item>
+        <item>Stai imparando cosa significa onorare te stesso completamente.</item>
+        <item>L\'impulso diventa più facile. Il tuo auto-rispetto diventa più forte.</item>
+        <item>Stai diventando qualcuno con veri confini.</item>
+        <item>Quello che stai proteggendo è sacro. Te stesso.</item>
+        <item>Il vecchio modello si sta rompendo. Qualcosa di nuovo sta crescendo.</item>
+        <item>Stai imparando ad ascoltare la tua saggezza.</item>
+        <item>La libertà non è una destinazione. È come ti muovi ogni giorno.</item>
+        <item>Stai costruendo una fondazione che supporta il vero cambiamento.</item>
+        <item>Ogni momento di presenza è un momento di potere.</item>
+        <item>La persona che vuoi diventare ha bisogno che tu faccia questo.</item>
+        <item>Stai imparando che mantenere la tua parola importa di più.</item>
+        <item>La vera dignità non è mai negoziabile.</item>
+        <item>Sei l\'unico che vive la tua vita. Posseditela completamente.</item>
+        <item>L\'abitudine non possiede il tuo futuro. Tu lo fai.</item>
+        <item>Stai diventando qualcuno che fa scelte invece di scuse.</item>
+        <item>Quello che stai costruendo è solo per te.</item>
+        <item>La presenza ti connette alla vita che è veramente tua.</item>
+        <item>Stai imparando a voler te stesso più dell\'impulso.</item>
+        <item>La versione di te senza questo peso ti sta aspettando.</item>
+        <item>Ogni giorno che scegli te stesso è un giorno che vinci.</item>
+        <item>Stai diventando affidabile alla persona che importa di più.</item>
+        <item>La vera forza è scegliere te stesso quando è difficile.</item>
+        <item>La chiarezza che arriva vale ogni momento di questo.</item>
+        <item>Stai imparando che la libertà è interna prima.</item>
+        <item>Quello che rispetti in te stesso cresce quando lo nutre.</item>
+        <item>Non stai aspettando di diventare degno. Sei degno adesso.</item>
+        <item>L\'abitudine è una vecchia storia. Stai scrivendo una nuova.</item>
+        <item>Stai scegliendo di essere presente per la tua vita.</item>
+        <item>Ogni momento di resistenza è un momento di crescita.</item>
+        <item>La persona che stai diventando capirà perché hai fatto questo.</item>
+        <item>Stai imparando ad amarti in azione.</item>
+        <item>La vera pace viene dall\'essere allineato con i tuoi valori.</item>
+        <item>Stai costruendo un io che non devi mai mentire.</item>
+        <item>L\'impulso svanisce come tutto il temporaneo.</item>
+        <item>Meriti sentirsi a casa nelle tue scelte.</item>
+        <item>L\'identità è scritta in quello che fai quando sei testato.</item>
+        <item>Stai imparando che la presenza è la forma più profonda di cura.</item>
+        <item>La versione di te che è libera è più vicina di quanto sai.</item>
+        <item>Quello che proteggi oggi diventa chi sei domani.</item>
+        <item>Stai scegliendo di essere qualcuno su cui puoi contare.</item>
+        <item>Ogni momento onesto conta. Li stai raccogliendo.</item>
+        <item>La vera forza è interna. Vive nella tua spina.</item>
+        <item>Stai diventando qualcuno che onora le proprie promesse.</item>
+        <item>La chiarezza che stai costruendo ti sosterrà.</item>
+        <item>Non stai scappando. Stai arrivando.</item>
+        <item>Quello che stai facendo prova qualcosa a te stesso.</item>
+        <item>L\'abitudine vuole la resa. Stai scegliendo la sovranità.</item>
+        <item>Stai imparando che la migliore vita è quella che scegli.</item>
+        <item>La presenza è l\'antidoto alla bugia che l\'abitudine dice.</item>
+        <item>Ogni momento che rimani è un momento che rimani fedele.</item>
+        <item>Stai diventando il tipo di persona che vale essere.</item>
+        <item>La vera libertà ha il sapore di fare quello in cui credi.</item>
+        <item>La versione di te che si fida di se stessa sta emergendo.</item>
+        <item>Stai imparando che la dignità non è data. È scelta.</item>
+        <item>Quello che importa è che stai scegliendo. Continua a scegliere.</item>
+        <item>La vecchia storia non possiede il prossimo capitolo.</item>
+        <item>Stai costruendo una relazione con te stesso che dura.</item>
+        <item>Ogni momento di scelta è un momento di potere.</item>
+        <item>La persona che stai diventando non è lontana.</item>
+        <item>Stai imparando a vivere con intento.</item>
+        <item>Il vero rispetto viene dal mantenere le tue promesse.</item>
+        <item>L\'impulso è temporaneo. Il tuo carattere è permanente.</item>
+        <item>Stai scegliendo di essere pienamente vivo nella tua vita.</item>
+        <item>L\'identità è costruita da mille piccoli sì a te stesso.</item>
+        <item>Meriti guardare te stesso negli occhi senza vergogna.</item>
+        <item>La chiarezza che arriva sarà la tua nuova casa.</item>
+        <item>Non stai aspettando il permesso. Te lo stai dando.</item>
+        <item>Quello che stai facendo proprio adesso è l\'inizio di tutto.</item>
+        <item>Stai imparando a fidarti di quello che sai è vero.</item>
+        <item>L\'abitudine sussurra. La tua coscienza parla. Ascolta più forte.</item>
+        <item>La vera scelta significa vivere con quello che hai deciso.</item>
+        <item>Stai diventando qualcuno con vera convinzione.</item>
+        <item>Ogni momento che rimani è un momento che stai costruendo te stesso.</item>
+        <item>La persona dentro che sa meglio sta già guidando.</item>
+        <item>Quello che stai costruendo è solo per chi lo vuole.</item>
+        <item>La libertà significa che non stai rispondendo più all\'impulso.</item>
+        <item>Stai imparando che il tuo rispetto vale di più.</item>
+        <item>La versione di te che è intatta sta ricrescendo.</item>
+        <item>Quello che proteggi in questi momenti è il tuo futuro.</item>
+        <item>Stai scegliendo di essere qualcuno che riconosci.</item>
+        <item>Il vero potere è scegliere quello che importa e viverlo.</item>
+        <item>La chiarezza che stai costruendo sta diventando permanente.</item>
+        <item>Stai imparando che la presenza è dove la vita davvero è.</item>
+        <item>Ogni scelta onesta ti avvicina a te stesso.</item>
+        <item>L\'abitudine non può toccare chi stai scegliendo di essere.</item>
+        <item>Meriti sentirti intero nelle tue decisioni.</item>
+        <item>Stai costruendo qualcosa che l\'impulso non prenderà mai.</item>
+        <item>Quello che ti definisce è quello che scegli quando è difficile.</item>
+        <item>Il vecchio modello sta perdendo la sua presa. Stai stando saldo.</item>
+        <item>La vera forza è mantenere la tua parola a te stesso al buio.</item>
+        <item>Stai diventando qualcuno il cui sì significa qualcosa.</item>
+        <item>Ogni momento che scegli te stesso è un momento di vittoria.</item>
+        <item>La persona che stai diventando sarà grata.</item>
+        <item>Stai imparando cosa richiede davvero la libertà.</item>
+        <item>La presenza è la tua ribellione contro l\'automatico.</item>
+        <item>Stai costruendo una vita che si allinea con la tua anima.</item>
+        <item>La versione di te che è autentica sta prendendo forma.</item>
+        <item>Quello che stai facendo proprio adesso ha ripercussioni in tutto.</item>
+        <item>Meriti stare in pace con le tue scelte.</item>
+        <item>La chiarezza che guadagni è una fondazione per tutto.</item>
+        <item>Stai imparando a fare scelte che riflettono chi sei.</item>
+        <item>Il vero rispetto viene dal fare la cosa difficile quando importa.</item>
+        <item>Ogni giorno senza la vecchia abitudine è un giorno di prova.</item>
+        <item>Stai diventando qualcuno che può fidarsi di se stesso.</item>
+        <item>L\'impulso non capisce chi stai diventando.</item>
+        <item>Stai scegliendo di vivere con intento e consapevolezza.</item>
+        <item>Quello che proteggi diventa quello che preservi.</item>
+        <item>L\'identità non è ereditata. È scelta e ricostruita quotidianamente.</item>
+        <item>Stai imparando che la libertà è un lavoro interno.</item>
+        <item>La versione di te che è libera è in attesa di essere trovata.</item>
+        <item>Ogni momento che resisti è un momento di forza.</item>
+        <item>Meriti conoscerti come qualcuno che mantiene promesse.</item>
+        <item>L\'abitudine sta svanendo. Stai diventando più chiaro.</item>
+        <item>Stai diventando qualcuno i cui valori sono vissuti.</item>
+        <item>La vera pace viene dal sapere che stai scegliendo bene.</item>
+        <item>Quello che stai costruendo ti sosterrà attraverso tutto.</item>
+        <item>Ogni scelta è un voto per chi vuoi diventare.</item>
+        <item>Stai imparando ad onorare la persona che vuoi essere.</item>
+        <item>La chiarezza delle tue scelte è il tuo più grande potere.</item>
+        <item>Non stai diventando qualcuno di nuovo. Stai diventando più te.</item>
+        <item>Quello che importa è che sei qui. Stai scegliendo.</item>
+        <item>La vecchia storia finisce. La nuova inizia con te.</item>
+        <item>Ogni momento di presenza è un momento di interezza.</item>
+        <item>Stai diventando qualcuno che genuinamente piaci.</item>
+        <item>La vera libertà ha il sapore di vivere la tua verità.</item>
+        <item>La versione di te che ti fidi sta formandosi adesso.</item>
+        <item>Meriti guardare indietro senza rimpianto su oggi.</item>
+        <item>Quello che stai costruendo è costruito per durare.</item>
+        <item>Sei esattamente dove hai bisogno di essere.</item>
+        <item>Ogni momento che non cedi è un momento di forza.</item>
+        <item>Stai costruendo qualcosa di nuovo con ogni giorno che passa.</item>
+        <item>I piccoli passi in avanti contano ancora come in avanti.</item>
+        <item>Il progresso non è sempre visibile, ma lo stai facendo.</item>
+        <item>Oggi hai scelto te stesso. Ecco quello che importa.</item>
+        <item>Non hai fatto la cosa. Quello è tutto.</item>
+        <item>Il percorso al cambiamento inizia con una decisione.</item>
+        <item>Anche quando è difficile, stai ancora muovendoti.</item>
+        <item>Questo momento di resistenza è la tua forza.</item>
+        <item>Non devi vincere per sempre, solo oggi.</item>
+        <item>Un giorno alla volta è il modo più gentile.</item>
+        <item>Rompere le catene richiede tempo. Lo hai.</item>
+        <item>Non preoccuparti della prossima settimana. Affronta solo oggi.</item>
+        <item>Il viaggio è lungo, ma cammini un giorno alla volta.</item>
+        <item>Non stai facendo una gara. Stai costruendo una vita.</item>
+        <item>Lascia che il domani si preoccupi di se stesso.</item>
+        <item>Oggi è tutto quello che devi gestire adesso.</item>
+        <item>Il tempo si muove più lentamente di quanto pensi.</item>
+        <item>Una caduta non è un fallimento, è informazione.</item>
+        <item>Hai inciampato. Non cancella il tuo progresso.</item>
+        <item>Un momento non definisce il tuo viaggio.</item>
+        <item>Puoi ricominciare proprio adesso. Niente di più.</item>
+        <item>Le cadute accadono. Quello che importa è quello che viene dopo.</item>
+        <item>Hai imparato qualcosa. Usalo.</item>
+        <item>Questo momento di lotta ti insegnerà qualcosa.</item>
+        <item>Cadere indietro una volta non significa che hai fallito.</item>
+        <item>La prossima scelta è sempre disponibile per te.</item>
+        <item>Puoi ricominciare tante volte quante hai bisogno.</item>
+        <item>Sii gentile con te stesso come lo saresti con un amico.</item>
+        <item>Meriti dolcezza mentre guarisci.</item>
+        <item>Le parole dure non aiuteranno. La compassione lo farà.</item>
+        <item>Stai facendo lavoro duro. Trattati dolcemente.</item>
+        <item>Questo viaggio non ha bisogno di punizione, solo pazienza.</item>
+        <item>La vergogna non aiuterà. La compassione lo farà.</item>
+        <item>Sei permesso essere imperfetto mentre cambi.</item>
+        <item>Perdonati il ​​più velocemente che puoi.</item>
+        <item>Il tuo progresso merita celebrazione tranquilla.</item>
+        <item>Sii la voce che ti solleva, non quella che ti abbatte.</item>
+        <item>Un\'onda rotta non cancella la tua forza.</item>
+        <item>La coerenza importa più della perfezione.</item>
+        <item>Quello che fai la maggior parte dei giorni importa più di un giorno.</item>
+        <item>La vera misura è come ti presenti regolarmente.</item>
+        <item>Una caduta non annulla il tuo modello di dire no.</item>
+        <item>Le tue abitudini si formano attraverso scelte piccole e ripetute.</item>
+        <item>Quello che conta è il ritmo che stai costruendo, non una linea perfetta.</item>
+        <item>Le onde si rompono. Il carattere non lo fa.</item>
+        <item>Ti stai allenando attraverso la ripetizione.</item>
+        <item>Ogni giorno è una possibilità di rinforzare chi stai diventando.</item>
+        <item>I primi giorni sono i più difficili. Diventa più facile.</item>
+        <item>All\'inizio, tutto sembra urgente. Quella sensazione svanisce.</item>
+        <item>Proprio adesso, sembra impossibile. Non sempre lo sarà.</item>
+        <item>Le voglie si indeboliranno. Fidati che lo faranno.</item>
+        <item>Quello che brucia luminoso adesso si raffredderà.</item>
+        <item>Il tuo corpo e la tua mente si adatteranno più velocemente di quanto pensi.</item>
+        <item>La prima settimana è la salita più ripida.</item>
+        <item>Ogni giorno è un po\' più leggero di quello prima.</item>
+        <item>Sei nella parte più difficile. Cambierà.</item>
+        <item>Questa intensità che senti adesso è temporanea.</item>
+        <item>Dopo un po\', la scelta diventa più facile da fare.</item>
+        <item>L\'impulso perde la presa nel tempo.</item>
+        <item>Noterai un giorno che non hai nemmeno pensato a esso.</item>
+        <item>La guarigione costruisce lo slancio mentre vai.</item>
+        <item>Ogni giorno di resistenza rende il prossimo più morbido.</item>
+        <item>Il tuo cervello si sta ricablando. Richiede tempo, poi accade.</item>
+        <item>Quello che richiede sforzo adesso diventa naturale.</item>
+        <item>Il percorso diventa più liscio quanto più lo cammini.</item>
+        <item>Ti sveglierai un giorno e ti sentirai diverso.</item>
+        <item>La forza costruisce tranquillamente, poi realizzi che l\'hai.</item>
+        <item>Un giorno è una pietra miliare. Una settimana lo è.</item>
+        <item>Segna le tue vittorie privatamente. Sono ancora vittorie.</item>
+        <item>Non devi annunciarlo per onorare il tuo progresso.</item>
+        <item>L\'orgoglio tranquillo conta tanto quanto qualsiasi celebrazione.</item>
+        <item>Celebra senza fanfare. La vittoria è reale.</item>
+        <item>Ogni pietra miliare, non importa la dimensione, merita di essere riconosciuta.</item>
+        <item>I tuoi progressi non hanno bisogno di un pubblico per importare.</item>
+        <item>La forza silenziosa è ancora forza.</item>
+        <item>Nota quello che hai fatto, anche se nessun altro lo fa.</item>
+        <item>Sai cosa ti è costato arrivare qui. È abbastanza.</item>
+        <item>Pensa oltre domani. Stai costruendo qualcosa che dura.</item>
+        <item>Questa scelta oggi forma la tua intera vita.</item>
+        <item>Non stai solo superando oggi, stai cambiando per sempre.</item>
+        <item>Il tuo futuro io sarà grato per quello che il tuo presente io sta facendo.</item>
+        <item>La persona che stai diventando ne vale la pena.</item>
+        <item>Il tuo futuro io conta su te.</item>
+        <item>Quello che fai adesso si compone nel tempo.</item>
+        <item>Stai investendo nella vita che veramente vuoi.</item>
+        <item>Non riguarda solo oggi. Riguarda chi stai diventando.</item>
+        <item>Tutto quello che fai adesso ha un\'onda lunga.</item>
+        <item>Quando arriva l\'impulso, ricorda perché hai iniziato.</item>
+        <item>Il vecchio modello vuole ritornare. Tu puoi dire no.</item>
+        <item>Quello che stai rompendo ha richiesto tempo per formarsi. Disfare richiede tempo.</item>
+        <item>Stai ricablando anni di comportamento. Quello è lavoro paziente.</item>
+        <item>L\'abitudine sussurra. Puoi scegliere di non ascoltare.</item>
+        <item>Ogni volta che dici no, ti stai allenando a dire no la prossima volta.</item>
+        <item>Non stai essendo deprivato. Stai essendo liberato.</item>
+        <item>Questo riguarda chi vuoi essere, non quello che non puoi avere.</item>
+        <item>I tuoi motivi per fermarti sono più grandi dell\'impulso a ritornare.</item>
+        <item>La vita senza è degna di quello che stai cedendo.</item>
+        <item>Oggi sei più forte dell\'abitudine. Fidati di questo.</item>
+        <item>Volere qualcosa non significa che devi farlo.</item>
+        <item>Puoi sentire l\'impulso e comunque passarci.</item>
+        <item>La sensazione passerà. Non devi agire su ogni sensazione.</item>
+        <item>Gli impulsi vanno e vengono come onde. Stai imparando a vederli passare.</item>
+        <item>Questa voglia non è un comando. È solo un pensiero.</item>
+        <item>Stai diventando il tipo di persona che può volere qualcosa e rifiutarla.</item>
+        <item>Ogni rifiuto dimostra che hai il potere che dubitavi.</item>
+        <item>Il vecchio modello non ti possiede più.</item>
+        <item>Stai riprendendo la tua vita, una scelta alla volta.</item>
+        <item>Quando sei stanco, ricorda quanto lontano sei già arrivato.</item>
+        <item>La parte più difficile non è dietro, ma sei passato il peggio.</item>
+        <item>Hai già fatto la cosa più difficile. Stare fermo è più facile.</item>
+        <item>Hai provato che puoi farlo. Non devi provarlo di nuovo.</item>
+        <item>Riposa quando hai bisogno. Il lavoro continua comunque.</item>
+        <item>L\'esaurimento è reale. Non significa che stai fallendo.</item>
+        <item>Puoi essere stanco e comunque muoverti in avanti.</item>
+        <item>Domani è un giorno nuovo. Questo non deve essere perfetto.</item>
+        <item>Se oggi è stato difficile, domani può essere più facile.</item>
+        <item>Niente di quello che fai oggi rovina tutto quello che hai costruito.</item>
+        <item>Un giorno difficile non cancella settimane di progresso.</item>
+        <item>Un brutto giorno non definisce la settimana intera.</item>
+        <item>Sei permesso avere un momento ruvido e comunque stare bene.</item>
+        <item>La guarigione non è una linea retta. La linea sale comunque.</item>
+        <item>Alcuni giorni sentirai che stai ricominciando. È normale.</item>
+        <item>Non ricominciare. Continui. Anche i giorni difficili ne fanno parte.</item>
+        <item>Quando le cose sembrano cadere a pezzi, spesso sei solo stanco.</item>
+        <item>La tua dignità non è determinata dalla tua onda.</item>
+        <item>Chi sei non è misurato da un momento di debolezza.</item>
+        <item>Sei più di una scelta. Sei tutte insieme.</item>
+        <item>L\'abitudine era un capitolo. Stai scrivendo un intero libro adesso.</item>
+        <item>Questa versione di te si sta ancora formando. Datti tempo.</item>
+        <item>Sei permesso cambiare lentamente.</item>
+        <item>La guarigione non ha una scadenza.</item>
+        <item>La guarigione accade al suo ritmo, e va bene.</item>
+        <item>La strada in avanti non è sempre chiara. Non devi vedere il percorso intero.</item>
+        <item>Solo il prossimo passo è abbastanza.</item>
+        <item>Non devi capire tutto adesso.</item>
+        <item>Fidati del processo anche quando non vedi il progresso.</item>
+        <item>Il lavoro che stai facendo adesso non mostrerà risultati immediatamente. Va bene.</item>
+        <item>Il progresso invisibile è ancora progresso.</item>
+        <item>Stai cambiando anche quando non lo vedi.</item>
+        <item>Il tuo corpo e la tua mente si stanno adattando tranquillamente.</item>
+        <item>Il premio per fermarsi non è sempre ovvio all\'inizio.</item>
+        <item>Quello che guadagni da questo richiede tempo per mostrare.</item>
+        <item>Sii paziente con te stesso nel modo in cui saresti paziente con qualcuno che ami.</item>
+        <item>Se stai lottando, non significa che sei debole.</item>
+        <item>La lotta è un segno che stai crescendo.</item>
+        <item>Il disagio è prova che qualcosa sta cambiando.</item>
+        <item>Stai facendo qualcosa di molto difficile. Onoralo.</item>
+        <item>Stai scegliendo questo, ogni giorno, anche quando è doloroso.</item>
+        <item>Nessuno può portarti via la libertà. Stai lottando per essa.</item>
+        <item>Non ti stai deprivando. Stai reclamando te stesso.</item>
+        <item>Questo è un atto di auto-rispetto.</item>
+        <item>Tratta questo nel modo in cui tratteresti qualcosa che ami veramente.</item>
+        <item>Ne vali la pena dello sforzo che stai mettendo.</item>
+        <item>Ne vali la pena di mantenere. Ne vali la pena di combattere.</item>
+        <item>Smetti di questionare se ne vali la pena.</item>
+        <item>Il dubbio arriverà. Lascialo. Non devi credervi.</item>
+        <item>Puoi essere incerto e comunque muoverti in avanti.</item>
+        <item>La fiducia seguirà l\'azione. Agisci per primo.</item>
+        <item>Non devi sentire fiducia per fare la cosa.</item>
+        <item>Fai la cosa. La fiducia verrà.</item>
+        <item>Alcuni giorni ti sentirai forte. Alcuni giorni ti sentirai fragile.</item>
+        <item>I giorni fragili sono dove vive la vera forza.</item>
+        <item>Quando sei debole, presentarsi è bravura.</item>
+        <item>L\'abitudine prospera nel silenzio e nella vergogna. Silenzio e vergogna sono il suo carburante.</item>
+        <item>Parlarne, accettarlo e andare avanti lo affama.</item>
+        <item>Non devi nascondere questo. Non c\'è nulla da nascondere.</item>
+        <item>Quello che stai facendo sta guarendo. Quello è il contrario della vergogna.</item>
+        <item>Ogni persona che ha smesso di qualcosa ha sentito quello che senti.</item>
+        <item>Altri hanno camminato questo percorso prima di te.</item>
+        <item>La tua storia non è finita. Sta solo iniziando un nuovo capitolo.</item>
+        <item>La fine che vuoi è ancora possibile. Più che possibile.</item>
+        <item>Non importa quante volte hai provato prima, questa volta è diversa.</item>
+        <item>I tuoi tentativi precedenti non erano fallimenti. Erano pratica.</item>
+        <item>Ogni volta che hai provato, hai imparato qualcosa.</item>
+        <item>Questa conoscenza è tua adesso. Usala.</item>
+        <item>L\'impulso ti testerà. Questo è quello che gli impulsi fanno.</item>
+        <item>Ogni test che superi ti avvicina alla pace.</item>
+        <item>Il pensiero ossessivo svanirà.</item>
+        <item>La costante riproduzione mentale si quieterà.</item>
+        <item>Un giorno realizzerai che non ci hai pensato per ore.</item>
+        <item>Sei permesso volere questo. Vuoi pienamente.</item>
+        <item>Vuoi la libertà. Vuoi la pace. Vuoi la nuova versione di te.</item>
+        <item>Quando la motivazione svanisce, lascia che i tuoi motivi ti portino.</item>
+        <item>Quando i motivi svaniscono, lascia che la routine ti porti.</item>
+        <item>Quando la routine si rompe, semplicemente riprendila.</item>
+        <item>Questo non è fragile. È flessibile.</item>
+        <item>Stai costruendo qualcosa di resiliente.</item>
+        <item>Il vecchio modello tenterà una volta di più. Lo sai che lo farà.</item>
+        <item>Sarai pronto, perché stai preparando.</item>
+        <item>Ogni giorno di dire no è pratica per quel momento.</item>
+        <item>Il tuo futuro è non scritto. Puoi scriverlo.</item>
+        <item>Ogni scelta che fai adesso è una parola in quel futuro.</item>
+        <item>Che storia vuoi raccontare?</item>
+        <item>La cosa più difficile che hai mai fatto è quella che stai facendo proprio adesso.</item>
+        <item>Non stai solo sopravvivendo. Stai imparando chi vuoi essere.</item>
+        <item>La persona che stai diventando non ha più bisogno dell\'abitudine.</item>
+        <item>La crescita è lenta. La crescita è reale. La crescita sta accadendo.</item>
+        <item>Il tuo cervello è plastico. Può cambiare. Sta cambiando.</item>
+        <item>Quello che sembra impossibile oggi sembrerà normale presto.</item>
+        <item>La nuova normalità ti sta aspettando.</item>
+        <item>Te stesso che continui a provare merita di essere celebrato.</item>
+        <item>Questa pace che stai costruendo non arriverà tutto in una volta.</item>
+        <item>Appartieni qui. Appartieni in questa guarigione.</item>
+        <item>Questa mattina hai un\'ora in più. Cosa ne farai?</item>
+        <item>La tua mente è più chiara di ieri. Nota.</item>
+        <item>Hai scelto te stesso oggi. Ecco quello che importa.</item>
+        <item>L\'abitudine è più tranquilla adesso. Stai imparando il suo ritmo.</item>
+        <item>Una passeggiata al mattino può resettare la tua intera giornata.</item>
+        <item>Stai costruendo qualcosa di reale con il tempo che stai risparmiando.</item>
+        <item>Il sonno stasera si sentirà diverso. Lascialo.</item>
+        <item>L\'acqua fredda non è punizione. È prova che puoi scegliere il disagio alle tue condizioni.</item>
+        <item>Le tue mani sono libere per qualcosa di meglio.</item>
+        <item>L\'impulso arriverà. Sai come stare con esso adesso.</item>
+        <item>La concentrazione cresce quando smetti di alimentare il vecchio modello.</item>
+        <item>Non stai più combattendo l\'abitudine. Stai solo allontanandoti.</item>
+        <item>La disciplina oggi è la libertà domani. L\'ha sempre fatto.</item>
+        <item>L\'avvallamento del pomeriggio è più piccolo. Lo noti?</item>
+        <item>La gratitudine per le piccole vittorie costruisce lo slancio più velocemente della vergogna sul passato.</item>
+        <item>Stai insegnando al tuo corpo un nuovo ritmo.</item>
+        <item>L\'abitudine sussurra. Il tuo impegno parla più forte.</item>
+        <item>Questa energia che senti è tua da spendere adesso.</item>
+        <item>Stare calmo quando arriva l\'impulso è un superpotere.</item>
+        <item>Cosa diresti a un amico nella tua posizione?</item>
+        <item>La tua routine mattutina è la tua ancora.</item>
+        <item>L\'impulso è dato, non destino.</item>
+        <item>Non stai deprivandoti. Ti stai proteggendo.</item>
+        <item>Dieci minuti fuori sono dieci minuti in cui la tua mente non lo stava inseguendo.</item>
+        <item>Questa settimana è diversa da quella scorsa. Vedi la differenza.</item>
+        <item>La tua famiglia nota. Non lo dicono ancora, ma notano.</item>
+        <item>L\'abitudine ha alimentato la tua ansia. Guardala ridursi mentre rimani fermo.</item>
+        <item>Stai diventando qualcuno che può stare seduto tranquillo.</item>
+        <item>Un giorno alla volta non è debolezza. È strategia.</item>
+        <item>Il tuo sonno è il modo del tuo corpo di guarire. Onoralo.</item>
+        <item>L\'impulso diventa più debole quando non litighi con esso.</item>
+        <item>Non stai ricominciando. Continui.</item>
+        <item>Le abitudini sostitutive richiedono tempo. Sii paziente con te stesso.</item>
+        <item>Questo momento è più facile di quello scorso.</item>
+        <item>La tua mente è meno affollata adesso. Senti lo spazio.</item>
+        <item>Il lavoro è più chiaro quando l\'abitudine non è nel mezzo.</item>
+        <item>Il vecchio modello aveva un costo. Sei libero da esso adesso.</item>
+        <item>Stai imparando ad essere annoiato. È una vera abilità.</item>
+        <item>Il mattino è tuo. Cosa creerai con esso?</item>
+        <item>Le tue mani tremano meno adesso. L\'hai notato?</item>
+        <item>Questo è quello che la calma sembra.</item>
+        <item>Non hai bisogno di permesso per smettere. L\'hai già.</item>
+        <item>L\'impulso passa. Ogni volta, passa.</item>
+        <item>Il tuo corpo ricorda l\'abitudine. La tua mente sa di meglio.</item>
+        <item>La piccola disciplina oggi costruisce la grande libertà domani.</item>
+        <item>Non sei spezzato. Stai solo reindirizzando la tua forza.</item>
+        <item>Diecimila piccoli momenti di scelta ti hanno portato qui.</item>
+        <item>L\'abitudine sarebbe ancora qui se l\'alimentassi. Non l\'hai fatto.</item>
+        <item>I tuoi amici vogliono vederti così. Chiaro e presente.</item>
+        <item>La routine serale è il tuo premio, non la tua prova.</item>
+        <item>Stai respirando più profondamente adesso.</item>
+        <item>L\'impulso ha perso il suo potere di prendere decisioni per te.</item>
+        <item>Oggi hai energia per qualcosa di reale.</item>
+        <item>La gratitudine per quello che stai guadagnando batte il rammarico per quello che hai perso.</item>
+        <item>Non stai stringendo i denti. Stai scegliendo.</item>
+        <item>L\'abitudine prospera nell\'oscurità. La luce è tua alleata.</item>
+        <item>La tua concentrazione si acuisce quando smetti di bruciare energia per questo.</item>
+        <item>L\'acqua fredda ti sveglia nel modo in cui l\'abitudine usava. Senza il costo.</item>
+        <item>Non stai deprivandoti. Stai investendo in te stesso.</item>
+        <item>L\'impulso è forte in alcuni giorni, tranquillo in altri. Entrambi vanno bene.</item>
+        <item>Il tuo debito di sonno si sta riducendo.</item>
+        <item>La passeggiata che hai fatto stamattina aveva uno scopo: ricordarti che puoi essere calmo.</item>
+        <item>Non sei perfetto. Sei persistente.</item>
+        <item>L\'abitudine vive nell\'abitudine. Rompi l\'abitudine, rompi il suo potere.</item>
+        <item>La tua mente è uno strumento di nuovo, non un campo di battaglia.</item>
+        <item>Il mattino è la tua pagina bianca.</item>
+        <item>Stai insegnando al tuo sistema nervoso un nuovo modo di sentirsi al sicuro.</item>
+        <item>Questo è quello che hai scelto. Continua a sceglierlo.</item>
+        <item>Il vecchio modello vuole sentirsi come libertà. La vera libertà si sente così.</item>
+        <item>La tua energia non è più presa in prestito da domani.</item>
+        <item>L\'impulso ti testerà. Lascialo. Hai superato ogni test finora.</item>
+        <item>La disciplina è l\'amore applicato a te stesso.</item>
+        <item>Non stai correndo via dall\'abitudine. Stai correndo verso qualcosa di meglio.</item>
+        <item>La chiarezza che senti adesso merita di essere protetta.</item>
+        <item>Una sera tranquilla dimostra che puoi averne molte.</item>
+        <item>Il tuo corpo sta guarendo. Fidati del processo.</item>
+        <item>Il momento in cui smetti di combattere è il momento in cui inizi a vincere.</item>
+        <item>Stai costruendo una vita in cui l\'abitudine non ha spazio.</item>
+        <item>L\'impulso si nutre del segreto. Portalo alla luce e guardalo ridursi.</item>
+        <item>Il sonno è dove il tuo corpo mantiene le sue promesse.</item>
+        <item>L\'abitudine sostitutiva sta diventando reale adesso.</item>
+        <item>Non stai perdendo l\'abitudine. Stai ricordando te stesso.</item>
+        <item>La routine mattutina è il tuo voto giornaliero per te stesso.</item>
+        <item>La gratitudine per il momento in cui sei batte la preoccupazione per quello in cui stai andando.</item>
+        <item>La tua mente ha spazio per qualcosa di nuovo adesso.</item>
+        <item>La passeggiata nel bosco è la medicina che l\'abitudine fingeva di essere.</item>
+        <item>Stai imparando che puoi stare con il disagio senza nutrirlo.</item>
+        <item>L\'abitudine prospera sull\'urgenza. La calma è il suo nemico.</item>
+        <item>La tua concentrazione ritorna nel momento in cui smetti di dividerla.</item>
+        <item>Ogni piccola vittoria è permesso di credere alle più grandi.</item>
+        <item>Non stai deprivandoti. Stai praticando la libertà.</item>
+        <item>L\'impulso è un visitatore, non un padrone di casa.</item>
+        <item>La tua energia sta spianando una strada per qualcosa di reale.</item>
+        <item>Il vecchio modello è più tranquillo perché non lo stai alimentando.</item>
+        <item>Stai costruendo un mestiere adesso, non solo passando il tempo.</item>
+        <item>La disciplina senza compassione è punizione. Conosci la differenza.</item>
+        <item>La notte è più tranquilla. Il sonno viene più facilmente. Lo senti.</item>
+        <item>I tuoi amici vogliono questa versione di te. La chiara.</item>
+        <item>L\'abitudine ha promesso fuga. Hai trovato qualcosa di meglio: la presenza.</item>
+        <item>L\'impulso verrà domani. Sai come gestirlo.</item>
+        <item>La routine mattutina ricablala il tuo cervello un giorno alla volta.</item>
+        <item>Non sei forte perché non senti l\'impulso. Sei forte perché lo senti e scegli comunque.</item>
+        <item>La tua mente è meno affollata. Cosa farai con lo spazio?</item>
+        <item>L\'abitudine si nutreva di noia. Stai imparando ad essere annoiato e vivere comunque.</item>
+        <item>Gratitudine per il tuo corpo, che sta guarendo, che sta provando.</item>
+        <item>La passeggiata stamattina era pratica. Continua a praticare.</item>
+        <item>Il tuo sonno è più profondo quando la tua mente non è divisa.</item>
+        <item>L\'impulso perde potere nel momento in cui smetti di credere nella sua necessità.</item>
+        <item>Non stai iniziando da zero. Stai iniziando da adesso.</item>
+        <item>Il vecchio modello ha promesso sollievo. Il vero sollievo è vivere senza.</item>
+        <item>La tua concentrazione si acuisce con ogni scelta di allontanarsi.</item>
+        <item>L\'acqua fredda ti ricorda: il disagio non richiede l\'abitudine.</item>
+        <item>Non stai più combattendo. Stai solo non alimentando il fuoco.</item>
+        <item>L\'abitudine voleva la tua mattina. Riprendila.</item>
+        <item>Le tue mani sono disponibili per il lavoro adesso.</item>
+        <item>L\'impulso è reale. La tua scelta è più reale.</item>
+        <item>La disciplina applicata a te stesso è la forma più alta di amore.</item>
+        <item>La sera è tua. Nessuna negoziazione. Nessun impulso. Solo sera.</item>
+        <item>La tua mente sta imparando ad essere tranquilla. Lasciala imparare.</item>
+        <item>L\'abitudine era forte. La tua calma è più forte.</item>
+        <item>L\'abitudine sostitutiva sta diventando casa adesso.</item>
+        <item>Stai insegnando al tuo sistema nervoso che sei al sicuro senza.</item>
+        <item>La passeggiata mattutina è il tuo promemoria giornaliero: puoi scegliere la tua direzione.</item>
+        <item>Gratitudine per il momento che ti ha portato qui, qualunque fosse.</item>
+        <item>La tua concentrazione era frammentata. Si sta riprendendo.</item>
+        <item>L\'impulso farà il picco e cadrà. Cade sempre.</item>
+        <item>Il sonno non è indulgenza. È infrastruttura.</item>
+        <item>Il vecchio modello è una porta che non devi aprire.</item>
+        <item>La tua energia non sta più essendo spesa per nascondere.</item>
+        <item>Il momento in cui accetti l\'impulso è il momento in cui perde potere.</item>
+        <item>L\'abitudine ha promesso eccitazione. Hai trovato la pace. È meglio.</item>
+        <item>Non sei perfetto. Sei onesto. È abbastanza.</item>
+        <item>Il giorno davanti è tuo. Usalo.</item>
+        <item>Il tuo corpo sa che sta guarendo. Fidati.</item>
+        <item>L\'impulso è un sussurro, non un grido, perché non lo stai alimentando.</item>
+        <item>La disciplina è il ponte tra chi sei e chi vuoi essere.</item>
+        <item>La passeggiata che fai è la risposta che stai cercando.</item>
+        <item>Non stai scappando dal piacere. Stai correndo verso la presenza.</item>
+        <item>Il mattino è l\'inizio di tutto.</item>
+        <item>L\'abitudine ti testerà. Passerai.</item>
+        <item>La tua concentrazione è un muscolo. Lo stai esercitando.</item>
+        <item>Il sonno che stai ricevendo è il tuo corpo che dice: grazie.</item>
+        <item>Stai costruendo qualcosa che l\'abitudine non aveva parte.</item>
+        <item>L\'impulso viene dalla memoria, non dalla necessità.</item>
+        <item>Gratitudine per la parte di te che vuole cambiare.</item>
+        <item>L\'acqua fredda è il tuo alleato.</item>
+        <item>Non sei forte nonostante la lotta. Sei forte per via di essa.</item>
+        <item>Il vecchio modello sta svanendo perché non lo stai rinforzando.</item>
+        <item>La tua mente sta clearing la stanza per il lavoro, lo studio, il mestiere.</item>
+        <item>La routine serale è la tua promessa mantenuta a te stesso.</item>
+        <item>L\'impulso verrà quando sei stanco. Sai cosa fare.</item>
+        <item>Non stai deprivandoti. Stai insegnando a te stesso qualcosa di vero.</item>
+        <item>L\'abitudine ha alimentato la tua ansia. Guarda come la calma cresce senza.</item>
+        <item>Il sonno è dove il lavoro della guarigione avviene.</item>
+        <item>La tua energia non è più in prestito dalla prossima settimana.</item>
+        <item>L\'abitudine sostitutiva sta diventando parte di te adesso.</item>
+        <item>La passeggiata non è esercizio. È ricordare.</item>
+        <item>Stai imparando che puoi stare bene senza il permesso dell\'abitudine.</item>
+        <item>La disciplina non è punizione. È protezione.</item>
+        <item>La routine mattutina è una lettera d\'amore che scrivi a te stesso quotidianamente.</item>
+        <item>La concentrazione che sta tornando è tua.</item>
+        <item>L\'impulso è forte nei giorni difficili. È normale. Stai bene.</item>
+        <item>Gratitudine per le tue mani, che sono libere adesso.</item>
+        <item>L\'abitudine sussurrava nel tuo orecchio. La tua voce è più forte adesso.</item>
+        <item>Il vecchio modello ha promesso sollievo. Stai costruendo la cosa reale.</item>
+        <item>Il tuo corpo ti sta insegnando di calma.</item>
+        <item>Il momento in cui smetti di combatterlo è il momento in cui vinci.</item>
+        <item>Non stai perdendo nulla. Stai guadagnando tutto.</item>
+        <item>L\'impulso è una prova che hai già superato mille volte.</item>
+        <item>La sera è più tranquilla perché il tuo giorno era alle tue condizioni.</item>
+        <item>La tua mente è meno frammentata.</item>
+        <item>L\'acqua fredda è prova che puoi scegliere il disagio.</item>
+        <item>L\'abitudine si nutreva del segreto. La tua onestà è il suo nemico.</item>
+        <item>Il sonno sta guarendo. Lascialo accadere.</item>
+        <item>La passeggiata mattutina è il tuo pulsante di ripristino quotidiano.</item>
+        <item>Non sei debole perché senti l\'impulso. Sei forte perché lo affronti.</item>
+        <item>La disciplina è l\'auto-rispetto in azione.</item>
+        <item>La concentrazione sta tornando perché hai smesso di disperderla.</item>
+        <item>I tuoi amici vedono qualcuno che riconoscono. Sei tu.</item>
+        <item>Il vecchio modello è storia. Sei nel tempo presente adesso.</item>
+        <item>L\'abitudine voleva il tuo tempo. Lo stai rivendicando.</item>
+        <item>Gratitudine per la chiarezza che sta arrivando.</item>
+        <item>L\'impulso ti visiterà. Conosci la strada verso la porta.</item>
+        <item>Non stai scappando dal piacere. Stai correndo verso la verità.</item>
+        <item>La routine serale è struttura senza punizione.</item>
+        <item>Il tuo corpo sta guarendo perché lo stai ascoltando.</item>
+        <item>L\'abitudine sostitutiva sta diventando reale oggi.</item>
+        <item>Il momento in cui l\'impulso passa è prova che passa sempre.</item>
+        <item>Non sei perfetto. Sei persistente. È lo stesso della forza.</item>
+        <item>L\'abitudine era forte. Il tuo silenzio è rivoluzione.</item>
+        <item>Il sonno non è pigrizia. È il lavoro più importante che fai.</item>
+        <item>Il mattino è un dono che dai a te stesso ogni singolo giorno.</item>
+        <item>La tua concentrazione si acuisce perché non è più divisa.</item>
+        <item>L\'acqua fredda è un insegnante. Ascolta quello che dice.</item>
+        <item>L\'impulso è onestà. Ti sta dicendo cosa devi ancora affrontare.</item>
+        <item>La disciplina è la conversazione tra te e te stesso.</item>
+        <item>Il vecchio modello aveva una forza gravitazionale. Stai lasciando la sua orbita.</item>
+        <item>La tua energia sta costruendo invece di drenare.</item>
+        <item>Gratitudine per la parte di te che ha scelto questo.</item>
+        <item>L\'abitudine ha promesso fuga. Hai trovato qualcosa di meglio: te stesso.</item>
+        <item>La sera che stai avendo è quella che hai guadagnato.</item>
+        <item>Stai imparando ad essere annoiato e stare bene.</item>
+        <item>L\'impulso è un promemoria. Ti sta ricordando perché hai iniziato.</item>
+        <item>La tua mente sta diventando una casa di nuovo.</item>
+        <item>L\'abitudine sostitutiva sta diventando identità.</item>
+        <item>La passeggiata mattutina è la tua conversazione con te stesso.</item>
+        <item>Non stai più combattendo l\'abitudine. La stai ignorando.</item>
+        <item>La disciplina è amore. Auto-amore, specificamente.</item>
+        <item>La concentrazione che sta tornando era sempre tua.</item>
+        <item>L\'abitudine stava rubando il tuo sonno. Nota com\'è tornato.</item>
+        <item>Gratitudine per il tuo sistema nervoso, che sta imparando a calmarsi.</item>
+        <item>Il vecchio modello sta diventando uno sconosciuto.</item>
+        <item>Le tue mani sono disponibili per il lavoro, lo studio, il mestiere, la connessione.</item>
+        <item>L\'acqua fredda è una piccola vittoria che scegli ogni giorno.</item>
+        <item>L\'impulso arriva. L\'impulso va. Tu rimani.</item>
+        <item>Il sonno è architettura. Costruiscilo solido.</item>
+        <item>La routine mattutina è la tua pratica quotidiana nel scegliere te stesso.</item>
+        <item>La sera è un santuario che stai costruendo mattone per mattone.</item>
+        <item>La tua chiarezza non è accidentale. È il risultato di piccole scelte.</item>
+        <item>L\'abitudine sostitutiva sta diventando più facile.</item>
+        <item>L\'abitudine si nutreva di stress. Guarda il tuo stress diminuire.</item>
+        <item>La disciplina senza gioia è solo soffrire. Conosci la differenza.</item>
+        <item>La passeggiata non è fuga. È ritorno.</item>
+        <item>La tua concentrazione è uno strumento che si sta affilando.</item>
+        <item>Gratitudine per il momento in cui hai deciso di cambiare.</item>
+        <item>L\'impulso è un\'onda. Hai imparato a non tuffarti.</item>
+        <item>Il vecchio modello sta perdendo il suo potere narrativo su di te.</item>
+        <item>Non stai correndo via dall\'abitudine. Stai correndo verso te stesso.</item>
+        <item>Il tuo corpo sta ricordando com\'è il riposo.</item>
+        <item>Il mattino è una tela. Oggi stai dipingendo qualcosa di reale.</item>
+        <item>L\'acqua fredda ti ricorda: il disagio non è lo stesso del danno.</item>
+        <item>Il sonno non è più sollievo. È una parte normale della vita.</item>
+        <item>La tua mente sta clearing perché hai smesso di alimentare la nebbia.</item>
+        <item>L\'abitudine voleva la tua attenzione. La stai dando a qualcosa di reale.</item>
+        <item>La disciplina è l\'atto di mantenere promesse a te stesso.</item>
+        <item>La routine serale è un rituale, non una gabbia.</item>
+        <item>L\'impulso farà il picco. Lo vedrai cadere. Starai bene.</item>
+        <item>Gratitudine per la forza che non sapevi di avere.</item>
+        <item>L\'abitudine sostitutiva sta diventando senza soluzione adesso.</item>
+        <item>La tua concentrazione sta tornando perché hai smesso di dividerla.</item>
+        <item>Il vecchio modello è una porta che hai imparato a passare.</item>
+        <item>Stai imparando che la calma è più potente di qualsiasi fuga.</item>
+        <item>L\'abitudine era una vita presa in prestito. Questa è tua.</item>
+        <item>La passeggiata mattutina è la tua conversazione quotidiana con la chiarezza.</item>
+        <item>Il sonno è la fondazione. Tutto il resto è costruito su di essa.</item>
+        <item>La disciplina è l\'architettura della libertà.</item>
+        <item>L\'impulso è onesto. Ti sta dicendo dove il lavoro è ancora.</item>
+        <item>La tua energia è di nuovo tua. Cosa costruirai con essa?</item>
+        <item>La sera è più tranquilla perché il tuo giorno è alle tue condizioni.</item>
+        <item>L\'acqua fredda è una piccola promessa: puoi fare cose difficili.</item>
+        <item>La concentrazione sta tornando, un giorno alla volta.</item>
+        <item>Gratitudine per il tuo corpo, che continua a provare.</item>
+        <item>Il vecchio modello è storia. La tua storia è adesso.</item>
+        <item>L\'abitudine sostitutiva sta diventando chi sei.</item>
+        <item>L\'abitudine ha promesso eccitazione. Hai trovato significato. È meglio.</item>
+        <item>La tua mente è meno affollata. Cosa inviterai dentro?</item>
+        <item>La routine mattutina è la tua prova quotidiana che puoi scegliere.</item>
+        <item>L\'impulso arriverà e andrà. Tu rimani.</item>
+        <item>Il sonno è il miglior lavoro che fai.</item>
+        <item>La disciplina applicata con compassione è inarrestabile.</item>
+        <item>La passeggiata non è correre. È ritorno.</item>
+        <item>La tua concentrazione si acuisce con ogni momento che rimani chiaro.</item>
+        <item>Gratitudine per la persona che stai diventando.</item>
+        <item>Il vecchio modello ha avuto il suo momento. Questo momento è tuo.</item>
+    </string-array>
+</resources>

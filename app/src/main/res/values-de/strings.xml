@@ -637,4 +637,77 @@
     <string name="punch_guard_6">Die Apps haben ein paar Runden gewonnen. Matrix führt Buch, damit du das Rückspiel planen kannst.</string>
     <string name="profile_language">Sprache</string>
     <string name="profile_language_system">Systemstandard</string>
+
+    <!-- Quit tracker -->
+    <string name="nav_quit">Weg</string>
+    <string name="quit_subtitle">Ein Tag nach dem anderen</string>
+    <string name="quit_thought_title">Gedanke des Tages</string>
+    <string name="quit_thought_another">Noch ein Gedanke</string>
+    <string name="quit_urge_title">Hast du gerade einen Drang?</string>
+    <string name="quit_urge_body">Er steigt, erreicht seinen Höhepunkt und geht vorbei. Atme zwei Minuten damit.</string>
+    <string name="quit_urge_start">Reite die Welle</string>
+    <plurals name="quit_urges_ridden">
+        <item quantity="one">%d Welle geritten</item>
+        <item quantity="other">%d Wellen geritten</item>
+    </plurals>
+    <string name="quit_section">Deine Reisen</string>
+    <string name="quit_empty_title">Starten etwas Neues</string>
+    <string name="quit_empty_body">Füge alles hinzu, das du hinter dir lassen möchtest. Nur du siehst den Namen, den du gibst.</string>
+    <string name="quit_add_first">Füge einen Tracker hinzu</string>
+    <string name="quit_new">Neuer Tracker</string>
+    <string name="quit_edit_title">Bearbeite Tracker</string>
+    <plurals name="quit_days_word">
+        <item quantity="one">Tag</item>
+        <item quantity="other">Tage</item>
+    </plurals>
+    <string name="quit_run_today">+ %1$d Std %2$d Min</string>
+    <string name="quit_best">Bester: %s</string>
+    <string name="quit_next">Nächster: %s</string>
+    <string name="quit_days_short">%d T</string>
+    <string name="quit_days_hours">%1$d T %2$d Std</string>
+    <string name="quit_hours_minutes">%1$d Std %2$d Min</string>
+    <string name="quit_ring_desc">%1$d Tage, %2$d%% des Weges zu %3$d Tagen</string>
+    <string name="quit_slipped">Ich bin ausgerutscht</string>
+    <string name="quit_slip_title">Nochmal anfangen?</string>
+    <string name="quit_slip_body">Das passiert. Ein Ausrutscher ist Information, nicht das Ende. Dein bester Lauf bleibt gespeichert.</string>
+    <string name="quit_slip_confirm">Nochmal anfangen</string>
+    <plurals name="quit_recent_slips">
+        <item quantity="one">%d Neustart in den letzten 30 Tagen</item>
+        <item quantity="other">%d Neustarts in den letzten 30 Tagen</item>
+    </plurals>
+    <string name="quit_more">Mehr Optionen</string>
+    <string name="quit_edit">Bearbeiten</string>
+    <string name="quit_delete_title">Diesen Tracker löschen?</string>
+    <string name="quit_delete_body">Seine Geschichte wird von diesem Gerät entfernt.</string>
+    <string name="quit_name">Name</string>
+    <string name="quit_name_hint">Jeder Name funktioniert. Nur du siehst ihn.</string>
+    <string name="quit_reason">Warum es wichtig ist (optional)</string>
+    <string name="quit_started">Begonnen</string>
+    <string name="quit_started_now">Gerade eben</string>
+    <string name="quit_started_pick">Wähle ein Datum</string>
+    <string name="quit_private_note">Bleibt auf diesem Gerät. Nicht in Matrix, Sicherungen oder Exporten.</string>
+    <string name="quit_breathe_in">Einatmen</string>
+    <string name="quit_breathe_hold">Halten</string>
+    <string name="quit_breathe_out">Ausatmen</string>
+    <string name="quit_urge_left">%1$d:%2$02d übrig</string>
+    <string name="quit_urge_done_title">Die Welle ist vorbei</string>
+    <string name="quit_urge_done_body">Du hast sie bemerkt, bist bei ihr geblieben und hast sie gehen lassen.</string>
+    <string name="quit_urge_done">Fertig</string>
+    <string name="quit_urge_leave">Gehen</string>
+    <string name="quit_urge_idea_title">Dann versuche eine Sache</string>
+    <string-array name="quit_urge_ideas">
+        <item>Trinke ein Glas Wasser.</item>
+        <item>Gehe fünf Minuten nach draußen.</item>
+        <item>Mache zehn langsame Kniebeugen.</item>
+        <item>Wasche dein Gesicht mit kaltem Wasser.</item>
+        <item>Schreibe jemandem, dem du vertraust.</item>
+        <item>Wechsle Räume und mache die Lichter an.</item>
+        <item>Lass dein Gerät eine Weile in einem anderen Raum.</item>
+        <item>Schreibe auf, was du gerade fühlst.</item>
+        <item>Ordne eine kleine Sache neben dir.</item>
+        <item>Dehne dich langsam zwei Minuten lang.</item>
+        <item>Mache dir ein warmes Getränk.</item>
+        <item>Wenn es spät ist, gehe schlafen.</item>
+    </string-array>
+    <!-- /Quit tracker -->
 </resources>

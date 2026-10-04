@@ -1,0 +1,1012 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generated: one line per item. Calm, neutral; never names a specific habit. -->
+<resources>
+    <string-array name="quit_thoughts">
+        <item>O desejo é uma onda. Ela sobe. Ela passa. Você consegue atravessá-la.</item>
+        <item>Neste momento, sinta sem lutar. Este instante é passageiro.</item>
+        <item>O que você sente sob o desejo? Tédio? Solidão? Cansaço? Nomeie.</item>
+        <item>Você não precisa agir em cada sentimento. Sinta e deixe passar.</item>
+        <item>O desejo não é uma ordem. É apenas um pensamento na sua mente.</item>
+        <item>Faça uma pausa de 10 minutos. A vontade vai mudar.</item>
+        <item>Quando o desejo chega, respire lentamente. Inspire por quatro, segure, expire por seis.</item>
+        <item>O que provocou este momento? Observe sem julgar.</item>
+        <item>O desejo é mais forte no início. Depois de 15 minutos, desaparece.</item>
+        <item>Levante-se. Caminhe para outro cômodo. Quebre o padrão.</item>
+        <item>Isso não é fraqueza. É você aprendendo um novo caminho.</item>
+        <item>O desejo mente. Diz que você precisa dele. Não precisa. Você está seguro sem.</item>
+        <item>Em vez de agir, escreva o que está sentindo agora.</item>
+        <item>Às vezes o desejo é tédio com máscara. Encontre algo para fazer.</item>
+        <item>Você não é o desejo. É um passageiro, não o motorista.</item>
+        <item>Deite-se por cinco minutos e observe: o desejo vai passar enquanto você descansa.</item>
+        <item>É tarde? Você está cansado? Desejos enganam quando sua guarda está baixa.</item>
+        <item>O desejo que você ignorou ontem deixou você orgulhoso. Faça de novo.</item>
+        <item>Seu cérebro está se reconfigurando agora. Esta é a parte difícil. Você está conseguindo.</item>
+        <item>O desejo é mais forte quando você está sozinho. Ligue para alguém. Converse.</item>
+        <item>Você sobreviveu ao último. Vai sobreviver a este também.</item>
+        <item>O que seu melhor eu faria agora? Ouça essa voz.</item>
+        <item>O pico da vontade dura minutos, não horas. Você consegue esperar.</item>
+        <item>Sente-se com o desejo como uma onda no oceano. Deixe-a passar.</item>
+        <item>Isso não é para sempre. É apenas agora.</item>
+        <item>O desejo sussurra mentiras. Você é mais forte que a mentira.</item>
+        <item>Estique seu corpo. Mova sangue pelos seus membros. Desejos desaparecem com movimento.</item>
+        <item>Você está construindo algo. Cada momento que você pausa é um tijoło na fundação.</item>
+        <item>Quando quer escapar, encontre o sentimento real por trás e atenda-o.</item>
+        <item>O desejo é um hábito, não uma necessidade. Seu corpo vai se ajustar.</item>
+        <item>Observe o desejo sem julgar. Não adicione vergonha em cima da vontade.</item>
+        <item>Você consegue ficar com isso por cinco minutos e ver o que acontece.</item>
+        <item>O desejo quer que você acredite que é permanente. Não é. São nuvens passando.</item>
+        <item>O que você fez na última vez que resistiu? Faça de novo.</item>
+        <item>O desejo é informação. Te diz algo que importa para você. Ouça, depois escolha.</item>
+        <item>Noites tarde trazem desejos. Dormir cedo os previne.</item>
+        <item>Você não está falhando ao sentir o desejo. Está falhando apenas se acreditar nele.</item>
+        <item>O desejo é uma onda com seu nome. Você aprendeu a surfar.</item>
+        <item>Quando sozinho, o desejo promete conexão. Procure conexão real.</item>
+        <item>O desejo não é amor. Não confunda com algo que não é.</item>
+        <item>Você teve muitos desejos e viveu através de todos. Este é apenas mais um.</item>
+        <item>Tédio é um gatilho. Tenha uma lista de coisas que importam para você.</item>
+        <item>O desejo diz para você se apressar. Você pode ir devagar.</item>
+        <item>Seu sistema nervoso está aprendendo que você está seguro sem o hábito.</item>
+        <item>Sente-se. Respire. Conte até 100. O desejo vai se suavizar.</item>
+        <item>O desejo é mais alto quando você resiste com medo. Respire com aceitação.</item>
+        <item>Você escolheu parar. Lembre disso. Apoie-se nessa escolha.</item>
+        <item>Estresse provoca desejos. Nomeie o estresse. Enfrente-o separadamente.</item>
+        <item>O desejo vai visitar. Isso não significa que você tenha que deixá-lo entrar.</item>
+        <item>Você está reconfigurando seu padrão. Isso leva tempo e gentileza.</item>
+        <item>O desejo é um passageiro no ônibus que você dirige. Deixe-o sentar. Continue.</item>
+        <item>Desejos atingem o pico rápido e caem rápido. Não confunda um pico com sempre.</item>
+        <item>Qual é a verdadeira necessidade? Sono? Conexão? Diversão? Encontre sem o hábito.</item>
+        <item>Você não precisa entender o desejo para sobreviver a ele.</item>
+        <item>O desejo não é sua culpa. Sua resposta é sua escolha.</item>
+        <item>Quando o desejo chega às 23h, isso é informação. Durma mais cedo.</item>
+        <item>Você pode sentar no chão, respirar e deixar o desejo estar ali com você.</item>
+        <item>O desejo vai voltar. É normal. Você vai lidar como com outros.</item>
+        <item>O padrão antigo quer sua atenção. Você pode ignorá-lo.</item>
+        <item>Solidão amplifica desejos. Até um texto para um amigo o enfraquece.</item>
+        <item>O desejo é um visitante. Você escolhe se abre a porta.</item>
+        <item>Você está construindo novos caminhos no seu cérebro toda vez que pausa.</item>
+        <item>O desejo é mais forte quando você pensa nele. Distraia-se gentilmente.</item>
+        <item>O que você faria se o desejo não existisse? Faça agora.</item>
+        <item>O desejo não é uma emergência. Trate como um pensamento que passa.</item>
+        <item>Você já esteve aqui. Seu corpo sabe como passar por isso.</item>
+        <item>O hábito levou tempo para se formar. A parada também vai levar. Tenha paciência.</item>
+        <item>Quando o desejo chega, significa que seu cérebro ainda está se ajustando. Isso é cura.</item>
+        <item>Você não precisa ser perfeito. Apenas continuar escolhendo.</item>
+        <item>O desejo é mais alto quando você está cansado. Sono é uma ferramenta poderosa.</item>
+        <item>Desejos vêm em ondas. Alguns são grandes. Alguns são pequenos. Todos passam.</item>
+        <item>A vontade é um sinal de que seu corpo está mudando. Isso é bom.</item>
+        <item>Você pode sentir o desejo e não agir. Ambos são verdade.</item>
+        <item>O que preenche o espaço que o hábito ocupava? Construa agora.</item>
+        <item>O desejo sussurra suavemente no início, depois mais alto se você ouve. Não ouça.</item>
+        <item>Levante-se. O desejo se acalma quando você move seu corpo.</item>
+        <item>Você não está quebrado por querer o padrão antigo. É humano.</item>
+        <item>O desejo é um loop de hábito. Você está quebrando o loop a cada pausa.</item>
+        <item>Noites tarde e solidão são a pior combinação. Planeje em volta.</item>
+        <item>Você pode dizer ao desejo: Eu vejo você. Eu sinto você. Não vou fazer mesmo assim.</item>
+        <item>O desejo é como uma nuvem. Observe-a. Ela vai passar.</item>
+        <item>Você já sobreviveu aos dias mais difíceis. Este é familiar agora.</item>
+        <item>O desejo pode ficar com você enquanto faz outra coisa. Tudo bem.</item>
+        <item>O que você está evitando ao buscar o hábito? Enfrente isso.</item>
+        <item>O desejo é mais alto quando você fica parado. Movimento quebra o feitiço.</item>
+        <item>Você é mais forte do que pensa. Este momento prova.</item>
+        <item>O hábito prometeu alívio. Entregou vazio. Lembre.</item>
+        <item>O desejo é seu cérebro pedindo dopamina. Encontre outra fonte.</item>
+        <item>Você pode sentir o desejo e manter controle. Ambos podem ser verdade.</item>
+        <item>O desejo vem de padrões aprendidos, não de quem você é.</item>
+        <item>Quando cansado, tudo é mais difícil. O desejo não é especial. Descanse.</item>
+        <item>Você não precisa entender por que tem o desejo para sobreviver.</item>
+        <item>A vontade é dados. Tédio? Estresse? Solidão? Aprenda o padrão.</item>
+        <item>O desejo vai voltar. Não é fracasso. É recuperação sendo normal.</item>
+        <item>Você escolheu esse caminho. O caminho é estreito agora. Vai se ampliar.</item>
+        <item>O desejo é um mentiroso. Diz que você não consegue viver sem. Consegue e vive.</item>
+        <item>Sente-se com seu desconforto por cinco minutos. Não vai destruir você.</item>
+        <item>O desejo é mais forte quando pego desprevenido. Fique atento.</item>
+        <item>Você não é o desejo. É quem percebe e respira.</item>
+        <item>Como seria passar o dia sem isso? Essa é a recompensa.</item>
+        <item>O desejo é uma onda. Você é a costa. Deixe quebrar e recuar.</item>
+        <item>Água, alongamento, água fria no rosto, mudar de cômodo. Escolha um.</item>
+        <item>O hábito levou meses ou anos para se formar. Sua parada também vai levar. É normal.</item>
+        <item>O desejo não é um retrocesso a menos que você acredite ser uma ordem.</item>
+        <item>Você pode sentar com o desejo como com um visitante indesejado.</item>
+        <item>Noite tarde é quando desejos são mais cruéis. Planeje seus anoiteceres.</item>
+        <item>O desejo fala em deveres e precisa-se. Ignore. Faça sua escolha.</item>
+        <item>Você tem mais força de vontade agora do que pensa. Este momento prova.</item>
+        <item>O desejo é um sentimento, não um fato. Sentimentos mudam.</item>
+        <item>O que você está enlutando que o hábito preencheu? Enlute. Honre. Siga.</item>
+        <item>O desejo vai testá-lo. Você vai passar. Passou antes.</item>
+        <item>O hábito prometeu felicidade. Entregou remorso. Escolha a rota sem remorso.</item>
+        <item>Você não precisa lutar contra o desejo. Pode apenas notar e continuar vivendo.</item>
+        <item>O desejo é software rodando no seu cérebro. Você é o programador agora.</item>
+        <item>Tédio alimenta o desejo. Significado o mata de fome.</item>
+        <item>A vontade é um sinal de algo fora de equilíbrio. Corrija o equilíbrio.</item>
+        <item>Você pode lutar. Luta é parte do caminho.</item>
+        <item>O desejo é mais alto no silêncio. Preencha com música, vozes, atividade.</item>
+        <item>Você já chegou até aqui. É evidência. Confie na evidência.</item>
+        <item>O hábito era escape. Você não precisa escapar mais.</item>
+        <item>O desejo é um membro fantasma. Parece real mas não está.</item>
+        <item>O que você gostava em você antes do hábito? Construa de novo.</item>
+        <item>O desejo desaparece se você se recusa a alimentar histórias.</item>
+        <item>Você está reescrevendo sua história agora. Cada pausa é um capítulo novo.</item>
+        <item>O desejo é mais forte quando você está vulnerável. Proteja-se descansando.</item>
+        <item>Você pode estar desconfortável e não agir ao mesmo tempo.</item>
+        <item>A vontade é seu cérebro em abstinência. É passageira e é cura.</item>
+        <item>O hábito o mantinha pequeno. Esta escolha o torna maior.</item>
+        <item>O desejo é como um alarme de incêndio tocando. É alto mas a casa não está pegando fogo.</item>
+        <item>Você não precisa estar confiante para resistir. Apenas precisa escolher.</item>
+        <item>Noite tarde, cansado, sozinho, entediado. É quando desejos atacam. Conheça seu padrão.</item>
+        <item>O desejo não é você. Sua resposta é você.</item>
+        <item>O padrão antigo quer ser familiar. Você está aprendendo a ser familiar com novo.</item>
+        <item>Você pode reconhecer o desejo, agradecê-lo e seguir.</item>
+        <item>A vontade é uma tempestade. Vai passar. Você não precisa sair nela.</item>
+        <item>Você pode sentir o desejo sem vergonha.</item>
+        <item>O que traz alegria que não é o hábito? Faça. Construa.</item>
+        <item>O desejo é mais alto quando foca toda atenção. Redirecione.</item>
+        <item>Você sobreviveu a cada momento antes. Vai sobreviver a este.</item>
+        <item>O hábito prometeu controle. Entregou o oposto. Lembre.</item>
+        <item>O desejo é um teste de seu comprometimento, não um sinal de fracasso.</item>
+        <item>Solidão alimenta desejos. Procure antes que fique alto.</item>
+        <item>Você consegue sentar com desconforto por 10 minutos. Isso é muito tempo.</item>
+        <item>O desejo vai voltar. Toda vez que volta, você fica mais forte.</item>
+        <item>O jeito antigo queria que você acreditasse que não tinha escolha. Tem.</item>
+        <item>A vontade não é uma emergência. Apenas parece uma.</item>
+        <item>Você está construindo uma vida diferente, não apenas deixando o hábito.</item>
+        <item>O desejo fala suavemente no início. Esse é o tempo de se afastar.</item>
+        <item>O que o deixaria orgulhoso de você hoje? Comece ali.</item>
+        <item>O desejo é informação de que tédio ou estresse ou cansaço está presente.</item>
+        <item>Você pode se sentir vazio e não buscar o hábito ao mesmo tempo.</item>
+        <item>O hábito sussurrava mentiras. Você está aprendendo a ouvir verdade.</item>
+        <item>O desejo vai voltar amanhã. Não é fracasso. É cura.</item>
+        <item>Você pode ser imperfeito nisso. Progresso imperfeito ainda é progresso.</item>
+        <item>O desejo é como estática no rádio. Você pode mudar de estação.</item>
+        <item>O que seu eu futuro pediria que você fizesse agora? Ouça isso.</item>
+        <item>A vontade é um fantasma de um padrão. Fantasmas não machucam.</item>
+        <item>Você está reconfigurando seu cérebro a cada momento que escolhe diferente.</item>
+        <item>Noites tarde são perigosas. Durma cedo. Prevenção é a melhor defesa.</item>
+        <item>O desejo é um hábito tentando se perpetuar. Você está quebrando.</item>
+        <item>Você pode estar cansado e resistindo e ainda ter sucesso.</item>
+        <item>O que o desejo quer que você esqueça? Segure essa memória.</item>
+        <item>O hábito o afastava de você. Este caminho o leva de volta.</item>
+        <item>O desejo é mais forte quando parado. Mexa-se.</item>
+        <item>Você não precisa querer resistir. Apenas precisa fazer.</item>
+        <item>A vontade é uma onda. Você já surfou ondas. Consegue surfar esta.</item>
+        <item>O que o preenche que não é o hábito? Invista nisso.</item>
+        <item>O desejo mente e diz que precisa. Não precisa. Quer. É diferente.</item>
+        <item>Tédio é um gatilho. Tenha um plano para momentos entediados.</item>
+        <item>Você consegue sobreviver com respiração e paciência.</item>
+        <item>O padrão antigo está batendo. Você não precisa responder.</item>
+        <item>O desejo é informação. Solidão? Estresse? Tédio? Nomeie e enfrente.</item>
+        <item>Você pode se sentir mal e não agir.</item>
+        <item>O hábito era mecanismo de enfrentamento. Você está aprendendo novos.</item>
+        <item>O desejo não reflete sua força de vontade. Reflete hábito.</item>
+        <item>O que o acalma que não é o hábito? Use agora.</item>
+        <item>A vontade é seu corpo se ajustando. Isso não é fraqueza. É mudança.</item>
+        <item>Você pode estar desconfortável sem precisar de resgate.</item>
+        <item>Desejos noturnos são reais. Planeje estar na cama antes deles chegar.</item>
+        <item>O desejo é mais alto quando isolado. Procure conexão.</item>
+        <item>Você escolheu um caminho mais duro porque quer algo melhor. Honre.</item>
+        <item>O hábito prometeu alegria. Entregou vazio. Escolha diferente.</item>
+        <item>O desejo é um teste. Você está passando agora.</item>
+        <item>Como se sente uma mente calma? Mova-se para esse sentimento.</item>
+        <item>A vontade vai visitar. Você não precisa deixar entrar.</item>
+        <item>Você está construindo resiliência a cada momento de resistência.</item>
+        <item>O desejo quer sua atenção. Dê para algo que merece você.</item>
+        <item>Tédio, solidão, estresse, cansaço. Conheça seus gatilhos e planeje.</item>
+        <item>Você pode estar triste e não buscar o hábito.</item>
+        <item>O hábito era atalho. Você está pegando a longa estrada. É sabedoria.</item>
+        <item>O desejo não é o inimigo. É um visitante. Você é o anfitrião.</item>
+        <item>O que contaria a seu melhor amigo se sentisse? Diga a si mesmo.</item>
+        <item>A vontade é passageira. Sua escolha é permanente.</item>
+        <item>Você pode lutar. Luta constrói força.</item>
+        <item>O desejo é uma onda que tem pico em minutos, não horas.</item>
+        <item>O que quer ser conhecido por? Isso, não o hábito.</item>
+        <item>Noite tarde mais cansado mais sozinho é igual perigo. Previna.</item>
+        <item>O desejo é um sinal de que seu padrão ainda está ligado. Você está reconfigurando.</item>
+        <item>Você pode sentir a necessidade e não agir. Essa é a batalha toda.</item>
+        <item>O hábito mentiu sobre o que faria. A verdade vai libertar.</item>
+        <item>O desejo é informação. Ouça. Depois escolha seu próprio caminho.</item>
+        <item>Você é mais forte que seus desejos. Este momento prova.</item>
+        <item>A vontade desaparece se der tempo em vez de ação.</item>
+        <item>O que traz paz para sua mente? Vá ali quando o desejo chegar.</item>
+        <item>O desejo não é fracasso. Sua resposta é sua medida.</item>
+        <item>Você sobreviveu a momentos mais difíceis. Vai sobreviver.</item>
+        <item>O hábito quis ser sua identidade. Você é mais que isso.</item>
+        <item>O desejo é um fantasma. Não tem poder a menos que dê.</item>
+        <item>O que se sentiria bem sem o hábito? Faça isso.</item>
+        <item>Solidão é um gatilho. Procure antes que o gatilho se acione.</item>
+        <item>Você pode estar frustrado e não agir.</item>
+        <item>O padrão antigo é familiar. O novo também vai ser.</item>
+        <item>O desejo é como uma criança que quer doce. Você pode reconhecer e dizer não.</item>
+        <item>O que está construindo com sua recusa? Construa conscientemente.</item>
+        <item>A vontade é seu cérebro cicatrizando. Dói porque a cicatrização é real.</item>
+        <item>Você pode descansar. Descanso não é fraqueza.</item>
+        <item>O desejo vai voltar. Cada volta é prova de progresso.</item>
+        <item>O hábito era uma saída. Você está ficando e enfrentando.</item>
+        <item>O desejo é informação sobre suas necessidades, não uma ordem.</item>
+        <item>O que preenche tempo que importa? Preencha com isso.</item>
+        <item>Noite tarde é quando desejos são mais cruéis. Durma cedo.</item>
+        <item>O desejo é uma onda. Você é solo firme. Deixe-a passar.</item>
+        <item>Você pode estar entediado e não buscar o hábito.</item>
+        <item>O hábito prometeu controle. Você está tomando controle real.</item>
+        <item>O desejo não é você. É um padrão que seu cérebro aprendeu. Você está desaprendendo.</item>
+        <item>O que você faria se não tivesse medo? Faça.</item>
+        <item>A vontade é um sinal de que seu sistema está se reequilibrando. Isso é cura.</item>
+        <item>Você está construindo uma vida que o desejo não consegue tocar.</item>
+        <item>O desejo sussurra. Não ouça.</item>
+        <item>O que traz verdadeira alegria? Construa seu dia em volta.</item>
+        <item>Estresse é um gatilho. Enfrente sem o hábito.</item>
+        <item>Você pode sentar com o desejo, respirar e esperar.</item>
+        <item>O padrão antigo quer se sentir confortável. Desconforto é a ponte para novo conforto.</item>
+        <item>O desejo é mais forte quando vulnerável. Proteja-se.</item>
+        <item>Você pode se sentir fraco e ainda escolher força.</item>
+        <item>O hábito era uma mentira. A verdade é que consegue viver sem.</item>
+        <item>O desejo é um teste de sua intenção. Você está passando.</item>
+        <item>O que sua melhor vida requer? Deixar o hábito. Continue.</item>
+        <item>O desejo é um sinal sem mensagem. Pare de procurar significado. Apenas respire.</item>
+        <item>Você pode pausar sem entender. Compreensão vem depois.</item>
+        <item>A vontade sobe, estabiliza e finalmente desaparece. Atravesse as três.</item>
+        <item>O que surpreenderia seu eu passado sobre sua força? Você está vivendo.</item>
+        <item>O desejo é um teste que não nota. Você está sempre passando.</item>
+        <item>Você não é a soma de seus desejos. É quem os observa.</item>
+        <item>O hábito queria permanência. Você está escolhendo impermanência. Está ganhando.</item>
+        <item>O que tornaria hoje um bom dia? Defina sem o hábito.</item>
+        <item>O desejo é um visitante que fica demais. Você pode pedir que saia.</item>
+        <item>Você pode ter medo de recaída e estar livre agora.</item>
+        <item>A vontade fala a língua da urgência. Você fala a do tempo.</item>
+        <item>Noite tarde é quando força de vontade é mais baixa. Previna a hora.</item>
+        <item>O desejo é um padrão que aprendeu. Você está aprendendo novo.</item>
+        <item>Você está construindo prova, não apenas fazendo promessas.</item>
+        <item>O hábito mentiu sobre dar o que precisava. Você está encontrando verdade.</item>
+        <item>O desejo é um lembrete de quem era. Você é diferente agora.</item>
+        <item>O que se sentiria como liberdade? Mova-se para isso.</item>
+        <item>A vontade é uma dívida que o hábito criou. Está pagando dia a dia.</item>
+        <item>Você consegue ficar na sua própria companhia sem buscar.</item>
+        <item>O desejo vai testar sua integridade. Cada pausa prova.</item>
+        <item>Identifique o que o hábito roubou. Tire de volta.</item>
+        <item>O padrão antigo é uma estrada que parou de caminhar. Não olhe para trás.</item>
+        <item>O desejo é ruído. Você pode estar numa sala barulhenta e manter calma.</item>
+        <item>O que levaria para se perdoar pelo tempo? Comece agora.</item>
+        <item>Você não está cicatrizando errado. Está exatamente certo.</item>
+        <item>O hábito queria ser sua solução. Você está encontrando soluções reais.</item>
+        <item>A vontade é abstinência. Abstinência é cura acontecendo.</item>
+        <item>Noites tarde sempre serão difíceis. Cama cedo é seu melhor amigo.</item>
+        <item>Você está escrevendo uma história sobre quem está se tornando. Faça boa.</item>
+        <item>O desejo vai passar. Você ficará. Essa é a diferença toda.</item>
+        <item>Você não está fugindo. Está caminhando para si mesmo.</item>
+        <item>A pessoa que quer ser está esperando que escolha hoje.</item>
+        <item>Este momento é onde seu eu futuro é construído.</item>
+        <item>Você cumpre promessas para si mesmo. Começando agora.</item>
+        <item>Liberdade significa fazer suas próprias escolhas. Está fazendo uma.</item>
+        <item>O que o melhor de você faria? Esse é quem está se tornando.</item>
+        <item>O hábito não a define. Suas escolhas definem.</item>
+        <item>Você merece confiar em si. Construa dia a dia.</item>
+        <item>Seu eu futuro já está orgulhoso de você por tentar.</item>
+        <item>Presença é um presente que dá a si e a outros.</item>
+        <item>Conexão real acontece quando se mostra como é.</item>
+        <item>Você está escolhendo dignidade. Isso é o suficiente.</item>
+        <item>O desejo vai passar. Sua integridade é permanente.</item>
+        <item>O que importa mais para você? Viva hoje.</item>
+        <item>Você não está se consertando. Está se honrando.</item>
+        <item>Sua vida é valiosa demais para meia atenção.</item>
+        <item>O padrão antigo não o possui.</item>
+        <item>Autoestima não vem de perfeição. Vem de esforço honesto.</item>
+        <item>Você é o autor de quem se torna.</item>
+        <item>Hoje você escolhe presença sobre ausência.</item>
+        <item>Cada escolha por você é uma promessa mantida.</item>
+        <item>A pessoa que é agora consegue fazer isso.</item>
+        <item>Você é mais forte que pensa. Mais calmo que acredita.</item>
+        <item>Identidade não é o que fez. É o que faz próximo.</item>
+        <item>É assim que se torna confiável para si.</item>
+        <item>Você não precisa de permissão para se respeitar.</item>
+        <item>O desejo é apenas ruído. Você é o sinal.</item>
+        <item>Que tipo de vida quer viver? Está construindo agora.</item>
+        <item>Sua atenção é sagrada. Proteja.</item>
+        <item>Confie em você. Já provou que consegue.</item>
+        <item>Confiança real vem de manter palavra para si.</item>
+        <item>Você está escrevendo sua história com cada escolha.</item>
+        <item>O hábito prospera em sua atenção dividida. Recupere.</item>
+        <item>Liberdade não é ausência de regras. É escolher as suas.</item>
+        <item>Você merece estar totalmente presente em sua própria vida.</item>
+        <item>O que sua consciência diz? Ouça.</item>
+        <item>A versão de você que respeita é quem está se tornando.</item>
+        <item>Intenção torna momentos ordinários significativos.</item>
+        <item>Você não está quebrado. Está escolhendo a si mesmo.</item>
+        <item>Cada dia é uma chance de provar quem é.</item>
+        <item>O desejo fica mais fraco. Sua determinação fica mais forte.</item>
+        <item>Você é alguém que mantém promessas. Especialmente para si.</item>
+        <item>O que contaria a um amigo na sua posição? Conte a si.</item>
+        <item>Identidade começa com uma escolha. Está fazendo.</item>
+        <item>Seu eu futuro não é um estranho. É você.</item>
+        <item>Presença é como ama as pessoas em sua vida.</item>
+        <item>Você está construindo um eu que consegue confiar. Leva tempo. Tem.</item>
+        <item>O hábito é passageiro. Quem está se tornando é permanente.</item>
+        <item>Força real é quieta. Não precisa anunciar.</item>
+        <item>Você está escolhendo o tipo de pessoa que quer ser.</item>
+        <item>Isso é o que manter você importa.</item>
+        <item>Seus valores não são abstratos. Vivem em suas escolhas.</item>
+        <item>O desejo quer que você esqueça. Lembre.</item>
+        <item>Você merece estar orgulhoso de si.</item>
+        <item>Cada momento é uma chance fresca para honrar sua vida.</item>
+        <item>Dignidade não é frágil. Fica mais forte quando alimenta.</item>
+        <item>Você é a pessoa que estava esperando.</item>
+        <item>Como se sentiria confiar em si completamente?</item>
+        <item>O padrão antigo é velho. Você é novo.</item>
+        <item>Presença não é sobre acertar. É sobre se mostrar.</item>
+        <item>Você está aprendendo a se amar diferente.</item>
+        <item>Sua atenção é coisa finita. Gaste bem.</item>
+        <item>O hábito não define sua capacidade. Suas escolhas definem.</item>
+        <item>Você está se tornando alguém que respeita.</item>
+        <item>Liberdade real tem gosto de escolher seu caminho.</item>
+        <item>A versão que quer conhecer está se formando.</item>
+        <item>Você está construindo relação consigo que importa.</item>
+        <item>Identidade não é fixa. É algo que escolhe cada dia.</item>
+        <item>O desejo desaparece. O respeito que constrói dura.</item>
+        <item>Você está aprendendo a manter a promessa mais importante.</item>
+        <item>O que quer lembrar sobre si mesmo?</item>
+        <item>O hábito quer você pequeno. Você está escolhendo grande.</item>
+        <item>Presença significa desfrutar o momento que está.</item>
+        <item>Seu eu futuro não pede perfeição. Apenas honestidade.</item>
+        <item>Você é alguém que aparece para si.</item>
+        <item>A recompensa disso é simples: você.</item>
+        <item>Autoestima não é luxo. É como vive.</item>
+        <item>Você está reescrevendo relação consigo.</item>
+        <item>Cada escolha é uma chance de provar para si.</item>
+        <item>O desejo não decide quem é.</item>
+        <item>Seus valores importam mais que o puxão passageiro.</item>
+        <item>Você está aprendendo a confiar completamente em si.</item>
+        <item>A pessoa que quer ser é paciente. Está esperando.</item>
+        <item>Presença é o melhor presente para si e outros.</item>
+        <item>Você está escolhendo intenção sobre piloto automático.</item>
+        <item>O hábito prometeu algo. Você prometeu melhor a si.</item>
+        <item>Identidade é construída em momentos como este.</item>
+        <item>Força real é escolher você quando ninguém vê.</item>
+        <item>Você está se tornando alguém que quer conhecer.</item>
+        <item>A versão que respeita vive em suas escolhas.</item>
+        <item>Você não está escapando. Está escolhendo algo.</item>
+        <item>Dignidade cresce toda vez que escolhe você.</item>
+        <item>O desejo é passageiro. Sua integridade não.</item>
+        <item>Você está aprendendo a ser seu próprio melhor amigo.</item>
+        <item>O que importa mais que o desejo?</item>
+        <item>O padrão antigo não vota em quem se torna.</item>
+        <item>Você está construindo vida que reflete valores reais.</item>
+        <item>Sua atenção pertence à vida que quer.</item>
+        <item>A pessoa que está se tornando vale o esforço.</item>
+        <item>Você está escolhendo ser alguém em que confie.</item>
+        <item>Presença é como recupera sua própria vida.</item>
+        <item>Cada momento que resiste é momento escolhendo você.</item>
+        <item>O hábito prospera em desatenção. Você está presente.</item>
+        <item>Você está aprendendo como liberdade real é.</item>
+        <item>Identidade não é algo que encontra. É algo que constrói.</item>
+        <item>Seu eu futuro sabe que manteve essa promessa.</item>
+        <item>Você merece gostar de quem está se tornando.</item>
+        <item>O desejo desaparece. A pessoa que está construindo fica mais forte.</item>
+        <item>Você é alguém que sabe o que valoriza e vive.</item>
+        <item>Confiança real vem de alinhar ação com quem quer ser.</item>
+        <item>A versão que respeita está ao alcance.</item>
+        <item>Você está escolhendo estar totalmente em sua vida.</item>
+        <item>Que tipo de pessoa aparece por si assim? Você é.</item>
+        <item>Clareza vem quando para de nublar sua mente.</item>
+        <item>A escolha que está fazendo agora define quem está se tornando.</item>
+        <item>Este é o trabalho de liberdade. Está fazendo.</item>
+        <item>Sua vida é a única que consegue viver completamente.</item>
+        <item>Você está aprendendo que força real está em dizer não.</item>
+        <item>A pessoa dentro que sabe melhor está liderando.</item>
+        <item>Cada momento que escolhe você importa mais que pensa.</item>
+        <item>O que protege hoje molda quem é amanhã.</item>
+        <item>O caminho velho não manda mais. Você manda.</item>
+        <item>Você está aprendendo a se mover pelo mundo como você.</item>
+        <item>Intenção é amor feito visível em como vive.</item>
+        <item>O hábito mascara quem poderia ser. Está tirando máscara.</item>
+        <item>Paz real vem de saber que está sendo verdadeiro.</item>
+        <item>Você está se tornando alguém que consegue admirar.</item>
+        <item>Isso não é sobre punição. É sobre respeito.</item>
+        <item>O desejo é uma mentira sobre o que precisa. Sabe melhor.</item>
+        <item>Você está construindo algo que não pode ser abalado.</item>
+        <item>Seu eu futuro está torcendo por você.</item>
+        <item>Presença é como fica conectado ao que importa.</item>
+        <item>Você está aprendendo a ser pessoa em que outros confiam porque confia em si.</item>
+        <item>Cada recusa é um sim para algo melhor.</item>
+        <item>A versão que é inteira está emergindo.</item>
+        <item>Você merece vida onde se sente como si.</item>
+        <item>O que está fazendo leva coragem real. Nomeie.</item>
+        <item>O hábito rouba tempo. Você está tomando de volta.</item>
+        <item>Você está escolhendo clareza sobre confusão.</item>
+        <item>Vitória real é quieta. Vive dentro.</item>
+        <item>Identidade se forma nas escolhas que ninguém vê.</item>
+        <item>Você está aprendendo a se honrar completamente.</item>
+        <item>O desejo fica mais fácil. Seu autoestima fica mais forte.</item>
+        <item>Você está se tornando alguém com limites genuínos.</item>
+        <item>O que está protegendo é sagrado. Você.</item>
+        <item>O padrão antigo está quebrando. Algo novo está crescendo.</item>
+        <item>Você está aprendendo a ouvir sua própria sabedoria.</item>
+        <item>Liberdade não é um destino. É como se move cada dia.</item>
+        <item>Você está construindo fundação que apoia mudança real.</item>
+        <item>Cada momento de presença é um momento de poder.</item>
+        <item>A pessoa que quer se tornar precisa que faça isso.</item>
+        <item>Você está aprendendo que manter palavra importa.</item>
+        <item>Dignidade real nunca é negociável.</item>
+        <item>Você é o único vivendo sua vida. Possua completamente.</item>
+        <item>O hábito não possui seu futuro. Você possui.</item>
+        <item>Você está se tornando alguém que faz escolhas.</item>
+        <item>O que está construindo é só para você.</item>
+        <item>Presença o conecta à vida que é realmente sua.</item>
+        <item>Você está aprendendo a se querer mais que o desejo.</item>
+        <item>A versão de você sem este fardo está esperando.</item>
+        <item>Cada dia que escolhe você é dia que está ganhando.</item>
+        <item>Você está se tornando confiável para pessoa mais importante.</item>
+        <item>Força real é escolher você quando é difícil.</item>
+        <item>A clareza que vem vale cada momento disso.</item>
+        <item>Você está aprendendo que liberdade é interna primeiro.</item>
+        <item>O que respeita em si cresce quando alimenta.</item>
+        <item>Você não está esperando se tornar digno. É digno agora.</item>
+        <item>O hábito é uma história antiga. Está escrevendo nova.</item>
+        <item>Você está escolhendo estar presente em sua própria vida.</item>
+        <item>Cada momento de resistência é um momento de crescimento.</item>
+        <item>A pessoa que está se tornando vai entender por que fez.</item>
+        <item>Você está aprendendo a se amar em ação.</item>
+        <item>Paz real vem de viver alinhado com valores.</item>
+        <item>Você está construindo um eu que nunca precisa enganar.</item>
+        <item>O desejo desaparece como tudo passageiro.</item>
+        <item>Você merece se sentir em casa em suas escolhas.</item>
+        <item>Identidade é escrita no que faz quando testado.</item>
+        <item>Você está aprendendo que presença é forma mais profunda de cuidado.</item>
+        <item>A versão de você que é livre está mais perto que pensa.</item>
+        <item>O que protege hoje se torna quem é amanhã.</item>
+        <item>Você está escolhendo ser alguém em que pode contar.</item>
+        <item>Cada momento honesto conta. Está coletando.</item>
+        <item>Força real é interna. Vive em sua espinha.</item>
+        <item>Você está se tornando alguém que honra suas promessas.</item>
+        <item>A clareza que está construindo vai sustentá-lo.</item>
+        <item>Você não está escapando. Está chegando.</item>
+        <item>O que está fazendo prova algo a si.</item>
+        <item>O hábito quer rendição. Você está escolhendo soberania.</item>
+        <item>Você está aprendendo que melhor vida é a que escolhe.</item>
+        <item>Presença é antídoto da mentira que o hábito diz.</item>
+        <item>Cada momento que fica é momento que fica verdadeiro.</item>
+        <item>Você está se tornando tipo de pessoa que merecia ser.</item>
+        <item>Liberdade real tem gosto de fazer o que acredita.</item>
+        <item>A versão que confia em si está emergindo.</item>
+        <item>Você está aprendendo que dignidade não é dada. É escolhida.</item>
+        <item>O que importa é que está escolhendo. Continue.</item>
+        <item>A história antiga não possui o próximo capítulo.</item>
+        <item>Você está construindo relação consigo que dura.</item>
+        <item>Cada momento de escolha é um momento de poder.</item>
+        <item>A pessoa que está se tornando não está longe.</item>
+        <item>Você está aprendendo a viver com intenção.</item>
+        <item>Respeito real vem de manter suas próprias promessas.</item>
+        <item>O desejo é passageiro. Seu caráter é permanente.</item>
+        <item>Você está escolhendo estar totalmente vivo em sua vida.</item>
+        <item>Identidade é construída de mil pequenos sins a si.</item>
+        <item>Você merece olhar para si sem vergonha.</item>
+        <item>A clareza que vem será seu novo lar.</item>
+        <item>Você não está esperando permissão. Está dando a si.</item>
+        <item>O que está fazendo agora é o início de tudo.</item>
+        <item>Você está aprendendo a confiar no que sabe ser verdade.</item>
+        <item>O hábito sussurra. Sua consciência fala. Ouça mais alto.</item>
+        <item>Escolha real significa viver com o que decidiu.</item>
+        <item>Você está se tornando alguém com convicção real.</item>
+        <item>Cada momento que fica é momento que está se construindo.</item>
+        <item>A pessoa dentro que sabe melhor já está liderando.</item>
+        <item>O que está construindo é só para quem quer.</item>
+        <item>Liberdade significa não responder mais ao desejo.</item>
+        <item>Você está aprendendo que seu próprio respeito vale mais.</item>
+        <item>A versão que está inteira está voltando a crescer.</item>
+        <item>O que protege nesses momentos é seu futuro.</item>
+        <item>Você está escolhendo ser alguém que reconhece.</item>
+        <item>Poder real é escolher o que importa e viver.</item>
+        <item>A clareza que está construindo é permanente.</item>
+        <item>Você está aprendendo que presença é onde a vida é.</item>
+        <item>Cada escolha honesta aproxima você de si.</item>
+        <item>O hábito não consegue tocar quem está escolhendo ser.</item>
+        <item>Você merece se sentir inteiro em suas decisões.</item>
+        <item>Você está construindo algo que o desejo nunca vai levar.</item>
+        <item>O que a define é o que escolhe quando é difícil.</item>
+        <item>O padrão antigo está perdendo força. Está firme.</item>
+        <item>Força real é manter palavra para si no escuro.</item>
+        <item>Você está se tornando alguém cujo sim significa algo.</item>
+        <item>Cada momento que escolhe você é momento de vitória.</item>
+        <item>A pessoa que está se tornando vai ser grata.</item>
+        <item>Você está aprendendo o que liberdade realmente requer.</item>
+        <item>Presença é sua rebelião contra piloto automático.</item>
+        <item>Você está construindo vida que se alinha com sua alma.</item>
+        <item>A versão autêntica de você está tomando forma.</item>
+        <item>O que está fazendo agora pulsa para tudo.</item>
+        <item>Você merece estar em paz com suas escolhas.</item>
+        <item>A clareza que ganha é fundação para tudo.</item>
+        <item>Você está aprendendo a fazer escolhas que refletem quem é.</item>
+        <item>Respeito real vem de fazer coisa difícil quando importa.</item>
+        <item>Cada dia sem hábito antigo é dia de prova.</item>
+        <item>Você está se tornando alguém que consegue confiar.</item>
+        <item>O desejo não entende quem está se tornando.</item>
+        <item>Você está escolhendo viver com intenção e consciência.</item>
+        <item>O que protege se torna o que preserva.</item>
+        <item>Identidade não é herdada. É escolhida e reconstruída.</item>
+        <item>Você está aprendendo que liberdade é trabalho de dentro.</item>
+        <item>A versão livre de você está esperando ser encontrada.</item>
+        <item>Cada momento que resiste é momento de força.</item>
+        <item>Você merece conhecer a si como alguém que mantém promessas.</item>
+        <item>O hábito está desaparecendo. Você está ficando mais claro.</item>
+        <item>Você está se tornando alguém cujos valores são vividos.</item>
+        <item>Paz real vem de saber que está escolhendo certo.</item>
+        <item>O que está construindo vai sustentá-lo através de tudo.</item>
+        <item>Cada escolha é um voto para quem quer se tornar.</item>
+        <item>Você está aprendendo a honrar a pessoa que quer ser.</item>
+        <item>A clareza de suas escolhas é seu maior poder.</item>
+        <item>Você não está se tornando alguém novo. Está sendo mais você.</item>
+        <item>O que importa é que está aqui. Está escolhendo.</item>
+        <item>A história antiga termina. A nova começa com você.</item>
+        <item>Cada momento de presença é um momento de inteireza.</item>
+        <item>Você está se tornando alguém genuinamente que gosta.</item>
+        <item>Liberdade real tem gosto de viver sua verdade.</item>
+        <item>A versão em que confia está se formando.</item>
+        <item>Você merece olhar para trás sem remorso de hoje.</item>
+        <item>O que está construindo é construído para durar.</item>
+        <item>Você está exatamente onde precisa estar.</item>
+        <item>Cada momento que não cede é momento de força.</item>
+        <item>Você está construindo algo novo a cada dia.</item>
+        <item>Pequenos passos ainda contam como para frente.</item>
+        <item>Progresso nem sempre é visível, mas está fazendo.</item>
+        <item>Hoje você escolheu a si. Isso que importa.</item>
+        <item>Você não fez a coisa. Isso é tudo.</item>
+        <item>O caminho para mudança começa com uma decisão.</item>
+        <item>Mesmo quando é difícil, está ainda se movendo.</item>
+        <item>Este momento de resistência é sua força.</item>
+        <item>Você não precisa ganhar para sempre, só hoje.</item>
+        <item>Um dia por vez é caminho mais gentil.</item>
+        <item>Parar de tomar leva tempo. Você tem.</item>
+        <item>Não se preocupe com semana que vem. Apenas hoje.</item>
+        <item>A jornada é longa, mas anda um dia.</item>
+        <item>Você não está em uma corrida. Está construindo vida.</item>
+        <item>Deixe próxima semana se preocupar consigo.</item>
+        <item>Hoje é tudo que precisa gerenciar agora.</item>
+        <item>Tempo se move mais lento que pensa.</item>
+        <item>Um escorregão não é fracasso, é informação.</item>
+        <item>Você tropeçou. Isso não apaga seu progresso.</item>
+        <item>Um momento não define sua jornada.</item>
+        <item>Pode começar de novo agora. Sem esperar.</item>
+        <item>Escorregões acontecem. O que importa é próximo.</item>
+        <item>Você aprendeu algo. Use isso.</item>
+        <item>Este momento de luta vai te ensinar algo.</item>
+        <item>Cair uma vez não significa que falhou.</item>
+        <item>Próxima escolha está sempre disponível.</item>
+        <item>Pode começar de novo quantas vezes precisar.</item>
+        <item>Seja gentil consigo como seria com um amigo.</item>
+        <item>Você merece gentileza enquanto cura.</item>
+        <item>Palavras duras não ajudam. Compaixão vai.</item>
+        <item>Você está fazendo trabalho duro. Trate gentilmente.</item>
+        <item>Esta jornada não precisa de punição, só paciência.</item>
+        <item>Vergonha não ajuda. Compaixão vai.</item>
+        <item>Você pode ser imperfeito enquanto muda.</item>
+        <item>Perdoe a si tão rápido quanto conseguir.</item>
+        <item>Seu progresso merece celebração tranquila.</item>
+        <item>Seja voz que levanta, não derruba.</item>
+        <item>Sequência quebrada não apaga sua força.</item>
+        <item>Consistência importa mais que perfeição.</item>
+        <item>O que faz a maioria dos dias importa mais.</item>
+        <item>A medida real é como aparece regularmente.</item>
+        <item>Um escorregão não desfaz seu padrão de dizer não.</item>
+        <item>Seus hábitos se formam através de pequenas escolhas.</item>
+        <item>O que conta é ritmo que está construindo.</item>
+        <item>Sequências quebram. Caráter não.</item>
+        <item>Você está se treinando através de repetição.</item>
+        <item>Cada dia é chance de reforçar quem está se tornando.</item>
+        <item>Primeiros dias são os mais difíceis. Fica mais fácil.</item>
+        <item>No início, tudo se sente urgente. Desaparece.</item>
+        <item>Agora parece impossível. Nem sempre vai ser.</item>
+        <item>As vontades vão enfraquecer. Confie que vão.</item>
+        <item>O que queima brilhante agora vai esfriar.</item>
+        <item>Seu corpo e mente vão se ajustar mais rápido que pensa.</item>
+        <item>A primeira semana é a subida mais íngreme.</item>
+        <item>Cada dia fica pouco mais leve que anterior.</item>
+        <item>Você está na parte mais difícil. Vai mudar.</item>
+        <item>Esta intensidade que sente é passageira.</item>
+        <item>Depois de um tempo, escolha fica mais fácil.</item>
+        <item>A vontade perde força com o tempo.</item>
+        <item>Um dia vai perceber que nem pensou.</item>
+        <item>Recuperação constrói impulso conforme vai.</item>
+        <item>Cada dia de resistência torna próximo mais suave.</item>
+        <item>Seu cérebro está se reconfigurando. Depois acontece.</item>
+        <item>O que leva esforço agora vira natural.</item>
+        <item>O caminho fica mais suave quanto mais caminha.</item>
+        <item>Vai acordar diferente um dia.</item>
+        <item>Força constrói quieta, depois você percebe.</item>
+        <item>Um dia é uma marca. Uma semana também é.</item>
+        <item>Marque suas vitórias em privado. Ainda são vitórias.</item>
+        <item>Você não precisa anunciar para honrar progresso.</item>
+        <item>Orgulho quieto conta como qualquer celebração.</item>
+        <item>Celebre sem alarde. A vitória é real.</item>
+        <item>Cada marca, não importa tamanho, merece reconhecer.</item>
+        <item>Seus avanços não precisam de audiência para importar.</item>
+        <item>Força silenciosa ainda é força.</item>
+        <item>Perceba o que fez, mesmo se ninguém vê.</item>
+        <item>Você sabe o que custou chegar. Isso é suficiente.</item>
+        <item>Pense além de amanhã. Está construindo algo que dura.</item>
+        <item>Esta escolha hoje molda sua vida toda.</item>
+        <item>Você não está só passando hoje, está mudando para sempre.</item>
+        <item>Seu eu futuro vai ser grato pelo que está fazendo.</item>
+        <item>A pessoa que está se tornando vale a pena.</item>
+        <item>Seu eu futuro está contando com você.</item>
+        <item>O que está fazendo agora compõe com tempo.</item>
+        <item>Está investindo na vida que realmente quer.</item>
+        <item>Isso não é sobre hoje. É sobre quem está se tornando.</item>
+        <item>Tudo que faz agora pulsa para frente.</item>
+        <item>Quando o desejo chegar, lembre por que começou.</item>
+        <item>O padrão antigo quer voltar. Você consegue dizer não.</item>
+        <item>O que está quebrando levou tempo para se formar. Desfazer leva também.</item>
+        <item>Você está reconfigurando anos de comportamento. Trabalho paciente.</item>
+        <item>O hábito sussurra. Você consegue escolher não ouvir.</item>
+        <item>Cada vez que diz não, está se treinando para dizer não próxima vez.</item>
+        <item>Você não está sendo privado. Está sendo libertado.</item>
+        <item>É sobre quem quer ser, não o que não consegue ter.</item>
+        <item>Suas razões para parar são maiores que vontade de voltar.</item>
+        <item>A vida sem vale o que está abrindo mão.</item>
+        <item>Hoje você é mais forte que o hábito. Confie.</item>
+        <item>Querer algo não significa ter que fazer.</item>
+        <item>Você consegue sentir o desejo e ainda passar.</item>
+        <item>O sentimento vai passar. Você não precisa agir em cada.</item>
+        <item>Desejos vêm e vão como ondas. Está aprendendo a vê-los passar.</item>
+        <item>Este desejo não é uma ordem. É apenas um pensamento.</item>
+        <item>Você está se tornando tipo de pessoa que consegue querer algo e recusar.</item>
+        <item>Cada recusa prova que tem poder que duvidava.</item>
+        <item>O padrão antigo não o possui mais.</item>
+        <item>Você está recuperando sua vida, uma escolha por vez.</item>
+        <item>Quando estiver cansado, lembre quanto já chegou.</item>
+        <item>A parte mais difícil não está atrás, mas passou o pior.</item>
+        <item>Você já fez coisa mais difícil. Ficar firme é mais fácil.</item>
+        <item>Você provou que consegue. Não precisa provar de novo.</item>
+        <item>Descanse quando precisar. O trabalho continua.</item>
+        <item>Exaustão é real. Não significa que está falhando.</item>
+        <item>Você pode estar cansado e ainda estar avançando.</item>
+        <item>Amanhã é dia fresco. Este não precisa ser perfeito.</item>
+        <item>Se hoje foi difícil, amanhã fica mais fácil.</item>
+        <item>Nada que faz hoje destrói tudo que construiu.</item>
+        <item>Um dia difícil não apaga semanas de progresso.</item>
+        <item>Um dia ruim não define a semana toda.</item>
+        <item>Você pode ter momento difícil e ainda estar bem.</item>
+        <item>Recuperação não é linha reta. A linha ainda sobe.</item>
+        <item>Alguns dias vão parecer começar de novo. É normal.</item>
+        <item>Você não recomeça. Continua. Mesmo dias difíceis são parte.</item>
+        <item>Quando sente que está desabando, muitas vezes está só cansado.</item>
+        <item>Seu valor não é determinado por sua sequência.</item>
+        <item>Quem é não é medido por um momento de fraqueza.</item>
+        <item>Você é mais que uma escolha. É todas juntas.</item>
+        <item>O hábito era um capítulo. Está escrevendo livro novo.</item>
+        <item>Esta versão de você ainda está se formando. Dê tempo.</item>
+        <item>Você pode mudar lentamente.</item>
+        <item>Cicatrização não tem prazo.</item>
+        <item>Recuperação acontece no seu próprio ritmo, e tudo bem.</item>
+        <item>Caminho para frente nem sempre é claro. Você não precisa ver tudo.</item>
+        <item>Apenas próximo passo é suficiente.</item>
+        <item>Você não precisa descobrir tudo hoje.</item>
+        <item>Confie no processo mesmo quando não vê progresso.</item>
+        <item>O trabalho que está fazendo agora não mostrará resultados logo. Tudo bem.</item>
+        <item>Progresso invisível ainda é progresso.</item>
+        <item>Você está mudando mesmo quando não vê.</item>
+        <item>Seu corpo e mente estão se ajustando quietamente.</item>
+        <item>A recompensa de parar nem sempre é óbvia no início.</item>
+        <item>O que ganha com isso leva tempo para aparecer.</item>
+        <item>Seja paciente consigo como seria com alguém que ama.</item>
+        <item>Se está lutando, não significa que é fraco.</item>
+        <item>Luta é sinal que está crescendo.</item>
+        <item>O desconforto é prova que algo está mudando.</item>
+        <item>Você está fazendo algo muito difícil. Honre.</item>
+        <item>Você está escolhendo isso, cada dia, mesmo quando dói.</item>
+        <item>Ninguém consegue tirar sua liberdade. Está lutando.</item>
+        <item>Você não está se privando. Está se reclamando.</item>
+        <item>É um ato de autoestima.</item>
+        <item>Trate como faria com algo que realmente ama.</item>
+        <item>Você vale o esforço que está colocando.</item>
+        <item>Você vale a pena ser mantido. Vale lutar.</item>
+        <item>Pare de questionar se vale a pena.</item>
+        <item>Dúvida vai vir. Deixe. Você não precisa acreditar.</item>
+        <item>Você pode estar incerto e ainda avançar.</item>
+        <item>Crença vai seguir ação. Aja primeiro.</item>
+        <item>Você não precisa se sentir confiante para fazer.</item>
+        <item>Faça. Confiança vai vir.</item>
+        <item>Alguns dias vai se sentir forte. Alguns frágil.</item>
+        <item>Os dias frágeis são onde força real vive.</item>
+        <item>Quando está fraco, aparecer é bravura.</item>
+        <item>O hábito prospera em silêncio e vergonha. Silêncio e vergonha a alimentam.</item>
+        <item>Falar sobre, aceitar e seguir a nega.</item>
+        <item>Você não precisa esconder. Não há nada.</item>
+        <item>O que está fazendo é cicatrização. Oposto de vergonha.</item>
+        <item>Cada pessoa que parou sentiu o que está sentindo.</item>
+        <item>Outros caminharam este caminho antes.</item>
+        <item>Sua história não terminou. Está começando capítulo novo.</item>
+        <item>O final que quer ainda é possível. Mais que possível.</item>
+        <item>Não importa quantas vezes tentou, desta vez é diferente.</item>
+        <item>Tentativas passadas não foram fracassos. Foram prática.</item>
+        <item>Cada vez que tentou, aprendeu algo.</item>
+        <item>Este conhecimento é seu agora. Use.</item>
+        <item>O desejo vai testá-lo. É o que desejos fazem.</item>
+        <item>Cada teste que passa fica mais perto de paz.</item>
+        <item>O pensamento obsessivo vai desaparecer.</item>
+        <item>A repetição mental constante vai ficar quieta.</item>
+        <item>Um dia vai perceber que não pensou em horas.</item>
+        <item>Você pode querer isso. Quer completamente.</item>
+        <item>Quer liberdade. Quer paz. Quer versão nova.</item>
+        <item>Quando motivação desaparece, deixe razões o levar.</item>
+        <item>Quando razões desaparecem, deixe rotina o levar.</item>
+        <item>Quando rotina quebra, apenas pegue de novo.</item>
+        <item>Isso não é frágil. É flexível.</item>
+        <item>Você está construindo algo resiliente.</item>
+        <item>O padrão antigo vai tentar mais uma vez. Sabe.</item>
+        <item>Vai estar pronto, porque esteve se preparando.</item>
+        <item>Cada dia de dizer não é prática para aquele momento.</item>
+        <item>Seu futuro não está escrito. Você escreve.</item>
+        <item>Cada escolha que faz agora é palavra naquele futuro.</item>
+        <item>Que história quer contar?</item>
+        <item>Coisa mais difícil que já fez é o que está fazendo.</item>
+        <item>Você não está só sobrevivendo. Está aprendendo quem quer ser.</item>
+        <item>A pessoa que está se tornando não precisa do hábito.</item>
+        <item>Crescimento é lento. Crescimento é real. Está acontecendo.</item>
+        <item>Seu cérebro é plástico. Consegue mudar. Está mudando.</item>
+        <item>O que parece impossível hoje vai parecer normal logo.</item>
+        <item>O novo normal está esperando por você.</item>
+        <item>O você que continua tentando merece celebração.</item>
+        <item>Esta paz que está construindo não vai vir de uma vez.</item>
+        <item>Você pertence aqui. Pertence nesta recuperação.</item>
+        <item>Esta manhã você tem hora extra. O que vai fazer?</item>
+        <item>Sua mente é mais clara que ontem. Perceba.</item>
+        <item>Você escolheu a si hoje. Isso que importa.</item>
+        <item>O hábito é mais quieto agora. Está aprendendo ritmo.</item>
+        <item>Uma caminhada de manhã consegue resetar seu dia.</item>
+        <item>Está construindo algo real com tempo que está economizando.</item>
+        <item>Sono de noite vai se sentir diferente. Deixe.</item>
+        <item>Água fria não é punição. É prova que consegue escolher desconforto.</item>
+        <item>Suas mãos estão livres para coisa melhor.</item>
+        <item>O desejo vai chegar. Agora sabe como ficar com.</item>
+        <item>Foco cresce quando para de alimentar padrão antigo.</item>
+        <item>Você não está mais lutando contra hábito. Está virando.</item>
+        <item>Disciplina hoje é liberdade amanhã. Sempre foi.</item>
+        <item>A queda de tarde é menor. Notou?</item>
+        <item>Gratidão por pequenas vitórias constrói impulso mais rápido que vergonha.</item>
+        <item>Você está ensinando seu corpo ritmo novo.</item>
+        <item>O hábito sussurra. Seu compromisso fala mais alto.</item>
+        <item>Esta energia que sente é sua para gastar.</item>
+        <item>Ficar calmo quando desejo chega é superpoder.</item>
+        <item>O que contaria a amigo na sua posição?</item>
+        <item>Sua rotina de manhã é seu âncora.</item>
+        <item>O desejo é dado, não destino.</item>
+        <item>Você não está se privando. Está se protegendo.</item>
+        <item>Dez minutos fora são dez minutos sua mente não caçava.</item>
+        <item>Esta semana é diferente da passada. Veja a diferença.</item>
+        <item>Sua família percebe. Ainda não falam, mas percebem.</item>
+        <item>O hábito alimentava sua ansiedade. Veja encolher.</item>
+        <item>Você está se tornando alguém que consegue ficar quieto.</item>
+        <item>Um dia por vez não é fraqueza. É estratégia.</item>
+        <item>Seu sono é forma seu corpo cicatrizar. Honre.</item>
+        <item>O desejo fica mais fraco quando não discute.</item>
+        <item>Você não está começando de novo. Está continuando.</item>
+        <item>Hábitos substitutos levam tempo. Seja paciente.</item>
+        <item>Este momento é mais fácil que anterior.</item>
+        <item>Sua mente é menos cheia agora. Sinta espaço.</item>
+        <item>Trabalho é mais claro quando hábito não está no caminho.</item>
+        <item>O padrão antigo tinha custo. Está livre dele.</item>
+        <item>Você está aprendendo a estar entediado. É habilidade real.</item>
+        <item>A manhã é sua. O que vai criar com?</item>
+        <item>Suas mãos tremem menos. Notou?</item>
+        <item>É disso que calma se sente.</item>
+        <item>Você não precisa de permissão para parar. Já tem.</item>
+        <item>O desejo passa. Toda vez passa.</item>
+        <item>Seu corpo lembra do hábito. Sua mente sabe melhor.</item>
+        <item>Pequena disciplina hoje constrói liberdade grande amanhã.</item>
+        <item>Você não está quebrado. Está redirecionando força.</item>
+        <item>Dez mil pequenos momentos de escolha o trouxe.</item>
+        <item>O hábito ainda estaria aqui se alimentasse. Não alimentou.</item>
+        <item>Seus amigos querem vê-lo assim. Claro e presente.</item>
+        <item>Rotina de noite é sua recompensa, não teste.</item>
+        <item>Você está respirando mais fundo.</item>
+        <item>O desejo perdeu poder de tomar decisões por você.</item>
+        <item>Hoje você tem energia para algo real.</item>
+        <item>Gratidão pelo que está ganhando bate remorso.</item>
+        <item>Você não está cerrado. Está escolhendo.</item>
+        <item>O hábito prospera em escuridão. Luz é aliado.</item>
+        <item>Foco aguça quando para de queimar energia.</item>
+        <item>Água fria acorda você como hábito fazia. Sem custo.</item>
+        <item>Você não está se privando. Está investindo em você.</item>
+        <item>O desejo é alto alguns dias, quieto outros. Ambos bem.</item>
+        <item>Sua dívida de sono está encolhendo.</item>
+        <item>Caminhada que fez de manhã teve propósito: lembrar que consegue ser calmo.</item>
+        <item>Você não é perfeito. É persistente.</item>
+        <item>O hábito vive em hábito. Quebre hábito, quebre poder.</item>
+        <item>Sua mente é ferramenta de novo, não campo de batalha.</item>
+        <item>A manhã é sua página em branco.</item>
+        <item>Você está ensinando seu sistema nervoso novo jeito de se sentir seguro.</item>
+        <item>Isso é o que escolheu. Continue escolhendo.</item>
+        <item>O padrão antigo quer parecer liberdade. Liberdade real se sente assim.</item>
+        <item>Sua energia não é mais emprestada de amanhã.</item>
+        <item>O desejo vai testá-lo. Deixe. Passou em todo teste.</item>
+        <item>Disciplina é amor aplicado a você.</item>
+        <item>Você não está fugindo do hábito. Está correndo para coisa melhor.</item>
+        <item>A clareza que sente vale a pena proteger.</item>
+        <item>Uma noite calma prova que consegue ter muitas.</item>
+        <item>Seu corpo está cicatrizando. Confie no processo.</item>
+        <item>Momento que para de lutar é momento que começa a ganhar.</item>
+        <item>Você está construindo vida que hábito não tem espaço.</item>
+        <item>O desejo se alimenta de segredo. Traga à luz e veja encolher.</item>
+        <item>Sono é onde seu corpo mantém promessas.</item>
+        <item>O hábito substituto está se tornando real.</item>
+        <item>Você não está sentindo falta do hábito. Está se lembrando de si.</item>
+        <item>A rotina de manhã é seu voto diário por você.</item>
+        <item>Gratidão pelo momento está agora bate preocupação.</item>
+        <item>Sua mente tem espaço para coisa nova.</item>
+        <item>A caminhada pela floresta é medicina que hábito fingiu ser.</item>
+        <item>Você está aprendendo que consegue ficar com desconforto sem alimentar.</item>
+        <item>O hábito prospera em urgência. Calma é inimigo.</item>
+        <item>Seu foco volta momento que para de dividir.</item>
+        <item>Cada pequena vitória é permissão acreditar nas maiores.</item>
+        <item>Você não está se privando. Está praticando liberdade.</item>
+        <item>O desejo é visitante, não dono.</item>
+        <item>Sua energia está limpando caminho para algo real.</item>
+        <item>O padrão antigo é mais quieto porque não está alimentando.</item>
+        <item>Você está construindo ofício agora, não passando tempo.</item>
+        <item>Disciplina sem compaixão é punição. Conhece diferença.</item>
+        <item>A noite é mais quieta. Sono vem mais fácil. Sente.</item>
+        <item>Seus amigos querem esta versão. A clara.</item>
+        <item>O hábito prometeu escape. Você encontrou melhor: presença.</item>
+        <item>O desejo vai chegar amanhã. Sabe lidar.</item>
+        <item>A rotina de manhã reconfigura cérebro um dia por vez.</item>
+        <item>Você não é forte porque não sente desejo. É forte porque sente e escolhe.</item>
+        <item>Sua mente é menos cheia. O que vai fazer com espaço?</item>
+        <item>O hábito se alimentava de tédio. Está aprendendo ser entediado e viver.</item>
+        <item>Gratidão por seu corpo, que está cicatrizando.</item>
+        <item>A caminhada de hoje foi prática. Continue.</item>
+        <item>Seu sono é mais profundo quando mente não está dividida.</item>
+        <item>O desejo perde poder momento que para de acreditar na necessidade.</item>
+        <item>Você não está começando do zero. Está começando de agora.</item>
+        <item>O padrão antigo prometeu alívio. Alívio real é viver sem.</item>
+        <item>Seu foco aguça a cada escolha de virar.</item>
+        <item>Água fria lembrança: desconforto não requer hábito.</item>
+        <item>Você não está mais lutando. Está só não alimentando fogo.</item>
+        <item>O hábito queria sua manhã. Tire de volta.</item>
+        <item>Suas mãos estão disponíveis para trabalho.</item>
+        <item>O desejo é real. Sua escolha é realer.</item>
+        <item>Disciplina aplicada a você é forma mais alta de amor.</item>
+        <item>A noite é sua. Sem negociação. Sem desejo. Só noite.</item>
+        <item>Sua mente está aprendendo ser quieta. Deixe aprender.</item>
+        <item>O hábito era alto. Sua calma é mais alto.</item>
+        <item>O hábito substituto está se tornando lar.</item>
+        <item>Você está ensinando sistema nervoso que está seguro sem.</item>
+        <item>A caminhada de manhã é lembrete diário: consegue escolher direção.</item>
+        <item>Gratidão pelo momento que o trouxe aqui, seja qual for.</item>
+        <item>Seu foco estava partido. Está voltando.</item>
+        <item>O desejo vai ter pico e cair. Sempre cai.</item>
+        <item>Sono não é indulgência. É infraestrutura.</item>
+        <item>O padrão antigo é porta que não precisa abrir.</item>
+        <item>Sua energia não está mais sendo gasta escondendo.</item>
+        <item>Momento que aceita desejo é momento que perde poder.</item>
+        <item>O hábito prometeu excitação. Você encontrou paz. Melhor.</item>
+        <item>Você não é perfeito. É honesto. Suficiente.</item>
+        <item>O dia à sua frente é seu. Use.</item>
+        <item>Seu corpo sabe que está cicatrizando. Confie.</item>
+        <item>O desejo é sussurro, não grito, porque não está alimentando.</item>
+        <item>Disciplina é ponte entre quem é e quer ser.</item>
+        <item>A caminhada que faz é resposta que está procurando.</item>
+        <item>Você não está fugindo do prazer. Está correndo para presença.</item>
+        <item>A manhã é começo de tudo.</item>
+        <item>O hábito vai testá-lo. Vai passar.</item>
+        <item>Seu foco é músculo. Está se exercitando.</item>
+        <item>O sono que está tendo é seu corpo dizendo: obrigado.</item>
+        <item>Você está construindo coisa que hábito não fez parte.</item>
+        <item>O desejo vem de memória, não necessidade.</item>
+        <item>Gratidão pela parte de você que quer mudar.</item>
+        <item>Água fria é seu aliado.</item>
+        <item>Você não é forte apesar da luta. É forte por causa.</item>
+        <item>O padrão antigo está desaparecendo porque não está reforçando.</item>
+        <item>Sua mente está abrindo espaço para trabalho, estudo, ofício.</item>
+        <item>A rotina de noite é promessa que mantém consigo.</item>
+        <item>O desejo vai chegar quando estiver cansado. Sabe o que fazer.</item>
+        <item>Você não está se privando. Está se ensinando algo verdadeiro.</item>
+        <item>O hábito alimentava ansiedade. Veja calma crescer.</item>
+        <item>Sono é onde trabalho de cicatrização acontece.</item>
+        <item>Sua energia não está mais emprestada de próxima semana.</item>
+        <item>O hábito substituto está virando parte de você.</item>
+        <item>A caminhada não é exercício. É lembrança.</item>
+        <item>Você está aprendendo que consegue estar bem sem permissão.</item>
+        <item>Disciplina não é punição. É proteção.</item>
+        <item>A rotina de manhã é carta de amor que escreve a si diariamente.</item>
+        <item>O foco que está voltando é seu.</item>
+        <item>O desejo é alto em dias difíceis. Normal. Está bem.</item>
+        <item>Gratidão por suas mãos, que estão livres.</item>
+        <item>O hábito sussurrava seu ouvido. Sua própria voz é mais alta.</item>
+        <item>O padrão antigo prometeu alívio. Está construindo coisa real.</item>
+        <item>Seu corpo está ensinando sobre calma.</item>
+        <item>Momento que para de lutar é momento que ganha.</item>
+        <item>Você não está sentindo falta de nada. Está ganhando tudo.</item>
+        <item>O desejo é teste que já passou mil vezes.</item>
+        <item>A noite é mais quieta porque seu dia foi nos seus termos.</item>
+        <item>Sua mente é menos fragmentada.</item>
+        <item>Água fria é prova que consegue escolher desconforto.</item>
+        <item>O hábito se alimentava de segredo. Sua honestidade é inimigo.</item>
+        <item>Sono é cicatrização. Deixe acontecer.</item>
+        <item>A caminhada de manhã é botão reset diário.</item>
+        <item>Você não é fraco porque sente desejo. É forte porque enfrenta.</item>
+        <item>Disciplina é autoestima em ação.</item>
+        <item>O foco está voltando porque parou de espalhar.</item>
+        <item>Seus amigos veem alguém que reconhecem. Isso é você.</item>
+        <item>O padrão antigo é história. Você está em presente.</item>
+        <item>O hábito queria seu tempo. Está reclamando.</item>
+        <item>Gratidão pela clareza que está vindo.</item>
+        <item>O desejo vai visitar. Sabe o caminho.</item>
+        <item>Você não está fugindo de prazer. Está correndo para verdade.</item>
+        <item>A rotina de noite é estrutura sem punição.</item>
+        <item>Seu corpo está cicatrizando porque está ouvindo.</item>
+        <item>O hábito substituto está ficando real.</item>
+        <item>Momento que desejo passa é prova que sempre passa.</item>
+        <item>Você não é perfeito. É persistente. É a mesma coisa que força.</item>
+        <item>O hábito era alto. Seu quieto é revolução.</item>
+        <item>Sono não é preguiça. É trabalho mais importante.</item>
+        <item>A manhã é presente que dá a si cada dia.</item>
+        <item>Seu foco aguça porque não está mais dividido.</item>
+        <item>Água fria é professor. Ouça o que diz.</item>
+        <item>O desejo é honestidade. Está dizendo o que ainda precisa trabalhar.</item>
+        <item>Disciplina é conversa entre você e você.</item>
+        <item>O padrão antigo tinha puxão gravitacional. Está saindo órbita.</item>
+        <item>Sua energia está construindo em vez de drenar.</item>
+        <item>Gratidão pela parte que escolheu.</item>
+        <item>O hábito prometeu escape. Você encontrou: você.</item>
+        <item>A noite que está tendo é que ganhou.</item>
+        <item>Você está aprendendo estar entediado e estar bem.</item>
+        <item>O desejo é lembrete. Está relembrando por que começou.</item>
+        <item>Sua mente está se tornando lar de novo.</item>
+        <item>O hábito substituto está se tornando identidade.</item>
+        <item>A caminhada de manhã é conversa consigo.</item>
+        <item>Você não está mais lutando contra. Está ignorando.</item>
+        <item>Disciplina é amor. Autoamor especificamente.</item>
+        <item>O foco que está voltando sempre foi seu.</item>
+        <item>O hábito estava roubando sono. Veja voltando.</item>
+        <item>Gratidão por sistema nervoso, que está aprendendo acalmar.</item>
+        <item>O padrão antigo está virando desconhecido.</item>
+        <item>Suas mãos estão disponíveis para trabalho, estudo, ofício, conexão.</item>
+        <item>Água fria é pequena vitória que escolhe todo dia.</item>
+        <item>O desejo vem. O desejo vai. Você fica.</item>
+        <item>Sono é arquitetura. Construa sólido.</item>
+        <item>A rotina de manhã é prática diária em escolher você.</item>
+        <item>A noite é santuário que está construindo tijoło por tijoło.</item>
+        <item>Sua clareza não é acidente. É resultado de escolhas pequenas.</item>
+        <item>O hábito substituto está ficando mais fácil.</item>
+        <item>O hábito se alimentava de estresse. Veja diminuir.</item>
+        <item>Disciplina sem alegria é só sofrimento. Conhece diferença.</item>
+        <item>A caminhada não é escape. É volta.</item>
+        <item>Seu foco é ferramenta que está se afiando.</item>
+        <item>Gratidão pelo momento que decidiu mudar.</item>
+        <item>O desejo é onda. Aprendeu a não mergulhar.</item>
+        <item>O padrão antigo está perdendo poder narrativo.</item>
+        <item>Você não está fugindo do hábito. Está correndo para você.</item>
+        <item>Seu corpo está lembrando como descanso é.</item>
+        <item>A manhã é tela. Hoje está pintando algo real.</item>
+        <item>Água fria lembrança: desconforto não é o mesmo que dano.</item>
+        <item>Sono não é mais alívio. É parte normal de vida.</item>
+        <item>Sua mente está abrindo porque parou de alimentar névoa.</item>
+        <item>O hábito queria sua atenção. Está dando para algo real.</item>
+        <item>Disciplina é ato de manter promessas a você.</item>
+        <item>A rotina de noite é ritual, não gaiola.</item>
+        <item>O desejo vai ter pico. Vai vê-lo cair. Vai estar bem.</item>
+        <item>Gratidão pela força que não sabia que tinha.</item>
+        <item>O hábito substituto está virando perfeito.</item>
+        <item>Seu foco está voltando porque parou de dividir.</item>
+        <item>O padrão antigo é porta que aprendeu passar.</item>
+        <item>Você está aprendendo que calma é mais poderosa que escape.</item>
+        <item>O hábito era vida emprestada. Esta é sua.</item>
+        <item>A caminhada de manhã é conversa diária com clareza.</item>
+        <item>Sono é fundação. Tudo mais é construído.</item>
+        <item>Disciplina é arquitetura de liberdade.</item>
+        <item>O desejo é honesto. Está dizendo onde trabalho ainda é.</item>
+        <item>Sua energia é sua de novo. O que vai construir?</item>
+        <item>A noite é mais quieta porque seu dia é nos seus termos.</item>
+        <item>Água fria é promessa pequena: consegue fazer coisas duras.</item>
+        <item>O foco está voltando, um dia por vez.</item>
+        <item>Gratidão por seu corpo, que continua tentando.</item>
+        <item>O padrão antigo é história. Seu história é agora.</item>
+        <item>O hábito substituto está virando quem é.</item>
+        <item>O hábito prometeu excitação. Você encontrou significado. Melhor.</item>
+        <item>Sua mente é menos cheia. O que vai convidar?</item>
+        <item>A rotina de manhã é prova diária que consegue escolher.</item>
+        <item>O desejo vai vir e ir. Você vai ficar.</item>
+        <item>Sono é melhor trabalho que faz.</item>
+        <item>Disciplina aplicada com compaixão é imparável.</item>
+        <item>A caminhada não está fugindo. Está voltando.</item>
+        <item>Seu foco aguça a cada momento que fica claro.</item>
+        <item>Gratidão pela pessoa que está se tornando.</item>
+        <item>O padrão antigo tinha seu momento. Este é seu.</item>
+    </string-array>
+</resources>

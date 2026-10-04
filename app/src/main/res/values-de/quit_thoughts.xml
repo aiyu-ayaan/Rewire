@@ -1,0 +1,1012 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generated: one line per item. Calm, neutral; never names a specific habit. -->
+<resources>
+    <string-array name="quit_thoughts">
+        <item>Der Drang ist eine Welle. Sie steigt, fällt und vorbei. Du kannst sie reiten.</item>
+        <item>Fühle es jetzt, ohne dich zu wehren. Dieser Moment ist vorüber.</item>
+        <item>Was fühlst du unter dem Drang? Langeweile? Einsamkeit? Müdigkeit? Nenne es.</item>
+        <item>Du brauchst nicht auf jedes Gefühl zu handeln. Fühle es und lass es vorbeiziehen.</item>
+        <item>Der Drang ist kein Befehl. Es ist nur ein Gedanke in deinem Kopf.</item>
+        <item>Mache 10 Minuten Pause. Das Verlangen verschiebt sich.</item>
+        <item>Wenn der Drang kommt, atme langsam. Vier zählen beim Einatmen, halten, sechs beim Ausatmen.</item>
+        <item>Was hat diesen Moment ausgelöst? Bemerke es ohne Wertung.</item>
+        <item>Der Drang ist am Anfang am stärksten. Nach 15 Minuten verblasst er.</item>
+        <item>Stehe auf. Gehe in einen anderen Raum. Unterbreche das Muster.</item>
+        <item>Das ist keine Schwäche. Das ist du, der einen neuen Weg lernt.</item>
+        <item>Der Drang lügt. Er sagt, du brauchst ihn. Das brauchst du nicht. Du bist sicher ohne ihn.</item>
+        <item>Schreibe auf, was du jetzt fühlst, statt darauf zu handeln.</item>
+        <item>Manchmal ist der Drang nur Langeweile mit einer Maske. Finde etwas zu tun.</item>
+        <item>Du bist nicht der Drang. Der Drang ist ein Fahrgast, nicht der Fahrer.</item>
+        <item>Lege dich fünf Minuten hin und bemerke: Der Drang vergeht, während du ruhst.</item>
+        <item>Ist es spät? Bist du müde? Der Drang täuscht dich, wenn deine Wachsamkeit sinkt.</item>
+        <item>Der Drang, den du gestern ignoriert hast, machte dich stolz. Mach das wieder.</item>
+        <item>Dein Gehirn verdrahtet sich gerade neu. Das ist der harte Teil. Du machst es.</item>
+        <item>Der Drang ist am stärksten, wenn du allein bist. Rufe jemanden an. Sprich.</item>
+        <item>Du hast den letzten überstanden. Du wirst auch diesen überstehen.</item>
+        <item>Was würde dein bestes Selbst jetzt tun? Höre auf diese Stimme.</item>
+        <item>Die Sehnsucht hält Minuten lang, nicht Stunden. Du kannst sie überdauern.</item>
+        <item>Sitze mit dem Drang wie mit einer Welle im Meer. Lass sie an dir vorbeigehen.</item>
+        <item>Das ist nicht für immer. Das ist nur jetzt.</item>
+        <item>Der Drang flüstert Lügen. Du bist stärker als die Lüge.</item>
+        <item>Dehne deinen Körper. Bewege Blut durch deine Glieder. Der Drang verblasst mit Bewegung.</item>
+        <item>Du baust etwas auf. Jeden Moment, in dem du inne hältst, ist ein Stein in der Grundlage.</item>
+        <item>Wenn du fliehen möchtest, finde das echte Gefühl darunter und treffe es stattdessen.</item>
+        <item>Der Drang ist eine Gewohnheit, keine Notwendigkeit. Dein Körper wird sich anpassen.</item>
+        <item>Bemerke den Drang ohne Wertung. Addiere keine Scham zu dem Verlangen hinzu.</item>
+        <item>Du kannst fünf Minuten damit sitzen und sehen, was passiert.</item>
+        <item>Der Drang möchte dich glauben lassen, es ist für immer. Das ist nicht so. Das sind Wolken, die vorbeiziehen.</item>
+        <item>Was hast du das letzte Mal getan, als du widerstanden hast? Mach das wieder.</item>
+        <item>Der Drang ist Information. Er zeigt dir, dass dir etwas wichtig ist. Höre hin, dann wähle.</item>
+        <item>Späte Nächte bringen Dränge. Frühes Bett verhindert sie.</item>
+        <item>Du fehlst nicht, wenn du den Drang fühlst. Du fehlst nur, wenn du es glaubst.</item>
+        <item>Der Drang ist eine Welle mit deinem Namen. Du hast gelernt zu surfen.</item>
+        <item>Wenn einsam, verspricht der Drang Verbindung. Suche echte Verbindung statt.</item>
+        <item>Der Drang ist nicht Liebe. Verwirre ihn nicht mit etwas, das er nicht ist.</item>
+        <item>Du hattest viele Dränge und lebtest durch alle. Das ist nur noch einer.</item>
+        <item>Langeweile ist ein Auslöser. Habe eine Liste von Dingen, die dir wichtig sind.</item>
+        <item>Der Drang sagt dir zu beeilen. Du kannst stattdessen langsam gehen.</item>
+        <item>Dein Nervensystem lernt, dass du ohne die Gewohnheit sicher bist.</item>
+        <item>Sitze. Atme. Zähle bis 100. Der Drang wird weicher.</item>
+        <item>Der Drang ist am lautesten, wenn du ihn mit Angst bekämpfst. Atme stattdessen mit Verständnis.</item>
+        <item>Du hast dich entschieden zu stoppen. Erinnere dich daran. Lehne dich auf diese Entscheidung.</item>
+        <item>Stress löst Dränge aus. Benenne den Stress. Adressiere ihn getrennt von der Sehnsucht.</item>
+        <item>Der Drang wird dich besuchen. Das bedeutet nicht, dass du ihn einladen musst.</item>
+        <item>Du verdrahtst dein Standard neu. Das braucht Zeit und Freundlichkeit.</item>
+        <item>Der Drang ist ein Fahrgast in einem Bus, den du fährst. Lass ihn sitzen. Fahre weiter.</item>
+        <item>Dränge erscheinen schnell und fallen schnell. Verwirre einen Gipfel nicht mit für immer.</item>
+        <item>Was ist das echte Bedürfnis? Schlaf? Verbindung? Spaß? Finde es ohne die Gewohnheit.</item>
+        <item>Du musst den Drang nicht verstehen, um ihn zu überstehen.</item>
+        <item>Der Drang ist nicht deine Schuld. Deine Antwort ist deine Wahl.</item>
+        <item>Wenn der Drang um 23 Uhr kommt, das ist Information. Gehe früher ins Bett.</item>
+        <item>Du kannst auf dem Boden sitzen und atmen und den Drang bei dir sein lassen.</item>
+        <item>Der Drang wird zurückkehren. Das ist normal. Du wirst es wie andere handhaben.</item>
+        <item>Das alte Muster möchte deine Aufmerksamkeit. Dir ist erlaubt, es zu ignorieren.</item>
+        <item>Einsamkeit verstärkt Dränge. Selbst eine Nachricht an einen Freund schwächt ihn.</item>
+        <item>Der Drang ist ein Besucher. Du entscheidest, ob du die Tür öffnest.</item>
+        <item>Du baust neue Bahnen in deinem Gehirn auf, jedes Mal, wenn du inne hältst.</item>
+        <item>Der Drang ist am stärksten, wenn du deine ganze Aufmerksamkeit darauf fokussierst. Lenke ab.</item>
+        <item>Was würdest du tun, wenn der Drang nicht existierte? Mach das jetzt.</item>
+        <item>Der Drang ist keine Notfall. Behandle ihn wie einen Gedanken, der vergeht.</item>
+        <item>Du warst schon hier. Dein Körper weiß, wie er das übersteht.</item>
+        <item>Die Gewohnheit brauchte Zeit zum Aufbau. Der Bruch braucht Zeit zum Halten. Sei geduldig.</item>
+        <item>Wenn der Drang kommt, bedeutet es, dass dein Gehirn sich noch anpasst. Das ist Heilung.</item>
+        <item>Du musst nicht perfekt sein. Du musst nur weiter wählen.</item>
+        <item>Der Drang ist am lautesten, wenn du müde bist. Schlaf ist ein mächtiges Werkzeug.</item>
+        <item>Dränge kommen in Wellen. Manche sind groß. Manche sind klein. Alle gehen vorbei.</item>
+        <item>Die Sehnsucht ist ein Zeichen, dass sich dein Körper verändert. Das ist gute Nachricht.</item>
+        <item>Dir ist erlaubt, den Drang zu fühlen und nicht darauf zu handeln. Beides ist wahr.</item>
+        <item>Was füllt den Raum, den die Gewohnheit einnahm? Baue das jetzt.</item>
+        <item>Der Drang flüstert zuerst leise, dann lauter, wenn du hörst. Höre nicht zu.</item>
+        <item>Stehe auf. Der Drang beruhigt sich, wenn du deinen Körper bewegst.</item>
+        <item>Du bist nicht kaputt, weil du das alte Muster möchtest. Du bist menschlich.</item>
+        <item>Der Drang ist eine Gewohnheitsschleife. Du brichst die Schleife mit jedem inne halten.</item>
+        <item>Späte Nächte und Einsamkeit sind die schlimmste Kombination. Plane darum herum.</item>
+        <item>Du kannst zum Drang sagen: Ich sehe dich. Ich fühle dich. Ich mache es trotzdem nicht.</item>
+        <item>Der Drang ist wie eine Wolke. Beobachte sie. Sie driftet weg.</item>
+        <item>Du hast schon die härtesten Tage überstanden. Dieser ist dir jetzt vertraut.</item>
+        <item>Der Drang kann bei dir sitzen, während du etwas anderes machst. Das ist okay.</item>
+        <item>Was vermeidest du, indem du zur Gewohnheit greifst? Stelle dich dem statt.</item>
+        <item>Der Drang ist am lautesten, wenn du still sitzt. Bewegung bricht den Zauber.</item>
+        <item>Du bist stärker als du denkst. Dieser Moment beweist es.</item>
+        <item>Die Gewohnheit versprach Erleichterung. Sie lieferte Leere. Erinnere dich daran.</item>
+        <item>Der Drang ist dein Gehirn, das Dopamin anfordert. Finde eine andere Quelle.</item>
+        <item>Du kannst den Drang fühlen und die Kontrolle behalten. Beides kann wahr sein.</item>
+        <item>Der Drang kommt von gelernten Mustern, nicht von dem, wer du bist.</item>
+        <item>Wenn müde, fühlt sich alles schwerer an. Der Drang ist nicht speziell. Ruhe.</item>
+        <item>Du musst nicht verstehen, warum du den Drang hast, um ihn zu überstehen.</item>
+        <item>Die Sehnsucht ist Daten. Langeweile? Stress? Einsamkeit? Lerne das Muster.</item>
+        <item>Der Drang wird zurückkehren. Das ist keine Niederlage. Das ist normale Genesung.</item>
+        <item>Du wähltest diesen Weg. Der Weg ist eng im Moment. Er wird breiter.</item>
+        <item>Der Drang ist ein Lügner. Er sagt, du kannst nicht ohne ihn leben. Du kannst und tust es.</item>
+        <item>Sitze in deinem Unbehagen fünf Minuten. Es wird dich nicht zerstören.</item>
+        <item>Der Drang ist am stärksten, wenn du überrascht wirst. Bleibe wach.</item>
+        <item>Du bist nicht der Drang. Du bist der, der den Drang bemerkt und atmet.</item>
+        <item>Wie würde es sich anfühlen, heute ohne ihn durchzubekommen? Das ist die Belohnung.</item>
+        <item>Der Drang ist eine Welle. Du bist der Strand. Lass ihn gegen dich brechen und zurückziehen.</item>
+        <item>Wasser trinken, dehnen, kaltes Wasser im Gesicht, Räume wechseln. Wähle eine.</item>
+        <item>Die Gewohnheit brauchte Monate oder Jahre zum Bilden. Dein Bruch wird Zeit brauchen. Das ist normal.</item>
+        <item>Der Drang ist keine Rückschlag, wenn du nicht glaubst, dass es ein Befehl ist.</item>
+        <item>Du kannst mit dem Drang sitzen wie mit einem unerwünschten Gast.</item>
+        <item>Späte Nacht ist, wenn Dränge am grausamsten sind. Plane deine Abende.</item>
+        <item>Der Drang spricht in Sollten und Müssen. Ignoriere es. Triff deine eigene Wahl.</item>
+        <item>Du hast mehr Willenskraft jetzt als du denkst. Dieser Moment beweist es.</item>
+        <item>Der Drang ist ein Gefühl, keine Tatsache. Gefühle ändern sich.</item>
+        <item>Was trauerst du, das die Gewohnheit gefüllt hat? Traure. Ehre es. Gehe weiter.</item>
+        <item>Der Drang wird dich testen. Du wirst den Test bestehen. Du hast es vorher getan.</item>
+        <item>Die Gewohnheit versprach Glück. Sie lieferte Bedauern. Wähle den reufreien Weg.</item>
+        <item>Du musst nicht gegen den Drang ankämpfen. Du kannst ihn einfach bemerken und weiterleben.</item>
+        <item>Der Drang ist Software, die in deinem Gehirn läuft. Du bist jetzt der Programmierer.</item>
+        <item>Langeweile füttert den Drang. Bedeutung hungert ihn aus.</item>
+        <item>Die Sehnsucht ist ein Signal, dass etwas aus Gleichgewicht ist. Repariere das Gleichgewicht.</item>
+        <item>Dir ist erlaubt zu kämpfen. Kampf ist Teil des Weges.</item>
+        <item>Der Drang ist am lautesten in Stille. Fülle Stille mit Musik, Stimmen, Aktivität.</item>
+        <item>Du bist so weit gekommen. Das ist Beweis. Vertraue dem Beweis.</item>
+        <item>Die Gewohnheit war eine Flucht. Du brauchst nicht mehr zu fliehen.</item>
+        <item>Der Drang ist ein Phantom. Es fühlt sich echt an, aber es ist nicht wirklich da.</item>
+        <item>Was mochtest du an dir, bevor es die Gewohnheit gab? Baue das zurück.</item>
+        <item>Der Drang verblasst, wenn du ihn nicht mit Geschichten fütterst.</item>
+        <item>Du schreibst deine Geschichte jetzt um. Jede Pause ist ein neues Kapitel.</item>
+        <item>Der Drang ist am stärksten, wenn du verletzlich bist. Beschütze dich selbst durch Ruhe.</item>
+        <item>Du kannst unbequem sein und nicht auf den Drang handeln zu gleicher Zeit.</item>
+        <item>Die Sehnsucht ist dein Gehirn im Entzug. Es ist temporär und es heilt.</item>
+        <item>Die Gewohnheit hielt dich klein. Diese Wahl macht dich größer.</item>
+        <item>Der Drang ist wie ein Feueralarm, der läutet. Er ist laut, aber das Haus brennt nicht.</item>
+        <item>Du brauchst nicht sicher zu sein zu widerstehen. Du musst nur wählen.</item>
+        <item>Späte Nacht, müde, allein, gelangweilt. Das ist, wenn Dränge angreifen. Kenne dein Muster.</item>
+        <item>Der Drang ist nicht du. Deine Antwort bist du.</item>
+        <item>Das alte Muster möchte vertraut sein. Das neue Muster wird auch vertraut sein.</item>
+        <item>Du kannst den Drang anerkennen, ihn danken und weitergehen.</item>
+        <item>Die Sehnsucht ist ein Sturm. Sie wird vorbeigehen. Du musst nicht hinaus in ihn gehen.</item>
+        <item>Dir ist erlaubt, den Drang ohne Scham zu fühlen.</item>
+        <item>Was bringt dir Freude, die nicht die Gewohnheit ist? Mach das. Baue das auf.</item>
+        <item>Der Drang ist am lautesten, wenn du deine ganze Aufmerksamkeit darauf fokussierst. Lenke um.</item>
+        <item>Du hast jeden Moment davor überstanden. Du wirst diesen überstehen.</item>
+        <item>Die Gewohnheit versprach Kontrolle. Sie lieferte das Gegenteil. Erinnere dich daran.</item>
+        <item>Der Drang ist ein Test deiner Verpflichtung, nicht ein Zeichen, dass du fehlst.</item>
+        <item>Einsamkeit füttert Dränge. Wende dich ab, bevor der Drang laut wird.</item>
+        <item>Du kannst zehn Minuten lang mit Unbehagen sitzen. Das ist lange Zeit.</item>
+        <item>Der Drang wird zurückkehren. Jedes Mal, wenn es zurückkommt, wirst du stärker.</item>
+        <item>Die alte Weise wollte, dass du glaubst, du hast keine Wahl. Du tust es.</item>
+        <item>Die Sehnsucht ist keine Notfall. Sie fühlt sich nur so an.</item>
+        <item>Du baust nicht nur eine Gewohnheit weg. Du baust ein anderes Leben auf.</item>
+        <item>Der Drang spricht zuerst leise. Das ist die Zeit, sich abzuwenden.</item>
+        <item>Was würde dich stolz auf dich selbst machen heute? Fang damit an.</item>
+        <item>Der Drang ist Information, dass Langeweile oder Stress oder Müdigkeit da ist.</item>
+        <item>Du kannst dich leer fühlen und nicht zur Gewohnheit greifen zu gleicher Zeit.</item>
+        <item>Die Gewohnheit flüsterte Lügen. Du lernst, Wahrheit zu hören statt.</item>
+        <item>Der Drang wird morgen zurückkehren. Das ist keine Niederlage. Das heilt.</item>
+        <item>Dir ist erlaubt, unvollkommen bei das zu sein. Unvollkommener Fortschritt ist immer noch Fortschritt.</item>
+        <item>Der Drang ist wie statisches Rauschen im Radio. Du kannst die Station wechseln.</item>
+        <item>Was würde dein zukünftiges Selbst dich jetzt bitten zu tun? Höre auf das.</item>
+        <item>Die Sehnsucht ist ein Geist eines Musters. Geister können dir nicht wehtun.</item>
+        <item>Du verdrahtst dein Gehirn neu mit jedem Moment, in dem du anders wählst.</item>
+        <item>Späte Nächte sind gefährlich. Schlafe früh. Vorbeugung ist die beste Verteidigung.</item>
+        <item>Der Drang ist eine Gewohnheit, die versucht, sich selbst zu erhalten. Du brichst die Schleife.</item>
+        <item>Du kannst müde und widerstrebend und erfolgreich sein.</item>
+        <item>Was möchte der Drang dich vergessen lassen? Halte diese Erinnerung fest.</item>
+        <item>Die Gewohnheit nahm dich weg von dir selbst. Dieser Weg bringt dich zurück.</item>
+        <item>Der Drang ist am stärksten, wenn du still sitzt. Bewege dich.</item>
+        <item>Du brauchst nicht widerstehen zu wollen. Du musst es einfach trotzdem tun.</item>
+        <item>Die Sehnsucht ist eine Welle. Du hast schon Wellen geritten. Du kannst diese reiten.</item>
+        <item>Was füllt dich, das nicht die Gewohnheit ist? Investiere in das.</item>
+        <item>Der Drang wird lügen und sagen, du brauchst ihn. Du brauchst ihn nicht. Du möchtest ihn. Das ist anders.</item>
+        <item>Langeweile ist ein Auslöser. Habe einen Plan für gelangweilte Momente.</item>
+        <item>Du kannst den Drang mit Atmen und Geduld überstehen.</item>
+        <item>Das alte Muster klopft. Du musst nicht antworten.</item>
+        <item>Der Drang ist Information. Einsamkeit? Stress? Langeweile? Benenne und adressiere es.</item>
+        <item>Dir ist erlaubt, dich schlecht zu fühlen und nicht auf den Drang zu handeln.</item>
+        <item>Die Gewohnheit war ein Bewältigungsmechanismus. Du lernst neue jetzt.</item>
+        <item>Der Drang ist keine Widerspiegelung deiner Willenskraft. Es ist eine Widerspiegelung der Gewohnheit.</item>
+        <item>Was bringt dir Ruhe, das nicht die Gewohnheit ist? Nutze das jetzt.</item>
+        <item>Die Sehnsucht ist dein Körper, der sich anpasst. Das ist keine Schwäche. Das ist Veränderung.</item>
+        <item>Du kannst unbequem sein ohne Rettung durch die Gewohnheit.</item>
+        <item>Späte Nacht-Dränge sind echt. Plane ins Bett vor sie kommen.</item>
+        <item>Der Drang ist am lautesten, wenn du isoliert bist. Suche Verbindung.</item>
+        <item>Du hast einen schwereren Weg gewählt, weil du etwas Besseres möchtest. Ehre das.</item>
+        <item>Die Gewohnheit versprach Freude. Sie lieferte Leere. Wähle anders jetzt.</item>
+        <item>Der Drang ist ein Test. Du bestehst ihn jetzt.</item>
+        <item>Wie würde sich ein ruhiger Verstand anfühlen? Bewege dich zu diesem Gefühl.</item>
+        <item>Die Sehnsucht wird dich besuchen. Du brauchst sie nicht willkommen zu heißen.</item>
+        <item>Du baust Widerstandsfähigkeit mit jedem Moment des Widerstands auf.</item>
+        <item>Der Drang möchte deine Aufmerksamkeit. Gib sie etwas, das dich verdient statt.</item>
+        <item>Langeweile, Einsamkeit, Stress, Müdigkeit. Kenne deine Auslöser und plane voraus.</item>
+        <item>Du kannst traurig sein und nicht zur Gewohnheit greifen.</item>
+        <item>Die Gewohnheit war eine Abkürzung. Du gehst die lange Straße. Das ist Weisheit.</item>
+        <item>Der Drang ist nicht der Feind. Es ist nur ein Besucher. Du bist der Gastgeber.</item>
+        <item>Was würdest du deinem besten Freund sagen, wenn sie diesen Drang fühlten? Sage das dir selbst.</item>
+        <item>Die Sehnsucht ist temporär. Deine Wahl ist permanent.</item>
+        <item>Dir ist erlaubt zu kämpfen. Kampf schafft Kraft.</item>
+        <item>Der Drang ist eine Welle, die in Minuten, nicht Stunden an die Spitze kommt.</item>
+        <item>Was möchtest du, dass man für dich bekannt ist? Das, nicht die Gewohnheit.</item>
+        <item>Späte Nacht plus müde plus allein gleich Gefahr. Verhindere diese Kombination.</item>
+        <item>Der Drang ist ein Signal, dass dein altes Muster noch verdrahtet ist. Du verdrahtst es neu.</item>
+        <item>Du kannst den Drang fühlen und nicht darauf handeln. Das ist der ganze Kampf.</item>
+        <item>Die Gewohnheit log über das, was sie tun würde. Die Wahrheit wird dich befreien.</item>
+        <item>Der Drang ist Information. Höre hin. Dann wähle deinen eigenen Weg.</item>
+        <item>Du bist stärker als deine Dränge. Dieser Moment beweist es.</item>
+        <item>Die Sehnsucht verblasst, wenn du ihr Zeit statt Handlung gibst.</item>
+        <item>Was bringt Frieden in deinen Verstand? Gehe dort hin, wenn der Drang kommt.</item>
+        <item>Der Drang ist keine Niederlage. Deine Antwort ist dein Maßstab.</item>
+        <item>Du hast schwerere Momente überstanden als diese. Du wirst auch diese überstehen.</item>
+        <item>Die Gewohnheit wollte deine Identität sein. Du bist mehr als das.</item>
+        <item>Der Drang ist ein Phantom. Er hat keine Kraft, wenn du ihn nicht gibst.</item>
+        <item>Was würde sich gut anfühlen, das die Gewohnheit nicht beinhaltet? Mach das.</item>
+        <item>Einsamkeit ist ein Auslöser. Wende dich ab, bevor der Auslöser sich betätigt.</item>
+        <item>Du kannst frustriert sein und nicht auf den Drang handeln.</item>
+        <item>Das alte Muster ist vertraut. Das neue Muster wird auch vertraut.</item>
+        <item>Der Drang ist wie ein Kind, das Süßes möchte. Du kannst es anerkennen und nein sagen.</item>
+        <item>Was baust du mit deinem Widerstand auf? Baue das bewusst.</item>
+        <item>Die Sehnsucht ist dein Gehirn, das heilt. Es tut weh, weil Heilung echt ist.</item>
+        <item>Dir ist erlaubt zu ruhen. Ruhe ist keine Schwäche.</item>
+        <item>Der Drang wird zurückkehren. Jede Rückkehr beweist, dass du Fortschritt machtest.</item>
+        <item>Die Gewohnheit war eine Fluchtroute. Du bleibst und stellst dich ihm statt.</item>
+        <item>Der Drang ist Information über deine Bedürfnisse, nicht ein Befehl über deine Handlungen.</item>
+        <item>Was füllt Zeit, die wichtig ist? Fülle Zeit mit dem.</item>
+        <item>Späte Nacht ist, wenn Dränge am grausamsten sind. Gehe früher ins Bett.</item>
+        <item>Der Drang ist eine Welle. Du bist Sacher Grund. Lass ihn über dir waschen.</item>
+        <item>Du kannst gelangweilt sein und nicht zur Gewohnheit greifen.</item>
+        <item>Die Gewohnheit versprach Kontrolle. Du nimmst echte Kontrolle jetzt.</item>
+        <item>Der Drang ist nicht du. Es ist ein Muster, das dein Gehirn lernte. Du lernst es nicht.</item>
+        <item>Was würdest du tun, wenn du nicht Angst hattest? Mach das.</item>
+        <item>Die Sehnsucht ist ein Zeichen, dass sich dein System neu ausbalanciert. Das ist Heilung.</item>
+        <item>Du baust ein Leben, das der Drang nicht erreichen kann.</item>
+        <item>Der Drang flüstert. Höre nicht zu.</item>
+        <item>Was bringt dir echte Freude? Baue deinen Tag darum.</item>
+        <item>Stress ist ein Auslöser. Stelle dich dem Stress ohne die Gewohnheit.</item>
+        <item>Du kannst mit dem Drang sitzen und atmen und warten.</item>
+        <item>Das alte Muster möchte sich komfortabel fühlen. Unbehagen ist die Brücke zu neuem Komfort.</item>
+        <item>Der Drang ist am stärksten, wenn du verletzlich bist. Beschütze dich selbst.</item>
+        <item>Dir ist erlaubt, dich schwach zu fühlen und immer noch Kraft zu wählen.</item>
+        <item>Die Gewohnheit war eine Lüge. Die Wahrheit ist, dass du ohne sie leben kannst.</item>
+        <item>Der Drang ist ein Test deiner Absicht. Du bestehst ihn.</item>
+        <item>Was verlangt dein bestes Leben? Mit dieser Gewohnheit zu brechen. Weitermachen.</item>
+        <item>Der Drang ist ein Signal ohne eine Nachricht. Höre auf, nach Bedeutung zu suchen. Atme einfach.</item>
+        <item>Du kannst innehalten ohne zu verstehen. Verstehen kommt später.</item>
+        <item>Die Sehnsucht an Spitze und Plateau und schließlich verblasst. Fahre alle drei Phasen.</item>
+        <item>Was würde dein vergangenes Selbst über deine Kraft überraschen? Du lebst diese Überraschung.</item>
+        <item>Der Drang ist ein Test, der dich nicht bewertet. Du bestehst immer.</item>
+        <item>Du bist nicht die Summe deiner Dränge. Du bist derjenige, der sie beobachtet.</item>
+        <item>Die Gewohnheit wollte Dauerhaftigkeit. Du wählst Vorübergehen. Du gewinnst.</item>
+        <item>Was würde diesen Tag gut machen? Definiere es ohne die Gewohnheit.</item>
+        <item>Der Drang ist ein Besucher, der zu lange bleibt. Du darfst ihn bitten zu gehen.</item>
+        <item>Du kannst Angst vor Rückfall haben und trotzdem rückfallfrei sein jetzt.</item>
+        <item>Die Sehnsucht spricht die Sprache der Dringlichkeit. Du sprichst die Sprache der Zeit.</item>
+        <item>Späte Nacht ist, wenn Willenskraft am niedrigsten ist. Verhindere die Zeit, nicht nur die Wahl.</item>
+        <item>Der Drang ist ein Muster, das du lerntest. Du lernst ein neues Muster jetzt.</item>
+        <item>Du baust Beweis auf, nicht nur Versprechen.</item>
+        <item>Die Gewohnheit log über das Geben dir, was du brauchtest. Du findest Wahrheit jetzt.</item>
+        <item>Der Drang ist eine Erinnerung, wer du warst. Du bist jemand anders jetzt.</item>
+        <item>Was würde sich wie Freiheit anfühlen? Bewege dich zu dem statt.</item>
+        <item>Die Sehnsucht ist eine Schuld, die die Gewohnheit schuf. Du zahlst sie Tag für Tag.</item>
+        <item>Du kannst allein mit dir selbst sitzen ohne zur Gewohnheit zu greifen.</item>
+        <item>Der Drang wird deine Integrität testen. Jeder Moment des Widerstands beweist es.</item>
+        <item>Benenne, was die Gewohnheit dir stahl. Nimm es zurück.</item>
+        <item>Das alte Muster ist eine Straße, auf der du nicht mehr gehst. Schaue nicht zurück.</item>
+        <item>Der Drang ist Lärm. Du kannst in einem lauten Raum sein und ruhig bleiben.</item>
+        <item>Was würde es brauchen, um dir selbst zu verzeihen für die Zeit, die du verbrachtest? Fang jetzt an.</item>
+        <item>Du heilst nicht falsch. Du heilst genau richtig.</item>
+        <item>Die Gewohnheit wollte deine Lösung sein. Du findest echte Lösungen jetzt.</item>
+        <item>Die Sehnsucht ist Entzug. Entzug ist Heilung, die passiert.</item>
+        <item>Späte Nächte werden immer schwer sein. Frühes Bett ist dein bester Freund.</item>
+        <item>Du schreibst eine Geschichte über wer du wirst. Mache sie gut.</item>
+        <item>Der Drang wird vorbeigehen. Du bleibst. Das ist der ganze Unterschied.</item>
+        <item>Du rennst nicht von etwas. Du gehst zu dir selbst.</item>
+        <item>Die Person, die du sein möchtest, wartet auf dich, dass du sie heute wählst.</item>
+        <item>Dieser Moment ist, wo dein zukünftiges Selbst gebaut wird.</item>
+        <item>Du hältst Versprechen zu dir selbst. Fang jetzt an.</item>
+        <item>Freiheit bedeutet, deine eigenen Wahlen zu treffen. Du triffst eine jetzt.</item>
+        <item>Was möchtest du, dass man für dich bekannt ist? Das, wonach du wirst.</item>
+        <item>Die Gewohnheit definiert dich nicht. Deine Wahlen tun es.</item>
+        <item>Du verdienst es, dir selbst zu vertrauen. Baue das Vertrauen einen Tag gleichzeitig.</item>
+        <item>Dein zukünftiges Selbst ist schon stolz auf dich, dass du versuchst.</item>
+        <item>Präsenz ist ein Geschenk, das du dir selbst und allen um dich gibst.</item>
+        <item>Echte Verbindung passiert, wenn du dich als du selbst zeigst.</item>
+        <item>Du wählst heute Würde. Das ist genug.</item>
+        <item>Der Drang wird vorbeigehen. Deine Integrität ist permanent.</item>
+        <item>Was sind die Werte, die dir am meisten wichtig sind? Lebe sie heute.</item>
+        <item>Du reparierst nicht dich selbst. Du ehrst dich selbst.</item>
+        <item>Dein Leben ist zu wertvoll für halbe Aufmerksamkeit.</item>
+        <item>Das alte Muster besitzt dich nicht.</item>
+        <item>Selbstrespekt wird nicht durch Vollkommenheit verdient. Er kommt von ehrlicher Anstrengung.</item>
+        <item>Du bist der Autor deines Werdegangs.</item>
+        <item>Heute wählst du Präsenz über Abwesenheit.</item>
+        <item>Jede Wahl für dich ist ein Versprechen, das du hältst.</item>
+        <item>Die Person, die du jetzt bist, kann das tun.</item>
+        <item>Du bist stärker als du denkst. Ruhiger als du glaubst.</item>
+        <item>Identität ist nicht das, was du tatst. Es ist das, was du als nächstes tust.</item>
+        <item>Das ist, wie du zuverlässig zu dir selbst wirst.</item>
+        <item>Du brauchst keine Genehmigung, um dich selbst zu respektieren.</item>
+        <item>Der Drang ist nur Lärm. Du bist das Signal.</item>
+        <item>Was für ein Leben möchtest du leben? Du baust es jetzt.</item>
+        <item>Deine Aufmerksamkeit ist heilig. Beschütze sie.</item>
+        <item>Vertraue dir selbst. Du hast schon bewiesen, dass du kannst.</item>
+        <item>Echtes Selbstvertrauen kommt von deinem Wort zu dir selbst halten.</item>
+        <item>Du schreibst deine Geschichte mit jeder Wahl.</item>
+        <item>Die Gewohnheit gedeiht auf deiner geteilten Aufmerksamkeit. Nimm sie zurück.</item>
+        <item>Freiheit ist nicht die Abwesenheit von Regeln. Es ist, deine eigenen zu wählen.</item>
+        <item>Du verdienst es, vollständig in deinem eigenen Leben präsent zu sein.</item>
+        <item>Was sagt dir dein Gewissen? Höre auf es.</item>
+        <item>Die Version von dir, die du respektierst, ist wer du wirst.</item>
+        <item>Absicht macht alltägliche Momente sinnvoll.</item>
+        <item>Du bist nicht kaputt. Du wählst dich selbst.</item>
+        <item>Jeden Tag ist eine Chance zu beweisen, wer du wirklich bist.</item>
+        <item>Der Drang wird schwächer. Dein Durchhaltevermögen wird stärker.</item>
+        <item>Du bist jemand, der Versprechen hält. Besonders zu sich selbst.</item>
+        <item>Was würdest du einem Freund in deiner Lage sagen? Sage dir das.</item>
+        <item>Identität beginnt mit einer Wahl. Du triffst es jetzt.</item>
+        <item>Dein zukünftiges Selbst ist nicht ein Fremder. Es ist du.</item>
+        <item>Präsenz ist, wie du die Menschen in deinem Leben liebst.</item>
+        <item>Du baust ein Selbst, dem du vertrauen kannst. Das braucht Zeit. Du hast es.</item>
+        <item>Die Gewohnheit ist temporär. Wer du wirst, ist permanent.</item>
+        <item>Echte Kraft ist leise. Sie muss sich nicht ankündigen.</item>
+        <item>Du wählst, was für eine Person du sein möchtest.</item>
+        <item>Das ist, was es bedeutet, dich selbst wichtig zu nehmen.</item>
+        <item>Deine Werte sind nicht abstrakt. Sie leben in deinen Wahlen heute.</item>
+        <item>Der Drang möchte dich vergessen lassen, wer du bist. Erinnere dich.</item>
+        <item>Du verdienst es, stolz auf dich selbst zu sein.</item>
+        <item>Jeder Moment ist eine frische Chance, dein eigenes Leben zu ehren.</item>
+        <item>Würde ist nicht zerbrechlich. Sie wird stärker, wenn du sie fütterst.</item>
+        <item>Du bist die Person, auf die du gewartet hast.</item>
+        <item>Was würde es sich anfühlen, dir selbst vollständig zu vertrauen?</item>
+        <item>Das alte Muster ist alt. Du bist neu.</item>
+        <item>Präsenz ist nicht darüber, es richtig zu machen. Es ist darüber, zu erscheinen.</item>
+        <item>Du lernst, dich selbst anders zu lieben.</item>
+        <item>Deine Aufmerksamkeit ist etwas Endliches. Gib sie mit Bedacht aus.</item>
+        <item>Die Gewohnheit definiert nicht deine Fähigkeit. Deine Wahlen tun es.</item>
+        <item>Du wirst jemand, den du respektierst.</item>
+        <item>Echte Freiheit schmeckt wie, deinen eigenen Weg zu wählen.</item>
+        <item>Die Version von dir, die du treffen möchtest, bildet sich jetzt.</item>
+        <item>Du baust eine Beziehung mit dir selbst, die wichtig ist.</item>
+        <item>Identität ist nicht fest. Es ist etwas, das du jeden Tag wählst.</item>
+        <item>Der Drang verblasst. Der Respekt, den du aufbaust, hält.</item>
+        <item>Du lernst, das wichtigste Versprechen aller zu halten.</item>
+        <item>Was möchtest du rückwirkend über dich selbst denken?</item>
+        <item>Die Gewohnheit möchte dich klein. Du wählst dich selbst groß.</item>
+        <item>Präsenz bedeutet, dass du den Moment genießen kannst, in dem du tatsächlich bist.</item>
+        <item>Dein zukünftiges Selbst fragt nicht um Vollkommenheit. Nur Ehrlichkeit.</item>
+        <item>Du bist jemand, der für dich selbst auftritt.</item>
+        <item>Die Belohnung für dies ist einfach: dich selbst.</item>
+        <item>Selbstrespekt ist keine Luxus. Es ist, wie du lebst.</item>
+        <item>Du schreibst deine Beziehung mit dir selbst neu.</item>
+        <item>Jede Wahl ist eine Chance, etwas dir selbst zu beweisen.</item>
+        <item>Der Drang entscheidet nicht, wer du bist.</item>
+        <item>Deine Werte sind wichtiger als das temporäre Ziehen.</item>
+        <item>Du lernst, dir selbst vollständig zu vertrauen.</item>
+        <item>Die Person, die du sein möchtest, ist geduldig. Sie wartet.</item>
+        <item>Präsenz ist das größte Geschenk an dich selbst und andere.</item>
+        <item>Du wählst Absicht über Autopilot.</item>
+        <item>Die Gewohnheit versprach etwas. Du verspratchest dir selbst etwas Besseres.</item>
+        <item>Identität wird in Momenten wie diesem gebaut.</item>
+        <item>Echte Kraft ist, dich selbst zu wählen, wenn niemand zusieht.</item>
+        <item>Du wirst jemand, den du kennenlernen möchtest.</item>
+        <item>Die Version von dir, die du respektierst, lebt in deinen Wahlen.</item>
+        <item>Du rennst nicht von etwas. Du wählst etwas.</item>
+        <item>Würde wächst jedes Mal, wenn du dich selbst wählst.</item>
+        <item>Der Drang ist temporär. Deine Integrität ist nicht.</item>
+        <item>Du lernst, dein eigener bester Freund zu sein.</item>
+        <item>Was ist dir wichtiger als die Gewohnheit?</item>
+        <item>Das alte Muster bekommt kein Mitspracherecht in wer du wirst.</item>
+        <item>Du baust ein Leben, das deine echten Werte widerspiegelt.</item>
+        <item>Deine Aufmerksamkeit gehört dem Leben, das du wirklich willst.</item>
+        <item>Die Person, die du wirst, ist die Anstrengung wert.</item>
+        <item>Du wählst, jemand zu sein, dem du vertrauen kannst.</item>
+        <item>Präsenz ist, wie du dein eigenes Leben zurückforderst.</item>
+        <item>Jeder Moment, in dem du dich selbst wählst, ist ein Moment, in dem du dich selbst wählst.</item>
+        <item>Die Gewohnheit gedeiht auf fehlender Aufmerksamkeit. Du wirst präsent.</item>
+        <item>Du lernst, was echte Freiheit sich anfühlt.</item>
+        <item>Identität ist nicht etwas, das du findest. Es ist etwas, das du aufbaust.</item>
+        <item>Dein zukünftiges Selbst wird wissen, dass du dieses Versprechen hieltest.</item>
+        <item>Du verdienst es, die Person zu mögen, die du wirst.</item>
+        <item>Der Drang verblasst. Die Person, die du aufbaust, wird stärker.</item>
+        <item>Du bist jemand, der weiß, was ihm wichtig ist, und lebt es.</item>
+        <item>Echtes Selbstvertrauen kommt von Handlung, die sich an Identität ausrichtet.</item>
+        <item>Die Version von dir, die du respektierst, ist in Reichweite.</item>
+        <item>Du wählst, vollständig in deinem eigenen Leben zu sein.</item>
+        <item>Was für eine Person zeigt sich für sich selbst wie dies? Du bist diese Person.</item>
+        <item>Klarheit kommt, wenn du dein eigenes Verstand aufhörst zu vernebeln.</item>
+        <item>Die Wahl, die du jetzt machst, definiert, wer du wirst.</item>
+        <item>Das ist die Arbeit der Freiheit. Du machst es.</item>
+        <item>Dein Leben ist das einzige, das du vollständig leben kannst.</item>
+        <item>Du lernst, dass echte Kraft im Nein-Sagen lebt.</item>
+        <item>Die Person in dir, die besser weiß, führt jetzt.</item>
+        <item>Jeder Moment, in dem du dich selbst wählst, ist wichtiger als du denkst.</item>
+        <item>Was du in diesen Momenten beschützt, formt, wer du morgen bist.</item>
+        <item>Die alte Weise ruft nicht mehr die Schüsse. Du tust es.</item>
+        <item>Du lernst, durch die Welt als du selbst zu bewegen.</item>
+        <item>Absicht ist Liebe, sichtbar gemacht in der Art, wie du lebst.</item>
+        <item>Die Gewohnheit verdeckt, wer du sein könntest. Du nimmst die Maske ab.</item>
+        <item>Echter Frieden kommt von Wissen, dass du wahr bist.</item>
+        <item>Du wirst jemand, den du bewundern kannst.</item>
+        <item>Das ist nicht über Bestrafung. Das ist über Respekt.</item>
+        <item>Der Drang ist eine Lüge über das, was du brauchst. Du weißt besser.</item>
+        <item>Du baust etwas, das nicht erschüttert werden kann.</item>
+        <item>Dein zukünftiges Selbst unterstützt dich jetzt.</item>
+        <item>Präsenz ist, wie du mit dem verbunden bleibst, das wichtig ist.</item>
+        <item>Du lernst, die Person zu sein, der andere vertrauen können, weil du dir selbst vertraust.</item>
+        <item>Jede Weigerung ist ein Ja zu etwas Besseres.</item>
+        <item>Die Version von dir, die ganz ist, taucht auf.</item>
+        <item>Du verdienst ein Leben, in dem du dich wie dich selbst fühlst.</item>
+        <item>Was du tust, braucht echten Mut. Benenne ihn.</item>
+        <item>Die Gewohnheit stiehlt Zeit. Du forderst deine zurück.</item>
+        <item>Du wählst Klarheit über Verwirrung.</item>
+        <item>Echter Sieg ist leise. Er lebt innen.</item>
+        <item>Identität bildet sich in den Wahlen, die niemand dich machen sieht.</item>
+        <item>Du lernst, dich selbst vollständig zu ehren.</item>
+        <item>Der Drang wird leichter. Dein Selbstrespekt wird stärker.</item>
+        <item>Du wirst jemand mit echten Grenzen.</item>
+        <item>Was du beschützt, ist heilig. Du selbst.</item>
+        <item>Das alte Muster bricht. Etwas Neues wächst.</item>
+        <item>Du lernst, auf deine eigene Weisheit zu hören.</item>
+        <item>Freiheit ist kein Ziel. Es ist, wie du jeden Tag dich bewegst.</item>
+        <item>Du baust eine Grundlage, die echten Wandel unterstützt.</item>
+        <item>Jeder Moment der Präsenz ist ein Moment der Macht.</item>
+        <item>Die Person, die du werden möchtest, braucht dich, das zu tun.</item>
+        <item>Du lernst, dass dein Wort zu halten am meisten wichtig ist.</item>
+        <item>Echte Würde ist nie verhandelbar.</item>
+        <item>Du bist der Einzige, der dein Leben lebt. Besitze es vollständig.</item>
+        <item>Die Gewohnheit besitzt deine Zukunft nicht. Du tust es.</item>
+        <item>Du wirst jemand, der Wahlen macht statt Ausreden.</item>
+        <item>Was du aufbaust, ist nur für dich.</item>
+        <item>Präsenz verbindet dich mit dem Leben, das tatsächlich dein ist.</item>
+        <item>Du lernst, dich selbst mehr zu wollen als den Drang.</item>
+        <item>Die Version von dir ohne diese Last wartet.</item>
+        <item>Jeden Tag, in dem du dich wählst, ist ein Tag, in dem du gewinnst.</item>
+        <item>Du wirst zuverlässig zu dem, das am meisten wichtig ist.</item>
+        <item>Echte Kraft ist, dich selbst zu wählen, wenn es schwer ist.</item>
+        <item>Die Klarheit, die kommt, ist jeden Moment wert davon.</item>
+        <item>Du lernst, dass Freiheit zuerst innen ist.</item>
+        <item>Was du respektierst in dir wächst, wenn du es fütterst.</item>
+        <item>Du wartest nicht um würdig zu sein. Du bist würdig jetzt.</item>
+        <item>Die Gewohnheit ist eine alte Geschichte. Du schreibst eine neue.</item>
+        <item>Du wählst, präsent für dein eigenes Leben zu sein.</item>
+        <item>Jeder Moment des Widerstands ist ein Moment des Wachstums.</item>
+        <item>Die Person, die du wirst, wird verstehen, warum du das tat.</item>
+        <item>Du lernst, dich selbst in Aktion zu lieben.</item>
+        <item>Echter Frieden kommt von, in Ausrichtung mit deinen Werten zu leben.</item>
+        <item>Du baust ein Selbst, das du niemandem belügen musst.</item>
+        <item>Der Drang verblasst wie alles Temporäre es tut.</item>
+        <item>Du verdienst es, dich in deinen eigenen Wahlen zu Hause zu fühlen.</item>
+        <item>Identität ist geschrieben in dem, was du tust, wenn getestet.</item>
+        <item>Du lernst, dass Präsenz die tiefste Form der Sorgfalt ist.</item>
+        <item>Die Version von dir, die frei ist, ist näher als du weißt.</item>
+        <item>Was du in diesen Momenten beschützt, wird wer du morgen bist.</item>
+        <item>Du wählst, jemand zu sein, auf den du dich verlassen kannst.</item>
+        <item>Jeden ehrlichen Moment zählt. Du sammelst sie.</item>
+        <item>Echte Kraft ist innen. Sie lebt in deiner Wirbelsäule.</item>
+        <item>Du wirst jemand, der seine eigenen Versprechen ehrt.</item>
+        <item>Die Klarheit, die du aufbaust, wird dich erhalten.</item>
+        <item>Du rennst nicht weg. Du kommst an.</item>
+        <item>Was du tust, beweist etwas dir selbst.</item>
+        <item>Die Gewohnheit möchte Ergeben. Du wählst Souveränität.</item>
+        <item>Du lernst, dass das beste Leben das ist, das du wählst.</item>
+        <item>Präsenz ist das Gegenmittel zu der Lüge, die die Gewohnheit sagt.</item>
+        <item>Jeder Moment, in dem du bleibst, ist ein Moment, in dem du wahr bleibst.</item>
+        <item>Du wirst die Art Person, die wert ist.</item>
+        <item>Echte Freiheit schmeckt wie das Tun, an das du glaubst.</item>
+        <item>Die Version von dir, die dir selbst vertraut, taucht auf.</item>
+        <item>Du lernst, dass Würde nicht gegeben wird. Sie wird gewählt.</item>
+        <item>Was wichtig ist, ist dass du wählst. Bleibe wählen.</item>
+        <item>Die alte Geschichte besitzt das nächste Kapitel nicht.</item>
+        <item>Du baust eine Beziehung mit dir selbst, die hält.</item>
+        <item>Jeder Moment der Wahl ist ein Moment der Macht.</item>
+        <item>Die Person, die du wirst, ist nicht weit weg.</item>
+        <item>Du lernst, mit Absicht zu leben.</item>
+        <item>Echter Respekt kommt von, deine eigenen Versprechen zu halten.</item>
+        <item>Der Drang ist temporär. Dein Charakter ist permanent.</item>
+        <item>Du wählst, vollständig lebendig in deinem eigenen Leben zu sein.</item>
+        <item>Identität wird von tausend kleinen Ja-Sagen zu dir selbst gebaut.</item>
+        <item>Du verdienst es, dich in die Augen zu sehen ohne Scham.</item>
+        <item>Die Klarheit, die kommt, wird dein neues Zuhause sein.</item>
+        <item>Du wartst nicht um Genehmigung. Du gibst sie dir selbst.</item>
+        <item>Was du gerade tust, ist der Anfang von allem.</item>
+        <item>Du lernst, dem zu vertrauen, das du weißt ist wahr.</item>
+        <item>Die Gewohnheit flüstert. Dein Gewissen spricht. Höre lauter.</item>
+        <item>Echte Wahl bedeutet, mit dem zu leben, das du entschied.</item>
+        <item>Du wirst jemand mit echter Überzeugung.</item>
+        <item>Jeder Moment, in dem du bleibst, ist ein Moment, in dem du dich aufbaust.</item>
+        <item>Die Person drinnen, die besser weiß, führt schon.</item>
+        <item>Was du aufbaust, ist nur für die, die es wollen.</item>
+        <item>Freiheit bedeutet, nicht mehr zum Drang zu antworten.</item>
+        <item>Du lernst, dass dein eigener Respekt mehr wert ist.</item>
+        <item>Die Version von dir, die ganz ist, wächst zurück.</item>
+        <item>Was du in diesen Momenten beschützt, ist deine Zukunft.</item>
+        <item>Du wählst, jemand zu sein, den du erkennst.</item>
+        <item>Echte Macht ist, das zu wählen, das wichtig ist, und es zu leben.</item>
+        <item>Die Klarheit, die du aufbaust, wird permanent.</item>
+        <item>Du lernst, dass Präsenz ist, wo Leben tatsächlich ist.</item>
+        <item>Jeder ehrliche Wahl bringt dich näher zu dir selbst.</item>
+        <item>Die Gewohnheit kann nicht die Person berühren, die du wählst zu werden.</item>
+        <item>Du verdienst es, dich in deinen eigenen Entscheidungen ganz zu fühlen.</item>
+        <item>Du baust etwas, das der Drang niemals nimmt.</item>
+        <item>Was dich definiert, ist das, was du wählst, wenn es schwer ist.</item>
+        <item>Das alte Muster verliert seinen Griff. Du stehst fest.</item>
+        <item>Echte Kraft ist, dein Wort zu dir selbst im Dunkeln zu halten.</item>
+        <item>Du wirst jemand, dessen Ja etwas bedeutet.</item>
+        <item>Jeder Moment, in dem du dich wählst, ist ein Moment des Sieges.</item>
+        <item>Die Person, die du wirst, wird dankbar sein.</item>
+        <item>Du lernst, was Freiheit tatsächlich verlangt.</item>
+        <item>Präsenz ist deine Rebellion gegen das Autopilot.</item>
+        <item>Du baust ein Leben, das mit deiner Seele ausgerichtet ist.</item>
+        <item>Die Version von dir, die authentisch ist, nimmt Gestalt an.</item>
+        <item>Was du gerade tust, ripple in alles.</item>
+        <item>Du verdienst es, mit deinen eigenen Wahlen in Frieden zu sein.</item>
+        <item>Die Klarheit, die du gewinnen, ist eine Grundlage für alles.</item>
+        <item>Du lernst, Wahlen zu treffen, die widerspiegeln, wer du bist.</item>
+        <item>Echter Respekt kommt von, das schwere Ding zu tun, wenn es wichtig ist.</item>
+        <item>Jeden Tag ohne die alte Gewohnheit ist ein Tag des Beweises.</item>
+        <item>Du wirst jemand, der sich selbst vertrauen kann.</item>
+        <item>Der Drang versteht nicht, wer du wirst.</item>
+        <item>Du wählst, mit Absicht und Bewusstsein zu leben.</item>
+        <item>Was du beschützt, wird das, das du bewahrst.</item>
+        <item>Identität wird nicht geerbt. Sie wird gewählt und täglich neu aufgebaut.</item>
+        <item>Du lernst, dass Freiheit eine innere Arbeit ist.</item>
+        <item>Die Version von dir, die frei ist, wartet um gefunden zu werden.</item>
+        <item>Jeder Moment, in dem du widerstehst, ist ein Moment der Kraft.</item>
+        <item>Du verdienst es, dich als jemand zu kennen, der Versprechen hält.</item>
+        <item>Die Gewohnheit verblasst. Du wirst klarer.</item>
+        <item>Du wirst jemand, dessen Werte gelebt sind.</item>
+        <item>Echter Frieden kommt von, zu wissen, dass du richtig wählst.</item>
+        <item>Was du aufbaust, wird dich durch alles erhalten.</item>
+        <item>Jede Wahl ist ein Stimme für wer du sein möchtest.</item>
+        <item>Du lernst, die Person zu ehren, die du sein möchtest.</item>
+        <item>Die Klarheit deiner Wahlen ist deine größte Macht.</item>
+        <item>Du wirst nicht jemand Neuen. Du wirst mehr du.</item>
+        <item>Was wichtig ist, ist dass du hier bist. Du wählst.</item>
+        <item>Die alte Geschichte endet. Die neue beginnt mit dir.</item>
+        <item>Jeder Moment der Präsenz ist ein Moment der Ganzheit.</item>
+        <item>Du wirst jemand, den du wirklich magst.</item>
+        <item>Echte Freiheit schmeckt wie, deine eigene Wahrheit zu leben.</item>
+        <item>Die Version von dir, der du vertraust, bildet sich jetzt.</item>
+        <item>Du verdienst es, zurückzublicken mit keinem Bedauern über heute.</item>
+        <item>Was du aufbaust, ist gemacht um zu halten.</item>
+        <item>Du bist genau wo du sein musst.</item>
+        <item>Jeder Moment, in dem du nicht nachgibst, ist ein Moment der Kraft.</item>
+        <item>Du baust etwas Neues mit jedem Tag, der vergeht.</item>
+        <item>Kleine Schritte vorwärts zählen immer noch als vorwärts.</item>
+        <item>Fortschritt ist nicht immer sichtbar, aber du machst ihn.</item>
+        <item>Heute wählst du dich selbst. Das ist das, das wichtig ist.</item>
+        <item>Du tat das Ding nicht. Das ist alles.</item>
+        <item>Der Weg zur Veränderung beginnt mit einer Entscheidung.</item>
+        <item>Selbst wenn es hart ist, bewegt du dich immer noch.</item>
+        <item>Dieser Moment des Widerstands ist deine Kraft.</item>
+        <item>Du musst nicht für immer gewinnen, nur heute.</item>
+        <item>Einen Tag gleichzeitig ist der gentleste Weg durch.</item>
+        <item>Das Brechen frei braucht Zeit. Du hast sie.</item>
+        <item>Kümmere dich nicht um nächste Woche. Handhabe einfach heute.</item>
+        <item>Die Reise ist lang, aber du gehst nur einen Tag gleichzeitig.</item>
+        <item>Du liest kein Rennen. Du baust ein Leben.</item>
+        <item>Lass nächste Woche sich um sich selbst sorgen.</item>
+        <item>Heute ist alles, das du jetzt verwalten musst.</item>
+        <item>Die Zeit bewegt sich langsamer als du denkst wird.</item>
+        <item>Ein Ausrutscher ist kein Fehler, es ist Information.</item>
+        <item>Du stolpertest. Das löscht nicht deinen Fortschritt.</item>
+        <item>Einen Moment definiert nicht deine Reise.</item>
+        <item>Du kannst jetzt wieder anfangen. Kein Warten.</item>
+        <item>Ausrutscher passieren. Was wichtig ist, ist das, was kommt als nächstes.</item>
+        <item>Du hast etwas gelernt. Nutze es.</item>
+        <item>Dieser Moment des Kampfes wird dir etwas lehren.</item>
+        <item>Rückwärts fallen einmal bedeutet nicht, dass du fehltest.</item>
+        <item>Die nächste Wahl ist immer dir verfügbar.</item>
+        <item>Du kannst wieder anfangen so oft, wie du brauchst.</item>
+        <item>Sei so sanft zu dir selbst, wie du zu einem Freund bist.</item>
+        <item>Du verdienst Sanftheit, während du heilst.</item>
+        <item>Harte Worte werden nicht helfen. Mitgefühl wird.</item>
+        <item>Du machst harte Arbeit. Behandle dich sanft.</item>
+        <item>Diese Reise braucht keine Bestrafung, nur Geduld.</item>
+        <item>Scham wird nicht helfen. Mitgefühl wird.</item>
+        <item>Du bist erlaubt unvollkommen zu sein, während du dich veränderst.</item>
+        <item>Vergib dir selbst so schnell, wie du kannst.</item>
+        <item>Dein Fortschritt verdient stille Feier.</item>
+        <item>Sei die Stimme, die dich aufhebt, nicht die, die dich abteilt.</item>
+        <item>Ein unterbrochener Streifen löscht deine Kraft nicht.</item>
+        <item>Konsistenz ist wichtiger als Vollkommenheit.</item>
+        <item>Was du die meisten Tage machst, ist wichtiger als ein Tag.</item>
+        <item>Das echte Maß ist, wie regelmäßig du auftritt.</item>
+        <item>Ein Ausrutscher undoes nicht dein Muster von Nein-Sagen.</item>
+        <item>Deine Gewohnheiten bilden sich durch kleine, wiederholte Wahlen.</item>
+        <item>Was zählt, ist der Rhythmus, den du aufbaust, nicht eine vollkommene Linie.</item>
+        <item>Streifen brechen. Charakter nicht.</item>
+        <item>Du trainierst dich durch Wiederholung.</item>
+        <item>Jeden Tag ist eine Chance, zu verstärken, wer du wirst.</item>
+        <item>Die ersten Tage sind die härtesten. Es wird einfacher.</item>
+        <item>Früh auf, fühlt sich alles dringend an. Das verblasst.</item>
+        <item>Jetzt fühlt es sich unmöglich an. Es wird nicht immer.</item>
+        <item>Die Sehnsüchte werden schwächer. Vertraue, dass sie werden.</item>
+        <item>Was hell brennt jetzt wird abkühlen.</item>
+        <item>Dein Körper und Verstand werden sich schneller anpassen als du denkst.</item>
+        <item>Die erste Woche ist der steilste Anstieg.</item>
+        <item>Jeden Tag ist ein bisschen leichter als der davor.</item>
+        <item>Du bist im härtesten Teil. Es wird sich ändern.</item>
+        <item>Diese Intensität, die du jetzt fühlst, ist temporär.</item>
+        <item>Nach eine Weile, die Wahl wird einfacher zu machen.</item>
+        <item>Der Drang verliert seinen Griff im Laufe der Zeit.</item>
+        <item>Du wirst eines Tages bemerken, dass du nicht mal daran dachtest.</item>
+        <item>Genesung baut Dynamik auf, während du gehst.</item>
+        <item>Jeden Tag des Widerstands macht den nächsten weicher.</item>
+        <item>Dein Gehirn verkabelt sich selbst neu. Das braucht Zeit, dann passiert.</item>
+        <item>Was Anstrengung braucht, wird natürlich.</item>
+        <item>Der Pfad wird glatter, je mehr du gehst.</item>
+        <item>Du wachst eines Tages auf und fühlst dich anders.</item>
+        <item>Kraft baut leise, dann erkennst du, dass du es hast.</item>
+        <item>Ein Tag ist ein Meilenstein. Eine Woche ist auch.</item>
+        <item>Markiere deine Siege privat. Sie sind immer noch Siege.</item>
+        <item>Du brauchst nicht zu brodacsten um deinen Fortschritt zu ehren.</item>
+        <item>Ruhiger Stolz zählt genauso wie jede Feier.</item>
+        <item>Feiere ohne Aufregung. Der Sieg ist echt.</item>
+        <item>Jeden Meilenstein, egal die Größe, ist wert zu erkennen.</item>
+        <item>Deine Durchbrüche brauchen kein Publikum um wichtig zu sein.</item>
+        <item>Stille Kraft ist immer noch Kraft.</item>
+        <item>Bemerke, was du getan hast, auch wenn niemand anders es tut.</item>
+        <item>Du weißt, was es gekostet, hier anzukommen. Das ist genug.</item>
+        <item>Denke über morgen hinaus. Du baust etwas, das hält.</item>
+        <item>Diese Wahl heute formt dein ganzes Leben.</item>
+        <item>Du kommst nicht nur heute durch, du veränderst für immer.</item>
+        <item>Zukünftig du wird dankbar sein für was gegenwärtig du macht.</item>
+        <item>Die Person, die du wirst, ist die Anstrengung wert.</item>
+        <item>Dein zukünftiges Selbst zählt auf dich.</item>
+        <item>Was du jetzt machst, verbindert sich im Laufe der Zeit.</item>
+        <item>Du investierst in das Leben, das du wirklich willst.</item>
+        <item>Das ist nicht über heute. Es ist über wer du wirst.</item>
+        <item>Alles, das du jetzt machst, wellenrädert vorwärts.</item>
+        <item>Wenn der Drang trifft, erinnere dich, warum du beganntest.</item>
+        <item>Das alte Muster möchte zurückkommen. Du darfst nein sagen.</item>
+        <item>Was du brichst, brauchte Zeit zum Bilden. Rückgängigmachen brauchte Zeit auch.</item>
+        <item>Du verkabelst Jahre von Verhalten neu. Das ist geduldige Arbeit.</item>
+        <item>Die Gewohnheit flüstert. Du kannst wählen, nicht zuzuhören.</item>
+        <item>Jedes Mal, dass du nein sagst, trainierst du dich, nächstes Mal nein zu sagen.</item>
+        <item>Du wirst nicht beraubt. Du wirst befreit.</item>
+        <item>Das ist über wer du sein möchtest, nicht was du nicht haben kannst.</item>
+        <item>Deine Gründe zum Stoppen sind größer als der Drang zu kehren.</item>
+        <item>Das Leben ohne es ist wert, was du aufgibst um es zu bekommen.</item>
+        <item>Heute bist du stärker als die Gewohnheit. Vertraue dem.</item>
+        <item>Etwas zu wollen bedeutet nicht, dass du es tun musst.</item>
+        <item>Du kannst den Drang fühlen und trotzdem vorbei gehen.</item>
+        <item>Das Gefühl wird verstreichen. Du brauchst nicht auf jedem Gefühl handeln.</item>
+        <item>Dränge kommen und gehen wie Wellen. Du lernst, sie vorbeigehen zu sehen.</item>
+        <item>Diese Sehnsucht ist kein Befehl. Es ist nur ein Gedanke.</item>
+        <item>Du wirst die Art Person, die etwas wollen kann und es ablehnen.</item>
+        <item>Jede Weigerung beweist, dass du die Macht hast, die du bezweifelt.</item>
+        <item>Das alte Muster besitzt dich nicht mehr.</item>
+        <item>Du forderst dein Leben zurück, eine Wahl gleichzeitig.</item>
+        <item>Wenn müde, erinnere dich, wie weit du schon gekommen bist.</item>
+        <item>Das Härteste ist nicht hinter dir, aber du bist vorbei das Schlechteste.</item>
+        <item>Du hast schon das Härteste getan. Stabil bleiben ist einfacher.</item>
+        <item>Du hast bewiesen, dass du das kannst. Du brauchst nicht wieder zu beweisen.</item>
+        <item>Ruhe, wenn du brauchst. Die Arbeit continues anyway.</item>
+        <item>Erschöpfung ist echt. Das bedeutet nicht, dass du fehlst.</item>
+        <item>Du kannst müde sein und immer noch vorwärts bewegen.</item>
+        <item>Morgen ist ein frischer Tag. Dieser brauchst nicht vollkommen zu sein.</item>
+        <item>Wenn heute hart war, morgen bekommt um leichter zu sein.</item>
+        <item>Nichts, das du heute machst, ruiniert alles, das du gebaut hast.</item>
+        <item>Ein harter Tag löscht Wochen von Fortschritt nicht.</item>
+        <item>Der schlechte Tag definiert nicht die ganze Woche.</item>
+        <item>Du bist erlaubt um einen harten Moment zu haben und trotzdem okay zu sein.</item>
+        <item>Genesung ist keine gerade Linie. Die Linie noch geht rauf.</item>
+        <item>Manche Tage werden sich anfühlen wie anfangen neu. Das ist normal.</item>
+        <item>Du beginnst nicht neu. Du setzt fort. Selbst die harten Tage sind Teil davon.</item>
+        <item>Wenn sich Dinge anfühlen, auseinander zu fallen, wirst du oft gerade müde.</item>
+        <item>Dein Wert ist nicht durch deinen Streifen bestimmt.</item>
+        <item>Wer du bist, wird nicht durch einen Moment der Schwäche gemessen.</item>
+        <item>Du bist mehr als eine Wahl. Du bist alle davon zusammen.</item>
+        <item>Die Gewohnheit war ein Kapitel. Du schreibst ein ganzes neues Buch jetzt.</item>
+        <item>Diese Version von dir bildet sich immer noch. Gebe dir Zeit.</item>
+        <item>Du bist erlaubt, langsam zu verändern.</item>
+        <item>Heilung hat keine Deadline.</item>
+        <item>Genesung passiert in seinem eigenen Tempo, und das ist okay.</item>
+        <item>Der Weg vorwärts ist nicht immer klar. Du brauchst nicht den ganzen Weg zu sehen.</item>
+        <item>Nur der nächste Schritt ist genug.</item>
+        <item>Du brauchst nicht alles heute zu beachte.</item>
+        <item>Vertraue dem Prozess selbst wenn du den Fortschritt nicht sehen kannst.</item>
+        <item>Die Arbeit, die du jetzt machst, wird nicht sofort Ergebnisse zeigen. Das ist fine.</item>
+        <item>Unsichtbarer Fortschritt ist immer noch Fortschritt.</item>
+        <item>Du veränderst selbst wenn du es nicht sehen kannst.</item>
+        <item>Dein Körper und Verstand passen leise an.</item>
+        <item>Die Belohnung zum Stoppen ist nicht immer offensichtlich zu zuerst.</item>
+        <item>Was du von das gewinnen, brauchst Zeit um zu zeigen.</item>
+        <item>Sei geduldig mit dir selbst die Art, wie du geduldig mit jemandem bist, den du liebst.</item>
+        <item>Wenn kämpfend, das bedeutet nicht, dass du schwach bist.</item>
+        <item>Kampf ist ein Zeichen, dass du wächst.</item>
+        <item>Das Unbehagen ist Beweis, dass etwas veränderst.</item>
+        <item>Du machst etwas sehr Hartes. Ehre das.</item>
+        <item>Du wählst das, jeden Tag, selbst wenn es schmerzhaft ist.</item>
+        <item>Niemand kann deine Freiheit wegnehmen. Du kämpfst dafür.</item>
+        <item>Du beraubst nicht dich selbst. Du forderst dich selbst zurück.</item>
+        <item>Das ist ein Akt des Selbstrespekts.</item>
+        <item>Behandle das, die Art, wie du etwas behandeln würde, das du wirklich liebst.</item>
+        <item>Du bist die Anstrengung wert, die du reinsteckst.</item>
+        <item>Du bist die Anstrengung wert zu halten. Du bist den Kampf wert.</item>
+        <item>Höre auf, dich zu fragen, ob du es wert bist.</item>
+        <item>Zweifel wird kommen. Lass es. Du brauchst nicht, es zu glauben.</item>
+        <item>Du kannst unsicher sein und trotzdem vorwärts bewegen.</item>
+        <item>Glaube wird Aktion folgen. Aktion erst.</item>
+        <item>Du brauchst nicht dich sicher zu fühlen um das Ding zu tun.</item>
+        <item>Mach das Ding. Zuversicht wird kommen.</item>
+        <item>Manche Tage fühlst du dich stark. Manche Tage fühlst du dich zerbrechlich.</item>
+        <item>Die zerbrechlichen Tage sind wo die echte Kraft lebt.</item>
+        <item>Wenn schwach, zu zeigen ist Tapferkeit.</item>
+        <item>Die Gewohnheit gedeiht in Stille und Scham. Stille und Scham sind seine Brennstoff.</item>
+        <item>Zu reden drüber, annehmend, und vorwärts bewegen, hungert es.</item>
+        <item>Du brauchst nicht das zu verstecken. Es gibt nichts um zu verstecken.</item>
+        <item>Was du machst, heilt. Das ist das Gegenteil von Schande.</item>
+        <item>Jeden Menschen, der etwas Unterschied machte, fühlte, was du fühlst.</item>
+        <item>Andere haben diesen Weg vor dir gegangen.</item>
+        <item>Deine Geschichte ist nicht vorbei. Sie beginnt gerade ein neues Kapitel.</item>
+        <item>Das Ende, das du willst, ist möglich noch. Mehr als möglich.</item>
+        <item>Egal wie oft du vorher versuchtest, dieses Mal ist anders.</item>
+        <item>Deine vorherigen Versuche waren nicht Fehler. Sie waren Praxis.</item>
+        <item>Jeden Mal, dass du versuchtest, lerntest du etwas.</item>
+        <item>Diese Wissen ist dein jetzt. Nutze es.</item>
+        <item>Der Drang wird dich testen. Das ist was Dränge tun.</item>
+        <item>Jeden Test, den du besteht, bekommt dich näher zum Frieden.</item>
+        <item>Die zwanghaften Gedanke werden verblassen.</item>
+        <item>Das konstante mentale Abspielen wird leiser.</item>
+        <item>Eines Tages wirst du bemerken, dass du nicht in Stunden drüber gedacht hast.</item>
+        <item>Du bist erlaubt, diese zu wollen. Wolle es vollständig.</item>
+        <item>Wolle die Freiheit. Wolle den Frieden. Wolle die neue Version von dir.</item>
+        <item>Wenn Antrieb verblasst, lass deinen Gründe dich tragen.</item>
+        <item>Wenn Gründe verblassen, lass Routine dich tragen.</item>
+        <item>Wenn Routine bricht, hebe sie gerade wieder auf.</item>
+        <item>Das ist nicht zerbrechlich. Das ist flexibel.</item>
+        <item>Du baust etwas Resillent.</item>
+        <item>Das alte Muster wird dich ein mehr Mal versuchen. Du weißt, das wird es.</item>
+        <item>Du wirst bereit sein, weil du dich vorbereitet.</item>
+        <item>Jeden Tag des Nein-Sagens ist Praxis für diesen Moment.</item>
+        <item>Deine Zukunft ist ungeschrieben. Du erhältst um sie zu schreiben.</item>
+        <item>Jede Wahl, die du machst, ist ein Wort in diese Zukunft.</item>
+        <item>Was Geschichte möchtest du erzählen?</item>
+        <item>Das Härteste Ding, das du je getan hast, ist was du gerade machst.</item>
+        <item>Du überlebst nicht gerade. Du lernst, wer du sein möchtest.</item>
+        <item>Die Person, die du wirst, braucht die Gewohnheit nicht mehr.</item>
+        <item>Wachstum ist langsam. Wachstum ist echt. Wachstum passiert.</item>
+        <item>Dein Gehirn ist plastisch. Es kann verändern. Es ist verändernd.</item>
+        <item>Was sich unmöglich heute anfühlt, wird bald normal.</item>
+        <item>Die neue Normalität wartet auf dich.</item>
+        <item>Du, die du weiterhin versuchst, verdient um gefeiert zu werden.</item>
+        <item>Dieser Frieden, den du aufbaust, wird nicht alles auf einmal kommen.</item>
+        <item>Du gehörst hier. Du gehörst in diese Genesung.</item>
+        <item>Diese Morgens du hast eine Extra Stunde. Was wirst du damit machen?</item>
+        <item>Dein Verstand ist klarer als es gestern war. Bemerke das.</item>
+        <item>Du wählst dich heute. Das ist was wichtig ist.</item>
+        <item>Die Gewohnheit ist stiller jetzt. Du lernst seinen Rhythmus.</item>
+        <item>Einen Spaziergang morgens kann dein ganzes Tag reset.</item>
+        <item>Du baust etwas Echtes mit der Zeit auf, die du ersparte.</item>
+        <item>Schlag heute Abend wird sich anders anfühlen. Lass es.</item>
+        <item>Kaltwasser ist nicht Bestrafung. Es ist Beweis, dass du Unbehagen wählen kannst auf deinen eigenen Bedingungen.</item>
+        <item>Deine Hände sind frei für etwas Besseres.</item>
+        <item>Der Drang wird kommen. Du weißt jetzt, wie man damit sitzt.</item>
+        <item>Der Fokus wächst, wenn du aufhöre, das alte Muster zu füttern.</item>
+        <item>Du kämpfst nicht gegen die Gewohnheit mehr an. Du drehst gerade weg.</item>
+        <item>Disziplin heute ist Freiheit morgen. Das hat das es immer gewesen.</item>
+        <item>Der Nachmittags Tiefpunkt ist kleiner. Du bemerkst das?</item>
+        <item>Dankbarkeit für kleine Siege baut Dynamik schneller als Scham über die Vergangenheit.</item>
+        <item>Du lehrst deinen Körper einen neuen Rhythmus.</item>
+        <item>Die Gewohnheit flüstert. Dein Engagement spricht lauter.</item>
+        <item>Diese Energie, die du fühlst, ist dein um zu verbringen jetzt.</item>
+        <item>Ruhig bleibend wenn der Drang kommt ist ein Übermensch.</item>
+        <item>Was würdest du einem Freund in deiner Lage sagen?</item>
+        <item>Deine Morgen Routine ist dein Anker.</item>
+        <item>Der Drang ist Daten, nicht Schicksal.</item>
+        <item>Du beraubst nicht dich selbst. Du beschützt dich selbst.</item>
+        <item>Zehn Minuten außen ist zehn Minuten dein Verstand war nicht jagend dafür.</item>
+        <item>Diese Woche ist anders von der letzten. Sehe den Unterschied.</item>
+        <item>Deine Familie bemerkt. Sie sagen es noch nicht, aber sie bemerken.</item>
+        <item>Die Gewohnheit fütterte deine Angst. Sehe es schrumpfen, wenn du bleibend bleibst.</item>
+        <item>Du wirst jemand, der still sitzen kann.</item>
+        <item>Einen Tag gleichzeitig ist nicht Schwäche. Das ist Strategie.</item>
+        <item>Dein Schlag ist dein Körpers Art um zu heilen. Ehre das.</item>
+        <item>Der Drang wird schwächer, wenn du nicht mit ihm kämpfst.</item>
+        <item>Du beginnst nicht neu. Du setzt fort.</item>
+        <item>Ersatz Gewohnheiten brauchen Zeit. Sei geduldig mit dir selbst.</item>
+        <item>Dieser Moment ist leichter als der letzte war.</item>
+        <item>Dein Verstand ist weniger überfüllt jetzt. Fühle den Platz.</item>
+        <item>Arbeit ist klarer, wenn die Gewohnheit nicht im Weg ist.</item>
+        <item>Das alte Muster hatte einen Kosten. Du bist frei davon jetzt.</item>
+        <item>Du lernst, gelangweilt zu sein. Das ist eine echte Fähigkeit.</item>
+        <item>Der Morgen ist dein. Was wirst du damit schaffen?</item>
+        <item>Deine Hände zittern weniger jetzt. Hast du bemerkt?</item>
+        <item>Das ist, was ruhig sich anfühlt.</item>
+        <item>Du brauchst nicht Genehmigung, um zu brechen. Du hast es schon.</item>
+        <item>Der Drang verstreicht. Jeden Mal, das es verstreicht.</item>
+        <item>Dein Körper erinnert sich die Gewohnheit. Dein Verstand weiß besser.</item>
+        <item>Klein Disziplin heute baut groß Freiheit morgen.</item>
+        <item>Du bist nicht kaputt. Du rediriist gerade deine Kraft.</item>
+        <item>Zehn Tausend kleine Momente von Wahl brachten dich hier.</item>
+        <item>Die Gewohnheit würde immer hier sein, wenn du es futztertest. Du tat nicht.</item>
+        <item>Deine Freunde möchten dich so sehen. Klar und präsent.</item>
+        <item>Die Abend Routine ist dein Belohnung, nicht dein Test.</item>
+        <item>Du atmet tiefer jetzt.</item>
+        <item>Der Drang hatte verloren seine Kraft, um Entscheidungen für dich zu machen.</item>
+        <item>Heute hast du Energie für etwas Echtes.</item>
+        <item>Dankbarkeit für was du gewinnen, schlägt Bedauern über was du verloren.</item>
+        <item>Du weißt nicht weiß-knuckle. Du wählst.</item>
+        <item>Die Gewohnheit gedeiht in Dunkelheit. Licht ist dein Verbündeter.</item>
+        <item>Dein Fokus schärft, wenn du aufhöre, Energie auf ihn zu verbrennen.</item>
+        <item>Kaltwasser wacht dich auf, die Art die Gewohnheit zu. Ohne den Kosten.</item>
+        <item>Du beraubst nicht dich selbst. Du investierst in dich selbst.</item>
+        <item>Der Drang ist laut an manche Tagen, leise an anderen. Beides ist fine.</item>
+        <item>Dein Schlag Schuld schrumpft.</item>
+        <item>Der Spaziergang, den du diese Morgen nahmst, hatte einen Zweck: um dich zu erinnern, dass du kannst ruhig sein.</item>
+        <item>Du bist nicht vollkommen. Du bist persistente.</item>
+        <item>Die Gewohnheit lebt in Gewohnheit. Unterbreche die Gewohnheit, unterbreche seine Kraft.</item>
+        <item>Dein Verstand ist ein Werkzeug wieder, nicht ein Schlachtfeld.</item>
+        <item>Der Morgen ist dein leere Seite.</item>
+        <item>Du lehrst deinem Nervensystem einen neuen Weg um dich sicher zu fühlen.</item>
+        <item>Das ist was du wähltest. Bleibe es wählen.</item>
+        <item>Das alte Muster möchte wie Freiheit sich anfühlen. Echte Freiheit fühlt sich wie das an.</item>
+        <item>Deine Energie wird nicht mehr von morgen geliehen.</item>
+        <item>Der Drang wird dich testen. Lass ihn. Du bestiegest jeden Test bislang.</item>
+        <item>Disziplin ist Liebe, angewendet um dich selbst.</item>
+        <item>Du rennst nicht von der Gewohnheit. Du rennst zu etwas Besseres.</item>
+        <item>Die Klarheit, die du fühlst jetzt, ist wert zu beschützen.</item>
+        <item>Ein ruhiger Abend beweist, dass du viele haben kannst.</item>
+        <item>Dein Körper heilt. Vertraue dem Prozess.</item>
+        <item>Der Moment, dass du kämpfen aufhörst, ist der Moment, dass du gewinnen fängst.</item>
+        <item>Du baust ein Leben, das die Gewohnheit keinen Platz darin hat.</item>
+        <item>Der Drang ernährt sich von Geheimnis. Bringe es ins Licht und sehe es schrumpfen.</item>
+        <item>Schlag ist wo dein Körper deine Versprechen behält.</item>
+        <item>Die Ersatz Gewohnheit wird real jetzt.</item>
+        <item>Du vermisst nicht die Gewohnheit. Du erinnerst dich selbst.</item>
+        <item>Die Morgen Routine ist dein tägliches Abstimmung für dich selbst.</item>
+        <item>Dankbarkeit für den Moment, dass du in schlägt Sorge über den Moment vorn.</item>
+        <item>Dein Verstand hat Platz für etwas Neues jetzt.</item>
+        <item>Der Spaziergang durch die Wälder ist die Medizin, die die Gewohnheit vorgab zu sein.</item>
+        <item>Du lernst, dass du mit Unbehagen sitzen kannst, ohne ihn zu füttern.</item>
+        <item>Die Gewohnheit gedeiht auf Dringlichkeit. Ruhe ist seine Feind.</item>
+        <item>Dein Fokus kehrt der Moment zurück, den du aufhörst, ihn zu teilen.</item>
+        <item>Jeden kleine Sieg ist Genehmigung um an die größeren zu glauben.</item>
+        <item>Du beraubst nicht dich selbst. Du praktizierst Freiheit.</item>
+        <item>Der Drang ist ein Besucher, nicht ein Vermieter.</item>
+        <item>Deine Energie räumt einen Weg für etwas Echtes.</item>
+        <item>Das alte Muster ist stiller, weil du es nicht fütterst.</item>
+        <item>Du baust ein Handwerk jetzt, nicht gerade Zeit vorbei bringend.</item>
+        <item>Disziplin ohne Mitgefühl ist Bestrafung. Du weißt den Unterschied.</item>
+        <item>Die Nacht ist stiller. Schlag kommt leichter. Du fühlst das.</item>
+        <item>Deine Freunde möchten diese Version von dir. Die klare.</item>
+        <item>Die Gewohnheit versprach Flucht. Du fand etwas Besseres: Präsenz.</item>
+        <item>Der Drang wird morgen kommen. Du weißt, wie man damit umgeht.</item>
+        <item>Die Morgen Routine verkabelt dein Gehirn neu einen Tag gleichzeitig.</item>
+        <item>Du bist nicht stark, weil du den Drang nicht fühlst. Du bist stark, weil du dich täuscht und du wählst trotzdem.</item>
+        <item>Dein Verstand ist weniger überfüllt. Was wirst du mit dem Platz machen?</item>
+        <item>Die Gewohnheit ernährt sich von Langeweile. Du lernst, gelangweilt zu sein und trotzdem zu leben.</item>
+        <item>Dankbarkeit für deinen Körper, der heilt, der versuchst.</item>
+        <item>Der Spaziergang diese Morgen war Praxis. Bleibe praktizierend.</item>
+        <item>Dein Schlag ist tiefer, wenn dein Verstand nicht geteilt ist.</item>
+        <item>Der Drang verliert Macht der Moment, den du aufhörst, an seine Notwendigkeit zu glauben.</item>
+        <item>Du beginnst nicht von Null. Du fängst von jetzt an.</item>
+        <item>Das alte Muster versprach Erleichterung. Die echte Erleichterung lebt ohne es.</item>
+        <item>Dein Fokus schärft mit jede Wahl um abzuwenden.</item>
+        <item>Das Kaltwasser erinnert dich: Unbehagen verlangt nicht die Gewohnheit.</item>
+        <item>Du kämpfst nicht mehr an. Du fütterst gerade nicht das Feuer.</item>
+        <item>Die Gewohnheit wollte deine Morgen. Nimm es zurück.</item>
+        <item>Deine Hände sind verfügbar für Arbeit jetzt.</item>
+        <item>Der Drang ist echt. Deine Wahl ist echter.</item>
+        <item>Disziplin, angewendet um dich selbst, ist die höchste Form der Liebe.</item>
+        <item>Der Abend ist dein. Keine Verhandlung. Kein Drang. Gerade Abend.</item>
+        <item>Dein Verstand lehrt sich, ruhig zu sein. Lass es lernen.</item>
+        <item>Die Gewohnheit war laut. Dein Ruhe ist lauter.</item>
+        <item>Die Ersatz Gewohnheit wird Heimat jetzt.</item>
+        <item>Du lehrst deinem Nervensystem, dass du sicher bist ohne es.</item>
+        <item>Der Morgen Spaziergang ist dein täglicher Erinnerung: Du kannst deine eigene Richtung wählen.</item>
+        <item>Dankbarkeit für den Moment, der dich hier brachte, egal was es war.</item>
+        <item>Dein Fokus wurde gebrochen. Es kommt zurück.</item>
+        <item>Der Drang wird an Spitze und fallen. Das tut es immer.</item>
+        <item>Schlag ist nicht Genuss. Das ist Infrastruktur.</item>
+        <item>Das alte Muster ist ein Tür, dass du nicht öffnen brauchst.</item>
+        <item>Deine Energie wird nicht länger ausgeben auf verstecken.</item>
+        <item>Der Moment, dass du den Drang akzeptierst, ist der Moment, dass er Kraft verliert.</item>
+        <item>Die Gewohnheit versprach Aufregung. Du fandest Frieden. Das ist besser.</item>
+        <item>Du bist nicht vollkommen. Du bist ehrlich. Das ist genug.</item>
+        <item>Der Tag vorn ist dein. Nutze es.</item>
+        <item>Dein Körper weiß, dass es heilt. Vertraue es.</item>
+        <item>Der Drang ist ein Flüstern, nicht ein Schrei, weil du es nicht fütterst.</item>
+        <item>Disziplin ist die Brücke zwischen wer du bist und wer du sein möchtest.</item>
+        <item>Der Spaziergang, dass du nimmst, ist die Antwort, die du suchte.</item>
+        <item>Du rennst nicht von Vergnügen. Du rennst zu Präsenz.</item>
+        <item>Der Morgen ist der Anfang von alles.</item>
+        <item>Die Gewohnheit wird dich testen. Du wirst bestehen.</item>
+        <item>Dein Fokus ist ein Muskel. Du trainierst es.</item>
+        <item>Der Schlag, dass du bekommst, ist dein Körper sagen: danke.</item>
+        <item>Du baust etwas, dass die Gewohnheit keinen Teil in hatte.</item>
+        <item>Der Drang kommt von Erinnerung, nicht Notwendigkeit.</item>
+        <item>Dankbarkeit für den Teil von dir, der verändern möchte.</item>
+        <item>Das Kaltwasser ist dein Verbündeter.</item>
+        <item>Du bist nicht stark trotz dem Kampf. Du bist stark deswegen davon.</item>
+        <item>Das alte Muster verblasst, weil du es nicht verstärkst.</item>
+        <item>Dein Verstand räumt das Zimmer für Arbeit, Studium, Handwerk.</item>
+        <item>Die Abend Routine ist dein Versprechen, dass du dir selbst hältst.</item>
+        <item>Der Drang wird kommen, wenn du müde bist. Du weißt was zu tun.</item>
+        <item>Du beraubst nicht dich selbst. Du lehrst dich selbst, etwas Echtes.</item>
+        <item>Die Gewohnheit fütterte deine Angst. Sehe, wie Ruhe ohne wächst.</item>
+        <item>Schlag ist wo die Arbeit der Heilung passiert.</item>
+        <item>Deine Energie wird nicht länger auf Darlehen von nächster Woche.</item>
+        <item>Die Ersatz Gewohnheit wird Teil von dir jetzt.</item>
+        <item>Der Spaziergang ist nicht Übung. Das ist Erinnerung.</item>
+        <item>Du lernst, dass du okay sein kannst ohne die Gewohnheit Genehmigung.</item>
+        <item>Disziplin ist nicht Bestrafung. Das ist Beschützer.</item>
+        <item>Die Morgen Routine ist ein Liebesbrief, dass du täglich dir selbst schreibest.</item>
+        <item>Der Fokus, dass kommt zurück, ist dein.</item>
+        <item>Der Drang ist laut an schwere Tage. Das ist normal. Du machst das fine.</item>
+        <item>Dankbarkeit für deine Hände, die frei sind jetzt.</item>
+        <item>Die Gewohnheit flüsterte in dein Ohr. Deine eigene Stimme ist lauter jetzt.</item>
+        <item>Das alte Muster versprach Erleichterung. Du baust das echte Ding.</item>
+        <item>Dein Körper lehrt dich über Ruhe.</item>
+        <item>Der Moment, dass du kämpfen aufhörst, ist der Moment, dass du gewinnst.</item>
+        <item>Du vermisst nicht irgendetwas. Du gewinnt alles.</item>
+        <item>Der Drang ist ein Test, dass du tausendmal schon bestanden hast.</item>
+        <item>Der Abend ist stiller, weil dein Tag auf deine eigenen Bedingungen war.</item>
+        <item>Dein Verstand ist weniger fragmentiert.</item>
+        <item>Das Kaltwasser ist Beweis, dass du Unbehagen wählen kannst.</item>
+        <item>Die Gewohnheit ernährt sich von Geheimnis. Deine Ehrlichkeit ist sein Feind.</item>
+        <item>Schlag heilt. Lass es passieren.</item>
+        <item>Der Morgen Spaziergang ist dein täglich Reset Knopf.</item>
+        <item>Du bist nicht schwach, weil du den Drang fühlst. Du bist stark, weil du damit konfrontierst.</item>
+        <item>Disziplin ist Selbstrespekt in Aktion.</item>
+        <item>Der Fokus kehrt zurück, weil du aufgehört hast, ihn zu zerstreuen.</item>
+        <item>Deine Freunde sehen jemand, den sie erkennten. Das ist du.</item>
+        <item>Das alte Muster ist Geschichte. Du bist jetzt in Präsens Spannung.</item>
+        <item>Die Gewohnheit wollte deine Zeit. Du forderst es zurück.</item>
+        <item>Dankbarkeit für die Klarheit, die kommt.</item>
+        <item>Der Drang wird besuchen. Du weißt den Weg zur Tür.</item>
+        <item>Du rennst nicht von Vergnügen. Du rennst zu Wahrheit.</item>
+        <item>Die Abend Routine ist Struktur ohne Bestrafung.</item>
+        <item>Dein Körper heilt, weil du darauf zuhörst.</item>
+        <item>Die Ersatz Gewohnheit wird real heute.</item>
+        <item>Der Moment, dass der Drang verstreicht, ist Beweis, dass es immer verstreicht.</item>
+        <item>Du bist nicht vollkommen. Du bist persistente. Das ist das gleiche wie Stärke.</item>
+        <item>Die Gewohnheit war laut. Dein Ruhe ist Revolution.</item>
+        <item>Schlag ist nicht Trägheit. Das ist die wichtigste Arbeit, die du machst.</item>
+        <item>Der Morgen ist ein Geschenk, dass du täglich dir selbst gibest.</item>
+        <item>Dein Fokus schärft, weil es nicht länger geteilt ist.</item>
+        <item>Das Kaltwasser ist ein Lehrer. Höre, was es sagt.</item>
+        <item>Der Drang ist Ehrlichkeit. Das ist dir sagen, was du immer noch durcharbeiten brauchst.</item>
+        <item>Disziplin ist das Gespräch zwischen dir und dich selbst.</item>
+        <item>Das alte Muster hatte einen Schwerkraft Ziehen. Du verlässt sein Umlaufbahn.</item>
+        <item>Deine Energie baut statt zu entwässern.</item>
+        <item>Dankbarkeit für den Teil von dir, der dieses wählte.</item>
+        <item>Die Gewohnheit versprach Flucht. Du fandest etwas Besseres: dich selbst.</item>
+        <item>Der Abend, dass du hast, ist der, dass du verdientest.</item>
+        <item>Du lernst, um gelangweilt zu sein und mit es okay zu sein.</item>
+        <item>Der Drang ist eine Erinnerung. Das ist dich erinnern, warum du beganntest.</item>
+        <item>Dein Verstand wird ein Heimat wieder.</item>
+        <item>Die Ersatz Gewohnheit wird Identität.</item>
+        <item>Der Morgen Spaziergang ist dein Gespräch mit dir selbst.</item>
+        <item>Du kämpfst nicht gegen die Gewohnheit mehr an. Du ignorierst sie.</item>
+        <item>Disziplin ist Liebe. Selbst-Liebe, spezifisch.</item>
+        <item>Der Fokus, dass wiederkehrt, war immer dein.</item>
+        <item>Die Gewohnheit war dein Schlaf stehlen. Bemerke, wie es zurück kommt.</item>
+        <item>Dankbarkeit für dein Nervensystem, das lernt um zu beruhigen.</item>
+        <item>Das alte Muster wird ein Fremder.</item>
+        <item>Deine Hände sind verfügbar für Arbeit, Studium, Handwerk, Verbindung.</item>
+        <item>Das Kaltwasser ist ein kleine Sieg, dass du täglich wählst.</item>
+        <item>Der Drang kommt. Der Drang geht. Du bleibst.</item>
+        <item>Schlag ist Architektur. Baue es fest.</item>
+        <item>Die Morgen Routine ist dein täglich Praxis in wählend dich selbst.</item>
+        <item>Der Abend ist ein Heiligtum, dass du Backstein für Backstein aufbaust.</item>
+        <item>Deine Klarheit ist kein Unfall. Das ist die Folgerung von kleine Wahlen.</item>
+        <item>Die Ersatz Gewohnheit wird leichter.</item>
+        <item>Die Gewohnheit ernährt sich von Stress. Sehe deinen Stress vermindern.</item>
+        <item>Disziplin ohne Freude ist bloß leiden. Du weißt den Unterschied.</item>
+        <item>Der Spaziergang ist nicht Flucht. Das ist Rückkehr.</item>
+        <item>Dein Fokus ist ein Werkzeug, das sich selbst schärft.</item>
+        <item>Dankbarkeit für den Moment, dass du entschied um zu verändern.</item>
+        <item>Der Drang ist eine Welle. Du hast gelernt nicht darin zu tauchen.</item>
+        <item>Das alte Muster verliert seine Erzähler Kraft über dir.</item>
+        <item>Du rennst nicht von der Gewohnheit. Du rennst zu dir selbst.</item>
+        <item>Dein Körper erinnert sich, was Ruhe sich anfühlt wie.</item>
+        <item>Der Morgen ist eine Leinwand. Heute malst du etwas Echtes.</item>
+        <item>Das Kaltwasser erinnert dich: Unbehagen ist nicht das gleiche wie Harm.</item>
+        <item>Schlag ist nicht länger eine Erleichterung. Das ist einen normal Teil von Leben.</item>
+        <item>Dein Verstand klärt, weil du aufgehört hast, den Nebel zu füttern.</item>
+        <item>Die Gewohnheit wollte deine Aufmerksamkeit. Du gibest es etwas, das dich verdient statt.</item>
+        <item>Disziplin ist die Tat von Versprechen zu dir selbst halten.</item>
+        <item>Die Abend Routine ist ein Ritual, nicht ein Käfig.</item>
+        <item>Der Drang wird an Spitze. Du wirst es fallen sehen. Du wirst fine sein.</item>
+        <item>Dankbarkeit für die Stärke, dass du nicht wusstest, dass du hattest.</item>
+        <item>Die Ersatz Gewohnheit wird nahtlos jetzt.</item>
+        <item>Dein Fokus kehrt zurück, weil du aufgehört hast, ihn zu teilen.</item>
+        <item>Das alte Muster ist eine Tür, dass du gelernt hast vorbeizugehen.</item>
+        <item>Du lernst, dass Ruhe mächtiger ist als jede Flucht.</item>
+        <item>Die Gewohnheit war ein geliehenes Leben. Das ist dein.</item>
+        <item>Der Morgen Spaziergang ist dein täglich Gespräch mit Klarheit.</item>
+        <item>Schlag ist die Grundlage. Alles anders ist darauf gebaut.</item>
+        <item>Disziplin ist die Architektur von Freiheit.</item>
+        <item>Der Drang ist ehrlich. Das ist dir sagen wo die Arbeit immer noch ist.</item>
+        <item>Deine Energie ist dein wieder. Was wirst du damit bauen?</item>
+        <item>Der Abend ist stiller, weil dein Tag auf deinen Bedingungen ist.</item>
+        <item>Das Kaltwasser ist eine kleine Versprechen: Du kannst harte Dinge tun.</item>
+        <item>Der Fokus kommt zurück, einen Tag gleichzeitig.</item>
+        <item>Dankbarkeit für deinen Körper, der weiterhin versucht.</item>
+        <item>Das alte Muster ist Geschichte. Deine Geschichte ist jetzt.</item>
+        <item>Die Ersatz Gewohnheit wird wer du bist.</item>
+        <item>Die Gewohnheit versprach Aufregung. Du fandest Bedeutung. Das ist besser.</item>
+        <item>Dein Verstand ist weniger überfüllt. Was wirst du einladen hinein?</item>
+        <item>Die Morgen Routine ist dein täglich Beweis, dass du kannst wählen.</item>
+        <item>Der Drang wird kommen und gehen. Du wirst bleiben.</item>
+        <item>Schlag ist das beste Arbeit, das du tust.</item>
+        <item>Disziplin, angewendet mit Mitgefühl, ist unaufhaltsam.</item>
+        <item>Der Spaziergang ist nicht Laufen. Das ist Rückkehr.</item>
+        <item>Dein Fokus schärft mit jedem Moment, dass du klar bleibst.</item>
+        <item>Dankbarkeit für die Person, dass du wirst.</item>
+        <item>Das alte Muster hatte sein Moment. Dieser Moment ist dein.</item>
+    </string-array>
+</resources>

@@ -653,4 +653,80 @@
     <string name="punch_guard_6">Les apps ont gagné quelques manches. Matrix compte les points pour que vous prépariez la revanche.</string>
     <string name="profile_language">Langue</string>
     <string name="profile_language_system">Par défaut du système</string>
+
+    <!-- Quit tracker -->
+    <string name="nav_quit">Arrêter</string>
+    <string name="quit_subtitle">Un jour à la fois</string>
+    <string name="quit_thought_title">Pensée du jour</string>
+    <string name="quit_thought_another">Une autre pensée</string>
+    <string name="quit_urge_title">Une envie?</string>
+    <string name="quit_urge_body">Elle monte, atteint un pic et passe. Respire avec pendant deux minutes.</string>
+    <string name="quit_urge_start">Chevauche la vague</string>
+    <plurals name="quit_urges_ridden">
+        <item quantity="one">%d vague chevauchée</item>
+        <item quantity="many">%d vagues chevauchées</item>
+        <item quantity="other">%d vagues chevauchées</item>
+    </plurals>
+    <string name="quit_section">Tes parcours</string>
+    <string name="quit_empty_title">Commencer quelque chose de nouveau</string>
+    <string name="quit_empty_body">Ajoute tout ce que tu veux laisser derrière. Seule tu vois le nom que tu lui donnes.</string>
+    <string name="quit_add_first">Ajouter un suivi</string>
+    <string name="quit_new">Nouveau suivi</string>
+    <string name="quit_edit_title">Modifier le suivi</string>
+    <plurals name="quit_days_word">
+        <item quantity="one">jour</item>
+        <item quantity="many">jours</item>
+        <item quantity="other">jours</item>
+    </plurals>
+    <string name="quit_run_today">+ %1$d h %2$d min</string>
+    <string name="quit_best">Meilleur: %s</string>
+    <string name="quit_next">Suivant: %s</string>
+    <string name="quit_days_short">%d j</string>
+    <string name="quit_days_hours">%1$d j %2$d h</string>
+    <string name="quit_hours_minutes">%1$d h %2$d min</string>
+    <string name="quit_ring_desc">%1$d jours, %2$d%% du chemin vers %3$d jours</string>
+    <string name="quit_slipped">J\'ai glissé</string>
+    <string name="quit_slip_title">Recommencer?</string>
+    <string name="quit_slip_body">Ça arrive. Une glissade c\'est une information, pas la fin. Ton meilleur parcours reste sauvegardé.</string>
+    <string name="quit_slip_confirm">Recommencer</string>
+    <plurals name="quit_recent_slips">
+        <item quantity="one">%d redémarrage au cours des 30 derniers jours</item>
+        <item quantity="many">%d redémarrages au cours des 30 derniers jours</item>
+        <item quantity="other">%d redémarrages au cours des 30 derniers jours</item>
+    </plurals>
+    <string name="quit_more">Plus d\'options</string>
+    <string name="quit_edit">Modifier</string>
+    <string name="quit_delete_title">Supprimer ce suivi?</string>
+    <string name="quit_delete_body">Son historique est supprimé de cet appareil.</string>
+    <string name="quit_name">Nom</string>
+    <string name="quit_name_hint">N\'importe quel nom fonctionne. Seule tu la vois.</string>
+    <string name="quit_reason">Pourquoi ça compte (optionnel)</string>
+    <string name="quit_started">Commencé</string>
+    <string name="quit_started_now">Maintenant</string>
+    <string name="quit_started_pick">Choisis une date</string>
+    <string name="quit_private_note">Reste sur cet appareil. Pas dans Matrix, sauvegardes ou exports.</string>
+    <string name="quit_breathe_in">Inspire</string>
+    <string name="quit_breathe_hold">Retiens</string>
+    <string name="quit_breathe_out">Expire</string>
+    <string name="quit_urge_left">%1$d:%2$02d restant</string>
+    <string name="quit_urge_done_title">La vague est passée</string>
+    <string name="quit_urge_done_body">Tu l\'as remarquée, tu as rester avec et tu l\'as laissée aller.</string>
+    <string name="quit_urge_done">Terminé</string>
+    <string name="quit_urge_leave">Quitter</string>
+    <string name="quit_urge_idea_title">Ensuite, essaie une chose</string>
+    <string-array name="quit_urge_ideas">
+        <item>Bois un verre d\'eau.</item>
+        <item>Sors dehors pendant cinq minutes.</item>
+        <item>Fais dix squats lents.</item>
+        <item>Lave ton visage avec de l\'eau froide.</item>
+        <item>Envoie un message à quelqu\'un en qui tu as confiance.</item>
+        <item>Change de pièce et allume les lumières.</item>
+        <item>Laisse ton appareil dans une autre pièce pendant un moment.</item>
+        <item>Écris ce que tu ressens maintenant.</item>
+        <item>Range une petite chose près de toi.</item>
+        <item>Étire-toi lentement pendant deux minutes.</item>
+        <item>Fais-toi une boisson chaude.</item>
+        <item>S\'il est tard, va te coucher.</item>
+    </string-array>
+    <!-- /Quit tracker -->
 </resources>

@@ -653,4 +653,80 @@
     <string name="punch_guard_6">Las apps ganaron unas rondas. Matrix lleva la cuenta para que planees la revancha.</string>
     <string name="profile_language">Idioma</string>
     <string name="profile_language_system">Predeterminado del sistema</string>
+
+    <!-- Quit tracker -->
+    <string name="nav_quit">Dejar</string>
+    <string name="quit_subtitle">Un día a la vez</string>
+    <string name="quit_thought_title">Pensamiento del día</string>
+    <string name="quit_thought_another">Otro pensamiento</string>
+    <string name="quit_urge_title">¿Sintiendo un impulso?</string>
+    <string name="quit_urge_body">Sube, alcanza un pico y pasa. Respira con él dos minutos.</string>
+    <string name="quit_urge_start">Monta la ola</string>
+    <plurals name="quit_urges_ridden">
+        <item quantity="one">%d ola superada</item>
+        <item quantity="many">%d de olas superadas</item>
+        <item quantity="other">%d olas superadas</item>
+    </plurals>
+    <string name="quit_section">Tus caminos</string>
+    <string name="quit_empty_title">Comienza algo nuevo</string>
+    <string name="quit_empty_body">Añade cualquier cosa que quieras dejar atrás. Solo tú ves el nombre que le das.</string>
+    <string name="quit_add_first">Añade un rastreador</string>
+    <string name="quit_new">Nuevo rastreador</string>
+    <string name="quit_edit_title">Editar rastreador</string>
+    <plurals name="quit_days_word">
+        <item quantity="one">día</item>
+        <item quantity="many">días</item>
+        <item quantity="other">días</item>
+    </plurals>
+    <string name="quit_run_today">+ %1$d h %2$d min</string>
+    <string name="quit_best">Mejor: %s</string>
+    <string name="quit_next">Próximo: %s</string>
+    <string name="quit_days_short">%d d</string>
+    <string name="quit_days_hours">%1$d d %2$d h</string>
+    <string name="quit_hours_minutes">%1$d h %2$d min</string>
+    <string name="quit_ring_desc">%1$d días, %2$d%% del camino a %3$d días</string>
+    <string name="quit_slipped">Me deslicé</string>
+    <string name="quit_slip_title">¿Empezar de nuevo?</string>
+    <string name="quit_slip_body">Sucede. Un desliz es información, no el final. Tu mejor carrera sigue guardada.</string>
+    <string name="quit_slip_confirm">Empezar de nuevo</string>
+    <plurals name="quit_recent_slips">
+        <item quantity="one">%d reinicio en los últimos 30 días</item>
+        <item quantity="many">%d de reinicios en los últimos 30 días</item>
+        <item quantity="other">%d reinicios en los últimos 30 días</item>
+    </plurals>
+    <string name="quit_more">Más opciones</string>
+    <string name="quit_edit">Editar</string>
+    <string name="quit_delete_title">¿Borrar este rastreador?</string>
+    <string name="quit_delete_body">Su historial se elimina de este dispositivo.</string>
+    <string name="quit_name">Nombre</string>
+    <string name="quit_name_hint">Cualquier nombre funciona. Solo tú lo ves.</string>
+    <string name="quit_reason">Por qué importa (opcional)</string>
+    <string name="quit_started">Comenzado</string>
+    <string name="quit_started_now">Ahora mismo</string>
+    <string name="quit_started_pick">Elige una fecha</string>
+    <string name="quit_private_note">Permanece en este dispositivo. No en Matrix, copias de seguridad o exportaciones.</string>
+    <string name="quit_breathe_in">Inhala</string>
+    <string name="quit_breathe_hold">Sostén</string>
+    <string name="quit_breathe_out">Exhala</string>
+    <string name="quit_urge_left">%1$d:%2$02d restante</string>
+    <string name="quit_urge_done_title">La ola pasó</string>
+    <string name="quit_urge_done_body">Lo notaste, permaneciste con él y lo dejaste ir.</string>
+    <string name="quit_urge_done">Listo</string>
+    <string name="quit_urge_leave">Salir</string>
+    <string name="quit_urge_idea_title">Luego intenta una cosa</string>
+    <string-array name="quit_urge_ideas">
+        <item>Bebe un vaso de agua.</item>
+        <item>Sal afuera cinco minutos.</item>
+        <item>Haz diez sentadillas lentas.</item>
+        <item>Lávate la cara con agua fría.</item>
+        <item>Envía un mensaje a alguien en quien confíes.</item>
+        <item>Cambia de habitación y enciende las luces.</item>
+        <item>Deja tu dispositivo en otra habitación por un tiempo.</item>
+        <item>Escribe lo que sientes ahora.</item>
+        <item>Ordena una cosa pequeña cerca de ti.</item>
+        <item>Estira lentamente dos minutos.</item>
+        <item>Prepárate una bebida caliente.</item>
+        <item>Si es tarde, ve a dormir.</item>
+    </string-array>
+    <!-- /Quit tracker -->
 </resources>

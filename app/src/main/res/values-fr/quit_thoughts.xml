@@ -1,0 +1,1012 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generated: one line per item. Calm, neutral; never names a specific habit. -->
+<resources>
+    <string-array name="quit_thoughts">
+        <item>L\'envie monte comme une vague. Elle atteint son apogée. Elle passe. Tu peux la surfer.</item>
+        <item>En ce moment, ressens-la sans la combattre. Ce moment est temporaire.</item>
+        <item>Qu\'y a-t-il sous l\'envie? L\'ennui? La solitude? La fatigue? Nomme-le.</item>
+        <item>Tu n\'as pas besoin d\'agir sur chaque sentiment. Ressens-le et laisse-le te traverser.</item>
+        <item>L\'envie n\'est pas un ordre. C\'est juste une pensée dans ton esprit.</item>
+        <item>Fais une pause de 10 minutes. Le manque va changer.</item>
+        <item>Quand l\'envie vient, respire lentement. Inspire sur quatre temps, retiens, expire sur six.</item>
+        <item>Qu\'est-ce qui a déclenché ce moment? Remarque-le sans jugement.</item>
+        <item>L\'envie est plus forte au début. Après 15 minutes, elle s\'estompe.</item>
+        <item>Lève-toi. Va dans une autre pièce. Casse le schéma.</item>
+        <item>Ce n\'est pas une faiblesse. C\'est toi qui apprends une nouvelle façon.</item>
+        <item>L\'envie ment. Elle dit que tu en as besoin. Ce n\'est pas vrai. Tu es en sécurité sans.</item>
+        <item>Au lieu d\'agir, écris ce que tu ressens maintenant.</item>
+        <item>Parfois, l\'envie, c\'est l\'ennui qui se déguise. Trouve quelque chose à faire.</item>
+        <item>Tu n\'es pas l\'envie. L\'envie est une passagère, pas la conductrice.</item>
+        <item>Allonge-toi cinq minutes et remarque: l\'envie passera pendant que tu te reposes.</item>
+        <item>Est-il tard? Es-tu fatiguée? Les envies te trompent quand ta vigilance baisse.</item>
+        <item>Tu as ignoré la dernière. Ça t\'a remplie de fierté. Fais-le à nouveau.</item>
+        <item>Ton cerveau se réorganise en ce moment même. C\'est la partie difficile. Tu le fais.</item>
+        <item>L\'envie est plus forte quand tu es seule. Appelle quelqu\'un. Parle.</item>
+        <item>Tu as survécu à la dernière. Tu survivras à celle-ci aussi.</item>
+        <item>Que ferait ta meilleure version en ce moment? Écoute cette voix.</item>
+        <item>Le pic du manque dure des minutes, pas des heures. Tu peux l\'attendre.</item>
+        <item>Assieds-toi avec l\'envie comme une vague dans l\'océan. Laisse-la rouler devant toi.</item>
+        <item>Ce n\'est pas pour toujours. C\'est juste maintenant.</item>
+        <item>L\'envie chuchote des mensonges. Tu es plus forte que le mensonge.</item>
+        <item>Étire ton corps. Fais circuler le sang dans tes membres. Les envies s\'estompent avec le mouvement.</item>
+        <item>Tu construis quelque chose. Chaque moment où tu marques une pause est une brique dans les fondations.</item>
+        <item>Quand tu veux échapper, trouve le vrai sentiment dessous et fais-y face à la place.</item>
+        <item>L\'envie est une habitude, pas un besoin. Ton corps s\'habituera.</item>
+        <item>Remarque l\'envie sans jugement. N\'ajoute pas la honte au-dessus du manque.</item>
+        <item>Tu peux rester avec ça pendant cinq minutes et voir ce qui arrive.</item>
+        <item>L\'envie veut que tu croies que c\'est permanent. Ce ne l\'est pas. C\'est des nuages qui passent.</item>
+        <item>Qu\'as-tu fait la dernière fois quand tu as résisté? Fais la même chose à nouveau.</item>
+        <item>L\'envie est une information. Elle te dit que quelque chose compte pour toi. Écoute, puis choisis.</item>
+        <item>Les soirées tardives amènent des envies. Un coucher tôt les prévient.</item>
+        <item>Tu n\'échoues pas quand tu ressens l\'envie. Tu échoues seulement si tu le crois.</item>
+        <item>L\'envie est une vague avec ton nom dessus. Tu as appris à en faire du surf.</item>
+        <item>Quand tu es seule, l\'envie promet une connexion. Cherche une véritable connexion à la place.</item>
+        <item>L\'envie n\'est pas de l\'amour. Ne la confonds pas avec quelque chose qu\'elle n\'est pas.</item>
+        <item>Tu as eu beaucoup d\'envies et tu as survécu à toutes. C\'est juste une de plus.</item>
+        <item>L\'ennui est un déclencheur. Aie une liste de choses qui comptent pour toi.</item>
+        <item>L\'envie te dit de te dépêcher. Tu peux aller lentement à la place.</item>
+        <item>Ton système nerveux apprend que tu es en sécurité sans l\'habitude.</item>
+        <item>Assieds-toi. Respire. Compte jusqu\'à 100. L\'envie s\'adoucira.</item>
+        <item>L\'envie est plus forte quand tu résistes avec peur. Respire plutôt avec acceptation.</item>
+        <item>Tu as choisi d\'arrêter. Souviens-toi de ça. Appuie-toi sur ce choix.</item>
+        <item>Le stress déclenche des envies. Nomme le stress. Traite-le séparé du manque.</item>
+        <item>L\'envie va visiter. Ça ne veut pas dire que tu dois l\'inviter.</item>
+        <item>Tu réorganises ton défaut. Ça prend du temps et de la tendresse.</item>
+        <item>L\'envie est une passagère sur un bus que tu conduis. Laisse-la s\'asseoir. Continue.</item>
+        <item>Les envies montent vite et tombent vite. Ne confonds pas un pic avec pour toujours.</item>
+        <item>Quel est le vrai besoin? Dormir? Une connexion? Du plaisir? Trouve-le sans l\'habitude.</item>
+        <item>Tu n\'as pas besoin de comprendre l\'envie pour la survivre.</item>
+        <item>L\'envie n\'est pas ta faute. Ta réaction est ton choix.</item>
+        <item>Quand l\'envie vient à 23h, c\'est une information. Va te coucher plus tôt.</item>
+        <item>Tu peux t\'asseoir par terre et respirer et laisser l\'envie être là avec toi.</item>
+        <item>L\'envie va revenir. C\'est normal. Tu la traiteras comme tu as traité les autres.</item>
+        <item>L\'ancien schéma veut ton attention. Tu es autorisée à l\'ignorer.</item>
+        <item>La solitude amplifie les envies. Même un message à un ami l\'affaiblit.</item>
+        <item>L\'envie est une visiteuse. Tu choisis si tu ouvres la porte.</item>
+        <item>Tu construis de nouveaux chemins dans ton cerveau chaque fois que tu marques une pause.</item>
+        <item>L\'envie est plus forte quand tu penses beaucoup à elle. Distrait-toi doucement.</item>
+        <item>Que ferais-tu si l\'envie n\'existait pas? Fais-le maintenant.</item>
+        <item>L\'envie n\'est pas une urgence. Traite-la comme une pensée qui passe.</item>
+        <item>Tu as déjà été ici. Ton corps sait comment passer.</item>
+        <item>L\'habitude a pris du temps à se construire. La rupture prendra du temps à tenir. Sois patient.</item>
+        <item>Quand l\'envie vient, ça veut dire que ton cerveau s\'ajuste encore. C\'est la guérison.</item>
+        <item>Tu n\'as pas besoin d\'être parfait. Tu dois juste continuer à choisir.</item>
+        <item>L\'envie est plus forte quand tu es fatiguée. Le sommeil est un outil puissant.</item>
+        <item>Les envies viennent par vagues. Certaines sont grandes. Certaines sont petites. Toutes passent.</item>
+        <item>La craving est un signe que ton corps change. C\'est une bonne nouvelle.</item>
+        <item>Tu es autorisée à ressentir l\'envie et à ne pas agir. Les deux sont vrais.</item>
+        <item>Qu\'est-ce qui remplit l\'espace que l\'habitude occupait? Construis ça maintenant.</item>
+        <item>L\'envie chuchote doucement d\'abord, puis plus fort si tu écoutes. N\'écoute pas.</item>
+        <item>Lève-toi. L\'envie se calme quand tu bouges ton corps.</item>
+        <item>Tu n\'es pas brisée d\'avoir envie de l\'ancien schéma. Tu es humaine.</item>
+        <item>L\'envie est une boucle d\'habitude. Tu casses la boucle avec chaque pause.</item>
+        <item>Les soirées tardives et la solitude sont la pire combinaison. Prévois-toi contre ça.</item>
+        <item>Tu peux dire à l\'envie: Je te vois. Je te sens. Je ne vais pas le faire de toute façon.</item>
+        <item>L\'envie est comme un nuage. Observe-le. Il s\'éloignera.</item>
+        <item>Tu as déjà survécu aux jours les plus difficiles. Celui-ci te semble familier maintenant.</item>
+        <item>L\'envie peut rester avec toi tandis que tu fais quelque chose d\'autre. C\'est correct.</item>
+        <item>Qu\'est-ce que tu évites en recourant à l\'habitude? Fais-y face à la place.</item>
+        <item>L\'envie est plus forte quand tu restes assis. Le mouvement brise le charme.</item>
+        <item>Tu es plus forte que tu le penses. Ce moment le prouve.</item>
+        <item>L\'habitude a promis du soulagement. Elle a livré le vide. Souviens-toi de ça.</item>
+        <item>L\'envie est ton cerveau qui demande de la dopamine. Trouve une autre source.</item>
+        <item>Tu peux ressentir l\'envie et rester en contrôle. Les deux peuvent être vrais.</item>
+        <item>L\'envie vient de schémas appris, pas de qui tu es.</item>
+        <item>Quand tu es fatiguée, tout est plus difficile. L\'envie n\'est pas spéciale. Repose-toi.</item>
+        <item>Tu n\'as pas besoin de savoir pourquoi tu as l\'envie pour la survivre.</item>
+        <item>La craving est une donnée. L\'ennui? Le stress? La solitude? Apprends le schéma.</item>
+        <item>L\'envie va revenir. Ce n\'est pas un échec. C\'est la rétablissement qui est normal.</item>
+        <item>Tu as choisi ce chemin. Le chemin est étroit maintenant. Il va s\'élargir.</item>
+        <item>L\'envie ment. Elle dit que tu ne peux pas vivre sans. Tu peux et tu le fais.</item>
+        <item>Assieds-toi dans ton inconfort pendant cinq minutes. Ça ne va pas te détruire.</item>
+        <item>L\'envie est plus forte quand tu es prise au dépourvu. Reste alerte.</item>
+        <item>Tu n\'es pas l\'envie. Tu es celle qui remarque l\'envie et qui respire.</item>
+        <item>À quoi ressemblerait de passer à travers aujourd\'hui sans ça? C\'est la récompense.</item>
+        <item>L\'envie est une vague. Tu es le rivage. Laisse-la se briser contre toi et se retirer.</item>
+        <item>Boire de l\'eau, s\'étirer, de l\'eau froide sur le visage, changer de pièce. Choisis-en une.</item>
+        <item>L\'habitude a pris des mois ou des années pour se former. Ton arrêt prendra du temps aussi. C\'est normal.</item>
+        <item>L\'envie n\'est pas un recul sauf si tu crois que c\'est un ordre.</item>
+        <item>Tu peux rester avec l\'envie comme tu resterais avec un invité non désiré.</item>
+        <item>La soirée tardive, c\'est quand les envies sont les plus cruelles. Prévois tes soirées.</item>
+        <item>L\'envie parle en devrais et dois. Ignore-la. Fais ton propre choix.</item>
+        <item>Tu as plus de force de volonté que tu le penses. Ce moment le prouve.</item>
+        <item>L\'envie est un sentiment, pas un fait. Les sentiments changent.</item>
+        <item>Qu\'est-ce que tu deuils que l\'habitude remplissait? Deuil-la. Honore-la. Avance.</item>
+        <item>L\'envie va te tester. Tu vas passer le test. Tu l\'as déjà passé avant.</item>
+        <item>L\'habitude a promis du bonheur. Elle a livré du regret. Choisis le chemin sans regret.</item>
+        <item>Tu n\'as pas besoin de combattre l\'envie. Tu peux juste la remarquer et continuer à vivre.</item>
+        <item>L\'envie est un logiciel qui s\'exécute dans ton cerveau. Tu es la programmeure maintenant.</item>
+        <item>L\'ennui nourrit l\'envie. Le sens l\'affame.</item>
+        <item>La craving est un signal que quelque chose n\'est pas en équilibre. Répare l\'équilibre.</item>
+        <item>Tu es autorisée à lutter. La lutte fait partie du chemin.</item>
+        <item>L\'envie est plus forte dans le silence. Remplis le silence avec de la musique, des voix, une activité.</item>
+        <item>Tu es allée aussi loin. C\'est une preuve. Fais confiance à la preuve.</item>
+        <item>L\'habitude était une évasion. Tu n\'as plus besoin d\'échapper.</item>
+        <item>L\'envie est un membre fantôme. Elle semble réelle mais elle ne l\'est pas vraiment.</item>
+        <item>Qu\'est-ce que tu aimais en toi avant l\'habitude? Reconstruis ça.</item>
+        <item>L\'envie s\'estompera si tu refuses de lui raconter des histoires.</item>
+        <item>Tu réécris ton histoire en ce moment. Chaque pause est un nouveau chapitre.</item>
+        <item>L\'envie est plus forte quand tu es vulnérable. Protège-toi en te reposant.</item>
+        <item>Tu peux être mal à l\'aise et ne pas agir sur l\'envie au même moment.</item>
+        <item>La craving est ton cerveau en sevrage. C\'est temporaire et c\'est la guérison.</item>
+        <item>L\'habitude t\'a gardée petite. Ce choix te rend plus grande.</item>
+        <item>L\'envie est comme une alarme incendie qui sonne. Elle est forte mais la maison ne brûle pas.</item>
+        <item>Tu n\'as pas besoin d\'être confidente pour résister. Tu dois juste choisir.</item>
+        <item>Soirée tardive, fatiguée, seule, ennuyée. C\'est quand les envies attaquent. Connaître ton schéma.</item>
+        <item>L\'envie ce n\'est pas toi. Ta réaction c\'est toi.</item>
+        <item>L\'ancien schéma veut se sentir familier. Tu apprends un nouveau familier.</item>
+        <item>Tu peux reconnaître l\'envie, la remercier d\'être venue, et avancer.</item>
+        <item>La craving est une tempête. Elle va passer. Tu n\'as pas à sortir dedans.</item>
+        <item>Tu es autorisée à ressentir l\'envie sans honte.</item>
+        <item>Qu\'est-ce qui t\'apporte de la joie qui n\'est pas l\'habitude? Fais ça. Construis ça.</item>
+        <item>L\'envie est plus forte quand tu lui donnes toute ton attention. Redirige.</item>
+        <item>Tu as survécu à chaque moment avant celui-ci. Tu survivras à celui-ci.</item>
+        <item>L\'habitude a promis du contrôle. Elle a livré le contraire. Souviens-toi de ça.</item>
+        <item>L\'envie est un test de ton engagement, pas un signe que tu échoues.</item>
+        <item>La solitude nourrit les envies. Atteins les gens avant que l\'envie devienne forte.</item>
+        <item>Tu peux rester avec l\'inconfort pendant 10 minutes. C\'est un long moment.</item>
+        <item>L\'envie va revenir. Chaque fois qu\'elle revient, tu deviens plus forte.</item>
+        <item>L\'ancien chemin voulait que tu croies que tu n\'avais pas de choix. Tu en as.</item>
+        <item>La craving n\'est pas une urgence. Elle en a juste l\'air.</item>
+        <item>Tu construis une vie différente, pas juste en arrêtant une habitude.</item>
+        <item>L\'envie parle doucement d\'abord. C\'est le moment de te détourner.</item>
+        <item>Qu\'est-ce qui te rendrait fière de toi aujourd\'hui? Commence là.</item>
+        <item>L\'envie est une information que l\'ennui ou le stress ou la fatigue est présent.</item>
+        <item>Tu peux te sentir vide et ne pas recourir à l\'habitude au même moment.</item>
+        <item>L\'habitude chuchotait des mensonges. Tu apprends à entendre la vérité à la place.</item>
+        <item>L\'envie va revenir demain. Ce n\'est pas un échec. C\'est la guérison.</item>
+        <item>Tu es autorisée à être imparfait à cela. Un progrès imparfait est toujours un progrès.</item>
+        <item>L\'envie est comme du bruit statique à la radio. Tu peux changer de station.</item>
+        <item>Qu\'est-ce que tu demanderais à ton futur toi maintenant? Écoute ça.</item>
+        <item>La craving est un fantôme d\'un schéma. Les fantômes ne peuvent pas te faire du mal.</item>
+        <item>Tu réorganises ton cerveau avec chaque moment où tu choisis différemment.</item>
+        <item>Les soirées tardives sont dangereuses. Dors tôt. La prévention est la meilleure défense.</item>
+        <item>L\'envie est une habitude qui essaie de se perpétuer. Tu casses la boucle.</item>
+        <item>Tu peux être fatiguée et résistante et réussir quand même.</item>
+        <item>Qu\'est-ce que l\'envie veut que tu oublies? Retiens ce souvenir à la place.</item>
+        <item>L\'habitude t\'a éloignée de toi-même. Ce chemin te ramène.</item>
+        <item>L\'envie est plus forte quand tu es assis. Bouge.</item>
+        <item>Tu n\'as pas besoin de vouloir résister. Tu dois juste le faire de toute façon.</item>
+        <item>La craving est une vague. Tu as chevauché des vagues avant. Tu peux chevaucher celle-ci.</item>
+        <item>Qu\'est-ce qui te remplit qui n\'est pas l\'habitude? Investis en ça.</item>
+        <item>L\'envie va mentir et dire que tu en as besoin. Tu ne l\'as pas. Tu la veux. C\'est différent.</item>
+        <item>L\'ennui est un déclencheur. Aie un plan pour les moments ennuyeux.</item>
+        <item>Tu peux survivre à l\'envie avec la respiration et la patience.</item>
+        <item>L\'ancien schéma frappe à la porte. Tu n\'as pas besoin de répondre.</item>
+        <item>L\'envie est une information. La solitude? Le stress? L\'ennui? Nomme-le et fais-y face.</item>
+        <item>Tu es autorisée à te sentir mal et ne pas agir sur l\'envie.</item>
+        <item>L\'habitude était un mécanisme d\'adaptation. Tu apprends de nouveaux mécanismes maintenant.</item>
+        <item>L\'envie n\'est pas un reflet de ta force de volonté. C\'est un reflet d\'habitude.</item>
+        <item>Qu\'est-ce qui te calme qui n\'est pas l\'habitude? Utilise ça maintenant.</item>
+        <item>La craving est ton corps qui s\'ajuste. Ce n\'est pas une faiblesse. C\'est un changement.</item>
+        <item>Tu peux être mal à l\'aise sans avoir besoin d\'être sauvée par l\'habitude.</item>
+        <item>Les envies tardives sont réelles. Prévois d\'être au lit avant qu\'elles arrivent.</item>
+        <item>L\'envie est plus forte quand tu es isolée. Cherche la connexion.</item>
+        <item>Tu as choisi un chemin plus difficile parce que tu veux quelque chose de mieux. Honore ça.</item>
+        <item>L\'habitude a promis de la joie. Elle a livré du vide. Choisis différemment maintenant.</item>
+        <item>L\'envie est un test. Tu le passes maintenant.</item>
+        <item>À quoi ressemble un esprit calme? Bouge vers ce sentiment.</item>
+        <item>La craving va visiter. Tu n\'as pas besoin de l\'accueillir.</item>
+        <item>Tu construis de la résilience avec chaque moment de résistance.</item>
+        <item>L\'envie veut ton attention. Donne-la à quelque chose qui te mérite à la place.</item>
+        <item>L\'ennui, la solitude, le stress, la fatigue. Connaître tes déclencheurs et prévois-toi.</item>
+        <item>Tu peux être triste et ne pas recourir à l\'habitude.</item>
+        <item>L\'habitude était un raccourci. Tu prends la longue route. C\'est de la sagesse.</item>
+        <item>L\'envie n\'est pas l\'ennemi. C\'est juste une visiteuse. Tu es l\'hôtesse.</item>
+        <item>Qu\'est-ce que tu dirais à ton meilleur ami s\'il ressentait cette envie? Dis-toi ça.</item>
+        <item>La craving est temporaire. Ton choix est permanent.</item>
+        <item>Tu es autorisée à lutter. La lutte développe la force.</item>
+        <item>L\'envie est une vague qui atteint un pic en minutes, pas en heures.</item>
+        <item>Qu\'est-ce que tu veux être connue pour? Pas l\'habitude.</item>
+        <item>Soirée tardive plus fatiguée plus seule égale danger. Préviens cette combinaison.</item>
+        <item>L\'envie est un signal que ton ancien schéma est toujours câblé. Tu le recâbles.</item>
+        <item>Tu peux ressentir le besoin et ne pas agir. C\'est toute la bataille.</item>
+        <item>L\'habitude a menti sur ce qu\'elle ferait. La vérité va te libérer.</item>
+        <item>L\'envie est une information. Écoute. Puis choisis ton propre chemin.</item>
+        <item>Tu es plus forte que tes envies. Ce moment le prouve.</item>
+        <item>La craving s\'estompera si tu lui donnes du temps au lieu d\'agir.</item>
+        <item>Qu\'est-ce qui apporte la paix à ton esprit? Va-y quand l\'envie arrive.</item>
+        <item>L\'envie n\'est pas un échec. Ta réaction est ta mesure.</item>
+        <item>Tu as survécu à des moments plus difficiles. Tu survivras à celui-ci aussi.</item>
+        <item>L\'habitude voulait être ton identité. Tu es plus que ça.</item>
+        <item>L\'envie est un fantôme. Elle n\'a pas de pouvoir sauf si tu lui en donnes.</item>
+        <item>Qu\'est-ce qui te ferait du bien qui n\'implique pas l\'habitude? Fais ça.</item>
+        <item>La solitude est un déclencheur. Atteins les gens avant que le déclencheur ne tire.</item>
+        <item>Tu peux être frustrée et ne pas agir sur l\'envie.</item>
+        <item>L\'ancien schéma est familier. Le nouveau schéma le deviendra aussi.</item>
+        <item>L\'envie est comme un enfant qui veut des bonbons. Tu peux la reconnaître et dire non.</item>
+        <item>Qu\'est-ce que tu construis avec ton refus? Construis ça consciemment.</item>
+        <item>La craving est ton cerveau qui guérit. Ça fait mal parce que la guérison est réelle.</item>
+        <item>Tu es autorisée à te reposer. Se reposer ce n\'est pas une faiblesse.</item>
+        <item>L\'envie va revenir. Chaque retour est une preuve que tu as fait des progrès.</item>
+        <item>L\'habitude était une route d\'évasion. Tu restes et tu fais face à la place.</item>
+        <item>L\'envie est une information sur tes besoins, pas un ordre sur tes actions.</item>
+        <item>Qu\'est-ce qui remplir le temps qui compte? Remplis le temps avec ça.</item>
+        <item>La soirée tardive est quand les envies sont les plus cruelles. Va te coucher plus tôt.</item>
+        <item>L\'envie est une vague. Tu es la terre solide. Laisse-la te couvrir.</item>
+        <item>Tu peux t\'ennuyer et ne pas recourir à l\'habitude.</item>
+        <item>L\'habitude a promis du contrôle. Tu prends le vrai contrôle maintenant.</item>
+        <item>L\'envie ce n\'est pas toi. C\'est un schéma que ton cerveau a appris. Tu le désapprends.</item>
+        <item>Qu\'est-ce que tu ferais si tu n\'avais pas peur? Fais ça.</item>
+        <item>La craving est un signe que ton système se rééquilibre. C\'est une guérison.</item>
+        <item>Tu construis une vie que l\'envie ne peut pas atteindre.</item>
+        <item>L\'envie chuchote. N\'écoute pas.</item>
+        <item>Qu\'est-ce qui t\'apporte de la vraie joie? Construis ta journée autour de ça.</item>
+        <item>Le stress est un déclencheur. Fais face au stress sans l\'habitude.</item>
+        <item>Tu peux rester avec l\'envie et respirer et attendre.</item>
+        <item>L\'ancien schéma veut se sentir confortable. L\'inconfort est le pont vers un nouveau confort.</item>
+        <item>L\'envie est plus forte quand tu es vulnérable. Protège-toi.</item>
+        <item>Tu es autorisée à te sentir faible et à choisir la force quand même.</item>
+        <item>L\'habitude était un mensonge. La vérité est que tu peux vivre sans.</item>
+        <item>L\'envie est un test de ton intention. Tu réussis.</item>
+        <item>Qu\'est-ce que ta meilleure vie exige? Arrêter cette habitude. Continue.</item>
+        <item>L\'envie est un signal sans message. Arrête de chercher un sens. Respire juste.</item>
+        <item>Tu peux faire une pause sans comprendre. La compréhension viendra plus tard.</item>
+        <item>La craving monte et atteint un plateau et finalement s\'estompe. Chevauche les trois étapes.</item>
+        <item>Qu\'est-ce qui surprendrait ton toi passé sur ta force? Tu vis cette surprise.</item>
+        <item>L\'envie est un test qui ne te note pas. Tu réussis toujours.</item>
+        <item>Tu n\'es pas la somme de tes envies. Tu es celle qui les remarque.</item>
+        <item>L\'habitude voulait la permanence. Tu choisis l\'impermanence. Tu gagnes.</item>
+        <item>Qu\'est-ce qui ferait une bonne journée? Définis-la sans l\'habitude.</item>
+        <item>L\'envie est une visiteuse qui reste trop longtemps. Tu peux lui demander de partir.</item>
+        <item>Tu peux avoir peur de rechuter et être sans rechute maintenant.</item>
+        <item>La craving parle le langage de l\'urgence. Tu parles le langage du temps.</item>
+        <item>La soirée tardive est quand la force de volonté est plus faible. Préviens l\'heure, pas juste le choix.</item>
+        <item>L\'envie est un schéma que tu as appris. Tu apprends un nouveau schéma maintenant.</item>
+        <item>Tu construis une preuve, pas juste de promesses.</item>
+        <item>L\'habitude a menti sur ce qu\'elle te donnerait. Tu trouves la vérité maintenant.</item>
+        <item>L\'envie est un rappel de qui tu étais. Tu es quelqu\'un de différent maintenant.</item>
+        <item>Qu\'est-ce qui se sentirait comme de la liberté? Bouge vers ça à la place.</item>
+        <item>La craving est une dette que l\'habitude a créée. Tu la rembourses jour après jour.</item>
+        <item>Tu peux être en ta propre compagnie sans recourir à l\'habitude.</item>
+        <item>L\'envie va tester ton intégrité. Chaque moment de résistance le prouve.</item>
+        <item>Identifie ce que l\'habitude t\'a volé. Reprends-le.</item>
+        <item>L\'ancien schéma est une route que tu as arrêté de parcourir. Ne regarde pas en arrière.</item>
+        <item>L\'envie est du bruit. Tu peux être dans une pièce bruyante et rester calme.</item>
+        <item>Qu\'est-ce qu\'il faudrait pour te pardonner pour le temps que tu as passé? Commence maintenant.</item>
+        <item>Tu ne guéris pas mal. Tu guéris exactement bien.</item>
+        <item>L\'habitude voulait être ta solution. Tu trouves de vraies solutions.</item>
+        <item>La craving est le sevrage. Le sevrage c\'est la guérison qui se fait.</item>
+        <item>Les soirées tardives seront toujours difficiles. Un coucher tôt est ton meilleur ami.</item>
+        <item>Tu écris une histoire sur qui tu deviens. Fais-la bonne.</item>
+        <item>L\'envie va passer. Tu resteras. C\'est la toute la différence.</item>
+        <item>Tu ne fuis pas quelque chose. Tu marches vers toi-même.</item>
+        <item>La personne que tu veux être t\'attend pour que tu la choisisses aujourd\'hui.</item>
+        <item>Ce moment c\'est où ton futur toi se construit.</item>
+        <item>Tu tiens tes promesses envers toi. En commençant maintenant.</item>
+        <item>La liberté signifie faire tes propres choix. Tu en fais un maintenant.</item>
+        <item>Qu\'est-ce que la meilleure version de toi ferait? C\'est qui tu deviens.</item>
+        <item>L\'habitude ne te définis pas. Tes choix le font.</item>
+        <item>Tu mérites de te faire confiance. Construis cette confiance un jour à la fois.</item>
+        <item>Ton futur toi est déjà fière de toi d\'essayer.</item>
+        <item>La présence est un cadeau que tu te donnes et que tu donnes à tous autour de toi.</item>
+        <item>La vraie connexion se fait quand tu te montres telle que tu es.</item>
+        <item>Tu choisis la dignité aujourd\'hui. C\'est suffisant.</item>
+        <item>L\'envie va passer. Ton intégrité est permanente.</item>
+        <item>Qu\'est-ce que les valeurs comptent le plus pour toi? Vis-les aujourd\'hui.</item>
+        <item>Tu ne te répares pas. Tu t\'honores.</item>
+        <item>Ta vie est trop importante pour une demi-attention.</item>
+        <item>L\'ancien schéma ne te possède pas.</item>
+        <item>L\'auto-respect n\'est pas gagné par la perfection. Il vient de l\'effort honnête.</item>
+        <item>Tu es l\'auteure de qui tu deviens.</item>
+        <item>Aujourd\'hui tu choisis la présence sur l\'absence.</item>
+        <item>Chaque choix pour toi-même est une promesse tenue.</item>
+        <item>La personne que tu es maintenant peut le faire.</item>
+        <item>Tu es plus forte que tu ne le penses. Plus calme que tu ne le crois.</item>
+        <item>L\'identité n\'est pas ce que tu as fait. C\'est ce que tu fais ensuite.</item>
+        <item>C\'est comment tu deviens fiable envers toi-même.</item>
+        <item>Tu ne trouves pas avoir besoin de permission pour te respecter.</item>
+        <item>L\'envie c\'est juste du bruit. Tu es le signal.</item>
+        <item>Quel type de vie veux-tu vivre? Tu la construis maintenant.</item>
+        <item>Ton attention est sacrée. Protège-la.</item>
+        <item>Fais-toi confiance. Tu as déjà prouvé que tu pouvais.</item>
+        <item>La vraie confiance vient de tenir ta parole envers toi-même.</item>
+        <item>Tu écris ton histoire avec chaque choix.</item>
+        <item>L\'habitude s\'épanouit de ton attention divisée. Reprends-la.</item>
+        <item>La liberté n\'est pas l\'absence de règles. C\'est choisir les tiennes.</item>
+        <item>Tu mérites d\'être entièrement présente dans ta propre vie.</item>
+        <item>Qu\'est-ce que ta conscience te dit? Écoute-la.</item>
+        <item>La version de toi que tu respectes c\'est qui tu deviens.</item>
+        <item>L\'intention rend les moments ordinaires significatifs.</item>
+        <item>Tu n\'es pas brisée. Tu te choisis.</item>
+        <item>Chaque jour c\'est une chance de prouver qui tu es réellement.</item>
+        <item>L\'envie s\'affaiblit. Ton engagement se renforce.</item>
+        <item>Tu es quelqu\'un qui tient ses promesses. Surtout envers toi-même.</item>
+        <item>Qu\'est-ce que tu dirais à une amie dans ta situation? Dis-toi ça.</item>
+        <item>L\'identité commence avec un choix. Tu le fais maintenant.</item>
+        <item>Ton futur toi ce n\'est pas une étrangère. C\'est toi.</item>
+        <item>La présence c\'est comment tu aimes les gens dans ta vie.</item>
+        <item>Tu construis une relation avec toi-même que tu peux faire confiance. Ça prend du temps. Tu l\'as.</item>
+        <item>L\'habitude est temporaire. Qui tu deviens est permanent.</item>
+        <item>La vraie force est tranquille. Elle n\'a pas besoin de s\'annoncer.</item>
+        <item>Tu choisis le type de personne que tu veux être.</item>
+        <item>C\'est comment tu te soucies de toi-même.</item>
+        <item>Tes valeurs ne sont pas abstraites. Elles vivent dans tes choix aujourd\'hui.</item>
+        <item>L\'envie veut que tu oublies qui tu es. Souviens-toi.</item>
+        <item>Tu mérites d\'être fière de toi.</item>
+        <item>Chaque moment est une chance fraîche d\'honorer ta propre vie.</item>
+        <item>La dignité n\'est pas fragile. Elle se renforce quand tu la nourris.</item>
+        <item>Tu es la personne que tu attends.</item>
+        <item>À quoi ressemblerait de te faire confiance complètement?</item>
+        <item>L\'ancien schéma est ancien. Tu es nouveau.</item>
+        <item>La présence n\'est pas avoir raison. C\'est te montrer.</item>
+        <item>Tu apprends à t\'aimer toi-même différemment.</item>
+        <item>Ton attention est quelque chose de fini. Dépense-la bien.</item>
+        <item>L\'habitude ne définit pas ta capacité. Tes choix le font.</item>
+        <item>Tu deviens quelqu\'un que tu respectes.</item>
+        <item>La vraie liberté goûte comme choisir ton propre chemin.</item>
+        <item>La version de toi que tu veux rencontrer se forme maintenant.</item>
+        <item>Tu construis une relation avec toi-même qui compte.</item>
+        <item>L\'identité n\'est pas fixée. C\'est quelque chose que tu choisis chaque jour.</item>
+        <item>L\'envie s\'estompe. Le respect que tu construis dure.</item>
+        <item>Tu apprends à tenir la promesse la plus importante.</item>
+        <item>Qu\'est-ce que tu veux te rappeler de toi-même?</item>
+        <item>L\'habitude veut te garder petite. Tu te choisis grande.</item>
+        <item>La présence signifie que tu jouis du moment réel que tu traverses.</item>
+        <item>Ton futur toi ne demande pas la perfection. Juste l\'honnêteté.</item>
+        <item>Tu es quelqu\'un qui se montre pour soi-même.</item>
+        <item>La récompense pour ça c\'est simple: toi.</item>
+        <item>L\'auto-respect n\'est pas un luxe. C\'est comment tu vis.</item>
+        <item>Tu réécris ta relation avec toi-même.</item>
+        <item>Chaque choix est une chance de prouver quelque chose à toi-même.</item>
+        <item>L\'envie ne te décide pas qui tu es.</item>
+        <item>Tes valeurs comptent plus que l\'attrait temporaire.</item>
+        <item>Tu apprends ce que ça signifie de te faire confiance complètement.</item>
+        <item>La personne que tu veux être c\'est patiente. Elle attend.</item>
+        <item>La présence c\'est le plus grand cadeau à toi-même et à autrui.</item>
+        <item>Tu choisis l\'intention sur le pilotage automatique.</item>
+        <item>L\'habitude a promis quelque chose. Tu as promis quelque chose de mieux à toi-même.</item>
+        <item>L\'identité se construit dans des moments comme celui-ci.</item>
+        <item>La vraie force c\'est de te choisir quand personne ne regarde.</item>
+        <item>Tu deviens quelqu\'un que tu veux connaître.</item>
+        <item>La version de toi que tu respectes vit dans tes choix.</item>
+        <item>Tu ne fuis pas quelque chose. Tu choisis quelque chose.</item>
+        <item>La dignité s\'accroît chaque fois que tu te choisis.</item>
+        <item>L\'envie est temporaire. Ton intégrité ne l\'est pas.</item>
+        <item>Tu apprends à être ton propre meilleur ami.</item>
+        <item>Qu\'est-ce qui compte plus pour toi que l\'habitude?</item>
+        <item>L\'ancien schéma ne reçoit pas un vote sur qui tu deviens.</item>
+        <item>Tu construis une vie qui reflète tes vraies valeurs.</item>
+        <item>Ton attention appartient à la vie que tu veux réellement.</item>
+        <item>La personne que tu deviens vaut l\'effort.</item>
+        <item>Tu choisis d\'être quelqu\'un que tu peux faire confiance.</item>
+        <item>La présence c\'est comment tu reprends ta propre vie.</item>
+        <item>Chaque moment où tu résistes c\'est un moment où tu te choisis.</item>
+        <item>L\'habitude s\'épanouit de l\'inattention. Tu deviens présente.</item>
+        <item>Tu apprends ce que la vraie liberté ressent.</item>
+        <item>L\'identité ce n\'est pas quelque chose que tu trouves. C\'est quelque chose que tu construis.</item>
+        <item>Ton futur toi saura que tu as tenu cette promesse.</item>
+        <item>Tu mérites d\'aimer la personne que tu deviens.</item>
+        <item>L\'envie s\'estompe. La personne que tu construis devient plus forte.</item>
+        <item>Tu es quelqu\'un qui sait ce qu\'il/elle valorise et le vit.</item>
+        <item>La vraie confiance vient d\'aligner l\'action avec qui tu veux être.</item>
+        <item>La version de toi que tu respectes est à portée de main.</item>
+        <item>Tu choisis d\'être entièrement dans ta propre vie.</item>
+        <item>Quel type de personne se montre pour soi-même comme ça? Tu es cette personne.</item>
+        <item>La clarté vient quand tu arrêtes de t\'embrouiller l\'esprit.</item>
+        <item>Le choix que tu fais maintenant définit qui tu deviens.</item>
+        <item>C\'est le travail de la liberté. Tu le fais.</item>
+        <item>Ta vie c\'est la seule que tu peux vivre entièrement.</item>
+        <item>Tu apprends que la vraie force vit en disant non.</item>
+        <item>La personne en toi qui sait mieux que le toi est en train de diriger maintenant.</item>
+        <item>Chaque moment où tu te choisis compte plus que tu ne le penses.</item>
+        <item>Ce que tu protèges aujourd\'hui façonne qui tu es demain.</item>
+        <item>L\'ancienne façon ne donne pas les coups maintenant. Tu le fais.</item>
+        <item>Tu apprends à te déplacer dans le monde comme toi-même.</item>
+        <item>L\'intention c\'est l\'amour rendu visible dans la façon dont tu vis.</item>
+        <item>L\'habitude masque qui tu pourrais être. Tu retires le masque.</item>
+        <item>La vraie paix vient de savoir que tu es honnête.</item>
+        <item>Tu deviens le genre de personne que tu peux admirer.</item>
+        <item>Ce n\'est pas du punition. C\'est du respect.</item>
+        <item>L\'envie est un mensonge sur ce dont tu as besoin. Tu le sais mieux.</item>
+        <item>Tu construis quelque chose qui ne peut pas être secoué.</item>
+        <item>Ton futur toi t\'encourage maintenant.</item>
+        <item>La présence c\'est comment tu restes connectée à ce qui compte.</item>
+        <item>Tu apprends à être la personne que les autres peuvent faire confiance parce que tu te fais confiance.</item>
+        <item>Chaque refus c\'est un oui à quelque chose de mieux.</item>
+        <item>La version de toi qui est entière est en émergence.</item>
+        <item>Tu mérites une vie où tu te sens comme toi-même.</item>
+        <item>Ce que tu fais prend du vrai courage. Nomme-le.</item>
+        <item>L\'habitude vole du temps. Tu reprends le tien.</item>
+        <item>Tu choisis la clarté sur la confusion.</item>
+        <item>La vraie victoire est tranquille. Elle vit en dedans.</item>
+        <item>L\'identité se forme dans les choix que personne ne te voit faire.</item>
+        <item>Tu apprends ce que ça signifie de t\'honorer complètement.</item>
+        <item>L\'envie s\'affaiblit. Ton auto-respect se renforce.</item>
+        <item>Tu deviens quelqu\'un avec des limites authentiques.</item>
+        <item>Ce que tu protèges est sacré. Toi.</item>
+        <item>L\'ancien schéma se casse. Quelque chose de nouveau grandit.</item>
+        <item>Tu apprends à écouter ta propre sagesse.</item>
+        <item>La liberté n\'est pas une destination. C\'est comment tu te déplaces à chaque jour.</item>
+        <item>Tu construis une fondation qui soutient un vrai changement.</item>
+        <item>Chaque moment de présence est un moment de pouvoir.</item>
+        <item>La personne que tu veux devenir a besoin de toi pour le faire.</item>
+        <item>Tu apprends que tenir ta parole compte le plus.</item>
+        <item>La vraie dignité n\'est jamais négociable.</item>
+        <item>Tu es la seule à vivre ta vie. Possède-la complètement.</item>
+        <item>L\'habitude ne possède pas ton futur. Tu le fais.</item>
+        <item>Tu deviens quelqu\'un qui fait des choix au lieu d\'excuses.</item>
+        <item>Ce que tu construis c\'est pour toi seule.</item>
+        <item>La présence te connecte à la vie qui est réellement la tienne.</item>
+        <item>Tu apprends à te vouloir plus que l\'envie.</item>
+        <item>La version de toi sans ce fardeau attend.</item>
+        <item>Chaque jour où tu te choisis c\'est un jour où tu gagnes.</item>
+        <item>Tu deviens fiable envers la personne qui compte le plus.</item>
+        <item>La vraie force c\'est de te choisir quand c\'est difficile.</item>
+        <item>La clarté qui vient vaut chaque moment de ça.</item>
+        <item>Tu apprends que la liberté c\'est d\'abord interne.</item>
+        <item>Ce que tu respectes en toi grandit quand tu la nourris.</item>
+        <item>Tu ne marches pas pour devenir digne. Tu es digne maintenant.</item>
+        <item>L\'habitude est une vieille histoire. Tu écris une nouvelle.</item>
+        <item>Tu choisis d\'être présente pour ta propre vie.</item>
+        <item>Chaque moment de résistance est un moment de croissance.</item>
+        <item>La personne que tu deviens va comprendre pourquoi tu l\'as fait.</item>
+        <item>Tu apprends à t\'aimer toi-même en action.</item>
+        <item>La vraie paix vient de vivre en accord avec tes valeurs.</item>
+        <item>Tu construis un toi que tu ne dois jamais mentir.</item>
+        <item>L\'envie s\'estompe comme tout temporaire le fait.</item>
+        <item>Tu mérites de te sentir chez toi dans tes propres choix.</item>
+        <item>L\'identité s\'écrit dans ce que tu fais quand on te teste.</item>
+        <item>Tu apprends que la présence c\'est la forme la plus profonde de soin.</item>
+        <item>La version de toi qui est libre est plus proche que tu le sais.</item>
+        <item>Ce que tu protèges aujourd\'hui devient qui tu es demain.</item>
+        <item>Tu choisis d\'être quelqu\'un sur qui tu peux compter.</item>
+        <item>Chaque moment honnête compte. Tu les collectionnes.</item>
+        <item>La vraie force c\'est l\'interne. Elle vit dans ta colonne.</item>
+        <item>Tu deviens quelqu\'un qui honore ses propres promesses.</item>
+        <item>La clarté que tu construis va te soutenir.</item>
+        <item>Tu ne fuis pas. Tu arrives.</item>
+        <item>Ce que tu fais le prouve quelque chose à toi-même.</item>
+        <item>L\'habitude veut la reddition. Tu choisis la souveraineté.</item>
+        <item>Tu apprends que la meilleure vie c\'est celle que tu choisis.</item>
+        <item>La présence c\'est l\'antidote au mensonge que l\'habitude raconte.</item>
+        <item>Chaque moment où tu restes c\'est un moment où tu restes vraie.</item>
+        <item>Tu deviens le type de personne qui mérite d\'exister.</item>
+        <item>La vraie liberté goûte comme faire ce en quoi tu crois.</item>
+        <item>La version de toi qui se fait confiance est en émergence.</item>
+        <item>Tu apprends que la dignité ce n\'est pas donné. C\'est choisi.</item>
+        <item>Ce qui compte c\'est que tu choisisses. Continues de choisir.</item>
+        <item>L\'ancienne histoire ne possède pas le prochain chapitre.</item>
+        <item>Tu construis une relation avec toi-même qui dure.</item>
+        <item>Chaque moment de choix c\'est un moment de pouvoir.</item>
+        <item>La personne que tu deviens n\'est pas loin.</item>
+        <item>Tu apprends à vivre avec intention.</item>
+        <item>La vraie respects vient de tenir tes propres promesses.</item>
+        <item>L\'envie est temporaire. Ton caractère est permanent.</item>
+        <item>Tu choisis d\'être entièrement vivante dans ta propre vie.</item>
+        <item>L\'identité se construit de mille petits oui à toi-même.</item>
+        <item>Tu mérites de te regarder dans les yeux sans honte.</item>
+        <item>La clarté qui vient va être ton nouveau foyer.</item>
+        <item>Tu ne marches pas pour la permission. Tu te la donnes.</item>
+        <item>Ce que tu fais maintenant c\'est le début de tout.</item>
+        <item>Tu apprends à croire en ce que tu sais être vrai.</item>
+        <item>L\'habitude chuchote. Ta conscience parle. Écoute plus fort.</item>
+        <item>Le vrai choix signifie vivre avec ce que tu as décidé.</item>
+        <item>Tu deviens quelqu\'un avec une vraie conviction.</item>
+        <item>Chaque moment où tu restes c\'est un moment où tu te construis.</item>
+        <item>La personne dedans qui sait mieux déjà mène.</item>
+        <item>Ce que tu construis c\'est seulement pour ceux qui la veulent.</item>
+        <item>La liberté signifie que tu ne répondes plus à l\'envie.</item>
+        <item>Tu apprends que ton propre respect vaut plus.</item>
+        <item>La version de toi qui est intacte se grandit.</item>
+        <item>Ce que tu protèges dans ces moments c\'est ton futur.</item>
+        <item>Tu choisis d\'être quelqu\'un que tu reconnais.</item>
+        <item>Le vrai pouvoir c\'est choisir ce qui compte et la vivre.</item>
+        <item>La clarté que tu construis c\'est de plus en plus permanent.</item>
+        <item>Tu apprends que la présence c\'est où la vie est réellement.</item>
+        <item>Chaque choix honnête te rapproche de toi.</item>
+        <item>L\'habitude ne peut pas toucher qui tu choisis de devenir.</item>
+        <item>Tu mérites de te sentir entière dans tes propres décisions.</item>
+        <item>Tu construis quelque chose que l\'envie ne prendra jamais.</item>
+        <item>Ce qui te définis c\'est ce que tu choisis quand c\'est difficile.</item>
+        <item>L\'ancien schéma perd sa prise. Tu restes ferme.</item>
+        <item>La vraie force c\'est de tenir ta parole à toi-même dans le noir.</item>
+        <item>Tu deviens quelqu\'un dont le oui signifie quelque chose.</item>
+        <item>Chaque moment où tu te choisis c\'est un moment de victoire.</item>
+        <item>La personne que tu deviens va être reconnaissante.</item>
+        <item>Tu apprends ce que la vraie liberté exige réellement.</item>
+        <item>La présence c\'est ta rébellion contre le pilotage automatique.</item>
+        <item>Tu construis une vie qui s\'aligne avec ton âme.</item>
+        <item>La version de toi qui est authentique prend forme.</item>
+        <item>Ce que tu fais maintenant ondule dans tout.</item>
+        <item>Tu mérites d\'être en paix avec tes propres choix.</item>
+        <item>La clarté que tu obtieus c\'est une fondation pour tout.</item>
+        <item>Tu apprends à faire des choix qui reflètent qui tu es.</item>
+        <item>La vraie respect vient de faire la chose difficile quand ça compte.</item>
+        <item>Chaque jour sans l\'ancienne habitude c\'est un jour de preuve.</item>
+        <item>Tu deviens quelqu\'un qui peut te faire confiance.</item>
+        <item>L\'envie ne comprend pas qui tu deviens.</item>
+        <item>Tu choisis de vivre avec intention et conscience.</item>
+        <item>Ce que tu protèges c\'est ce que tu préserves.</item>
+        <item>L\'identité ce n\'est pas hérité. C\'est choisi et reconstruit chaque jour.</item>
+        <item>Tu apprends que la liberté c\'est une tâche interne.</item>
+        <item>La version de toi qui est libre attend d\'être trouvée.</item>
+        <item>Chaque moment où tu résistes c\'est un moment de force.</item>
+        <item>Tu mérites de connaître par toi-même comme quelqu\'un qui tient promesse.</item>
+        <item>L\'habitude s\'estompe. Tu deviens plus claire.</item>
+        <item>Tu deviens quelqu\'un dont les valeurs sont vécues.</item>
+        <item>La vraie paix vient de savoir que tu choisisses correctement.</item>
+        <item>Ce que tu construis va te soutenir à travers tout.</item>
+        <item>Chaque choix c\'est un vote pour qui tu veux devenir.</item>
+        <item>Tu apprends à honorer la personne que tu veux être.</item>
+        <item>La clarté de tes choix c\'est ton plus grand pouvoir.</item>
+        <item>Tu ne deviens pas quelqu\'un de nouveau. Tu deviens plus toi.</item>
+        <item>Ce qui compte c\'est que tu sois ici. Tu choisisses.</item>
+        <item>L\'ancienne histoire finit. La nouvelle commence par toi.</item>
+        <item>Chaque moment de présence c\'est un moment d\'intégrité.</item>
+        <item>Tu deviens quelqu\'un que tu aimes réellement.</item>
+        <item>La vraie liberté goûte comme vivre ta propre vérité.</item>
+        <item>La version de toi que tu fais confiance se forme maintenant.</item>
+        <item>Tu mérites de regarder en arrière sans regret du jour d\'aujourd\'hui.</item>
+        <item>Ce que tu construis c\'est construit pour durer.</item>
+        <item>Tu es exactement où tu as besoin d\'être.</item>
+        <item>Chaque moment où tu ne cèdes pas c\'est un moment de force.</item>
+        <item>Tu construis quelque chose de nouveau avec chaque jour qui passe.</item>
+        <item>Les petits pas en avant compte quand même comme avancer.</item>
+        <item>Le progrès n\'est pas toujours visible, mais tu la fais.</item>
+        <item>Aujourd\'hui, tu t\'es choisie. C\'est ce qui compte.</item>
+        <item>Tu n\'as pas fait la chose. C\'est tout.</item>
+        <item>Le chemin vers le changement commence par une décision.</item>
+        <item>Même quand c\'est difficile, tu avances.</item>
+        <item>Ce moment de résistance c\'est ta force.</item>
+        <item>Tu n\'as pas besoin de gagner pour toujours, juste aujourd\'hui.</item>
+        <item>Un jour à la fois c\'est la façon la plus douce d\'avancer.</item>
+        <item>Briser l\'habitude prend du temps. Tu l\'as.</item>
+        <item>Ne t\'inquiète pas de la semaine prochaine. Gère juste aujourd\'hui.</item>
+        <item>Le voyage est long, mais tu n\'avances qu\'un jour à la fois.</item>
+        <item>Tu ne participes pas à une course. Tu construis une vie.</item>
+        <item>Laisse demain se soucier de lui-même.</item>
+        <item>Aujourd\'hui c\'est tout ce que tu dois gérer maintenant.</item>
+        <item>Le temps se déplace plus lentement que tu penses qu\'il fera.</item>
+        <item>Un glissement ce n\'est pas un échec, c\'est une information.</item>
+        <item>Tu as trébuché. Ça n\'efface pas ton progrès.</item>
+        <item>Un moment ne définit pas ton voyage.</item>
+        <item>Tu peux recommencer maintenant. Pas besoin d\'attendre.</item>
+        <item>Les glissements se produisent. Ce qui compte c\'est ce qui vient après.</item>
+        <item>Tu as appris quelque chose. Utilise-le.</item>
+        <item>Ce moment de lutte va t\'enseigner quelque chose.</item>
+        <item>Tomber une fois ne signifie pas que tu as échoué.</item>
+        <item>Le prochain choix est toujours disponible pour toi.</item>
+        <item>Tu peux recommencer aussi souvent que tu dois.</item>
+        <item>Sois aussi gentille envers toi que tu l\'aurais été pour une amie.</item>
+        <item>Tu mérites de la douceur pendant que tu guéris.</item>
+        <item>Des mots durs n\'aideront pas. La compassion le fera.</item>
+        <item>Tu fais du travail difficile. Traite-toi doucement.</item>
+        <item>Ce voyage n\'a pas besoin de punition, seulement de patience.</item>
+        <item>La honte n\'aidera pas. La compassion aidera.</item>
+        <item>Tu es autorisée à être imparfait pendant que tu changes.</item>
+        <item>Pardonne-toi aussi vite que tu peux.</item>
+        <item>Ton progrès mérite une célébration tranquille.</item>
+        <item>Sois la voix qui te lève, pas celle qui te déchire.</item>
+        <item>Une série cassée n\'efface pas ta force.</item>
+        <item>La cohérence compte plus que la perfection.</item>
+        <item>Ce que tu fais la plupart des jours compte plus qu\'un jour.</item>
+        <item>La vraie mesure c\'est comment tu te montres régulièrement.</item>
+        <item>Un glissement n\'annule pas ton modèle de dire non.</item>
+        <item>Tes habitudes se forment par de petits choix répétés.</item>
+        <item>Ce qui compte c\'est le rythme que tu construis, pas une ligne parfaite.</item>
+        <item>Les séries se cassent. Le caractère ne le fait pas.</item>
+        <item>Tu te entraînes par répétition.</item>
+        <item>Chaque jour c\'est une chance de renforcer qui tu deviens.</item>
+        <item>Les premiers jours sont les plus difficiles. Ça devient plus facile.</item>
+        <item>Au début, tout se sent urgent. Ça s\'efface.</item>
+        <item>Maintenant, ça se sent impossible. Ce ne sera pas toujours le cas.</item>
+        <item>Les envies vont s\'affaiblir. Crois que elles le feront.</item>
+        <item>Ce qui brûle maintenant se refroidira.</item>
+        <item>Ton corps et ton esprit s\'ajusteront plus vite que tu le penses.</item>
+        <item>La première semaine c\'est la montée la plus raide.</item>
+        <item>Chaque jour c\'est un peu plus léger que le précédent.</item>
+        <item>Tu es dans la partie la plus difficile. Ça va changer.</item>
+        <item>Cette intensité que tu ressens maintenant est temporaire.</item>
+        <item>Après un temps, le choix devient plus facile à faire.</item>
+        <item>L\'envie perd sa prise avec le temps.</item>
+        <item>Tu remarqueras un jour que tu n\'y as même pas pensé.</item>
+        <item>La récupération construit l\'élan à mesure que tu avances.</item>
+        <item>Chaque jour de résistance rend le prochain plus doux.</item>
+        <item>Ton cerveau se réorganise. Ça prend du temps, puis ça arrive.</item>
+        <item>Ce qui prend de l\'effort maintenant devient naturel.</item>
+        <item>Le chemin devient plus lisse plus tu la marches.</item>
+        <item>Tu te réveilleras un jour et tu te sentiras différente.</item>
+        <item>La force se construit tranquillement, puis tu te rends compte que tu l\'as.</item>
+        <item>Un jour c\'est une étape. Une semaine aussi.</item>
+        <item>Marque tes victoires en privé. C\'est quand même des victoires.</item>
+        <item>Tu n\'as pas besoin de diffuser pour honorer ton progrès.</item>
+        <item>La fierté tranquille compte autant que tout célébration.</item>
+        <item>Célèbre sans fanfare. La victoire est réelle.</item>
+        <item>Chaque étape, peu importe la taille, vaut la peine d\'être reconnue.</item>
+        <item>Tes percées n\'ont pas besoin d\'un public pour compter.</item>
+        <item>La force tranquille c\'est toujours de la force.</item>
+        <item>Remarque ce que tu as fait, même si personne d\'autre ne le fait.</item>
+        <item>Tu sais ce que ça a coûté pour arriver ici. C\'est suffisant.</item>
+        <item>Pense au-delà de demain. Tu construis quelque chose qui dure.</item>
+        <item>Ce choix aujourd\'hui façonne toute ta vie.</item>
+        <item>Tu ne fais pas juste passer à travers aujourd\'hui, tu changes pour toujours.</item>
+        <item>Future toi va être reconnaissante pour ce que présent toi fais.</item>
+        <item>La personne que tu deviens en vaut la peine.</item>
+        <item>Ton futur toi compte sur toi.</item>
+        <item>Ce que tu fais maintenant s\'accumule avec le temps.</item>
+        <item>Tu investis dans la vie que tu veux réellement.</item>
+        <item>Ce n\'est pas à propos d\'aujourd\'hui. C\'est à propos de qui tu deviens.</item>
+        <item>Tout ce que tu fais maintenant ondule vers l\'avant.</item>
+        <item>Quand l\'envie frappe, souviens-toi pourquoi tu as commencé.</item>
+        <item>L\'ancien schéma veut revenir. Tu es autorisée à dire non.</item>
+        <item>Ce que tu casses a pris du temps à se former. L\'annuler prend aussi du temps.</item>
+        <item>Tu réorganises des années de comportement. C\'est un travail patient.</item>
+        <item>L\'habitude chuchote. Tu peux choisir de ne pas écouter.</item>
+        <item>Chaque fois que tu dis non, tu t\'entraînes à dire non la prochaine fois.</item>
+        <item>Tu ne te pries pas. Tu te libères.</item>
+        <item>C\'est à propos de qui tu veux être, pas de ce que tu ne peux pas avoir.</item>
+        <item>Tes raisons d\'arrêter sont plus grandes que l\'envie de revenir.</item>
+        <item>La vie sans c\'est la peine de ce que tu donnes pour l\'obtenir.</item>
+        <item>Aujourd\'hui tu es plus forte que l\'habitude. Fais confiance à ça.</item>
+        <item>Vouloir quelque chose ne signifie pas que tu dois le faire.</item>
+        <item>Tu peux ressentir l\'envie et toujours marcher devant.</item>
+        <item>Le sentiment va passer. Tu n\'as pas à agir sur chaque sentiment.</item>
+        <item>Les envies viennent et vont comme des vagues. Tu apprends à les regarder passer.</item>
+        <item>Cette craving n\'est pas un ordre. C\'est juste une pensée.</item>
+        <item>Tu deviens le type de personne qui peut vouloir quelque chose et le refuser.</item>
+        <item>Chaque refus prouve que tu as le pouvoir que tu mettais en doute.</item>
+        <item>L\'ancien schéma ne te possède plus.</item>
+        <item>Tu reprends ta vie, un choix à la fois.</item>
+        <item>Quand tu es fatiguée, souviens-toi à quel point tu es allée loin.</item>
+        <item>La partie la plus difficile n\'est pas derrière toi, mais tu as passé le pire.</item>
+        <item>Tu as déjà fait la chose la plus difficile. Rester stable c\'est plus facile.</item>
+        <item>Tu as prouvé que tu peux le faire. Tu n\'as pas besoin de le prouver à nouveau.</item>
+        <item>Repose-toi quand tu dois. Le travail continue de toute façon.</item>
+        <item>L\'épuisement est réel. Ça ne veut pas dire que tu échoues.</item>
+        <item>Tu peux être fatiguée et toujours avancer.</item>
+        <item>Demain c\'est une journée fraîche. Celui-ci ne doit pas être parfait.</item>
+        <item>Si aujourd\'hui a été difficile, demain peut être plus facile.</item>
+        <item>Rien de ce que tu fais aujourd\'hui ne détruit tout ce que tu as construit.</item>
+        <item>Un mauvais jour n\'efface pas des semaines de progrès.</item>
+        <item>Le mauvais jour ne définit pas la semaine entière.</item>
+        <item>Tu es autorisée à avoir un moment rude et toujours être bien.</item>
+        <item>La récupération n\'est pas une ligne droite. La ligne monte toujours.</item>
+        <item>Certains jours se sentiront comme recommencer. C\'est normal.</item>
+        <item>Tu ne recommences pas. Tu continues. Même les jours difficiles en font partie.</item>
+        <item>Quand les choses semblent s\'effondrer, tu es souvent juste fatiguée.</item>
+        <item>Ta valeur n\'est pas déterminée par ta série.</item>
+        <item>Qui tu es n\'est pas mesuré par un moment de faiblesse.</item>
+        <item>Tu es plus qu\'un choix. Tu es tous ensemble.</item>
+        <item>L\'habitude était un chapitre. Tu écris un tout nouveau livre maintenant.</item>
+        <item>Cette version de toi est toujours en train de se former. Donne-toi du temps.</item>
+        <item>Tu es autorisée à changer lentement.</item>
+        <item>La guérison n\'a pas de date limite.</item>
+        <item>La récupération se fait à son propre rythme, et ça va.</item>
+        <item>Le chemin vers l\'avant n\'est pas toujours clair. Tu n\'as pas besoin de voir tout le chemin.</item>
+        <item>Juste le prochain pas suffit.</item>
+        <item>Tu n\'as pas besoin de tout comprendre aujourd\'hui.</item>
+        <item>Fais confiance au processus même quand tu ne peux pas voir le progrès.</item>
+        <item>Le travail que tu fais maintenant ne montrera pas les résultats immédiatement. C\'est bien.</item>
+        <item>Le progrès invisible c\'est toujours du progrès.</item>
+        <item>Tu changes même quand tu ne peux pas le voir.</item>
+        <item>Ton corps et ton esprit s\'ajustent tranquillement.</item>
+        <item>La récompense d\'arrêter n\'est pas toujours évidente au début.</item>
+        <item>Ce que tu gagnes de ça prend du temps à montrer.</item>
+        <item>Sois patiente envers toi de la manière dont tu l\'aurais été pour quelqu\'un que tu aimes.</item>
+        <item>Si tu luttes, ça ne signifie pas que tu es faible.</item>
+        <item>La lutte c\'est un signe que tu grandit.</item>
+        <item>L\'inconfort c\'est la preuve que quelque chose change.</item>
+        <item>Tu fais quelque chose de très difficile. Honore ça.</item>
+        <item>Tu choisisses ceci, chaque jour, même quand c\'est douloureux.</item>
+        <item>Personne ne peut t\'enlever ta liberté. Tu te bats pour ça.</item>
+        <item>Tu ne te pries pas. Tu te reclames.</item>
+        <item>C\'est un acte d\'auto-respect.</item>
+        <item>Traite ça comme tu traiterais quelque chose que tu aimes vraiment.</item>
+        <item>Tu vaux le effort que tu mets.</item>
+        <item>Tu vaux à garder. Tu vaux à combattre pour.</item>
+        <item>Arrête de mettre en question si tu en vaux la peine.</item>
+        <item>Le doute viendra. Laisse-le. Tu n\'as pas à y croire.</item>
+        <item>Tu peux être incertaine et toujours avancer.</item>
+        <item>La croyance suivra l\'action. Agis d\'abord.</item>
+        <item>Tu n\'as pas besoin de te sentir confidente pour faire la chose.</item>
+        <item>Fais la chose. La confiance viendra.</item>
+        <item>Certains jours tu te sentieras forte. Certains jours tu te sentiras fragile.</item>
+        <item>C\'est les jours fragiles où vit la vraie force.</item>
+        <item>Quand tu es faible, te montrer c\'est de la bravoure.</item>
+        <item>L\'habitude s\'épanouissait dans le silence et la honte. Le silence et la honte c\'est son carburant.</item>
+        <item>En parler, l\'accepter et avancer l\'affame.</item>
+        <item>Tu n\'as pas à le cacher. Il n\'y a rien à cacher.</item>
+        <item>Ce que tu fais c\'est de la guérison. C\'est l\'opposé de la honte.</item>
+        <item>Chaque personne qui a arrêté quelque chose a ressenti ce que tu ressens.</item>
+        <item>D\'autres ont déjà marché ce chemin avant toi.</item>
+        <item>Ton histoire n\'est pas finie. C\'est juste un nouveau chapitre qui commence.</item>
+        <item>La fin que tu veux c\'est toujours possible. Plus que possible.</item>
+        <item>Peu importe combien de fois tu as essayé avant, cette fois c\'est différent.</item>
+        <item>Tes essais précédents ne furent pas des échecs. C\'était de la pratique.</item>
+        <item>Chaque fois que tu as essayé, tu as appris quelque chose.</item>
+        <item>Cette connaissance c\'est la tienne maintenant. Utilise-la.</item>
+        <item>L\'envie va te tester. C\'est ce que les envies font.</item>
+        <item>Chaque test que tu passes t\'approche de la paix.</item>
+        <item>La pensée obsessive va s\'estomper.</item>
+        <item>La relecture mentale constante va se calmer.</item>
+        <item>Un jour tu remarqueras que tu n\'y as même pas pensé pendant des heures.</item>
+        <item>Tu es autorisée à vouloir ça. Veuille-le complètement.</item>
+        <item>Veuille la liberté. Veuille la paix. Veuille la nouvelle version de toi.</item>
+        <item>Quand la motivation s\'efface, laisse tes raisons te porter.</item>
+        <item>Quand les raisons s\'effacent, laisse la routine te porter.</item>
+        <item>Quand la routine se casse, reprends-la juste.</item>
+        <item>Ce n\'est pas fragile. C\'est flexible.</item>
+        <item>Tu construis quelque chose de résiliente.</item>
+        <item>L\'ancien schéma va essayer une fois de plus. Tu sais qu\'il le fera.</item>
+        <item>Tu seras prête, parce que tu as été en train de préparer.</item>
+        <item>Chaque jour de dire non c\'est la pratique pour ce moment.</item>
+        <item>Ton futur c\'est sans écriture. Tu l\'écrit.</item>
+        <item>Chaque choix que tu fais maintenant c\'est un mot dans ce futur.</item>
+        <item>Quel histoire veux-tu raconter?</item>
+        <item>La chose la plus difficile que tu as jamais faite c\'est ce que tu fais maintenant.</item>
+        <item>Tu ne fais pas juste survivre. Tu apprends qui tu veux être.</item>
+        <item>La personne que tu deviens n\'a plus besoin de l\'habitude.</item>
+        <item>La croissance c\'est lent. La croissance c\'est réelle. La croissance se produit.</item>
+        <item>Ton cerveau c\'est plastique. Il peut changer. Il change.</item>
+        <item>Ce qui se semble impossible aujourd\'hui se sentirait normal bientôt.</item>
+        <item>Le nouveau normal t\'attend.</item>
+        <item>Le toi qui continue d\'essayer mérite d\'être célébré.</item>
+        <item>Cette paix que tu construis ne viendra pas tout à coup.</item>
+        <item>Tu appartient ici. Tu appartient dans cette récupération.</item>
+        <item>Ce matin tu as une heure en plus. Qu\'est-ce que tu en feras?</item>
+        <item>Ton esprit est plus clair qu\'hier. Remarque ça.</item>
+        <item>Tu t\'es choisie aujourd\'hui. C\'est ce qui compte.</item>
+        <item>L\'habitude est plus tranquille maintenant. Tu apprends son rythme.</item>
+        <item>Une promenade le matin peut réinitialiser toute ta journée.</item>
+        <item>Tu construis quelque chose de réel avec le temps que tu épargnes.</item>
+        <item>Dors ce soir te sentira différemment. Laisse-le.</item>
+        <item>L\'eau froide ce n\'est pas une punition. C\'est une preuve que tu peux choisir l\'inconfort sur tes propres termes.</item>
+        <item>Tes mains sont libres pour quelque chose de mieux.</item>
+        <item>L\'envie viendra. Tu sais comment rester avec ça maintenant.</item>
+        <item>La focus grandit quand tu arrêtes de nourrir l\'ancien schéma.</item>
+        <item>Tu n\'es pas en train de combattre l\'habitude plus. Tu te détourne juste.</item>
+        <item>La discipline aujourd\'hui c\'est la liberté demain. C\'est toujours été comme ça.</item>
+        <item>La baisse l\'après-midi est plus petite. Tu le remarques?</item>
+        <item>La gratitude pour les petites victoires crée l\'élan plus vite que la honte du passé.</item>
+        <item>Tu enseignes à ton corps un nouveau rythme.</item>
+        <item>L\'habitude chuchote. Ton engagement parle plus fort.</item>
+        <item>Cette énergie que tu ressens c\'est la tienne à dépenser maintenant.</item>
+        <item>Rester calme quand l\'envie vient c\'est un superpouvoir.</item>
+        <item>Qu\'est-ce que tu dirais à une amie dans ta position?</item>
+        <item>Ta routine matinale c\'est ton ancre.</item>
+        <item>L\'envie c\'est une donnée, pas une destinée.</item>
+        <item>Tu ne te pries pas. Tu te protèges.</item>
+        <item>Dix minutes dehors c\'est dix minutes ton esprit n\'a pas poursuivie.</item>
+        <item>Cette semaine c\'est différent de la dernière. Vois la différence.</item>
+        <item>Ta famille le remarque. Elles ne la disent pas encore, mais elles le remarquent.</item>
+        <item>L\'habitude alimentait ton anxiété. Regarde-la diminuer à mesure que tu restes stable.</item>
+        <item>Tu deviens quelqu\'un qui peut s\'asseoir tranquillement.</item>
+        <item>Un jour à la fois c\'est pas une faiblesse. C\'est une stratégie.</item>
+        <item>Ton sommeil c\'est la façon de ton corps de tenir ses promesses. Honore-la.</item>
+        <item>L\'envie s\'affaiblit quand tu ne la combats pas.</item>
+        <item>Tu ne recommences pas. Tu continues.</item>
+        <item>Les habitudes de remplacement prennent du temps. Sois patient envers toi.</item>
+        <item>Ce moment c\'est plus facile que le dernier c\'était.</item>
+        <item>Ton esprit est moins encombré maintenant. Sens l\'espace.</item>
+        <item>Le travail est plus clair quand l\'habitude n\'est pas en travers.</item>
+        <item>L\'ancien schéma avait un coût. Tu en es libre maintenant.</item>
+        <item>Tu apprends à être ennuyée. C\'est une vraie compétence.</item>
+        <item>Le matin c\'est à toi. Qu\'est-ce que tu créeras avec?</item>
+        <item>Tes mains tremblent moins maintenant. Tu as remarqué?</item>
+        <item>C\'est ce que le calme ressemble.</item>
+        <item>Tu n\'as pas besoin de permission pour arrêter. Tu l\'as déjà.</item>
+        <item>L\'envie passe. Chaque fois, elle passe.</item>
+        <item>Ton corps se souvient de l\'habitude. Ton esprit sait mieux.</item>
+        <item>La petite discipline aujourd\'hui construit la grande liberté demain.</item>
+        <item>Tu ne sois pas cassée. Tu redirige juste ta force.</item>
+        <item>Dix mille petits moments de choix t\'ont menée ici.</item>
+        <item>L\'habitude serait toujours ici si tu la nourrissait. Tu ne l\'as pas.</item>
+        <item>Tes amis veulent te voir comme ça. Clair et présent.</item>
+        <item>La routine du soir c\'est ta récompense, pas ton test.</item>
+        <item>Tu respires plus profondément maintenant.</item>
+        <item>L\'envie a perdu son pouvoir de prendre des décisions pour toi.</item>
+        <item>Aujourd\'hui tu as l\'énergie pour quelque chose de réel.</item>
+        <item>La gratitude pour ce que tu gagnes bats le regret pour ce que tu as perdu.</item>
+        <item>Tu ne serres pas les poings. Tu choisisses.</item>
+        <item>L\'habitude s\'épanouissait dans l\'obscurité. La lumière c\'est ton allié.</item>
+        <item>Ton focus s\'aiguise quand tu arrête de brûler l\'énergie dessus.</item>
+        <item>L\'eau froide te réveille comme l\'habitude le ferait. Sans le coût.</item>
+        <item>Tu ne te pries pas. Tu investis en toi.</item>
+        <item>L\'envie est forte certains jours, tranquille d\'autres. Les deux vont.</item>
+        <item>Ta dette de sommeil se rétrécit.</item>
+        <item>La promenade que tu as prise ce matin avait un but: te souvenir que tu peux être calme.</item>
+        <item>Tu n\'es pas parfaite. Tu sois persévérante.</item>
+        <item>L\'habitude vit dans l\'habitude. Casse l\'habitude, casse son pouvoir.</item>
+        <item>Ton esprit c\'est un outil à nouveau, pas un champ de bataille.</item>
+        <item>Le matin c\'est ta page blanche.</item>
+        <item>Tu enseignes à ton système nerveux une nouvelle façon de te sentir en sécurité.</item>
+        <item>C\'est ce que tu as choisi. Continues de le choisir.</item>
+        <item>L\'ancien schéma veut se sentir comme de la liberté. La vraie liberté se sent comme ça.</item>
+        <item>Ton énergie n\'est plus empruntée à demain.</item>
+        <item>L\'envie va te tester. Laisse-la. Tu as déjà passé chaque test jusqu\'à présent.</item>
+        <item>La discipline c\'est l\'amour appliqué à toi-même.</item>
+        <item>Tu ne fuis pas l\'habitude. Tu fuis vers quelque chose de mieux.</item>
+        <item>La clarté que tu ressens maintenant vaut la peine de la protéger.</item>
+        <item>Une soirée calme prouve que tu peux en avoir beaucoup.</item>
+        <item>Ton corps guérit. Fais confiance au processus.</item>
+        <item>Le moment que tu arrête de combattre c\'est le moment où tu commences à gagner.</item>
+        <item>Tu construis une vie dans laquelle l\'habitude n\'a pas de place.</item>
+        <item>L\'envie se nourrit de secret. Apporte-le à la lumière et regarde-le rétrécir.</item>
+        <item>Le sommeil c\'est où ton corps tient ses promesses.</item>
+        <item>L\'habitude de remplacement devient réelle maintenant.</item>
+        <item>Tu ne manques pas l\'habitude. Tu te souviens de toi.</item>
+        <item>La routine matinale c\'est ton vote quotidien pour toi.</item>
+        <item>La gratitude pour le moment que tu es dedans bats l\'inquiétude pour celui qui vient.</item>
+        <item>Ton esprit a de la place pour quelque chose de nouveau maintenant.</item>
+        <item>La promenade dans les bois c\'est le médicament que l\'habitude prétendait être.</item>
+        <item>Tu apprends que tu peux rester avec l\'inconfort sans la nourrir.</item>
+        <item>L\'habitude s\'épanouissait sur l\'urgence. Le calme c\'est son ennemi.</item>
+        <item>Ton focus revient le moment où tu arrête de le diviser.</item>
+        <item>Chaque petite victoire c\'est la permission de croire aux plus grandes.</item>
+        <item>Tu ne te pries pas. Tu pratiques la liberté.</item>
+        <item>L\'envie c\'est une visiteuse, pas une propriétaire.</item>
+        <item>Ton énergie c\'est en train de dégager un chemin pour quelque chose de réel.</item>
+        <item>L\'ancien schéma c\'est plus tranquille parce que tu ne la nourris pas.</item>
+        <item>Tu construis un métier maintenant, pas juste du temps qui passe.</item>
+        <item>La discipline sans compassion c\'est une punition. Tu connait la différence.</item>
+        <item>La nuit c\'est plus tranquille. Le sommeil vient plus facile. Tu le sens.</item>
+        <item>Tes amis veulent cette version de toi. La claire.</item>
+        <item>L\'habitude a promis l\'évasion. Tu as trouvé quelque chose de mieux: la présence.</item>
+        <item>L\'envie viendra demain. Tu sais comment la gérer.</item>
+        <item>La routine matinale réorganise ton cerveau un jour à la fois.</item>
+        <item>Tu ne sois pas forte parce que tu ne ressens pas l\'envie. Tu sois forte parce que tu la ressens et tu choisisses quand même.</item>
+        <item>Ton esprit c\'est moins encombré. Qu\'est-ce que tu feras avec l\'espace?</item>
+        <item>L\'habitude se nourrie d\'ennui. Tu apprends à être ennuyée et à vivre de toute façon.</item>
+        <item>Gratitude pour ton corps, qui guérit, qui essaie.</item>
+        <item>La promenade ce matin c\'était la pratique. Continues la pratique.</item>
+        <item>Ton sommeil c\'est plus profond quand ton esprit ne c\'est pas divisé.</item>
+        <item>L\'envie perd du pouvoir le moment où tu arrête de croire en sa nécessité.</item>
+        <item>Tu ne commences pas de zéro. Tu commences de maintenant.</item>
+        <item>L\'ancien schéma a promis le soulagement. Le vrai soulagement c\'est vivre sans.</item>
+        <item>Ton focus s\'aiguise avec chaque choix de te détourner.</item>
+        <item>L\'eau froide te rappelle: l\'inconfort ne exige pas l\'habitude.</item>
+        <item>Tu ne combats plus. Tu juste ne nourrit pas le feu.</item>
+        <item>L\'habitude voulait ton matin. Reprends-le.</item>
+        <item>Tes mains c\'est disponible pour le travail maintenant.</item>
+        <item>L\'envie c\'est réelle. Ton choix c\'est plus réel.</item>
+        <item>La discipline appliquée à toi-même c\'est la forme la plus élevée d\'amour.</item>
+        <item>La soirée c\'est à toi. Pas de négociation. Pas d\'envie. Juste la soirée.</item>
+        <item>Ton esprit c\'est en train d\'apprendre à être tranquille. Laisse-le apprendre.</item>
+        <item>L\'habitude c\'était bruyante. Ton calme c\'est plus bruyant.</item>
+        <item>L\'habitude de remplacement c\'est maintenant un foyer.</item>
+        <item>Tu enseignes à ton système nerveux que tu es en sécurité sans.</item>
+        <item>La promenade matinale c\'est ton rappel quotidien: tu peux choisir ta propre direction.</item>
+        <item>Gratitude pour le moment qui t\'a menée ici, peu importe ce que c\'était.</item>
+        <item>Ton focus c\'était fragmenté. Il revient.</item>
+        <item>L\'envie atteindra un pic et tombera. Ça tombe toujours.</item>
+        <item>Le sommeil ce n\'est pas l\'indulgence. C\'est l\'infrastructure.</item>
+        <item>L\'ancien schéma c\'est une porte que tu n\'as pas à ouvrir.</item>
+        <item>Ton énergie c\'est plus d\'être pas dépensée en se cachant.</item>
+        <item>Le moment que tu acceptes l\'envie c\'est le moment où elle perd son pouvoir.</item>
+        <item>L\'habitude a promis l\'excitation. Tu as trouvé la paix. C\'est mieux.</item>
+        <item>Tu n\'es pas parfaite. Tu sois honnête. C\'est assez.</item>
+        <item>Le jour à venir c\'est à toi. Utilise-le.</item>
+        <item>Ton corps c\'est en train de guérir. Fais-lui confiance.</item>
+        <item>L\'envie c\'est un chuchottement, pas un cri, parce que tu ne la nourrit pas.</item>
+        <item>La discipline c\'est le pont entre qui tu sois et qui tu veux être.</item>
+        <item>La promenade que tu prends c\'est la réponse que tu cherches.</item>
+        <item>Tu ne fuis pas du plaisir. Tu fuis vers la présence.</item>
+        <item>Le matin c\'est le début de tout.</item>
+        <item>L\'habitude va te tester. Tu vas réussir.</item>
+        <item>Ton focus c\'est un muscle. Tu l\'exercice.</item>
+        <item>Le sommeil que tu obtiens c\'est ton corps qui dit: merci.</item>
+        <item>Tu construis quelque chose dans laquelle l\'habitude n\'avait pas de part.</item>
+        <item>L\'envie vient de la mémoire, pas de la nécessité.</item>
+        <item>Gratitude pour la partie de toi qui veut changer.</item>
+        <item>L\'eau froide c\'est ton allié.</item>
+        <item>Tu n\'es pas forte malgré la lutte. Tu sois forte à cause de ça.</item>
+        <item>L\'ancien schéma s\'estompe parce que tu ne la renforce pas.</item>
+        <item>Ton esprit c\'est en train de vider la chambre pour le travail, l\'étude, le métier.</item>
+        <item>La routine du soir c\'est la promesse que tu tiens à toi-même.</item>
+        <item>L\'envie viendra quand tu sois fatiguée. Tu sais quoi faire.</item>
+        <item>Tu ne te pries pas. Tu t\'enseignes quelque chose de vrai.</item>
+        <item>L\'habitude se nourrissait de ton anxiété. Regarde comment le calme se grandit sans.</item>
+        <item>Le sommeil c\'est où le travail de la guérison se passe.</item>
+        <item>Ton énergie c\'est plus d\'emprunt de la semaine prochaine.</item>
+        <item>L\'habitude de remplacement c\'est maintenant en train de devenir une partie de toi.</item>
+        <item>La promenade c\'est pas de l\'exercice. C\'est de se souvenir.</item>
+        <item>Tu apprends que tu peux être bien sans la permission de l\'habitude.</item>
+        <item>La discipline ce n\'est pas une punition. C\'est la protection.</item>
+        <item>La routine matinale c\'est une lettre d\'amour que tu écris à toi-même quotidiennement.</item>
+        <item>Le focus qui revient c\'est à toi.</item>
+        <item>L\'envie c\'est fort les jours difficiles. C\'est normal. Tu fais bien.</item>
+        <item>Gratitude pour tes mains, qui sont libres maintenant.</item>
+        <item>L\'habitude chuchotait dans ton oreille. Leur propre voix c\'est plus forte maintenant.</item>
+        <item>L\'ancien schéma a promis le soulagement. Tu construis la chose réelle.</item>
+        <item>Ton corps c\'est en train de t\'enseigner à propos du calme.</item>
+        <item>Le moment que tu arrête de le combattre c\'est le moment où tu gagnes.</item>
+        <item>Tu ne manques rien. Tu gagnes tout.</item>
+        <item>L\'envie c\'est un test que tu as déjà passé mille fois.</item>
+        <item>La soirée c\'est plus tranquille parce que ton jour c\'était sur tes propres termes.</item>
+        <item>Ton esprit c\'est moins fragmenté.</item>
+        <item>L\'eau froide c\'est une preuve que tu peux choisir l\'inconfort.</item>
+        <item>L\'habitude se nourrie de secret. Leur honnêteté c\'est son ennemi.</item>
+        <item>Le sommeil c\'est une guérison. Laisse-la se faire.</item>
+        <item>La promenade matinale c\'est ton bouton de réinitialisation quotidien.</item>
+        <item>Tu n\'es pas faible parce que tu ressens l\'envie. Tu sois forte parce que tu la fasses face.</item>
+        <item>La discipline c\'est l\'auto-respect en action.</item>
+        <item>Le focus revient parce que tu as arrêté de la disperser.</item>
+        <item>Tes amis voient quelqu\'un qu\'ils reconnaissent. C\'est toi.</item>
+        <item>L\'ancien schéma c\'est l\'histoire. Tu sois dans le temps présent maintenant.</item>
+        <item>L\'habitude voulait ton temps. Tu la reclames.</item>
+        <item>Gratitude pour la clarté qui vient.</item>
+        <item>L\'envie va visiter. Tu connais le chemin pour la porte.</item>
+        <item>Tu ne fuis pas du plaisir. Tu fuis vers la vérité.</item>
+        <item>La routine du soir c\'est une structure sans punition.</item>
+        <item>Ton corps guérit parce que tu l\'écoutes.</item>
+        <item>L\'habitude de remplacement c\'est maintenant en train de devenir réelle.</item>
+        <item>Le moment que l\'envie passe c\'est une preuve qu\'elle passe toujours.</item>
+        <item>Tu n\'es pas parfaite. Tu sois persévérante. C\'est la même chose qu\'une force.</item>
+        <item>L\'habitude c\'était bruyante. Ton tranquille c\'est une rébellion.</item>
+        <item>Le sommeil ce n\'est pas de la paresse. C\'est le travail le plus important que tu fais.</item>
+        <item>Le matin c\'est un cadeau que tu te donnes chaque jour.</item>
+        <item>Ton focus s\'aiguise parce qu\'il n\'est plus divisé.</item>
+        <item>L\'eau froide c\'est un professeur. Écoute ce qu\'il dit.</item>
+        <item>L\'envie c\'est de l\'honnêteté. C\'est en train de te dire ce avec quoi tu dois encore travailler.</item>
+        <item>La discipline c\'est la conversation entre toi et toi-même.</item>
+        <item>L\'ancien schéma avait une force gravitationnelle. Tu quittes son orbite.</item>
+        <item>Ton énergie c\'est en train de se construire au lieu de se drainer.</item>
+        <item>Gratitude pour la partie de toi qui a choisi ça.</item>
+        <item>L\'habitude a promis l\'évasion. Tu as trouvé quelque chose de mieux: toi-même.</item>
+        <item>La soirée que tu as c\'est celle que tu as gagnée.</item>
+        <item>Tu apprends à être ennuyée et à être d\'accord avec ça.</item>
+        <item>L\'envie c\'est un rappel. C\'est te rappeler pourquoi tu as commencé.</item>
+        <item>Ton esprit c\'est en train de devenir un foyer à nouveau.</item>
+        <item>L\'habitude de remplacement c\'est en train de devenir une identité.</item>
+        <item>La promenade matinale c\'est ta conversation avec toi-même.</item>
+        <item>Tu ne combats plus l\'habitude. Tu l\'ignores.</item>
+        <item>La discipline c\'est l\'amour. L\'auto-amour, spécifiquement.</item>
+        <item>Le focus qui revient c\'était toujours à toi.</item>
+        <item>L\'habitude c\'était en train de te voler le sommeil. Remarque comment il revient.</item>
+        <item>Gratitude pour ton système nerveux, qui c\'est en train d\'apprendre à te calmer.</item>
+        <item>L\'ancien schéma c\'est en train de devenir une étrangère.</item>
+        <item>Tes mains c\'est disponible pour le travail, l\'étude, le métier, la connexion.</item>
+        <item>L\'eau froide c\'est une petite victoire que tu choisisses chaque jour.</item>
+        <item>L\'envie vient. L\'envie va. Tu restes.</item>
+        <item>Le sommeil c\'est l\'architecture. Construit-la solide.</item>
+        <item>La routine matinale c\'est ta pratique quotidienne en te choisissant.</item>
+        <item>La soirée c\'est un sanctuaire que tu construis brique par brique.</item>
+        <item>Ta clarté ce n\'est pas un accident. C\'est le résultat des petits choix.</item>
+        <item>L\'habitude de remplacement c\'est en train de devenir plus facile.</item>
+        <item>L\'habitude se nourrie du stress. Regarde ton stress diminuer.</item>
+        <item>La discipline sans joie c\'est juste la souffrance. Tu connait la différence.</item>
+        <item>La promenade ce n\'est pas l\'évasion. C\'est le retour.</item>
+        <item>Ton focus c\'est un outil qui s\'aiguise soi-même.</item>
+        <item>Gratitude pour le moment où tu as décidé de changer.</item>
+        <item>L\'envie c\'est une vague. Tu as appris à ne pas te jeter dedans.</item>
+        <item>L\'ancien schéma c\'est en train de perdre son pouvoir narratif sur toi.</item>
+        <item>Tu ne fuis pas l\'habitude. Tu fuis vers toi-même.</item>
+        <item>Ton corps c\'est en train de se souvenir de ce que le repos ressemble.</item>
+        <item>Le matin c\'est une toile. Aujourd\'hui tu peint quelque chose de réel.</item>
+        <item>L\'eau froide te rappelle: l\'inconfort ce n\'est pas la même chose que le mal.</item>
+        <item>Le sommeil ce n\'est plus un soulagement. C\'est une partie normale de la vie.</item>
+        <item>Ton esprit c\'est en train de s\'éclaircir parce que tu as arrêté de nourrir le brouillard.</item>
+        <item>L\'habitude voulait ton attention. Tu la donnes à quelque chose de réel.</item>
+        <item>La discipline c\'est l\'acte de tenir des promesses à toi-même.</item>
+        <item>La routine du soir c\'est un rituel, pas une cage.</item>
+        <item>L\'envie atteindra un pic. Tu va la regarder tomber. Tu va être bien.</item>
+        <item>Gratitude pour la force que tu ne savais pas que tu avais.</item>
+        <item>L\'habitude de remplacement c\'est en train de devenir seamless maintenant.</item>
+        <item>Ton focus revient parce que tu as arrêté de la diviser.</item>
+        <item>L\'ancien schéma c\'est une porte que tu as appris à marcher devant.</item>
+        <item>Tu apprends que le calme c\'est plus puissant que n\'importe quel évasion.</item>
+        <item>L\'habitude c\'était une vie empruntée. Celle-ci c\'est la tienne.</item>
+        <item>La promenade matinale c\'est ta conversation quotidienne avec la clarté.</item>
+        <item>Le sommeil c\'est la fondation. Tout le reste c\'est construit là-dessus.</item>
+        <item>La discipline c\'est l\'architecture de la liberté.</item>
+        <item>L\'envie c\'est honnête. C\'est en train de te dire où le travail c\'est toujours.</item>
+        <item>Ton énergie c\'est à toi à nouveau. Qu\'est-ce que tu construiras avec?</item>
+        <item>La soirée c\'est plus tranquille parce que ton jour c\'est sur tes termes.</item>
+        <item>L\'eau froide c\'est une petite promesse: tu peux faire les choses difficiles.</item>
+        <item>Le focus revient, un jour à la fois.</item>
+        <item>Gratitude pour ton corps, qui continue à essayer.</item>
+        <item>L\'ancien schéma c\'est l\'histoire. Ton histoire c\'est maintenant.</item>
+        <item>L\'habitude de remplacement c\'est en train de devenir qui tu sois.</item>
+        <item>L\'habitude a promis l\'excitation. Tu as trouvé le sens. C\'est mieux.</item>
+        <item>Ton esprit c\'est moins encombré. Qu\'est-ce que tu vas inviter dedans?</item>
+        <item>La routine matinale c\'est ta preuve quotidienne que tu peux choisir.</item>
+        <item>L\'envie va venir et aller. Tu va rester.</item>
+        <item>Le sommeil c\'est le meilleur travail que tu fais.</item>
+        <item>La discipline appliquée avec compassion c\'est impossible à arrêter.</item>
+        <item>La promenade ce n\'est pas de la course. C\'est le retour.</item>
+        <item>Ton focus s\'aiguise avec chaque moment que tu restes clair.</item>
+        <item>Gratitude pour la personne que tu deviens.</item>
+        <item>L\'ancien schéma avait son moment. Ce moment c\'est le tien.</item>
+    </string-array>
+</resources>
