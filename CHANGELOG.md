@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.1.1](https://github.com/aiyu-ayaan/Rewire/compare/v1.1.0...v1.1.1) (2026-10-04)
+
+### Bug fixes
+
+* Clamp bottom bar insets to non-negative so spring bounce does not crash compose padding
+
 ## [1.1.0](https://github.com/aiyu-ayaan/Rewire/compare/v1.0.2...v1.1.0) (2026-10-04)
 
 ### Features
