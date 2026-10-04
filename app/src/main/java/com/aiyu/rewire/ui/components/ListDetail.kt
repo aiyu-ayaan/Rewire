@@ -97,7 +97,8 @@ fun ListDetail(detail: String?, list: @Composable () -> Unit, listWidth: Dp = 42
                             translationY = lerp(from.top, 0f, p)
                             clip = true
                             shape = rounded(size.width, lerp(from.height, size.height, p) / k, corner.toPx() / k)
-                            shadowElevation = (1f - p).coerceIn(0f, 1f) * 6.dp.toPx()
+                            // Fade the container over the last stretch so it never sits opaque on top of the card (blink on close).
+                            alpha = (p / 0.25f).coerceIn(0f, 1f)
                         },
                         color = color,
                     ) {
