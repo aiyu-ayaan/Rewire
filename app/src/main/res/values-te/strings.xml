@@ -637,4 +637,77 @@
     <string name="punch_guard_6">యాప్‌లు కొన్ని రౌండ్లు గెలిచాయి. రీమ్యాచ్ కోసం ప్లాన్ చేసుకునేలా Matrix స్కోరు ఉంచుతుంది.</string>
     <string name="profile_language">భాష</string>
     <string name="profile_language_system">సిస్టమ్ డిఫాల్ట్</string>
+
+    <!-- Quit tracker -->
+    <string name="nav_quit">వదిలివేయండి</string>
+    <string name="quit_subtitle">ఒక్క రోజులో ఒక్క అడుగు</string>
+    <string name="quit_thought_title">నేటి ఆలోచన</string>
+    <string name="quit_thought_another">మరో ఆలోచన</string>
+    <string name="quit_urge_title">కోరిక కలుగుతోందా?</string>
+    <string name="quit_urge_body">ఇది పైకి లేస్తుంది, శిఖరాగ్రానికి చేరుతుంది మరియు దాటిపోతుంది. రెండు నిమిషాలు దీనితో పాటు శ్వాసించండి.</string>
+    <string name="quit_urge_start">తరంగంతో సాగండి</string>
+    <plurals name="quit_urges_ridden">
+        <item quantity="one">%d తరంగాన్ని దాటారు</item>
+        <item quantity="other">%d తరంగాలను దాటారు</item>
+    </plurals>
+    <string name="quit_section">మీ ప్రయాణాలు</string>
+    <string name="quit_empty_title">కొత్తది ప్రారంభించండి</string>
+    <string name="quit_empty_body">మీరు వెనుకన వదలాలనుకునే దేనినైనా జోడించండి. మీరు ఇచ్చిన పేరు కేవలం మీకు మాత్రమే కనిపిస్తుంది.</string>
+    <string name="quit_add_first">ఒక ట్రాకర్‌ను జోడించండి</string>
+    <string name="quit_new">కొత్త ట్రాకర్</string>
+    <string name="quit_edit_title">ట్రాకర్‌ను సవరించండి</string>
+    <plurals name="quit_days_word" xmlns:tools="http://schemas.android.com/tools" tools:ignore="ImpliedQuantity">
+        <item quantity="one">రోజు</item>
+        <item quantity="other">రోజులు</item>
+    </plurals>
+    <string name="quit_run_today">+ %1$d గం %2$d నిమి</string>
+    <string name="quit_best">ఉత్తమమైనది: %s</string>
+    <string name="quit_next">తదుపరిది: %s</string>
+    <string name="quit_days_short">%d రో</string>
+    <string name="quit_days_hours">%1$d రో %2$d గం</string>
+    <string name="quit_hours_minutes">%1$d గం %2$d నిమి</string>
+    <string name="quit_ring_desc">%1$d రోజులు, %3$d రోజులకు చేరుకోవడానికి %2$d%% మార్గంలో ఉన్నారు</string>
+    <string name="quit_slipped">జారమొహం</string>
+    <string name="quit_slip_title">మళ్లీ ప్రారంభించాలా?</string>
+    <string name="quit_slip_body">ఇది జరుగుతుంది. జారడం అనేది సమాచారం, అంతం కాదు. మీ అత్యుత్తమ రికార్డు సేవ్‌ అయి ఉంటుంది.</string>
+    <string name="quit_slip_confirm">మళ్లీ ప్రారంభించండి</string>
+    <plurals name="quit_recent_slips">
+        <item quantity="one">గత 30 రోజులలో %d పునఃప్రారంభం</item>
+        <item quantity="other">గత 30 రోజులలో %d పునఃప్రారంభాలు</item>
+    </plurals>
+    <string name="quit_more">మరిన్ని ఎంపికలు</string>
+    <string name="quit_edit">సవరించు</string>
+    <string name="quit_delete_title">ఈ ట్రాకర్‌ను తొలగించాలా?</string>
+    <string name="quit_delete_body">దీని చరిత్ర ఈ పరికరం నుండి తీసివేయబడుతుంది.</string>
+    <string name="quit_name">పేరు</string>
+    <string name="quit_name_hint">ఏ పేరుఇచ్చినా పని చేస్తుంది. మీకు మాత్రమే కనిపిస్తుంది.</string>
+    <string name="quit_reason">ఇది ఎందుకు ముఖ్యం (ఐచ్ఛికం)</string>
+    <string name="quit_started">ప్రారంభించబడింది</string>
+    <string name="quit_started_now">ఇప్పుడే</string>
+    <string name="quit_started_pick">ఒక తేదీని ఎంచుకోండి</string>
+    <string name="quit_private_note">ఈ పరికరంలోనే ఉంటుంది. మ్యాట్రిక్స్, బ్యాకప్‌లు లేదా ఎక్స్‌పోర్ట్‌లలో ఉండదు.</string>
+    <string name="quit_breathe_in">శ్వాస పీల్చండి</string>
+    <string name="quit_breathe_hold">ఆపుకోండి</string>
+    <string name="quit_breathe_out">శ్వాస వదలండి</string>
+    <string name="quit_urge_left">%1$d:%2$02d మిగిలి ఉంది</string>
+    <string name="quit_urge_done_title">తరంగం దాటిపోయింది</string>
+    <string name="quit_urge_done_body">మీరు దానిని గమనించారు, దానితో ఉన్నారు మరియు దానిని వదిలిపెట్టారు.</string>
+    <string name="quit_urge_done">పూర్తయింది</string>
+    <string name="quit_urge_leave">వెళ్లిపోండి</string>
+    <string name="quit_urge_idea_title">అప్పుడు ఒక్క పని చేయండి</string>
+    <string-array name="quit_urge_ideas">
+        <item>ఒక గ్లాసు నీళ్లు తాగండి.</item>
+        <item>ఐదు నిమిషాలు బయటకు అడుగు పెట్టండి.</item>
+        <item>పది మెల్లని స్కాట్స్ చేయండి.</item>
+        <item>చల్లటి నీటితో మీ ముఖం కడుక్కೊಳ್ಳండి.</item>
+        <item>మీరు నమ్మే వ్యక్తికి సందేశం పంపండి.</item>
+        <item>గది మార్చండి మరియు లైట్లు ఆన్ చేయండి.</item>
+        <item>కొంతసేపు మీ పరికరాన్ని వేరే గదిలో ఉంచండి.</item>
+        <item>ప్రస్తుతం మీరు ఏమి అనుభవిస్తున్నారో వ్రాసి పెట్టుకోండి.</item>
+        <item>మీకు దగ్గరగా ఉన్న ఒక చిన్న వస్తువును సర్దండి.</item>
+        <item>రెండు నిమిషాల పాటు మెల్లగా సాగదీయండి.</item>
+        <item>మీకోసం వేడి పానీయం తయారు చేసుకోండి.</item>
+        <item>ఇది ఆలస్యమైతే, నిద్రపోండి.</item>
+    </string-array>
+    <!-- /Quit tracker -->
 </resources>

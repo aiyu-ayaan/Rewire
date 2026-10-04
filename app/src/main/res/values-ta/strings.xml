@@ -637,4 +637,77 @@
     <string name="punch_guard_6">ஆப்கள் சில சுற்றுகளை வென்றன. மறுபோட்டிக்குத் திட்டமிட Matrix மதிப்பெண் வைத்திருக்கிறது.</string>
     <string name="profile_language">மொழி</string>
     <string name="profile_language_system">சிஸ்டம் இயல்பு</string>
+
+    <!-- Quit tracker -->
+    <string name="nav_quit">கைவிடு</string>
+    <string name="quit_subtitle">ஒரு நேரத்தில் ஒரு நாள்</string>
+    <string name="quit_thought_title">இன்றைய சிந்தனை</string>
+    <string name="quit_thought_another">மற்றொரு சிந்தனை</string>
+    <string name="quit_urge_title">தூண்டுதல் ஏற்படுகிறதா?</string>
+    <string name="quit_urge_body">இது எழுகிறது, உச்சத்தை அடைகிறது மற்றும் கடந்து செல்கிறது. இரண்டு நிமிடங்களுக்கு அதனுடன் மூச்சு விடுங்கள்.</string>
+    <string name="quit_urge_start">அலையுடன் செல்லுங்கள்</string>
+    <plurals name="quit_urges_ridden">
+        <item quantity="one">%d அலை கடக்கப்பட்டது</item>
+        <item quantity="other">%d அலைகள் கடக்கப்பட்டன</item>
+    </plurals>
+    <string name="quit_section">உங்கள் பயணங்கள்</string>
+    <string name="quit_empty_title">புதியதைத் தொடங்குங்கள்</string>
+    <string name="quit_empty_body">நீங்கள் விட்டுவிட விரும்பும் எதையும் சேர்க்கவும். நீங்கள் வழங்கும் பெயர் உங்களுக்கு மட்டுமே தெரியும்.</string>
+    <string name="quit_add_first">டிராக்கரைச் சேர்க்கவும்</string>
+    <string name="quit_new">புதிய டிராக்கர்</string>
+    <string name="quit_edit_title">டிராக்கரைத் திருத்து</string>
+    <plurals name="quit_days_word" xmlns:tools="http://schemas.android.com/tools" tools:ignore="ImpliedQuantity">
+        <item quantity="one">நாள்</item>
+        <item quantity="other">நாட்கள்</item>
+    </plurals>
+    <string name="quit_run_today">+ %1$d ம %2$d நி</string>
+    <string name="quit_best">சிறந்தது: %s</string>
+    <string name="quit_next">அடுத்து: %s</string>
+    <string name="quit_days_short">%d நா</string>
+    <string name="quit_days_hours">%1$d நா %2$d ம</string>
+    <string name="quit_hours_minutes">%1$d ம %2$d நி</string>
+    <string name="quit_ring_desc">%1$d நாட்கள், %3$d நாட்களை அடைய %2$d%% வழி</string>
+    <string name="quit_slipped">நான் வழுக்கிவிட்டேன்</string>
+    <string name="quit_slip_title">மீண்டும் தொடங்கவா?</string>
+    <string name="quit_slip_body">இது நடக்கும். வழுக்குவது என்பது தகவல், முடிவு அல்ல. உங்கள் சிறந்த ஓட்டம் சேமிக்கப்படும்.</string>
+    <string name="quit_slip_confirm">மீண்டும் தொடங்கு</string>
+    <plurals name="quit_recent_slips">
+        <item quantity="one">கடந்த 30 நாட்களில் %d மறுதொடக்கம்</item>
+        <item quantity="other">கடந்த 30 நாட்களில் %d மறுதொடக்கங்கள்</item>
+    </plurals>
+    <string name="quit_more">கூடுதல் விருப்பங்கள்</string>
+    <string name="quit_edit">திருத்து</string>
+    <string name="quit_delete_title">இந்த டிராக்கரை நீக்கவா?</string>
+    <string name="quit_delete_body">இதன் வரலாறு இந்தச் சாதனத்திலிருந்து அகற்றப்படும்.</string>
+    <string name="quit_name">பெயர்</string>
+    <string name="quit_name_hint">எந்தப் பெயரும் வேலை செய்யும். உங்களுக்கு மட்டுமே தெரியும்.</string>
+    <string name="quit_reason">ஏன் இது முக்கியம் (விரும்பினால்)</string>
+    <string name="quit_started">தொடங்கியது</string>
+    <string name="quit_started_now">இப்போதே</string>
+    <string name="quit_started_pick">தேதியைத் தேர்ந்தெடுக்கவும்</string>
+    <string name="quit_private_note">இந்த சாதனத்தில் இருக்கும். மேட்ரிக்ஸ், காப்புப்பிரதிகள் அல்லது ஏற்றுமதிகளில் இல்லை.</string>
+    <string name="quit_breathe_in">உள்ளே மூச்சு விடுங்கள்</string>
+    <string name="quit_breathe_hold">நிறுத்துங்கள்</string>
+    <string name="quit_breathe_out">வெளியே மூச்சு விடுங்கள்</string>
+    <string name="quit_urge_left">%1$d:%2$02d மீதமுள்ளது</string>
+    <string name="quit_urge_done_title">அலை கடந்துவிட்டது</string>
+    <string name="quit_urge_done_body">நீங்கள் அதைக் கவனித்து, அதனுடன் தங்கி, அதை விட்டுவிட்டீர்கள்.</string>
+    <string name="quit_urge_done">முடிந்தது</string>
+    <string name="quit_urge_leave">வெளியேறு</string>
+    <string name="quit_urge_idea_title">பின்னர் ஒரு காரியத்தைச் முயற்சிக்கவும்</string>
+    <string-array name="quit_urge_ideas">
+        <item>ஒரு கிளாஸ் தண்ணீர் குடியுங்கள்.</item>
+        <item>ஐந்து நிமிடங்களுக்கு வெளியே செல்லுங்கள்.</item>
+        <item>பத்து மெதுவான ஸ்குவாட்களைச் செய்யுங்கள்.</item>
+        <item>குளிர்ந்த நீரால் உங்கள் முகத்தைக் கழுவுங்கள்.</item>
+        <item>நீங்கள் நம்பும் யாருக்காவது செய்தி அனுப்புங்கள்.</item>
+        <item>அறையை மாற்றி விளக்குகளை ஆன் செய்யுங்கள்.</item>
+        <item>உங்கள் சாதனத்தை சிறிது நேரம் மற்றொரு அறையில் விட்டுவிடுங்கள்.</item>
+        <item>இப்போது நீங்கள் என்ன உணர்கிறீர்கள் என்பதை எழுதுங்கள்.</item>
+        <item>உங்களுக்கு அருகிலுள்ள ஒரு சிறிய விஷயத்தைச் சீரமைக்கவும்.</item>
+        <item>இரண்டு நிமிடங்களுக்கு மெதுவாக நீட்டவும்.</item>
+        <item>உங்களுக்கு சூடான பானம் தயாரித்துக் கொள்ளுங்கள்.</item>
+        <item>நேரமாகிவிட்டால், தூங்கச் செல்லுங்கள்.</item>
+    </string-array>
+    <!-- /Quit tracker -->
 </resources>

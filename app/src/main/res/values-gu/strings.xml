@@ -637,4 +637,77 @@
     <string name="punch_guard_6">એપ્સ થોડા રાઉન્ડ જીતી. ફરી મુકાબલાની યોજના બનાવી શકો એટલે Matrix સ્કોર રાખે છે.</string>
     <string name="profile_language">ભાષા</string>
     <string name="profile_language_system">સિસ્ટમ ડિફૉલ્ટ</string>
+
+    <!-- Quit tracker -->
+    <string name="nav_quit">છોડો</string>
+    <string name="quit_subtitle">એક સમયે એક દિવસ</string>
+    <string name="quit_thought_title">આજ માટેનો વિચાર</string>
+    <string name="quit_thought_another">બીજો વિચાર</string>
+    <string name="quit_urge_title">તીવ્ર ઇચ્છા અનુભવાઈ રહી છે?</string>
+    <string name="quit_urge_body">તે વધે છે, શિખરે પહોંચે છે અને પસાર થઈ જાય છે. બે મિનિટ માટે તેની સાથે શ્વાસ લો.</string>
+    <string name="quit_urge_start">મોજા પર સવાર થાઓ</string>
+    <plurals name="quit_urges_ridden">
+        <item quantity="one">%d મોજું પાર કર્યું</item>
+        <item quantity="other">%d મોજાં પાર કર્યા</item>
+    </plurals>
+    <string name="quit_section">તમારી સફર</string>
+    <string name="quit_empty_title">કંઈક નવું શરૂ કરો</string>
+    <string name="quit_empty_body">તમે જે પાછળ છોડવા માંગો છો તે ઉમેરો. તમે તેને જે નામ આપો છો તે ફક્ત તમને જ દેખાય છે.</string>
+    <string name="quit_add_first">ટ્રેકર ઉમેરો</string>
+    <string name="quit_new">નવું ટ્રેકર</string>
+    <string name="quit_edit_title">ટ્રેકર સંપાદિત કરો</string>
+    <plurals name="quit_days_word" xmlns:tools="http://schemas.android.com/tools" tools:ignore="ImpliedQuantity">
+        <item quantity="one">દિવસ</item>
+        <item quantity="other">દિવસો</item>
+    </plurals>
+    <string name="quit_run_today">+ %1$d કલાક %2$d મિનિટ</string>
+    <string name="quit_best">શ્રેષ્ઠ: %s</string>
+    <string name="quit_next">આગળનું: %s</string>
+    <string name="quit_days_short">%d દિ</string>
+    <string name="quit_days_hours">%1$d દિ %2$d ક</string>
+    <string name="quit_hours_minutes">%1$d ક %2$d મિ</string>
+    <string name="quit_ring_desc">%1$d દિવસ, %3$d દિવસ સુધી પહોંચવાના રસ્તાના %2$d%%</string>
+    <string name="quit_slipped">હું લપસી ગયો</string>
+    <string name="quit_slip_title">ફરીથી શરૂ કરવું?</string>
+    <string name="quit_slip_body">આ બને છે. લપસવું એ માહિતી છે, અંત નથી. તમારી શ્રેષ્ઠ દોડ સાચવેલી રહે છે.</string>
+    <string name="quit_slip_confirm">ફરીથી શરૂ કરો</string>
+    <plurals name="quit_recent_slips">
+        <item quantity="one">છેલ્લા ૩૦ દિવસમાં %d પુનઃશરૂઆત</item>
+        <item quantity="other">છેલ્લા ૩૦ દિવસમાં %d પુનઃશરૂઆતો</item>
+    </plurals>
+    <string name="quit_more">વધુ વિકલ્પો</string>
+    <string name="quit_edit">સંપાદિત કરો</string>
+    <string name="quit_delete_title">આ ટ્રેકર કાઢી નાખવું?</string>
+    <string name="quit_delete_body">આ ઇતિહાસ આ ઉપકરણમાંથી દૂર કરવામાં આવે છે.</string>
+    <string name="quit_name">નામ</string>
+    <string name="quit_name_hint">કોઈપણ નામ ચાલે છે. ફક્ત તમને જ દેખાય છે.</string>
+    <string name="quit_reason">શા માટે તે મહત્વનું છે (વૈકલ્પિક)</string>
+    <string name="quit_started">શરૂ કર્યું</string>
+    <string name="quit_started_now">હમણાં જ</string>
+    <string name="quit_started_pick">તારીખ પસંદ કરો</string>
+    <string name="quit_private_note">આ ઉપકરણ પર રહે છે. મેટ્રિક્સ, બેકઅપ અથવા નિકાસમાં નહીં.</string>
+    <string name="quit_breathe_in">શ્વાસ અંદર લો</string>
+    <string name="quit_breathe_hold">રોકી રાખો</string>
+    <string name="quit_breathe_out">શ્વાસ બહાર કાઢો</string>
+    <string name="quit_urge_left">%1$d:%2$02d બાકી</string>
+    <string name="quit_urge_done_title">મોજું પસાર થઈ ગયું</string>
+    <string name="quit_urge_done_body">તમે તેની નોંધ લીધી, તેની સાથે રહ્યા અને તેને જવા દીધું.</string>
+    <string name="quit_urge_done">પૂર્ણ</string>
+    <string name="quit_urge_leave">છોડો</string>
+    <string name="quit_urge_idea_title">પછી એક કામ કરો</string>
+    <string-array name="quit_urge_ideas">
+        <item>એક ગ્લાસ પાણી પીઓ.</item>
+        <item>પાંચ મિનિટ માટે બહાર જાઓ.</item>
+        <item>દસ ધીમા સ્ક્વોટ્સ કરો.</item>
+        <item>ઠંડા પાણીથી તમારો ચહેરો ધોઈ લો.</item>
+        <item>તમે જેના પર વિશ્વાસ કરો છો તેને મેસેજ કરો.</item>
+        <item>રૂમ બદલો અને લાઇટ ચાલુ કરો.</item>
+        <item>તમારું ઉપકરણ થોડા સમય માટે બીજા રૂમમાં છોડી દો.</item>
+        <item>હમણાં તમે શું અનુભવો છો તે લખી લો.</item>
+        <item>તમારી આસપાસની એક નાની વસ્તુ વ્યવસ્થિત કરો.</item>
+        <item>બે મિનિટ માટે ધીમેથી સ્ટ્રેચ કરો.</item>
+        <item>તમારી જાત માટે ગરમ પીણું બનાવો.</item>
+        <item>જો મોડું થયું હોય, તો સૂઈ જાઓ.</item>
+    </string-array>
+    <!-- /Quit tracker -->
 </resources>

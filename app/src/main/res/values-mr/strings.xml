@@ -637,4 +637,77 @@
     <string name="punch_guard_6">ॲप्सनी काही फेऱ्या जिंकल्या. पुन्हा सामन्याची आखणी करता यावी म्हणून Matrix गुण नोंदवते.</string>
     <string name="profile_language">भाषा</string>
     <string name="profile_language_system">सिस्टम डीफॉल्ट</string>
+
+    <!-- Quit tracker -->
+    <string name="nav_quit">सोडा</string>
+    <string name="quit_subtitle">एका वेळी एक दिवस</string>
+    <string name="quit_thought_title">आजचा विचार</string>
+    <string name="quit_thought_another">दुसरा विचार</string>
+    <string name="quit_urge_title">तीव्र इच्छा होतेय?</string>
+    <string name="quit_urge_body">ती वाढते, शिखरावर पोहोचते आणि निघून जाते. दोन मिनिटे तिच्यासोबत श्वास घ्या.</string>
+    <string name="quit_urge_start">लाटेवर स्वार व्हा</string>
+    <plurals name="quit_urges_ridden">
+        <item quantity="one">%d लाट पार केली</item>
+        <item quantity="other">%d लाटा पार केल्या</item>
+    </plurals>
+    <string name="quit_section">तुमचे प्रवास</string>
+    <string name="quit_empty_title">काहीतरी नवीन सुरू करा</string>
+    <string name="quit_empty_body">तुम्ही मागे सोडू इच्छित असलेली कोणतीही गोष्ट जोडा. तुम्ही दिलेल्या नावावर फक्त तुमचे लक्ष असते.</string>
+    <string name="quit_add_first">ट्रॅकर जोडा</string>
+    <string name="quit_new">नवीन ट्रॅकर</string>
+    <string name="quit_edit_title">ट्रॅकर संपादित करा</string>
+    <plurals name="quit_days_word" xmlns:tools="http://schemas.android.com/tools" tools:ignore="ImpliedQuantity">
+        <item quantity="one">दिवस</item>
+        <item quantity="other">दिवस</item>
+    </plurals>
+    <string name="quit_run_today">+ %1$d ता %2$d मि</string>
+    <string name="quit_best">सर्वोत्तम: %s</string>
+    <string name="quit_next">पुढील: %s</string>
+    <string name="quit_days_short">%d दि</string>
+    <string name="quit_days_hours">%1$d दि %2$d ता</string>
+    <string name="quit_hours_minutes">%1$d ता %2$d मि</string>
+    <string name="quit_ring_desc">%1$d दिवस, %3$d दिवसांपर्यंत पोहोचण्यासाठी %2$d%% मार्ग</string>
+    <string name="quit_slipped">मी घसरलो</string>
+    <string name="quit_slip_title">पुन्हा सुरू करायचे?</string>
+    <string name="quit_slip_body">असे घडते. घसरण म्हणजे माहिती आहे, शेवट नाही. तुमची सर्वोत्तम कामगिरी सेव्ह राहते.</string>
+    <string name="quit_slip_confirm">पुन्हा सुरू करा</string>
+    <plurals name="quit_recent_slips">
+        <item quantity="one">गेल्या ३० दिवसांत %d पुनरारंभ</item>
+        <item quantity="other">गेल्या ३० दिवसांत %d पुनरारंभ</item>
+    </plurals>
+    <string name="quit_more">अधिक पर्याय</string>
+    <string name="quit_edit">संपादित करा</string>
+    <string name="quit_delete_title">हा ट्रॅकर हटवायचा?</string>
+    <string name="quit_delete_body">याचा इतिहास या डिव्हाइसवरून काढून टाकला जाईल.</string>
+    <string name="quit_name">नाव</string>
+    <string name="quit_name_hint">कोणतेही नाव चालेल. फक्त तुम्हालाच दिसते.</string>
+    <string name="quit_reason">हे का महत्त्वाचे आहे (पर्यायी)</string>
+    <string name="quit_started">सुरू केले</string>
+    <string name="quit_started_now">आत्ताच</string>
+    <string name="quit_started_pick">तारीख निवडा</string>
+    <string name="quit_private_note">या डिव्हाइसवरच राहते. मॅट्रिक्स, बॅकअप किंवा एक्सपोर्टमध्ये नाही.</string>
+    <string name="quit_breathe_in">श्वास आत घ्या</string>
+    <string name="quit_breathe_hold">रोखून ठेवा</string>
+    <string name="quit_breathe_out">श्वास बाहेर सोडा</string>
+    <string name="quit_urge_left">%1$d:%2$02d शिल्लक</string>
+    <string name="quit_urge_done_title">लाट निघून गेली</string>
+    <string name="quit_urge_done_body">तुम्ही त्याची नोंद घेतली, त्याच्यासोबत थांबलात आणि ते सोडून दिले.</string>
+    <string name="quit_urge_done">पूर्ण झाले</string>
+    <string name="quit_urge_leave">सोडा</string>
+    <string name="quit_urge_idea_title">मग एक गोष्ट करून पहा</string>
+    <string-array name="quit_urge_ideas">
+        <item>एक ग्लास पाणी प्या.</item>
+        <item>पाच मिनिटांसाठी बाहेर जा.</item>
+        <item>दहा वेळा हळूवार बसा आणि उठा.</item>
+        <item>थंड पाण्याने মুখ धुवा.</item>
+        <item>तुम्हाला ज्याच्यावर विश्वास आहे अशा कोणालातरी मेसेज करा.</item>
+        <item>खोली बदला आणि दिवे चालू करा.</item>
+        <item>काही वेळ तुमचे डिव्हाइस दुसऱ्या खोलीत ठेवा.</item>
+        <item>आता तुम्हाला काय वाटते ते लिहून ठेवा.</item>
+        <item>तुमच्या जवळची एक लहान गोष्ट नीट करा.</item>
+        <item>दोन मिनिटे हळूवार ताणून घ्या.</item>
+        <item> स्वतःसाठी एक गरम पेय बनवा.</item>
+        <item>जर उशीर झाला असेल तर झोपी जा.</item>
+    </string-array>
+    <!-- /Quit tracker -->
 </resources>
