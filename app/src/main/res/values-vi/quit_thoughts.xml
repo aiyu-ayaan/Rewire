@@ -1,0 +1,1012 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generated: one line per item. Calm, neutral; never names a specific habit. -->
+<resources>
+    <string-array name="quit_thoughts">
+        <item>Cơn thèm muốn là một làn sóng. Nó lên cao. Rồi nó qua đi. Bạn có thể vượt qua nó.</item>
+        <item>Bây giờ, cảm nhận nó mà không chống lại. Thời điểm này chỉ là tạm thời.</item>
+        <item>Bạn đang cảm thấy gì dưới cơn thèm muốn? Buồn? Cô đơn? Mệt? Hãy gọi tên nó.</item>
+        <item>Bạn không bắt buộc phải hành động theo mọi cảm xúc. Cảm nhận rồi để nó đi qua.</item>
+        <item>Cơn thèm muốn không phải lệnh. Nó chỉ là một suy nghĩ trong tâm trí bạn.</item>
+        <item>Dừng lại năm mười phút. Cơn thèm muốn sẽ thay đổi.</item>
+        <item>Khi cơn thèm muốn đến, hãy thở chậm. Hít vào bốn, giữ, thở ra sáu.</item>
+        <item>Cái gì khiến bạn như vậy? Hãy nhận biết mà không phán xét.</item>
+        <item>Cơn thèm muốn mạnh nhất vào lúc đầu. Sau mười lăm phút, nó sẽ nhỏ dần.</item>
+        <item>Đứng dậy. Đi vào phòng khác. Phá vỡ thói quen cũ.</item>
+        <item>Đây không phải yếu đuối. Đây là bạn học một cách sống mới.</item>
+        <item>Cơn thèm muốn nói dối. Nó bảo bạn cần nó. Bạn không cần. Bạn an toàn mà không có nó.</item>
+        <item>Thay vì hành động theo nó, viết lại những gì bạn đang cảm thấy ngay bây giờ.</item>
+        <item>Đôi khi cơn thèm muốn là sự buồn chán che lấp. Hãy tìm cái gì để làm.</item>
+        <item>Bạn không phải là cơn thèm muốn. Cơn thèm muốn là một hành khách, không phải tài xế.</item>
+        <item>Nằm xuống năm phút và để ý: cơn thèm muốn sẽ qua đi khi bạn đang nghỉ.</item>
+        <item>Có phải lúc khuya? Bạn mệt? Cơn thèm muốn lợi dụng bạn khi cảnh báo của bạn không tỉnh táo.</item>
+        <item>Cơn thèm muốn bạn phớt lờ hôm qua làm bạn tự hào. Hãy làm lại.</item>
+        <item>Bộ não của bạn đang sửa chữa chính nó ngay bây giờ. Đây là phần khó. Bạn đang làm điều đó.</item>
+        <item>Cơn thèm muốn mạnh nhất khi bạn ở một mình. Hãy gọi ai đó. Nói chuyện.</item>
+        <item>Bạn sống sót cơn hôm qua. Bạn sẽ sống sót cơn này nữa.</item>
+        <item>Người tốt nhất của bạn sẽ làm gì bây giờ? Hãy nghe tiếng nói đó.</item>
+        <item>Đỉnh cao của cơn thèm muốn chỉ kéo dài vài phút, không phải hàng giờ. Bạn có thể chịu đựng nó.</item>
+        <item>Ngồi yên với cơn thèm muốn như một làn sóng trên biển. Để nó lăn qua bạn và rút lại.</item>
+        <item>Đây không phải mãi mãi. Đây chỉ là lúc này.</item>
+        <item>Cơn thèm muốn thì thầm những lời nói dối. Bạn mạnh hơn lời nói dối.</item>
+        <item>Duỗi cơ thể bạn. Làm máu chảy qua các chi của bạn. Cơn thèm muốn sẽ tàn khi bạn vận động.</item>
+        <item>Bạn đang xây dựng cái gì đó. Mỗi khoảnh khắc bạn tạm dừng là một viên gạch trong nền móng.</item>
+        <item>Khi bạn muốn trốn tránh, hãy tìm cảm xúc thực tế bên dưới và đối mặt với nó thay vào đó.</item>
+        <item>Cơn thèm muốn là một thói quen, không phải nhu cầu. Cơ thể bạn sẽ thích nghi.</item>
+        <item>Để ý cơn thèm muốn mà không phán xét. Đừng thêm hổ thẹn lên trên cơn thèm muốn.</item>
+        <item>Bạn có thể ngồi yên với điều này năm phút và xem điều gì sẽ xảy ra.</item>
+        <item>Cơn thèm muốn muốn bạn tin rằng nó vĩnh viễn. Nó không phải. Nó là những đám mây đi qua.</item>
+        <item>Bạn đã làm gì vào lần cuối cùng khi bạn chống lại? Hãy làm lại.</item>
+        <item>Cơn thèm muốn là thông tin. Nó cho bạn biết cái gì đó quan trọng với bạn. Hãy lắng nghe, rồi chọn.</item>
+        <item>Đêm khuya mang lại cơn thèm muốn. Ngủ sớm ngăn chặn chúng.</item>
+        <item>Bạn không thất bại khi bạn cảm thấy cơn thèm muốn. Bạn chỉ thất bại nếu bạn tin vào nó.</item>
+        <item>Cơn thèm muốn là một làn sóng có tên bạn. Bạn đã học cách lướt sóng.</item>
+        <item>Khi cô đơn, cơn thèm muốn hứa kết nối. Hãy tìm kết nối thực tế thay vào đó.</item>
+        <item>Cơn thèm muốn không phải yêu thương. Đừng nhầm lẫn nó với điều gì đó khác.</item>
+        <item>Bạn đã có nhiều cơn thèm muốn và sống sót qua tất cả. Đây chỉ là một cơn nữa.</item>
+        <item>Sự buồn chán là một kích hoạt. Hãy có một danh sách những thứ quan trọng với bạn.</item>
+        <item>Cơn thèm muốn bảo bạn phải vội vã. Bạn có thể đi chậm thay vào đó.</item>
+        <item>Hệ thần kinh của bạn đang học rằng bạn an toàn mà không có thói quen.</item>
+        <item>Ngồi. Thở. Đếm đến một trăm. Cơn thèm muốn sẽ mềm dịu.</item>
+        <item>Cơn thèm muốn lớn nhất khi bạn chống lại bằng sợ hãi. Hãy thở với sự chấp nhận thay vào đó.</item>
+        <item>Bạn đã chọn dừng lại. Hãy nhớ điều đó. Dựa trên lựa chọn đó.</item>
+        <item>Căng thẳng kích hoạt cơn thèm muốn. Hãy gọi tên căng thẳng. Xử lý nó riêng biệt với cơn thèm muốn.</item>
+        <item>Cơn thèm muốn sẽ đến. Điều đó không có nghĩa là bạn phải mời nó vào.</item>
+        <item>Bạn đang sửa chữa mặc định của bạn. Điều này cần thời gian và lòng tốt.</item>
+        <item>Cơn thèm muốn là một hành khách trên một chiếc xe buýt mà bạn đang lái. Để nó ngồi. Tiếp tục đi.</item>
+        <item>Cơn thèm muốn lên cao nhanh và rơi nhanh. Đừng nhầm một đỉnh với mãi mãi.</item>
+        <item>Nhu cầu thực tế là gì? Ngủ? Kết nối? Vui vẻ? Tìm nó mà không có thói quen.</item>
+        <item>Bạn không bắt buộc phải hiểu cơn thèm muốn để sống sót nó.</item>
+        <item>Cơn thèm muốn không phải lỗi của bạn. Phản ứng của bạn là lựa chọn của bạn.</item>
+        <item>Khi cơn thèm muốn đến lúc mười một giờ đêm, đó là thông tin. Hãy đi ngủ sớm hơn.</item>
+        <item>Bạn có thể ngồi trên sàn nhà và thở và để cơn thèm muốn ở đó cùng với bạn.</item>
+        <item>Cơn thèm muốn sẽ quay lại. Đó là bình thường. Bạn sẽ xử lý nó như bạn đã xử lý những cơn khác.</item>
+        <item>Mô hình cũ muốn sự chú ý của bạn. Bạn được phép bỏ qua nó.</item>
+        <item>Sự cô đơn tăng cường cơn thèm muốn. Ngay cả một tin nhắn cho bạn bè sẽ làm yếu nó.</item>
+        <item>Cơn thèm muốn là một khách. Bạn chọn có mở cửa hay không.</item>
+        <item>Bạn đang xây dựng các con đường mới trong não bộ bạn mỗi khi bạn tạm dừng.</item>
+        <item>Cơn thèm muốn mạnh nhất khi bạn suy nghĩ về nó. Hãy tự làm mất tập trung nhẹ nhàng.</item>
+        <item>Bạn sẽ làm gì nếu cơn thèm muốn không tồn tại? Hãy làm điều đó ngay bây giờ.</item>
+        <item>Cơn thèm muốn không phải một cuộc khẩn cấp. Coi nó như một suy nghĩ qua đi.</item>
+        <item>Bạn đã ở đây trước đây. Cơ thể bạn biết cách vượt qua điều này.</item>
+        <item>Thói quen mất thời gian để xây dựng. Việc dừng lại sẽ mất thời gian để giữ. Hãy kiên nhẫn.</item>
+        <item>Khi cơn thèm muốn đến, điều đó có nghĩa là bộ não của bạn vẫn đang thích nghi. Đó là sự chữa lành.</item>
+        <item>Bạn không bắt buộc phải hoàn hảo. Bạn chỉ cần tiếp tục chọn.</item>
+        <item>Cơn thèm muốn lớn nhất khi bạn mệt. Ngủ là một công cụ mạnh mẽ.</item>
+        <item>Cơn thèm muốn đến dưới dạng làn sóng. Một số lớn. Một số nhỏ. Tất cả đều qua đi.</item>
+        <item>Cơn thèm muốn là dấu hiệu cơ thể bạn đang thay đổi. Đó là tin tốt.</item>
+        <item>Bạn được phép cảm thấy cơn thèm muốn và không hành động theo nó. Cả hai đều đúng.</item>
+        <item>Cái gì lấp đầy chỗ trống mà thói quen đã chiếm? Hãy xây dựng điều đó bây giờ.</item>
+        <item>Cơn thèm muốn thì thầm nhẹ nhàng vào đầu, sau đó to hơn nếu bạn lắng nghe. Đừng lắng nghe.</item>
+        <item>Đứng dậy. Cơn thèm muốn yên tĩnh khi bạn vận động cơ thể.</item>
+        <item>Bạn không bị hỏng vì muốn mô hình cũ. Bạn là con người.</item>
+        <item>Cơn thèm muốn là một vòng lặp thói quen. Bạn đang phá vỡ vòng lặp với mỗi lần tạm dừng.</item>
+        <item>Đêm khuya và cô đơn là sự kết hợp tồi tệ nhất. Hãy lên kế hoạch xung quanh chúng.</item>
+        <item>Bạn có thể nói với cơn thèm muốn: Tôi thấy bạn. Tôi cảm thấy bạn. Tôi không làm điều đó.</item>
+        <item>Cơn thèm muốn giống như một đám mây. Quan sát nó. Nó sẽ trôi đi.</item>
+        <item>Bạn đã sống sót những ngày khó khăn nhất. Ngày này đã quen thuộc với bạn rồi.</item>
+        <item>Cơn thèm muốn có thể ngồi cùng bạn trong khi bạn làm việc khác. Điều đó ổn.</item>
+        <item>Bạn đang tránh cái gì bằng cách tìm đến thói quen? Hãy đối mặt với điều đó thay vào đó.</item>
+        <item>Cơn thèm muốn lớn nhất khi bạn đang ngồi yên. Chuyển động phá vỡ ma thuật.</item>
+        <item>Bạn mạnh hơn bạn nghĩ. Khoảnh khắc này chứng minh điều đó.</item>
+        <item>Thói quen hứa giải thoát. Nó gây ra sự trống rỗng. Hãy nhớ điều đó.</item>
+        <item>Cơn thèm muốn là bộ não bạn yêu cầu dopamine. Hãy tìm một nguồn khác.</item>
+        <item>Bạn có thể cảm thấy cơn thèm muốn và vẫn kiểm soát. Cả hai có thể đúng.</item>
+        <item>Cơn thèm muốn đến từ các mô hình học được, không phải từ bạn là ai.</item>
+        <item>Khi mệt, mọi thứ cảm thấy khó khăn hơn. Cơn thèm muốn không đặc biệt. Hãy nghỉ ngơi.</item>
+        <item>Bạn không bắt buộc phải hiểu tại sao bạn lại có cơn thèm muốn để sống sót nó.</item>
+        <item>Cơn thèm muốn là dữ liệu. Buồn chán? Căng thẳng? Cô đơn? Hãy học mô hình.</item>
+        <item>Cơn thèm muốn sẽ quay lại. Đó không phải thất bại. Đó là phục hồi bình thường.</item>
+        <item>Bạn đã chọn con đường này. Con đường hiện tại hẹp. Nó sẽ mở rộng.</item>
+        <item>Cơn thèm muốn nói dối. Nó bảo bạn không thể sống mà không có nó. Bạn có thể và đang sống.</item>
+        <item>Ngồi trong sự không thoải mái của bạn năm phút. Nó sẽ không phá hủy bạn.</item>
+        <item>Cơn thèm muốn mạnh nhất khi bạn bị bất ngờ. Hãy giữ cảnh báo.</item>
+        <item>Bạn không phải là cơn thèm muốn. Bạn là người nhận biết cơn thèm muốn và thở.</item>
+        <item>Cảm giác như thế nào để qua ngày hôm nay mà không có nó? Đó là phần thưởng.</item>
+        <item>Cơn thèm muốn là một làn sóng. Bạn là bờ biển. Để nó đập vào bạn và rút lại.</item>
+        <item>Uống nước, duỗi cơ thể, rửa mặt với nước lạnh, đổi phòng. Chọn một.</item>
+        <item>Thói quen mất tháng hoặc năm để hình thành. Việc bỏ của bạn cũng sẽ mất thời gian. Đó là bình thường.</item>
+        <item>Cơn thèm muốn không phải là một bước lùi trừ khi bạn tin rằng nó là lệnh.</item>
+        <item>Bạn có thể ngồi với cơn thèm muốn như bạn sẽ ngồi với một vị khách không được mời.</item>
+        <item>Khuya đêm là lúc cơn thèm muốn tàn nhẫn nhất. Hãy lên kế hoạch cho buổi tối của bạn.</item>
+        <item>Cơn thèm muốn nói theo \"phải\" và \"bắt buộc\". Bỏ qua nó. Hãy tự lựa chọn.</item>
+        <item>Bạn có ý chí mạnh hơn bạn nghĩ. Khoảnh khắc này chứng minh điều đó.</item>
+        <item>Cơn thèm muốn là một cảm giác, không phải sự thật. Cảm giác thay đổi.</item>
+        <item>Bạn đang than khóc cái gì mà thói quen đã làm đầy? Hãy than khóc. Tôn vinh nó. Tiếp tục.</item>
+        <item>Cơn thèm muốn sẽ kiểm tra bạn. Bạn sẽ vượt qua bài kiểm tra. Bạn đã vượt qua trước đây.</item>
+        <item>Thói quen hứa hạnh phúc. Nó gây ra nuối tiếc. Hãy chọn con đường không nuối tiếc.</item>
+        <item>Bạn không bắt buộc phải chiến đấu với cơn thèm muốn. Bạn chỉ có thể để ý và tiếp tục sống.</item>
+        <item>Cơn thèm muốn là phần mềm chạy trong não bộ bạn. Bạn là lập trình viên bây giờ.</item>
+        <item>Sự buồn chán nuôi dưỡng cơn thèm muốn. Ý nghĩa làm cho nó chết đói.</item>
+        <item>Cơn thèm muốn là tín hiệu rằng cái gì đó không cân bằng. Hãy sửa sự cân bằng.</item>
+        <item>Bạn được phép vật lộn. Vật lộn là một phần của con đường.</item>
+        <item>Cơn thèm muốn lớn nhất trong sự yên tĩnh. Hãy làm đầy sự im lặng bằng âm nhạc, tiếng nói, hoạt động.</item>
+        <item>Bạn đã tới đây rồi. Đó là bằng chứng. Hãy tin vào bằng chứng.</item>
+        <item>Thói quen là một cách thoát. Bạn không cần phải thoát nữa.</item>
+        <item>Cơn thèm muốn là một chi phí ảo. Nó cảm thấy thực nhưng nó không thực sự ở đó.</item>
+        <item>Bạn thích gì về chính bạn trước thói quen? Hãy xây dựng lại.</item>
+        <item>Cơn thèm muốn sẽ tàn nếu bạn từ chối cho nó những câu chuyện.</item>
+        <item>Bạn đang viết lại câu chuyện của mình ngay bây giờ. Mỗi tạm dừng là một chương mới.</item>
+        <item>Cơn thèm muốn mạnh nhất khi bạn dễ bị tổn thương. Bảo vệ bản thân bằng cách nghỉ ngơi.</item>
+        <item>Bạn có thể không thoải mái và không hành động theo cơn thèm muốn cùng một lúc.</item>
+        <item>Cơn thèm muốn là bộ não bạn rút lui. Nó là tạm thời và nó đang chữa lành.</item>
+        <item>Thói quen giữ bạn nhỏ. Lựa chọn này làm bạn lớn lên.</item>
+        <item>Cơn thèm muốn giống như một báo động cháy đang reo. Nó to nhưng ngôi nhà không bị cháy.</item>
+        <item>Bạn không bắt buộc phải tự tin để chống lại. Bạn chỉ phải chọn.</item>
+        <item>Khuya, mệt, một mình, buồn chán. Đó là lúc cơn thèm muốn tấn công. Hãy biết mô hình của bạn.</item>
+        <item>Cơn thèm muốn không phải là bạn. Phản ứng của bạn là bạn.</item>
+        <item>Mô hình cũ muốn trở thành quen thuộc. Bạn đang học quen thuộc mới.</item>
+        <item>Bạn có thể thừa nhận cơn thèm muốn, cảm ơn nó vì đã xuất hiện, và tiếp tục.</item>
+        <item>Cơn thèm muốn là một cơn bão. Nó sẽ qua đi. Bạn không phải bước ra ngoài vào nó.</item>
+        <item>Bạn được phép cảm thấy cơn thèm muốn mà không có hổ thẹn.</item>
+        <item>Cái gì mang lại cho bạn niềm vui không phải là thói quen? Hãy làm điều đó. Xây dựng điều đó.</item>
+        <item>Cơn thèm muốn lớn nhất khi bạn tập trung tất cả sự chú ý của bạn vào nó. Chuyển hướng.</item>
+        <item>Bạn đã sống sót mọi khoảnh khắc trước đây. Bạn sẽ sống sót khoảnh khắc này.</item>
+        <item>Thói quen hứa kiểm soát. Nó gây ra điều ngược lại. Hãy nhớ điều đó.</item>
+        <item>Cơn thèm muốn là một bài kiểm tra về cam kết của bạn, không phải dấu hiệu bạn đang thất bại.</item>
+        <item>Sự cô đơn nuôi dưỡng cơn thèm muốn. Hãy liên lạc trước khi cơn thèm muốn trở nên lớn.</item>
+        <item>Bạn có thể ngồi với sự không thoải mái trong mười phút. Đó là một khoảng thời gian dài.</item>
+        <item>Cơn thèm muốn sẽ quay lại. Mỗi lần nó quay lại, bạn đang trở nên mạnh hơn.</item>
+        <item>Cách cũ muốn bạn tin rằng bạn không có lựa chọn. Bạn có.</item>
+        <item>Cơn thèm muốn không phải một cuộc khẩn cấp. Nó chỉ cảm thấy như vậy.</item>
+        <item>Bạn đang xây dựng một cuộc sống khác, không chỉ bỏ một thói quen.</item>
+        <item>Cơn thèm muốn nói nhẹ nhàng vào đầu. Đó là lúc quay đi.</item>
+        <item>Cái gì sẽ làm cho bạn tự hào về chính bạn hôm nay? Hãy bắt đầu từ đó.</item>
+        <item>Cơn thèm muốn là thông tin rằng sự buồn chán hoặc căng thẳng hoặc mệt mỏi hiện diện.</item>
+        <item>Bạn có thể cảm thấy trống rỗng và không tìm đến thói quen cùng một lúc.</item>
+        <item>Thói quen thì thầm nói dối. Bạn đang học nghe sự thật thay vào đó.</item>
+        <item>Cơn thèm muốn sẽ quay lại ngày mai. Đó không phải thất bại. Đó là sự chữa lành.</item>
+        <item>Bạn được phép không hoàn hảo ở điều này. Tiến độ không hoàn hảo vẫn là tiến độ.</item>
+        <item>Cơn thèm muốn giống như nhiễu trên radio. Bạn có thể chuyển đài.</item>
+        <item>Bạn sẽ hỏi bạn tương lai gì để làm ngay bây giờ? Hãy nghe điều đó.</item>
+        <item>Cơn thèm muốn là bóng ma của một mô hình. Bóng ma không thể làm tổn thương bạn.</item>
+        <item>Bạn đang sửa chữa não bộ của bạn với mỗi khoảnh khắc bạn chọn khác.</item>
+        <item>Khuya là nguy hiểm. Hãy ngủ sớm. Phòng ngừa là cách phòng chống tốt nhất.</item>
+        <item>Cơn thèm muốn là một thói quen cố gắng tự duy trì. Bạn đang phá vỡ vòng lặp.</item>
+        <item>Bạn có thể mệt mỏi và chống lại và vẫn thành công.</item>
+        <item>Cơn thèm muốn muốn bạn quên cái gì? Hãy giữ ký ức đó thay vào đó.</item>
+        <item>Thói quen đã đưa bạn đi xa khỏi chính bạn. Con đường này đưa bạn trở lại.</item>
+        <item>Cơn thèm muốn mạnh nhất khi bạn đang ngồi yên. Hãy vận động.</item>
+        <item>Bạn không bắt buộc phải muốn chống lại. Bạn chỉ phải làm nó dù sao.</item>
+        <item>Cơn thèm muốn là một làn sóng. Bạn đã lướt sóng trước đây. Bạn có thể lướt qua cái này.</item>
+        <item>Cái gì làm cho bạn cảm thấy tràn đầy không phải là thói quen? Hãy đầu tư vào điều đó.</item>
+        <item>Cơn thèm muốn sẽ nói dối và bảo bạn cần nó. Bạn không cần. Bạn muốn nó. Điều đó khác.</item>
+        <item>Sự buồn chán là một kích hoạt. Hãy có kế hoạch cho những khoảnh khắc buồn chán.</item>
+        <item>Bạn có thể sống sót cơn thèm muốn bằng hơi thở và kiên nhẫn.</item>
+        <item>Mô hình cũ đang gõ cửa. Bạn không bắt buộc phải trả lời.</item>
+        <item>Cơn thèm muốn là thông tin. Cô đơn? Căng thẳng? Buồn chán? Hãy gọi tên nó và xử lý nó.</item>
+        <item>Bạn được phép cảm thấy tệ và không hành động theo cơn thèm muốn.</item>
+        <item>Thói quen là một cơ chế đối phó. Bạn đang học các cơ chế đối phó mới bây giờ.</item>
+        <item>Cơn thèm muốn không phải là phản ánh của ý chí của bạn. Nó là phản ánh của thói quen.</item>
+        <item>Cái gì mang lại cho bạn sự bình tĩnh không phải là thói quen? Hãy sử dụng điều đó bây giờ.</item>
+        <item>Cơn thèm muốn là cơ thể bạn điều chỉnh. Đó không phải yếu đuối. Đó là thay đổi.</item>
+        <item>Bạn có thể không thoải mái mà không cần cứu hộ từ thói quen.</item>
+        <item>Cơn thèm muốn khuya là thực. Hãy lên kế hoạch để nằm trên giường trước khi chúng đến.</item>
+        <item>Cơn thèm muốn lớn nhất khi bạn bị cô lập. Hãy tìm kiếm kết nối.</item>
+        <item>Bạn đã chọn một con đường khó khăn hơn vì bạn muốn điều gì đó tốt hơn. Tôn vinh điều đó.</item>
+        <item>Thói quen hứa niềm vui. Nó gây ra sự trống rỗng. Hãy chọn khác bây giờ.</item>
+        <item>Cơn thèm muốn là một bài kiểm tra. Bạn đang vượt qua nó ngay bây giờ.</item>
+        <item>Tâm trí tĩnh lặng cảm thấy như thế nào? Hãy tiến gần hơn đến cảm giác đó.</item>
+        <item>Cơn thèm muốn sẽ ghé thăm. Bạn không bắt buộc phải chào đón nó vào.</item>
+        <item>Bạn đang xây dựng khả năng phục hồi với mỗi khoảnh khắc chống lại.</item>
+        <item>Cơn thèm muốn muốn sự chú ý của bạn. Hãy cho nó cho cái gì xứng đáng với bạn.</item>
+        <item>Buồn chán, cô đơn, căng thẳng, mệt mỏi. Biết kích hoạt của bạn và lên kế hoạch trước.</item>
+        <item>Bạn có thể buồn và không tìm đến thói quen.</item>
+        <item>Thói quen là một phím tắt. Bạn đang đi con đường dài. Đó là sự khôn ngoan.</item>
+        <item>Cơn thèm muốn không phải kẻ thù. Nó chỉ là một khách. Bạn là chủ nhân.</item>
+        <item>Bạn sẽ nói với người bạn tốt nhất của bạn gì nếu họ cảm thấy cơn thèm muốn này? Hãy nói điều đó cho chính bạn.</item>
+        <item>Cơn thèm muốn là tạm thời. Lựa chọn của bạn là vĩnh viễn.</item>
+        <item>Bạn được phép vật lộn. Vật lộn xây dựng sức mạnh.</item>
+        <item>Cơn thèm muốn là một làn sóng đạt đỉnh trong vài phút, không phải giờ.</item>
+        <item>Bạn muốn được biết đến vì điều gì? Điều đó, không phải thói quen.</item>
+        <item>Khuya cộng mệt cộng một mình bằng nguy hiểm. Ngăn chặn sự kết hợp đó.</item>
+        <item>Cơn thèm muốn là tín hiệu rằng mô hình cũ của bạn vẫn còn dây. Bạn đang sửa chữa nó.</item>
+        <item>Bạn có thể cảm thấy nhu cầu và không hành động theo nó. Đó là toàn bộ trận chiến.</item>
+        <item>Thói quen nói dối về những gì nó sẽ làm. Sự thật sẽ giải phóng bạn.</item>
+        <item>Cơn thèm muốn là thông tin. Hãy lắng nghe. Rồi chọn con đường riêng của bạn.</item>
+        <item>Bạn mạnh hơn cơn thèm muốn của bạn. Khoảnh khắc này chứng minh điều đó.</item>
+        <item>Cơn thèm muốn sẽ tàn nếu bạn cho nó thời gian thay vì hành động.</item>
+        <item>Cái gì mang lại bình yên cho tâm trí bạn? Hãy đi đến đó khi cơn thèm muốn đến.</item>
+        <item>Cơn thèm muốn không phải thất bại. Phản ứng của bạn là thước đo của bạn.</item>
+        <item>Bạn đã sống sót những khoảnh khắc khó khăn hơn thế này. Bạn sẽ sống sót điều này nữa.</item>
+        <item>Thói quen muốn là nhân dạng của bạn. Bạn nhiều hơn thế.</item>
+        <item>Cơn thèm muốn là một bóng ma. Nó không có sức mạnh trừ khi bạn cho nó sức mạnh.</item>
+        <item>Cái gì sẽ cảm thấy tốt mà không liên quan đến thói quen? Hãy làm điều đó.</item>
+        <item>Sự cô đơn là một kích hoạt. Hãy liên lạc trước khi kích hoạt kéo.</item>
+        <item>Bạn có thể bực bội và không hành động theo cơn thèm muốn.</item>
+        <item>Mô hình cũ là quen thuộc. Mô hình mới sẽ trở thành quen thuộc.</item>
+        <item>Cơn thèm muốn giống như một đứa trẻ muốn kẹo. Bạn có thể thừa nhận nó và nói không.</item>
+        <item>Bạn đang xây dựng cái gì bằng sự từ chối của bạn? Hãy xây dựng nó một cách tỉnh táo.</item>
+        <item>Cơn thèm muốn là bộ não bạn đang chữa lành. Nó đau vì chữa lành là thực.</item>
+        <item>Bạn được phép nghỉ ngơi. Nghỉ ngơi không phải yếu đuối.</item>
+        <item>Cơn thèm muốn sẽ quay lại. Mỗi lần quay lại là bằng chứng bạn đã tiến bộ.</item>
+        <item>Thói quen là một tuyến thoát. Bạn ở lại và đối mặt với nó thay vào đó.</item>
+        <item>Cơn thèm muốn là thông tin về nhu cầu của bạn, không phải lệnh về hành động của bạn.</item>
+        <item>Cái gì lấp đầy thời gian có ý nghĩa? Hãy lấp đầy thời gian bằng điều đó.</item>
+        <item>Khuya là lúc cơn thèm muốn tàn nhẫn nhất. Hãy đi ngủ sớm hơn.</item>
+        <item>Cơn thèm muốn là một làn sóng. Bạn là mặt đất cứng chắc. Để nó cuốn trôi bạn.</item>
+        <item>Bạn có thể buồn chán và không tìm đến thói quen.</item>
+        <item>Thói quen hứa kiểm soát. Bạn đang kiểm soát thực tế bây giờ.</item>
+        <item>Cơn thèm muốn không phải là bạn. Nó là một mô hình mà bộ não của bạn học. Bạn đang học lại.</item>
+        <item>Bạn sẽ làm gì nếu bạn không sợ? Hãy làm điều đó.</item>
+        <item>Cơn thèm muốn là dấu hiệu hệ thống của bạn đang cân bằng lại. Đó là sự chữa lành.</item>
+        <item>Bạn đang xây dựng một cuộc sống mà cơn thèm muốn không thể chạm đến.</item>
+        <item>Cơn thèm muốn thì thầm. Đừng lắng nghe.</item>
+        <item>Cái gì mang lại cho bạn niềm vui thực sự? Hãy xây dựng ngày của bạn xung quanh điều đó.</item>
+        <item>Căng thẳng là một kích hoạt. Hãy đối mặt với căng thẳng mà không có thói quen.</item>
+        <item>Bạn có thể ngồi với cơn thèm muốn và thở và chờ đợi.</item>
+        <item>Mô hình cũ muốn cảm thấy thoải mái. Sự không thoải mái là cây cầu để thoải mái mới.</item>
+        <item>Cơn thèm muốn mạnh nhất khi bạn dễ bị tổn thương. Bảo vệ bản thân.</item>
+        <item>Bạn được phép cảm thấy yếu đuối và vẫn chọn sức mạnh.</item>
+        <item>Thói quen là một lời nói dối. Sự thật là bạn có thể sống mà không có nó.</item>
+        <item>Cơn thèm muốn là một bài kiểm tra ý định của bạn. Bạn đang vượt qua.</item>
+        <item>Cuộc sống tốt nhất của bạn yêu cầu gì? Bỏ thói quen này. Tiếp tục.</item>
+        <item>Cơn thèm muốn là một tín hiệu không có thông điệp. Đừng tìm kiếm ý nghĩa. Chỉ cần thở.</item>
+        <item>Bạn có thể tạm dừng mà không hiểu. Sự hiểu biết đến sau.</item>
+        <item>Cơn thèm muốn đạt đỉnh và ngang bằng và cuối cùng tàn. Lướt qua cả ba giai đoạn.</item>
+        <item>Bạn sẽ ngạc nhiên như thế nào về sức mạnh của bạn so với quá khứ? Bạn đang sống bất ngờ đó.</item>
+        <item>Cơn thèm muốn là một bài kiểm tra không phân loại bạn. Bạn luôn vượt qua.</item>
+        <item>Bạn không phải là tổng của cơn thèm muốn của bạn. Bạn là người quan sát chúng.</item>
+        <item>Thói quen muốn vĩnh viễn. Bạn đang chọn tạm thời. Bạn đang thắng.</item>
+        <item>Cái gì sẽ làm cho hôm nay là một ngày tốt? Hãy xác định nó mà không có thói quen.</item>
+        <item>Cơn thèm muốn là một khách ở lâu hơn mong muốn. Bạn được phép yêu cầu nó rời đi.</item>
+        <item>Bạn có thể sợ tái lập lại và vẫn không tái lập lại bây giờ.</item>
+        <item>Cơn thèm muốn nói ngôn ngữ sự khẩn cấp. Bạn nói ngôn ngữ thời gian.</item>
+        <item>Khuya là lúc ý chí yếu nhất. Ngăn chặn thời gian, không chỉ lựa chọn.</item>
+        <item>Cơn thèm muốn là một mô hình bạn học. Bạn đang học một mô hình mới bây giờ.</item>
+        <item>Bạn đang xây dựng bằng chứng, không chỉ hứa hẹn.</item>
+        <item>Thói quen nói dối về việc cung cấp cho bạn những gì bạn cần. Bạn đang tìm sự thật bây giờ.</item>
+        <item>Cơn thèm muốn là một lời nhắc nhở về người bạn từng là. Bạn là người khác bây giờ.</item>
+        <item>Cái gì cảm thấy như tự do? Hãy tiến lại gần hơn thay vào đó.</item>
+        <item>Cơn thèm muốn là nợ mà thói quen tạo ra. Bạn đang trả nó ngày một.</item>
+        <item>Bạn có thể ngồi một mình mà không tìm đến thói quen.</item>
+        <item>Cơn thèm muốn sẽ kiểm tra toàn vẹn của bạn. Mỗi khoảnh khắc chống lại chứng minh nó.</item>
+        <item>Xác định thói quen đã lấy đi gì từ bạn. Hãy lấy lại.</item>
+        <item>Mô hình cũ là một con đường bạn đã dừng bước. Đừng nhìn lại.</item>
+        <item>Cơn thèm muốn là tiếng ồn. Bạn có thể ở trong một phòng ồn ào và giữ bình tĩnh.</item>
+        <item>Sẽ mất gì để tha thứ cho chính bạn vì thời gian bạn đã dành? Bắt đầu ngay bây giờ.</item>
+        <item>Bạn không phải chữa lành sai. Bạn đang chữa lành đúng.</item>
+        <item>Thói quen muốn là giải pháp của bạn. Bạn đang tìm giải pháp thực tế.</item>
+        <item>Cơn thèm muốn là rút lui. Rút lui đang chữa lành xảy ra.</item>
+        <item>Khuya sẽ luôn khó khăn. Ngủ sớm là bạn tốt nhất của bạn.</item>
+        <item>Bạn đang viết một câu chuyện về người bạn đang trở thành. Hãy làm nó tốt.</item>
+        <item>Cơn thèm muốn sẽ qua đi. Bạn sẽ ở lại. Đó là toàn bộ sự khác biệt.</item>
+        <item>Bạn không chạy trốn từ cái gì. Bạn đang đi bộ về phía chính bạn.</item>
+        <item>Người bạn muốn trở thành đang chờ bạn chọn họ hôm nay.</item>
+        <item>Khoảnh khắc này là nơi xây dựng bạn tương lai.</item>
+        <item>Bạn giữ lời hứa với chính bạn. Bắt đầu ngay bây giờ.</item>
+        <item>Tự do có nghĩa là tự lựa chọn. Bạn đang làm một lựa chọn ngay bây giờ.</item>
+        <item>Bạn sẽ làm gì nếu bạn là phiên bản tốt nhất? Đó là bạn đang trở thành.</item>
+        <item>Thói quen không định nghĩa bạn. Lựa chọn của bạn định nghĩa bạn.</item>
+        <item>Bạn xứng đáng tin tưởng chính bạn. Hãy xây dựng sự tin tưởng đó một ngày một lần.</item>
+        <item>Bạn tương lai của bạn đã tự hào vì bạn cố gắng.</item>
+        <item>Sự hiện tại là một món quà bạn tặng cho chính bạn và mọi người xung quanh.</item>
+        <item>Kết nối thực sự xảy ra khi bạn xuất hiện như chính bạn.</item>
+        <item>Bạn đang chọn phẩm giá hôm nay. Đó là đủ.</item>
+        <item>Cơn thèm muốn sẽ qua đi. Toàn vẹn của bạn là vĩnh viễn.</item>
+        <item>Giá trị nào quan trọng nhất với bạn? Hãy sống chúng hôm nay.</item>
+        <item>Bạn không phải sửa chữa bản thân. Bạn đang tôn vinh bản thân.</item>
+        <item>Cuộc sống của bạn quá giá trị để chỉ chú ý một nửa.</item>
+        <item>Mô hình cũ không sở hữu bạn.</item>
+        <item>Tự trọng không được kiếm qua sự hoàn hảo. Nó đến từ nỗ lực chân thực.</item>
+        <item>Bạn là tác giả của người bạn trở thành.</item>
+        <item>Hôm nay bạn chọn sự hiện tại hơn vắng mặt.</item>
+        <item>Mỗi lựa chọn cho bản thân bạn là một lời hứa giữ lại.</item>
+        <item>Người bạn là ngay bây giờ có thể làm điều này.</item>
+        <item>Bạn mạnh hơn bạn nghĩ. Bình tĩnh hơn bạn tin.</item>
+        <item>Nhân dạng không phải là những gì bạn đã làm. Nó là những gì bạn làm tiếp theo.</item>
+        <item>Đây là cách bạn trở thành đáng tin cậy với chính bạn.</item>
+        <item>Bạn không cần phép để tôn trọng bản thân.</item>
+        <item>Cơn thèm muốn chỉ là tiếng ồn. Bạn là tín hiệu.</item>
+        <item>Loại cuộc sống bạn muốn sống? Bạn đang xây dựng nó bây giờ.</item>
+        <item>Sự chú ý của bạn là thiêng liêng. Hãy bảo vệ nó.</item>
+        <item>Tin tưởng bản thân. Bạn đã chứng minh rồi.</item>
+        <item>Tự tin thực sự đến từ việc giữ lời hứa với bản thân.</item>
+        <item>Bạn đang viết câu chuyện của mình với mỗi lựa chọn.</item>
+        <item>Thói quen thịnh vượng bằng chú ý chia cắt của bạn. Hãy lấy lại.</item>
+        <item>Tự do không phải là sự vắng mặt của quy tắc. Nó đang chọn quy tắc của riêng bạn.</item>
+        <item>Bạn xứng đáng hoàn toàn hiện diện trong cuộc sống của chính bạn.</item>
+        <item>Lương tâm của bạn nói gì? Hãy lắng nghe nó.</item>
+        <item>Phiên bản bạn mà bạn tôn trọng là người bạn đang trở thành.</item>
+        <item>Ý định làm cho những khoảnh khắc thường xuyên trở nên có ý nghĩa.</item>
+        <item>Bạn không bị hỏng. Bạn đang chọn chính bạn.</item>
+        <item>Mỗi ngày là một cơ hội để chứng minh bạn thực sự là ai.</item>
+        <item>Cơn thèm muốn sẽ yếu đi. Quyết tâm của bạn sẽ mạnh hơn.</item>
+        <item>Bạn là người giữ lời hứa. Đặc biệt là với chính bạn.</item>
+        <item>Bạn sẽ nói với bạn bè ở vị trí của bạn gì? Hãy nói điều đó với chính bạn.</item>
+        <item>Nhân dạng bắt đầu với một lựa chọn. Bạn đang làm nó bây giờ.</item>
+        <item>Bạn tương lai của bạn không phải là người lạ. Nó là bạn.</item>
+        <item>Sự hiện tại là cách bạn yêu các người xung quanh bạn.</item>
+        <item>Bạn đang xây dựng một bản thân bạn có thể tin tưởng. Điều đó cần thời gian. Bạn có nó.</item>
+        <item>Thói quen là tạm thời. Người bạn đang trở thành là vĩnh viễn.</item>
+        <item>Sức mạnh thực sự im lặng. Nó không cần phải thông báo cho chính nó.</item>
+        <item>Bạn đang chọn loại người bạn muốn trở thành.</item>
+        <item>Đây là lý do tự giữ bản thân quan trọng.</item>
+        <item>Giá trị của bạn không trừu tượng. Chúng sống trong những lựa chọn của bạn hôm nay.</item>
+        <item>Cơn thèm muốn muốn bạn quên bạn là ai. Hãy nhớ.</item>
+        <item>Bạn xứng đáng tự hào về bản thân.</item>
+        <item>Mỗi khoảnh khắc là một cơ hội mới để tôn vinh cuộc sống của riêng bạn.</item>
+        <item>Phẩm giá không mong manh. Nó trở nên mạnh hơn khi bạn nuôi dưỡng nó.</item>
+        <item>Bạn là người bạn đã chờ đợi.</item>
+        <item>Cảm giác như thế nào khi tin tưởng chính bạn hoàn toàn?</item>
+        <item>Mô hình cũ là cũ. Bạn là mới.</item>
+        <item>Sự hiện tại không phải về việc làm đúng. Nó là về việc xuất hiện.</item>
+        <item>Bạn đang học cách yêu chính bạn khác.</item>
+        <item>Sự chú ý của bạn là một thứ hữu hạn. Hãy chi tiêu nó tốt.</item>
+        <item>Thói quen không định nghĩa khả năng của bạn. Lựa chọn của bạn định nghĩa nó.</item>
+        <item>Bạn đang trở thành người bạn tôn trọng.</item>
+        <item>Tự do thực sự có vị giống như chọn con đường riêng của bạn.</item>
+        <item>Phiên bản của bạn mà bạn muốn gặp đang hình thành ngay bây giờ.</item>
+        <item>Bạn đang xây dựng một mối quan hệ với chính bạn có ý nghĩa.</item>
+        <item>Nhân dạng không cố định. Nó là cái gì bạn chọn mỗi ngày.</item>
+        <item>Cơn thèm muốn tàn. Sự tôn trọng bạn xây dựng kéo dài.</item>
+        <item>Bạn đang học cách giữ lời hứa quan trọng nhất.</item>
+        <item>Bạn muốn nhìn lại và nhớ gì về bản thân?</item>
+        <item>Thói quen muốn bạn nhỏ. Bạn đang chọn chính bạn lớn.</item>
+        <item>Sự hiện tại có nghĩa là bạn được tận hưởng khoảnh khắc thực tế mà bạn đang ở trong đó.</item>
+        <item>Bạn tương lai của bạn không yêu cầu sự hoàn hảo. Chỉ cần sự trung thực.</item>
+        <item>Bạn là người tự xuất hiện cho chính bạn.</item>
+        <item>Phần thưởng cho điều này rất đơn giản: bạn.</item>
+        <item>Tự trọng không phải một sự xa xỉ. Nó là cách bạn sống.</item>
+        <item>Bạn đang viết lại mối quan hệ với chính bạn.</item>
+        <item>Mỗi lựa chọn là một cơ hội để chứng minh điều gì đó cho chính bạn.</item>
+        <item>Cơn thèm muốn không được quyết định bạn là ai.</item>
+        <item>Giá trị của bạn quan trọng hơn sự kéo tạm thời.</item>
+        <item>Bạn đang học điều gì nghĩa là tin tưởng chính bạn hoàn toàn.</item>
+        <item>Người bạn muốn trở thành là kiên nhẫn. Họ đang chờ đợi.</item>
+        <item>Sự hiện tại là món quà lớn nhất cho bạn và những người khác.</item>
+        <item>Bạn đang chọn ý định hơn tự động.</item>
+        <item>Thói quen hứa cái gì đó. Bạn hứa điều gì đó tốt hơn cho chính bạn.</item>
+        <item>Nhân dạng được xây dựng trong những khoảnh khắc như cái này.</item>
+        <item>Sức mạnh thực sự là chọn chính bạn khi không ai nhìn thấy.</item>
+        <item>Bạn đang trở thành người bạn muốn biết.</item>
+        <item>Phiên bản bạn mà bạn tôn trọng sống trong những lựa chọn của bạn.</item>
+        <item>Bạn không trốn tránh điều gì. Bạn đang chọn điều gì.</item>
+        <item>Phẩm giá tăng lên mỗi khi bạn chọn bản thân.</item>
+        <item>Cơn thèm muốn là tạm thời. Toàn vẹn của bạn không phải.</item>
+        <item>Bạn đang học cách là bạn tốt nhất của chính bạn.</item>
+        <item>Cái gì quan trọng với bạn hơn thói quen?</item>
+        <item>Mô hình cũ không được bình chọn trong người bạn trở thành.</item>
+        <item>Bạn đang xây dựng một cuộc sống phản ánh giá trị thực sự của bạn.</item>
+        <item>Sự chú ý của bạn thuộc về cuộc sống bạn thực sự muốn.</item>
+        <item>Người bạn đang trở thành xứng đáng với nỗ lực.</item>
+        <item>Bạn đang chọn để trở thành người bạn có thể tin tưởng.</item>
+        <item>Sự hiện tại là cách bạn lấy lại cuộc sống riêng của bạn.</item>
+        <item>Mỗi khoảnh khắc bạn chống lại là một khoảnh khắc bạn đang chọn bản thân.</item>
+        <item>Thói quen thị thợ về sự vắng mặt tâm trí. Bạn đang trở thành hiện tại.</item>
+        <item>Bạn đang học cách tự do thực sự cảm thấy như thế nào.</item>
+        <item>Nhân dạng không phải là cái gì bạn tìm thấy. Nó là cái gì bạn xây dựng.</item>
+        <item>Bạn tương lai của bạn sẽ biết bạn giữ lời hứa này.</item>
+        <item>Bạn xứng đáng thích người bạn đang trở thành.</item>
+        <item>Cơn thèm muốn tàn. Người bạn đang xây dựng trở nên mạnh hơn.</item>
+        <item>Bạn là người biết giá trị gì và sống nó.</item>
+        <item>Tự tin thực sự đến từ việc sắp xếp hành động với người bạn muốn trở thành.</item>
+        <item>Phiên bản bạn mà bạn tôn trọng trong tầm với.</item>
+        <item>Bạn đang chọn để hoàn toàn ở trong cuộc sống riêng của bạn.</item>
+        <item>Loại người xuất hiện cho chính bạn như thế nào? Bạn là người đó.</item>
+        <item>Sự rõ ràng đến khi bạn dừng làm mây mù tâm trí của riêng bạn.</item>
+        <item>Lựa chọn bạn đang thực hiện ngay bây giờ định nghĩa bạn đang trở thành.</item>
+        <item>Đây là công việc của tự do. Bạn đang làm nó.</item>
+        <item>Cuộc sống của bạn là cái duy nhất bạn được sống đầy đủ.</item>
+        <item>Bạn đang học rằng sức mạnh thực sự sống trong việc nói không.</item>
+        <item>Người bên trong bạn biết tốt hơn đang dẫn đầu bây giờ.</item>
+        <item>Mỗi khoảnh khắc bạn chọn chính bạn quan trọng hơn bạn nghĩ.</item>
+        <item>Những gì bạn bảo vệ hôm nay tạo ra ai bạn sẽ là ngày mai.</item>
+        <item>Cách cũ không gọi điểm gây bất ngờ nữa. Bạn làm.</item>
+        <item>Bạn đang học cách di chuyển qua thế giới như chính bạn.</item>
+        <item>Ý định là tình yêu nhìn thấy được bằng cách bạn sống.</item>
+        <item>Thói quen che giấu bạn có thể trở thành. Bạn đang cởi mặt nạ ra.</item>
+        <item>Sự yên bình thực sự đến từ việc biết bạn đang trung thực.</item>
+        <item>Bạn đang trở thành loại người bạn có thể ngưỡng mộ.</item>
+        <item>Điều này không phải về hình phạt. Đây là về tôn trọng.</item>
+        <item>Cơn thèm muốn là lời nói dối về những gì bạn cần. Bạn biết tốt hơn.</item>
+        <item>Bạn đang xây dựng cái gì không thể bị rung chuyển.</item>
+        <item>Bạn tương lai của bạn đang cổ vũ cho bạn ngay bây giờ.</item>
+        <item>Sự hiện tại là cách bạn giữ kết nối với những gì quan trọng.</item>
+        <item>Bạn đang học cách trở thành người mà những người khác có thể tin tưởng vì bạn tin tưởng chính bạn.</item>
+        <item>Mỗi sự từ chối là một lần nói có cho điều gì đó tốt hơn.</item>
+        <item>Phiên bản bạn hoàn toàn đang nổi lên.</item>
+        <item>Bạn xứng đáng có một cuộc sống nơi bạn cảm thấy như chính bạn.</item>
+        <item>Những gì bạn đang làm cần thật sự từ bỏ. Hãy gọi tên nó.</item>
+        <item>Thói quen lấy cắp thời gian. Bạn đang lấy lại của bạn.</item>
+        <item>Bạn đang chọn rõ ràng hơn nhầm lẫn.</item>
+        <item>Chiến thắng thực sự im lặng. Nó sống bên trong.</item>
+        <item>Nhân dạng hình thành trong những lựa chọn mà không ai thấy bạn tạo ra.</item>
+        <item>Bạn đang học cách tôn vinh hoàn toàn bản thân.</item>
+        <item>Cơn thèm muốn dễ dàng hơn. Tự trọng của bạn trở nên mạnh hơn.</item>
+        <item>Bạn đang trở thành người có ranh giới thực sự.</item>
+        <item>Những gì bạn đang bảo vệ là thiêng liêng. Bản thân bạn.</item>
+        <item>Mô hình cũ đang bị phá vỡ. Cái gì mới đang phát triển.</item>
+        <item>Bạn đang học cách lắng nghe sự khôn ngoan của chính bạn.</item>
+        <item>Tự do không phải là đích đến. Nó là cách bạn di chuyển qua mỗi ngày.</item>
+        <item>Bạn đang xây dựng nền tảng hỗ trợ thay đổi thực sự.</item>
+        <item>Mỗi khoảnh khắc hiện tại là một khoảnh khắc quyền lực.</item>
+        <item>Người bạn muốn trở thành cần bạn làm điều này.</item>
+        <item>Bạn đang học rằng giữ lời hứa quan trọng nhất.</item>
+        <item>Phẩm giá thực sự không bao giờ có thể thương lượng.</item>
+        <item>Bạn là người duy nhất sống cuộc sống của riêng bạn. Sở hữu nó hoàn toàn.</item>
+        <item>Thói quen không sở hữu tương lai của bạn. Bạn làm.</item>
+        <item>Bạn đang trở thành người tạo ra lựa chọn thay vì cái cớ.</item>
+        <item>Những gì bạn đang xây dựng chỉ dành cho bạn một mình.</item>
+        <item>Sự hiện tại kết nối bạn với cuộc sống thực sự là của bạn.</item>
+        <item>Bạn đang học cách muốn chính bạn hơn cơn thèm muốn.</item>
+        <item>Phiên bản bạn không có gánh nặng này đang chờ đợi.</item>
+        <item>Mỗi ngày bạn chọn bạn là một ngày bạn đang thắng.</item>
+        <item>Bạn đang trở thành đáng tin cậy với người quan trọng nhất.</item>
+        <item>Sức mạnh thực sự là chọn chính bạn khi nó khó.</item>
+        <item>Sự rõ ràng đến là đáng giá mọi khoảnh khắc của cái này.</item>
+        <item>Bạn đang học rằng tự do là nội tại trước tiên.</item>
+        <item>Những gì bạn tôn trọng trong chính bạn phát triển khi bạn nuôi dưỡng nó.</item>
+        <item>Bạn không phải chờ để trở nên xứng đáng. Bạn xứng đáng bây giờ.</item>
+        <item>Thói quen là một câu chuyện cũ. Bạn đang viết một câu chuyện mới.</item>
+        <item>Bạn đang chọn để hiện diện cho cuộc sống riêng của bạn.</item>
+        <item>Mỗi khoảnh khắc chống lại là một khoảnh khắc tăng trưởng.</item>
+        <item>Người bạn đang trở thành sẽ hiểu tại sao bạn đã làm điều này.</item>
+        <item>Bạn đang học cách yêu bản thân trong hành động.</item>
+        <item>Sự yên bình thực sự đến từ việc sống phù hợp với giá trị của bạn.</item>
+        <item>Bạn đang xây dựng một bản thân bạn không bao giờ phải nói dối.</item>
+        <item>Cơn thèm muốn tàn như tất cả thứ tạm thời.</item>
+        <item>Bạn xứng đáng cảm thấy như nhà trong những lựa chọn riêng của bạn.</item>
+        <item>Nhân dạng được viết theo những gì bạn làm khi được kiểm tra.</item>
+        <item>Bạn đang học rằng sự hiện tại là hình thức chăm sóc sâu sắc nhất.</item>
+        <item>Phiên bản bạn miễn phí gần hơn bạn biết.</item>
+        <item>Những gì bạn bảo vệ hôm nay trở thành ai bạn sẽ là ngày mai.</item>
+        <item>Bạn đang chọn để trở thành người bạn có thể dựa vào.</item>
+        <item>Mỗi khoảnh khắc trung thực đều tính. Bạn đang thu thập chúng.</item>
+        <item>Sức mạnh thực sự là nội tại. Nó sống trong cột sống của bạn.</item>
+        <item>Bạn đang trở thành người tôn vinh những lời hứa riêng của bạn.</item>
+        <item>Sự rõ ràng bạn đang xây dựng sẽ duy trì bạn.</item>
+        <item>Bạn không trốn tránh. Bạn đang đến.</item>
+        <item>Những gì bạn đang làm chứng minh điều gì cho chính bạn.</item>
+        <item>Thói quen muốn hàng phục. Bạn đang chọn chủ quyền.</item>
+        <item>Bạn đang học rằng cuộc sống tốt nhất là cuộc sống bạn chọn.</item>
+        <item>Sự hiện tại là giải pháp cho lời nói dối thói quen nói.</item>
+        <item>Mỗi khoảnh khắc bạn ở là một khoảnh khắc bạn ở lại trung thực.</item>
+        <item>Bạn đang trở thành loại người xứng đáng trở thành.</item>
+        <item>Tự do thực sự có vị giống như làm những gì bạn tin vào.</item>
+        <item>Phiên bản bạn tin tưởng chính bạn đang nổi lên.</item>
+        <item>Bạn đang học rằng phẩm giá không được cho. Nó được chọn.</item>
+        <item>Cái gì quan trọng là bạn đang chọn. Hãy tiếp tục chọn.</item>
+        <item>Câu chuyện cũ không sở hữu chương tiếp theo.</item>
+        <item>Bạn đang xây dựng mối quan hệ với chính bạn kéo dài.</item>
+        <item>Mỗi khoảnh khắc lựa chọn là một khoảnh khắc quyền lực.</item>
+        <item>Người bạn đang trở thành không xa.</item>
+        <item>Bạn đang học cách sống với ý định.</item>
+        <item>Sự tôn trọng thực sự đến từ việc giữ lời hứa của riêng bạn.</item>
+        <item>Cơn thèm muốn là tạm thời. Tính cách của bạn là vĩnh viễn.</item>
+        <item>Bạn đang chọn để hoàn toàn sống trong cuộc sống riêng của bạn.</item>
+        <item>Nhân dạng được xây dựng từ hàng ngàn lần nói có nhỏ với chính bạn.</item>
+        <item>Bạn xứng đáng nhìn chính bạn vào mắt mà không có hổ thẹn.</item>
+        <item>Sự rõ ràng đó sẽ là nhà mới của bạn.</item>
+        <item>Bạn không chờ phép phép. Bạn đang cho nó cho chính bạn.</item>
+        <item>Những gì bạn đang làm ngay bây giờ là sự bắt đầu của mọi thứ.</item>
+        <item>Bạn đang học cách tin tưởng những gì bạn biết là sự thật.</item>
+        <item>Thói quen thì thầm. Lương tâm của bạn nói. Hãy nghe lớn hơn.</item>
+        <item>Lựa chọn thực sự có nghĩa sống với những gì bạn quyết định.</item>
+        <item>Bạn đang trở thành người có thực sự chuyên chế.</item>
+        <item>Mỗi khoảnh khắc bạn ở là một khoảnh khắc bạn đang xây dựng chính bạn.</item>
+        <item>Người bên trong biết tốt hơn đã dẫn đầu.</item>
+        <item>Những gì bạn đang xây dựng chỉ dành cho những người muốn nó.</item>
+        <item>Tự do có nghĩa là bạn không trả lời lại cơn thèm muốn nữa.</item>
+        <item>Bạn đang học rằng tôn trọng bạn riêng có giá trị hơn.</item>
+        <item>Phiên bản bạn nguyên vẹn đang phát triển trở lại.</item>
+        <item>Cái gì bạn bảo vệ trong những khoảnh khắc này là tương lai của bạn.</item>
+        <item>Bạn đang chọn để trở thành người bạn nhận ra.</item>
+        <item>Quyền lực thực sự là chọn cái gì quan trọng và sống nó.</item>
+        <item>Sự rõ ràng bạn đang xây dựng đang trở thành vĩnh viễn.</item>
+        <item>Bạn đang học rằng sự hiện tại là nơi cuộc sống thực sự.</item>
+        <item>Mỗi lựa chọn trung thực đưa bạn gần hơn đến chính bạn.</item>
+        <item>Thói quen không thể chạm đến người bạn chọn trở thành.</item>
+        <item>Bạn xứng đáng cảm thấy hoàn toàn trong những quyết định riêng của bạn.</item>
+        <item>Bạn đang xây dựng cái gì cơn thèm muốn không bao giờ sẽ lấy.</item>
+        <item>Cái gì định nghĩa bạn là cái gì bạn chọn khi nó khó.</item>
+        <item>Mô hình cũ đang mất sức nắm giữ của nó. Bạn đang đứng vững.</item>
+        <item>Sức mạnh thực sự là giữ lời hứa của bạn với chính bạn trong bóng tối.</item>
+        <item>Bạn đang trở thành ai có nghĩa là cái gì.</item>
+        <item>Mỗi khoảnh khắc bạn chọn bạn là một khoảnh khắc chiến thắng.</item>
+        <item>Người bạn đang trở thành sẽ biết ơn.</item>
+        <item>Bạn đang học những gì tự do thực sự yêu cầu.</item>
+        <item>Sự hiện tại là sự nổi loạn của bạn chống lại tự động.</item>
+        <item>Bạn đang xây dựng một cuộc sống phù hợp với linh hồn bạn.</item>
+        <item>Phiên bản của bạn xác thực đang hình thành.</item>
+        <item>Những gì bạn đang làm ngay bây giờ lan rộng vào mọi thứ.</item>
+        <item>Bạn xứng đáng có sự yên bình với những lựa chọn riêng của bạn.</item>
+        <item>Sự rõ ràng bạn đạt được là nền tảng cho mọi thứ.</item>
+        <item>Bạn đang học cách tạo ra những lựa chọn phản ánh bạn là ai.</item>
+        <item>Sự tôn trọng thực sự đến từ việc làm điều khó khăn khi nó quan trọng.</item>
+        <item>Mỗi ngày không có thói quen cũ là một ngày chứng minh.</item>
+        <item>Bạn đang trở thành ai có thể tin tưởng chính bạn.</item>
+        <item>Cơn thèm muốn không hiểu bạn đang trở thành ai.</item>
+        <item>Bạn đang chọn sống với ý định và nhận thức.</item>
+        <item>Những gì bạn bảo vệ trở thành những gì bạn bảo tồn.</item>
+        <item>Nhân dạng không được thừa hưởng. Nó được chọn và xây dựng lại hàng ngày.</item>
+        <item>Bạn đang học rằng tự do là công việc bên trong.</item>
+        <item>Phiên bản bạn tự do đang chờ được tìm thấy.</item>
+        <item>Mỗi khoảnh khắc bạn chống lại là một khoảnh khắc sức mạnh.</item>
+        <item>Bạn xứng đáng biết chính bạn là ai giữ lời hứa.</item>
+        <item>Thói quen đang tàn. Bạn đang trở nên rõ ràng hơn.</item>
+        <item>Bạn đang trở thành ai có giá trị được sống.</item>
+        <item>Sự yên bình thực sự đến từ việc biết bạn đang chọn đúng.</item>
+        <item>Những gì bạn đang xây dựng sẽ duy trì bạn qua mọi thứ.</item>
+        <item>Mỗi lựa chọn là một phiếu bầu cho người bạn muốn trở thành.</item>
+        <item>Bạn đang học cách tôn vinh người bạn muốn trở thành.</item>
+        <item>Sự rõ ràng của những lựa chọn của bạn là sức mạnh lớn nhất của bạn.</item>
+        <item>Bạn không phải trở thành ai mới. Bạn đang trở thành nhiều bạn hơn.</item>
+        <item>Cái gì quan trọng là bạn đang ở đây. Bạn đang chọn.</item>
+        <item>Câu chuyện cũ kết thúc. Cái mới bắt đầu với bạn.</item>
+        <item>Mỗi khoảnh khắc hiện tại là một khoảnh khắc hoàn toàn.</item>
+        <item>Bạn đang trở thành ai bạn thực sự thích.</item>
+        <item>Tự do thực sự có vị giống như sống sự thật riêng của bạn.</item>
+        <item>Phiên bản bạn tin tưởng đang hình thành bây giờ.</item>
+        <item>Bạn xứng đáng nhìn lại mà không có hối tiếc về hôm nay.</item>
+        <item>Những gì bạn đang xây dựng được xây dựng để tồn tại.</item>
+        <item>Bạn chính xác ở nơi bạn cần phải ở.</item>
+        <item>Mỗi khoảnh khắc bạn không từ bỏ là một khoảnh khắc sức mạnh.</item>
+        <item>Bạn đang xây dựng cái gì mới với mỗi ngày trôi qua.</item>
+        <item>Các bước nhỏ về phía trước vẫn tính là về phía trước.</item>
+        <item>Tiến bộ không phải lúc nào cũng nhìn thấy được, nhưng bạn đang tạo ra nó.</item>
+        <item>Hôm nay, bạn đã chọn chính bạn. Đó là cái gì quan trọng.</item>
+        <item>Bạn không làm điều đó. Đó là mọi thứ.</item>
+        <item>Con đường để thay đổi bắt đầu với một quyết định.</item>
+        <item>Ngay cả khi nó khó, bạn vẫn đang di chuyển.</item>
+        <item>Khoảnh khắc chống lại này là sức mạnh của bạn.</item>
+        <item>Bạn không phải thắng mãi mãi, chỉ cần hôm nay.</item>
+        <item>Một ngày một lần là cách nhẹ nhàng nhất.</item>
+        <item>Phá vỡ tự do cần thời gian. Bạn có nó.</item>
+        <item>Đừng lo lắng về tuần tới. Chỉ cần xử lý hôm nay.</item>
+        <item>Cuộc hành trình dài, nhưng bạn chỉ đi bộ một ngày một lần.</item>
+        <item>Bạn không chạy đua. Bạn đang xây dựng một cuộc sống.</item>
+        <item>Hãy để ngày mai lo lắng về chính nó.</item>
+        <item>Hôm nay là tất cả bạn cần phải quản lý ngay bây giờ.</item>
+        <item>Thời gian di chuyển chậm hơn bạn nghĩ nó sẽ.</item>
+        <item>Một lần trượt không phải là thất bại, nó là thông tin.</item>
+        <item>Bạn bước chân loạng quạng. Điều đó không xóa sổ tiến bộ của bạn.</item>
+        <item>Một khoảnh khắc không định nghĩa hành trình của bạn.</item>
+        <item>Bạn có thể bắt đầu lại ngay bây giờ. Không chờ.</item>
+        <item>Trượt xảy ra. Cái gì quan trọng là điều gì xảy ra tiếp.</item>
+        <item>Bạn đã học được một cái gì đó. Sử dụng nó.</item>
+        <item>Khoảnh khắc vật lộn này sẽ dạy bạn cái gì.</item>
+        <item>Ngã lại một lần không có nghĩa là bạn thất bại.</item>
+        <item>Lựa chọn tiếp theo luôn có sẵn cho bạn.</item>
+        <item>Bạn có thể bắt đầu lại bao nhiêu lần bạn cần.</item>
+        <item>Hãy tốt như bạn sẽ với một bạn.</item>
+        <item>Bạn xứng đáng sự dịu dàng khi bạn chữa lành.</item>
+        <item>Lời nói khắt khe sẽ không giúp. Tốt bụng sẽ.</item>
+        <item>Bạn đang làm công việc khó. Hãy đối xử với bản thân một cách nhẹ nhàng.</item>
+        <item>Cuộc hành trình này không cần hình phạt, chỉ cần kiên nhẫn.</item>
+        <item>Hổ thẹn sẽ không giúp. Thương cảm sẽ.</item>
+        <item>Bạn được phép không hoàn hảo khi thay đổi.</item>
+        <item>Tha thứ cho bản thân bạn càng nhanh càng tốt.</item>
+        <item>Tiến bộ của bạn xứng đáng với sự ăn mừng lặng lẽ.</item>
+        <item>Hãy là giọng nói nâng bạn lên, không phải đóng khung bạn.</item>
+        <item>Một dãy bị phá vỡ không xóa sơ sức mạnh của bạn.</item>
+        <item>Nhất quán quan trọng hơn sự hoàn hảo.</item>
+        <item>Những gì bạn làm hầu hết các ngày quan trọng hơn một ngày.</item>
+        <item>Thước đo thực sự là cách bạn xuất hiện thường xuyên.</item>
+        <item>Một lần trượt không làm hủy mô hình nói không của bạn.</item>
+        <item>Thói quen của bạn hình thành thông qua những lựa chọn nhỏ lặp lại.</item>
+        <item>Cái gì tính là nhịp điệu bạn đang xây dựng, không phải một dòng hoàn hảo.</item>
+        <item>Dãy ngắt quãng. Tính cách không.</item>
+        <item>Bạn đang huấn luyện bản thân thông qua lặp lại.</item>
+        <item>Mỗi ngày là một cơ hội để củng cố bạn đang trở thành.</item>
+        <item>Những ngày đầu tiên là những cuộc leo núi khó khăn nhất. Nó sẽ dễ dàng hơn.</item>
+        <item>Sớm, mọi thứ cảm thấy cấp bách. Điều đó sẽ biến mất.</item>
+        <item>Bây giờ, nó cảm thấy không thể. Nó sẽ không luôn luôn.</item>
+        <item>Những thèm muốn sẽ yếu đi. Tin tưởng rằng họ sẽ.</item>
+        <item>Cái gì cháy sáng bây giờ sẽ nguội đi.</item>
+        <item>Cơ thể và tâm trí bạn sẽ điều chỉnh nhanh hơn bạn nghĩ.</item>
+        <item>Tuần đầu tiên là cuộc leo núi dốc nhất.</item>
+        <item>Mỗi ngày nhẹ nhàng hơn một chút so với ngày trước.</item>
+        <item>Bạn đang ở phần khó nhất. Nó sẽ thay đổi.</item>
+        <item>Cường độ bạn cảm thấy bây giờ là tạm thời.</item>
+        <item>Sau một thời gian, lựa chọn trở nên dễ dàng hơn để tạo ra.</item>
+        <item>Cơn thèm muốn mất sức nắm giữ của nó theo thời gian.</item>
+        <item>Bạn sẽ nhận thấy một ngày mà bạn thậm chí không nghĩ về nó.</item>
+        <item>Phục hồi xây dựng động lực khi bạn đi.</item>
+        <item>Mỗi ngày kháng cự làm cho cái tiếp theo mềm mỏng hơn.</item>
+        <item>Bộ não của bạn đang sửa chữa chính nó. Điều đó cần thời gian, sau đó xảy ra.</item>
+        <item>Những gì cần nỗ lực bây giờ trở thành tự nhiên.</item>
+        <item>Con đường được làm mịn hơn càng nhiều bạn đi bộ nó.</item>
+        <item>Bạn sẽ tỉnh dậy một ngày và cảm thấy khác.</item>
+        <item>Sức mạnh xây dựng lặng lẽ, sau đó bạn nhận ra bạn có nó.</item>
+        <item>Một ngày là một cột mốc. Một tuần cũng vậy.</item>
+        <item>Đánh dấu chiến thắng của bạn một cách riêng tư. Họ vẫn là những chiến thắng.</item>
+        <item>Bạn không phải quảng bá để tôn vinh tiến bộ của bạn.</item>
+        <item>Tự hào lặng lẽ tính bằng bất kỳ sự ăn mừng nào.</item>
+        <item>Ăn mừng mà không cần quá trình. Chiến thắng là thực.</item>
+        <item>Mỗi cột mốc, dù nhỏ bao nhiêu, đều xứng đáng công nhận.</item>
+        <item>Những bước ngoặt của bạn không cần khán giả để quan trọng.</item>
+        <item>Sức mạnh im lặng vẫn là sức mạnh.</item>
+        <item>Để ý những gì bạn đã làm, ngay cả khi không ai khác làm.</item>
+        <item>Bạn biết nó giá bao nhiêu để đến đây. Đó là đủ.</item>
+        <item>Hãy suy nghĩ vượt quá ngày mai. Bạn đang xây dựng cái gì kéo dài.</item>
+        <item>Lựa chọn hôm nay hình thành cả cuộc sống của bạn.</item>
+        <item>Bạn không chỉ đang vượt qua hôm nay, bạn đang thay đổi mãi mãi.</item>
+        <item>Bạn tương lai sẽ biết ơn bạn hiện tại đang làm.</item>
+        <item>Người bạn đang trở thành xứng đáng.</item>
+        <item>Bạn tương lai của bạn đang dựa vào bạn.</item>
+        <item>Những gì bạn đang làm bây giờ hợp thành theo thời gian.</item>
+        <item>Bạn đang đầu tư vào cuộc sống bạn thực sự muốn.</item>
+        <item>Điều này không phải về hôm nay. Nó là về bạn đang trở thành.</item>
+        <item>Mọi thứ bạn làm bây giờ sóng về phía trước.</item>
+        <item>Khi cơn thèm muốn đến, hãy nhớ tại sao bạn bắt đầu.</item>
+        <item>Mô hình cũ muốn quay trở lại. Bạn được nói không.</item>
+        <item>Cái gì bạn đang phá vỡ mất thời gian để hình thành. Hoàn tác cũng mất thời gian.</item>
+        <item>Bạn đang sửa chữa năm của hành vi. Đó là công việc kiên nhẫn.</item>
+        <item>Thói quen thì thầm. Bạn có thể chọn không nghe.</item>
+        <item>Mỗi lần bạn nói không, bạn đang đào tạo bản thân để nói không lần tới.</item>
+        <item>Bạn không bị tước quyền. Bạn đang được giải phóng.</item>
+        <item>Điều này là về bạn muốn trở thành, không phải những gì bạn không thể có.</item>
+        <item>Lý do bạn dừng lại lớn hơn cơn thèm muốn để quay trở lại.</item>
+        <item>Cuộc sống không có nó xứng đáng với những gì bạn đang từ bỏ để có được nó.</item>
+        <item>Hôm nay bạn mạnh hơn thói quen. Tin tưởng điều đó.</item>
+        <item>Muốn cái gì đó không có nghĩa là bạn phải làm nó.</item>
+        <item>Bạn có thể cảm thấy cơn thèm muốn và vẫn đi qua nó.</item>
+        <item>Cảm giác sẽ qua đi. Bạn không phải hành động theo mọi cảm giác.</item>
+        <item>Cơn thèm muốn đến và đi giống như những làn sóng. Bạn đang học cách xem chúng qua đi.</item>
+        <item>Cơn thèm muốn này không phải lệnh. Nó chỉ là một suy nghĩ.</item>
+        <item>Bạn đang trở thành loại người có thể muốn cái gì đó và từ chối nó.</item>
+        <item>Mỗi sự từ chối chứng minh bạn có sức mạnh bạn nghi ngờ.</item>
+        <item>Mô hình cũ không sở hữu bạn nữa.</item>
+        <item>Bạn đang lấy cuộc sống của bạn lại, một lựa chọn một lần.</item>
+        <item>Khi bạn mệt, hãy nhớ bạn đã đi bao xa.</item>
+        <item>Phần khó nhất không ở phía sau bạn, nhưng bạn đã vượt qua cái tồi tệ nhất.</item>
+        <item>Bạn đã làm điều khó nhất. Ở vững là dễ dàng hơn.</item>
+        <item>Bạn đã chứng minh bạn có thể làm điều này. Bạn không cần phải chứng minh nó lại.</item>
+        <item>Nghỉ ngơi khi bạn cần. Công việc vẫn tiếp tục.</item>
+        <item>Kiệt sức là thực. Nó không có nghĩa là bạn đang thất bại.</item>
+        <item>Bạn có thể mệt mỏi và vẫn tiến lên.</item>
+        <item>Ngày mai là một ngày mới. Cái này không phải hoàn hảo.</item>
+        <item>Nếu hôm nay khó khăn, ngày mai sẽ dễ dàng hơn.</item>
+        <item>Không có gì bạn làm hôm nay phá hủy mọi thứ bạn đã xây dựng.</item>
+        <item>Một ngày khó khăn không xóa sơ tuần của tiến bộ.</item>
+        <item>Ngày tệ không định nghĩa cả tuần.</item>
+        <item>Bạn được phép có một khoảnh khắc khó khăn và vẫn ổn.</item>
+        <item>Phục hồi không phải một đường thẳng. Dòng vẫn đi lên.</item>
+        <item>Một số ngày sẽ cảm thấy như bắt đầu lại. Đó là bình thường.</item>
+        <item>Bạn không khởi động lại. Bạn tiếp tục. Ngay cả những ngày khó khăn cũng là một phần của nó.</item>
+        <item>Khi mọi thứ cảm thấy như thể đang sụp đổ, bạn thường chỉ mệt mỏi.</item>
+        <item>Giá trị của bạn không được xác định bởi dãy của bạn.</item>
+        <item>Bạn là ai không được đo bằng một khoảnh khắc yếu đuối.</item>
+        <item>Bạn nhiều hơn một lựa chọn. Bạn là tất cả họ cùng nhau.</item>
+        <item>Thói quen là một chương. Bạn đang viết một cuốn sách hoàn toàn mới bây giờ.</item>
+        <item>Phiên bản bạn này vẫn đang hình thành. Hãy cho chính bạn thời gian.</item>
+        <item>Bạn được phép thay đổi từ từ.</item>
+        <item>Chữa lành không có thời hạn.</item>
+        <item>Phục hồi diễn ra với tốc độ riêng của nó, và điều đó là ổn.</item>
+        <item>Con đường phía trước không phải lúc nào cũng rõ ràng. Bạn không cần phải thấy toàn bộ con đường.</item>
+        <item>Chỉ bước tiếp theo là đủ.</item>
+        <item>Bạn không phải tìm ra tất cả hôm nay.</item>
+        <item>Tin tưởng vào quy trình ngay cả khi bạn không thể thấy tiến bộ.</item>
+        <item>Công việc bạn đang làm bây giờ sẽ không hiển thị kết quả ngay lập tức. Điều đó ổn.</item>
+        <item>Tiến bộ vô hình vẫn là tiến bộ.</item>
+        <item>Bạn đang thay đổi ngay cả khi bạn không thể thấy nó.</item>
+        <item>Cơ thể và tâm trí bạn đang điều chỉnh lặng lẽ.</item>
+        <item>Phần thưởng vì dừng lại không phải lúc nào cũng rõ ràng lúc đầu.</item>
+        <item>Những gì bạn có được từ điều này cần thời gian để hiển thị.</item>
+        <item>Hãy kiên nhẫn với bản thân theo cách bạn sẽ kiên nhẫn với ai đó bạn yêu.</item>
+        <item>Nếu bạn đang vật lộn, nó không có nghĩa là bạn yếu đuối.</item>
+        <item>Vật lộn là dấu hiệu bạn đang phát triển.</item>
+        <item>Sự không thoải mái là bằng chứng rằng một cái gì đó đang thay đổi.</item>
+        <item>Bạn đang làm điều gì đó rất khó. Tôn vinh điều đó.</item>
+        <item>Bạn đang chọn điều này, mỗi ngày, ngay cả khi nó đau.</item>
+        <item>Không ai có thể lấy tự do của bạn đi. Bạn đang chiến đấu vì nó.</item>
+        <item>Bạn không tước quyền bản thân. Bạn đang tuyên bố bản thân.</item>
+        <item>Đây là một hành động của tự trọng.</item>
+        <item>Hãy đối xử như bạn sẽ đối với cái gì đó bạn thực sự yêu.</item>
+        <item>Bạn xứng đáng với nỗ lực bạn đang nỗ lực.</item>
+        <item>Bạn xứng đáng để giữ. Bạn xứng đáng chiến đấu vì nó.</item>
+        <item>Dừng đặt câu hỏi liệu bạn có xứng đáng hay không.</item>
+        <item>Nghi ngờ sẽ đến. Hãy để nó. Bạn không phải tin vào nó.</item>
+        <item>Bạn có thể không chắc chắn và vẫn tiến lên.</item>
+        <item>Niềm tin sẽ theo hành động. Hành động trước.</item>
+        <item>Bạn không phải cảm thấy tự tin để làm điều đó.</item>
+        <item>Hãy làm điều đó. Tự tin sẽ đến.</item>
+        <item>Một số ngày bạn sẽ cảm thấy mạnh mẽ. Một số ngày bạn sẽ cảm thấy mong manh.</item>
+        <item>Những ngày mong manh là nơi sức mạnh thực sự sống.</item>
+        <item>Khi bạn yếu, xuất hiện là bravery.</item>
+        <item>Thói quen phát triển trong im lặng và hổ thẹn. Im lặng và hổ thẹn là nhiên liệu của nó.</item>
+        <item>Nói về nó, chấp nhận nó, và tiến lên làm cho nó chết đói.</item>
+        <item>Bạn không phải ẩn điều này. Không có gì để ẩn.</item>
+        <item>Những gì bạn đang làm là chữa lành. Đó là điều ngược lại với sự xấu hổ.</item>
+        <item>Mỗi người từng bỏ cái gì đó cảm thấy cái gì bạn đang cảm thấy.</item>
+        <item>Những người khác đã đi trên con đường này trước bạn.</item>
+        <item>Câu chuyện của bạn chưa kết thúc. Nó vừa bắt đầu một chương mới.</item>
+        <item>Kết thúc bạn muốn vẫn có thể. Hơn cả có thể.</item>
+        <item>Dù bạn đã cố gắng bao nhiêu lần trước, lần này khác.</item>
+        <item>Những nỗ lực quá khứ của bạn không phải thất bại. Họ đã được thực hành.</item>
+        <item>Mỗi lần bạn cố, bạn học được điều gì.</item>
+        <item>Kiến thức này là của bạn bây giờ. Sử dụng nó.</item>
+        <item>Cơn thèm muốn sẽ kiểm tra bạn. Đó là những gì cơn thèm muốn làm.</item>
+        <item>Mỗi bài kiểm tra bạn vượt qua đưa bạn gần hơn đến sự yên bình.</item>
+        <item>Suy nghĩ ám ảnh sẽ tàn.</item>
+        <item>Khúc lặp lại thị trường tâm thần liên tục sẽ im lặng.</item>
+        <item>Một ngày bạn sẽ nhận ra rằng bạn chưa nghĩ về nó trong hàng giờ.</item>
+        <item>Bạn được phép muốn điều này. Muốn nó đầy đủ.</item>
+        <item>Muốn tự do. Muốn sự yên bình. Muốn phiên bản mới của bạn.</item>
+        <item>Khi động lực tàn, hãy để lý do của bạn mang bạn đi.</item>
+        <item>Khi lý do tàn, hãy để thói quen mang bạn đi.</item>
+        <item>Khi thói quen bị phá vỡ, chỉ cần nhặt nó lên lại.</item>
+        <item>Điều này không mỏng manh. Nó linh hoạt.</item>
+        <item>Bạn đang xây dựng cái gì kinh nghiệm.</item>
+        <item>Mô hình cũ sẽ cố gắng lần nữa. Bạn biết nó sẽ.</item>
+        <item>Bạn sẽ sẵn sàng, bởi vì bạn đã chuẩn bị.</item>
+        <item>Mỗi ngày nói không là thực hành cho thời điểm đó.</item>
+        <item>Tương lai của bạn chưa được viết. Bạn được viết nó.</item>
+        <item>Mỗi lựa chọn bạn tạo bây giờ là một từ trong tương lai đó.</item>
+        <item>Bạn muốn kể câu chuyện nào?</item>
+        <item>Điều khó nhất bạn đã từng làm là những gì bạn đang làm ngay bây giờ.</item>
+        <item>Bạn không chỉ sống sót. Bạn đang học ai bạn muốn trở thành.</item>
+        <item>Người bạn đang trở thành không cần thói quen nữa.</item>
+        <item>Tăng trưởng là chậm. Tăng trưởng là thực. Tăng trưởng đang xảy ra.</item>
+        <item>Bộ não của bạn là nhựa. Nó có thể thay đổi. Nó đang thay đổi.</item>
+        <item>Cái gì cảm thấy không thể hôm nay sẽ cảm thấy bình thường sớm.</item>
+        <item>Bình thường mới đang chờ bạn.</item>
+        <item>Bạn cố gắng xứng đáng ăn mừng.</item>
+        <item>Sự yên bình bạn đang xây dựng sẽ không đến cùng một lúc.</item>
+        <item>Bạn thuộc về đây. Bạn thuộc về phục hồi này.</item>
+        <item>Sáng nay bạn có thêm một giờ. Bạn sẽ làm gì với nó?</item>
+        <item>Tâm trí bạn rõ ràng hơn nó hôm qua. Để ý điều đó.</item>
+        <item>Bạn đã chọn chính bạn hôm nay. Đó là cái gì quan trọng.</item>
+        <item>Thói quen yên tĩnh hơn bây giờ. Bạn đang học nhịp điệu của nó.</item>
+        <item>Một bước đi buổi sáng có thể đặt lại cả ngày của bạn.</item>
+        <item>Bạn đang xây dựng cái gì thực với thời gian bạn đang tiết kiệm.</item>
+        <item>Giấc ngủ tối nay sẽ cảm thấy khác. Hãy để nó.</item>
+        <item>Nước lạnh không phải hình phạt. Nó là bằng chứng bạn có thể chọn sự không thoải mái theo các điều khoản của riêng bạn.</item>
+        <item>Bàn tay bạn miễn phí cho cái gì tốt hơn.</item>
+        <item>Cơn thèm muốn sẽ đến. Bạn biết cách ngồi với nó bây giờ.</item>
+        <item>Tập trung phát triển khi bạn dừng cho cái mô hình cũ.</item>
+        <item>Bạn không chiến đấu với thói quen nữa. Bạn chỉ quay đi.</item>
+        <item>Kỷ luật hôm nay là tự do ngày mai. Nó luôn có.</item>
+        <item>Sụt giảm buổi chiều nhỏ hơn. Bạn nhận thấy nó?</item>
+        <item>Biết ơn vì những chiến thắng nhỏ xây dựng động lực nhanh hơn hổ thẹn về quá khứ.</item>
+        <item>Bạn đang dạy cơ thể của bạn một nhịp điệu mới.</item>
+        <item>Thói quen thì thầm. Cam kết của bạn nói to hơn.</item>
+        <item>Năng lượng này bạn cảm thấy là của bạn để chi tiêu bây giờ.</item>
+        <item>Giữ bình tĩnh khi cơn thèm muốn đến là một siêu năng lực.</item>
+        <item>Bạn sẽ nói với một bạn ở vị trí của bạn gì?</item>
+        <item>Thường lệ buổi sáng của bạn là neo của bạn.</item>
+        <item>Cơn thèm muốn là dữ liệu, không phải số phận.</item>
+        <item>Bạn không tước quyền bản thân. Bạn đang bảo vệ bản thân.</item>
+        <item>Mười phút ngoài là mười phút tâm trí bạn không bị đuổi.</item>
+        <item>Tuần này khác với tuần trước. Hãy xem sự khác biệt.</item>
+        <item>Gia đình của bạn nhận thấy. Họ chưa nói, nhưng họ nhận thấy.</item>
+        <item>Thói quen cho ăn sự lo lắng của bạn. Xem nó co lại khi bạn ở vững.</item>
+        <item>Bạn đang trở thành ai có thể ngồi yên.</item>
+        <item>Một ngày một lần không phải yếu đuối. Nó là chiến lược.</item>
+        <item>Giấc ngủ của bạn là cách cơ thể bạn chữa lành. Tôn vinh nó.</item>
+        <item>Cơn thèm muốn sẽ yếu đi khi bạn không tranh cãi với nó.</item>
+        <item>Bạn không khởi động lại. Bạn đang tiếp tục.</item>
+        <item>Thói quen thay thế cần thời gian. Hãy kiên nhẫn với bản thân.</item>
+        <item>Thời điểm này dễ dàng hơn so với lần cuối cùng.</item>
+        <item>Tâm trí bạn ít chật chội hơn bây giờ. Cảm thấy không gian.</item>
+        <item>Công việc rõ ràng hơn khi thói quen không ở đường.</item>
+        <item>Mô hình cũ có một chi phí. Bạn miễn phí từ nó bây giờ.</item>
+        <item>Bạn đang học cách buồn chán. Đó là một kỹ năng thực sự.</item>
+        <item>Buổi sáng là của bạn. Bạn sẽ tạo ra gì với nó?</item>
+        <item>Bàn tay bạn rung ít hơn bây giờ. Bạn có nhận thấy không?</item>
+        <item>Đây là bình tĩnh cảm thấy như thế nào.</item>
+        <item>Bạn không cần phép để bỏ cuộc. Bạn đã có nó.</item>
+        <item>Cơn thèm muốn qua đi. Mỗi lần, nó qua đi.</item>
+        <item>Cơ thể bạn nhớ thói quen. Tâm trí bạn biết tốt hơn.</item>
+        <item>Kỷ luật nhỏ hôm nay xây dựng tự do lớn ngày mai.</item>
+        <item>Bạn không bị hỏng. Bạn chỉ chuyển hướng sức mạnh của bạn.</item>
+        <item>Mười ngàn khoảnh khắc nhỏ của lựa chọn đã đưa bạn đến đây.</item>
+        <item>Thói quen vẫn sẽ ở đây nếu bạn cho nó ăn. Bạn không.</item>
+        <item>Bạn bè của bạn muốn thấy bạn như thế này. Rõ ràng và hiện diện.</item>
+        <item>Thường lệ buổi tối là phần thưởng của bạn, không phải bài kiểm tra của bạn.</item>
+        <item>Bạn đang thở sâu hơn bây giờ.</item>
+        <item>Cơn thèm muốn đã mất sức mạnh để tạo ra quyết định cho bạn.</item>
+        <item>Hôm nay bạn có năng lượng cho cái gì thực.</item>
+        <item>Biết ơn vì những gì bạn đang lấy được đánh bại hối tiếc về những gì bạn mất.</item>
+        <item>Bạn không mua nữa. Bạn đang chọn.</item>
+        <item>Thói quen thị thợ trong bóng tối. Ánh sáng là đồng minh của bạn.</item>
+        <item>Tập trung của bạn sắc nét hơn khi bạn dừng đốt năng lượng trên nó.</item>
+        <item>Nước lạnh thức bạn dậy theo cách thói quen từng làm. Không có chi phí.</item>
+        <item>Bạn không tước quyền bản thân. Bạn đang đầu tư vào bản thân.</item>
+        <item>Cơn thèm muốn lớn vào một số ngày, yên tĩnh vào những ngày khác. Cả hai ổn.</item>
+        <item>Nợ giấc ngủ của bạn đang co lại.</item>
+        <item>Cuộc đi bộ bạn thực hiện sáng nay có một mục đích: để nhớ bạn có thể bình tĩnh.</item>
+        <item>Bạn không hoàn hảo. Bạn kiên trì.</item>
+        <item>Thói quen sống trong thói quen. Phá vỡ thói quen, phá vỡ sức mạnh của nó.</item>
+        <item>Tâm trí bạn là một công cụ lại, không phải một chiến trường.</item>
+        <item>Buổi sáng là trang trống của bạn.</item>
+        <item>Bạn đang dạy hệ thần kinh của bạn một cách cảm thấy an toàn.</item>
+        <item>Đây là cái bạn đã chọn. Hãy tiếp tục chọn nó.</item>
+        <item>Mô hình cũ muốn cảm thấy như tự do. Tự do thực sự cảm thấy như thế này.</item>
+        <item>Năng lượng của bạn không còn được vay từ ngày mai.</item>
+        <item>Cơn thèm muốn sẽ kiểm tra bạn. Hãy để nó. Bạn đã vượt qua mọi bài kiểm tra cho đến nay.</item>
+        <item>Kỷ luật là tình yêu áp dụng cho chính bạn.</item>
+        <item>Bạn không chạy trốn khỏi thói quen. Bạn đang chạy hướng tới cái gì tốt hơn.</item>
+        <item>Sự rõ ràng bạn cảm thấy bây giờ xứng đáng bảo vệ.</item>
+        <item>Một buổi tối yên bình chứng minh bạn có thể có nhiều.</item>
+        <item>Cơ thể bạn đang chữa lành. Tin tưởng vào quy trình.</item>
+        <item>Thời điểm bạn dừng chiến đấu là thời điểm bạn bắt đầu thắng.</item>
+        <item>Bạn đang xây dựng một cuộc sống thói quen không có chỗ trong.</item>
+        <item>Cơn thèm muốn ăn trên bí mật. Đưa nó vào ánh sáng và xem nó co lại.</item>
+        <item>Giấc ngủ là nơi cơ thể bạn giữ lời hứa.</item>
+        <item>Thói quen thay thế đang trở thành thực bây giờ.</item>
+        <item>Bạn không bỏ lỡ thói quen. Bạn đang nhớ lại chính bạn.</item>
+        <item>Thường lệ buổi sáng là phiếu bầu hàng ngày của bạn cho chính bạn.</item>
+        <item>Biết ơn vì khoảnh khắc bạn đang ở đánh bại lo lắng về khoảnh khắc phía trước.</item>
+        <item>Tâm trí bạn có chỗ cho cái gì mới bây giờ.</item>
+        <item>Cuộc đi bộ qua rừng là thuốc mà thói quen đã giả vờ.</item>
+        <item>Bạn đang học rằng bạn có thể ngồi với sự không thoải mái mà không cho nó ăn.</item>
+        <item>Thói quen phát triển trong sự khẩn cấp. Bình tĩnh là kẻ thù của nó.</item>
+        <item>Tập trung của bạn quay lại thời điểm bạn dừng chia nó.</item>
+        <item>Mỗi chiến thắng nhỏ là sự cho phép tin vào những cái lớn hơn.</item>
+        <item>Bạn không tước quyền bạn. Bạn đang thực hành tự do.</item>
+        <item>Cơn thèm muốn là một khách, không phải chủ nhân.</item>
+        <item>Năng lượng của bạn đang xóa một con đường cho cái gì thực.</item>
+        <item>Mô hình cũ yên tĩnh hơn bởi vì bạn không cho nó ăn.</item>
+        <item>Bạn đang xây dựng một công nghệ bây giờ, không chỉ trôi qua thời gian.</item>
+        <item>Kỷ luật mà không có lòng trắc ẩn là hình phạt. Bạn biết sự khác biệt.</item>
+        <item>Đêm yên tĩnh hơn. Giấc ngủ đến dễ dàng hơn. Bạn cảm thấy nó.</item>
+        <item>Bạn bè của bạn muốn phiên bản này của bạn. Cái rõ ràng.</item>
+        <item>Thói quen hứa thoát. Bạn tìm thấy cái gì tốt hơn: sự hiện tại.</item>
+        <item>Cơn thèm muốn sẽ đến ngày mai. Bạn biết cách xử lý nó.</item>
+        <item>Thường lệ buổi sáng sửa dây não của bạn một ngày một lần.</item>
+        <item>Bạn không mạnh mẽ bởi vì bạn không cảm thấy cơn thèm muốn. Bạn mạnh mẽ bởi vì bạn làm và bạn chọn dù sao.</item>
+        <item>Tâm trí bạn ít chật chội hơn. Bạn sẽ làm gì với không gian?</item>
+        <item>Thói quen ăn trên sự buồn chán. Bạn đang học cách buồn chán và sống dù sao.</item>
+        <item>Biết ơn vì cơ thể bạn, cái mà đang chữa lành, cái đang cố gắng.</item>
+        <item>Cuộc đi bộ sáng nay là thực hành. Hãy tiếp tục thực hành.</item>
+        <item>Giấc ngủ của bạn sâu hơn khi tâm trí bạn không chia.</item>
+        <item>Cơn thèm muốn mất sức mạnh thời điểm bạn dừng tin vào sự cần thiết của nó.</item>
+        <item>Bạn không bắt đầu từ 0. Bạn đang bắt đầu từ bây giờ.</item>
+        <item>Mô hình cũ hứa giải thoát. Giải thoát thực sự là sống mà không có nó.</item>
+        <item>Tập trung của bạn sắc nét hơn với mỗi lựa chọn quay đi.</item>
+        <item>Nước lạnh nhắc bạn: sự không thoải mái không yêu cầu thói quen.</item>
+        <item>Bạn không chiến đấu nữa. Bạn chỉ không cho lửa ăn.</item>
+        <item>Thói quen muốn buổi sáng của bạn. Lấy nó lại.</item>
+        <item>Bàn tay bạn có sẵn cho công việc bây giờ.</item>
+        <item>Cơn thèm muốn là thực. Lựa chọn của bạn là thực hơn.</item>
+        <item>Kỷ luật áp dụng cho chính bạn là hình thức tình yêu cao nhất.</item>
+        <item>Buổi tối là của bạn. Không thương lượng. Không cơn thèm muốn. Chỉ buổi tối.</item>
+        <item>Tâm trí bạn đang học cách yên tĩnh. Hãy để nó học.</item>
+        <item>Thói quen lớn. Bình tĩnh của bạn to hơn.</item>
+        <item>Thói quen thay thế đang trở thành nhà bây giờ.</item>
+        <item>Bạn đang dạy hệ thần kinh của bạn rằng bạn an toàn mà không có nó.</item>
+        <item>Cuộc đi bộ buổi sáng là lời nhắc nhở hàng ngày của bạn: bạn có thể chọn hướng riêng của bạn.</item>
+        <item>Biết ơn vì khoảnh khắc mang bạn đến đây, bất kể nó là gì.</item>
+        <item>Tập trung của bạn bị gãy. Nó đang quay lại.</item>
+        <item>Cơn thèm muốn sẽ đạt đỉnh và rơi. Nó luôn rơi.</item>
+        <item>Giấc ngủ không phải sự linh hoạt. Nó là cơ sở hạ tầng.</item>
+        <item>Mô hình cũ là một cửa bạn không phải mở.</item>
+        <item>Năng lượng của bạn không còn được chi tiêu vào việc che giấu.</item>
+        <item>Thời điểm bạn chấp nhận cơn thèm muốn là thời điểm nó mất sức mạnh.</item>
+        <item>Thói quen hứa hứng phấn. Bạn tìm thấy sự yên bình. Đó là tốt hơn.</item>
+        <item>Bạn không hoàn hảo. Bạn là trung thực. Điều đó là đủ.</item>
+        <item>Ngày phía trước là của bạn. Sử dụng nó.</item>
+        <item>Cơ thể bạn biết nó đang chữa lành. Tin tưởng nó.</item>
+        <item>Cơn thèm muốn là một lời thì thầm, không phải một tiếng gào, vì bạn không cho nó ăn.</item>
+        <item>Kỷ luật là cây cầu giữa bạn là ai và bạn muốn trở thành.</item>
+        <item>Cuộc đi bộ bạn thực hiện là câu trả lời bạn tìm kiếm.</item>
+        <item>Bạn không chạy trốn khỏi nhoạn lạc. Bạn đang chạy hướng tới sự hiện tại.</item>
+        <item>Buổi sáng là sự bắt đầu của mọi thứ.</item>
+        <item>Thói quen sẽ kiểm tra bạn. Bạn sẽ vượt qua.</item>
+        <item>Tập trung của bạn là một cơ bắp. Bạn đang tập luyện nó.</item>
+        <item>Giấc ngủ bạn nhận được là cơ thể bạn nói: cảm ơn.</item>
+        <item>Bạn đang xây dựng cái gì thói quen không có phần trong.</item>
+        <item>Cơn thèm muốn đến từ ký ức, không phải sự cần thiết.</item>
+        <item>Biết ơn vì phần bạn muốn thay đổi.</item>
+        <item>Nước lạnh là đồng minh của bạn.</item>
+        <item>Bạn không mạnh mẽ mặc dù cuộc đấu tranh. Bạn mạnh mẽ bởi vì nó.</item>
+        <item>Mô hình cũ đang tàn bởi vì bạn không củng cố nó.</item>
+        <item>Tâm trí bạn đang xóa phòng cho công việc, học tập, thủ công.</item>
+        <item>Thường lệ buổi tối là lời hứa bạn giữ cho chính bạn.</item>
+        <item>Cơn thèm muốn sẽ đến khi bạn mệt. Bạn biết phải làm gì.</item>
+        <item>Bạn không tước quyền bạn. Bạn đang dạy bản thân cái gì đúng.</item>
+        <item>Thói quen cho ăn sự lo lắng của bạn. Xem bình tĩnh phát triển mà không có nó.</item>
+        <item>Giấc ngủ là nơi công việc chữa lành xảy ra.</item>
+        <item>Năng lượng của bạn không còn được vay từ tuần tới.</item>
+        <item>Thói quen thay thế đang trở thành một phần của bạn bây giờ.</item>
+        <item>Cuộc đi bộ không phải tập luyện. Nó đang nhớ lại.</item>
+        <item>Bạn đang học rằng bạn có thể ổn mà không có sự cho phép của thói quen.</item>
+        <item>Kỷ luật không phải hình phạt. Nó là bảo vệ.</item>
+        <item>Thường lệ buổi sáng là một lá thư tình yêu bạn viết cho chính bạn hàng ngày.</item>
+        <item>Tập trung đó đang quay lại là của bạn.</item>
+        <item>Cơn thèm muốn lớn vào những ngày khó. Đó là bình thường. Bạn đang làm tốt.</item>
+        <item>Biết ơn vì bàn tay bạn, miễn phí bây giờ.</item>
+        <item>Thói quen thì thầm vào tai bạn. Giọng nói của bạn to hơn bây giờ.</item>
+        <item>Mô hình cũ hứa giải thoát. Bạn đang xây dựng điều thực tế.</item>
+        <item>Cơ thể bạn đang dạy bạn về bình tĩnh.</item>
+        <item>Thời điểm bạn dừng chiến đấu là thời điểm bạn thắng.</item>
+        <item>Bạn không bỏ lỡ bất cứ điều gì. Bạn đang lấy được mọi thứ.</item>
+        <item>Cơn thèm muốn là một bài kiểm tra bạn đã vượt qua nghìn lần.</item>
+        <item>Buổi tối yên tĩnh hơn bởi vì ngày bạn là theo các điều khoản riêng của bạn.</item>
+        <item>Tâm trí bạn ít bị phân mảnh.</item>
+        <item>Nước lạnh là bằng chứng bạn có thể chọn sự không thoải mái.</item>
+        <item>Thói quen ăn trên bí mật. Sự trung thực của bạn là kẻ thù của nó.</item>
+        <item>Giấc ngủ đang chữa lành. Hãy để nó xảy ra.</item>
+        <item>Cuộc đi bộ buổi sáng là nút đặt lại hàng ngày của bạn.</item>
+        <item>Bạn không yếu vì bạn cảm thấy cơn thèm muốn. Bạn mạnh mẽ vì bạn đối mặt với nó.</item>
+        <item>Kỷ luật là tự trọng trong hành động.</item>
+        <item>Tập trung đang quay lại vì bạn dừng tán xạ nó.</item>
+        <item>Bạn bè của bạn nhìn thấy ai đó họ nhận ra. Đó là bạn.</item>
+        <item>Mô hình cũ là lịch sử. Bạn đang ở thì hiện tại bây giờ.</item>
+        <item>Thói quen muốn thời gian của bạn. Bạn đang lấy lại nó.</item>
+        <item>Biết ơn vì sự rõ ràng sắp tới.</item>
+        <item>Cơn thèm muốn sẽ ghé thăm. Bạn biết con đường đến cửa.</item>
+        <item>Bạn không chạy trốn khỏi nhoạn lạc. Bạn đang chạy hướng tới sự thật.</item>
+        <item>Thường lệ buổi tối là cấu trúc không bị hình phạt.</item>
+        <item>Cơ thể bạn đang chữa lành vì bạn đang lắng nghe nó.</item>
+        <item>Thói quen thay thế đang trở thành thực hôm nay.</item>
+        <item>Thời điểm cơn thèm muốn qua đi là bằng chứng mà nó luôn qua đi.</item>
+        <item>Bạn không hoàn hảo. Bạn kiên trì. Đó cũng giống như sức mạnh.</item>
+        <item>Thói quen lớn. Bạn yên tĩnh là cách mạng.</item>
+        <item>Giấc ngủ không phải lười. Nó là công việc quan trọng nhất bạn làm.</item>
+        <item>Buổi sáng là một món quà bạn tặng cho chính bạn mỗi ngày.</item>
+        <item>Tập trung của bạn sắc nét hơn vì nó không còn bị chia.</item>
+        <item>Nước lạnh là một giáo viên. Nghe những gì nó nói.</item>
+        <item>Cơn thèm muốn là sự trung thực. Nó đang cho bạn biết những gì bạn vẫn cần làm việc.</item>
+        <item>Kỷ luật là cuộc trò chuyện giữa bạn và chính bạn.</item>
+        <item>Mô hình cũ có lực hấp dẫn. Bạn đang rời khỏi quỹ đạo của nó.</item>
+        <item>Năng lượng của bạn đang xây dựng thay vì rút.</item>
+        <item>Biết ơn vì phần bạn lựa chọn này.</item>
+        <item>Thói quen hứa thoát. Bạn tìm thấy cái gì tốt hơn: chính bạn.</item>
+        <item>Buổi tối bạn có là cái bạn kiếm được.</item>
+        <item>Bạn đang học cách buồn chán và cảm thấy ổn với nó.</item>
+        <item>Cơn thèm muốn là một lời nhắc nhở. Nó nhắc nhở bạn tại sao bạn bắt đầu.</item>
+        <item>Tâm trí bạn đang trở thành một ngôi nhà lại.</item>
+        <item>Thói quen thay thế đang trở thành nhân dạng.</item>
+        <item>Cuộc đi bộ buổi sáng là cuộc trò chuyện của bạn với chính bạn.</item>
+        <item>Bạn không chiến đấu với thói quen nữa. Bạn đang bỏ qua nó.</item>
+        <item>Kỷ luật là tình yêu. Tự yêu, cụ thể.</item>
+        <item>Tập trung đang quay lại là luôn của bạn.</item>
+        <item>Thói quen đang ăn cắp giấc ngủ của bạn. Để ý nó quay lại.</item>
+        <item>Biết ơn vì hệ thần kinh của bạn, đang học cách bình tĩnh.</item>
+        <item>Mô hình cũ đang trở thành người lạ.</item>
+        <item>Bàn tay bạn có sẵn cho công việc, học tập, thủ công, kết nối.</item>
+        <item>Nước lạnh là một chiến thắng nhỏ bạn chọn mỗi ngày.</item>
+        <item>Cơn thèm muốn đến. Cơn thèm muốn đi. Bạn ở lại.</item>
+        <item>Giấc ngủ là kiến trúc. Xây dựng nó chắc chắn.</item>
+        <item>Thường lệ buổi sáng là thực hành hàng ngày của bạn để chọn chính bạn.</item>
+        <item>Buổi tối là một nơi linh thiêng bạn đang xây dựng từng viên gạch.</item>
+        <item>Sự rõ ràng của bạn không phải là một tai nạn. Nó là kết quả của những lựa chọn nhỏ.</item>
+        <item>Thói quen thay thế đang trở nên dễ dàng hơn.</item>
+        <item>Thói quen ăn trên căng thẳng. Xem căng thẳng của bạn giảm bớt.</item>
+        <item>Kỷ luật mà không có niềm vui chỉ là sự khổ. Bạn biết sự khác biệt.</item>
+        <item>Cuộc đi bộ không phải thoát. Nó là trở về.</item>
+        <item>Tập trung của bạn là một công cụ sắc nét chính nó.</item>
+        <item>Biết ơn vì khoảnh khắc bạn quyết định thay đổi.</item>
+        <item>Cơn thèm muốn là một làn sóng. Bạn đã học cách không lặn vào.</item>
+        <item>Mô hình cũ đang mất sức mạnh thuyết phục của nó đối với bạn.</item>
+        <item>Bạn không chạy trốn khỏi thói quen. Bạn đang chạy hướng tới chính bạn.</item>
+        <item>Cơ thể bạn đang nhớ cảm giác yên bình.</item>
+        <item>Buổi sáng là một canvas. Hôm nay bạn đang vẽ cái gì thực.</item>
+        <item>Nước lạnh nhắc bạn: sự không thoải mái không giống như tổn hại.</item>
+        <item>Giấc ngủ không còn là một cơn bão. Nó là một phần bình thường của cuộc sống.</item>
+        <item>Tâm trí bạn đang rõ ràng vì bạn dừng cho sương mù ăn.</item>
+        <item>Thói quen muốn sự chú ý của bạn. Bạn đang cho nó cho cái gì thực.</item>
+        <item>Kỷ luật là hành động giữ lời hứa với chính bạn.</item>
+        <item>Thường lệ buổi tối là một nghi lễ, không phải một lồng.</item>
+        <item>Cơn thèm muốn sẽ đạt đỉnh. Bạn sẽ xem nó rơi. Bạn sẽ ổn.</item>
+        <item>Biết ơn vì sức mạnh bạn không biết mình có.</item>
+        <item>Thói quen thay thế đang trở thành liền mạch bây giờ.</item>
+        <item>Tập trung của bạn đang quay lại vì bạn dừng chia nó.</item>
+        <item>Mô hình cũ là một cửa bạn đã học cách đi qua.</item>
+        <item>Bạn đang học rằng bình tĩnh mạnh hơn bất kỳ thoát nào.</item>
+        <item>Thói quen là một cuộc sống vay mượn. Cái này là của bạn.</item>
+        <item>Cuộc đi bộ buổi sáng là cuộc trò chuyện hàng ngày của bạn với sự rõ ràng.</item>
+        <item>Giấc ngủ là nền tảng. Mọi thứ khác được xây dựng trên nó.</item>
+        <item>Kỷ luật là kiến trúc của tự do.</item>
+        <item>Cơn thèm muốn là trung thực. Nó đang cho bạn biết công việc vẫn ở đâu.</item>
+        <item>Năng lượng của bạn là của bạn lại. Bạn sẽ xây dựng gì với nó?</item>
+        <item>Buổi tối yên tĩnh hơn vì ngày của bạn theo các điều khoản riêng của bạn.</item>
+        <item>Nước lạnh là một lời hứa nhỏ: bạn có thể làm những điều khó.</item>
+        <item>Tập trung đang quay lại, một ngày một lần.</item>
+        <item>Biết ơn vì cơ thể bạn, vẫn cố gắng.</item>
+        <item>Mô hình cũ là lịch sử. Lịch sử bạn là bây giờ.</item>
+        <item>Thói quen thay thế đang trở thành bạn là ai.</item>
+        <item>Thói quen hứa hứng phấn. Bạn tìm thấy ý nghĩa. Đó là tốt hơn.</item>
+        <item>Tâm trí bạn ít chật chội hơn. Bạn sẽ mời gọi cái gì?</item>
+        <item>Thường lệ buổi sáng là bằng chứng hàng ngày bạn có thể chọn.</item>
+        <item>Cơn thèm muốn sẽ đến và đi. Bạn sẽ ở lại.</item>
+        <item>Giấc ngủ là công việc tốt nhất bạn làm.</item>
+        <item>Kỷ luật áp dụng với lòng trắc ẩn là bất khả chiến bại.</item>
+        <item>Cuộc đi bộ không phải chạy. Nó đang trở về.</item>
+        <item>Tập trung của bạn sắc nét hơn với mỗi khoảnh khắc bạn ở lại rõ ràng.</item>
+        <item>Biết ơn vì người bạn đang trở thành.</item>
+        <item>Mô hình cũ đã có thời điểm của nó. Khoảnh khắc này là của bạn.</item>
+    </string-array>
+</resources>

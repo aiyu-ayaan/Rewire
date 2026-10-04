@@ -621,4 +621,74 @@
     <string name="punch_guard_6">アプリが数ラウンド先取しました。Matrixがスコアを記録しているので、リベンジの作戦を立てましょう。</string>
     <string name="profile_language">言語</string>
     <string name="profile_language_system">システムのデフォルト</string>
+
+    <!-- Quit tracker -->
+    <string name="nav_quit">辞める</string>
+    <string name="quit_subtitle">一度に一日ずつ</string>
+    <string name="quit_thought_title">今日の考え</string>
+    <string name="quit_thought_another">別の考え</string>
+    <string name="quit_urge_title">衝動を感じていますか?</string>
+    <string name="quit_urge_body">それは上昇し、ピークに達し、そして去る。2分間それと共に呼吸しよう。</string>
+    <string name="quit_urge_start">波に乗ってみよう</string>
+    <plurals name="quit_urges_ridden">
+        <item quantity="other">%d個の波に乗った</item>
+    </plurals>
+    <string name="quit_section">あなたの旅</string>
+    <string name="quit_empty_title">新しいもの始めよう</string>
+    <string name="quit_empty_body">後ろに残したい何かを追加してください。自分だけが名前を見ています。</string>
+    <string name="quit_add_first">トラッカーを追加</string>
+    <string name="quit_new">新しいトラッカー</string>
+    <string name="quit_edit_title">トラッカーを編集</string>
+    <plurals name="quit_days_word" xmlns:tools="http://schemas.android.com/tools" tools:ignore="ImpliedQuantity">
+        <item quantity="other">日</item>
+    </plurals>
+    <string name="quit_run_today">+ %1$d h %2$d分</string>
+    <string name="quit_best">最高記録: %s</string>
+    <string name="quit_next">次: %s</string>
+    <string name="quit_days_short">%d日</string>
+    <string name="quit_days_hours">%1$d日 %2$d時間</string>
+    <string name="quit_hours_minutes">%1$d h %2$d分</string>
+    <string name="quit_ring_desc">%1$d日、%3$d日までの%2$d%%</string>
+    <string name="quit_slipped">滑った</string>
+    <string name="quit_slip_title">もう一度始めますか?</string>
+    <string name="quit_slip_body">よくあることです。滑りは情報で、終わりではありません。あなたの最高記録は保存されたままです。</string>
+    <string name="quit_slip_confirm">もう一度始める</string>
+    <plurals name="quit_recent_slips">
+        <item quantity="other">過去30日間に%d回再起動</item>
+    </plurals>
+    <string name="quit_more">その他のオプション</string>
+    <string name="quit_edit">編集</string>
+    <string name="quit_delete_title">このトラッカーを削除しますか?</string>
+    <string name="quit_delete_body">その履歴はこのデバイスから削除されます。</string>
+    <string name="quit_name">名前</string>
+    <string name="quit_name_hint">どの名前でもいい。自分だけが見ている。</string>
+    <string name="quit_reason">なぜそれが大事なのか（オプション）</string>
+    <string name="quit_started">開始</string>
+    <string name="quit_started_now">今すぐ</string>
+    <string name="quit_started_pick">日付を選ぶ</string>
+    <string name="quit_private_note">このデバイスに留まる。マトリックス、バックアップ、またはエクスポートには含まれません。</string>
+    <string name="quit_breathe_in">吸う</string>
+    <string name="quit_breathe_hold">止める</string>
+    <string name="quit_breathe_out">吐く</string>
+    <string name="quit_urge_left">%1$d:%2$02d残り</string>
+    <string name="quit_urge_done_title">波が通った</string>
+    <string name="quit_urge_done_body">あなたはそれに気づき、それと一緒にいて、それを手放した。</string>
+    <string name="quit_urge_done">完了</string>
+    <string name="quit_urge_leave">戻る</string>
+    <string name="quit_urge_idea_title">それでは1つ試してみましょう</string>
+    <string-array name="quit_urge_ideas">
+        <item>水を1杯飲む。</item>
+        <item>5分間外に出よう。</item>
+        <item>10回ゆっくりしゃがむ。</item>
+        <item>顔を冷たい水で洗う。</item>
+        <item>信頼できる人にメッセージを送る。</item>
+        <item>部屋を変えて電気をつける。</item>
+        <item>デバイスをしばらく別の部屋に置く。</item>
+        <item>今感じていることを書く。</item>
+        <item>近くの小さなものを整理する。</item>
+        <item>2分間ゆっくりストレッチする。</item>
+        <item>温かい飲み物を自分に用意する。</item>
+        <item>遅い場合は寝る。</item>
+    </string-array>
+    <!-- /Quit tracker -->
 </resources>

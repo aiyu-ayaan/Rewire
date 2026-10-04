@@ -621,4 +621,74 @@
     <string name="punch_guard_6">应用赢了几个回合。Matrix 替你记着比分，好让你筹划一场复赛。</string>
     <string name="profile_language">语言</string>
     <string name="profile_language_system">跟随系统</string>
+
+    <!-- Quit tracker -->
+    <string name="nav_quit">戒除</string>
+    <string name="quit_subtitle">一次一天</string>
+    <string name="quit_thought_title">今日思语</string>
+    <string name="quit_thought_another">另一个思语</string>
+    <string name="quit_urge_title">感到欲望？</string>
+    <string name="quit_urge_body">它涨起，达到顶峰，然后消退。和它呼吸两分钟。</string>
+    <string name="quit_urge_start">驾驭这股浪</string>
+    <plurals name="quit_urges_ridden">
+        <item quantity="other">%d 股浪驾驭出去</item>
+    </plurals>
+    <string name="quit_section">你的旅程</string>
+    <string name="quit_empty_title">开始新的东西</string>
+    <string name="quit_empty_body">加入任何你想留在后面的东西。只有你看到你给它的名字。</string>
+    <string name="quit_add_first">加入一个跟踪器</string>
+    <string name="quit_new">新跟踪器</string>
+    <string name="quit_edit_title">编辑跟踪器</string>
+    <plurals name="quit_days_word" xmlns:tools="http://schemas.android.com/tools" tools:ignore="ImpliedQuantity">
+        <item quantity="other">天</item>
+    </plurals>
+    <string name="quit_run_today">+ %1$d 小时 %2$d 分钟</string>
+    <string name="quit_best">最佳：%s</string>
+    <string name="quit_next">下一个：%s</string>
+    <string name="quit_days_short">%d 天</string>
+    <string name="quit_days_hours">%1$d 天 %2$d 小时</string>
+    <string name="quit_hours_minutes">%1$d 小时 %2$d 分钟</string>
+    <string name="quit_ring_desc">%1$d 天，到 %3$d 天的 %2$d%%</string>
+    <string name="quit_slipped">我滑了</string>
+    <string name="quit_slip_title">重新开始？</string>
+    <string name="quit_slip_body">这会发生。一个滑动是信息，不是结束。你最好的运行保持保存。</string>
+    <string name="quit_slip_confirm">重新开始</string>
+    <plurals name="quit_recent_slips">
+        <item quantity="other">过去 30 天内 %d 次重新开始</item>
+    </plurals>
+    <string name="quit_more">更多选项</string>
+    <string name="quit_edit">编辑</string>
+    <string name="quit_delete_title">删除这个跟踪器？</string>
+    <string name="quit_delete_body">它的历史从此设备被删除。</string>
+    <string name="quit_name">名字</string>
+    <string name="quit_name_hint">任何名字都可以。只有你看到。</string>
+    <string name="quit_reason">为什么它重要（可选）</string>
+    <string name="quit_started">开始</string>
+    <string name="quit_started_now">现在</string>
+    <string name="quit_started_pick">选择日期</string>
+    <string name="quit_private_note">停留在此设备上。不在矩阵、备份或导出中。</string>
+    <string name="quit_breathe_in">吸气</string>
+    <string name="quit_breathe_hold">屏息</string>
+    <string name="quit_breathe_out">呼气</string>
+    <string name="quit_urge_left">%1$d:%2$02d 剩余</string>
+    <string name="quit_urge_done_title">波浪过去了</string>
+    <string name="quit_urge_done_body">你注意到它，和它坐着，让它去。</string>
+    <string name="quit_urge_done">完成</string>
+    <string name="quit_urge_leave">离开</string>
+    <string name="quit_urge_idea_title">然后尝试一个东西</string>
+    <string-array name="quit_urge_ideas">
+        <item>喝一杯水。</item>
+        <item>在外面走五分钟。</item>
+        <item>做十个缓慢的深蹲。</item>
+        <item>用冷水洗你的脸。</item>
+        <item>给你信任的人发消息。</item>
+        <item>换个房间打开灯。</item>
+        <item>把你的设备放在另一个房间一段时间。</item>
+        <item>写下你现在感到的。</item>
+        <item>整理你附近的一个小东西。</item>
+        <item>缓慢伸展两分钟。</item>
+        <item>给自己泡一个温饮。</item>
+        <item>如果很晚了，去睡觉。</item>
+    </string-array>
+    <!-- /Quit tracker -->
 </resources>

@@ -621,4 +621,74 @@
     <string name="punch_guard_6">Các ứng dụng thắng vài hiệp. Matrix giữ tỷ số để bạn lên kế hoạch tái đấu.</string>
     <string name="profile_language">Ngôn ngữ</string>
     <string name="profile_language_system">Mặc định của hệ thống</string>
+
+    <!-- Quit tracker -->
+    <string name="nav_quit">Bỏ</string>
+    <string name="quit_subtitle">Từng ngày một lần</string>
+    <string name="quit_thought_title">Suy nghĩ cho ngày hôm nay</string>
+    <string name="quit_thought_another">Một suy nghĩ khác</string>
+    <string name="quit_urge_title">Cảm thấy cơn thèm muốn?</string>
+    <string name="quit_urge_body">Nó lên cao, đạt đỉnh rồi qua đi. Thở với nó trong hai phút.</string>
+    <string name="quit_urge_start">Lướt sóng</string>
+    <plurals name="quit_urges_ridden">
+        <item quantity="other">%d làn sóng đã lướt</item>
+    </plurals>
+    <string name="quit_section">Những hành trình của bạn</string>
+    <string name="quit_empty_title">Bắt đầu cái gì đó mới</string>
+    <string name="quit_empty_body">Thêm bất cứ thứ gì bạn muốn bỏ lại. Chỉ có bạn thấy tên bạn đặt.</string>
+    <string name="quit_add_first">Thêm một bộ theo dõi</string>
+    <string name="quit_new">Bộ theo dõi mới</string>
+    <string name="quit_edit_title">Chỉnh sửa bộ theo dõi</string>
+    <plurals name="quit_days_word" xmlns:tools="http://schemas.android.com/tools" tools:ignore="ImpliedQuantity">
+        <item quantity="other">ngày</item>
+    </plurals>
+    <string name="quit_run_today">+ %1$d h %2$d phút</string>
+    <string name="quit_best">Tốt nhất: %s</string>
+    <string name="quit_next">Tiếp theo: %s</string>
+    <string name="quit_days_short">%d ngày</string>
+    <string name="quit_days_hours">%1$d ngày %2$d h</string>
+    <string name="quit_hours_minutes">%1$d h %2$d phút</string>
+    <string name="quit_ring_desc">%1$d ngày, %2$d%% đi được %3$d ngày</string>
+    <string name="quit_slipped">Tôi bị trượt</string>
+    <string name="quit_slip_title">Bắt đầu lại?</string>
+    <string name="quit_slip_body">Nó xảy ra. Một lần trượt là thông tin, không phải kết thúc. Lần chạy tốt nhất của bạn vẫn được lưu.</string>
+    <string name="quit_slip_confirm">Bắt đầu lại</string>
+    <plurals name="quit_recent_slips">
+        <item quantity="other">%d lần khởi động lại trong 30 ngày qua</item>
+    </plurals>
+    <string name="quit_more">Tùy chọn khác</string>
+    <string name="quit_edit">Chỉnh sửa</string>
+    <string name="quit_delete_title">Xóa bộ theo dõi này?</string>
+    <string name="quit_delete_body">Lịch sử của nó được xóa khỏi thiết bị này.</string>
+    <string name="quit_name">Tên</string>
+    <string name="quit_name_hint">Bất kỳ tên nào cũng được. Chỉ có bạn thấy.</string>
+    <string name="quit_reason">Tại sao nó quan trọng (tùy chọn)</string>
+    <string name="quit_started">Bắt đầu</string>
+    <string name="quit_started_now">Ngay bây giờ</string>
+    <string name="quit_started_pick">Chọn một ngày</string>
+    <string name="quit_private_note">Ở trên thiết bị này. Không ở Matrix, sao lưu hoặc xuất.</string>
+    <string name="quit_breathe_in">Thở vào</string>
+    <string name="quit_breathe_hold">Giữ</string>
+    <string name="quit_breathe_out">Thở ra</string>
+    <string name="quit_urge_left">%1$d:%2$02d còn lại</string>
+    <string name="quit_urge_done_title">Làn sóng đã qua</string>
+    <string name="quit_urge_done_body">Bạn để ý nó, ở lại với nó và để nó đi.</string>
+    <string name="quit_urge_done">Xong</string>
+    <string name="quit_urge_leave">Rời đi</string>
+    <string name="quit_urge_idea_title">Sau đó thử một thứ</string>
+    <string-array name="quit_urge_ideas">
+        <item>Uống một cốc nước.</item>
+        <item>Bước ra ngoài năm phút.</item>
+        <item>Làm mười squat chậm.</item>
+        <item>Rửa mặt bằng nước lạnh.</item>
+        <item>Nhắn tin cho ai đó bạn tin tưởng.</item>
+        <item>Đổi phòng và bật đèn.</item>
+        <item>Để thiết bị của bạn trong phòng khác một lúc.</item>
+        <item>Viết lại những gì bạn cảm thấy ngay bây giờ.</item>
+        <item>Sắp xếp một điều nhỏ gần bạn.</item>
+        <item>Duỗi chậm trong hai phút.</item>
+        <item>Pha cho bạn một thức uống ấm.</item>
+        <item>Nếu muộn, hãy đi ngủ.</item>
+    </string-array>
+    <!-- /Quit tracker -->
 </resources>

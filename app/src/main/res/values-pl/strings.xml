@@ -669,4 +669,83 @@
     <string name="punch_guard_6">Aplikacje wygrały kilka rund. Matrix liczy punkty, więc możesz zaplanować rewanż.</string>
     <string name="profile_language">Język</string>
     <string name="profile_language_system">Domyślny systemowy</string>
+
+    <!-- Quit tracker -->
+    <string name="nav_quit">Przerwij</string>
+    <string name="quit_subtitle">Jeden dzień na raz</string>
+    <string name="quit_thought_title">Myśl na dzisiaj</string>
+    <string name="quit_thought_another">Inna myśl</string>
+    <string name="quit_urge_title">Czujesz pragnienie?</string>
+    <string name="quit_urge_body">Rośnie, osiąga szczyt i mija. Oddychaj z nim przez dwie minuty.</string>
+    <string name="quit_urge_start">Jedź na fali</string>
+    <plurals name="quit_urges_ridden">
+        <item quantity="one">%d fala przetrwana</item>
+        <item quantity="few">%d fale przetrwane</item>
+        <item quantity="many">%d fal przetrwanych</item>
+        <item quantity="other">%d fal przetrwanych</item>
+    </plurals>
+    <string name="quit_section">Twoje podróże</string>
+    <string name="quit_empty_title">Zacznij coś nowego</string>
+    <string name="quit_empty_body">Dodaj cokolwiek, od czego chcesz się uwolnić. Tylko ty widzisz nazwę, którą mu dajesz.</string>
+    <string name="quit_add_first">Dodaj śledzenie</string>
+    <string name="quit_new">Nowe śledzenie</string>
+    <string name="quit_edit_title">Edytuj śledzenie</string>
+    <plurals name="quit_days_word" xmlns:tools="http://schemas.android.com/tools" tools:ignore="ImpliedQuantity">
+        <item quantity="one">dzień</item>
+        <item quantity="few">dni</item>
+        <item quantity="many">dni</item>
+        <item quantity="other">dni</item>
+    </plurals>
+    <string name="quit_run_today">+ %1$d h %2$d min</string>
+    <string name="quit_best">Najlepsze: %s</string>
+    <string name="quit_next">Następne: %s</string>
+    <string name="quit_days_short">%d d</string>
+    <string name="quit_days_hours">%1$d d %2$d h</string>
+    <string name="quit_hours_minutes">%1$d h %2$d min</string>
+    <string name="quit_ring_desc">%1$d dni, %2$d%% w drodze do %3$d dni</string>
+    <string name="quit_slipped">Poślizgnąłem się</string>
+    <string name="quit_slip_title">Zacznąć od nowa?</string>
+    <string name="quit_slip_body">To się zdarza. Poślizgnięcie to informacja, nie koniec. Twój najlepszy przebieg pozostaje zapisany.</string>
+    <string name="quit_slip_confirm">Zacznij od nowa</string>
+    <plurals name="quit_recent_slips">
+        <item quantity="one">%d restart w ostatnich 30 dniach</item>
+        <item quantity="few">%d starty w ostatnich 30 dniach</item>
+        <item quantity="many">%d startów w ostatnich 30 dniach</item>
+        <item quantity="other">%d startów w ostatnich 30 dniach</item>
+    </plurals>
+    <string name="quit_more">Więcej opcji</string>
+    <string name="quit_edit">Edytuj</string>
+    <string name="quit_delete_title">Usunąć to śledzenie?</string>
+    <string name="quit_delete_body">Jego historia jest usunięta z tego urządzenia.</string>
+    <string name="quit_name">Nazwa</string>
+    <string name="quit_name_hint">Każda nazwa się liczy. Tylko ty to widzisz.</string>
+    <string name="quit_reason">Dlaczego to ważne (opcjonalnie)</string>
+    <string name="quit_started">Rozpoczęto</string>
+    <string name="quit_started_now">Teraz</string>
+    <string name="quit_started_pick">Wybierz datę</string>
+    <string name="quit_private_note">Pozostaje na tym urządzeniu. Nie w Matrycy, kopiach zapasowych lub eksportach.</string>
+    <string name="quit_breathe_in">Wdech</string>
+    <string name="quit_breathe_hold">Wstrzymanie</string>
+    <string name="quit_breathe_out">Wydech</string>
+    <string name="quit_urge_left">%1$d:%2$02d zostało</string>
+    <string name="quit_urge_done_title">Fala minęła</string>
+    <string name="quit_urge_done_body">Zauważyłeś/aś to, pozostałeś/aś z tym i pozwoliłeś/aś mu odejść.</string>
+    <string name="quit_urge_done">Gotowe</string>
+    <string name="quit_urge_leave">Wyjdź</string>
+    <string name="quit_urge_idea_title">Następnie spróbuj jednej rzeczy</string>
+    <string-array name="quit_urge_ideas">
+        <item>Wypij szklankę wody.</item>
+        <item>Wyjdź na zewnątrz na pięć minut.</item>
+        <item>Zrób dziesięć powolnych przysiadów.</item>
+        <item>Umyj twarz zimną wodą.</item>
+        <item>Wyślij wiadomość komuś, komu ufasz.</item>
+        <item>Zmień pokój i włącz światła.</item>
+        <item>Zostaw swoje urządzenie w innym pokoju na chwilę.</item>
+        <item>Napisz, co czujesz teraz.</item>
+        <item>Sprzątnij jedną małą rzecz blisko ciebie.</item>
+        <item>Rozciągaj się powoli przez dwie minuty.</item>
+        <item>Przygotuj sobie ciepły napój.</item>
+        <item>Jeśli jest późno, idź spać.</item>
+    </string-array>
+    <!-- /Quit tracker -->
 </resources>

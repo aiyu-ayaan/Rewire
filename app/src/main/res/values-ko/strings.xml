@@ -621,4 +621,74 @@
     <string name="punch_guard_6">앱이 몇 라운드를 이겼어요. Matrix가 점수를 기록해 두니 설욕전을 계획해 보세요.</string>
     <string name="profile_language">언어</string>
     <string name="profile_language_system">시스템 기본값</string>
+
+    <!-- Quit tracker -->
+    <string name="nav_quit">끝내기</string>
+    <string name="quit_subtitle">하루씩</string>
+    <string name="quit_thought_title">오늘의 생각</string>
+    <string name="quit_thought_another">다른 생각</string>
+    <string name="quit_urge_title">욕구를 느끼나?</string>
+    <string name="quit_urge_body">올라갔다가, 절정에 오르다가, 지나간다. 2분을 그것과 함께 숨을 쉬자.</string>
+    <string name="quit_urge_start">파도를 타자</string>
+    <plurals name="quit_urges_ridden">
+        <item quantity="other">%d개의 파도를 타냈다</item>
+    </plurals>
+    <string name="quit_section">너의 여정들</string>
+    <string name="quit_empty_title">뭔가 새로운 걸 시작하자</string>
+    <string name="quit_empty_body">넌 떠나고 싶은 모든 것을 추가할 수 있다. 오직 너만 넌 주는 이름을 본다.</string>
+    <string name="quit_add_first">추적기를 추가하자</string>
+    <string name="quit_new">새로운 추적기</string>
+    <string name="quit_edit_title">추적기를 편집하자</string>
+    <plurals name="quit_days_word" xmlns:tools="http://schemas.android.com/tools" tools:ignore="ImpliedQuantity">
+        <item quantity="other">일</item>
+    </plurals>
+    <string name="quit_run_today">+ %1$d시간 %2$d분</string>
+    <string name="quit_best">최고: %s</string>
+    <string name="quit_next">다음: %s</string>
+    <string name="quit_days_short">%d일</string>
+    <string name="quit_days_hours">%1$d일 %2$d시간</string>
+    <string name="quit_hours_minutes">%1$d시간 %2$d분</string>
+    <string name="quit_ring_desc">%1$d일, %3$d일까지 %2$d%%</string>
+    <string name="quit_slipped">넘어졌다</string>
+    <string name="quit_slip_title">다시 시작할까?</string>
+    <string name="quit_slip_body">일어난다. 넘어짐은 정보지, 끝이 아니다. 너의 최고의 기록이 남아있다.</string>
+    <string name="quit_slip_confirm">다시 시작</string>
+    <plurals name="quit_recent_slips">
+        <item quantity="other">지난 30일 동안 %d번 재시작</item>
+    </plurals>
+    <string name="quit_more">더 많은 선택</string>
+    <string name="quit_edit">편집</string>
+    <string name="quit_delete_title">이 추적기를 삭제할까?</string>
+    <string name="quit_delete_body">그 기록이 이 기기에서 제거된다.</string>
+    <string name="quit_name">이름</string>
+    <string name="quit_name_hint">아무 이름이나 괜찮다. 오직 넌만 본다.</string>
+    <string name="quit_reason">왜 중요한가 (선택사항)</string>
+    <string name="quit_started">시작됨</string>
+    <string name="quit_started_now">지금</string>
+    <string name="quit_started_pick">날짜를 선택하자</string>
+    <string name="quit_private_note">이 기기에만 머물러 있다. 매트릭스, 백업, 또는 내보내기에는 없다.</string>
+    <string name="quit_breathe_in">들이마시자</string>
+    <string name="quit_breathe_hold">멈춰</string>
+    <string name="quit_breathe_out">내쉬자</string>
+    <string name="quit_urge_left">%1$d:%2$02d 남음</string>
+    <string name="quit_urge_done_title">파도가 지나갔다</string>
+    <string name="quit_urge_done_body">넌 그것을 알아차리고, 그것과 앉아 있었고, 그것을 놨다.</string>
+    <string name="quit_urge_done">끝났다</string>
+    <string name="quit_urge_leave">떠나자</string>
+    <string name="quit_urge_idea_title">그 다음 한 가지를 시도해보자</string>
+    <string-array name="quit_urge_ideas">
+        <item>물 한 잔을 마시자.</item>
+        <item>5분 동안 밖에 나가자.</item>
+        <item>천천히 10번 스쿼트를 하자.</item>
+        <item>찬물로 얼굴을 씻자.</item>
+        <item>믿을 수 있는 누군가에게 메시지를 보내자.</item>
+        <item>방을 바꾸고 불을 켜자.</item>
+        <item>한동안 기기를 다른 방에 두자.</item>
+        <item>지금 느끼는 것을 적어내자.</item>
+        <item>가까운 작은 것을 정리하자.</item>
+        <item>2분 동안 천천히 스트레칭하자.</item>
+        <item>따뜻한 음료를 마시자.</item>
+        <item>늦으면 자자.</item>
+    </string-array>
+    <!-- /Quit tracker -->
 </resources>

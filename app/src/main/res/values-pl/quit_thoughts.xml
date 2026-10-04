@@ -1,0 +1,1012 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generated: one line per item. Calm, neutral; never names a specific habit. -->
+<resources>
+    <string-array name="quit_thoughts">
+        <item>Pragnienie to fala. Osiąga szczyt. Mija. Możesz jechać na niej.</item>
+        <item>Teraz poczuj to bez walki. Ten moment jest przemijalny.</item>
+        <item>Co czujesz pod pragnieniem? Nudę? Samotność? Zmęczenie? Nazwij to.</item>
+        <item>Nie musisz działać na każde uczucie. Poczuj je i pozwól mu przejść.</item>
+        <item>Pragnienie to nie rozkaz. To tylko myśl w twojej głowie.</item>
+        <item>Zrób przerwę na 10 minut. Chęć się zmieni.</item>
+        <item>Kiedy przyjdzie pragnienie, oddychaj powoli. Wdech na cztery, wstrzymaj, wydech na sześć.</item>
+        <item>Co spowodowało ten moment? Zauważ to bez osądu.</item>
+        <item>Pragnienie jest najsilniejsze na początku. Po 15 minutach słabnie.</item>
+        <item>Wstań. Przejdź do innego pokoju. Przerwij schemat.</item>
+        <item>To nie słabość. To ty ucząc się nowego sposobu.</item>
+        <item>Pragnienie kłamie. Mówi ci, że go potrzebujesz. Nie potrzebujesz. Jesteś bezpieczny/a bez niego.</item>
+        <item>Zamiast działać na to, napisz, co teraz czujesz.</item>
+        <item>Czasem pragnienie to nuda w masce. Znajdź coś do robienia.</item>
+        <item>Ty nie jesteś pragnieniem. Pragnienie to pasażer, nie kierowca.</item>
+        <item>Połóż się na pięć minut i zaobserwuj: pragnienie minie, kiedy odpoczywasz.</item>
+        <item>Jest późno? Jesteś zmęczony/a? Pragnienia oszukują cię, kiedy tracisz czujność.</item>
+        <item>Pragnienie, które zignorowałeś/aś wczoraj, cię dumą. Zrób to znowu.</item>
+        <item>Twój mózg się teraz przewiązu. To trudna część. Ty to robisz.</item>
+        <item>Pragnienie jest najsilniejsze, kiedy jesteś sam/a. Zadzwoń do kogoś. Porozmawiaj.</item>
+        <item>Przeżyłeś/aś ostatnie. Przeżyjesz i to.</item>
+        <item>Co zrobiłaby twoja najlepsza wersja teraz? Posłuchaj tego głosu.</item>
+        <item>Szczyt chęci trwa minuty, nie godziny. Możesz go przetrwać.</item>
+        <item>Siedź z pragnieniem jak fala w oceanie. Pozwól mu przejść koło ciebie.</item>
+        <item>To nie na zawsze. To tylko teraz.</item>
+        <item>Pragnienie szepce kłamstwa. Jesteś silniejszy/a niż to kłamstwo.</item>
+        <item>Rozciągnij ciało. Ruszaj krew przez kończyny. Pragnienia zanikają z ruchem.</item>
+        <item>Budujesz coś. Każdy moment pauzy to cegła w fundamencie.</item>
+        <item>Kiedy chcesz uciec, znajdź prawdziwe uczucie poniżej i spotykaj się z nim zamiast.</item>
+        <item>Pragnienie to nawyk, nie potrzeba. Twoje ciało się przystosuje.</item>
+        <item>Zauważ pragnienie bez osądu. Nie dodawaj wstydu na wierzch pragnienia.</item>
+        <item>Możesz siedzieć z tym pięć minut i zobaczyć, co się stanie.</item>
+        <item>Pragnienie chce, byś wierzył/a, że jest trwałe. Nie jest. To przechodzące chmury.</item>
+        <item>Co zrobiłeś/aś ostatnio, kiedy się opierałeś/aś? Zrób to znowu.</item>
+        <item>Pragnienie to informacja. Mówi ci, że coś ci się liczy. Posłuchaj, potem wybierz.</item>
+        <item>Późne noce przynoszą pragnienia. Wcześniejsze łóżko je zapobiega.</item>
+        <item>Nie zawodzisz, kiedy czujesz pragnienie. Zawodzisz tylko, jeśli w to wierzysz.</item>
+        <item>Pragnienie to fala z twoim imieniem. Nauczyłeś/aś się surfować.</item>
+        <item>Kiedy samotny/a, pragnienie obiecuje połączenie. Szukaj prawdziwego połączenia zamiast.</item>
+        <item>Pragnienie to nie miłość. Nie pomyl go z czymś, czym nie jest.</item>
+        <item>Miałeś/aś wiele pragnienia i przeżyłeś/aś je wszystkie. To tylko jeszcze jedno.</item>
+        <item>Nuda to wyzwalacz. Miej listę rzeczy, które ci się liczą.</item>
+        <item>Pragnienie mówi ci, żeby się spieszyć. Możesz iść wolniej zamiast.</item>
+        <item>Twój układ nerwowy uczy się, że jesteś bezpieczny/a bez tego nawyka.</item>
+        <item>Siedź. Oddychaj. Liczysz do 100. Pragnienie się zmiękkczy.</item>
+        <item>Pragnienie jest najgłośniejsze, kiedy opierasz się ze strachem. Oddychaj z akceptacją zamiast.</item>
+        <item>Wybrałeś/aś, żeby zatrzymać. Pamiętaj o tym. Opieraj się na tym wyborze.</item>
+        <item>Stres wyzwala pragnienia. Nazwij stres. Zajmij się nim oddzielnie od pragnienia.</item>
+        <item>Pragnienie odwiedzi. To nie oznacza, że musisz je zaprosić.</item>
+        <item>Przewiązyjesz swoje ustawienia domyślne. To wymaga czasu i miłości.</item>
+        <item>Pragnienie to pasażer na autobusie, którym jeździsz. Pozwól mu siedzieć. Jedź dalej.</item>
+        <item>Pragnienia szybko osiągają szczyt i szybko spadają. Nie mylić szczytu z na zawsze.</item>
+        <item>Jaka jest prawdziwa potrzeba? Sen? Połączenie? Zabawa? Znajdź ją bez nawyka.</item>
+        <item>Nie musisz rozumieć pragnienia, aby je przetrwać.</item>
+        <item>Pragnienie to nie twoja wina. Twoja odpowiedź to twój wybór.</item>
+        <item>Kiedy pragnienie przychodzi o 23:00, to informacja. Chodź do łóżka wcześniej.</item>
+        <item>Możesz siedzieć na podłodze i oddychać i pozwolić pragnieniu być z tobą.</item>
+        <item>Pragnienie wróci. To normalne. Radzisz sobie jak radzisz sobie z innymi.</item>
+        <item>Stary schemat chce twojej uwagi. Masz prawo go ignorować.</item>
+        <item>Samotność wzmacnia pragnienia. Nawet wiadomość do przyjaciela je osłabia.</item>
+        <item>Pragnienie to odwiedzający. Ty wybierasz, czy otworzyć drzwi.</item>
+        <item>Budujesz nowe ścieżki w mózgu za każdym razem, kiedy robisz przerwę.</item>
+        <item>Pragnienie jest najsilniejsze, kiedy o tym myślisz. Delikatnie się rozprosź.</item>
+        <item>Co byś zrobił/a, gdyby pragnienie nie istniało? Zrób to teraz.</item>
+        <item>Pragnienie to nie nagły wypadek. Traktuj to jak myśl, która mija.</item>
+        <item>Byłeś/aś tu wcześniej. Twoje ciało wie, jak to przejść.</item>
+        <item>Nawyk zajął czas do budowania. Przerwa zajmie czas do utrzymania. Bądź cierpliwy/a.</item>
+        <item>Kiedy przychodzi pragnienie, oznacza to, że twój mózg się jeszcze przystosowuje. To uzdrawianie.</item>
+        <item>Nie musisz być idealny/a. Musisz tylko dalej wybierać.</item>
+        <item>Pragnienie jest najgłośniejsze, kiedy jesteś zmęczony/a. Sen to potężne narzędzie.</item>
+        <item>Pragnienia przychodzą falami. Niektóre są duże. Niektóre są małe. Wszystkie mijają.</item>
+        <item>Chęć to znak, że twoje ciało się zmienia. To dobra wiadomość.</item>
+        <item>Masz prawo poczuć pragnienie i na nim nie działać. Oba są prawdziwe.</item>
+        <item>Co wypełnia miejsce, które zwykł nawyk? Buduj to teraz.</item>
+        <item>Pragnienie szepce cicho na początku, potem głośniej, jeśli słuchasz. Nie słuchaj.</item>
+        <item>Wstań. Pragnienie się uspokaja, kiedy poruszasz ciałem.</item>
+        <item>Nie jesteś złamany/a za chęć starego schematu. Jesteś człowiekiem.</item>
+        <item>Pragnienie to pętla nawyku. Przerywacie pętlę z każdą przerwą.</item>
+        <item>Późne noce i samotność to najgorsza kombinacja. Planuj wokół nich.</item>
+        <item>Możesz powiedzieć pragnieniu: Cię widzę. Cię czuję. Nie będę tego robić mimo wszystko.</item>
+        <item>Pragnienie to jak chmura. Obserwuj je. Odejdzie.</item>
+        <item>Przeżyłeś/aś już najtrudniejsze dni. Ten jest teraz znajomy.</item>
+        <item>Pragnienie może siedzieć z tobą, kiedy robisz coś innego. To ok.</item>
+        <item>Czego unikasz, sięgając po nawyk? Stawiaj temu zamiast czoła.</item>
+        <item>Pragnienie jest najgłośniejsze, kiedy siedzisz. Ruch przerywa zaklęcie.</item>
+        <item>Jesteś silniejszy/a, niż myślisz. Ten moment to dowód.</item>
+        <item>Nawyk obiecał ulgę. Dostarczył pustki. Pamiętaj o tym.</item>
+        <item>Pragnienie to twój mózg proszący o dopaminę. Znajdź inne źródło.</item>
+        <item>Możesz czuć pragnienie i zachować kontrolę. Oba mogą być prawdziwe.</item>
+        <item>Pragnienie pochodzi z wyniesionego schematu, nie z tego, kim jesteś.</item>
+        <item>Kiedy zmęczony/a, wszystko czuje się trudniej. Pragnienie nie jest specjalne. Odpoczywaj.</item>
+        <item>Nie musisz rozumieć, dlaczego masz pragnienie, aby je przetrwać.</item>
+        <item>Chęć to dane. Nuda? Stres? Samotność? Naucz się schematu.</item>
+        <item>Pragnienie wróci. To nie porażka. To normalność zdrowienia.</item>
+        <item>Wybrałeś/aś tę ścieżkę. Ścieżka jest teraz wąska. Będzie się poszerzać.</item>
+        <item>Pragnienie to kłamca. Mówi, że nie możesz żyć bez niego. Możesz i żyjesz.</item>
+        <item>Siedź w swoim dyskomforcie pięć minut. Cię nie zniszczy.</item>
+        <item>Pragnienie jest najsilniejsze, kiedy jesteś zaskoczony/a. Bądź czujny/a.</item>
+        <item>Ty nie jesteś pragnieniem. Ty jesteś tym, kto zauważa pragnienie i oddycha.</item>
+        <item>Co byś czuł/a, gdybyś przyszedł/a przez dzisiaj bez niego? To jest nagroda.</item>
+        <item>Pragnienie to fala. Ty jesteś brzegiem. Pozwól mu rozbić się o ciebie i odsunąć.</item>
+        <item>Pij wodę, rozciągaj się, zimna woda na twojej twarzy, przejdź do innego pokoju. Wybierz jedno.</item>
+        <item>Nawyk zajął miesiące lub lata do sformowania. Twoja przerwa też zajmie czas. To normalne.</item>
+        <item>Pragnienie to nie porażka, chyba że wierzysz, że to rozkaz.</item>
+        <item>Możesz siedzieć z pragnieniem tak, jak siedziałbyś z niechcianym gościem.</item>
+        <item>Późna noc to kiedy pragnienia są najokrutniejsze. Planuj swoje wieczory.</item>
+        <item>Pragnienie mówi w powinien i muszę. Zignoruj to. Dokonaj własnego wyboru.</item>
+        <item>Masz więcej siły woli teraz, niż myślisz. Ten moment to dowód.</item>
+        <item>Pragnienie to uczucie, nie fakt. Uczucia się zmieniają.</item>
+        <item>Co opłakujesz, czego nawyk wypełniał? Opłakaj to. Uczcić to. Rusz się dalej.</item>
+        <item>Pragnienie będzie cię testować. Przejdziesz test. Przeszedłeś/aś je przedtem.</item>
+        <item>Nawyk obiecał szczęście. Dostarczył żalu. Wybierz ścieżkę bez żalu.</item>
+        <item>Nie musisz walczyć z pragnieniem. Możesz je zauważyć i dalej żyć.</item>
+        <item>Pragnienie to oprogramowanie działające w twoim mózgu. Ty jesteś programistą teraz.</item>
+        <item>Nuda karmi pragnienie. Sens je głodzi.</item>
+        <item>Chęć to sygnał, że coś jest poza równowagą. Napraw równowagę.</item>
+        <item>Masz prawo walczyć. Walka jest częścią ścieżki.</item>
+        <item>Pragnienie jest najgłośniejsze w ciszy. Wypełnij ciszę muzyką, głosami, aktywnością.</item>
+        <item>Zajechałeś/aś to daleko. To dowód. Ufaj dowodom.</item>
+        <item>Nawyk był ucieczką. Nie musisz już uciekać.</item>
+        <item>Pragnienie to fantomowy członek. Czuje się rzeczywisty, ale naprawdę tam go nie ma.</item>
+        <item>Co lubiłeś/aś na sobie zanim nawyk? Buduj to z powrotem.</item>
+        <item>Pragnienie zaniknie, jeśli odmówisz karmienia go historii.</item>
+        <item>Przepisujesz swoją historię teraz. Każda pauza to nowy rozdział.</item>
+        <item>Pragnienie jest najsilniejsze, kiedy jesteś podatny/a. Chrań się poprzez odpoczynek.</item>
+        <item>Możesz być w dyskomforcie i nie działać na pragnienie w tym samym czasie.</item>
+        <item>Chęć to twój mózg w odstawianiu. To tymczasowe i to uzdrawianie.</item>
+        <item>Nawyk cię trzymał mały/a. Ten wybór cię czyni większy/a.</item>
+        <item>Pragnienie to jak alarm przeciwpożarowy dzwoniący. To głośne, ale dom nie pali się.</item>
+        <item>Nie musisz być pewny/a, aby się oprzeć. Musisz tylko wybrać.</item>
+        <item>Późna noc, zmęczony/a, sam/a, znudzony/a. To kiedy pragnienia atakują. Znaj swój schemat.</item>
+        <item>Pragnienie to nie ty. Twoja odpowiedź to ty.</item>
+        <item>Stary schemat chce być znajomy. Nauczysz się nowego znajomego.</item>
+        <item>Możesz przyjąć pragnienie, podziękować mu za pojawienie się i rusz się dalej.</item>
+        <item>Chęć to burza. Minie. Nie musisz wychodzić na zewnątrz do niej.</item>
+        <item>Masz prawo czuć pragnienie bez wstydu.</item>
+        <item>Co przynosi ci radość, która nie jest nawykiem? Zrób to. Buduj to.</item>
+        <item>Pragnienie jest najgłośniejsze, kiedy skupiasz całą uwagę na nim. Przekieruj.</item>
+        <item>Przeżyłeś/aś każdy moment przed tym. Przeżyjesz i ten.</item>
+        <item>Nawyk obiecał kontrolę. Dostarczył odwrotnie. Pamiętaj o tym.</item>
+        <item>Pragnienie to test twojego zaangażowania, nie znak, że zawodzisz.</item>
+        <item>Samotność karmi pragnienia. Wyciągnij się zanim pragnienie będzie głośne.</item>
+        <item>Możesz siedzieć z dyskomfortem na 10 minut. To długi czas.</item>
+        <item>Pragnienie wróci. Za każdym razem, kiedy wraca, stajesz się silniejszy/a.</item>
+        <item>Stary sposób chciał, abyś wierzył/a, że nie masz wyboru. Masz.</item>
+        <item>Chęć to nie nagły wypadek. Tylko czuje się jak jeden.</item>
+        <item>Budujesz inne życie, nie tylko rzucasz nawyk.</item>
+        <item>Pragnienie mówi cicho na początku. To pora, żeby się odwrócić.</item>
+        <item>Co sprawiłoby, że byłbyś/a z siebie dumny/a dzisiaj? Zacznij tam.</item>
+        <item>Pragnienie to informacja, że nuda, stres lub zmęczenie jest obecne.</item>
+        <item>Możesz czuć pustotę i nie sięgać po nawyk w tym samym czasie.</item>
+        <item>Nawyk szeptał kłamstwa. Nauczysz się słuchać prawdy zamiast.</item>
+        <item>Pragnienie wróci jutro. To nie porażka. To uzdrawianie.</item>
+        <item>Masz prawo być niedoskonały/a w tym. Niedoskonały/a postęp to nadal postęp.</item>
+        <item>Pragnienie to jak szum na radiu. Możesz zmienić stację.</item>
+        <item>Co byś chciał/a, aby twoja przyszłość pytała cię zrobić teraz? Posłuchaj tego.</item>
+        <item>Chęć to duch schematu. Duchy cię nie mogą skrzywdzić.</item>
+        <item>Przewiązujesz swój mózg z każdym momentem, kiedy wybierasz inaczej.</item>
+        <item>Późne noce są niebezpieczne. Śpij wcześniej. Zapobieganie to najlepsza obrona.</item>
+        <item>Pragnienie to nawyk próbujący się perpetuować. Przerywacie pętlę.</item>
+        <item>Możesz być zmęczony/a i oporny/a i wciąż się powodzić.</item>
+        <item>Co pragnienie chce, żebyś zapomniał/a? Trzymaj tę pamięć zamiast.</item>
+        <item>Nawyk cię zabrał od siebie. Ta ścieżka cię przynosi z powrotem.</item>
+        <item>Pragnienie jest najsilniejsze, kiedy siedzisz nieruchomo. Się rusz.</item>
+        <item>Nie musisz chcieć się oprzeć. Musisz to zrobić mimo wszystko.</item>
+        <item>Chęć to fala. Jazdzileś/aś na falach przedtem. Możesz jazdzić na tej.</item>
+        <item>Co cię wypełnia, co nie jest nawykiem? Inwestuj w to.</item>
+        <item>Pragnienie będzie kłamać i powiedzieć, że go potrzebujesz. Nie potrzebujesz. Chcesz go. To inne.</item>
+        <item>Nuda to wyzwalacz. Miej plan dla nudzących momentów.</item>
+        <item>Możesz przetrwać pragnienie ze spokojem i cierpliwością.</item>
+        <item>Stary schemat puka. Nie musisz odpowiadać.</item>
+        <item>Pragnienie to informacja. Samotność? Stres? Nuda? Nazwij to i zajmij się tym.</item>
+        <item>Masz prawo czuć się źle i nie działać na pragnienie.</item>
+        <item>Nawyk był mechanizmem radzenia sobie. Nauczysz się nowych mechanizmów radzenia sobie teraz.</item>
+        <item>Pragnienie to nie odbicie twojej siły woli. To odbicie nawyku.</item>
+        <item>Co przynosi ci spokój, który nie jest nawykiem? Użyj tego teraz.</item>
+        <item>Chęć to twoje ciało się dostosowywujące. To nie słabość. To zmiana.</item>
+        <item>Możesz być w dyskomforcie bez potrzeby ratunku z nawyku.</item>
+        <item>Późne noce pragnienia są rzeczywiste. Planuj być w łóżku zanim się pojawią.</item>
+        <item>Pragnienie jest najgłośniejsze, kiedy jesteś izolowany/a. Szukaj połączenia.</item>
+        <item>Wybrałeś/aś trudniejszą ścieżkę, ponieważ chcesz czegoś lepszego. Uczcić to.</item>
+        <item>Nawyk obiecał radość. Dostarczył pustki. Wybierz inaczej teraz.</item>
+        <item>Pragnienie to test. Przechodzisz go teraz.</item>
+        <item>Co czuje się spokojny/a? Rusz się ku temu uczuciu.</item>
+        <item>Chęć będzie odwiedzić. Nie musisz go zapraszać.</item>
+        <item>Budujesz wytrzymałość z każdym momentem oporu.</item>
+        <item>Pragnienie chce twojej uwagi. Daj jej czemuś, co cię zasługuje zamiast.</item>
+        <item>Nuda, samotność, stres, zmęczenie. Znaj swoje wyzwalacze i planuj z wyprzedzeniem.</item>
+        <item>Możesz być smutny/a i nie sięgać po nawyk.</item>
+        <item>Nawyk był skrótem. Bierzesz długą drogę. To mądrość.</item>
+        <item>Pragnienie to nie wróg. To odwiedzający. Ty jesteś gospodarzem.</item>
+        <item>Co byś powiedział/a swojemu najlepszemu przyjacielowi, jeśli poczuliby to pragnienie? Powiedz to sobie.</item>
+        <item>Chęć to tymczasowe. Twój wybór jest trwały/a.</item>
+        <item>Masz prawo walczyć. Walka buduje siłę.</item>
+        <item>Pragnienie to fala, która osiąga szczyt w minutach, nie godzinach.</item>
+        <item>Co chcesz być znany/a? To, nie nawyk.</item>
+        <item>Późna noc plus zmęczony/a plus sam/a równa się niebezpieczeństwo. Zapobiegaj tej kombinacji.</item>
+        <item>Pragnienie to sygnał, że twój stary schemat jest wciąż przewiązany. Ty go przewiązujesz.</item>
+        <item>Możesz poczuć potrzebę i na nim nie działać. To cała bitwa.</item>
+        <item>Nawyk kłamał o tym, co by zrobił. Prawda cię uwolni.</item>
+        <item>Pragnienie to informacja. Posłuchaj. Potem wybierz własną ścieżkę.</item>
+        <item>Jesteś silniejszy/a niż twoje pragnienia. Ten moment to dowód.</item>
+        <item>Chęć zaniknie, jeśli dasz jej czas zamiast działania.</item>
+        <item>Co przynosi spokój do twojego umysłu? Idź tam kiedy pragnienie się pojawia.</item>
+        <item>Pragnienie to nie porażka. Twoja odpowiedź to twoja miara.</item>
+        <item>Przeżyłeś/aś trudniejsze momenty niż ten. Przeżyjesz i ten.</item>
+        <item>Nawyk chciał być twoją tożsamością. Jesteś czymś więcej.</item>
+        <item>Pragnienie to fantom. Nie ma mocy, chyba że mu ją dajesz.</item>
+        <item>Co czułoby się dobrze, co nie angażuje nawyku? Zrób to.</item>
+        <item>Samotność to wyzwalacz. Wyciągnij się zanim wyzwalacz będzie ciągnąć.</item>
+        <item>Możesz być sfrustrowany/a i nie działać na pragnienie.</item>
+        <item>Stary schemat jest znajomy. Nowy schemat też będzie znany.</item>
+        <item>Pragnienie to jak dziecko, które chce słodycze. Możesz je przyjąć i powiedzieć nie.</item>
+        <item>Co budujesz swoją odmową? Buduj to świadomie.</item>
+        <item>Chęć to twój mózg się uzdrawiający. Boli, ponieważ uzdrawianie jest rzeczywiste.</item>
+        <item>Masz prawo odpocząć. Odpoczynek to nie słabość.</item>
+        <item>Pragnienie wróci. Każdy powrót to dowód, że postępiłeś/aś.</item>
+        <item>Nawyk był trasą ucieczki. Zostałeś/aś i stawiłeś/aś czoła zamiast.</item>
+        <item>Pragnienie to informacja o twoich potrzebach, nie rozkaz o twoich działaniach.</item>
+        <item>Co wypełnia czas, który ma znaczenie? Wypełnij czas tym.</item>
+        <item>Późna noc to kiedy pragnienia są najokrutniejsze. Chodź wcześniej do łóżka.</item>
+        <item>Pragnienie to fala. Ty jesteś stałą ziemią. Pozwól jej przesunąć się po tobie.</item>
+        <item>Możesz być znudzony/a i nie sięgać po nawyk.</item>
+        <item>Nawyk obiecał kontrolę. Bierzesz prawdziwą kontrolę teraz.</item>
+        <item>Pragnienie to nie ty. To schemat, który nauczył się twój mózg. Ty go oduczasz.</item>
+        <item>Co byś zrobił/a, gdybyś nie był/a przerażony/a? Zrób to.</item>
+        <item>Chęć to znak, że twój system się przywraca do równowagi. To uzdrawianie.</item>
+        <item>Budujesz życie, którego pragnienie nie może dotknąć.</item>
+        <item>Pragnienie szepce. Nie słuchaj.</item>
+        <item>Co przynosi ci prawdziwą radość? Buduj swój dzień wokół tego.</item>
+        <item>Stres to wyzwalacz. Stawiaj czoła stresowi bez nawyku.</item>
+        <item>Możesz siedzieć z pragnieniem i oddychać i czekać.</item>
+        <item>Stary schemat chce czuć się komfortowy. Dyskomfort to most do nowego komfortu.</item>
+        <item>Pragnienie jest najsilniejsze, kiedy jesteś podatny/a. Chrań się.</item>
+        <item>Masz prawo czuć się słaby/a i wciąż wybrać siłę.</item>
+        <item>Nawyk był kłamstwem. Prawda jest, że możesz żyć bez niego.</item>
+        <item>Pragnienie to test twojego zamiaru. Przechodzisz.</item>
+        <item>Co wymaga twoje najlepsze życie? Rzucenie tego nawyku. Się nie poddawaj.</item>
+        <item>Pragnienie to sygnał bez wiadomości. Przestań szukać znaczenia. Po prostu oddychaj.</item>
+        <item>Możesz zrobić przerwę bez zrozumienia. Zrozumienie przychodzi później.</item>
+        <item>Chęć osiąga szczyt i plateau i w końcu zanika. Jazdzij wszystkie trzy etapy.</item>
+        <item>Co byłoby zaskakujące dla twojej przeszłości o twojej sile? Żyjesz tą niespodzianką.</item>
+        <item>Pragnienie to test, który cię nie ocenia. Zawsze przechodzisz.</item>
+        <item>Ty nie jesteś sumą twoich pragnienia. Ty jesteś tym, kto je obserwuje.</item>
+        <item>Nawyk chciał trwałości. Ty wybierasz nietrwałość. Ty wygrywasz.</item>
+        <item>Co sprawiłoby, że dzisiaj byłby dobry dzień? Zdefiniuj to bez nawyku.</item>
+        <item>Pragnienie to gość, który się przedłuża. Masz prawo go poprosić, aby wyszedł.</item>
+        <item>Możesz bać się recydywy i wciąż być wolny od recydywy teraz.</item>
+        <item>Chęć mówi językiem pilności. Ty mówisz językiem czasu.</item>
+        <item>Późna noc to kiedy siła woli jest najniższa. Zapobiegaj czasowi, nie tylko wyborowi.</item>
+        <item>Pragnienie to schemat, który nauczyłeś/aś się. Nauczysz się nowego schematu teraz.</item>
+        <item>Budujesz dowód, nie tylko składasz obietnice.</item>
+        <item>Nawyk kłamał o dawaniu ci tego, czego potrzebowałeś/aś. Znajdujesz prawdę teraz.</item>
+        <item>Pragnienie to przypomnienie, kto byłeś/aś. Ty jesteś kimś innym teraz.</item>
+        <item>Co czułoby się jak wolność? Rusz się ku temu zamiast.</item>
+        <item>Chęć to dług, który nawyk stworzył. Spłacasz go dzień po dniu.</item>
+        <item>Możesz siedzieć we własnym towarzystwie bez sięgania po nawyk.</item>
+        <item>Pragnienie będzie testować twoją uczciwość. Każdy moment oporu to dowód.</item>
+        <item>Zidentyfikuj, co nawyk od ciebie ukradł. Weź to z powrotem.</item>
+        <item>Stary schemat to droga, którą przestałeś/aś chodzić. Nie patrz wstecz.</item>
+        <item>Pragnienie to szum. Możesz być w głośnym pokoju i pozostać spokojny/a.</item>
+        <item>Co byłoby potrzebne, aby wybaczyć sobie za poświęcony czas? Zacznij teraz.</item>
+        <item>Ty się nie leczysz źle. Ty się leczysz dokładnie dobrze.</item>
+        <item>Nawyk chciał być twojego rozwiązaniem. Znajdujesz prawdziwe rozwiązania.</item>
+        <item>Chęć to odstawienie. Odstawienie to uzdrawianie, które się dzieje.</item>
+        <item>Późne noce będą zawsze trudne. Wcześniejsze łóżko to twój najlepszy przyjaciel.</item>
+        <item>Piszesz historię o tym, kim się stajesz. Napisz dobrą historię.</item>
+        <item>Pragnienie minie. Ty pozostaniesz. To cała różnica.</item>
+        <item>Ty nie uciekasz od czegoś. Ty idziesz ku sobie.</item>
+        <item>Osoba, którą chcesz być, czeka aż ją dzisiaj wybierzesz.</item>
+        <item>Ten moment to gdzie twoja przyszłość się buduje.</item>
+        <item>Składasz obietnice sobie. Począwszy od teraz.</item>
+        <item>Wolność oznacza dokonywanie twoich własnych wyborów. Ty dokonujesz jednego teraz.</item>
+        <item>Co byś zrobił/a najlepsza wersja ciebie? To kim się stajesz.</item>
+        <item>Nawyk cię nie definiuje. Twoje wybory robią.</item>
+        <item>Zasługujesz, aby ufać sobie. Buduj tę ufność dzień po dniu.</item>
+        <item>Twoja przyszłość jest już z ciebie dumna za próbowanie.</item>
+        <item>Obecność to dar, który dajesz sobie i wszystkim wokół.</item>
+        <item>Prawdziwe połączenie się dzieje, kiedy się pojawisz jako ty.</item>
+        <item>Ty wybierasz godność dzisiaj. To wystarczające.</item>
+        <item>Pragnienie minie. Twoja uczciwość jest trwała/a.</item>
+        <item>Jakie wartości są dla ciebie najważniejsze? Żyj nimi dzisiaj.</item>
+        <item>Ty się nie naprawiasz. Ty się szanujesz.</item>
+        <item>Twoje życie jest zbyt cenne dla pół-uwagi.</item>
+        <item>Stary schemat cię nie posiadł.</item>
+        <item>Samooszacowanie nie jest zdobywane przez perfekcję. Przychodzi z uczciwego wysiłku.</item>
+        <item>Ty jesteś autorem tego, kim się stajesz.</item>
+        <item>Dzisiaj wybierasz obecność nad nieobecność.</item>
+        <item>Każdy wybór dla siebie to obietnica dotrzymana.</item>
+        <item>Osoba, którą jesteś teraz, może to zrobić.</item>
+        <item>Jesteś silniejszy/a niż myślisz. Spokojniejszy/a niż wierzysz.</item>
+        <item>Tożsamość to nie to, co zrobiłeś/aś. To, co robisz dalej.</item>
+        <item>To jak się stajesz niezawodny/a dla siebie.</item>
+        <item>Ty nie potrzebujesz pozwolenia, aby się szanować.</item>
+        <item>Pragnienie to tylko szum. Ty jesteś sygnałem.</item>
+        <item>Co rodzaju życia chcesz żyć? Ty je budujesz teraz.</item>
+        <item>Twoja uwaga jest święta. Chrań ją.</item>
+        <item>Ufaj sobie. Ty już to udowodniłeś/aś, że możesz.</item>
+        <item>Prawdziwa pewność siebie przychodzi z dotrzymywania słowa sobie.</item>
+        <item>Piszesz swoją historię z każdym wyborem.</item>
+        <item>Nawyk rośnie na twojej podzielonej uwadze. Weź ją z powrotem.</item>
+        <item>Wolność to nie nieobecność reguł. To wybranie swoich.</item>
+        <item>Zasługujesz na pełne obecne w swoim życiu.</item>
+        <item>Co mówi ci twoje sumienie? Posłuchaj tego.</item>
+        <item>Wersja ciebie, którą szanujesz, to kto się stajesz.</item>
+        <item>Intencja sprawia, że zwykłe momenty są znaczące.</item>
+        <item>Ty nie jesteś złamany/a. Ty się wybierasz.</item>
+        <item>Każdy dzień to szansa, aby udowodnić, kim naprawdę jesteś.</item>
+        <item>Pragnienie się osłabia. Twoja stanowczość się wzmacnia.</item>
+        <item>Ty jesteś kimś, kto dotrzymuje obietnic. Szczególnie dla siebie.</item>
+        <item>Co byś powiedział/a przyjacielowi w twojej pozycji? Powiedz to sobie.</item>
+        <item>Tożsamość zaczyna się od jednego wyboru. Ty go dokonujesz teraz.</item>
+        <item>Twoja przyszłość to nie obca osoba. To ty.</item>
+        <item>Obecność to jak kochasz ludzi w twoim życiu.</item>
+        <item>Budujesz siebie, którą możesz ufać. To wymaga czasu. Ty go masz.</item>
+        <item>Nawyk to tymczasowe. Kto się stajesz, to trwałe.</item>
+        <item>Prawdziwa siła jest cicha. Nie musi się ogłaszać.</item>
+        <item>Ty wybierasz, jaki rodzaj człowieka chcesz być.</item>
+        <item>To jest to, co utrzymanie siebie ma znaczenie.</item>
+        <item>Twoje wartości nie są abstrakcyjne. Żyją w twoich wyborach dzisiaj.</item>
+        <item>Pragnienie chce, żebyś zapomniał/a, kim jesteś. Pamiętaj.</item>
+        <item>Zasługujesz być z siebie dumny/a.</item>
+        <item>Każdy moment to świeża szansa, aby uczcić twoje życie.</item>
+        <item>Godność to nie jest krucha. Rośnie silniejsza, kiedy ją karmiasz.</item>
+        <item>Ty jesteś osobą, którą czekałeś/aś.</item>
+        <item>Jak czułoby się, aby całkowicie sobie ufać?</item>
+        <item>Stary schemat to stary. Ty jesteś nowy/a.</item>
+        <item>Obecność to nie wygranie. To pojawienie się.</item>
+        <item>Ty się uczysz siebie kochać inaczej.</item>
+        <item>Twoja uwaga to skończona rzecz. Wydaj ją dobrze.</item>
+        <item>Nawyk nie definiuje twojej zdolności. Twoje wybory robią.</item>
+        <item>Ty się stajesz kimś, którym się szanujesz.</item>
+        <item>Prawdziwa wolność smakuje jak wybranie własnej ścieżki.</item>
+        <item>Wersja ciebie, którą chcesz poznać, formuje się teraz.</item>
+        <item>Ty budujesz relację z sobą, która ma znaczenie.</item>
+        <item>Tożsamość to nie jest stała. To jest coś, co wybierasz każdego dnia.</item>
+        <item>Pragnienie zanika. Szacunek, który budujesz, trwa.</item>
+        <item>Ty się uczysz dotrzymywać najważniejszej obietnicy ze wszystkich.</item>
+        <item>Co chcesz wspominać o sobie gdy patrzysz wstecz?</item>
+        <item>Nawyk chciał cię mały/a. Ty się wybierasz duży/a.</item>
+        <item>Obecność oznacza, że możesz cieszyć się rzeczywistym momentem, w którym jesteś.</item>
+        <item>Twoja przyszłość nie prosi o perfekcję. Tylko uczciwość.</item>
+        <item>Ty jesteś kimś, kto się pojawia dla siebie.</item>
+        <item>Nagroda za to jest prosta: ty.</item>
+        <item>Samooszacowanie to nie luksus. To jest jak żyjesz.</item>
+        <item>Ty przepisujesz swoją relację z sobą.</item>
+        <item>Każdy wybór to szansa, aby coś sobie udowodnić.</item>
+        <item>Pragnienie nie dostaje głosu na temat tego, kim jesteś.</item>
+        <item>Twoje wartości mają większe znaczenie niż tymczasowe pociągnięcie.</item>
+        <item>Ty się uczysz, co to znaczy całkowicie sobie ufać.</item>
+        <item>Osoba, którą chcesz być, czeka cierpliwie. Ona czeka.</item>
+        <item>Obecność to największy dar dla siebie i innych.</item>
+        <item>Ty wybierasz intencję zamiast autopilota.</item>
+        <item>Nawyk obiecał coś. Ty obiecałeś/aś sobie coś lepszego.</item>
+        <item>Tożsamość się buduje w momentach takich jak ten.</item>
+        <item>Prawdziwa siła to wybranie siebie, kiedy nikt nie patrzy.</item>
+        <item>Ty się stajesz kimś, którym chcesz być.</item>
+        <item>Wersja ciebie, którą szanujesz, żyje w twoich wyborach.</item>
+        <item>Ty nie uciekasz od czegoś. Ty się wybierasz coś.</item>
+        <item>Godność rośnie za każdym razem, kiedy się wybierasz.</item>
+        <item>Pragnienie to tymczasowe. Twoja uczciwość to nie.</item>
+        <item>Ty się uczysz być swoim najlepszym przyjacielem.</item>
+        <item>Co ma dla ciebie większe znaczenie niż nawyk?</item>
+        <item>Stary schemat nie dostaje głosu na temat tego, kim się stajesz.</item>
+        <item>Ty budujesz życie, które odbija twoje rzeczywiste wartości.</item>
+        <item>Twoja uwaga należy do życia, które faktycznie chcesz.</item>
+        <item>Osoba, którą się stajesz, jest warta wysiłku.</item>
+        <item>Ty się wybierasz być kimś, komu możesz ufać.</item>
+        <item>Obecność to jak odzyskujesz swoje życie.</item>
+        <item>Każdy moment, kiedy się opierasz, to moment, kiedy się wybierasz.</item>
+        <item>Nawyk rośnie na bezmyślności. Ty się stajesz obecny/a.</item>
+        <item>Ty się uczysz, co prawdziwa wolność czuje.</item>
+        <item>Tożsamość to nie jest coś, co znajdujesz. To jest coś, co budujesz.</item>
+        <item>Twoja przyszłość będzie wiedzieć, że dotrzymałeś/aś tej obietnicy.</item>
+        <item>Zasługujesz lubić osobę, którą się stajesz.</item>
+        <item>Pragnienie zanika. Osoba, którą budujesz, rośnie silniejsza.</item>
+        <item>Ty jesteś kimś, kto wie, co sobie ceni i żyje tym.</item>
+        <item>Prawdziwa pewność siebie przychodzi z wyrównaniem działań z tym, kim chcesz być.</item>
+        <item>Wersja ciebie, którą szanujesz, jest w zasięgu.</item>
+        <item>Ty się wybierasz być całkowicie w swoim życiu.</item>
+        <item>Co rodzaju osoba się pojawia dla siebie w ten sposób? Ty jesteś tą osobą.</item>
+        <item>Jasność przychodzi, kiedy przestajesz mącić twój umysł.</item>
+        <item>Wybór, który dokonujesz teraz, definiuje, kim się stajesz.</item>
+        <item>To jest praca wolności. Ty to robisz.</item>
+        <item>Twoje życie to jedyne, które możesz całkowicie żyć.</item>
+        <item>Ty się uczysz, że prawdziwa siła żyje w mówieniu nie.</item>
+        <item>Osoba wewnątrz ciebie, która wie lepiej, teraz prowadzi.</item>
+        <item>Każdy moment, kiedy się wybierasz, ma większe znaczenie, niż myślisz.</item>
+        <item>Co chroniasz dzisiaj, kształtuje, kim jesteś jutro.</item>
+        <item>Stary sposób nie wydaje rozkazów. Ty robisz.</item>
+        <item>Ty się uczysz poruszać się po świecie jako ty.</item>
+        <item>Intencja to miłość zaobserwowana w sposobie, w jaki żyjesz.</item>
+        <item>Nawyk ukrywa, kim mógłbyś/aś być. Ty zdejmujesz maskę.</item>
+        <item>Prawdziwy spokój przychodzi z wiedzy, że jesteś szczery/a.</item>
+        <item>Ty się stajesz kimś, którym możesz podziwiać.</item>
+        <item>To nie jest o karze. To jest o szacunku.</item>
+        <item>Pragnienie kłamie o tym, czego potrzebujesz. Ty wiesz lepiej.</item>
+        <item>Ty budujesz coś, co nie może być wstrząśnięte.</item>
+        <item>Twoja przyszłość czeka dla ciebie teraz.</item>
+        <item>Obecność to jak pozostajesz połączony/a z tym, co ma znaczenie.</item>
+        <item>Ty się uczysz być osobą, której inni mogą ufać, ponieważ sobie ufasz.</item>
+        <item>Każda odmowa to tak do czegoś lepszego.</item>
+        <item>Wersja ciebie, która jest całokształtu, się pojawia.</item>
+        <item>Zasługujesz na życie, gdzie czujesz się jak ty.</item>
+        <item>Co robisz, wymaga prawdziwej odwagi. Nazwij to.</item>
+        <item>Nawyk kradnie czas. Ty bierzesz swój z powrotem.</item>
+        <item>Ty wybierasz jasność zamiast zamieszania.</item>
+        <item>Prawdziwe zwycięstwo jest ciche. Żyje wewnątrz.</item>
+        <item>Tożsamość się formuje w wyborach, które nikt nie widzi, jak robisz.</item>
+        <item>Ty się uczysz, co to znaczy szanować się całkowicie.</item>
+        <item>Pragnienie jest łatwiejsze. Twój szacunek dla siebie rośnie silniejszy.</item>
+        <item>Ty się stajesz kimś z prawdziwymi granicami.</item>
+        <item>Co chroniasz, to poświęcone. Ty.</item>
+        <item>Stary schemat się łamie. Coś nowego rośnie.</item>
+        <item>Ty się uczysz słuchać własnej mądrości.</item>
+        <item>Wolność to nie cel. To jak poruszasz się przez każdy dzień.</item>
+        <item>Ty budujesz fundament, który wspiera prawdziwą zmianę.</item>
+        <item>Każdy moment obecności to moment mocy.</item>
+        <item>Osoba, którą chcesz być, potrzebuje ciebie, aby to zrobić.</item>
+        <item>Ty się uczysz, że dotrzymywanie słowa ma największe znaczenie.</item>
+        <item>Prawdziwa godność nigdy nie podlega negocjacjom.</item>
+        <item>Ty jesteś jedynym, kto żyje twoim życiem. Posiadaj je całkowicie.</item>
+        <item>Nawyk nie posiadł twojej przyszłości. Ty robisz.</item>
+        <item>Ty się stajesz kimś, kto robi wybory zamiast wymówek.</item>
+        <item>Co budujesz, to jest tylko dla ciebie.</item>
+        <item>Obecność łączy cię z życiem, które naprawdę jest twoje.</item>
+        <item>Ty się uczysz chcieć siebie bardziej niż pragnienie.</item>
+        <item>Wersja ciebie bez tego ciężaru czeka.</item>
+        <item>Każdy dzień, kiedy wybierasz siebie, to dzień, kiedy wygrywasz.</item>
+        <item>Ty się stajesz niezawodny/a dla jednej osoby, która ma znaczenie.</item>
+        <item>Prawdziwa siła to wybranie siebie, kiedy to trudne.</item>
+        <item>Jasność, która przychodzi, jest warta każdego momentu.</item>
+        <item>Ty się uczysz, że wolność jest wewnętrzna najpierw.</item>
+        <item>Co szanujesz w sobie, rośnie, kiedy je karmiasz.</item>
+        <item>Ty nie czekasz na bycie godnym. Jesteś godny/a teraz.</item>
+        <item>Nawyk to stara historia. Ty piszesz nową.</item>
+        <item>Ty się wybierasz być obecny/a dla swojego życia.</item>
+        <item>Każdy moment oporu to moment wzrostu.</item>
+        <item>Osoba, którą się stajesz, zrozumie, dlaczego to zrobiłeś/aś.</item>
+        <item>Ty się uczysz kochać się w działaniu.</item>
+        <item>Prawdziwy spokój przychodzi z życiem w wyrównaniu z twoimi wartościami.</item>
+        <item>Ty budujesz siebie, której nigdy nie musisz kłamać.</item>
+        <item>Pragnienie zanika jak wszystko tymczasowe.</item>
+        <item>Zasługujesz czuć się w domu w swoich wyborach.</item>
+        <item>Tożsamość jest pisana w tym, co robisz, kiedy jesteś testowany/a.</item>
+        <item>Ty się uczysz, że obecność to najgłębsza forma opieki.</item>
+        <item>Wersja ciebie, która jest wolna, jest bliżej, niż wiesz.</item>
+        <item>Co chroniasz dzisiaj, staje się, kim jesteś jutro.</item>
+        <item>Ty się wybierasz być kimś, na kom możesz liczyć.</item>
+        <item>Każdy uczciwy moment liczy się. Ty je zbierasz.</item>
+        <item>Prawdziwa siła to wewnętrzna. Żyje w twojej kręgosłupie.</item>
+        <item>Ty się stajesz kimś, kto ceni własne obietnice.</item>
+        <item>Jasność, którą budujesz, będzie cię wspierać.</item>
+        <item>Ty nie uciekasz. Ty przybywasz.</item>
+        <item>Co robisz, to sobie coś udowadnia.</item>
+        <item>Nawyk chce kapitulacji. Ty wybierasz suwerenność.</item>
+        <item>Ty się uczysz, że najlepsze życie to życie, które wybierasz.</item>
+        <item>Obecność to antidotum na kłamstwo, które mówi nawyk.</item>
+        <item>Każdy moment, kiedy pozostajesz, to moment, kiedy pozostajesz szczery/a.</item>
+        <item>Ty się stajesz rodzajem osoby godnym bycia.</item>
+        <item>Prawdziwa wolność smakuje jak robienie tego, w co wierzysz.</item>
+        <item>Wersja ciebie, która sobie ufa, się pojawia.</item>
+        <item>Ty się uczysz, że godność nie jest dana. Jest wybrana.</item>
+        <item>Co ma znaczenie, to że się wybierasz. Dalej się wybieraj.</item>
+        <item>Stara historia nie posiadł następnego rozdziału.</item>
+        <item>Ty budujesz relację z sobą, która trwa.</item>
+        <item>Każdy moment wyboru to moment mocy.</item>
+        <item>Osoba, którą się stajesz, nie jest daleko.</item>
+        <item>Ty się uczysz żyć z intencją.</item>
+        <item>Prawdziwy szacunek przychodzi z dotrzymywania własnych obietnic.</item>
+        <item>Pragnienie to tymczasowe. Twój charakter to trwały/a.</item>
+        <item>Ty się wybierasz być całkowicie żywym/a w swoim życiu.</item>
+        <item>Tożsamość się buduje z tysiąca małych tak do siebie.</item>
+        <item>Zasługujesz patrzeć sobie w oczy bez wstydu.</item>
+        <item>Jasność, która przychodzi, będzie twoim nowym domem.</item>
+        <item>Ty nie czekasz na pozwolenie. Ty dajesz je sobie.</item>
+        <item>Co robisz teraz, to początek wszystkiego.</item>
+        <item>Ty się uczysz ufać, co wiesz, że to jest prawda.</item>
+        <item>Nawyk szepce. Twoje sumienie mówi. Słuchaj głośniej.</item>
+        <item>Prawdziwy wybór oznacza życie z tym, co zdecydowałeś/aś.</item>
+        <item>Ty się stajesz kimś z rzeczywistą wiarą.</item>
+        <item>Każdy moment, kiedy pozostajesz, to moment, kiedy się budujesz.</item>
+        <item>Osoba wewnątrz, która wie lepiej, już prowadzi.</item>
+        <item>Co budujesz, to tylko dla tych, którzy go chcą.</item>
+        <item>Wolność oznacza, że nie odpowiadasz już pragnieniu.</item>
+        <item>Ty się uczysz, że twój własny szacunek jest wart więcej.</item>
+        <item>Wersja ciebie, która jest nienaruszona, rośnie z powrotem.</item>
+        <item>Co chroniasz w tych momentach, to twoja przyszłość.</item>
+        <item>Ty się wybierasz być kimś, którą rozpoznajesz.</item>
+        <item>Prawdziwa moc to wybranie, co ma znaczenie, i żyj tym.</item>
+        <item>Jasność, którą budujesz, staje się trwała/a.</item>
+        <item>Ty się uczysz, że obecność to gdzie życie naprawdę jest.</item>
+        <item>Każdy uczciwy wybór przynosi cię bliżej do siebie.</item>
+        <item>Nawyk nie może dotknąć tego, kim się wybierasz być.</item>
+        <item>Zasługujesz czuć się całość w swoich decyzjach.</item>
+        <item>Ty budujesz coś, czego pragnienie nigdy nie weźmie.</item>
+        <item>Co cię definiuje, to co wybierasz, kiedy to trudne.</item>
+        <item>Stary schemat traci na uchwyce. Ty stoisz mocno.</item>
+        <item>Prawdziwa siła to dotrzymywanie słowa sobie w ciemności.</item>
+        <item>Ty się stajesz kimś, którego tak coś znaczy.</item>
+        <item>Każdy moment, kiedy się wybierasz, to moment zwycięstwa.</item>
+        <item>Osoba, którą się stajesz, będzie wdzięczna.</item>
+        <item>Ty się uczysz, co wolność naprawdę wymaga.</item>
+        <item>Obecność to twój bunt przeciw autopilotowi.</item>
+        <item>Ty budujesz życie, które wyrównuje się z twoją duszą.</item>
+        <item>Wersja ciebie, która jest autentyczna, przyjmuje kształt.</item>
+        <item>Co robisz teraz rozchodzi się na wszystko.</item>
+        <item>Zasługujesz być w pokoju z własnymi wyborami.</item>
+        <item>Jasność, którą zyskujesz, to fundament na wszystko.</item>
+        <item>Ty się uczysz dokonywać wyborów, które odbijają, kim jesteś.</item>
+        <item>Prawdziwy szacunek przychodzi z robienia trudnej rzeczy, kiedy to ma znaczenie.</item>
+        <item>Każdy dzień bez starego nawyku to dzień dowodu.</item>
+        <item>Ty się stajesz kimś, kto może sobie ufać.</item>
+        <item>Pragnienie nie rozumie, kim się stajesz.</item>
+        <item>Ty się wybierasz żyć z intencją i świadomością.</item>
+        <item>Co chroniasz, staje się tym, co zachowujesz.</item>
+        <item>Tożsamość nie jest dziedziczona. Jest wybrana i przebudowywana każdego dnia.</item>
+        <item>Ty się uczysz, że wolność to praca wewnętrzna.</item>
+        <item>Wersja ciebie, która jest wolna, czeka na znalezienie.</item>
+        <item>Każdy moment, kiedy się opierasz, to moment siły.</item>
+        <item>Zasługujesz znać siebie jako kogoś, kto dotrzymuje obietnic.</item>
+        <item>Nawyk zanika. Ty stajesz się wyraźniejszy/a.</item>
+        <item>Ty się stajesz kimś, którego wartości są żywione.</item>
+        <item>Prawdziwy spokój przychodzi z wiedzy, że dokonujesz właściwego wyboru.</item>
+        <item>Co budujesz, będzie cię wspierać przez wszystko.</item>
+        <item>Każdy wybór to głos na rzecz tego, kim chcesz się stać.</item>
+        <item>Ty się uczysz czcić osobę, którą chcesz być.</item>
+        <item>Jasność twoich wyborów to twoja największa moc.</item>
+        <item>Ty się nie stajesz kimś nowym. Ty się stajesz bardziej tobą.</item>
+        <item>Co ma znaczenie, to że tu jesteś. Ty się wybierasz.</item>
+        <item>Stara historia się kończy. Nowa zaczyna się tobie.</item>
+        <item>Każdy moment obecności to moment całości.</item>
+        <item>Ty się stajesz kimś, którym naprawdę się lubisz.</item>
+        <item>Prawdziwa wolność smakuje jak życie twoim własnym prawdziwością.</item>
+        <item>Wersja ciebie, której sobie ufasz, się formuje teraz.</item>
+        <item>Zasługujesz patrzeć wstecz bez żalu o dzisiaj.</item>
+        <item>Co budujesz, jest zbudowane na trwanie.</item>
+        <item>Ty jesteś dokładnie tam, gdzie musisz być.</item>
+        <item>Każdy moment, kiedy nie poddajesz się, to moment siły.</item>
+        <item>Budujesz coś nowego z każdym dniem, który mija.</item>
+        <item>Małe kroki naprzód to wciąż naprzód.</item>
+        <item>Postęp nie zawsze jest widoczny, ale go robisz.</item>
+        <item>Dzisiaj wybrałeś/aś siebie. To ma znaczenie.</item>
+        <item>Nie robiłeś/aś rzeczy. To wszystko.</item>
+        <item>Ścieżka do zmiany zaczyna się z jedną decyzją.</item>
+        <item>Nawet kiedy to trudne, się ruszasz.</item>
+        <item>Ten moment oporu to twoja siła.</item>
+        <item>Nie musisz wygrać na zawsze, tylko dzisiaj.</item>
+        <item>Jeden dzień na raz to najdelikatniejsza droga.</item>
+        <item>Zerwanie się z zwyczaju wymaga czasu. Ty go masz.</item>
+        <item>Nie martw się o następny tydzień. Zajmij się dzisiaj.</item>
+        <item>Podróż jest długa, ale chodzisz tylko jeden dzień na raz.</item>
+        <item>Nie biegasz wyścigu. Ty budujesz życie.</item>
+        <item>Pozwól jutru, aby się o siebie martwić.</item>
+        <item>Dzisiaj to wszystko, czym musisz zarządzać teraz.</item>
+        <item>Czas porusza się wolniej, niż myślisz.</item>
+        <item>Przejęzyczenie to nie porażka, to informacja.</item>
+        <item>Potknąłeś/aś się. To nie usuwa twojego postępu.</item>
+        <item>Jeden moment nie definiuje twojej podróży.</item>
+        <item>Możesz zacząć znowu teraz. Bez czekania.</item>
+        <item>Przejęzyczenia się zdarzają. Co ma znaczenie, to co będzie dalej.</item>
+        <item>Czego się nauczyłeś/aś. Użyj tego.</item>
+        <item>Ten moment walki cię nauczy czegoś.</item>
+        <item>Upadek raz nie oznacza, że zawiodłeś/aś.</item>
+        <item>Następny wybór jest zawsze dostępny dla ciebie.</item>
+        <item>Możesz zacząć znowu tyle razy, ile potrzebujesz.</item>
+        <item>Bądź dla siebie tak miły/a, jak byś był/a dla przyjaciela.</item>
+        <item>Zasługujesz na delikatność podczas zdrowienia.</item>
+        <item>Ostre słowa nie pomogą. Miłość będzie.</item>
+        <item>Robisz trudną pracę. Traktuj się delikatnie.</item>
+        <item>Ta podróż nie wymaga kary, tylko cierpliwości.</item>
+        <item>Wstyd ci nie pomoże. Współczucie będzie.</item>
+        <item>Masz prawo być niedoskonały/a podczas zmiany.</item>
+        <item>Wybaczyć sobie tak szybko, jak potrafisz.</item>
+        <item>Twój postęp zasługuje na cichy świadek.</item>
+        <item>Bądź głosem, który cię podnosi, nie rozrywa.</item>
+        <item>Złamany ciąg nie usuwa twojej siły.</item>
+        <item>Konsekwencja ma większe znaczenie niż perfekcja.</item>
+        <item>Co robisz większość dni, ma większe znaczenie niż jeden dzień.</item>
+        <item>Prawdziwa miara to jak się regularnie pojawisz.</item>
+        <item>Jedno przejęzyczenie nie cofa twojego schematu mówiania nie.</item>
+        <item>Twoje nawyki formują się poprzez małe, powtarzane wybory.</item>
+        <item>Co liczy się, to rytm, który budujesz, nie doskonała linia.</item>
+        <item>Ciągi się łamią. Charakter nie.</item>
+        <item>Ty się trenujesz poprzez powtórzenie.</item>
+        <item>Każdy dzień to szansa, aby wzmocnić, kim się stajesz.</item>
+        <item>Pierwsze dni są najtrudniejsze. Robi się łatwiej.</item>
+        <item>Na początku wszystko czuje się pilne. To mija.</item>
+        <item>Teraz czuje się niemożliwe. Zawsze nie będzie.</item>
+        <item>Pragnienia osłabną. Ufaj, że będą.</item>
+        <item>Co teraz świeci jasno, będzie się chłodzić.</item>
+        <item>Twoje ciało i umysł przystosują się szybciej, niż myślisz.</item>
+        <item>Pierwszy tydzień to najpowniejszy wspinaczka.</item>
+        <item>Każdy dzień jest trochę lżejszy niż poprzedni.</item>
+        <item>Jesteś w najtrudniejszej części. To się zmieni.</item>
+        <item>Tę intensywność, którą czujesz teraz, jest tymczasowa.</item>
+        <item>Po chwili, wybór staje się łatwiejszy do zrobienia.</item>
+        <item>Pragnienie traci na uchwyce nad czasem.</item>
+        <item>Jeden dzień zauważysz, że nawet o tym nie myślałeś/aś.</item>
+        <item>Zdrowienie buduje dynamikę w trakcie.</item>
+        <item>Każdy dzień oporu sprawia, że następny jest miększy.</item>
+        <item>Twój mózg się przewiązu. To wymaga czasu, potem się dzieje.</item>
+        <item>Co wymaga wysiłku teraz, staje się naturalne.</item>
+        <item>Ścieżka jest gładka, im bardziej ją chodzisz.</item>
+        <item>Obudzisz się jeden dzień i będziesz czuć się inaczej.</item>
+        <item>Siła buduje się cicho, potem zdajesz sobie sprawę, że ją masz.</item>
+        <item>Jeden dzień to kamień milowy. Jeden tydzień też.</item>
+        <item>Zaznacz swoje wygrane prywatnie. To wciąż zwycięstwa.</item>
+        <item>Nie musisz rozgłaszać, aby uczcić swój postęp.</item>
+        <item>Cicha duma liczy się tyle samo co każdy świadek.</item>
+        <item>Celebruj bez fanfar. Zwycięstwo jest rzeczywiste.</item>
+        <item>Każdy kamień milowy, niezależnie od wielkości, godny jest uznania.</item>
+        <item>Twoje przełomy nie potrzebują publiczności, aby miały znaczenie.</item>
+        <item>Cicha siła to wciąż siła.</item>
+        <item>Zauważ, co zrobiłeś/aś, nawet jeśli nikt inny nie robi.</item>
+        <item>Wiesz, co cię to kosztowało, aby tu dotrzeć. To wystarczające.</item>
+        <item>Myśl poza jutrem. Ty budujesz coś, co trwa.</item>
+        <item>Ten wybór dzisiaj kształtuje całe twoje życie.</item>
+        <item>Nie tylko przechodzisz dzisiaj, zmienisz się na zawsze.</item>
+        <item>Przyszła ty będzie wdzięczna za to, co teraźniejsza ty robi.</item>
+        <item>Osoba, którą się stajesz, jest tego warta.</item>
+        <item>Twoja przyszłość cię liczy.</item>
+        <item>Co robisz teraz, się zmienia w czasie.</item>
+        <item>Inwestujesz w życie, które faktycznie chcesz.</item>
+        <item>To nie o dzisiaj. To o tym, kim się stajesz.</item>
+        <item>Wszystko, co robisz teraz, rozchodzi się do przodu.</item>
+        <item>Kiedy pragnienie uderzy, pamiętaj, dlaczego zacząłeś/aś.</item>
+        <item>Stary schemat chce wrócić. Ty możesz powiedzieć nie.</item>
+        <item>Co łamiesz, zajęło czas do formowania. Odrabianie czasu też.</item>
+        <item>Ty przewiązyjesz lata zachowania. To cierpliwa praca.</item>
+        <item>Nawyk szepce. Możesz wybrać, aby nie słuchać.</item>
+        <item>Za każdym razem, kiedy mówisz nie, uczysz się mówić nie następnym razem.</item>
+        <item>Ty nie jesteś pozbawiony/a. Ty jesteś uwolniony/a.</item>
+        <item>To jest o tym, kim chcesz być, nie o tym, czego nie możesz mieć.</item>
+        <item>Twoje powody zatrzymania są większe niż pragnienie powrotu.</item>
+        <item>Życie bez niego jest warte tego, co poświęcasz, aby je uzyskać.</item>
+        <item>Dzisiaj jesteś silniejszy/a niż nawyk. Ufaj temu.</item>
+        <item>Chcieć coś nie oznacza, że musisz to zrobić.</item>
+        <item>Możesz poczuć pragnienie i wciąż przejść obok niego.</item>
+        <item>Uczucie minie. Nie musisz działać na każde uczucie.</item>
+        <item>Pragnienia przychodzą i idą jak fale. Nauczysz się obserwować, jak mijają.</item>
+        <item>Ta chęć to nie rozkaz. To po prostu myśl.</item>
+        <item>Ty się stajesz rodzajem osoby, która może chcieć czegoś i je odrzucić.</item>
+        <item>Każda odmowa udowadnia, że masz moc, którą wątpiłeś/aś.</item>
+        <item>Stary schemat nie cię już nie posiadł.</item>
+        <item>Ty bierzesz swoje życie z powrotem, jeden wybór na raz.</item>
+        <item>Kiedy jesteś zmęczony/a, pamiętaj, jak daleko już zaszedłeś/aś.</item>
+        <item>Najtrudniejsza część nie jest za tobą, ale jesteś poza najgorszym.</item>
+        <item>Już zrobiłeś/aś najtrudniejszą rzecz. Pozostanie w miejscu jest łatwiejsze.</item>
+        <item>Udowodniłeś/aś, że możesz to zrobić. Nie musisz tego ponownie udowadniać.</item>
+        <item>Odpoczywaj, kiedy potrzebujesz. Praca się toczy mimo wszystko.</item>
+        <item>Wyczerpanie jest rzeczywiste. To nie oznacza, że zawodzisz.</item>
+        <item>Możesz być zmęczony/a i wciąż się ruszać do przodu.</item>
+        <item>Jutro to świeży dzień. Ten dzień nie musi być doskonały.</item>
+        <item>Jeśli dzisiaj było trudne, jutro może być łatwiejsze.</item>
+        <item>Nic, co robisz dzisiaj, nie niszczy wszystkiego, co wybudowałeś/aś.</item>
+        <item>Jeden trudny dzień nie usuwa tygodni postępu.</item>
+        <item>Zły dzień nie definiuje całego tygodnia.</item>
+        <item>Masz prawo mieć chropowaty moment i wciąż być ok.</item>
+        <item>Zdrowienie nie jest linią prostą. Linia wciąż idzie w górę.</item>
+        <item>Niektóre dni będą czuć się jak zaczynanie od nowa. To normalne.</item>
+        <item>Ty nie restartasz. Ty kontynuujesz. Nawet trudne dni to część.</item>
+        <item>Kiedy czuje się, że się wali, często jesteś po prostu zmęczony/a.</item>
+        <item>Twoja warta nie jest określana przez twój ciąg.</item>
+        <item>Kto jesteś, nie jest mierzony jednym momentem słabości.</item>
+        <item>Ty jesteś więcej niż jeden wybór. Ty jesteś wszystkimi razem.</item>
+        <item>Nawyk to był jeden rozdział. Ty piszesz całą nową książkę teraz.</item>
+        <item>Ta wersja ciebie wciąż się formuje. Daj sobie czas.</item>
+        <item>Masz prawo zmieniać się powoli.</item>
+        <item>Leczenie nie ma terminu.</item>
+        <item>Zdrowienie następuje w swoim tempie, i to ok.</item>
+        <item>Droga naprzód nie zawsze jest jasna. Nie musisz widzieć całej ścieżki.</item>
+        <item>Tylko następny krok to wystarczające.</item>
+        <item>Nie musisz wszystkiego wymyślić dzisiaj.</item>
+        <item>Ufaj procesowi, nawet kiedy nie widzisz postępu.</item>
+        <item>Praca, którą robisz teraz, nie będzie pokazywać wyników natychmiast. To ok.</item>
+        <item>Niewidoczny postęp to wciąż postęp.</item>
+        <item>Ty się zmieniasz, nawet kiedy nie widzisz.</item>
+        <item>Twoje ciało i umysł się regulują cicho.</item>
+        <item>Nagroda za zatrzymanie nie zawsze jest oczywista na początku.</item>
+        <item>Co zyskujesz z tego, wymaga czasu, aby pokazać.</item>
+        <item>Bądź cierpliwy/a z sobą w ten sposób, jak byś był/a cierpliwy/a z kimś, kto ci się liczy.</item>
+        <item>Jeśli się walczysz, to nie oznacza, że jesteś słaby/a.</item>
+        <item>Walka to znak, że rosniesz.</item>
+        <item>Dyskomfort to dowód, że coś się zmienia.</item>
+        <item>Robisz coś bardzo trudnego. Uczcij to.</item>
+        <item>Ty się wybierasz to każdego dnia, nawet kiedy to boli.</item>
+        <item>Nikt nie może ci odebrać wolności. Ty się walczysz o to.</item>
+        <item>Ty nie pozbawisz się siebie. Ty się rościsz.</item>
+        <item>To jest akt szacunku dla siebie.</item>
+        <item>Traktuj to w sposób, w jaki traktowałbyś/aś coś, co naprawdę kochasz.</item>
+        <item>Ty jesteś wart wysiłku, który wkładasz.</item>
+        <item>Ty jesteś wart utrzymania. Ty jesteś wart walki.</item>
+        <item>Przestań pytać, czy jesteś tego wart/a.</item>
+        <item>Wątpliwość będzie przychodzić. Pozwól jej. Nie musisz w to wierzyć.</item>
+        <item>Możesz być niepewny/a i wciąż iść do przodu.</item>
+        <item>Wiara będzie podążać za działaniem. Działaj najpierw.</item>
+        <item>Nie musisz czuć się pewny/a, aby zrobić rzecz.</item>
+        <item>Zrób rzecz. Pewność siebie będzie przychodzić.</item>
+        <item>Niektóre dni będziesz czuł/a się silny/a. Niektóre dni będziesz czuł/a się kruchą.</item>
+        <item>Kruche dni to gdzie żyje prawdziwa siła.</item>
+        <item>Kiedy jesteś słaby/a, pojawienie się to odwaga.</item>
+        <item>Nawyk rozkwitał w ciszy i wstydzie. Cisza i wstyd to jego paliwo.</item>
+        <item>Mówienie o tym, akceptowanie i poruszanie się naprzód, je głodzą.</item>
+        <item>Nie musisz to ukrywać. Nie ma nic do ukrycia.</item>
+        <item>Co robisz, to uzdrawianie. To jest przeciwieństwem wstydu.</item>
+        <item>Każda osoba, która coś rzuciła, czuła, co ty czujesz.</item>
+        <item>Inni chodzili tą ścieżką przed tobą.</item>
+        <item>Twoja historia nie się nie skończyła. Zaczyna się nowy rozdział.</item>
+        <item>Koniec, jaki chcesz, jest wciąż możliwy. Bardziej niż możliwy.</item>
+        <item>Nieważne, ile razy próbowałeś/aś przedtem, tym razem jest inaczej.</item>
+        <item>Twoje poprzednie próby nie były porażkami. Były praktyką.</item>
+        <item>Za każdym razem, kiedy próbowałeś/aś, nauczyłeś/aś się czegoś.</item>
+        <item>Ta wiedza teraz jest twoja. Użyj jej.</item>
+        <item>Pragnienie będzie cię testować. To to robi pragnienia.</item>
+        <item>Każdy test, który przejdziesz, przenosi cię bliżej do spokoju.</item>
+        <item>Obsesyjne myślenie zaniknie.</item>
+        <item>Stała mentalność powtarzania się ucichnie.</item>
+        <item>Jeden dzień zdajesz sobie sprawę, że o tym nie myślałeś/aś przez godziny.</item>
+        <item>Masz prawo chcieć to. Chciej to w pełni.</item>
+        <item>Chciej wolności. Chciej spokoju. Chciej nowej wersji siebie.</item>
+        <item>Kiedy motywacja zanika, pozwól twoim powodom cię nosić.</item>
+        <item>Kiedy powody zanikają, pozwól rutynie cię nosić.</item>
+        <item>Kiedy rutyna się łamie, po prostu ją weź znowu.</item>
+        <item>To nie jest kruche. To jest elastyczne.</item>
+        <item>Ty budujesz coś odpornego.</item>
+        <item>Stary schemat będzie próbował jeszcze raz. Wiesz, że będzie.</item>
+        <item>Będziesz gotów/a, ponieważ się przygotowywałeś/aś.</item>
+        <item>Każdy dzień mówiania nie to praktyka do tego momentu.</item>
+        <item>Twoja przyszłość jest nienakażana. Ty ją piszesz.</item>
+        <item>Każdy wybór, który robisz teraz, to słowo w tej przyszłości.</item>
+        <item>Co historię chcesz opowiedzieć?</item>
+        <item>Najtrudniejsza rzecz, którą kiedykolwiek zrobiłeś/aś, to to, co robisz teraz.</item>
+        <item>Ty nie tylko przetrwasz. Ty się uczysz, kim chcesz być.</item>
+        <item>Osoba, którą się stajesz, nie potrzebuje już nawyk.</item>
+        <item>Wzrost jest powolny. Wzrost jest rzeczywisty. Wzrost się dzieje.</item>
+        <item>Twój mózg jest plastykowy. Może się zmienić. Się zmienia.</item>
+        <item>Co dziś czuje się niemożliwe, będzie czuć się normalne wkrótce.</item>
+        <item>Nowa norma czeka na ciebie.</item>
+        <item>Ty, która próbuje, godny/a jest celebrowania.</item>
+        <item>Ten spokój, który budujesz, nie przyjdzie od razu.</item>
+        <item>Ty należysz tu. Ty należysz w tym zdrowienia.</item>
+        <item>Ten ranek masz dodatkową godzinę. Co z nią zrobisz?</item>
+        <item>Twój umysł jest wyraźniejszy, niż wczoraj. Zauważ to.</item>
+        <item>Wybrałeś/aś siebie dzisiaj. To ma znaczenie.</item>
+        <item>Nawyk jest teraz cichszy. Ty uczysz się jego rytmu.</item>
+        <item>Jeden spacer rano może zresetować cały dzień.</item>
+        <item>Ty budujesz coś rzeczywistego z czasem, który oszczędzasz.</item>
+        <item>Sen dzisiaj będzie czuć się inaczej. Pozwól mu.</item>
+        <item>Zimna woda to nie kara. To dowód, że możesz wybrać dyskomfort na własnych warunkach.</item>
+        <item>Twoje ręce są wolne na coś lepszego.</item>
+        <item>Pragnienie będzie przychodzić. Wiesz teraz, jak z nim siedzieć.</item>
+        <item>Focus rośnie, kiedy przestajesz karmiać stary schemat.</item>
+        <item>Ty nie walczysz z nawykiem już. Ty tylko się odwracasz.</item>
+        <item>Dyscyplina dzisiaj to wolność jutro. Zawsze tak było.</item>
+        <item>Popołudniowy spadek jest mniejszy. Zauważyłeś/aś?</item>
+        <item>Wdzięczność za małe wygrane buduje dynamikę szybciej niż wstyd o przeszłości.</item>
+        <item>Ty uczysz swoje ciało nowego rytmu.</item>
+        <item>Nawyk szepce. Twoje zaangażowanie mówi głośniej.</item>
+        <item>Ta energia, którą czujesz, jest teraz twoja do wydatkowania.</item>
+        <item>Pozostanie spokojnym/a, kiedy pragnienie przychodzi, to supermoc.</item>
+        <item>Co byś powiedział/a przyjacielu w twojej pozycji?</item>
+        <item>Twoja poranna rutyna to twoja kotwica.</item>
+        <item>Pragnienie to dane, nie przeznaczenie.</item>
+        <item>Ty się nie pozbawisz siebie. Ty się chronisz.</item>
+        <item>Dziesięć minut na zewnątrz to dziesięć minut, kiedy twój umysł na to nie gonił.</item>
+        <item>Ten tydzień jest inny niż ostatni. Patrz na różnicę.</item>
+        <item>Twoja rodzina zauważa. Nie mówią tego jeszcze, ale zauważają.</item>
+        <item>Nawyk karmiał twoją niepokój. Patrz, jak się zmniejsza, kiedy zostaniesz spokojny/a.</item>
+        <item>Ty się stajesz kimś, kto może siedzieć nieruchomo.</item>
+        <item>Jeden dzień na raz to nie słabość. To strategia.</item>
+        <item>Twój sen to sposób na uzdrawianie się twojego ciała. Uczcij to.</item>
+        <item>Pragnienie słabnie, kiedy się z nim nie kłócisz.</item>
+        <item>Ty nie zaczynasz od nowa. Ty kontynuujesz.</item>
+        <item>Zastępcze nawyki wymaga czasu. Bądź dla siebie cierpliwy/a.</item>
+        <item>Ten moment jest łatwiejszy, niż ostatni.</item>
+        <item>Twój umysł jest mniej zatłoczony teraz. Czuj przestrzeń.</item>
+        <item>Praca jest wyraźniejsza, kiedy nawyk nie jest na drodze.</item>
+        <item>Stary schemat miał koszt. Jesteś z niego wolny/a teraz.</item>
+        <item>Ty się uczysz być znudzona. To prawdziwa umiejętność.</item>
+        <item>Ranek jest twój. Co z nim stworzysz?</item>
+        <item>Twoje ręce mniej się trzęsą teraz. Zauważyłeś/aś?</item>
+        <item>To czego spokój się czuje.</item>
+        <item>Nie potrzebujesz pozwolenia, aby rzucić. Już to masz.</item>
+        <item>Pragnienie minie. Za każdym razem, minie.</item>
+        <item>Twoje ciało pamięta nawyk. Twój umysł wie lepiej.</item>
+        <item>Mała dyscyplina dzisiaj buduje dużą wolność jutro.</item>
+        <item>Ty nie jesteś złamany/a. Ty po prostu przekierowujesz swoją siłę.</item>
+        <item>Dziesięć tysięcy małych momentów wyboru cię tutaj przyniosło.</item>
+        <item>Nawyk byłby tu, jeślibyś go karmiła. Nie robiłeś/aś.</item>
+        <item>Twoi przyjaciele chcą cię widzieć takim/a. Jasnym i obecnym.</item>
+        <item>Wieczorna rutyna to twoja nagroda, nie twój test.</item>
+        <item>Ty oddychasz głębiej teraz.</item>
+        <item>Pragnienie straciło moc, aby podejmować za ciebie decyzje.</item>
+        <item>Dzisiaj masz energię na coś rzeczywistego.</item>
+        <item>Wdzięczność za to, co zyskujesz, pokonuje żal o to, co straciłeś/aś.</item>
+        <item>Ty nie białujesz knykli. Ty się wybierasz.</item>
+        <item>Nawyk prosperował w ciemności. Światło jest twoim sojusznikiem.</item>
+        <item>Twój focus ostrzejszy się, kiedy przestajesz palić energię na to.</item>
+        <item>Zimna woda budzi cię w sposób, w jaki nawyk kiedyś. Bez kosztu.</item>
+        <item>Ty się nie pozbawisz siebie. Ty inwestujesz w siebie.</item>
+        <item>Pragnienie jest głośne w niektóre dni, ciche w inne. Oba są ok.</item>
+        <item>Twój dług snu się zmniejsza.</item>
+        <item>Spacer, który zrobiłeś/aś tego ranka, miał cel: pamiętać, że możesz być spokojny/a.</item>
+        <item>Ty nie jesteś doskonały/a. Ty jesteś wytrwały/a.</item>
+        <item>Nawyk żyje w nawyku. Przerwij nawyk, przerwij jego moc.</item>
+        <item>Twój umysł to narzędzie znowu, nie pole bitwy.</item>
+        <item>Ranek to twoja pusta strona.</item>
+        <item>Ty uczysz swój układ nerwowy nowego sposobu, aby czuć się bezpieczny/a.</item>
+        <item>To jest to, co wybrałeś/aś. Dalej się to wybieraj.</item>
+        <item>Stary schemat chce czuć się jak wolność. Prawdziwa wolność czuje się tak.</item>
+        <item>Twoja energia już nie jest pożyczana z jutra.</item>
+        <item>Pragnienie będzie cię testować. Pozwól mu. Przeszedłeś/aś każdy test do tej pory.</item>
+        <item>Dyscyplina to miłość zastosowana do siebie.</item>
+        <item>Ty nie uciekasz przed nawykiem. Ty biegasz ku czemuś lepszemu.</item>
+        <item>Jasność, którą czujesz teraz, godny jest ochrony.</item>
+        <item>Jeden spokojny wieczór udowadnia, że możesz mieć wiele.</item>
+        <item>Twoje ciało się uzdrawia. Ufaj procesowi.</item>
+        <item>Moment, kiedy przestajesz się walczyć, to moment, kiedy zaczynacie wygrywać.</item>
+        <item>Ty budujesz życie, w którym nawyk nie ma miejsca.</item>
+        <item>Pragnienie karmi się sekretami. Przynieś je do światła i patrz, jak się zmniejsza.</item>
+        <item>Sen to gdzie twoje ciało dotrzymuje obietnic.</item>
+        <item>Zastępczy nawyk teraz się staje rzeczywisty.</item>
+        <item>Ty nie tęsknisz za nawykiem. Ty pamiętasz siebie.</item>
+        <item>Poranna rutyna to twoje codzienne głosowanie dla siebie.</item>
+        <item>Wdzięczność za moment, w którym jesteś, pokonuje niepokój o następny moment.</item>
+        <item>Twój umysł ma teraz miejsce na coś nowego.</item>
+        <item>Spacer przez las to lekarstwo, które nawyk pretendował być.</item>
+        <item>Ty się uczysz, że możesz siedzieć z dyskomfortem bez go karmienia.</item>
+        <item>Nawyk prosperował na pilności. Spokój to jego wróg.</item>
+        <item>Twój focus powraca w momencie, kiedy przestajesz go dzielić.</item>
+        <item>Każda mała wygrana to pozwolenie wierzyć w większe.</item>
+        <item>Ty nie pozbawisz się siebie. Ty ćwiczysz wolność.</item>
+        <item>Pragnienie to gość, nie właściciel.</item>
+        <item>Twoja energia czyści ścieżkę dla czegoś rzeczywistego.</item>
+        <item>Stary schemat jest cichszy, ponieważ go nie karmiasz.</item>
+        <item>Ty budujesz rzemiosło teraz, nie po prostu przechodzisz czas.</item>
+        <item>Dyscyplina bez współczucia to kara. Znasz różnicę.</item>
+        <item>Noc jest cichsza. Sen przychodzi łatwiej. Czujesz to.</item>
+        <item>Twoi przyjaciele chcą tę wersję ciebie. Jasną.</item>
+        <item>Nawyk obiecał ucieczkę. Znaleźliście coś lepszego: obecność.</item>
+        <item>Pragnienie przychodzi jutro. Wiesz, jak z tym radzić.</item>
+        <item>Poranna rutyna przewiązu twój mózg jeden dzień na raz.</item>
+        <item>Ty nie jesteś silny/a, ponieważ nie czujesz pragnienia. Ty jesteś silny/a, ponieważ czujesz i wybierasz mimo wszystko.</item>
+        <item>Twój umysł jest mniej zatłoczony. Co zrobisz z przestrzenią?</item>
+        <item>Nawyk karmiał się nudą. Ty się uczysz być znudzony/a i żyć mimo wszystko.</item>
+        <item>Wdzięczność dla twojego ciała, które się uzdrawia, które się stara.</item>
+        <item>Spacer tego ranka była praktyka. Dalej ćwicz.</item>
+        <item>Twój sen jest głębszy, kiedy twój umysł nie jest podzielony.</item>
+        <item>Pragnienie traci moc w momencie, kiedy przestajesz wierzyć w jego konieczność.</item>
+        <item>Ty nie zaczynasz od zera. Ty zaczynasz od teraz.</item>
+        <item>Stary schemat obiecał ulgę. Prawdziwa ulga to życie bez niego.</item>
+        <item>Twój focus ostrzejszy się z każdym wyborem, aby się odwrócić.</item>
+        <item>Zimna woda cię przypomina: dyskomfort nie wymaga nawyku.</item>
+        <item>Ty nie walczysz już. Ty po prostu nie karmiasz ognia.</item>
+        <item>Nawyk chciał twojego ranka. Weź to z powrotem.</item>
+        <item>Twoje ręce są dostępne do pracy teraz.</item>
+        <item>Pragnienie jest rzeczywiste. Twój wybór jest rzeczywistszy.</item>
+        <item>Dyscyplina zastosowana do siebie to najwyższa forma miłości.</item>
+        <item>Wieczór jest twój. Bez negocjacji. Bez pragnienia. Po prostu wieczór.</item>
+        <item>Twój umysł się uczy być w bezruchu. Pozwól mu się uczyć.</item>
+        <item>Nawyk był głośny. Twój spokój jest głośniejszy.</item>
+        <item>Zastępczy nawyk teraz staje się domem.</item>
+        <item>Ty uczysz swój układ nerwowy, że jesteś bezpieczny/a bez niego.</item>
+        <item>Poranny spacer to twoje codzienne przypomnienie: możesz wybrać swój własny kierunek.</item>
+        <item>Wdzięczność za moment, który cię tu przywiódł, cokolwiek był.</item>
+        <item>Twój focus był pęknięty. Powraca.</item>
+        <item>Pragnienie będzie osiągać szczyt i spadać. Zawsze spada.</item>
+        <item>Sen to nie pobłażliwość. To infrastruktura.</item>
+        <item>Stary schemat to drzwi, których nie musisz otwierać.</item>
+        <item>Twoja energia już nie jest wydatkowana na ukrywanie.</item>
+        <item>Moment, kiedy akceptujesz pragnienie, to moment, kiedy traci moc.</item>
+        <item>Nawyk obiecał podniecenie. Znalazłeś spokój. To lepsze.</item>
+        <item>Ty nie jesteś doskonały/a. Ty jesteś szczery/a. To wystarczające.</item>
+        <item>Dzień przed tobą jest twój. Użyj go.</item>
+        <item>Twoje ciało wie, że się uzdrawia. Ufaj mu.</item>
+        <item>Pragnienie to szept, nie krzyk, ponieważ go nie karmiasz.</item>
+        <item>Dyscyplina to most między tym, kim jesteś, a tym, kim chcesz być.</item>
+        <item>Spacer, który bierzesz, to odpowiedź, którą szukasz.</item>
+        <item>Ty nie uciekasz przed przyjemnością. Ty biegasz ku obecności.</item>
+        <item>Ranek to początek wszystkiego.</item>
+        <item>Nawyk będzie cię testować. Przejdziesz.</item>
+        <item>Twój focus to mięsień. Ćwiczysz go.</item>
+        <item>Sen, który dostajesz, to twoje ciało mówiące: dziękuję.</item>
+        <item>Ty budujesz coś, w czym nawyk nie miał części.</item>
+        <item>Pragnienie pochodzi z pamięci, nie z konieczności.</item>
+        <item>Wdzięczność dla tej części ciebie, która chce się zmienić.</item>
+        <item>Zimna woda to twój sojusznik.</item>
+        <item>Ty nie jesteś silny/a mimo walki. Ty jesteś silny/a, ponieważ walczysz.</item>
+        <item>Stary schemat zanika, ponieważ go nie wzmacniasz.</item>
+        <item>Twój umysł czyszcze pokój do pracy, nauki, rzemiosła.</item>
+        <item>Wieczorna rutyna to obietnica dotrzymana sobie.</item>
+        <item>Pragnienie przychodzi, kiedy jesteś zmęczony/a. Wiesz, co zrobić.</item>
+        <item>Ty nie pozbawisz się siebie. Ty uczysz się czegoś prawdziwego.</item>
+        <item>Nawyk karmiał twoją niepokój. Patrz, jak spokój rośnie bez niego.</item>
+        <item>Sen to gdzie praca uzdrawiania się dzieje.</item>
+        <item>Twoja energia już nie jest na pożyczce z następnego tygodnia.</item>
+        <item>Zastępczy nawyk teraz staje się częścią ciebie.</item>
+        <item>Spacer to nie ćwiczenie. To pamiętanie.</item>
+        <item>Ty się uczysz, że możesz być ok bez pozwolenia nawyku.</item>
+        <item>Dyscyplina to nie kara. To ochrona.</item>
+        <item>Poranna rutyna to list miłosny, który piszesz sobie codziennie.</item>
+        <item>Focus, który powraca, jest twój.</item>
+        <item>Pragnienie jest głośne w trudne dni. To normalne. Robisz dobrze.</item>
+        <item>Wdzięczność dla twoich rąk, które są wolne teraz.</item>
+        <item>Nawyk szeptał ci do ucha. Twój własny głos jest głośniejszy teraz.</item>
+        <item>Stary schemat obiecał ulgę. Ty budujesz prawdziwą rzecz.</item>
+        <item>Twoje ciało uczy cię o spokoju.</item>
+        <item>Moment, kiedy przestajesz się walczyć, to moment, kiedy wygrywasz.</item>
+        <item>Ty nie brakuje nic. Ty zyskujesz wszystko.</item>
+        <item>Pragnienie to test, który przeszedłeś/aś już tysiąc razy.</item>
+        <item>Wieczór jest cichszy, ponieważ twój dzień był na twoich warunkach.</item>
+        <item>Twój umysł jest mniej pofragmentowany.</item>
+        <item>Zimna woda to dowód, że możesz wybrać dyskomfort.</item>
+        <item>Nawyk karmiał się sekretami. Twoja szczerość to jego wróg.</item>
+        <item>Sen to uzdrawianie. Pozwól mu się dziać.</item>
+        <item>Poranny spacer to twój codzienny guzik resetowania.</item>
+        <item>Ty nie jesteś słaby/a, ponieważ czujesz pragnienie. Ty jesteś silny/a, ponieważ mu stawiasz czoła.</item>
+        <item>Dyscyplina to samooszacowanie w działaniu.</item>
+        <item>Focus powraca, ponieważ przestałeś/aś go rozproszyć.</item>
+        <item>Twoi przyjaciele widzą kogoś, którą rozpoznają. To ty.</item>
+        <item>Stary schemat to historia. Ty jesteś w teraźniejszości teraz.</item>
+        <item>Nawyk chciał twojego czasu. Ty go odzyskujesz.</item>
+        <item>Wdzięczność za jasność, która przychodzi.</item>
+        <item>Pragnienie będzie odwiedzać. Znasz drogę do drzwi.</item>
+        <item>Ty nie uciekasz przed przyjemnością. Ty biegasz ku prawdzie.</item>
+        <item>Wieczorna rutyna to struktura bez kary.</item>
+        <item>Twoje ciało się uzdrawia, ponieważ go słuchasz.</item>
+        <item>Zastępczy nawyk staje się rzeczywisty dzisiaj.</item>
+        <item>Moment, kiedy pragnienie minie, to dowód, że zawsze minie.</item>
+        <item>Ty nie jesteś doskonały/a. Ty jesteś wytrwały/a. To to samo co siła.</item>
+        <item>Nawyk był głośny. Twój spokój to rewolucja.</item>
+        <item>Sen to nie lenistwo. To najważniejsza praca, którą robisz.</item>
+        <item>Ranek to dar, który dajesz sobie każdego dnia.</item>
+        <item>Twój focus ostrzejszy się, ponieważ nie jest już podzielony.</item>
+        <item>Zimna woda to nauczyciel. Posłuchaj, co mówi.</item>
+        <item>Pragnienie to szczerość. To mówi ci, co ty wciąż musisz przezwyciężyć.</item>
+        <item>Dyscyplina to rozmowa między tobą a sobą.</item>
+        <item>Stary schemat miał siłę przyciągania. Ty opuszczasz jego orbitę.</item>
+        <item>Twoja energia się buduje zamiast drażnić.</item>
+        <item>Wdzięczność dla tej części ciebie, która to wybrała.</item>
+        <item>Nawyk obiecał ucieczkę. Znaleźliście coś lepszego: siebie.</item>
+        <item>Wieczór, który masz, to ten, którego zarabiałeś/aś.</item>
+        <item>Ty się uczysz być znudzony/a i być ok z tym.</item>
+        <item>Pragnienie to przypomnienie. To ci przypomina, dlaczego zacząłeś/aś.</item>
+        <item>Twój umysł staje się domem znowu.</item>
+        <item>Zastępczy nawyk staje się tożsamością.</item>
+        <item>Poranny spacer to twoja rozmowa z sobą.</item>
+        <item>Ty nie walczysz z nawykiem już. Ty go ignorujesz.</item>
+        <item>Dyscyplina to miłość. Samomiłość, konkretnie.</item>
+        <item>Focus, który powraca, zawsze był twój.</item>
+        <item>Nawyk kradł twój sen. Zauważ, jak powraca.</item>
+        <item>Wdzięczność dla twojego układu nerwowego, który się uczy spokoju.</item>
+        <item>Stary schemat staje się obcym.</item>
+        <item>Twoje ręce są dostępne do pracy, nauki, rzemiosła, połączenia.</item>
+        <item>Zimna woda to mała wygrana, którą wybierasz każdego dnia.</item>
+        <item>Pragnienie przychodzi. Pragnienie idzie. Ty pozostajesz.</item>
+        <item>Sen to architektura. Buduj ją solidnie.</item>
+        <item>Poranna rutyna to twoja codzienna praktyka w wyborze siebie.</item>
+        <item>Wieczór to sanktuarium, które budujesz cegła po cegle.</item>
+        <item>Twoja jasność to nie wypadek. To wynik małych wyborów.</item>
+        <item>Zastępczy nawyk staje się łatwiejszy.</item>
+        <item>Nawyk karmiał się stresem. Patrz, jak twój stres się zmniejsza.</item>
+        <item>Dyscyplina bez radości to po prostu cierpienie. Znasz różnicę.</item>
+        <item>Spacer to nie ucieczka. To powrót.</item>
+        <item>Twój focus to narzędzie, które się samo ostrzył.</item>
+        <item>Wdzięczność za moment, kiedy zdecydowałeś/aś się zmienić.</item>
+        <item>Pragnienie to fala. Nauczyłeś/aś się nie nurkować w nim.</item>
+        <item>Stary schemat traci swoją moc narracyjną nad tobą.</item>
+        <item>Ty nie uciekasz przed nawykiem. Ty biegasz ku sobie.</item>
+        <item>Twoje ciało pamiętać, co odpoczynek czuje.</item>
+        <item>Ranek to kanwa. Dzisiaj malujesz coś rzeczywistego.</item>
+        <item>Zimna woda ci przypomina: dyskomfort to nie to samo co szkoda.</item>
+        <item>Sen to już nie ulga. To normalna część życia.</item>
+        <item>Twój umysł czyści się, ponieważ przestałeś/aś karmiać mgłę.</item>
+        <item>Nawyk chciał twojej uwagi. Ty dajesz jej czemuś rzeczywistemu.</item>
+        <item>Dyscyplina to akt dotrzymywania obietnic sobie.</item>
+        <item>Wieczorna rutyna to rytual, nie klatka.</item>
+        <item>Pragnienie będzie osiągać szczyt. Będziesz patrzeć, jak spada. Będziesz ok.</item>
+        <item>Wdzięczność za siłę, której nie wiedziałeś/aś, że masz.</item>
+        <item>Zastępczy nawyk staje się bezproblemowy teraz.</item>
+        <item>Twój focus powraca, ponieważ przestałeś/aś go dzielić.</item>
+        <item>Stary schemat to drzwi, które nauczyłeś/aś się przechodzić.</item>
+        <item>Ty się uczysz, że spokój jest potężniejszy niż jakakolwiek ucieczka.</item>
+        <item>Nawyk to była pożyczona życia. Ta jest twoja.</item>
+        <item>Poranny spacer to twoja codzienna rozmowa z jasnością.</item>
+        <item>Sen to fundament. Wszystko inne jest na nim zbudowane.</item>
+        <item>Dyscyplina to architektura wolności.</item>
+        <item>Pragnienie jest uczciwe. To mówi ci, gdzie praca wciąż jest.</item>
+        <item>Twoja energia jest znowu twoja. Co z nią budujesz?</item>
+        <item>Wieczór jest cichszy, ponieważ twój dzień jest na twoich warunkach.</item>
+        <item>Zimna woda to mała obietnica: możesz robić trudne rzeczy.</item>
+        <item>Focus powraca, jeden dzień na raz.</item>
+        <item>Wdzięczność dla twojego ciała, które ciągle próbuje.</item>
+        <item>Stary schemat to historia. Twoja historia to teraz.</item>
+        <item>Zastępczy nawyk staje się tym, kim jesteś.</item>
+        <item>Nawyk obiecał podniecenie. Znalazłeś znaczenie. To lepsze.</item>
+        <item>Twój umysł jest mniej zatłoczony. Co zaprosisz w?</item>
+        <item>Poranna rutyna to twój codzienny dowód, że możesz wybrać.</item>
+        <item>Pragnienie będzie przychodzić i iść. Ty pozostaniesz.</item>
+        <item>Sen to najlepsza praca, którą robisz.</item>
+        <item>Dyscyplina zastosowana ze współczuciem jest niezachwiana.</item>
+        <item>Spacer to nie bieganie. To powrót.</item>
+        <item>Twój focus ostrzejszy się z każdym momentem, kiedy pozostajesz jasny/a.</item>
+        <item>Wdzięczność dla osoby, którą się stajesz.</item>
+        <item>Stary schemat miał swój moment. Ten moment jest twój.</item>
+    </string-array>
+</resources>
