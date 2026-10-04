@@ -144,7 +144,7 @@ fun GuardScreen(onOpenHabit: (String) -> Unit, onStartFocus: () -> Unit) {
             expanded = fabExpanded,
             icon = { Icon(Icons.Rounded.Add, contentDescription = null) },
             text = { Text(stringResource(R.string.guard_new_habit)) },
-            modifier = Modifier.align(Alignment.BottomEnd).padding(16.dp).padding(bottom = LocalBottomBarInsets.current.fab),
+            modifier = Modifier.align(Alignment.BottomEnd).padding(16.dp).padding(bottom = LocalBottomBarInsets.current.fab.coerceAtLeast(0.dp)),
         )
     }
 

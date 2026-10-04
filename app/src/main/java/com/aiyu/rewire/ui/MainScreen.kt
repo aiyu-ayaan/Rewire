@@ -245,8 +245,18 @@ fun MainScreen(
     }
 }
 
-/** Space the floating pill covers at the bottom: [content] for scroll padding (fixed), [fab] follows the pill as it hides. */
-data class BottomBarInsets(val content: Dp = 0.dp, val fab: Dp = 0.dp)
+/** Space the floating pill covers at the bottom: [content] for scroll padding (fixed), [fab] follows the pill as it hides. Clamped to non-negative so spring bounce cannot crash Compose padding. */
+class BottomBarInsets(content: Dp = 0.dp, fab: Dp = 0.dp) {
+    val content: Dp = content.coerceAtLeast(0.dp)
+    val fab: Dp = fab.coerceAtLeast(0.dp)
+
+    override fun equals(other: Any?): Boolean =
+        other is BottomBarInsets && other.content == content && other.fab == fab
+
+    override fun hashCode(): Int = 31 * content.hashCode() + fab.hashCode()
+
+    override fun toString(): String = "BottomBarInsets(content=$content, fab=$fab)"
+}
 
 val LocalBottomBarInsets = compositionLocalOf { BottomBarInsets() }
 

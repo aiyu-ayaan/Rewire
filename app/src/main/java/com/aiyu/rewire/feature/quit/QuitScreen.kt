@@ -203,7 +203,7 @@ private fun QuitHome(
             expanded = fabExpanded,
             icon = { Icon(Icons.Rounded.Add, contentDescription = null) },
             text = { Text(stringResource(R.string.quit_new)) },
-            modifier = Modifier.align(Alignment.BottomEnd).padding(16.dp).padding(bottom = LocalBottomBarInsets.current.fab),
+            modifier = Modifier.align(Alignment.BottomEnd).padding(16.dp).padding(bottom = LocalBottomBarInsets.current.fab.coerceAtLeast(0.dp)),
         )
     }
 }
