@@ -739,6 +739,30 @@
     <string name="quit_days_hours">%1$d ي %2$d س</string>
     <string name="quit_hours_minutes">%1$d س %2$d دقيقة</string>
     <string name="quit_ring_desc">%1$d أيام، %2$d%% من الطريق إلى %3$d أيام</string>
+    <string name="quit_back">رجوع</string>
+    <string name="quit_detail_days_strong">يومًا من الثبات</string>
+    <string name="quit_detail_running">مستمر منذ %s</string>
+    <string-array name="quit_cheer">
+        <item>كل رحلة تبدأ بخطوة أولى، وأنت تخطوها الآن.</item>
+        <item>الأيام الأولى هي الأصعب وأنت في وسطها. واصل.</item>
+        <item>جسدك وعقلك يتأقلمان الآن. هذا تقدم حقيقي.</item>
+        <item>أسبوع فأكثر. أنت تثبت لنفسك أنك تستطيع.</item>
+        <item>أسابيع وأنت تختار نفسك. هذا يصبح جزءًا منك.</item>
+        <item>شهور من التحكم. انظر كم قطعت من الطريق.</item>
+    </string-array>
+    <string name="quit_next_title">المحطة التالية</string>
+    <string name="quit_to_go">تبقّى %1$s حتى %2$s</string>
+    <string name="quit_stat_best">أفضل سلسلة</string>
+    <string name="quit_stat_restarts">مرات البدء من جديد</string>
+    <string name="quit_stat_started">بدأ في</string>
+    <string name="quit_milestones">المحطات</string>
+    <string name="quit_milestone_reached">%s، تحققت</string>
+    <string name="quit_milestone_ahead">%s، قادمة</string>
+    <string name="quit_why_title">لماذا بدأت</string>
+    <string name="quit_history_title">قصتك</string>
+    <string name="quit_history_body">البدء من جديد جزء من الرحلة. كل مرة أنهت سلسلة وبدأت أخرى، وتبقى أفضل سلسلة لك محفوظة.</string>
+    <string name="quit_history_row">بدأ من جديد بعد %1$s</string>
+    <string name="quit_slip_hint">هل تعثرت؟ هذه معلومة وليست فشلًا.</string>
     <string name="quit_slipped">انزلقت</string>
     <string name="quit_slip_title">تبدأ من جديد؟</string>
     <string name="quit_slip_body">يحدث. الانزلاق معلومة، وليس النهاية. أفضل مسار لك يبقى محفوظًا.</string>

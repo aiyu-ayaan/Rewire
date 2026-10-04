@@ -115,27 +115,38 @@ fun QuitScreen() {
     val data by vm.data.collectAsStateWithLifecycle()
     val now by vm.now.collectAsStateWithLifecycle()
     var urge by rememberSaveable { mutableStateOf(false) }
+    // Journey opened from the list; the bar steps away like it does for the breathing step.
+    var open by rememberSaveable { mutableStateOf<String?>(null) }
     // null = closed, "" = new tracker, otherwise the id being edited.
     var sheet by rememberSaveable { mutableStateOf<String?>(null) }
     val thoughts = stringArrayResource(R.array.quit_thoughts)
 
     // Breathing is a step inside the tab, like the running focus timer: the bar steps away.
-    HideNavigationBar(hide = urge)
+    HideNavigationBar(hide = urge || open != null)
     val effects = MaterialTheme.motionScheme.defaultEffectsSpec<Float>()
-    AnimatedContent(urge, transitionSpec = { fadeIn(effects).togetherWith(fadeOut(effects)) }, label = "urge") { riding ->
-        if (riding) {
-            UrgeScreen(thoughts, onLeave = { urge = false }, onDone = { vm.urgeRidden(); urge = false })
-        } else {
-            val d = data ?: return@AnimatedContent
-            QuitHome(
+    AnimatedContent(if (urge) 2 else if (open != null) 1 else 0, transitionSpec = { fadeIn(effects).togetherWith(fadeOut(effects)) }, label = "urge") { view ->
+        val d = data
+        val journey = d?.habits?.find { it.id == open }
+        when {
+            view == 2 -> UrgeScreen(thoughts, onLeave = { urge = false }, onDone = { vm.urgeRidden(); urge = false })
+            view == 1 && journey != null -> QuitDetailScreen(
+                h = journey,
+                now = now,
+                onBack = { open = null },
+                onEdit = { sheet = journey.id },
+                onDelete = { vm.delete(journey.id); open = null },
+                onSlip = { vm.slip(journey.id) },
+                onUrge = { urge = true },
+            )
+            d != null -> QuitHome(
                 habits = d.habits,
                 urgesRidden = d.urgesRidden,
                 now = now,
                 thoughts = thoughts,
                 onUrge = { urge = true },
                 onAdd = { sheet = "" },
+                onOpen = { open = it },
                 onEdit = { sheet = it },
-                onSlip = vm::slip,
                 onDelete = vm::delete,
             )
         }
@@ -162,8 +173,8 @@ private fun QuitHome(
     thoughts: Array<String>,
     onUrge: () -> Unit,
     onAdd: () -> Unit,
+    onOpen: (String) -> Unit,
     onEdit: (String) -> Unit,
-    onSlip: (String) -> Unit,
     onDelete: (String) -> Unit,
 ) {
     val list = rememberLazyGridState()
@@ -173,7 +184,7 @@ private fun QuitHome(
             columns = GridCells.Adaptive(340.dp),
             state = list,
             modifier = Modifier.fillMaxSize().statusBarsPadding().readableWidth(1200.dp),
-            contentPadding = PaddingValues(start = 16.dp, end = 16.dp, bottom = 112.dp),
+            contentPadding = PaddingValues(start = 16.dp, end = 16.dp, bottom = 88.dp),
             horizontalArrangement = Arrangement.spacedBy(12.dp),
         ) {
             val full: LazyGridItemSpanScope.() -> GridItemSpan = { GridItemSpan(maxLineSpan) }
@@ -191,7 +202,7 @@ private fun QuitHome(
                 }
             }
             items(habits, key = { it.id }) { h ->
-                QuitCard(h, now, onEdit = { onEdit(h.id) }, onSlip = { onSlip(h.id) }, onDelete = { onDelete(h.id) }, modifier = Modifier.animateItem().padding(bottom = 12.dp))
+                QuitCard(h, now, onOpen = { onOpen(h.id) }, onEdit = { onEdit(h.id) }, onDelete = { onDelete(h.id) }, modifier = Modifier.animateItem().padding(bottom = 12.dp))
             }
             item(span = full) { PrivateNote() }
         }
@@ -265,17 +276,16 @@ private fun UrgeCard(urgesRidden: Int, onUrge: () -> Unit) {
 }
 
 @Composable
-private fun QuitCard(h: QuitHabit, now: Long, onEdit: () -> Unit, onSlip: () -> Unit, onDelete: () -> Unit, modifier: Modifier = Modifier) {
+private fun QuitCard(h: QuitHabit, now: Long, onOpen: () -> Unit, onEdit: () -> Unit, onDelete: () -> Unit, modifier: Modifier = Modifier) {
     val days = Quit.runDays(h, now)
     val m = Quit.milestone(days)
     val progress by animateFloatAsState(m.progress, MaterialTheme.motionScheme.slowSpatialSpec(), label = "milestone")
     val rest = Quit.runMillis(h, now) % Quit.DAY_MS
-    val recentSlips = h.slips.count { it > now - 30 * Quit.DAY_MS }
     var menu by remember { mutableStateOf(false) }
-    var confirmSlip by remember { mutableStateOf(false) }
     var confirmDelete by remember { mutableStateOf(false) }
 
     Card(
+        onClick = onOpen,
         shape = MaterialTheme.shapes.extraLarge,
         colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surfaceContainerHigh),
         modifier = modifier.fillMaxWidth(),
@@ -323,21 +333,9 @@ private fun QuitCard(h: QuitHabit, now: Long, onEdit: () -> Unit, onSlip: () -> 
                     }
                 }
             }
-            Row(Modifier.padding(top = 12.dp, end = 12.dp), verticalAlignment = Alignment.CenterVertically) {
-                if (recentSlips > 0) Text(pluralStringResource(R.plurals.quit_recent_slips, recentSlips, recentSlips), style = MaterialTheme.typography.labelMedium, color = MaterialTheme.colorScheme.onSurfaceVariant, modifier = Modifier.weight(1f))
-                else Spacer(Modifier.weight(1f))
-                OutlinedButton(onClick = { confirmSlip = true }) { Text(stringResource(R.string.quit_slipped)) }
-            }
         }
     }
 
-    if (confirmSlip) AlertDialog(
-        onDismissRequest = { confirmSlip = false },
-        title = { Text(stringResource(R.string.quit_slip_title)) },
-        text = { Text(stringResource(R.string.quit_slip_body)) },
-        confirmButton = { TextButton(onClick = { confirmSlip = false; onSlip() }) { Text(stringResource(R.string.quit_slip_confirm)) } },
-        dismissButton = { TextButton(onClick = { confirmSlip = false }) { Text(stringResource(R.string.common_cancel)) } },
-    )
     if (confirmDelete) AlertDialog(
         onDismissRequest = { confirmDelete = false },
         title = { Text(stringResource(R.string.quit_delete_title)) },
@@ -348,7 +346,7 @@ private fun QuitCard(h: QuitHabit, now: Long, onEdit: () -> Unit, onSlip: () -> 
 }
 
 @Composable
-private fun duration(ms: Long): String {
+internal fun duration(ms: Long): String {
     val days = (ms / Quit.DAY_MS).toInt()
     val hours = (ms % Quit.DAY_MS / 3_600_000).toInt()
     return if (days > 0) stringResource(R.string.quit_days_hours, days, hours)

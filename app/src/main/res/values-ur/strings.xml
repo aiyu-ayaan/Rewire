@@ -667,6 +667,30 @@
     <string name="quit_days_hours">%1$d دن %2$d گھنٹے</string>
     <string name="quit_hours_minutes">%1$d گھنٹے %2$d منٹ</string>
     <string name="quit_ring_desc">%1$d دن، %3$d دن تک کے راستے کا %2$d%%</string>
+    <string name="quit_back">واپس</string>
+    <string name="quit_detail_days_strong">دن سے ثابت قدم</string>
+    <string name="quit_detail_running">%s سے جاری</string>
+    <string-array name="quit_cheer">
+        <item>ہر سفر پہلے قدم سے شروع ہوتا ہے۔ آپ وہ قدم اٹھا رہے ہیں۔</item>
+        <item>ابتدائی دن سب سے مشکل ہوتے ہیں اور آپ انہی میں ہیں۔ ڈٹے رہیں۔</item>
+        <item>آپ کا جسم اور ذہن ابھی سے ڈھل رہے ہیں۔ یہ حقیقی پیش رفت ہے۔</item>
+        <item>ایک ہفتہ اور اس سے زیادہ۔ آپ خود کو ثابت کر رہے ہیں کہ آپ کر سکتے ہیں۔</item>
+        <item>ہفتوں سے آپ خود کو چن رہے ہیں۔ یہ آپ کی پہچان بنتا جا رہا ہے۔</item>
+        <item>مہینوں کا ضبط۔ دیکھیں آپ کتنی دور آ گئے ہیں۔</item>
+    </string-array>
+    <string name="quit_next_title">اگلا سنگِ میل</string>
+    <string name="quit_to_go">%2$s تک %1$s باقی</string>
+    <string name="quit_stat_best">بہترین سلسلہ</string>
+    <string name="quit_stat_restarts">دوبارہ آغاز</string>
+    <string name="quit_stat_started">آغاز</string>
+    <string name="quit_milestones">سنگِ میل</string>
+    <string name="quit_milestone_reached">%s، حاصل</string>
+    <string name="quit_milestone_ahead">%s، آگے</string>
+    <string name="quit_why_title">آپ نے کیوں شروع کیا</string>
+    <string name="quit_history_title">آپ کی کہانی</string>
+    <string name="quit_history_body">دوبارہ شروع کرنا سفر کا حصہ ہے۔ ہر بار ایک سلسلہ ختم ہوا اور نیا شروع ہوا، اور آپ کا بہترین سلسلہ محفوظ رہتا ہے۔</string>
+    <string name="quit_history_row">%1$s بعد دوبارہ آغاز</string>
+    <string name="quit_slip_hint">پھسل گئے؟ یہ معلومات ہے، ناکامی نہیں۔</string>
     <string name="quit_slipped">مجھ سے چوک ہو گئی</string>
     <string name="quit_slip_title">دوبارہ شروع کریں؟</string>
     <string name="quit_slip_body">ایسا ہو جاتا ہے۔ چوک ہونا ایک معلومات ہے، انجام نہیں۔ آپ کا بہترین ریکارڈ محفوظ رہتا ہے۔</string>

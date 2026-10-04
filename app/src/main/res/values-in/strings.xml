@@ -649,6 +649,30 @@
     <string name="quit_days_hours">%1$d h %2$d j</string>
     <string name="quit_hours_minutes">%1$d j %2$d mnt</string>
     <string name="quit_ring_desc">%1$d hari, %2$d%% menuju %3$d hari</string>
+    <string name="quit_back">Kembali</string>
+    <string name="quit_detail_days_strong">hari tangguh</string>
+    <string name="quit_detail_running">Sudah berjalan %s</string>
+    <string-array name="quit_cheer">
+        <item>Setiap perjalanan dimulai dengan langkah pertama. Kamu sedang melangkah.</item>
+        <item>Hari-hari awal paling berat, dan kamu sedang melewatinya. Teruskan.</item>
+        <item>Tubuh dan pikiranmu sudah menyesuaikan diri. Ini kemajuan nyata.</item>
+        <item>Seminggu lebih. Kamu membuktikan pada dirimu bahwa kamu bisa.</item>
+        <item>Berminggu-minggu memilih dirimu sendiri. Ini menjadi siapa dirimu.</item>
+        <item>Berbulan-bulan terkendali. Lihat sejauh mana kamu melangkah.</item>
+    </string-array>
+    <string name="quit_next_title">Pencapaian berikutnya</string>
+    <string name="quit_to_go">%1$s lagi menuju %2$s</string>
+    <string name="quit_stat_best">Rekor terbaik</string>
+    <string name="quit_stat_restarts">Mulai ulang</string>
+    <string name="quit_stat_started">Mulai</string>
+    <string name="quit_milestones">Pencapaian</string>
+    <string name="quit_milestone_reached">%s, tercapai</string>
+    <string name="quit_milestone_ahead">%s, di depan</string>
+    <string name="quit_why_title">Mengapa kamu memulai</string>
+    <string name="quit_history_title">Ceritamu</string>
+    <string name="quit_history_body">Mulai ulang adalah bagian dari perjalanan. Tiap kali mengakhiri satu rentetan dan memulai yang baru, dan rekor terbaikmu tetap tersimpan.</string>
+    <string name="quit_history_row">Mulai ulang setelah %1$s</string>
+    <string name="quit_slip_hint">Tergelincir? Itu informasi, bukan kegagalan.</string>
     <string name="quit_slipped">Saya terpeleset</string>
     <string name="quit_slip_title">Mulai lagi?</string>
     <string name="quit_slip_body">Hal itu bisa terjadi. Terpeleset adalah informasi, bukan akhir. Catatan terbaik Anda tetap tersimpan.</string>

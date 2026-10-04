@@ -667,6 +667,30 @@
     <string name="quit_days_hours">%1$d ദി %2$d മണി</string>
     <string name="quit_hours_minutes">%1$d മണി %2$d മി</string>
     <string name="quit_ring_desc">%1$d ദിവസങ്ങൾ, %3$d ദിവസങ്ങളിലേക്കുള്ള ലക്ഷ്യത്തിന്റെ %2$d%%</string>
+    <string name="quit_back">പിന്നോട്ട്</string>
+    <string name="quit_detail_days_strong">ദിവസം ഉറച്ചുനിൽക്കുന്നു</string>
+    <string name="quit_detail_running">%s ആയി തുടരുന്നു</string>
+    <string-array name="quit_cheer">
+        <item>ഓരോ യാത്രയും ആദ്യ ചുവടിൽ തുടങ്ങുന്നു. നിങ്ങൾ ആ ചുവട് വയ്ക്കുകയാണ്.</item>
+        <item>ആദ്യ ദിവസങ്ങളാണ് ഏറ്റവും കഠിനം, നിങ്ങൾ ഇപ്പോൾ അതിലാണ്. തുടരൂ.</item>
+        <item>നിങ്ങളുടെ ശരീരവും മനസ്സും ഇതിനകം പൊരുത്തപ്പെടുന്നു. ഇത് യഥാർഥ പുരോഗതിയാണ്.</item>
+        <item>ഒരാഴ്ചയോ അതിലധികമോ. നിങ്ങൾക്ക് കഴിയുമെന്ന് സ്വയം തെളിയിക്കുകയാണ്.</item>
+        <item>ആഴ്ചകളായി നിങ്ങൾ സ്വയം തിരഞ്ഞെടുക്കുന്നു. ഇത് നിങ്ങളുടെ വ്യക്തിത്വമായി മാറുന്നു.</item>
+        <item>മാസങ്ങളായി നിയന്ത്രണം. എത്ര ദൂരം എത്തിയെന്ന് നോക്കൂ.</item>
+    </string-array>
+    <string name="quit_next_title">അടുത്ത നാഴികക്കല്ല്</string>
+    <string name="quit_to_go">%2$s വരെ %1$s ബാക്കി</string>
+    <string name="quit_stat_best">മികച്ച പരമ്പര</string>
+    <string name="quit_stat_restarts">വീണ്ടും തുടങ്ങിയത്</string>
+    <string name="quit_stat_started">തുടക്കം</string>
+    <string name="quit_milestones">നാഴികക്കല്ലുകൾ</string>
+    <string name="quit_milestone_reached">%s, എത്തി</string>
+    <string name="quit_milestone_ahead">%s, മുന്നിൽ</string>
+    <string name="quit_why_title">എന്തിന് തുടങ്ങി</string>
+    <string name="quit_history_title">നിങ്ങളുടെ കഥ</string>
+    <string name="quit_history_body">വീണ്ടും തുടങ്ങുന്നത് യാത്രയുടെ ഭാഗമാണ്. ഓരോ തവണയും ഒരു പരമ്പര അവസാനിച്ച് പുതിയത് തുടങ്ങി, നിങ്ങളുടെ മികച്ച പരമ്പര നിലനിൽക്കും.</string>
+    <string name="quit_history_row">%1$s കഴിഞ്ഞ് വീണ്ടും തുടക്കം</string>
+    <string name="quit_slip_hint">വഴുതിപ്പോയോ? ഇത് വിവരമാണ്, പരാജയമല്ല.</string>
     <string name="quit_slipped">ഞാൻ വീണുപോയി</string>
     <string name="quit_slip_title">വീണ്ടും തുടങ്ങണോ?</string>
     <string name="quit_slip_body">അത് സംഭവിക്കാം. ഇതൊരു വിവരമാണ്, അവസാനമല്ല. നിങ്ങളുടെ ഏറ്റവും മികച്ച റെക്കോർഡ് സൂക്ഷിക്കപ്പെടും.</string>

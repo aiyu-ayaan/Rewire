@@ -685,6 +685,30 @@
     <string name="quit_days_hours">%1$d j %2$d h</string>
     <string name="quit_hours_minutes">%1$d h %2$d min</string>
     <string name="quit_ring_desc">%1$d jours, %2$d%% du chemin vers %3$d jours</string>
+    <string name="quit_back">Retour</string>
+    <string name="quit_detail_days_strong">jours de suite</string>
+    <string name="quit_detail_running">En cours depuis %s</string>
+    <string-array name="quit_cheer">
+        <item>Tout voyage commence par un premier pas. Vous le faites.</item>
+        <item>Les premiers jours sont les plus durs, et vous y êtes. Continuez.</item>
+        <item>Votre corps et votre esprit s\'adaptent déjà. C\'est un vrai progrès.</item>
+        <item>Une semaine et plus. Vous vous prouvez que vous en êtes capable.</item>
+        <item>Des semaines à vous choisir. Cela devient qui vous êtes.</item>
+        <item>Des mois de maîtrise. Regardez le chemin parcouru.</item>
+    </string-array>
+    <string name="quit_next_title">Prochain palier</string>
+    <string name="quit_to_go">Encore %1$s avant %2$s</string>
+    <string name="quit_stat_best">Meilleure série</string>
+    <string name="quit_stat_restarts">Recommencements</string>
+    <string name="quit_stat_started">Début</string>
+    <string name="quit_milestones">Paliers</string>
+    <string name="quit_milestone_reached">%s, atteint</string>
+    <string name="quit_milestone_ahead">%s, à venir</string>
+    <string name="quit_why_title">Pourquoi vous avez commencé</string>
+    <string name="quit_history_title">Votre histoire</string>
+    <string name="quit_history_body">Recommencer fait partie du chemin. Chaque fois, une série a pris fin et une autre a commencé, et votre meilleure série reste.</string>
+    <string name="quit_history_row">Recommencé après %1$s</string>
+    <string name="quit_slip_hint">Un écart ? C\'est une information, pas un échec.</string>
     <string name="quit_slipped">J\'ai glissé</string>
     <string name="quit_slip_title">Recommencer?</string>
     <string name="quit_slip_body">Ça arrive. Une glissade c\'est une information, pas la fin. Ton meilleur parcours reste sauvegardé.</string>

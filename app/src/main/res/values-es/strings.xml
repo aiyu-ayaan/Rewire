@@ -685,6 +685,30 @@
     <string name="quit_days_hours">%1$d d %2$d h</string>
     <string name="quit_hours_minutes">%1$d h %2$d min</string>
     <string name="quit_ring_desc">%1$d días, %2$d%% del camino a %3$d días</string>
+    <string name="quit_back">Atrás</string>
+    <string name="quit_detail_days_strong">días firme</string>
+    <string name="quit_detail_running">Llevas %s</string>
+    <string-array name="quit_cheer">
+        <item>Todo viaje empieza con un primer paso. Tú lo estás dando.</item>
+        <item>Los primeros días son los más duros y estás en ellos. Sigue.</item>
+        <item>Tu cuerpo y tu mente ya se están adaptando. Es un progreso real.</item>
+        <item>Una semana o más. Te estás demostrando que puedes.</item>
+        <item>Semanas eligiéndote a ti. Esto se está convirtiendo en quien eres.</item>
+        <item>Meses de control. Mira hasta dónde has llegado.</item>
+    </string-array>
+    <string name="quit_next_title">Próximo hito</string>
+    <string name="quit_to_go">Faltan %1$s para %2$s</string>
+    <string name="quit_stat_best">Mejor racha</string>
+    <string name="quit_stat_restarts">Reinicios</string>
+    <string name="quit_stat_started">Inicio</string>
+    <string name="quit_milestones">Hitos</string>
+    <string name="quit_milestone_reached">%s, logrado</string>
+    <string name="quit_milestone_ahead">%s, por delante</string>
+    <string name="quit_why_title">Por qué empezaste</string>
+    <string name="quit_history_title">Tu historia</string>
+    <string name="quit_history_body">Los reinicios son parte del camino. Cada uno cerró una racha y abrió otra, y tu mejor racha se conserva.</string>
+    <string name="quit_history_row">Reinicio tras %1$s</string>
+    <string name="quit_slip_hint">¿Tuviste una recaída? Es información, no un fracaso.</string>
     <string name="quit_slipped">Me deslicé</string>
     <string name="quit_slip_title">¿Empezar de nuevo?</string>
     <string name="quit_slip_body">Sucede. Un desliz es información, no el final. Tu mejor carrera sigue guardada.</string>

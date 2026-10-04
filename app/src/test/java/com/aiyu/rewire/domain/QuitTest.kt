@@ -66,4 +66,10 @@ class QuitTest {
         assertEquals(9, Quit.thoughtIndex(0, -1, 10))
         assertEquals(0, Quit.thoughtIndex(5, 0, 0))
     }
+
+    @Test fun stagesAndEndedRuns() {
+        assertEquals(listOf(0, 1, 2, 3, 4, 5), listOf(0, 1, 3, 7, 30, 90).map(Quit::stage))
+        val h = one().habits.single().copy(slips = listOf(10L, 15L, 40L))
+        assertEquals(listOf(40L to 25L, 15L to 5L), Quit.endedRuns(h))
+    }
 }

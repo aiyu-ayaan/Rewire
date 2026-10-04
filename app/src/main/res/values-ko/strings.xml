@@ -649,6 +649,30 @@
     <string name="quit_days_hours">%1$d일 %2$d시간</string>
     <string name="quit_hours_minutes">%1$d시간 %2$d분</string>
     <string name="quit_ring_desc">%1$d일, %3$d일까지 %2$d%%</string>
+    <string name="quit_back">뒤로</string>
+    <string name="quit_detail_days_strong">일째 순항 중</string>
+    <string name="quit_detail_running">%s째 진행 중</string>
+    <string-array name="quit_cheer">
+        <item>모든 여정은 첫걸음에서 시작됩니다. 지금 그 걸음을 떼고 있어요.</item>
+        <item>처음 며칠이 가장 힘들고, 지금이 그때예요. 계속 가요.</item>
+        <item>몸과 마음이 이미 적응하고 있어요. 진짜 진전이에요.</item>
+        <item>일주일 그 이상. 할 수 있다는 걸 스스로 증명하고 있어요.</item>
+        <item>몇 주째 스스로를 선택하고 있어요. 이제 당신의 모습이 되어가요.</item>
+        <item>몇 달의 절제. 얼마나 멀리 왔는지 보세요.</item>
+    </string-array>
+    <string name="quit_next_title">다음 이정표</string>
+    <string name="quit_to_go">%2$s까지 %1$s 남음</string>
+    <string name="quit_stat_best">최고 기록</string>
+    <string name="quit_stat_restarts">다시 시작</string>
+    <string name="quit_stat_started">시작일</string>
+    <string name="quit_milestones">이정표</string>
+    <string name="quit_milestone_reached">%s, 달성</string>
+    <string name="quit_milestone_ahead">%s, 앞으로</string>
+    <string name="quit_why_title">시작한 이유</string>
+    <string name="quit_history_title">나의 이야기</string>
+    <string name="quit_history_body">다시 시작하는 것도 여정의 일부예요. 그때마다 한 기록이 끝나고 새 기록이 시작되며, 최고 기록은 그대로 남아요.</string>
+    <string name="quit_history_row">%1$s 후 다시 시작</string>
+    <string name="quit_slip_hint">미끄러졌나요? 실패가 아니라 정보예요.</string>
     <string name="quit_slipped">넘어졌다</string>
     <string name="quit_slip_title">다시 시작할까?</string>
     <string name="quit_slip_body">일어난다. 넘어짐은 정보지, 끝이 아니다. 너의 최고의 기록이 남아있다.</string>

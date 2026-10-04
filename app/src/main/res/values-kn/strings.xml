@@ -667,6 +667,30 @@
     <string name="quit_days_hours">%1$d ದಿ %2$d ಗಂ</string>
     <string name="quit_hours_minutes">%1$d ಗಂ %2$d ನಿಮಿಷ</string>
     <string name="quit_ring_desc">%1$d ದಿನಗಳು, %3$d ದಿನಗಳ ಕಡೆಗೆ %2$d%% ರಷ್ಟು ಹಾದಿ</string>
+    <string name="quit_back">ಹಿಂದೆ</string>
+    <string name="quit_detail_days_strong">ದಿನ ದೃಢವಾಗಿ</string>
+    <string name="quit_detail_running">%s ರಿಂದ ಮುಂದುವರಿದಿದೆ</string>
+    <string-array name="quit_cheer">
+        <item>ಪ್ರತಿ ಪ್ರಯಾಣ ಮೊದಲ ಹೆಜ್ಜೆಯಿಂದ ಆರಂಭ. ನೀವು ಆ ಹೆಜ್ಜೆ ಇಡುತ್ತಿದ್ದೀರಿ.</item>
+        <item>ಮೊದಲ ದಿನಗಳು ಅತ್ಯಂತ ಕಠಿಣ, ನೀವು ಈಗ ಅದರಲ್ಲೇ ಇದ್ದೀರಿ. ಮುಂದುವರಿಸಿ.</item>
+        <item>ನಿಮ್ಮ ದೇಹ ಮತ್ತು ಮನಸ್ಸು ಈಗಾಗಲೇ ಹೊಂದಿಕೊಳ್ಳುತ್ತಿವೆ. ಇದು ನಿಜವಾದ ಪ್ರಗತಿ.</item>
+        <item>ಒಂದು ವಾರ ಅಥವಾ ಹೆಚ್ಚು. ನೀವು ಮಾಡಬಲ್ಲಿರಿ ಎಂದು ನಿಮಗೇ ಸಾಬೀತುಪಡಿಸುತ್ತಿದ್ದೀರಿ.</item>
+        <item>ವಾರಗಳಿಂದ ನಿಮ್ಮನ್ನೇ ಆಯ್ಕೆ ಮಾಡುತ್ತಿದ್ದೀರಿ. ಇದು ನಿಮ್ಮ ಗುರುತಾಗುತ್ತಿದೆ.</item>
+        <item>ತಿಂಗಳುಗಳ ನಿಯಂತ್ರಣ. ಎಷ್ಟು ದೂರ ಬಂದಿದ್ದೀರಿ ನೋಡಿ.</item>
+    </string-array>
+    <string name="quit_next_title">ಮುಂದಿನ ಮೈಲಿಗಲ್ಲು</string>
+    <string name="quit_to_go">%2$s ವರೆಗೆ %1$s ಬಾಕಿ</string>
+    <string name="quit_stat_best">ಅತ್ಯುತ್ತಮ ಸರಣಿ</string>
+    <string name="quit_stat_restarts">ಮರುಆರಂಭಗಳು</string>
+    <string name="quit_stat_started">ಆರಂಭ</string>
+    <string name="quit_milestones">ಮೈಲಿಗಲ್ಲುಗಳು</string>
+    <string name="quit_milestone_reached">%s, ತಲುಪಿದೆ</string>
+    <string name="quit_milestone_ahead">%s, ಮುಂದಿದೆ</string>
+    <string name="quit_why_title">ನೀವು ಏಕೆ ಆರಂಭಿಸಿದಿರಿ</string>
+    <string name="quit_history_title">ನಿಮ್ಮ ಕಥೆ</string>
+    <string name="quit_history_body">ಮರುಆರಂಭ ಪ್ರಯಾಣದ ಭಾಗ. ಪ್ರತಿ ಬಾರಿ ಒಂದು ಸರಣಿ ಮುಗಿದು ಹೊಸದು ಆರಂಭವಾಯಿತು, ನಿಮ್ಮ ಅತ್ಯುತ್ತಮ ಸರಣಿ ಉಳಿಯುತ್ತದೆ.</string>
+    <string name="quit_history_row">%1$s ನಂತರ ಮರುಆರಂಭ</string>
+    <string name="quit_slip_hint">ಜಾರಿದಿರಾ? ಇದು ಮಾಹಿತಿ, ವೈಫಲ್ಯವಲ್ಲ.</string>
     <string name="quit_slipped">ನಾನು ಜಾರಿದೆ</string>
     <string name="quit_slip_title">ಮತ್ತೆ ಪ್ರಾರಂಭಿಸೇ?</string>
     <string name="quit_slip_body">ಇದು ಸಂಭವಿಸುತ್ತದೆ. ಜಾರುವುದು ಒಂದು ಮಾಹಿತಿ, ಅಂತ್ಯವಲ್ಲ. ನಿಮ್ಮ ಅತ್ಯುತ್ತಮ ಓಟವು ಉಳಿಸಲ್ಪಡುತ್ತದೆ.</string>

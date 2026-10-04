@@ -685,6 +685,30 @@
     <string name="quit_days_hours">%1$d g %2$d h</string>
     <string name="quit_hours_minutes">%1$d h %2$d min</string>
     <string name="quit_ring_desc">%1$d giorni, %2$d%% del cammino verso %3$d giorni</string>
+    <string name="quit_back">Indietro</string>
+    <string name="quit_detail_days_strong">giorni di fila</string>
+    <string name="quit_detail_running">In corso da %s</string>
+    <string-array name="quit_cheer">
+        <item>Ogni viaggio inizia con un primo passo. Tu lo stai facendo.</item>
+        <item>I primi giorni sono i più duri e ci sei dentro. Continua.</item>
+        <item>Corpo e mente si stanno già adattando. È un progresso reale.</item>
+        <item>Una settimana e oltre. Stai dimostrando a te stesso che puoi.</item>
+        <item>Settimane a scegliere te stesso. Sta diventando ciò che sei.</item>
+        <item>Mesi di controllo. Guarda quanta strada hai fatto.</item>
+    </string-array>
+    <string name="quit_next_title">Prossimo traguardo</string>
+    <string name="quit_to_go">Mancano %1$s a %2$s</string>
+    <string name="quit_stat_best">Serie migliore</string>
+    <string name="quit_stat_restarts">Ripartenze</string>
+    <string name="quit_stat_started">Iniziato</string>
+    <string name="quit_milestones">Traguardi</string>
+    <string name="quit_milestone_reached">%s, raggiunto</string>
+    <string name="quit_milestone_ahead">%s, in vista</string>
+    <string name="quit_why_title">Perché hai iniziato</string>
+    <string name="quit_history_title">La tua storia</string>
+    <string name="quit_history_body">Le ripartenze fanno parte del percorso. Ognuna ha chiuso una serie e ne ha aperta un\'altra, e la tua serie migliore resta.</string>
+    <string name="quit_history_row">Ripartito dopo %1$s</string>
+    <string name="quit_slip_hint">Una ricaduta? È un\'informazione, non un fallimento.</string>
     <string name="quit_slipped">Ho ceduto</string>
     <string name="quit_slip_title">Ricominciare?</string>
     <string name="quit_slip_body">Accade. Una caduta è informazione, non la fine. Il tuo miglior percorso rimane salvato.</string>

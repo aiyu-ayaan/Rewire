@@ -703,6 +703,30 @@
     <string name="quit_days_hours">%1$d д %2$d ч</string>
     <string name="quit_hours_minutes">%1$d ч %2$d мин</string>
     <string name="quit_ring_desc">%1$d дней, %2$d%% пути к %3$d дням</string>
+    <string name="quit_back">Назад</string>
+    <string name="quit_detail_days_strong">дней подряд</string>
+    <string name="quit_detail_running">Уже %s</string>
+    <string-array name="quit_cheer">
+        <item>Любой путь начинается с первого шага. Вы его делаете.</item>
+        <item>Первые дни самые трудные, и вы в них. Держитесь.</item>
+        <item>Тело и разум уже перестраиваются. Это настоящий прогресс.</item>
+        <item>Неделя и больше. Вы доказываете себе, что можете.</item>
+        <item>Недели выбора в свою пользу. Это становится вашей сутью.</item>
+        <item>Месяцы контроля. Посмотрите, как далеко вы зашли.</item>
+    </string-array>
+    <string name="quit_next_title">Следующая веха</string>
+    <string name="quit_to_go">Осталось %1$s до %2$s</string>
+    <string name="quit_stat_best">Лучшая серия</string>
+    <string name="quit_stat_restarts">Срывы</string>
+    <string name="quit_stat_started">Начало</string>
+    <string name="quit_milestones">Вехи</string>
+    <string name="quit_milestone_reached">%s, достигнуто</string>
+    <string name="quit_milestone_ahead">%s, впереди</string>
+    <string name="quit_why_title">Почему вы начали</string>
+    <string name="quit_history_title">Ваша история</string>
+    <string name="quit_history_body">Срывы — часть пути. Каждый закончил одну серию и начал новую, а лучшая серия сохраняется.</string>
+    <string name="quit_history_row">Срыв после %1$s</string>
+    <string name="quit_slip_hint">Был срыв? Это информация, а не провал.</string>
     <string name="quit_slipped">Я поскользнулся</string>
     <string name="quit_slip_title">Начать заново?</string>
     <string name="quit_slip_body">Это случается. Скольжение — информация, а не конец. Твой лучший результат сохранён.</string>

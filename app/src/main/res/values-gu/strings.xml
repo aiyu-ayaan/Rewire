@@ -667,6 +667,30 @@
     <string name="quit_days_hours">%1$d દિ %2$d ક</string>
     <string name="quit_hours_minutes">%1$d ક %2$d મિ</string>
     <string name="quit_ring_desc">%1$d દિવસ, %3$d દિવસ સુધી પહોંચવાના રસ્તાના %2$d%%</string>
+    <string name="quit_back">પાછળ</string>
+    <string name="quit_detail_days_strong">દિવસ મક્કમ</string>
+    <string name="quit_detail_running">%s થી ચાલુ</string>
+    <string-array name="quit_cheer">
+        <item>દરેક સફર પહેલા પગલાથી શરૂ થાય છે. તમે તે પગલું ભરી રહ્યા છો.</item>
+        <item>શરૂઆતના દિવસો સૌથી અઘરા હોય છે અને તમે તેમાં જ છો. ચાલુ રાખો.</item>
+        <item>તમારું શરીર અને મન હમણાંથી ગોઠવાઈ રહ્યાં છે. આ સાચી પ્રગતિ છે.</item>
+        <item>એક અઠવાડિયું અને તેથી વધુ. તમે પોતાને સાબિત કરી રહ્યા છો કે તમે કરી શકો છો.</item>
+        <item>અઠવાડિયાંથી તમે પોતાને પસંદ કરી રહ્યા છો. આ તમારી ઓળખ બની રહ્યું છે.</item>
+        <item>મહિનાઓનો સંયમ. જુઓ તમે કેટલા આગળ આવ્યા છો.</item>
+    </string-array>
+    <string name="quit_next_title">આગલો મુકામ</string>
+    <string name="quit_to_go">%2$s સુધી %1$s બાકી</string>
+    <string name="quit_stat_best">શ્રેષ્ઠ શ્રેણી</string>
+    <string name="quit_stat_restarts">ફરી શરૂઆત</string>
+    <string name="quit_stat_started">શરૂઆત</string>
+    <string name="quit_milestones">મુકામ</string>
+    <string name="quit_milestone_reached">%s, પૂર્ણ</string>
+    <string name="quit_milestone_ahead">%s, આગળ</string>
+    <string name="quit_why_title">તમે કેમ શરૂ કર્યું</string>
+    <string name="quit_history_title">તમારી વાર્તા</string>
+    <string name="quit_history_body">ફરી શરૂ કરવું સફરનો ભાગ છે. દરેક વખતે એક શ્રેણી પૂરી થઈ અને નવી શરૂ થઈ, અને તમારી શ્રેષ્ઠ શ્રેણી સચવાયેલી રહે છે.</string>
+    <string name="quit_history_row">%1$s પછી ફરી શરૂઆત</string>
+    <string name="quit_slip_hint">લપસી ગયા? આ માહિતી છે, નિષ્ફળતા નથી.</string>
     <string name="quit_slipped">હું લપસી ગયો</string>
     <string name="quit_slip_title">ફરીથી શરૂ કરવું?</string>
     <string name="quit_slip_body">આ બને છે. લપસવું એ માહિતી છે, અંત નથી. તમારી શ્રેષ્ઠ દોડ સાચવેલી રહે છે.</string>

@@ -649,6 +649,30 @@
     <string name="quit_days_hours">%1$d 天 %2$d 小時</string>
     <string name="quit_hours_minutes">%1$d 小時 %2$d 分</string>
     <string name="quit_ring_desc">%1$d 天，達到 %3$d 天的 %2$d%%</string>
+    <string name="quit_back">返回</string>
+    <string name="quit_detail_days_strong">天，狀態穩健</string>
+    <string name="quit_detail_running">已堅持 %s</string>
+    <string-array name="quit_cheer">
+        <item>每段旅程都從第一步開始，而你正在邁出這一步。</item>
+        <item>最初幾天最難，你正身處其中。繼續加油。</item>
+        <item>你的身體和心理已經在適應，這是實實在在的進步。</item>
+        <item>一週以上了。你正在向自己證明你做得到。</item>
+        <item>連續幾週選擇了自己，這正在成為你的一部分。</item>
+        <item>數月的自控。看看你已經走了多遠。</item>
+    </string-array>
+    <string name="quit_next_title">下一個里程碑</string>
+    <string name="quit_to_go">距離 %2$s 還有 %1$s</string>
+    <string name="quit_stat_best">最佳紀錄</string>
+    <string name="quit_stat_restarts">重新開始</string>
+    <string name="quit_stat_started">開始於</string>
+    <string name="quit_milestones">里程碑</string>
+    <string name="quit_milestone_reached">%s，已達成</string>
+    <string name="quit_milestone_ahead">%s，還在前方</string>
+    <string name="quit_why_title">你為何開始</string>
+    <string name="quit_history_title">你的故事</string>
+    <string name="quit_history_body">重新開始也是旅程的一部分。每一次都結束了一段紀錄並開啟新的一段，你的最佳紀錄會保留。</string>
+    <string name="quit_history_row">堅持 %1$s 後重新開始</string>
+    <string name="quit_slip_hint">失誤了？這是資訊，不是失敗。</string>
     <string name="quit_slipped">我滑落了</string>
     <string name="quit_slip_title">重新開始？</string>
     <string name="quit_slip_body">會發生。滑落是信息，不是結束。你最好的跑仍然被保存。</string>

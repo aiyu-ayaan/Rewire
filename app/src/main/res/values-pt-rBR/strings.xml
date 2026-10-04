@@ -685,6 +685,30 @@
     <string name="quit_days_hours">%1$d d %2$d h</string>
     <string name="quit_hours_minutes">%1$d h %2$d min</string>
     <string name="quit_ring_desc">%1$d dias, %2$d%% do caminho para %3$d dias</string>
+    <string name="quit_back">Voltar</string>
+    <string name="quit_detail_days_strong">dias firme</string>
+    <string name="quit_detail_running">Há %s</string>
+    <string-array name="quit_cheer">
+        <item>Toda jornada começa com um primeiro passo. Você está dando o seu.</item>
+        <item>Os primeiros dias são os mais difíceis, e você está neles. Continue.</item>
+        <item>Seu corpo e sua mente já estão se ajustando. Isso é progresso de verdade.</item>
+        <item>Uma semana ou mais. Você está provando a si mesmo que consegue.</item>
+        <item>Semanas escolhendo você. Isso está virando quem você é.</item>
+        <item>Meses de controle. Veja o quanto você avançou.</item>
+    </string-array>
+    <string name="quit_next_title">Próximo marco</string>
+    <string name="quit_to_go">Faltam %1$s para %2$s</string>
+    <string name="quit_stat_best">Melhor sequência</string>
+    <string name="quit_stat_restarts">Recomeços</string>
+    <string name="quit_stat_started">Início</string>
+    <string name="quit_milestones">Marcos</string>
+    <string name="quit_milestone_reached">%s, alcançado</string>
+    <string name="quit_milestone_ahead">%s, pela frente</string>
+    <string name="quit_why_title">Por que você começou</string>
+    <string name="quit_history_title">Sua história</string>
+    <string name="quit_history_body">Recomeçar faz parte. Cada um encerrou uma sequência e iniciou outra, e sua melhor sequência fica guardada.</string>
+    <string name="quit_history_row">Recomeçou após %1$s</string>
+    <string name="quit_slip_hint">Escorregou? Isso é informação, não fracasso.</string>
     <string name="quit_slipped">Escorreguei</string>
     <string name="quit_slip_title">Começar de novo?</string>
     <string name="quit_slip_body">Acontece. Um escorregão é informação, não o fim. Sua melhor sequência fica salva.</string>

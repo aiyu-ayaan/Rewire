@@ -667,6 +667,30 @@
     <string name="quit_days_hours">%1$d দিন %2$d ঘণ্টা</string>
     <string name="quit_hours_minutes">%1$d ঘণ্টা %2$d মিনিট</string>
     <string name="quit_ring_desc">%1$d দিন, %3$d দিনের লক্ষ্যের দিকে %2$d%% সম্পন্ন</string>
+    <string name="quit_back">পেছনে</string>
+    <string name="quit_detail_days_strong">দিন অটল</string>
+    <string name="quit_detail_running">%s ধরে চলছে</string>
+    <string-array name="quit_cheer">
+        <item>প্রতিটি যাত্রা প্রথম পদক্ষেপ দিয়ে শুরু হয়। আপনি সেটাই নিচ্ছেন।</item>
+        <item>প্রথম কয়েক দিন সবচেয়ে কঠিন, আর আপনি এখন সেখানেই আছেন। এগিয়ে চলুন।</item>
+        <item>আপনার শরীর ও মন ইতিমধ্যে মানিয়ে নিচ্ছে। এটা সত্যিকারের অগ্রগতি।</item>
+        <item>এক সপ্তাহ বা তার বেশি। আপনি নিজেকে প্রমাণ করছেন যে আপনি পারেন।</item>
+        <item>সপ্তাহের পর সপ্তাহ নিজেকে বেছে নিচ্ছেন। এটাই আপনার পরিচয় হয়ে উঠছে।</item>
+        <item>মাসের পর মাস নিয়ন্ত্রণ। দেখুন কতদূর এসেছেন।</item>
+    </string-array>
+    <string name="quit_next_title">পরবর্তী মাইলফলক</string>
+    <string name="quit_to_go">%2$s পর্যন্ত আর %1$s</string>
+    <string name="quit_stat_best">সেরা ধারা</string>
+    <string name="quit_stat_restarts">পুনরায় শুরু</string>
+    <string name="quit_stat_started">শুরু</string>
+    <string name="quit_milestones">মাইলফলক</string>
+    <string name="quit_milestone_reached">%s, অর্জিত</string>
+    <string name="quit_milestone_ahead">%s, সামনে</string>
+    <string name="quit_why_title">কেন শুরু করেছিলেন</string>
+    <string name="quit_history_title">আপনার গল্প</string>
+    <string name="quit_history_body">পুনরায় শুরু করা যাত্রার অংশ। প্রতিবার একটি ধারা শেষ হয়ে নতুন একটি শুরু হয়েছে, আর আপনার সেরা ধারা থেকে যায়।</string>
+    <string name="quit_history_row">%1$s পর পুনরায় শুরু</string>
+    <string name="quit_slip_hint">পিছলে গেছেন? এটা তথ্য, ব্যর্থতা নয়।</string>
     <string name="quit_slipped">স্লিপ করেছি</string>
     <string name="quit_slip_title">আবার শুরু করবেন?</string>
     <string name="quit_slip_body">এমনটা হতেই পারে। স্লিপ করা মানে তথ্য, শেষ নয়। আপনার সেরা রান সংরক্ষিত থাকে।</string>

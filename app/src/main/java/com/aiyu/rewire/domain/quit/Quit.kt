@@ -51,6 +51,20 @@ object Quit {
     /** Milestones already reached in the current run. */
     fun reached(days: Int) = MILESTONES.filter { it <= days }
 
+    /** Index into the encouragement lines: fresh start, first days, first week, first month, three months, beyond. */
+    fun stage(days: Int) = when {
+        days < 1 -> 0
+        days < 3 -> 1
+        days < 7 -> 2
+        days < 30 -> 3
+        days < 90 -> 4
+        else -> 5
+    }
+
+    /** Length of each run that a slip ended, newest first; the first slip has no known start, so it is skipped. */
+    fun endedRuns(h: QuitHabit): List<Pair<Long, Long>> =
+        h.slips.zipWithNext { a, b -> b to (b - a) }.reversed()
+
     fun add(data: QuitData, id: String, name: String, reason: String, startedAt: Long, now: Long): QuitData {
         if (!isValidName(name)) return data
         val h = QuitHabit(id, name.trim(), reason.trim().take(MAX_REASON), startedAt.coerceAtMost(now), now)

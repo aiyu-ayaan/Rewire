@@ -649,6 +649,30 @@
     <string name="quit_days_hours">%1$d ngày %2$d h</string>
     <string name="quit_hours_minutes">%1$d h %2$d phút</string>
     <string name="quit_ring_desc">%1$d ngày, %2$d%% đi được %3$d ngày</string>
+    <string name="quit_back">Quay lại</string>
+    <string name="quit_detail_days_strong">ngày vững vàng</string>
+    <string name="quit_detail_running">Đã duy trì %s</string>
+    <string-array name="quit_cheer">
+        <item>Mọi hành trình đều bắt đầu từ bước đầu tiên. Bạn đang bước đi.</item>
+        <item>Những ngày đầu khó nhất và bạn đang ở trong đó. Hãy tiếp tục.</item>
+        <item>Cơ thể và tâm trí bạn đang thích nghi. Đó là tiến bộ thật sự.</item>
+        <item>Một tuần trở lên. Bạn đang chứng minh với chính mình rằng bạn làm được.</item>
+        <item>Nhiều tuần chọn chính mình. Điều này đang trở thành con người bạn.</item>
+        <item>Nhiều tháng kiểm soát. Hãy nhìn xem bạn đã đi xa thế nào.</item>
+    </string-array>
+    <string name="quit_next_title">Cột mốc tiếp theo</string>
+    <string name="quit_to_go">Còn %1$s nữa đến %2$s</string>
+    <string name="quit_stat_best">Chuỗi tốt nhất</string>
+    <string name="quit_stat_restarts">Lần bắt đầu lại</string>
+    <string name="quit_stat_started">Bắt đầu</string>
+    <string name="quit_milestones">Cột mốc</string>
+    <string name="quit_milestone_reached">%s, đã đạt</string>
+    <string name="quit_milestone_ahead">%s, phía trước</string>
+    <string name="quit_why_title">Vì sao bạn bắt đầu</string>
+    <string name="quit_history_title">Câu chuyện của bạn</string>
+    <string name="quit_history_body">Bắt đầu lại là một phần của hành trình. Mỗi lần kết thúc một chuỗi và mở ra chuỗi mới, còn chuỗi tốt nhất của bạn vẫn được giữ.</string>
+    <string name="quit_history_row">Bắt đầu lại sau %1$s</string>
+    <string name="quit_slip_hint">Lỡ một lần? Đó là thông tin, không phải thất bại.</string>
     <string name="quit_slipped">Tôi bị trượt</string>
     <string name="quit_slip_title">Bắt đầu lại?</string>
     <string name="quit_slip_body">Nó xảy ra. Một lần trượt là thông tin, không phải kết thúc. Lần chạy tốt nhất của bạn vẫn được lưu.</string>

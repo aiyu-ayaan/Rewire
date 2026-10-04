@@ -649,6 +649,30 @@
     <string name="quit_days_hours">%1$d日 %2$d時間</string>
     <string name="quit_hours_minutes">%1$d h %2$d分</string>
     <string name="quit_ring_desc">%1$d日、%3$d日までの%2$d%%</string>
+    <string name="quit_back">戻る</string>
+    <string name="quit_detail_days_strong">日継続中</string>
+    <string name="quit_detail_running">継続 %s</string>
+    <string-array name="quit_cheer">
+        <item>どんな旅も最初の一歩から。あなたは今、その一歩を踏み出しています。</item>
+        <item>最初の数日が一番つらく、今まさにその中にいます。続けましょう。</item>
+        <item>体も心もすでに慣れ始めています。これは本物の進歩です。</item>
+        <item>1週間以上。できると自分に証明しています。</item>
+        <item>何週間も自分を選んできました。それがあなたらしさになっていきます。</item>
+        <item>何か月もの自制。ここまで来た道のりを見てください。</item>
+    </string-array>
+    <string name="quit_next_title">次のマイルストーン</string>
+    <string name="quit_to_go">%2$sまであと%1$s</string>
+    <string name="quit_stat_best">最高記録</string>
+    <string name="quit_stat_restarts">やり直し</string>
+    <string name="quit_stat_started">開始日</string>
+    <string name="quit_milestones">マイルストーン</string>
+    <string name="quit_milestone_reached">%s、達成</string>
+    <string name="quit_milestone_ahead">%s、これから</string>
+    <string name="quit_why_title">始めた理由</string>
+    <string name="quit_history_title">あなたの物語</string>
+    <string name="quit_history_body">やり直しも道のりの一部です。そのたびに一つの記録が終わり、新しい記録が始まり、最高記録は残ります。</string>
+    <string name="quit_history_row">%1$s後にやり直し</string>
+    <string name="quit_slip_hint">滑ってしまった？それは情報であり、失敗ではありません。</string>
     <string name="quit_slipped">滑った</string>
     <string name="quit_slip_title">もう一度始めますか?</string>
     <string name="quit_slip_body">よくあることです。滑りは情報で、終わりではありません。あなたの最高記録は保存されたままです。</string>

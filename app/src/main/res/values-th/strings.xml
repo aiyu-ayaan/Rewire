@@ -649,6 +649,30 @@
     <string name="quit_days_hours">%1$d วัน %2$d ชม.</string>
     <string name="quit_hours_minutes">%1$d ชม. %2$d นาที</string>
     <string name="quit_ring_desc">%1$d วัน, คิดเป็น %2$d%% ไปสู่เป้าหมาย %3$d วัน</string>
+    <string name="quit_back">กลับ</string>
+    <string name="quit_detail_days_strong">วันแล้วที่ยังมั่นคง</string>
+    <string name="quit_detail_running">ผ่านมา %s</string>
+    <string-array name="quit_cheer">
+        <item>ทุกการเดินทางเริ่มจากก้าวแรก และคุณกำลังก้าวอยู่</item>
+        <item>ไม่กี่วันแรกยากที่สุด และคุณกำลังอยู่ในช่วงนั้น สู้ต่อไป</item>
+        <item>ร่างกายและจิตใจกำลังปรับตัว นี่คือความก้าวหน้าจริง</item>
+        <item>หนึ่งสัปดาห์ขึ้นไป คุณกำลังพิสูจน์กับตัวเองว่าทำได้</item>
+        <item>หลายสัปดาห์ที่เลือกตัวเอง สิ่งนี้กำลังกลายเป็นตัวตนของคุณ</item>
+        <item>หลายเดือนแห่งการควบคุม ลองดูว่าคุณมาไกลแค่ไหน</item>
+    </string-array>
+    <string name="quit_next_title">เป้าหมายถัดไป</string>
+    <string name="quit_to_go">อีก %1$s ถึง %2$s</string>
+    <string name="quit_stat_best">สถิติที่ดีที่สุด</string>
+    <string name="quit_stat_restarts">เริ่มใหม่</string>
+    <string name="quit_stat_started">เริ่มเมื่อ</string>
+    <string name="quit_milestones">เป้าหมายระหว่างทาง</string>
+    <string name="quit_milestone_reached">%s, ถึงแล้ว</string>
+    <string name="quit_milestone_ahead">%s, รออยู่ข้างหน้า</string>
+    <string name="quit_why_title">ทำไมคุณจึงเริ่ม</string>
+    <string name="quit_history_title">เรื่องราวของคุณ</string>
+    <string name="quit_history_body">การเริ่มใหม่เป็นส่วนหนึ่งของเส้นทาง แต่ละครั้งปิดช่วงหนึ่งและเริ่มช่วงใหม่ และสถิติที่ดีที่สุดของคุณยังอยู่</string>
+    <string name="quit_history_row">เริ่มใหม่หลังผ่านไป %1$s</string>
+    <string name="quit_slip_hint">พลาดไปหรือ? นั่นคือข้อมูล ไม่ใช่ความล้มเหลว</string>
     <string name="quit_slipped">ฉันพลาดไป</string>
     <string name="quit_slip_title">เริ่มต้นใหม่อีกครั้งไหม?</string>
     <string name="quit_slip_body">เกิดขึ้นได้ การพลาดคือข้อมูล ไม่ใช่จุดจบ สถิติที่ดีที่สุดของคุณยังคงถูกบันทึกไว้</string>
