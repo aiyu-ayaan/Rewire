@@ -1,0 +1,1012 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generated: one line per item. Calm, neutral; never names a specific habit. -->
+<resources>
+    <string-array name="quit_thoughts">
+        <item>The urge is a wave. It peaks. It passes. You can ride it.</item>
+        <item>Right now, feel it without fighting it. This moment is temporary.</item>
+        <item>What are you feeling under the urge? Bored? Lonely? Tired? Name it.</item>
+        <item>You don\'t have to act on every feeling. Feel it and let it move through.</item>
+        <item>The urge is not a command. It\'s just a thought in your mind.</item>
+        <item>Pause for 10 minutes. The craving will shift.</item>
+        <item>When the urge hits, breathe slowly. In for four, hold, out for six.</item>
+        <item>What triggered this moment? Notice it without judgment.</item>
+        <item>The urge is strongest at the beginning. After 15 minutes, it fades.</item>
+        <item>Get up. Walk to another room. Break the pattern.</item>
+        <item>This is not weakness. This is you learning a new way.</item>
+        <item>The urge lies. It says you need it. You don\'t. You\'re safe without it.</item>
+        <item>Instead of acting on it, write down what you\'re feeling right now.</item>
+        <item>Sometimes the urge is boredom wearing a mask. Find something to do.</item>
+        <item>You are not the urge. The urge is a passenger, not the driver.</item>
+        <item>Lay down for five minutes and notice: the urge will pass while you rest.</item>
+        <item>Is it late? Are you tired? Urges trick you when your guard is down.</item>
+        <item>The urge you ignored yesterday made you proud. Do that again.</item>
+        <item>Your brain is rewiring itself right now. This is the hard part. You\'re doing it.</item>
+        <item>The urge is strongest when you\'re alone. Call someone. Talk.</item>
+        <item>You survived the last one. You\'ll survive this one too.</item>
+        <item>What would your best self do right now? Listen to that voice.</item>
+        <item>The craving peak lasts minutes, not hours. You can outlast it.</item>
+        <item>Sit with the urge like a wave in the ocean. Let it roll past you.</item>
+        <item>This is not forever. This is just right now.</item>
+        <item>The urge whispers lies. You are stronger than the lie.</item>
+        <item>Stretch your body. Move blood through your limbs. Urges fade with motion.</item>
+        <item>You\'re building something. Every moment you pause is a brick in the foundation.</item>
+        <item>When you want to escape, find the real feeling underneath and meet it instead.</item>
+        <item>The urge is a habit, not a need. Your body will adjust.</item>
+        <item>Notice the urge without judgment. Don\'t add shame on top of the craving.</item>
+        <item>You can sit with this for five minutes and see what happens.</item>
+        <item>The urge wants you to believe it\'s permanent. It\'s not. It\'s clouds passing.</item>
+        <item>What did you do last time when you resisted? Do that again.</item>
+        <item>The urge is information. It tells you something matters to you. Listen, then choose.</item>
+        <item>Late nights bring urges. Early bed prevents them.</item>
+        <item>You are not failing when you feel the urge. You\'re failing only if you believe it.</item>
+        <item>The urge is a wave with your name on it. You\'ve learned to surf.</item>
+        <item>When lonely, the urge promises connection. Seek real connection instead.</item>
+        <item>The urge is not love. Don\'t mistake it for something it\'s not.</item>
+        <item>You\'ve had many urges and lived through all of them. This is just one more.</item>
+        <item>Boredom is a trigger. Have a list of things that matter to you.</item>
+        <item>The urge tells you to hurry. You can go slow instead.</item>
+        <item>Your nervous system is learning that you\'re safe without the habit.</item>
+        <item>Sit. Breathe. Count to 100. The urge will soften.</item>
+        <item>The urge is loudest when you resist with fear. Breathe with acceptance instead.</item>
+        <item>You chose to stop. Remember that. Lean on that choice.</item>
+        <item>Stress triggers urges. Name the stress. Address it separately from the craving.</item>
+        <item>The urge will visit. That doesn\'t mean you have to invite it in.</item>
+        <item>You are rewiring your default. This takes time and kindness.</item>
+        <item>The urge is a passenger on a bus you\'re driving. Let it sit. Keep going.</item>
+        <item>Urges peak fast and drop fast. Don\'t confuse a peak with forever.</item>
+        <item>What\'s the real need? Sleep? Connection? Fun? Find it without the habit.</item>
+        <item>You don\'t have to understand the urge to survive it.</item>
+        <item>The urge is not your fault. Your response is your choice.</item>
+        <item>When the urge comes at 11 PM, that\'s information. Go to bed earlier.</item>
+        <item>You can sit on the floor and breathe and let the urge be there with you.</item>
+        <item>The urge will return. That\'s normal. You\'ll handle it like you\'ve handled others.</item>
+        <item>The old pattern wants your attention. You\'re allowed to ignore it.</item>
+        <item>Loneliness amplifies urges. Even a text to a friend weakens it.</item>
+        <item>The urge is a visitor. You choose whether to open the door.</item>
+        <item>You are building new pathways in your brain every time you pause.</item>
+        <item>The urge is strongest when you think about it. Distract yourself gently.</item>
+        <item>What would you do if the urge didn\'t exist? Do that right now.</item>
+        <item>The urge is not an emergency. Treat it like a thought that passes.</item>
+        <item>You\'ve been here before. Your body knows how to get through this.</item>
+        <item>The habit took time to build. The break will take time to hold. Be patient.</item>
+        <item>When the urge comes, it means your brain is still adjusting. That\'s healing.</item>
+        <item>You don\'t have to be perfect. You just have to keep choosing.</item>
+        <item>The urge is loudest when you\'re tired. Sleep is a powerful tool.</item>
+        <item>Urges come in waves. Some are big. Some are small. All pass.</item>
+        <item>The craving is a sign your body is changing. That\'s good news.</item>
+        <item>You are allowed to feel the urge and not act on it. Both are true.</item>
+        <item>What fills the space the habit used to? Build that now.</item>
+        <item>The urge whispers softly at first, then louder if you listen. Don\'t listen.</item>
+        <item>Stand up. The urge settles when you move your body.</item>
+        <item>You are not broken for wanting the old pattern. You\'re human.</item>
+        <item>The urge is a habit loop. You\'re breaking the loop with every pause.</item>
+        <item>Late nights and loneliness are the worst combination. Plan around them.</item>
+        <item>You can say to the urge: I see you. I feel you. I\'m not doing it anyway.</item>
+        <item>The urge is like a cloud. Observe it. It will drift away.</item>
+        <item>You\'ve already survived the hardest days. This one is familiar now.</item>
+        <item>The urge can sit with you while you do something else. That\'s okay.</item>
+        <item>What are you avoiding by reaching for the habit? Face that instead.</item>
+        <item>The urge is loudest when you\'re sitting still. Movement breaks the spell.</item>
+        <item>You are stronger than you think. This moment proves it.</item>
+        <item>The habit promised relief. It delivered emptiness. Remember that.</item>
+        <item>The urge is your brain asking for dopamine. Find another source.</item>
+        <item>You can feel the urge and stay in control. Both can be true.</item>
+        <item>The urge comes from learned patterns, not from who you are.</item>
+        <item>When tired, everything feels harder. The urge is not special. Rest.</item>
+        <item>You don\'t have to understand why you have the urge to survive it.</item>
+        <item>The craving is data. Boredom? Stress? Loneliness? Learn the pattern.</item>
+        <item>The urge will return. That\'s not failure. That\'s recovery being normal.</item>
+        <item>You chose this path. The path is narrow right now. It will widen.</item>
+        <item>The urge is a liar. It says you can\'t live without it. You can and do.</item>
+        <item>Sit in your discomfort for five minutes. It won\'t destroy you.</item>
+        <item>The urge is strongest when you\'re caught off guard. Stay aware.</item>
+        <item>You are not the urge. You are the one who notices the urge and breathes.</item>
+        <item>What would it feel like to get through today without it? That\'s the reward.</item>
+        <item>The urge is a wave. You are the shore. Let it break against you and recede.</item>
+        <item>Drinking water, stretching, cold water on your face, moving rooms. Pick one.</item>
+        <item>The habit took months or years to form. Your break will take time too. That\'s normal.</item>
+        <item>The urge is not a setback unless you believe it\'s a command.</item>
+        <item>You can sit with the urge the way you\'d sit with an uninvited guest.</item>
+        <item>Late night is when urges are cruelest. Plan your evenings.</item>
+        <item>The urge speaks in shoulds and have-tos. Ignore it. Make your own choice.</item>
+        <item>You have more willpower now than you think. This moment proves it.</item>
+        <item>The urge is a feeling, not a fact. Feelings change.</item>
+        <item>What are you grieving that the habit filled? Grieve it. Honor it. Move on.</item>
+        <item>The urge will test you. You will pass the test. You\'ve passed them before.</item>
+        <item>The habit promised happiness. It delivered regret. Choose the regret-free path.</item>
+        <item>You don\'t have to fight the urge. You can just notice it and keep living.</item>
+        <item>The urge is software running in your brain. You are the programmer now.</item>
+        <item>Boredom feeds the urge. Meaning starves it.</item>
+        <item>The craving is a signal that something is out of balance. Fix the balance.</item>
+        <item>You are allowed to struggle. Struggle is part of the path.</item>
+        <item>The urge is loudest in silence. Fill silence with music, voices, activity.</item>
+        <item>You\'ve made it this far. That\'s evidence. Trust the evidence.</item>
+        <item>The habit was an escape. You don\'t need to escape anymore.</item>
+        <item>The urge is a phantom limb. It feels real but it\'s not really there.</item>
+        <item>What did you like about yourself before the habit? Build that back.</item>
+        <item>The urge will fade if you refuse to feed it stories.</item>
+        <item>You are rewriting your story right now. Every pause is a new chapter.</item>
+        <item>The urge is strongest when you\'re vulnerable. Protect yourself by resting.</item>
+        <item>You can be uncomfortable and not act on the urge at the same time.</item>
+        <item>The craving is your brain in withdrawal. It\'s temporary and it\'s healing.</item>
+        <item>The habit kept you small. This choice makes you larger.</item>
+        <item>The urge is like a fire alarm ringing. It\'s loud but the house isn\'t burning.</item>
+        <item>You don\'t have to be confident to resist. You just have to choose.</item>
+        <item>Late night, tired, alone, bored. That\'s when urges attack. Know your pattern.</item>
+        <item>The urge is not you. Your response is you.</item>
+        <item>The old pattern wants to be familiar. You\'re learning new familiar.</item>
+        <item>You can acknowledge the urge, thank it for showing up, and move on.</item>
+        <item>The craving is a storm. It will pass. You don\'t have to step outside into it.</item>
+        <item>You are allowed to feel the urge without shame.</item>
+        <item>What brings you joy that\'s not the habit? Do that. Build that.</item>
+        <item>The urge is loudest when you focus all your attention on it. Redirect.</item>
+        <item>You\'ve survived every moment before this. You\'ll survive this one.</item>
+        <item>The habit promised control. It delivered the opposite. Remember that.</item>
+        <item>The urge is a test of your commitment, not a sign you\'re failing.</item>
+        <item>Loneliness feeds urges. Reach out before the urge gets loud.</item>
+        <item>You can sit with discomfort for 10 minutes. That\'s a long time.</item>
+        <item>The urge will come back. Every time it comes back, you\'re getting stronger.</item>
+        <item>The old way wanted you to believe you had no choice. You do.</item>
+        <item>The craving is not an emergency. It just feels like one.</item>
+        <item>You are building a different life, not just quitting a habit.</item>
+        <item>The urge speaks softly at first. That\'s the time to turn away.</item>
+        <item>What would make you proud of yourself today? Start there.</item>
+        <item>The urge is information that boredom or stress or tiredness is present.</item>
+        <item>You can feel empty and not reach for the habit at the same time.</item>
+        <item>The habit whispered lies. You\'re learning to hear truth instead.</item>
+        <item>The urge will return tomorrow. That\'s not failure. That\'s healing.</item>
+        <item>You are allowed to be imperfect at this. Imperfect progress is still progress.</item>
+        <item>The urge is like static on the radio. You can change the station.</item>
+        <item>What would your future self ask you to do right now? Listen to that.</item>
+        <item>The craving is a ghost of a pattern. Ghosts can\'t hurt you.</item>
+        <item>You are rewiring your brain with every moment you choose differently.</item>
+        <item>Late nights are dangerous. Sleep early. Prevention is the best defense.</item>
+        <item>The urge is a habit trying to perpetuate itself. You are breaking the loop.</item>
+        <item>You can be tired and resistant and still succeed.</item>
+        <item>What does the urge want you to forget? Hold that memory instead.</item>
+        <item>The habit took you away from yourself. This path takes you back.</item>
+        <item>The urge is strongest when you\'re sitting still. Move.</item>
+        <item>You don\'t have to want to resist. You just have to do it anyway.</item>
+        <item>The craving is a wave. You\'ve ridden waves before. You can ride this one.</item>
+        <item>What fills you up that\'s not the habit? Invest in that.</item>
+        <item>The urge will lie and say you need it. You don\'t. You want it. That\'s different.</item>
+        <item>Boredom is a trigger. Have a plan for bored moments.</item>
+        <item>You can survive the urge with breathing and patience.</item>
+        <item>The old pattern is knocking. You don\'t have to answer.</item>
+        <item>The urge is information. Loneliness? Stress? Boredom? Name it and address it.</item>
+        <item>You are allowed to feel bad and not act on the urge.</item>
+        <item>The habit was a coping mechanism. You\'re learning new coping mechanisms now.</item>
+        <item>The urge is not a reflection of your willpower. It\'s a reflection of habit.</item>
+        <item>What brings you calm that\'s not the habit? Use that now.</item>
+        <item>The craving is your body adjusting. That\'s not weakness. That\'s change.</item>
+        <item>You can be uncomfortable without needing rescue from the habit.</item>
+        <item>Late night urges are real. Plan to be in bed before they arrive.</item>
+        <item>The urge is loudest when you\'re isolated. Seek connection.</item>
+        <item>You\'ve chosen a harder path because you want something better. Honor that.</item>
+        <item>The habit promised joy. It delivered emptiness. Choose differently now.</item>
+        <item>The urge is a test. You\'re passing it right now.</item>
+        <item>What does a calm mind feel like? Move toward that feeling.</item>
+        <item>The craving will visit. You don\'t have to welcome it in.</item>
+        <item>You are building resilience with every moment of resistance.</item>
+        <item>The urge wants your attention. Give it to something that deserves you instead.</item>
+        <item>Boredom, loneliness, stress, tiredness. Know your triggers and plan ahead.</item>
+        <item>You can be sad and not reach for the habit.</item>
+        <item>The habit was a shortcut. You\'re taking the long road. That\'s wisdom.</item>
+        <item>The urge is not the enemy. It\'s just a visitor. You\'re the host.</item>
+        <item>What would you tell your best friend if they felt this urge? Say that to yourself.</item>
+        <item>The craving is temporary. Your choice is permanent.</item>
+        <item>You are allowed to struggle. Struggle builds strength.</item>
+        <item>The urge is a wave that peaks in minutes, not hours.</item>
+        <item>What do you want to be known for? That, not the habit.</item>
+        <item>Late night plus tired plus alone equals danger. Prevent that combination.</item>
+        <item>The urge is a signal your old pattern is still wired. You\'re rewiring it.</item>
+        <item>You can feel the need and not act on it. That\'s the whole battle.</item>
+        <item>The habit lied about what it would do. The truth will set you free.</item>
+        <item>The urge is information. Listen. Then choose your own path.</item>
+        <item>You are stronger than your urges. This moment proves it.</item>
+        <item>The craving will fade if you give it time instead of action.</item>
+        <item>What brings peace to your mind? Go there when the urge arrives.</item>
+        <item>The urge is not a failure. Your response is your measure.</item>
+        <item>You\'ve survived harder moments than this. You\'ll survive this too.</item>
+        <item>The habit wanted to be your identity. You are more than that.</item>
+        <item>The urge is a phantom. It has no power unless you give it power.</item>
+        <item>What would feel good that doesn\'t involve the habit? Do that.</item>
+        <item>Loneliness is a trigger. Reach out before the trigger pulls.</item>
+        <item>You can be frustrated and not act on the urge.</item>
+        <item>The old pattern is familiar. The new pattern will become familiar too.</item>
+        <item>The urge is like a child who wants candy. You can acknowledge it and say no.</item>
+        <item>What are you building with your refusal? Build that consciously.</item>
+        <item>The craving is your brain healing. It hurts because healing is real.</item>
+        <item>You are allowed to rest. Rest is not weakness.</item>
+        <item>The urge will come back. Every return is proof you\'ve made progress.</item>
+        <item>The habit was a escape route. You\'re staying and facing it instead.</item>
+        <item>The urge is information about your needs, not a command about your actions.</item>
+        <item>What fills time that matters? Fill time with that.</item>
+        <item>Late night is when urges are cruelest. Go to bed earlier.</item>
+        <item>The urge is a wave. You are solid ground. Let it wash over you.</item>
+        <item>You can be bored and not reach for the habit.</item>
+        <item>The habit promised control. You\'re taking real control now.</item>
+        <item>The urge is not you. It\'s a pattern your brain learned. You\'re unlearning it.</item>
+        <item>What would you do if you weren\'t afraid? Do that.</item>
+        <item>The craving is a sign your system is rebalancing. That\'s healing.</item>
+        <item>You are building a life the urge can\'t touch.</item>
+        <item>The urge whispers. Don\'t listen.</item>
+        <item>What brings you real joy? Build your day around that.</item>
+        <item>Stress is a trigger. Face the stress without the habit.</item>
+        <item>You can sit with the urge and breathe and wait.</item>
+        <item>The old pattern wants to feel comfortable. Discomfort is the bridge to new comfort.</item>
+        <item>The urge is strongest when you\'re vulnerable. Protect yourself.</item>
+        <item>You are allowed to feel weak and still choose strength.</item>
+        <item>The habit was a lie. The truth is you can live without it.</item>
+        <item>The urge is a test of your intention. You\'re passing.</item>
+        <item>What does your best life require? Quitting this habit. Keep going.</item>
+        <item>The urge is a signal without a message. Stop searching for meaning. Just breathe.</item>
+        <item>You can pause without understanding. Understanding comes later.</item>
+        <item>The craving peaks and plateaus and finally fades. Ride all three stages.</item>
+        <item>What would surprise your past self about your strength? You\'re living that surprise.</item>
+        <item>The urge is a test that doesn\'t grade you. You\'re always passing.</item>
+        <item>You are not the sum of your urges. You\'re the one who observes them.</item>
+        <item>The habit wanted permanence. You\'re choosing impermanence. You\'re winning.</item>
+        <item>What would make today a good day? Define it without the habit.</item>
+        <item>The urge is a visitor who overstays. You\'re allowed to ask it to leave.</item>
+        <item>You can be afraid of relapse and still relapse-free right now.</item>
+        <item>The craving speaks the language of urgency. You speak the language of time.</item>
+        <item>Late night is when willpower is lowest. Prevent the time, not just the choice.</item>
+        <item>The urge is a pattern you learned. You\'re learning a new pattern now.</item>
+        <item>You are building proof, not just making promises.</item>
+        <item>The habit lied about giving you what you needed. You\'re finding truth now.</item>
+        <item>The urge is a reminder of who you were. You\'re someone different now.</item>
+        <item>What would feel like freedom? Move toward that instead.</item>
+        <item>The craving is a debt the habit created. You\'re paying it off day by day.</item>
+        <item>You can sit in your own company without reaching for the habit.</item>
+        <item>The urge will test your integrity. Every moment of resistance proves it.</item>
+        <item>Identify what the habit stole from you. Take it back.</item>
+        <item>The old pattern is a road you\'ve stopped walking. Don\'t look back.</item>
+        <item>The urge is noise. You can be in a noisy room and stay calm.</item>
+        <item>What would it take to forgive yourself for the time you spent? Start now.</item>
+        <item>You are not healing wrong. You are healing exactly right.</item>
+        <item>The habit wanted to be your solution. You\'re finding real solutions.</item>
+        <item>The craving is withdrawal. Withdrawal is healing happening.</item>
+        <item>Late nights will always be hard. Early bed is your best friend.</item>
+        <item>You are writing a story about who you\'re becoming. Make it a good one.</item>
+        <item>The urge will pass. You will remain. That\'s the whole difference.</item>
+        <item>You are not running from something. You are walking toward yourself.</item>
+        <item>The person you want to be is waiting for you to choose them today.</item>
+        <item>This moment is where your future self is built.</item>
+        <item>You keep promises to yourself. Starting now.</item>
+        <item>Freedom means making your own choices. You are making one right now.</item>
+        <item>What would the best version of you do? That\'s who you are becoming.</item>
+        <item>The habit does not define you. Your choices do.</item>
+        <item>You deserve to trust yourself. Build that trust one day at a time.</item>
+        <item>Your future self is already proud of you for trying.</item>
+        <item>Presence is a gift you give yourself and everyone around you.</item>
+        <item>Real connection happens when you show up as you.</item>
+        <item>You are choosing dignity today. That is enough.</item>
+        <item>The urge will pass. Your integrity is permanent.</item>
+        <item>What values matter most to you? Live them today.</item>
+        <item>You are not fixing yourself. You are honoring yourself.</item>
+        <item>Your life is too valuable for half-attention.</item>
+        <item>The old pattern does not own you.</item>
+        <item>Self-respect is not earned through perfection. It comes from honest effort.</item>
+        <item>You are the author of who you become.</item>
+        <item>Today you choose presence over absence.</item>
+        <item>Every choice for yourself is a promise kept.</item>
+        <item>The person you are right now can do this.</item>
+        <item>You are stronger than you think. Calmer than you believe.</item>
+        <item>Identity is not what you did. It is what you do next.</item>
+        <item>This is how you become reliable to yourself.</item>
+        <item>You do not need permission to respect yourself.</item>
+        <item>The urge is just noise. You are the signal.</item>
+        <item>What kind of life do you want to live? You are building it now.</item>
+        <item>Your attention is sacred. Protect it.</item>
+        <item>Trust yourself. You have already proven you can.</item>
+        <item>Real confidence comes from keeping your word to yourself.</item>
+        <item>You are writing your story with every choice.</item>
+        <item>The habit thrives on your divided attention. Take it back.</item>
+        <item>Freedom is not the absence of rules. It is choosing your own.</item>
+        <item>You deserve to be fully present in your own life.</item>
+        <item>What does your conscience tell you? Listen to it.</item>
+        <item>The version of you that you respect is who you are becoming.</item>
+        <item>Intention makes ordinary moments meaningful.</item>
+        <item>You are not broken. You are choosing yourself.</item>
+        <item>Every day is a chance to prove who you really are.</item>
+        <item>The urge gets weaker. Your resolve gets stronger.</item>
+        <item>You are someone who keeps promises. Especially to yourself.</item>
+        <item>What would you tell a friend in your position? Tell yourself that.</item>
+        <item>Identity starts with one choice. You are making it now.</item>
+        <item>Your future self is not a stranger. It is you.</item>
+        <item>Presence is how you love the people in your life.</item>
+        <item>You are building a self you can trust. That takes time. You have it.</item>
+        <item>The habit is temporary. Who you are becoming is permanent.</item>
+        <item>Real strength is quiet. It does not need to announce itself.</item>
+        <item>You are choosing the kind of person you want to be.</item>
+        <item>This is what keeping yourself matters.</item>
+        <item>Your values are not abstract. They live in your choices today.</item>
+        <item>The urge wants you to forget who you are. Remember.</item>
+        <item>You deserve to be proud of yourself.</item>
+        <item>Every moment is a fresh chance to honor your own life.</item>
+        <item>Dignity is not fragile. It grows stronger when you feed it.</item>
+        <item>You are the person you have been waiting for.</item>
+        <item>What would it feel like to trust yourself completely?</item>
+        <item>The old pattern is old. You are new.</item>
+        <item>Presence is not about getting it right. It is about showing up.</item>
+        <item>You are learning to love yourself differently.</item>
+        <item>Your attention is a finite thing. Spend it well.</item>
+        <item>The habit does not define your capacity. Your choices do.</item>
+        <item>You are becoming someone you respect.</item>
+        <item>Real freedom tastes like choosing your own path.</item>
+        <item>The version of you that you want to meet is forming right now.</item>
+        <item>You are building a relationship with yourself that matters.</item>
+        <item>Identity is not fixed. It is something you choose each day.</item>
+        <item>The urge fades. The respect you build lasts.</item>
+        <item>You are learning to keep the most important promise of all.</item>
+        <item>What do you want to look back and remember about yourself?</item>
+        <item>The habit wants you small. You are choosing yourself large.</item>
+        <item>Presence means you get to enjoy the actual moment you are in.</item>
+        <item>Your future self is not asking for perfection. Just honesty.</item>
+        <item>You are someone who shows up for themselves.</item>
+        <item>The reward for this is simple: you.</item>
+        <item>Self-respect is not a luxury. It is how you live.</item>
+        <item>You are rewriting your relationship with yourself.</item>
+        <item>Every choice is a chance to prove something to yourself.</item>
+        <item>The urge does not get to decide who you are.</item>
+        <item>Your values matter more than the temporary pull.</item>
+        <item>You are learning what it means to trust yourself completely.</item>
+        <item>The person you want to be is patient. They are waiting.</item>
+        <item>Presence is the greatest gift to yourself and others.</item>
+        <item>You are choosing intention over autopilot.</item>
+        <item>The habit promised something. You promised something better to yourself.</item>
+        <item>Identity is built in moments like this one.</item>
+        <item>Real strength is choosing yourself when nobody is watching.</item>
+        <item>You are becoming someone you want to know.</item>
+        <item>The version of you that you respect lives in your choices.</item>
+        <item>You are not escaping something. You are choosing something.</item>
+        <item>Dignity grows every time you choose yourself.</item>
+        <item>The urge is temporary. Your integrity is not.</item>
+        <item>You are learning to be your own best friend.</item>
+        <item>What matters to you more than the habit?</item>
+        <item>The old pattern does not get a vote in who you become.</item>
+        <item>You are building a life that reflects your real values.</item>
+        <item>Your attention belongs to the life you actually want.</item>
+        <item>The person you are becoming is worth the effort.</item>
+        <item>You are choosing to be someone you can trust.</item>
+        <item>Presence is how you reclaim your own life.</item>
+        <item>Every moment you resist is a moment you are choosing yourself.</item>
+        <item>The habit thrives on absent-mindedness. You are becoming present.</item>
+        <item>You are learning what real freedom feels like.</item>
+        <item>Identity is not something you find. It is something you build.</item>
+        <item>Your future self will know you kept this promise.</item>
+        <item>You deserve to like the person you are becoming.</item>
+        <item>The urge fades. The person you are building grows stronger.</item>
+        <item>You are someone who knows what they value and lives it.</item>
+        <item>Real confidence comes from aligning action with who you want to be.</item>
+        <item>The version of you that you respect is within reach.</item>
+        <item>You are choosing to be fully in your own life.</item>
+        <item>What kind of person shows up for themselves like this? You are that person.</item>
+        <item>Clarity comes when you stop clouding your own mind.</item>
+        <item>The choice you are making right now defines who you are becoming.</item>
+        <item>This is the work of freedom. You are doing it.</item>
+        <item>Your life is the only one you get to live fully.</item>
+        <item>You are learning that real strength lives in saying no.</item>
+        <item>The person inside you that knows better is leading right now.</item>
+        <item>Every moment you choose yourself matters more than you think.</item>
+        <item>What you protect today shapes who you are tomorrow.</item>
+        <item>The old way does not call the shots anymore. You do.</item>
+        <item>You are learning to move through the world as yourself.</item>
+        <item>Intention is love made visible in the way you live.</item>
+        <item>The habit masks who you could be. You are taking the mask off.</item>
+        <item>Real peace comes from knowing you are being true.</item>
+        <item>You are becoming the kind of person you can admire.</item>
+        <item>This is not about punishment. This is about respect.</item>
+        <item>The urge is a lie about what you need. You know better.</item>
+        <item>You are building something that cannot be shaken.</item>
+        <item>Your future self is rooting for you right now.</item>
+        <item>Presence is how you stay connected to what matters.</item>
+        <item>You are learning to be the person others can trust because you trust yourself.</item>
+        <item>Every refusal is a yes to something better.</item>
+        <item>The version of you that is whole is emerging.</item>
+        <item>You deserve a life where you feel like yourself.</item>
+        <item>What you are doing takes real courage. Name it.</item>
+        <item>The habit steals time. You are taking yours back.</item>
+        <item>You are choosing clarity over confusion.</item>
+        <item>Real victory is quiet. It lives inside.</item>
+        <item>Identity forms in the choices nobody sees you make.</item>
+        <item>You are learning what it means to honor yourself completely.</item>
+        <item>The urge gets easier. Your self-respect gets stronger.</item>
+        <item>You are becoming someone with genuine boundaries.</item>
+        <item>What you are protecting is sacred. Yourself.</item>
+        <item>The old pattern is breaking. Something new is growing.</item>
+        <item>You are learning to listen to your own wisdom.</item>
+        <item>Freedom is not a destination. It is how you move through each day.</item>
+        <item>You are building a foundation that supports real change.</item>
+        <item>Every moment of presence is a moment of power.</item>
+        <item>The person you want to become needs you to do this.</item>
+        <item>You are learning that keeping your word matters most.</item>
+        <item>Real dignity is never negotiable.</item>
+        <item>You are the only one living your life. Own it completely.</item>
+        <item>The habit does not own your future. You do.</item>
+        <item>You are becoming someone who makes choices instead of excuses.</item>
+        <item>What you are building is for you alone.</item>
+        <item>Presence connects you to the life that is actually yours.</item>
+        <item>You are learning to want yourself more than the urge.</item>
+        <item>The version of you without this burden is waiting.</item>
+        <item>Every day you choose you is a day you are winning.</item>
+        <item>You are becoming reliable to the one person who matters most.</item>
+        <item>Real strength is choosing yourself when it is hard.</item>
+        <item>The clarity that comes is worth every moment of this.</item>
+        <item>You are learning that freedom is internal first.</item>
+        <item>What you respect in yourself grows when you feed it.</item>
+        <item>You are not waiting to become worthy. You are worthy now.</item>
+        <item>The habit is an old story. You are writing a new one.</item>
+        <item>You are choosing to be present for your own life.</item>
+        <item>Every moment of resistance is a moment of growth.</item>
+        <item>The person you are becoming will understand why you did this.</item>
+        <item>You are learning to love yourself in action.</item>
+        <item>Real peace comes from living in alignment with your values.</item>
+        <item>You are building a self you never have to lie to.</item>
+        <item>The urge fades like everything temporary does.</item>
+        <item>You deserve to feel at home in your own choices.</item>
+        <item>Identity is written in what you do when tested.</item>
+        <item>You are learning that presence is the deepest form of care.</item>
+        <item>The version of you that is free is closer than you know.</item>
+        <item>What you protect today becomes who you are tomorrow.</item>
+        <item>You are choosing to be someone you can count on.</item>
+        <item>Every honest moment counts. You are collecting them.</item>
+        <item>Real strength is internal. It lives in your spine.</item>
+        <item>You are becoming someone who honors their own promises.</item>
+        <item>The clarity you are building will sustain you.</item>
+        <item>You are not escaping. You are arriving.</item>
+        <item>What you are doing proves something to yourself.</item>
+        <item>The habit wants surrender. You are choosing sovereignty.</item>
+        <item>You are learning that the best life is the one you choose.</item>
+        <item>Presence is the antidote to the lie the habit tells.</item>
+        <item>Every moment you stay is a moment you stay true.</item>
+        <item>You are becoming the kind of person worth being.</item>
+        <item>Real freedom tastes like doing what you believe in.</item>
+        <item>The version of you that trusts yourself is emerging.</item>
+        <item>You are learning that dignity is not given. It is chosen.</item>
+        <item>What matters is that you are choosing. Keep choosing.</item>
+        <item>The old story does not own the next chapter.</item>
+        <item>You are building a relationship with yourself that lasts.</item>
+        <item>Every moment of choice is a moment of power.</item>
+        <item>The person you are becoming is not far away.</item>
+        <item>You are learning to live with intention.</item>
+        <item>Real respect comes from keeping your own promises.</item>
+        <item>The urge is temporary. Your character is permanent.</item>
+        <item>You are choosing to be fully alive in your own life.</item>
+        <item>Identity is built from a thousand small yeses to yourself.</item>
+        <item>You deserve to look yourself in the eye with no shame.</item>
+        <item>The clarity that comes will be your new home.</item>
+        <item>You are not waiting for permission. You are giving it to yourself.</item>
+        <item>What you are doing right now is the beginning of everything.</item>
+        <item>You are learning to trust what you know is true.</item>
+        <item>The habit whispers. Your conscience speaks. Listen louder.</item>
+        <item>Real choice means living with what you decided.</item>
+        <item>You are becoming someone with actual conviction.</item>
+        <item>Every moment you stay is a moment you are building yourself.</item>
+        <item>The person inside who knows better is already leading.</item>
+        <item>What you are building is only for those who want it.</item>
+        <item>Freedom means you are not answering to the urge anymore.</item>
+        <item>You are learning that your own respect is worth more.</item>
+        <item>The version of you that is intact is growing back.</item>
+        <item>What you protect in these moments is your future.</item>
+        <item>You are choosing to be someone you recognize.</item>
+        <item>Real power is choosing what matters and living it.</item>
+        <item>The clarity you are building is becoming permanent.</item>
+        <item>You are learning that presence is where life actually is.</item>
+        <item>Every honest choice brings you closer to yourself.</item>
+        <item>The habit cannot touch who you are choosing to be.</item>
+        <item>You deserve to feel whole in your own decisions.</item>
+        <item>You are building something the urge will never take.</item>
+        <item>What defines you is what you choose when it is hard.</item>
+        <item>The old pattern is losing its grip. You are standing firm.</item>
+        <item>Real strength is keeping your word to yourself in the dark.</item>
+        <item>You are becoming someone whose yes means something.</item>
+        <item>Every moment you choose you is a moment of victory.</item>
+        <item>The person you are becoming will be grateful.</item>
+        <item>You are learning what freedom actually requires.</item>
+        <item>Presence is your rebellion against the autopilot.</item>
+        <item>You are building a life that aligns with your soul.</item>
+        <item>The version of you that is authentic is taking shape.</item>
+        <item>What you are doing right now ripples into everything.</item>
+        <item>You deserve to be at peace with your own choices.</item>
+        <item>The clarity you gain is a foundation for everything.</item>
+        <item>You are learning to make choices that reflect who you are.</item>
+        <item>Real respect comes from doing the hard thing when it matters.</item>
+        <item>Every day without the old habit is a day of proof.</item>
+        <item>You are becoming someone who can trust themselves.</item>
+        <item>The urge does not understand who you are becoming.</item>
+        <item>You are choosing to live with intention and awareness.</item>
+        <item>What you protect becomes what you preserve.</item>
+        <item>Identity is not inherited. It is chosen and rebuilt daily.</item>
+        <item>You are learning that freedom is an inside job.</item>
+        <item>The version of you that is free is waiting to be found.</item>
+        <item>Every moment you resist is a moment of strength.</item>
+        <item>You deserve to know yourself as someone who keeps promises.</item>
+        <item>The habit is fading. You are getting clearer.</item>
+        <item>You are becoming someone whose values are lived.</item>
+        <item>Real peace comes from knowing you are choosing right.</item>
+        <item>What you are building will sustain you through everything.</item>
+        <item>Every choice is a vote for who you want to become.</item>
+        <item>You are learning to honor the person you want to be.</item>
+        <item>The clarity of your choices is your greatest power.</item>
+        <item>You are not becoming someone new. You are becoming more you.</item>
+        <item>What matters is that you are here. You are choosing.</item>
+        <item>The old story ends. The new one begins with you.</item>
+        <item>Every moment of presence is a moment of wholeness.</item>
+        <item>You are becoming someone you genuinely like.</item>
+        <item>Real freedom tastes like living your own truth.</item>
+        <item>The version of you that you trust is forming now.</item>
+        <item>You deserve to look back with no regret about today.</item>
+        <item>What you are building is built to last.</item>
+        <item>You are exactly where you need to be.</item>
+        <item>Every moment you don\'t give in is a moment of strength.</item>
+        <item>You\'re building something new with each day that passes.</item>
+        <item>Small steps forward still count as forward.</item>
+        <item>Progress isn\'t always visible, but you\'re making it.</item>
+        <item>Today, you chose yourself. That\'s what matters.</item>
+        <item>You didn\'t do the thing. That\'s everything.</item>
+        <item>The path to change starts with one decision.</item>
+        <item>Even when it\'s hard, you\'re still moving.</item>
+        <item>This moment of resistance is your strength.</item>
+        <item>You don\'t have to win forever, just today.</item>
+        <item>One day at a time is the gentlest way through.</item>
+        <item>Breaking free takes time. You have it.</item>
+        <item>Don\'t worry about next week. Just handle today.</item>
+        <item>The journey is long, but you only walk one day at a time.</item>
+        <item>You\'re not running a race. You\'re building a life.</item>
+        <item>Let tomorrow worry about itself.</item>
+        <item>Today is all you need to manage right now.</item>
+        <item>Time moves slower than you think it will.</item>
+        <item>A slip is not a failure, it\'s information.</item>
+        <item>You stumbled. That doesn\'t erase your progress.</item>
+        <item>One moment doesn\'t define your journey.</item>
+        <item>You can start again right now. No waiting.</item>
+        <item>Slips happen. What matters is what comes next.</item>
+        <item>You\'ve learned something. Use it.</item>
+        <item>This moment of struggle will teach you something.</item>
+        <item>Falling back once doesn\'t mean you failed.</item>
+        <item>The next choice is always available to you.</item>
+        <item>You can begin again as many times as you need to.</item>
+        <item>Be as kind to yourself as you would be to a friend.</item>
+        <item>You deserve gentleness while you heal.</item>
+        <item>Harsh words won\'t help. Kindness will.</item>
+        <item>You\'re doing hard work. Treat yourself gently.</item>
+        <item>This journey doesn\'t need punishment, only patience.</item>
+        <item>Shame won\'t help you. Compassion will.</item>
+        <item>You\'re allowed to be imperfect while changing.</item>
+        <item>Forgive yourself as quickly as you can.</item>
+        <item>Your progress deserves quiet celebration.</item>
+        <item>Be the voice that lifts you up, not tears you down.</item>
+        <item>A broken streak doesn\'t erase your strength.</item>
+        <item>Consistency matters more than perfection.</item>
+        <item>What you do most days matters more than one day.</item>
+        <item>The real measure is how you show up regularly.</item>
+        <item>One slip doesn\'t undo your pattern of saying no.</item>
+        <item>Your habits form through small, repeated choices.</item>
+        <item>What counts is the rhythm you\'re building, not a perfect line.</item>
+        <item>Streaks break. Character doesn\'t.</item>
+        <item>You\'re training yourself through repetition.</item>
+        <item>Each day is a chance to reinforce who you\'re becoming.</item>
+        <item>The first days are the hardest. It gets easier.</item>
+        <item>Early on, everything feels urgent. That fades.</item>
+        <item>Right now, it feels impossible. It won\'t always.</item>
+        <item>The cravings will weaken. Trust that they will.</item>
+        <item>What burns bright now will cool down.</item>
+        <item>Your body and mind will adjust faster than you think.</item>
+        <item>The first week is the steepest climb.</item>
+        <item>Each day gets a little lighter than the one before.</item>
+        <item>You\'re in the hardest part. It will change.</item>
+        <item>This intensity you feel now is temporary.</item>
+        <item>After a while, the choice becomes easier to make.</item>
+        <item>The urge loses its grip over time.</item>
+        <item>You\'ll notice one day that you didn\'t even think about it.</item>
+        <item>Recovery builds momentum as you go.</item>
+        <item>Each day of resistance makes the next one softer.</item>
+        <item>Your brain is rewiring itself. That takes time, then happens.</item>
+        <item>What takes effort now becomes natural.</item>
+        <item>The path gets smoother the more you walk it.</item>
+        <item>You\'ll wake up one day and feel different.</item>
+        <item>Strength builds quietly, then you realize you have it.</item>
+        <item>One day is a milestone. One week is too.</item>
+        <item>Mark your wins privately. They\'re still victories.</item>
+        <item>You don\'t have to broadcast to honor your progress.</item>
+        <item>Quiet pride counts as much as any celebration.</item>
+        <item>Celebrate without fanfare. The victory is real.</item>
+        <item>Every milestone, no matter the size, is worth acknowledging.</item>
+        <item>Your breakthroughs don\'t need an audience to matter.</item>
+        <item>Silent strength is still strength.</item>
+        <item>Notice what you\'ve done, even if no one else does.</item>
+        <item>You know what it cost to get here. That\'s enough.</item>
+        <item>Think beyond tomorrow. You\'re building something that lasts.</item>
+        <item>This choice today shapes your whole life.</item>
+        <item>You\'re not just getting through today, you\'re changing forever.</item>
+        <item>Future you will be grateful for what present you is doing.</item>
+        <item>The person you\'re becoming is worth it.</item>
+        <item>Your future self is counting on you.</item>
+        <item>What you\'re doing now compounds over time.</item>
+        <item>You\'re investing in the life you actually want.</item>
+        <item>This isn\'t about today. It\'s about who you\'re becoming.</item>
+        <item>Everything you do now ripples forward.</item>
+        <item>When the urge hits, remember why you started.</item>
+        <item>The old pattern wants to return. You get to say no.</item>
+        <item>What you\'re breaking took time to form. Undoing takes time too.</item>
+        <item>You\'re rewiring years of behavior. That\'s patient work.</item>
+        <item>The habit whispers. You can choose not to listen.</item>
+        <item>Each time you say no, you\'re training yourself to say no next time.</item>
+        <item>You\'re not being deprived. You\'re being freed.</item>
+        <item>This is about who you want to be, not what you can\'t have.</item>
+        <item>Your reasons for stopping are bigger than the urge to return.</item>
+        <item>The life without it is worth what you\'re giving up to get it.</item>
+        <item>Today you\'re stronger than the habit. Trust that.</item>
+        <item>Wanting something doesn\'t mean you have to do it.</item>
+        <item>You can feel the urge and still walk past it.</item>
+        <item>The feeling will pass. You don\'t have to act on every feeling.</item>
+        <item>Urges come and go like waves. You\'re learning to watch them pass.</item>
+        <item>This craving is not a command. It\'s just a thought.</item>
+        <item>You\'re becoming the kind of person who can want something and refuse it.</item>
+        <item>Each refusal proves you have the power you doubted.</item>
+        <item>The old pattern doesn\'t own you anymore.</item>
+        <item>You\'re taking your life back, one choice at a time.</item>
+        <item>When you\'re tired, remember how far you\'ve already come.</item>
+        <item>The hardest part isn\'t behind you, but you\'re past the worst.</item>
+        <item>You\'ve already done the hardest thing. Staying steady is easier.</item>
+        <item>You\'ve proven you can do this. You don\'t need to prove it again.</item>
+        <item>Rest when you need to. The work continues anyway.</item>
+        <item>Exhaustion is real. It doesn\'t mean you\'re failing.</item>
+        <item>You can be tired and still be moving forward.</item>
+        <item>Tomorrow is a fresh day. This one doesn\'t have to be perfect.</item>
+        <item>If today was hard, tomorrow gets to be easier.</item>
+        <item>Nothing you do today ruins everything you\'ve built.</item>
+        <item>One hard day doesn\'t erase weeks of progress.</item>
+        <item>The bad day doesn\'t define the whole week.</item>
+        <item>You\'re allowed to have a rough moment and still be okay.</item>
+        <item>Recovery isn\'t a straight line. The line still goes up.</item>
+        <item>Some days will feel like starting over. That\'s normal.</item>
+        <item>You don\'t restart. You continue. Even the hard days are part of it.</item>
+        <item>When things feel like they\'re falling apart, you\'re often just tired.</item>
+        <item>Your worth is not determined by your streak.</item>
+        <item>Who you are is not measured by one moment of weakness.</item>
+        <item>You\'re more than one choice. You\'re all of them together.</item>
+        <item>The habit was one chapter. You\'re writing a whole new book now.</item>
+        <item>This version of you is still forming. Give yourself time.</item>
+        <item>You\'re allowed to change slowly.</item>
+        <item>Healing doesn\'t have a deadline.</item>
+        <item>Recovery happens at its own pace, and that\'s okay.</item>
+        <item>The way forward isn\'t always clear. You don\'t need to see the whole path.</item>
+        <item>Just the next step is enough.</item>
+        <item>You don\'t have to figure it all out today.</item>
+        <item>Trust the process even when you can\'t see the progress.</item>
+        <item>The work you\'re doing now won\'t show results immediately. That\'s fine.</item>
+        <item>Invisible progress is still progress.</item>
+        <item>You\'re changing even when you can\'t see it.</item>
+        <item>Your body and mind are adjusting quietly.</item>
+        <item>The reward for stopping isn\'t always obvious at first.</item>
+        <item>What you gain from this takes time to show.</item>
+        <item>Be patient with yourself the way you\'d be patient with someone you love.</item>
+        <item>If you\'re struggling, it doesn\'t mean you\'re weak.</item>
+        <item>Struggle is a sign you\'re growing.</item>
+        <item>The discomfort is proof that something is changing.</item>
+        <item>You\'re doing something very hard. Honor that.</item>
+        <item>You\'re choosing this, every day, even when it\'s painful.</item>
+        <item>No one can take your freedom away. You\'re fighting for it.</item>
+        <item>You\'re not depriving yourself. You\'re claiming yourself.</item>
+        <item>This is an act of self-respect.</item>
+        <item>Treat this the way you\'d treat something you truly love.</item>
+        <item>You\'re worth the effort you\'re putting in.</item>
+        <item>You\'re worth keeping. You\'re worth fighting for.</item>
+        <item>Stop questioning whether you\'re worth it.</item>
+        <item>Doubt will come. Let it. You don\'t have to believe it.</item>
+        <item>You can be uncertain and still move forward.</item>
+        <item>Belief will follow action. Act first.</item>
+        <item>You don\'t have to feel confident to do the thing.</item>
+        <item>Do the thing. Confidence will come.</item>
+        <item>Some days you\'ll feel strong. Some days you\'ll feel fragile.</item>
+        <item>The fragile days are where the real strength lives.</item>
+        <item>When you\'re weak, showing up is bravery.</item>
+        <item>The habit thrived in silence and shame. Silence and shame are its fuel.</item>
+        <item>Speaking about it, accepting it, and moving forward starves it.</item>
+        <item>You don\'t have to hide this. There\'s nothing to hide.</item>
+        <item>What you\'re doing is healing. That\'s the opposite of shameful.</item>
+        <item>Every person who quit something felt what you\'re feeling.</item>
+        <item>Others have walked this path before you.</item>
+        <item>Your story isn\'t over. It\'s just beginning a new chapter.</item>
+        <item>The ending you want is still possible. More than possible.</item>
+        <item>No matter how many times you\'ve tried before, this time is different.</item>
+        <item>Your past attempts weren\'t failures. They were practice.</item>
+        <item>Each time you tried, you learned something.</item>
+        <item>This knowledge is yours now. Use it.</item>
+        <item>The urge will test you. That\'s what urges do.</item>
+        <item>Every test you pass gets you closer to peace.</item>
+        <item>The obsessive thinking will fade.</item>
+        <item>The constant mental replay will quiet down.</item>
+        <item>One day you\'ll realize you haven\'t thought about it in hours.</item>
+        <item>You\'re allowed to want this. Want it fully.</item>
+        <item>Want the freedom. Want the peace. Want the new version of you.</item>
+        <item>When motivation fades, let your reasons carry you.</item>
+        <item>When reasons fade, let routine carry you.</item>
+        <item>When routine breaks, just pick it up again.</item>
+        <item>This isn\'t fragile. It\'s flexible.</item>
+        <item>You\'re building something resilient.</item>
+        <item>The old pattern will try one more time. You know it will.</item>
+        <item>You\'ll be ready, because you\'ve been preparing.</item>
+        <item>Each day of saying no is practice for that moment.</item>
+        <item>Your future is unwritten. You get to write it.</item>
+        <item>Every choice you make now is a word in that future.</item>
+        <item>What story do you want to tell?</item>
+        <item>The hardest thing you\'ve ever done is what you\'re doing right now.</item>
+        <item>You\'re not just surviving. You\'re learning who you want to be.</item>
+        <item>The person you\'re becoming doesn\'t need the habit anymore.</item>
+        <item>Growth is slow. Growth is real. Growth is happening.</item>
+        <item>Your brain is plastic. It can change. It is changing.</item>
+        <item>What feels impossible today will feel normal soon.</item>
+        <item>The new normal is waiting for you.</item>
+        <item>The you that keeps trying is worth celebrating.</item>
+        <item>This peace you\'re building won\'t come all at once.</item>
+        <item>You belong here. You belong in this recovery.</item>
+        <item>This morning you have an extra hour. What will you do with it?</item>
+        <item>Your mind is clearer than it was yesterday. Notice that.</item>
+        <item>You chose yourself today. That\'s what matters.</item>
+        <item>The habit is quieter now. You\'re learning its rhythm.</item>
+        <item>One walk in the morning can reset your whole day.</item>
+        <item>You\'re building something real with the time you\'re saving.</item>
+        <item>Sleep tonight will feel different. Let it.</item>
+        <item>Cold water isn\'t punishment. It\'s proof you can choose discomfort on your own terms.</item>
+        <item>Your hands are free for something better.</item>
+        <item>The urge will come. You know how to sit with it now.</item>
+        <item>Focus grows when you stop feeding the old pattern.</item>
+        <item>You\'re not fighting the habit anymore. You\'re just turning away.</item>
+        <item>Discipline today is freedom tomorrow. It always has been.</item>
+        <item>The afternoon slump is smaller. You notice it?</item>
+        <item>Gratitude for small wins builds momentum faster than shame about the past.</item>
+        <item>You\'re teaching your body a new rhythm.</item>
+        <item>The habit whispers. Your commitment speaks louder.</item>
+        <item>This energy you feel is yours to spend now.</item>
+        <item>Staying calm when the urge comes is a superpower.</item>
+        <item>What would you tell a friend in your position?</item>
+        <item>Your morning routine is your anchor.</item>
+        <item>The urge is data, not destiny.</item>
+        <item>You\'re not depriving yourself. You\'re protecting yourself.</item>
+        <item>Ten minutes outside is ten minutes your mind wasn\'t chasing it.</item>
+        <item>This week is different from the last one. See the difference.</item>
+        <item>Your family notices. They don\'t say it yet, but they notice.</item>
+        <item>The habit fed your anxiety. Watch it shrink as you stay steady.</item>
+        <item>You\'re becoming someone who can sit still.</item>
+        <item>One day at a time is not weakness. It\'s strategy.</item>
+        <item>Your sleep is your body\'s way of healing. Honor it.</item>
+        <item>The urge gets weaker when you don\'t argue with it.</item>
+        <item>You\'re not starting over. You\'re continuing.</item>
+        <item>Replacement habits take time. Be patient with yourself.</item>
+        <item>This moment is easier than the last one was.</item>
+        <item>Your mind is less crowded now. Feel the space.</item>
+        <item>Work is clearer when the habit isn\'t in the way.</item>
+        <item>The old pattern had a cost. You\'re free from it now.</item>
+        <item>You\'re learning to be bored. That\'s a real skill.</item>
+        <item>The morning is yours. What will you create with it?</item>
+        <item>Your hands shake less now. Did you notice?</item>
+        <item>This is what calm feels like.</item>
+        <item>You don\'t need permission to quit. You already have it.</item>
+        <item>The urge passes. Every time, it passes.</item>
+        <item>Your body remembers the habit. Your mind knows better.</item>
+        <item>Small discipline today builds large freedom tomorrow.</item>
+        <item>You\'re not broken. You\'re just redirecting your strength.</item>
+        <item>Ten thousand small moments of choice brought you here.</item>
+        <item>The habit would still be here if you fed it. You didn\'t.</item>
+        <item>Your friends want to see you like this. Clear and present.</item>
+        <item>The evening routine is your reward, not your test.</item>
+        <item>You\'re breathing more deeply now.</item>
+        <item>The urge has lost its power to make decisions for you.</item>
+        <item>Today you have energy for something real.</item>
+        <item>Gratitude for what you\'re gaining beats regret about what you lost.</item>
+        <item>You\'re not white-knuckling. You\'re choosing.</item>
+        <item>The habit thrived in darkness. Light is your ally.</item>
+        <item>Your focus sharpens when you stop burning energy on it.</item>
+        <item>Cold water wakes you up the way the habit used to. Without the cost.</item>
+        <item>You\'re not depriving yourself. You\'re investing in yourself.</item>
+        <item>The urge is loud on some days, quiet on others. Both are fine.</item>
+        <item>Your sleep debt is shrinking.</item>
+        <item>The walk you took this morning had a purpose: to remember you can be calm.</item>
+        <item>You\'re not perfect. You\'re persistent.</item>
+        <item>The habit lives in habit. Break the habit, break its power.</item>
+        <item>Your mind is a tool again, not a battlefield.</item>
+        <item>The morning is your blank page.</item>
+        <item>You\'re teaching your nervous system a new way to feel safe.</item>
+        <item>This is what you chose. Keep choosing it.</item>
+        <item>The old pattern wants to feel like freedom. Real freedom feels like this.</item>
+        <item>Your energy is no longer borrowed from tomorrow.</item>
+        <item>The urge will test you. Let it. You\'ve passed every test so far.</item>
+        <item>Discipline is love applied to yourself.</item>
+        <item>You\'re not running from the habit. You\'re running toward something better.</item>
+        <item>The clarity you feel now is worth protecting.</item>
+        <item>One calm evening proves you can have many.</item>
+        <item>Your body is healing. Trust the process.</item>
+        <item>The moment you stop fighting is the moment you start winning.</item>
+        <item>You\'re building a life the habit has no room in.</item>
+        <item>The urge feeds on secrecy. Bring it into the light and watch it shrink.</item>
+        <item>Sleep is where your body keeps its promises.</item>
+        <item>The replacement habit is becoming real now.</item>
+        <item>You\'re not missing the habit. You\'re remembering yourself.</item>
+        <item>The morning routine is your daily vote for yourself.</item>
+        <item>Gratitude for the moment you\'re in beats worry about the moment ahead.</item>
+        <item>Your mind has room for something new now.</item>
+        <item>The walk through the woods is the medicine the habit was pretending to be.</item>
+        <item>You\'re learning that you can sit with discomfort without feeding it.</item>
+        <item>The habit thrived on urgency. Calm is its enemy.</item>
+        <item>Your focus returns the moment you stop dividing it.</item>
+        <item>Every small win is permission to believe in the bigger ones.</item>
+        <item>You\'re not depriving yourself. You\'re practicing freedom.</item>
+        <item>The urge is a visitor, not a landlord.</item>
+        <item>Your energy is clearing a path for something real.</item>
+        <item>The old pattern is quieter because you\'re not feeding it.</item>
+        <item>You\'re building a craft now, not just passing time.</item>
+        <item>Discipline without compassion is punishment. You know the difference.</item>
+        <item>The night is quieter. Sleep comes easier. You feel it.</item>
+        <item>Your friends want this version of you. The clear one.</item>
+        <item>The habit promised escape. You found something better: presence.</item>
+        <item>The urge will come tomorrow. You know how to handle it.</item>
+        <item>The morning routine rewires your brain one day at a time.</item>
+        <item>You\'re not strong because you don\'t feel the urge. You\'re strong because you do and you choose anyway.</item>
+        <item>Your mind is less crowded. What will you do with the space?</item>
+        <item>The habit fed on boredom. You\'re learning to be bored and live anyway.</item>
+        <item>Gratitude for your body, which is healing, which is trying.</item>
+        <item>The walk this morning was practice. Keep practicing.</item>
+        <item>Your sleep is deeper when your mind isn\'t divided.</item>
+        <item>The urge loses power the moment you stop believing in its necessity.</item>
+        <item>You\'re not starting from zero. You\'re starting from now.</item>
+        <item>The old pattern promised relief. The real relief is living without it.</item>
+        <item>Your focus sharpens with every choice to turn away.</item>
+        <item>The cold water reminds you: discomfort doesn\'t require the habit.</item>
+        <item>You\'re not fighting anymore. You\'re just not feeding the fire.</item>
+        <item>The habit wanted your morning. Take it back.</item>
+        <item>Your hands are available for work now.</item>
+        <item>The urge is real. Your choice is realer.</item>
+        <item>Discipline applied to yourself is the highest form of love.</item>
+        <item>The evening is yours. No negotiation. No urge. Just evening.</item>
+        <item>Your mind is learning to be still. Let it learn.</item>
+        <item>The habit was loud. Your calm is louder.</item>
+        <item>The replacement habit is becoming home now.</item>
+        <item>You\'re teaching your nervous system that you\'re safe without it.</item>
+        <item>The morning walk is your daily reminder: you can choose your own direction.</item>
+        <item>Gratitude for the moment that brought you here, whatever it was.</item>
+        <item>Your focus was fractured. It\'s coming back.</item>
+        <item>The urge will peak and fall. It always falls.</item>
+        <item>Sleep is not indulgence. It\'s infrastructure.</item>
+        <item>The old pattern is a door you don\'t have to open.</item>
+        <item>Your energy is no longer being spent on hiding.</item>
+        <item>The moment you accept the urge is the moment it loses its power.</item>
+        <item>The habit promised excitement. You found peace. That\'s better.</item>
+        <item>You\'re not perfect. You\'re honest. That\'s enough.</item>
+        <item>The day ahead is yours. Use it.</item>
+        <item>Your body knows it\'s healing. Trust it.</item>
+        <item>The urge is a whisper, not a scream, because you\'re not feeding it.</item>
+        <item>Discipline is the bridge between who you are and who you want to be.</item>
+        <item>The walk you take is the answer you\'re looking for.</item>
+        <item>You\'re not running from pleasure. You\'re running toward presence.</item>
+        <item>The morning is the beginning of everything.</item>
+        <item>The habit will test you. You\'ll pass.</item>
+        <item>Your focus is a muscle. You\'re exercising it.</item>
+        <item>The sleep you\'re getting is your body saying: thank you.</item>
+        <item>You\'re building something the habit had no part in.</item>
+        <item>The urge comes from memory, not necessity.</item>
+        <item>Gratitude for the part of you that wants to change.</item>
+        <item>The cold water is your ally.</item>
+        <item>You\'re not strong in spite of the struggle. You\'re strong because of it.</item>
+        <item>The old pattern is fading because you\'re not reinforcing it.</item>
+        <item>Your mind is clearing the room for work, study, craft.</item>
+        <item>The evening routine is your promise kept to yourself.</item>
+        <item>The urge will come when you\'re tired. You know what to do.</item>
+        <item>You\'re not depriving yourself. You\'re teaching yourself something true.</item>
+        <item>The habit fed your anxiety. Watch how calm grows without it.</item>
+        <item>Sleep is where the work of healing happens.</item>
+        <item>Your energy is no longer on loan from next week.</item>
+        <item>The replacement habit is becoming part of you now.</item>
+        <item>The walk is not exercise. It\'s remembering.</item>
+        <item>You\'re learning that you can be okay without the habit\'s permission.</item>
+        <item>Discipline is not punishment. It\'s protection.</item>
+        <item>The morning routine is a love letter you write to yourself daily.</item>
+        <item>The focus that\'s coming back is yours.</item>
+        <item>The urge is loud on hard days. That\'s normal. You\'re doing fine.</item>
+        <item>Gratitude for your hands, which are free now.</item>
+        <item>The habit whispered in your ear. Your own voice is louder now.</item>
+        <item>The old pattern promised relief. You\'re building the real thing.</item>
+        <item>Your body is teaching you about calm.</item>
+        <item>The moment you stop fighting it is the moment you win.</item>
+        <item>You\'re not missing anything. You\'re gaining everything.</item>
+        <item>The urge is a test you\'ve already passed a thousand times.</item>
+        <item>The evening is quieter because your day was on your own terms.</item>
+        <item>Your mind is less fragmented.</item>
+        <item>The cold water is proof that you can choose discomfort.</item>
+        <item>The habit fed on secrecy. Your honesty is its enemy.</item>
+        <item>Sleep is healing. Let it happen.</item>
+        <item>The morning walk is your daily reset button.</item>
+        <item>You\'re not weak because you feel the urge. You\'re strong because you face it.</item>
+        <item>Discipline is self-respect in action.</item>
+        <item>The focus is returning because you stopped scattering it.</item>
+        <item>Your friends see someone they recognize. That\'s you.</item>
+        <item>The old pattern is history. You\'re in the present tense now.</item>
+        <item>The habit wanted your time. You\'re reclaiming it.</item>
+        <item>Gratitude for the clarity that\'s coming.</item>
+        <item>The urge will visit. You know the way to the door.</item>
+        <item>You\'re not running from pleasure. You\'re running toward truth.</item>
+        <item>The evening routine is structure without punishment.</item>
+        <item>Your body is healing because you\'re listening to it.</item>
+        <item>The replacement habit is becoming real today.</item>
+        <item>The moment the urge passes is proof that it always passes.</item>
+        <item>You\'re not perfect. You\'re persistent. That\'s the same as strength.</item>
+        <item>The habit was loud. Your quiet is revolution.</item>
+        <item>Sleep is not laziness. It\'s the most important work you do.</item>
+        <item>The morning is a gift you give yourself every single day.</item>
+        <item>Your focus is sharpening because it\'s no longer divided.</item>
+        <item>The cold water is a teacher. Listen to what it says.</item>
+        <item>The urge is honesty. It\'s telling you what you still need to work through.</item>
+        <item>Discipline is the conversation between you and yourself.</item>
+        <item>The old pattern had a gravitational pull. You\'re leaving its orbit.</item>
+        <item>Your energy is building instead of draining.</item>
+        <item>Gratitude for the part of you that chose this.</item>
+        <item>The habit promised escape. You found something better: yourself.</item>
+        <item>The evening you\'re having is the one you earned.</item>
+        <item>You\'re learning to be bored and to be okay with it.</item>
+        <item>The urge is a reminder. It\'s reminding you why you started.</item>
+        <item>Your mind is becoming a home again.</item>
+        <item>The replacement habit is becoming identity.</item>
+        <item>The morning walk is your conversation with yourself.</item>
+        <item>You\'re not fighting the habit anymore. You\'re ignoring it.</item>
+        <item>Discipline is love. Self-love, specifically.</item>
+        <item>The focus that\'s returning was always yours.</item>
+        <item>The habit was stealing your sleep. Notice how it\'s coming back.</item>
+        <item>Gratitude for your nervous system, which is learning to calm.</item>
+        <item>The old pattern is becoming a stranger.</item>
+        <item>Your hands are available for work, study, craft, connection.</item>
+        <item>The cold water is a small victory you choose every day.</item>
+        <item>The urge comes. The urge goes. You stay.</item>
+        <item>Sleep is architecture. Build it solid.</item>
+        <item>The morning routine is your daily practice in choosing yourself.</item>
+        <item>The evening is a sanctuary you\'re building brick by brick.</item>
+        <item>Your clarity is no accident. It\'s the result of small choices.</item>
+        <item>The replacement habit is becoming easier.</item>
+        <item>The habit fed on stress. Watch your stress diminish.</item>
+        <item>Discipline without joy is just suffering. You know the difference.</item>
+        <item>The walk is not escape. It\'s return.</item>
+        <item>Your focus is a tool that\'s sharpening itself.</item>
+        <item>Gratitude for the moment you decided to change.</item>
+        <item>The urge is a wave. You\'ve learned not to dive in.</item>
+        <item>The old pattern is losing its narrative power over you.</item>
+        <item>You\'re not running from the habit. You\'re running toward yourself.</item>
+        <item>Your body is remembering what rest feels like.</item>
+        <item>The morning is a canvas. Today you\'re painting something real.</item>
+        <item>The cold water reminds you: discomfort is not the same as harm.</item>
+        <item>Sleep is no longer a relief. It\'s a normal part of life.</item>
+        <item>Your mind is clearing because you stopped feeding the fog.</item>
+        <item>The habit wanted your attention. You\'re giving it to something real.</item>
+        <item>Discipline is the act of keeping promises to yourself.</item>
+        <item>The evening routine is a ritual, not a cage.</item>
+        <item>The urge will peak. You\'ll watch it fall. You\'ll be fine.</item>
+        <item>Gratitude for the strength you didn\'t know you had.</item>
+        <item>The replacement habit is becoming seamless now.</item>
+        <item>Your focus is returning because you stopped dividing it.</item>
+        <item>The old pattern is a door you\'ve learned to walk past.</item>
+        <item>You\'re learning that calm is more powerful than any escape.</item>
+        <item>The habit was a borrowed life. This one is yours.</item>
+        <item>The morning walk is your daily conversation with clarity.</item>
+        <item>Sleep is the foundation. Everything else is built on it.</item>
+        <item>Discipline is the architecture of freedom.</item>
+        <item>The urge is honest. It\'s telling you where the work still is.</item>
+        <item>Your energy is yours again. What will you build with it?</item>
+        <item>The evening is quieter because your day is on your terms.</item>
+        <item>The cold water is a small promise: you can do hard things.</item>
+        <item>The focus is coming back, one day at a time.</item>
+        <item>Gratitude for your body, which keeps trying.</item>
+        <item>The old pattern is history. Your history is now.</item>
+        <item>The replacement habit is becoming who you are.</item>
+        <item>The habit promised excitement. You found meaning. That\'s better.</item>
+        <item>Your mind is less crowded. What will you invite in?</item>
+        <item>The morning routine is your daily proof that you can choose.</item>
+        <item>The urge will come and go. You\'ll stay.</item>
+        <item>Sleep is the best work you do.</item>
+        <item>Discipline applied with compassion is unstoppable.</item>
+        <item>The walk is not running. It\'s returning.</item>
+        <item>Your focus is sharpening with every moment you stay clear.</item>
+        <item>Gratitude for the person you\'re becoming.</item>
+        <item>The old pattern had its moment. This moment is yours.</item>
+    </string-array>
+</resources>
