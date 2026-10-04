@@ -109,7 +109,7 @@ fun GuardScreen(onOpenHabit: (String) -> Unit, onStartFocus: () -> Unit) {
             columns = GridCells.Adaptive(340.dp),
             state = list,
             modifier = Modifier.fillMaxSize().statusBarsPadding().readableWidth(1200.dp),
-            contentPadding = PaddingValues(start = 16.dp, end = 16.dp, bottom = 112.dp),
+            contentPadding = PaddingValues(start = 16.dp, end = 16.dp, bottom = 88.dp),
             horizontalArrangement = Arrangement.spacedBy(12.dp),
         ) {
             val full: LazyGridItemSpanScope.() -> GridItemSpan = { GridItemSpan(maxLineSpan) }

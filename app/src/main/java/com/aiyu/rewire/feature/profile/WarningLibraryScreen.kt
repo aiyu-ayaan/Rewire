@@ -100,7 +100,7 @@ fun WarningLibraryScreen(onBack: () -> Unit) {
         LazyVerticalGrid(
             columns = GridCells.Adaptive(340.dp),
             modifier = Modifier.padding(padding).readableWidth(1000.dp),
-            contentPadding = PaddingValues(start = 16.dp, end = 16.dp, bottom = 104.dp),
+            contentPadding = PaddingValues(start = 16.dp, end = 16.dp, bottom = 88.dp),
             verticalArrangement = Arrangement.spacedBy(12.dp),
             horizontalArrangement = Arrangement.spacedBy(12.dp),
         ) {

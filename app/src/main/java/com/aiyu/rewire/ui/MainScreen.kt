@@ -206,7 +206,7 @@ fun MainScreen(
                 contentWindowInsets = WindowInsets(0),
                 bottomBar = {
                     AnimatedVisibility(!navBar.hidden, enter = barEnter, exit = barExit) {
-                    FloatingNavBar(tab, select)
+                        FloatingNavBar(tab, select)
                     }
                 },
             ) { padding ->
