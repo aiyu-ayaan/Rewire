@@ -649,9 +649,7 @@
     <string name="quit_days_hours">%1$d 天 %2$d 小時</string>
     <string name="quit_hours_minutes">%1$d 小時 %2$d 分</string>
     <string name="quit_ring_desc">%1$d 天，達到 %3$d 天的 %2$d%%</string>
-    <string name="quit_back">返回</string>
     <string name="quit_detail_days_strong">天，狀態穩健</string>
-    <string name="quit_detail_running">已堅持 %s</string>
     <string-array name="quit_cheer">
         <item>每段旅程都從第一步開始，而你正在邁出這一步。</item>
         <item>最初幾天最難，你正身處其中。繼續加油。</item>
@@ -660,11 +658,11 @@
         <item>連續幾週選擇了自己，這正在成為你的一部分。</item>
         <item>數月的自控。看看你已經走了多遠。</item>
     </string-array>
+    <string name="quit_started_on">自 %s 起</string>
     <string name="quit_next_title">下一個里程碑</string>
-    <string name="quit_to_go">距離 %2$s 還有 %1$s</string>
+    <string name="quit_to_go">還剩 %s</string>
     <string name="quit_stat_best">最佳紀錄</string>
     <string name="quit_stat_restarts">重新開始</string>
-    <string name="quit_stat_started">開始於</string>
     <string name="quit_milestones">里程碑</string>
     <string name="quit_milestone_reached">%s，已達成</string>
     <string name="quit_milestone_ahead">%s，還在前方</string>

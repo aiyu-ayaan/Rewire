@@ -667,9 +667,7 @@
     <string name="quit_days_hours">%1$d T %2$d Std</string>
     <string name="quit_hours_minutes">%1$d Std %2$d Min</string>
     <string name="quit_ring_desc">%1$d Tage, %2$d%% des Weges zu %3$d Tagen</string>
-    <string name="quit_back">Zurück</string>
     <string name="quit_detail_days_strong">Tage stark</string>
-    <string name="quit_detail_running">Seit %s dabei</string>
     <string-array name="quit_cheer">
         <item>Jede Reise beginnt mit einem ersten Schritt. Du gehst ihn gerade.</item>
         <item>Die ersten Tage sind die schwersten, und du steckst mittendrin. Bleib dran.</item>
@@ -678,11 +676,11 @@
         <item>Wochenlang hast du dich für dich entschieden. Das wird zu deinem Wesen.</item>
         <item>Monate der Kontrolle. Sieh, wie weit du gekommen bist.</item>
     </string-array>
+    <string name="quit_started_on">Seit %s</string>
     <string name="quit_next_title">Nächster Meilenstein</string>
-    <string name="quit_to_go">Noch %1$s bis %2$s</string>
+    <string name="quit_to_go">noch %s</string>
     <string name="quit_stat_best">Beste Serie</string>
     <string name="quit_stat_restarts">Neustarts</string>
-    <string name="quit_stat_started">Gestartet</string>
     <string name="quit_milestones">Meilensteine</string>
     <string name="quit_milestone_reached">%s, erreicht</string>
     <string name="quit_milestone_ahead">%s, noch offen</string>

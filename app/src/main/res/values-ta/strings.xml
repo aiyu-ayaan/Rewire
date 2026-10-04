@@ -667,9 +667,7 @@
     <string name="quit_days_hours">%1$d நா %2$d ம</string>
     <string name="quit_hours_minutes">%1$d ம %2$d நி</string>
     <string name="quit_ring_desc">%1$d நாட்கள், %3$d நாட்களை அடைய %2$d%% வழி</string>
-    <string name="quit_back">பின்செல்</string>
     <string name="quit_detail_days_strong">நாட்கள் உறுதியாக</string>
-    <string name="quit_detail_running">%s ஆக தொடர்கிறது</string>
     <string-array name="quit_cheer">
         <item>ஒவ்வொரு பயணமும் முதல் அடியில் தொடங்குகிறது. நீங்கள் அதை எடுத்து வருகிறீர்கள்.</item>
         <item>முதல் சில நாட்கள் மிகக் கடினம், நீங்கள் இப்போது அதில் இருக்கிறீர்கள். தொடருங்கள்.</item>
@@ -678,11 +676,11 @@
         <item>வாரங்களாக உங்களையே தேர்ந்தெடுக்கிறீர்கள். இது நீங்கள் யார் என்பதாக மாறுகிறது.</item>
         <item>மாதங்களாகக் கட்டுப்பாடு. எவ்வளவு தூரம் வந்திருக்கிறீர்கள் என்று பாருங்கள்.</item>
     </string-array>
+    <string name="quit_started_on">%s முதல்</string>
     <string name="quit_next_title">அடுத்த மைல்கல்</string>
-    <string name="quit_to_go">%2$s வரை %1$s மீதம்</string>
+    <string name="quit_to_go">%s மீதம்</string>
     <string name="quit_stat_best">சிறந்த தொடர்</string>
     <string name="quit_stat_restarts">மீண்டும் தொடங்கியவை</string>
-    <string name="quit_stat_started">தொடக்கம்</string>
     <string name="quit_milestones">மைல்கற்கள்</string>
     <string name="quit_milestone_reached">%s, எட்டியது</string>
     <string name="quit_milestone_ahead">%s, முன்னால்</string>

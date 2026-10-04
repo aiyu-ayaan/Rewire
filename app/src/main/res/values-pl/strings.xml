@@ -703,9 +703,7 @@
     <string name="quit_days_hours">%1$d d %2$d h</string>
     <string name="quit_hours_minutes">%1$d h %2$d min</string>
     <string name="quit_ring_desc">%1$d dni, %2$d%% w drodze do %3$d dni</string>
-    <string name="quit_back">Wstecz</string>
     <string name="quit_detail_days_strong">dni z rzędu</string>
-    <string name="quit_detail_running">Trwa od %s</string>
     <string-array name="quit_cheer">
         <item>Każda droga zaczyna się od pierwszego kroku. Właśnie go robisz.</item>
         <item>Pierwsze dni są najtrudniejsze, a ty w nich jesteś. Trzymaj się.</item>
@@ -714,11 +712,11 @@
         <item>Tygodnie wybierania siebie. To staje się tym, kim jesteś.</item>
         <item>Miesiące kontroli. Zobacz, jak daleko zaszedłeś.</item>
     </string-array>
+    <string name="quit_started_on">Od %s</string>
     <string name="quit_next_title">Następny kamień milowy</string>
-    <string name="quit_to_go">Jeszcze %1$s do %2$s</string>
+    <string name="quit_to_go">zostało %s</string>
     <string name="quit_stat_best">Najlepsza seria</string>
     <string name="quit_stat_restarts">Nawroty</string>
-    <string name="quit_stat_started">Start</string>
     <string name="quit_milestones">Kamienie milowe</string>
     <string name="quit_milestone_reached">%s, osiągnięte</string>
     <string name="quit_milestone_ahead">%s, przed tobą</string>

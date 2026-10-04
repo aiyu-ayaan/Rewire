@@ -649,9 +649,7 @@
     <string name="quit_days_hours">%1$d วัน %2$d ชม.</string>
     <string name="quit_hours_minutes">%1$d ชม. %2$d นาที</string>
     <string name="quit_ring_desc">%1$d วัน, คิดเป็น %2$d%% ไปสู่เป้าหมาย %3$d วัน</string>
-    <string name="quit_back">กลับ</string>
     <string name="quit_detail_days_strong">วันแล้วที่ยังมั่นคง</string>
-    <string name="quit_detail_running">ผ่านมา %s</string>
     <string-array name="quit_cheer">
         <item>ทุกการเดินทางเริ่มจากก้าวแรก และคุณกำลังก้าวอยู่</item>
         <item>ไม่กี่วันแรกยากที่สุด และคุณกำลังอยู่ในช่วงนั้น สู้ต่อไป</item>
@@ -660,11 +658,11 @@
         <item>หลายสัปดาห์ที่เลือกตัวเอง สิ่งนี้กำลังกลายเป็นตัวตนของคุณ</item>
         <item>หลายเดือนแห่งการควบคุม ลองดูว่าคุณมาไกลแค่ไหน</item>
     </string-array>
+    <string name="quit_started_on">ตั้งแต่ %s</string>
     <string name="quit_next_title">เป้าหมายถัดไป</string>
-    <string name="quit_to_go">อีก %1$s ถึง %2$s</string>
+    <string name="quit_to_go">อีก %s</string>
     <string name="quit_stat_best">สถิติที่ดีที่สุด</string>
     <string name="quit_stat_restarts">เริ่มใหม่</string>
-    <string name="quit_stat_started">เริ่มเมื่อ</string>
     <string name="quit_milestones">เป้าหมายระหว่างทาง</string>
     <string name="quit_milestone_reached">%s, ถึงแล้ว</string>
     <string name="quit_milestone_ahead">%s, รออยู่ข้างหน้า</string>

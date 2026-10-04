@@ -649,9 +649,7 @@
     <string name="quit_days_hours">%1$d일 %2$d시간</string>
     <string name="quit_hours_minutes">%1$d시간 %2$d분</string>
     <string name="quit_ring_desc">%1$d일, %3$d일까지 %2$d%%</string>
-    <string name="quit_back">뒤로</string>
     <string name="quit_detail_days_strong">일째 순항 중</string>
-    <string name="quit_detail_running">%s째 진행 중</string>
     <string-array name="quit_cheer">
         <item>모든 여정은 첫걸음에서 시작됩니다. 지금 그 걸음을 떼고 있어요.</item>
         <item>처음 며칠이 가장 힘들고, 지금이 그때예요. 계속 가요.</item>
@@ -660,11 +658,11 @@
         <item>몇 주째 스스로를 선택하고 있어요. 이제 당신의 모습이 되어가요.</item>
         <item>몇 달의 절제. 얼마나 멀리 왔는지 보세요.</item>
     </string-array>
+    <string name="quit_started_on">%s부터</string>
     <string name="quit_next_title">다음 이정표</string>
-    <string name="quit_to_go">%2$s까지 %1$s 남음</string>
+    <string name="quit_to_go">%s 남음</string>
     <string name="quit_stat_best">최고 기록</string>
     <string name="quit_stat_restarts">다시 시작</string>
-    <string name="quit_stat_started">시작일</string>
     <string name="quit_milestones">이정표</string>
     <string name="quit_milestone_reached">%s, 달성</string>
     <string name="quit_milestone_ahead">%s, 앞으로</string>

@@ -667,9 +667,7 @@
     <string name="quit_days_hours">%1$d દિ %2$d ક</string>
     <string name="quit_hours_minutes">%1$d ક %2$d મિ</string>
     <string name="quit_ring_desc">%1$d દિવસ, %3$d દિવસ સુધી પહોંચવાના રસ્તાના %2$d%%</string>
-    <string name="quit_back">પાછળ</string>
     <string name="quit_detail_days_strong">દિવસ મક્કમ</string>
-    <string name="quit_detail_running">%s થી ચાલુ</string>
     <string-array name="quit_cheer">
         <item>દરેક સફર પહેલા પગલાથી શરૂ થાય છે. તમે તે પગલું ભરી રહ્યા છો.</item>
         <item>શરૂઆતના દિવસો સૌથી અઘરા હોય છે અને તમે તેમાં જ છો. ચાલુ રાખો.</item>
@@ -678,11 +676,11 @@
         <item>અઠવાડિયાંથી તમે પોતાને પસંદ કરી રહ્યા છો. આ તમારી ઓળખ બની રહ્યું છે.</item>
         <item>મહિનાઓનો સંયમ. જુઓ તમે કેટલા આગળ આવ્યા છો.</item>
     </string-array>
+    <string name="quit_started_on">%s થી</string>
     <string name="quit_next_title">આગલો મુકામ</string>
-    <string name="quit_to_go">%2$s સુધી %1$s બાકી</string>
+    <string name="quit_to_go">%s બાકી</string>
     <string name="quit_stat_best">શ્રેષ્ઠ શ્રેણી</string>
     <string name="quit_stat_restarts">ફરી શરૂઆત</string>
-    <string name="quit_stat_started">શરૂઆત</string>
     <string name="quit_milestones">મુકામ</string>
     <string name="quit_milestone_reached">%s, પૂર્ણ</string>
     <string name="quit_milestone_ahead">%s, આગળ</string>

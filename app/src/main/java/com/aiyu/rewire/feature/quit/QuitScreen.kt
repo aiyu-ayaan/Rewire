@@ -1,6 +1,7 @@
 package com.aiyu.rewire.feature.quit
 
 import androidx.activity.compose.BackHandler
+import com.aiyu.rewire.ui.LocalBottomBarInsets
 import androidx.compose.animation.AnimatedContent
 import androidx.compose.animation.core.animateFloatAsState
 import androidx.compose.animation.core.tween
@@ -95,6 +96,7 @@ import com.aiyu.rewire.ui.components.EmptyState
 import com.aiyu.rewire.ui.components.MorphingShape
 import com.aiyu.rewire.ui.components.SectionTitle
 import com.aiyu.rewire.ui.components.readableWidth
+import com.aiyu.rewire.ui.components.sharedBoundsOrSelf
 import kotlinx.coroutines.delay
 import java.time.Instant
 import java.time.LocalDate
@@ -110,42 +112,31 @@ private const val BREATH_HOLD = 4
 private const val BREATH_CYCLE = 14
 
 @Composable
-fun QuitScreen() {
+fun QuitScreen(onOpen: (String) -> Unit) {
     val vm = hiltViewModel<QuitViewModel>()
     val data by vm.data.collectAsStateWithLifecycle()
     val now by vm.now.collectAsStateWithLifecycle()
     var urge by rememberSaveable { mutableStateOf(false) }
-    // Journey opened from the list; the bar steps away like it does for the breathing step.
-    var open by rememberSaveable { mutableStateOf<String?>(null) }
     // null = closed, "" = new tracker, otherwise the id being edited.
     var sheet by rememberSaveable { mutableStateOf<String?>(null) }
     val thoughts = stringArrayResource(R.array.quit_thoughts)
 
     // Breathing is a step inside the tab, like the running focus timer: the bar steps away.
-    HideNavigationBar(hide = urge || open != null)
+    HideNavigationBar(hide = urge)
     val effects = MaterialTheme.motionScheme.defaultEffectsSpec<Float>()
-    AnimatedContent(if (urge) 2 else if (open != null) 1 else 0, transitionSpec = { fadeIn(effects).togetherWith(fadeOut(effects)) }, label = "urge") { view ->
-        val d = data
-        val journey = d?.habits?.find { it.id == open }
-        when {
-            view == 2 -> UrgeScreen(thoughts, onLeave = { urge = false }, onDone = { vm.urgeRidden(); urge = false })
-            view == 1 && journey != null -> QuitDetailScreen(
-                h = journey,
-                now = now,
-                onBack = { open = null },
-                onEdit = { sheet = journey.id },
-                onDelete = { vm.delete(journey.id); open = null },
-                onSlip = { vm.slip(journey.id) },
-                onUrge = { urge = true },
-            )
-            d != null -> QuitHome(
+    AnimatedContent(urge, transitionSpec = { fadeIn(effects).togetherWith(fadeOut(effects)) }, label = "urge") { riding ->
+        if (riding) {
+            UrgeScreen(thoughts, onLeave = { urge = false }, onDone = { vm.urgeRidden(); urge = false })
+        } else {
+            val d = data ?: return@AnimatedContent
+            QuitHome(
                 habits = d.habits,
                 urgesRidden = d.urgesRidden,
                 now = now,
                 thoughts = thoughts,
                 onUrge = { urge = true },
                 onAdd = { sheet = "" },
-                onOpen = { open = it },
+                onOpen = onOpen,
                 onEdit = { sheet = it },
                 onDelete = vm::delete,
             )
@@ -184,7 +175,7 @@ private fun QuitHome(
             columns = GridCells.Adaptive(340.dp),
             state = list,
             modifier = Modifier.fillMaxSize().statusBarsPadding().readableWidth(1200.dp),
-            contentPadding = PaddingValues(start = 16.dp, end = 16.dp, bottom = 88.dp),
+            contentPadding = PaddingValues(start = 16.dp, end = 16.dp, bottom = 88.dp + LocalBottomBarInsets.current.content),
             horizontalArrangement = Arrangement.spacedBy(12.dp),
         ) {
             val full: LazyGridItemSpanScope.() -> GridItemSpan = { GridItemSpan(maxLineSpan) }
@@ -211,7 +202,7 @@ private fun QuitHome(
             expanded = fabExpanded,
             icon = { Icon(Icons.Rounded.Add, contentDescription = null) },
             text = { Text(stringResource(R.string.quit_new)) },
-            modifier = Modifier.align(Alignment.BottomEnd).padding(16.dp),
+            modifier = Modifier.align(Alignment.BottomEnd).padding(16.dp).padding(bottom = LocalBottomBarInsets.current.fab),
         )
     }
 }
@@ -288,7 +279,7 @@ private fun QuitCard(h: QuitHabit, now: Long, onOpen: () -> Unit, onEdit: () -> 
         onClick = onOpen,
         shape = MaterialTheme.shapes.extraLarge,
         colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surfaceContainerHigh),
-        modifier = modifier.fillMaxWidth(),
+        modifier = modifier.fillMaxWidth().sharedBoundsOrSelf("quit-${h.id}"),
     ) {
         Column(Modifier.padding(start = 20.dp, end = 8.dp, top = 20.dp, bottom = 16.dp)) {
             Row(verticalAlignment = Alignment.CenterVertically) {
@@ -365,7 +356,7 @@ private fun PrivateNote() {
 // ---- Add / edit ---------------------------------------------------------------------------------
 
 @Composable
-private fun QuitSheet(initial: QuitHabit?, onDismiss: () -> Unit, onSave: (name: String, reason: String, startedAt: Long) -> Unit) {
+internal fun QuitSheet(initial: QuitHabit?, onDismiss: () -> Unit, onSave: (name: String, reason: String, startedAt: Long) -> Unit) {
     var name by rememberSaveable { mutableStateOf(initial?.name.orEmpty()) }
     var reason by rememberSaveable { mutableStateOf(initial?.reason.orEmpty()) }
     // null = right now; editing keeps the existing start unless changed.
@@ -445,7 +436,7 @@ private fun QuitSheet(initial: QuitHabit?, onDismiss: () -> Unit, onSave: (name:
 
 /** Two minutes of paced breathing with a thought per breath; finishing counts one urge ridden out. */
 @Composable
-private fun UrgeScreen(thoughts: Array<String>, onLeave: () -> Unit, onDone: () -> Unit) {
+internal fun UrgeScreen(thoughts: Array<String>, onLeave: () -> Unit, onDone: () -> Unit) {
     var elapsed by rememberSaveable { mutableIntStateOf(0) }
     val first = rememberSaveable { (thoughts.indices).randomOrNull() ?: 0 }
     val ideas = stringArrayResource(R.array.quit_urge_ideas)

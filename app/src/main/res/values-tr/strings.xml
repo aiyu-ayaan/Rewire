@@ -667,9 +667,7 @@
     <string name="quit_days_hours">%1$d g %2$d h</string>
     <string name="quit_hours_minutes">%1$d h %2$d dk</string>
     <string name="quit_ring_desc">%1$d gün, %2$d%% %3$d gün yolunda</string>
-    <string name="quit_back">Geri</string>
     <string name="quit_detail_days_strong">gün güçlü</string>
-    <string name="quit_detail_running">%s süredir devam ediyor</string>
     <string-array name="quit_cheer">
         <item>Her yolculuk ilk adımla başlar. Sen o adımı atıyorsun.</item>
         <item>İlk günler en zorudur ve sen şu an onların içindesin. Devam et.</item>
@@ -678,11 +676,11 @@
         <item>Haftalardır kendini seçiyorsun. Bu, kim olduğuna dönüşüyor.</item>
         <item>Aylarca kontrol. Ne kadar yol aldığına bak.</item>
     </string-array>
+    <string name="quit_started_on">%s tarihinden beri</string>
     <string name="quit_next_title">Sonraki dönüm noktası</string>
-    <string name="quit_to_go">%2$s için %1$s kaldı</string>
+    <string name="quit_to_go">%s kaldı</string>
     <string name="quit_stat_best">En iyi seri</string>
     <string name="quit_stat_restarts">Yeniden başlama</string>
-    <string name="quit_stat_started">Başlangıç</string>
     <string name="quit_milestones">Dönüm noktaları</string>
     <string name="quit_milestone_reached">%s, ulaşıldı</string>
     <string name="quit_milestone_ahead">%s, önde</string>
