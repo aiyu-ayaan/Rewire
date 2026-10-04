@@ -673,7 +673,7 @@
     <string name="quit_add_first">Aggiungi un tracker</string>
     <string name="quit_new">Nuovo tracker</string>
     <string name="quit_edit_title">Modifica tracker</string>
-    <plurals name="quit_days_word">
+    <plurals name="quit_days_word" xmlns:tools="http://schemas.android.com/tools" tools:ignore="ImpliedQuantity">
         <item quantity="one">giorno</item>
         <item quantity="many">di giorni</item>
         <item quantity="other">giorni</item>

@@ -673,7 +673,7 @@
     <string name="quit_add_first">Adicionar rastreador</string>
     <string name="quit_new">Novo rastreador</string>
     <string name="quit_edit_title">Editar rastreador</string>
-    <plurals name="quit_days_word">
+    <plurals name="quit_days_word" xmlns:tools="http://schemas.android.com/tools" tools:ignore="ImpliedQuantity">
         <item quantity="one">dia</item>
         <item quantity="many">de dias</item>
         <item quantity="other">dias</item>

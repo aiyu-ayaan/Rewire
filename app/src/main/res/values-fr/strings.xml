@@ -673,7 +673,7 @@
     <string name="quit_add_first">Ajouter un suivi</string>
     <string name="quit_new">Nouveau suivi</string>
     <string name="quit_edit_title">Modifier le suivi</string>
-    <plurals name="quit_days_word">
+    <plurals name="quit_days_word" xmlns:tools="http://schemas.android.com/tools" tools:ignore="ImpliedQuantity">
         <item quantity="one">jour</item>
         <item quantity="many">jours</item>
         <item quantity="other">jours</item>

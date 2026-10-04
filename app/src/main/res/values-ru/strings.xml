@@ -690,7 +690,7 @@
     <string name="quit_add_first">Добавить трекер</string>
     <string name="quit_new">Новый трекер</string>
     <string name="quit_edit_title">Отредактировать трекер</string>
-    <plurals name="quit_days_word">
+    <plurals name="quit_days_word" xmlns:tools="http://schemas.android.com/tools" tools:ignore="ImpliedQuantity">
         <item quantity="one">день</item>
         <item quantity="few">дня</item>
         <item quantity="many">дней</item>
