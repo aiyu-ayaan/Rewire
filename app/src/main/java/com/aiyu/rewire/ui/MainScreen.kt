@@ -1,6 +1,29 @@
 package com.aiyu.rewire.ui
 
 import androidx.compose.animation.AnimatedContent
+import androidx.compose.animation.animateColorAsState
+import androidx.compose.animation.animateContentSize
+import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.displayCutoutPadding
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.heightIn
+import androidx.compose.foundation.layout.navigationBarsPadding
+import androidx.compose.foundation.layout.systemBarsPadding
+import androidx.compose.foundation.layout.widthIn
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.selection.selectable
+import androidx.compose.foundation.selection.selectableGroup
+import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.foundation.verticalScroll
+import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.semantics.Role
+import androidx.compose.ui.semantics.contentDescription
+import androidx.compose.ui.semantics.semantics
+import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.res.stringResource
 import com.aiyu.rewire.R
 import androidx.annotation.StringRes
@@ -35,11 +58,9 @@ import androidx.compose.material.icons.rounded.Shield
 import androidx.compose.material.icons.rounded.Timer
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.NavigationRail
 import androidx.compose.material3.NavigationRailItem
+import androidx.compose.material3.NavigationRailItemDefaults
 import androidx.compose.material3.Scaffold
-import androidx.compose.material3.ShortNavigationBar
-import androidx.compose.material3.ShortNavigationBarItem
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionLocalProvider
@@ -171,16 +192,7 @@ fun MainScreen(
                     enter = slideInHorizontally(barSpatial) { -it } + expandHorizontally(barSize) + fadeIn(effects),
                     exit = slideOutHorizontally(barSpatial) { -it } + shrinkHorizontally(barSize) + fadeOut(fastEffects),
                 ) {
-                NavigationRail(containerColor = MaterialTheme.colorScheme.surfaceContainer) {
-                    Tab.entries.forEach { t ->
-                        NavigationRailItem(
-                            selected = t == tab,
-                            onClick = { select(t) },
-                            icon = { Icon(if (t == tab) t.selectedIcon else t.icon, contentDescription = null) },
-                            label = { Text(stringResource(t.label)) },
-                        )
-                    }
-                }
+                    FloatingNavRail(tab, select)
                 }
                 Box(Modifier.weight(1f)) { content(Modifier.fillMaxSize(), widePane) }
             }
@@ -189,16 +201,7 @@ fun MainScreen(
                 contentWindowInsets = WindowInsets(0),
                 bottomBar = {
                     AnimatedVisibility(!navBar.hidden, enter = barEnter, exit = barExit) {
-                    ShortNavigationBar {
-                        Tab.entries.forEach { t ->
-                            ShortNavigationBarItem(
-                                selected = t == tab,
-                                onClick = { select(t) },
-                                icon = { Icon(if (t == tab) t.selectedIcon else t.icon, contentDescription = null) },
-                                label = { Text(stringResource(t.label)) },
-                            )
-                        }
-                    }
+                    FloatingNavBar(tab, select)
                     }
                 },
             ) { padding ->
@@ -264,5 +267,78 @@ private fun DetailContent(key: String, onClose: () -> Unit, open: (String) -> Un
         key == "updates" -> if (BuildConfig.UPDATES) UpdateScreen(onBack = onClose)
         key == "goals" -> GoalsScreen(onBack = onClose)
         key == "language" -> LanguageScreen(onBack = onClose)
+    }
+}
+
+/**
+ * Phones: a floating pill (Google Photos style). The selected tab grows into icon + label; the
+ * others stay icon-only so five tabs fit in every language at 360dp.
+ */
+@Composable
+private fun FloatingNavBar(tab: Tab, onSelect: (Tab) -> Unit) {
+    Box(Modifier.fillMaxWidth().navigationBarsPadding().padding(bottom = 12.dp), contentAlignment = Alignment.Center) {
+        Surface(
+            shape = CircleShape,
+            color = MaterialTheme.colorScheme.surfaceContainerHigh,
+            shadowElevation = 6.dp,
+        ) {
+            Row(Modifier.padding(6.dp).selectableGroup(), horizontalArrangement = Arrangement.spacedBy(2.dp)) {
+                Tab.entries.forEach { t -> PillItem(t, t == tab) { onSelect(t) } }
+            }
+        }
+    }
+}
+
+@Composable
+private fun PillItem(t: Tab, selected: Boolean, onClick: () -> Unit) {
+    val c = MaterialTheme.colorScheme
+    val effects = MaterialTheme.motionScheme.defaultEffectsSpec<Color>()
+    val bg by animateColorAsState(if (selected) c.secondaryContainer else Color.Transparent, effects, label = "pillBg")
+    val fg by animateColorAsState(if (selected) c.onSecondaryContainer else c.onSurfaceVariant, effects, label = "pillFg")
+    val label = stringResource(t.label)
+    Row(
+        Modifier
+            .clip(CircleShape)
+            .background(bg)
+            .selectable(selected, onClick = onClick, role = Role.Tab)
+            .semantics(mergeDescendants = true) { contentDescription = label }
+            .heightIn(min = 48.dp)
+            .padding(horizontal = 16.dp)
+            .animateContentSize(MaterialTheme.motionScheme.defaultSpatialSpec()),
+        verticalAlignment = Alignment.CenterVertically,
+    ) {
+        Icon(if (selected) t.selectedIcon else t.icon, contentDescription = null, tint = fg)
+        if (selected) {
+            Spacer(Modifier.width(8.dp))
+            Text(label, style = MaterialTheme.typography.labelLarge, color = fg, maxLines = 1, overflow = TextOverflow.Ellipsis, modifier = Modifier.widthIn(max = 120.dp))
+        }
+    }
+}
+
+/** Tablets / landscape: the same pill stood upright on the left edge, like Google Photos on large screens. */
+@Composable
+private fun FloatingNavRail(tab: Tab, onSelect: (Tab) -> Unit) {
+    Box(Modifier.fillMaxHeight().systemBarsPadding().displayCutoutPadding().padding(start = 12.dp, top = 12.dp, bottom = 12.dp), contentAlignment = Alignment.Center) {
+        Surface(
+            shape = MaterialTheme.shapes.extraLarge,
+            color = MaterialTheme.colorScheme.surfaceContainerHigh,
+            shadowElevation = 6.dp,
+        ) {
+            Column(
+                Modifier.width(88.dp).padding(vertical = 12.dp).verticalScroll(rememberScrollState()).selectableGroup(),
+                horizontalAlignment = Alignment.CenterHorizontally,
+                verticalArrangement = Arrangement.spacedBy(4.dp),
+            ) {
+                Tab.entries.forEach { t ->
+                    NavigationRailItem(
+                        selected = t == tab,
+                        onClick = { onSelect(t) },
+                        icon = { Icon(if (t == tab) t.selectedIcon else t.icon, contentDescription = null) },
+                        label = { Text(stringResource(t.label), maxLines = 1, overflow = TextOverflow.Ellipsis) },
+                        colors = NavigationRailItemDefaults.colors(indicatorColor = MaterialTheme.colorScheme.secondaryContainer),
+                    )
+                }
+            }
+        }
     }
 }

@@ -37,6 +37,7 @@ notifications production-ready. Data in memory + DataStore (Room = Phase 2).
 ### 1.4 App shell
 - [x] 4-tab nav: Guard / Focus / Matrix / Profile
 - [x] `ShortNavigationBar` on compact, `NavigationRail` on >= 600dp
+- [x] Floating pill nav (Google Photos style): bottom pill on compact, upright pill on the left on >= 600dp (2026-10-04)
 - [x] Edge-to-edge, insets handled
 - [x] Tab content crossfade/through motion
 - [x] Notification deep link opens correct tab
