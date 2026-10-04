@@ -701,4 +701,89 @@
     <string name="punch_guard_6">ربحت التطبيقات بضع جولات. Matrix يحتفظ بالنتيجة لتستعد للجولة القادمة.</string>
     <string name="profile_language">اللغة</string>
     <string name="profile_language_system">افتراضي النظام</string>
+
+    <!-- Quit tracker -->
+    <string name="nav_quit">إقلاع</string>
+    <string name="quit_subtitle">يوم تلو الآخر</string>
+    <string name="quit_thought_title">فكرة لليوم</string>
+    <string name="quit_thought_another">فكرة أخرى</string>
+    <string name="quit_urge_title">تشعر برغبة؟</string>
+    <string name="quit_urge_body">إنها ترتفع، وتصل للقمة، ثم تمضي. تنفس معها لمدة دقيقتين.</string>
+    <string name="quit_urge_start">اركب الموجة</string>
+    <plurals name="quit_urges_ridden">
+        <item quantity="zero">لا موجات تم ركوبها</item>
+        <item quantity="one">موجة واحدة تم ركوبها</item>
+        <item quantity="two">موجتان تم ركوبهما</item>
+        <item quantity="few">%d موجات تم ركوبها</item>
+        <item quantity="many">%d موجة تم ركوبها</item>
+        <item quantity="other">%d موجة تم ركوبها</item>
+    </plurals>
+    <string name="quit_section">رحلاتك</string>
+    <string name="quit_empty_title">ابدأ شيئًا جديدًا</string>
+    <string name="quit_empty_body">أضف أي شيء تريد تركه خلفك. فقط أنت ترى الاسم الذي تعطيه له.</string>
+    <string name="quit_add_first">أضف متتبعًا</string>
+    <string name="quit_new">متتبع جديد</string>
+    <string name="quit_edit_title">عدّل المتتبع</string>
+    <plurals name="quit_days_word" xmlns:tools="http://schemas.android.com/tools" tools:ignore="ImpliedQuantity">
+        <item quantity="zero">أيام</item>
+        <item quantity="one">يوم</item>
+        <item quantity="two">يومان</item>
+        <item quantity="few">أيام</item>
+        <item quantity="many">يوم</item>
+        <item quantity="other">يوم</item>
+    </plurals>
+    <string name="quit_run_today">+ %1$d س %2$d دقيقة</string>
+    <string name="quit_best">الأفضل: %s</string>
+    <string name="quit_next">التالي: %s</string>
+    <string name="quit_days_short">%d ي</string>
+    <string name="quit_days_hours">%1$d ي %2$d س</string>
+    <string name="quit_hours_minutes">%1$d س %2$d دقيقة</string>
+    <string name="quit_ring_desc">%1$d أيام، %2$d%% من الطريق إلى %3$d أيام</string>
+    <string name="quit_slipped">انزلقت</string>
+    <string name="quit_slip_title">تبدأ من جديد؟</string>
+    <string name="quit_slip_body">يحدث. الانزلاق معلومة، وليس النهاية. أفضل مسار لك يبقى محفوظًا.</string>
+    <string name="quit_slip_confirm">ابدأ من جديد</string>
+    <plurals name="quit_recent_slips">
+        <item quantity="zero">لا بدايات جديدة في آخر 30 يومًا</item>
+        <item quantity="one">بداية جديدة واحدة في آخر 30 يومًا</item>
+        <item quantity="two">بدايتان جديدتان في آخر 30 يومًا</item>
+        <item quantity="few">%d بدايات جديدة في آخر 30 يومًا</item>
+        <item quantity="many">%d بدايات جديدة في آخر 30 يومًا</item>
+        <item quantity="other">%d بدايات جديدة في آخر 30 يومًا</item>
+    </plurals>
+    <string name="quit_more">خيارات أكثر</string>
+    <string name="quit_edit">عدّل</string>
+    <string name="quit_delete_title">حذف هذا المتتبع؟</string>
+    <string name="quit_delete_body">تاريخه يتم حذفه من هذا الجهاز.</string>
+    <string name="quit_name">الاسم</string>
+    <string name="quit_name_hint">أي اسم يعمل. فقط أنت ترى ذلك.</string>
+    <string name="quit_reason">لماذا يهم (اختياري)</string>
+    <string name="quit_started">بدأ</string>
+    <string name="quit_started_now">الآن مباشرة</string>
+    <string name="quit_started_pick">اختر تاريخًا</string>
+    <string name="quit_private_note">يبقى على هذا الجهاز. وليس في المصفوفة أو النسخ الاحتياطية أو الصادرات.</string>
+    <string name="quit_breathe_in">شهيق</string>
+    <string name="quit_breathe_hold">احبس النفس</string>
+    <string name="quit_breathe_out">زفير</string>
+    <string name="quit_urge_left">%1$d:%2$02d متبقيًا</string>
+    <string name="quit_urge_done_title">مرت الموجة</string>
+    <string name="quit_urge_done_body">لاحظتها، بقيت معها، وتركتها تذهب.</string>
+    <string name="quit_urge_done">تم</string>
+    <string name="quit_urge_leave">اترك</string>
+    <string name="quit_urge_idea_title">ثم جرب شيئًا واحدًا</string>
+    <string-array name="quit_urge_ideas">
+        <item>اشرب كأس ماء.</item>
+        <item>اخرج خارجًا لمدة خمس دقائق.</item>
+        <item>افعل عشر تمارين القرفصاء البطيئة.</item>
+        <item>اغسل وجهك بماء بارد.</item>
+        <item>أرسل رسالة لشخص تثق به.</item>
+        <item>انتقل إلى غرفة أخرى وشغّل الأضواء.</item>
+        <item>اترك جهازك في غرفة أخرى للقليل من الوقت.</item>
+        <item>اكتب ما تشعر به الآن.</item>
+        <item>رتّب شيئًا صغيرًا بجانبك.</item>
+        <item>امدد جسمك ببطء لمدة دقيقتين.</item>
+        <item>اصنع لنفسك مشروبًا دافئًا.</item>
+        <item>إذا كان الوقت متأخرًا، اذهب للنوم.</item>
+    </string-array>
+    <!-- /Quit tracker -->
 </resources>

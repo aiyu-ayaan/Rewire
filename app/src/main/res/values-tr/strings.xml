@@ -637,4 +637,77 @@
     <string name="punch_guard_6">Uygulamalar birkaç tur kazandı. Matrix skoru tutar; rövanşı planlayabilirsin.</string>
     <string name="profile_language">Dil</string>
     <string name="profile_language_system">Sistem varsayılanı</string>
+
+    <!-- Quit tracker -->
+    <string name="nav_quit">Bırak</string>
+    <string name="quit_subtitle">Gün gün</string>
+    <string name="quit_thought_title">Bugünün düşüncesi</string>
+    <string name="quit_thought_another">Başka bir düşünce</string>
+    <string name="quit_urge_title">İstek hissediyor musun?</string>
+    <string name="quit_urge_body">Yükseliyor, zirveye çıkıyor ve geçiyor. Bununla iki dakika nefes al.</string>
+    <string name="quit_urge_start">Dalgayı bin</string>
+    <plurals name="quit_urges_ridden">
+        <item quantity="one">%d dalgaya binildi</item>
+        <item quantity="other">%d dalgaya binildi</item>
+    </plurals>
+    <string name="quit_section">Senin yolculuklarım</string>
+    <string name="quit_empty_title">Bir şey başlat</string>
+    <string name="quit_empty_body">Geride bırakmak istediğin herhangi bir şeyi ekle. Sadece sen görüyorsun adını.</string>
+    <string name="quit_add_first">İzleyici ekle</string>
+    <string name="quit_new">Yeni izleyici</string>
+    <string name="quit_edit_title">İzleyiciyi düzenle</string>
+    <plurals name="quit_days_word" xmlns:tools="http://schemas.android.com/tools" tools:ignore="ImpliedQuantity">
+        <item quantity="one">gün</item>
+        <item quantity="other">gün</item>
+    </plurals>
+    <string name="quit_run_today">+ %1$d h %2$d min</string>
+    <string name="quit_best">En iyi: %s</string>
+    <string name="quit_next">Sonraki: %s</string>
+    <string name="quit_days_short">%d g</string>
+    <string name="quit_days_hours">%1$d g %2$d h</string>
+    <string name="quit_hours_minutes">%1$d h %2$d dk</string>
+    <string name="quit_ring_desc">%1$d gün, %2$d%% %3$d gün yolunda</string>
+    <string name="quit_slipped">Kaydım</string>
+    <string name="quit_slip_title">Yeniden başla?</string>
+    <string name="quit_slip_body">Oluyor. Kayma bilgi, son değil. En iyi koşun kaydedilmiş kalır.</string>
+    <string name="quit_slip_confirm">Yeniden başla</string>
+    <plurals name="quit_recent_slips">
+        <item quantity="one">%d yeniden başlamak son 30 günde</item>
+        <item quantity="other">%d yeniden başlamak son 30 günde</item>
+    </plurals>
+    <string name="quit_more">Daha seçenekler</string>
+    <string name="quit_edit">Düzenle</string>
+    <string name="quit_delete_title">Bu izleyiciyi sil?</string>
+    <string name="quit_delete_body">Geçmişi bu cihazdan kaldırılır.</string>
+    <string name="quit_name">Ad</string>
+    <string name="quit_name_hint">Herhangi adı çalışır. Sadece sen görüyorsun.</string>
+    <string name="quit_reason">Neden önemli (isteğe bağlı)</string>
+    <string name="quit_started">Başlandı</string>
+    <string name="quit_started_now">Şu anda</string>
+    <string name="quit_started_pick">Tarih seç</string>
+    <string name="quit_private_note">Cihazda kalır. Matris, yedek veya ihraçta değil.</string>
+    <string name="quit_breathe_in">Nefes al</string>
+    <string name="quit_breathe_hold">Tut</string>
+    <string name="quit_breathe_out">Nefes ver</string>
+    <string name="quit_urge_left">%1$d:%2$02d kaldı</string>
+    <string name="quit_urge_done_title">Dalgası geçti</string>
+    <string name="quit_urge_done_body">Fark ettin, kaldın ve bıraktın.</string>
+    <string name="quit_urge_done">Bitti</string>
+    <string name="quit_urge_leave">Ayrıl</string>
+    <string name="quit_urge_idea_title">Sonra bir şey dene</string>
+    <string-array name="quit_urge_ideas">
+        <item>Bir bardak su iç.</item>
+        <item>Beş dakika dışarı çık.</item>
+        <item>On yavaş çömelme yap.</item>
+        <item>Yüzünü soğuk su ile yıka.</item>
+        <item>Güvendiğin birine mesaj gönder.</item>
+        <item>Odaları değiştir ve ışıkları aç.</item>
+        <item>Cihazını bir süre başka odaya bırak.</item>
+        <item>Şimdi hissettiğini yaz.</item>
+        <item>Yanında bir küçük şeyi düzenle.</item>
+        <item>Yavaşça iki dakika esneme yap.</item>
+        <item>Kendine sıcak bir içecek yap.</item>
+        <item>Geç ise, uyu.</item>
+    </string-array>
+    <!-- /Quit tracker -->
 </resources>

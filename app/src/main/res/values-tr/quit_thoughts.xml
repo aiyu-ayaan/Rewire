@@ -1,0 +1,1012 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generated: one line per item. Calm, neutral; never names a specific habit. -->
+<resources>
+    <string-array name="quit_thoughts">
+        <item>İstek bir dalgadır. Zirveye çıkar. Geçer. Seni bunu binebilirsin.</item>
+        <item>Şimdi, onunla savaşmadan hisset. Bu an geçici.</item>
+        <item>İsteğin altında ne hissediyorsun? Sıkıldı mı? Yalnız mı? Yorgun mu? Adını koy.</item>
+        <item>Her duygya karşı hareket etmek zorunda değilsin. Hisset ve geçmesine izin ver.</item>
+        <item>İstek bir komut değil. Sadece senin aklındaki bir düşünce.</item>
+        <item>On dakika bekle. İsteğin değişecek.</item>
+        <item>İstek geldiğinde, yavaşça nefes al. Dört için içeri, tut, altı için dışarı.</item>
+        <item>Bu anı neyin tetikledi? Yargılamadan fark et.</item>
+        <item>İstek başında en güçlüdür. 15 dakikadan sonra zayıflar.</item>
+        <item>Kalk. Başka bir odaya git. Deseni kır.</item>
+        <item>Bu zayıflık değil. Bu senin yeni bir yol öğrenmen.</item>
+        <item>İstek yalan söyler. Ona ihtiyacın var diyir. Yok. Onsuz güvendesin.</item>
+        <item>Ona göre hareket etmek yerine, şu an ne hissettiğini yaz.</item>
+        <item>Bazen istek maskeli sıkıntıdır. Yapacak bir şey bul.</item>
+        <item>Sen istek değilsin. İstek bir yolcu, şoför değil.</item>
+        <item>Beş dakika uzan ve fark et: istek istirahat ederken geçecek.</item>
+        <item>Geç mi? Yorgun musun? İstekler, tetiğin aşağıda olduğunda seni aldatır.</item>
+        <item>Dün yok saydığın istek seni gururlandırdı. Bunu tekrar yap.</item>
+        <item>Senin beyinin şu anda kendini yeniden bağlıyor. Bu zor kısım. Bunu yapıyorsun.</item>
+        <item>İstek yalnız olduğun zaman en güçlüdür. Birini ara. Konuş.</item>
+        <item>Sonuncuyu atlattın. Bunu da atlataacaksın.</item>
+        <item>Senin en iyi versionun şu anda ne yapardı? O sese kulak ver.</item>
+        <item>İsteğin zirve saati dakikaları, saatleri değil. Sen bunu daha uzun süre dayanabilirsin.</item>
+        <item>İsteğe okyanus dalgası gibi otur. Senin yanından yuvarlanmasına izin ver.</item>
+        <item>Bu sonsuza kadar değil. Bu sadece şu an.</item>
+        <item>İstek yalan fısıldar. Yalandan daha güçlüsün.</item>
+        <item>Bedenini esnettir. Kanı kolların ve bacaklarında dolaştır. İstekler hareketle zayıflar.</item>
+        <item>Bir şey inşa ediyorsun. Durduğun her an temel atmanın bir tuğlasıdır.</item>
+        <item>Kaçmak istediğin zaman, altındaki gerçek duygulduğunu bul ve onunla karşılaş.</item>
+        <item>İstek bir alışkanlıktır, ihtiyaç değil. Bedenin alışacaktır.</item>
+        <item>İsteği yargılamadan fark et. İsteğin üstüne utanç ekleme.</item>
+        <item>Bunu beş dakika oturup neler olup bittiğini görebilirsin.</item>
+        <item>İstek bunun kalıcı olduğuna inanmanı ister. Değil. Sadece geçen bulutlar.</item>
+        <item>Geçen sefer direndiğinde ne yaptın? Bunu tekrar yap.</item>
+        <item>İstek bilgi. Sana önemli bir şey olduğunu söylüyor. Dinle, sonra seç.</item>
+        <item>Geç saatler istekleri getiri. Erken yatış bunları engeller.</item>
+        <item>İsteği hissettiğinde başarısız değilsin. Sadece ona inanırsan başarısız olursun.</item>
+        <item>İstek senin adınla yazılı bir dalgadır. Binmeyi öğrendin.</item>
+        <item>Yalnız olduğunda, istek bağlantı vaat eder. Bunun yerine gerçek bağlantı ara.</item>
+        <item>İstek sevgi değil. Bunu olmadığı bir şeyle karıştırma.</item>
+        <item>Birçok istekle karşılaştın ve hepsini atladın. Bu sadece birbirini takip eden.</item>
+        <item>Sıkıntı bir tetikleyicidir. Sana önemli şeylerin bir listesi var.</item>
+        <item>İstek sana acele et der. Bunun yerine yavaş gidebilirsin.</item>
+        <item>Senin sinir sistemi onsuz güvende olduğunu öğreniyor.</item>
+        <item>Otur. Nefes al. 100\'e kadar say. İstek yumuşayacak.</item>
+        <item>İstek korkuyla direndiğinde en yüksek. Bunun yerine kabullenme ile nefes al.</item>
+        <item>Durduğu seçtin. Onu hatırla. O seçime yaslan.</item>
+        <item>Stres istekleri tetikler. Stresi adlandır. İsteğinden ayrı ele al.</item>
+        <item>İstek ziyaret edecek. Onu içeri almak zorunda değilsin.</item>
+        <item>Senin varsayılanını yeniden yazıyorsun. Bu zaman ve nezaket istiyor.</item>
+        <item>İstek sen şoför olan bir otobüste yolcu. Oturmasına izin ver. Git.</item>
+        <item>İstekler çabuk zirveye çıkıp hızlı düşer. Zirveyi sonsuza karıştırma.</item>
+        <item>Gerçek ihtiyaç ne? Uyku? Bağlantı? Eğlence? Onu alışkanlık olmadan bul.</item>
+        <item>İsteği anlamak zorunda değilsin onu atlatmak için.</item>
+        <item>İstek senin hatan değil. Tepkin senin seçimin.</item>
+        <item>İstek saat 11\'de geldiğinde, bu bilgidir. Daha erken yat.</item>
+        <item>Yerde oturabilir, nefes alabilir ve isteğin sana beraber olmasına izin verebilirsin.</item>
+        <item>İstek geri gelecek. Bu normaldir. Bunu diğerleri gibi ele alacaksın.</item>
+        <item>Eski desen senin dikkatini istiyor. Onu görmezden gelmeye izniniz var.</item>
+        <item>Yalnızlık istekleri artırır. Bir arkadaşa yazı atması bile zayıflatır.</item>
+        <item>İstek bir ziyaretçidir. Kapıyı açıp açmamayı sen seçersin.</item>
+        <item>Durduğun her zaman beyninde yeni yollar inşa ediyorsun.</item>
+        <item>İstek hakkında düşündüğün zaman en güçlüdür. Kendini nazikçe saptır.</item>
+        <item>İstek yoksa ne yapardın? Bunu şu anda yap.</item>
+        <item>İstek acil durum değil. Geçen bir düşünce gibi davran ona.</item>
+        <item>Burada daha önce bulundun. Bedenin bundan nasıl geçeceğini biliyor.</item>
+        <item>Alışkanlık kurmak zaman aldı. Kırılmayı tutmak da zaman alacak. Sabrızlı ol.</item>
+        <item>İstek gelince, beynin hala alışıyor anlamına geliyor. O iyileşme.</item>
+        <item>Mükemmel olmak zorunda değilsin. Sadece seçmeyi devam ettirmek zorundasın.</item>
+        <item>İstek yorgun olduğunda en yüksek. Uyku güçlü bir araçtır.</item>
+        <item>İstekler dalgalar halinde gelir. Bazıları büyük. Bazıları küçük. Hepsi geçer.</item>
+        <item>İstek vücudunun değiştiğinin işareti. Müjde haber.</item>
+        <item>İsteği hissetmeye ve ona karşı hareket etmemeye izinlisin. İkisi de doğru.</item>
+        <item>Alışkanlığın dolduruğu boşluğu ne dolduruyor? Bunu şimdi inşa et.</item>
+        <item>İstek önce hafif fısıldar, dinlersen daha yüksek ses yapar. Dinleme.</item>
+        <item>Kalk. İstek bedenini hareket ettirince yerleşir.</item>
+        <item>Eski deseni istediğin için kırılmadın. İnsansın.</item>
+        <item>İstek bir alışkanlık döngüsü. Her durduğunda döngüyü kırıyorsun.</item>
+        <item>Geç saatler ve yalnızlık en kötü kombinasyondur. Etraflarında plan yap.</item>
+        <item>İsteğe şöyle diyebilirsin: Seni görüyorum. Seni hissediyorum. Yine de yapacak değilim.</item>
+        <item>İstek bulut gibi. Gözlemle. Sürüklenerek gidecek.</item>
+        <item>Zaten en zor günleri atlattın. Bu tanıdık oldu.</item>
+        <item>İstek başka bir şey yaparken sana beraber oturabilir. Bu tamam.</item>
+        <item>Alışkanlığı ele alarak neyi kaçırıyorsun? Bunun yerine bununla yüzleş.</item>
+        <item>İstek hareketsiz otururken en yüksek. Hareket büyüyü kırar.</item>
+        <item>Düşündüğünden daha güçlüsün. Bu an bunu kanıtlıyor.</item>
+        <item>Alışkanlık rahatlama vaat etti. Boşluk sundu. Onu hatırla.</item>
+        <item>İstek beyinin dopamin istemesi. Başka bir kaynak bul.</item>
+        <item>İsteği hissetebilir ve kontrol altında kalabilirsin. İkisi de doğru olabilir.</item>
+        <item>İstek öğrenilen desenlerden geliyor, kim olduğundan değil.</item>
+        <item>Yorgunken her şey zor hissedilir. İstek özel değil. Istirahat et.</item>
+        <item>İsteğin neden olduğunu anlamak zorunda değilsin onu atlatmak için.</item>
+        <item>İstek veri. Sıkıntı? Stres? Yalnızlık? Deseni öğren.</item>
+        <item>İstek geri gelecek. Bu başarısızlık değil. Bu iyileşmenin normal olması.</item>
+        <item>Bu yolu seçtin. Yol şu anda dar. Genişleyecek.</item>
+        <item>İstek yalancı. Onsuz yaşayamayacağını söylüyor. Yaşayabilirsin ve yapıyorsun.</item>
+        <item>Beş dakika rahatsızlığında otur. Seni yok etmeyecek.</item>
+        <item>İstek seni şaşırtıldığında en güçlü. Farkında kal.</item>
+        <item>Sen istek değilsin. Sen isteği fark eden ve nefes alan kişisin.</item>
+        <item>Bugünü onsuz geçmek nasıl hissettirirdi? O ödül.</item>
+        <item>İstek bir dalgadır. Sen sahilsin. Sana çarpa çekilmesine izin ver.</item>
+        <item>Su içmek, esnenmek, yüzüne soğuk su, oda değiştirmek. Birini seç.</item>
+        <item>Alışkanlık kurmak aylar veya yıllar aldı. Kırılmanız da zaman alacak. Bu normaldir.</item>
+        <item>İstek bir geriye dönüş değil, senin bunu komut olarak görmediğin sürece.</item>
+        <item>İsteğe istenmeyen bir konuk gibi oturabilirsin.</item>
+        <item>Geç gece istekleri en zalimdir. Akşamlarını planla.</item>
+        <item>İstek \"yapmalısın\" dilinde konuşur. Bunu yok say. Kendi seçimini yap.</item>
+        <item>Düşündüğünden daha fazla irade gücü var. Bu an bunu kanıtlıyor.</item>
+        <item>İstek bir duygu, gerçek değil. Duygular değişir.</item>
+        <item>Alışkanlığın dolduruğu neyi yas yapıyorsun? Yas yap. Onuru ver. Devam et.</item>
+        <item>İstek seni test edecek. Testi geçeceksin. Daha önce geçmişsin.</item>
+        <item>Alışkanlık mutluluk vaat etti. Pişmanlık sundu. Pişmanlıksız yolu seç.</item>
+        <item>İstekle savaşmak zorunda değilsin. Sadece fark edip yaşamaya devam edebilirsin.</item>
+        <item>İstek senin beyninde çalışan yazılım. Artık sen programcısın.</item>
+        <item>Sıkıntı isteği besler. Anlam onu aç bırakır.</item>
+        <item>İstek bir şeyin dengesiz olduğunun sinyali. Dengeyi düzelt.</item>
+        <item>Mücadele etmeye izinlisin. Mücadele yolun bir parçası.</item>
+        <item>İstek sessizlikte en yüksek. Sessizliği müzik, sesler, aktivite ile doldur.</item>
+        <item>Buraya kadar gelmişsin. Bu kanıttır. Kanıta güven.</item>
+        <item>Alışkanlık bir kaçıştı. Artık kaçmana ihtiyacın yok.</item>
+        <item>İstek hayalet bir uzuv. Gerçek gibi hissettirir ama gerçek değil.</item>
+        <item>Alışkanlıktan önce kendini ne gibi seviyordun? Onu geri inşa et.</item>
+        <item>İstek ona hikaye vermezsen zayıflar.</item>
+        <item>Hikayeni şu anda yeniden yazıyorsun. Her duruş yeni bir bölüm.</item>
+        <item>İstek kırılgan olduğunda en güçlü. Istirahat ederek kendini koru.</item>
+        <item>Rahatsız olmak ve istekte bulunmamak aynı anda mümkün.</item>
+        <item>İstek beyinin çekilişi. Geçici ve iyileştirici.</item>
+        <item>Alışkanlık seni küçük tuttu. Bu seçim seni büyütüyor.</item>
+        <item>İstek bir yangın alarmı gibi. Yüksek ses ama ev yanmıyor.</item>
+        <item>Direnmek için güven sahibi olmak zorunda değilsin. Sadece seçmek zorundasın.</item>
+        <item>Geç gece, yorgun, yalnız, sıkılmış. O zaman istekler saldırır. Desenini bilin.</item>
+        <item>İstek sen değilsin. Tepkin sen.</item>
+        <item>Eski desen tanıdık olmak istiyor. Yeni tanıdık öğreniyorsun.</item>
+        <item>İsteği tanıyabilir, gelmesi için teşekkür edebilir ve devam edebilirsin.</item>
+        <item>İstek bir fırtınadır. Geçecek. Dışarı çıkıp fırtınaya adım atmak zorunda değilsin.</item>
+        <item>İsteği hissetmeye utanç olmaksızın izinlisin.</item>
+        <item>Alışkanlık olmayan seni neyi sevindirir? Bunu yap. Bunu inşa et.</item>
+        <item>İstek ona tüm dikkatini verdiğinde en yüksek. Yeniden yönlendir.</item>
+        <item>Bundan önceki her anı atlattın. Bunu da atlataacaksın.</item>
+        <item>Alışkanlık kontrol vaat etti. Tam tersini sundu. Onu hatırla.</item>
+        <item>İstek taahhüdünü test ediyor, başarısız olduğunun işareti değil.</item>
+        <item>Yalnızlık istekleri besler. İstek yükselmeden önce iletişim kur.</item>
+        <item>10 dakika rahatsızlıkla oturabilirsin. O uzun bir zaman.</item>
+        <item>İstek geri gelecek. Her geri gelişinde daha güçlü oluyorsun.</item>
+        <item>Eski yol seçim hakkın yok diye inanmanı istiyordu. Var.</item>
+        <item>İstek acil durum değil. Sadece böyle hissettiriyor.</item>
+        <item>Sadece bir alışkanlık bırakmıyorsun, farklı bir hayat inşa ediyorsun.</item>
+        <item>İstek önce hafif konuşur. O kıpırdamayı uzaklaştırmanın zamanı.</item>
+        <item>Kendine ne gururlandırırdı? Oradan başla.</item>
+        <item>İstek sıkıntı veya stres veya yorgunluğun var olduğunun bilgisi.</item>
+        <item>Boş olmak ve alışkanlığı tutmamak aynı anda mümkün.</item>
+        <item>Alışkanlık yalan fısılladı. Bunun yerine gerçeği duymayı öğreniyorsun.</item>
+        <item>İstek yarın geri gelecek. Bu başarısızlık değil. Bu iyileşme.</item>
+        <item>Bu konuda kusurlu olmaya izinlisin. Kusurlu ilerleme yine de ilerlemedir.</item>
+        <item>İstek radyodaki parazit gibi. İstasyonu değiştirebilirsin.</item>
+        <item>Gelecek senin kendini şu anda ne yapmanı ister? O sese dinle.</item>
+        <item>İstek bir desenin hayaleti. Hayaletler sana zarar veremez.</item>
+        <item>Farklı seçim yaptığın her anla beynini yeniden bağlıyorsun.</item>
+        <item>Geç geceler tehlikelidir. Erken uyu. Korunma en iyi savunmadır.</item>
+        <item>İstek kendini sürdürmek isteyen bir alışkanlık. Döngüyü kırıyorsun.</item>
+        <item>Yorgun ve dirençli olmak ve yine başarılı olabilirsin.</item>
+        <item>İstek seni unutturtmak istediğini? Bunun yerine bu anı tut.</item>
+        <item>Alışkanlık seni kendinden uzaklaştırdı. Bu yol seni geri getiriyor.</item>
+        <item>İstek hareketsiz otururken en güçlü. Hareket et.</item>
+        <item>Direnmek istemeniz gerekmiyor. Sadece yine de bunu yapmak zorundasın.</item>
+        <item>İstek bir dalgadır. Daha önce dalgalar binddin. Bunu da binebilirsin.</item>
+        <item>Alışkanlık olmayan seni neyi doldurur? Buna yatırım yap.</item>
+        <item>İstek yalan söyler ve ona ihtiyacın var der. Yok. Bunu istiyorsun. Farklı.</item>
+        <item>Sıkıntı bir tetikleyicidir. Sıkılan anlar için bir plan var.</item>
+        <item>İsteği nefes ve sabırla atlataabilirsin.</item>
+        <item>Eski desen kapı vuruyor. Cevap vermek zorunda değilsin.</item>
+        <item>İstek bilgidir. Yalnızlık? Stres? Sıkıntı? Adını koy ve ele al.</item>
+        <item>Kötü hissetmeye ve istekte bulunmamaya izinlisin.</item>
+        <item>Alışkanlık baş etme mekanizmasıydı. Artık yeni baş etme mekanizmaları öğreniyorsun.</item>
+        <item>İstek sen irade gücünün yansıması değil. Alışkanlığın yansıması.</item>
+        <item>Alışkanlık olmayan seni neyi sakinleştirir? Şimdi bunu kullan.</item>
+        <item>İstek vücudun ayarlanması. Bu zayıflık değil. Bu değişim.</item>
+        <item>Alışkanlıktan kurtulma ihtiyacı olmaksızın rahatsız olabilirsin.</item>
+        <item>Geç gece istekleri gerçek. Gelmeden önce yatakta olmak için planla.</item>
+        <item>İstek yalnızlıkta en yüksek. Bağlantı ara.</item>
+        <item>Daha iyi bir şey istediğin için daha zor bir yol seçtin. Onuru ver.</item>
+        <item>Alışkanlık neşe vaat etti. Boşluk sundu. Farklı seç.</item>
+        <item>İstek bir testimdir. Şu anda geçiyorsun.</item>
+        <item>Sakin bir zihin neye benziyor? Bu duyguya doğru hareket et.</item>
+        <item>İstek ziyaret edecek. Onu içeri almak zorunda değilsin.</item>
+        <item>Direnç anlarının her biriyle esneklik inşa ediyorsun.</item>
+        <item>İstek senin dikkatini istiyor. Bunu sana layık olan şeye ver.</item>
+        <item>Sıkıntı, yalnızlık, stres, yorgunluk. Tetikleyicilerini bilin ve önceden planla.</item>
+        <item>Üzgün olmak ve alışkanlığı tutmamak mümkün.</item>
+        <item>Alışkanlık bir kısayoldur. Uzun yolu alıyorsun. Bu hikmet.</item>
+        <item>İstek düşman değil. Sadece bir ziyaretçi. Sen ev sahibisin.</item>
+        <item>Arkadaşına bu isteği hissettirse ne derdin? Bunu kendin söyle.</item>
+        <item>İstek geçici. Seçimin kalıcı.</item>
+        <item>Mücadele etmeye izinlisin. Mücadele güç inşa ediyor.</item>
+        <item>İstek dakikalarda zirveye çıkan bir dalgadır, saatlerde değil.</item>
+        <item>Ne olmak istiyorsun bilinmek? O, alışkanlık değil.</item>
+        <item>Geç gece artı yorgun artı yalnız eşittir tehlike. O kombinasyonu engelle.</item>
+        <item>İstek eski desenin hala bağlı olduğunun sinyali. Onu yeniden yazıyorsun.</item>
+        <item>İhtiyacı hissetebilir ve ona hareket etmemek. Bu tüm savaş.</item>
+        <item>Alışkanlık hakkında yalan söyledi. Gerçek seni özgür yapacak.</item>
+        <item>İstek bilgidir. Dinle. Sonra kendi yolunu seç.</item>
+        <item>İsteklerinden daha güçlüsün. Bu an bunu kanıtlıyor.</item>
+        <item>İstek zaman verirsen hareket etmek yerine zayıflar.</item>
+        <item>Aklını neyin sakin eder? İstek gelince oraya git.</item>
+        <item>İstek bir başarısızlık değil. Tepkin senin ölçütün.</item>
+        <item>Bundan daha zor anları atlattın. Bunu da atlataacaksın.</item>
+        <item>Alışkanlık senin kimliğin olmak istiyordu. Bundan daha fazlasın.</item>
+        <item>İstek hayalet. Ona güç vermedikçe gücü yok.</item>
+        <item>Alışkanlık olmadan neyi iyi hissedersin? Bunu yap.</item>
+        <item>Yalnızlık bir tetikleyicidir. Tetikleyici çekmeden önce iletişim kur.</item>
+        <item>Sinirli olmak ve istekte bulunmamak mümkün.</item>
+        <item>Eski desen tanıdık. Yeni desen de tanıdık olacak.</item>
+        <item>İstek şeker isteyen bir çocuk gibi. Onu tanıyabilir ve hayır diyebilirsin.</item>
+        <item>Reddetişinle ne inşa ediyorsun? Bunu bilinçli inşa et.</item>
+        <item>İstek beyinin iyileşmesi. Acıyacak çünkü iyileşme gerçek.</item>
+        <item>İstirahat etmeye izinlisin. İstirahat zayıflık değil.</item>
+        <item>İstek geri gelecek. Her dönüş ilerleme yaptığının kanıtı.</item>
+        <item>Alışkanlık bir kaçış rotasıydı. Kalıp yüzleşiyorsun.</item>
+        <item>İstek ihtiyaçların hakkında bilgi, eylemler hakkında komut değil.</item>
+        <item>Zaman dolduran ne önemlidir? Zamanı bununla doldur.</item>
+        <item>Geç gece istekleri en zalimdir. Daha erken yat.</item>
+        <item>İstek bir dalgadır. Sen katı zemin. Sana üzerine yıkılmasına izin ver.</item>
+        <item>Sıkılmış olmak ve alışkanlığı tutmamak mümkün.</item>
+        <item>Alışkanlık kontrol vaat etti. Şimdi gerçek kontrol alıyorsun.</item>
+        <item>İstek sen değilsin. Beyninin öğrendiği bir desen. Onu yeniden öğreniyorsun.</item>
+        <item>Korkuşa değilsen ne yapardın? Bunu yap.</item>
+        <item>İstek sisteminizin yeniden dengelenmesinin sinyali. O iyileşme.</item>
+        <item>İsteğin dokunmayacağı bir hayat inşa ediyorsun.</item>
+        <item>İstek fısıldar. Dinleme.</item>
+        <item>Seni gerçekten neyi sevindirir? Günü bununla inşa et.</item>
+        <item>Stres bir tetikleyicidir. Alışkanlık olmadan strese karşı durun.</item>
+        <item>İsteği oturabilir, nefes alabilir ve bekleyebilirsin.</item>
+        <item>Eski desen rahat olmak istiyor. Rahatsızlık yeni rahatlığa giden köprü.</item>
+        <item>İstek kırılgan olduğunda en güçlü. Kendini koru.</item>
+        <item>Zayıf hissetmeye ve yine de güç seçmeye izinlisin.</item>
+        <item>Alışkanlık bir yalan. Gerçek yaşayabileceğindir.</item>
+        <item>İstek senin niyetinin testi. Geçiyorsun.</item>
+        <item>En iyi hayatın ne istiyor? Bu alışkanlığı bırakmak. Devam et.</item>
+        <item>İstek mesajsız bir sinyal. Anlam arama. Sadece nefes al.</item>
+        <item>Anlamak zorunda değilsin; bekleyebilirsin. Anlama sonra gelir.</item>
+        <item>İstek zirveye çıkıp plato yapıp sonunda zayıflar. Üç evrenin hepsini bin.</item>
+        <item>Geçmiş seni neyin gücü şaşırtacak? Bunu yaşıyorsun.</item>
+        <item>İstek seni puanlandırmayan bir test. Sen her zaman geçiyorsun.</item>
+        <item>İsteklerinin toplamı değilsin. Sen onları gözlemleyen kişisin.</item>
+        <item>Alışkanlık süreğiliği istiyordu. Geçgitliği seçiyorsun. Kazanıyorsun.</item>
+        <item>Bugünü iyi yapmak ne gerektirir? Bunu alışkanlık olmadan tanımla.</item>
+        <item>İstek çok kalmış bir ziyaretçi. Gitmesini istemeye izinlisin.</item>
+        <item>Nüksün korkusu ve nüksüz olabilirsin şu anda.</item>
+        <item>İstek aciliyet dilinde konuşur. Sen zaman dilinde konuşursun.</item>
+        <item>Geç gece irade gücü en düşük. Zamanı engelle, sadece seçimi değil.</item>
+        <item>İstek öğrendiğin bir desen. Şimdi yeni bir desen öğreniyorsun.</item>
+        <item>Kanıt inşa ediyorsun, sadece söz vermiyorsun.</item>
+        <item>Alışkanlık istediğini verdiği konusunda yalan söyledi. Şimdi gerçek buluyorsun.</item>
+        <item>İstek kim olduğun bir hatırlatma. Şimdi farklısın.</item>
+        <item>Özgürlük neye benzeceği? Bunun yerine buna doğru hareket et.</item>
+        <item>İstek alışkanlığın oluşturduğu bir borç. Gün geçtikçe ödeme.</item>
+        <item>Alışkanlığa ulaşmadan kendi şirketinde oturabilirsin.</item>
+        <item>İstek senin bütünlüğünü test edecek. Direnç anının her biri bunu kanıtlıyor.</item>
+        <item>Alışkanlığın senden çaldığını tanımla. Geri al.</item>
+        <item>Eski desen yürüyüşünü durdurduğun bir yol. Geriye bakmayın.</item>
+        <item>İstek gürültü. Gürültülü bir odada olabilir ve sakin kalabilirsin.</item>
+        <item>Harcadığın zaman için kendini affetmek ne alacak? Şimdi başla.</item>
+        <item>Yanlış iyileşmiyorsun. Tam olarak doğru iyileşiyorsun.</item>
+        <item>Alışkanlık senin çözüm olmak istiyordu. Gerçek çözümler buluyorsun.</item>
+        <item>İstek çekilişi. Çekilişi iyileşme olur.</item>
+        <item>Geç geceler her zaman zor olacak. Erken yatış senin en iyi arkadaşın.</item>
+        <item>Kimin olduğun hakkında bir hikaye yazıyorsun. İyi bir tane yap.</item>
+        <item>İstek geçecek. Kalacaksın. Bu bütün fark.</item>
+        <item>Bir şeyden kaçmıyorsun. Kendine doğru yürüyüyorsün.</item>
+        <item>Olmak istediğin kişi bugün seçim yapmanı bekliyor.</item>
+        <item>Bu an gelecek senin inşa edildiği yerdir.</item>
+        <item>Kendine sözler tutsun. Şimdi başlıyorsun.</item>
+        <item>Özgürlük kendi seçimlerini yapmak demek. Şu anda bir tane yapıyorsun.</item>
+        <item>En iyi versionun ne yapardı? O kişi ol.</item>
+        <item>Alışkanlık seni tanımlamıyor. Seçimlerin tanımlıyor.</item>
+        <item>Kendine güven layık olmaya hak sahibisin. Bunu gün gün inşa et.</item>
+        <item>Gelecek senin denediğin için zaten seni gurur duyarak izliyor.</item>
+        <item>Varlık kendin ve etrafındakilere verdiğin bir hediye.</item>
+        <item>Gerçek bağlantı kendin gibi bulunduğunda oluyor.</item>
+        <item>Bugün onur seçiyorsun. Bu yeterli.</item>
+        <item>İstek geçecek. Bütünlüğün kalıcı.</item>
+        <item>Sana en önemli değerler neler? Bugün onları yaşa.</item>
+        <item>Kendini düzeltmiyorsun. Kendini onurluyorsun.</item>
+        <item>Hayatın çok değerli yarı dikkat için.</item>
+        <item>Eski desen sana ait değil.</item>
+        <item>Kendine saygı mükemmellik yoluyla kazanılmaz. Dürüst çabadan gelir.</item>
+        <item>Kim olacağınızın yazarısın.</item>
+        <item>Bugün varlık yokluğu yerine seç.</item>
+        <item>Kendine verilen her seçim tutulmuş bir sözdür.</item>
+        <item>Şimdi olan kişi bunu yapabilir.</item>
+        <item>Düşündüğünden daha güçlüsün. İnanmaktan daha sakin.</item>
+        <item>Kimlik yaptığın şey değil. Sonra yapacak olduğun şeydir.</item>
+        <item>Bu kendine güvenilir olmaya nasıl olursun.</item>
+        <item>Kendine saygı göstermek için izin almana gerek yok.</item>
+        <item>İstek sadece gürültü. Sen sinyal.</item>
+        <item>Ne tür bir hayat yaşamak istiyorsun? Şimdi inşa ediyorsun.</item>
+        <item>Dikkattin kutsal. Koru.</item>
+        <item>Kendine güven. Zaten kanıtladın.</item>
+        <item>Gerçek özgüven kendine söz tutmaktan gelir.</item>
+        <item>Seçimle hikayeni yazıyorsun.</item>
+        <item>Alışkanlık bölünmüş dikkatinde gelişir. Geri al.</item>
+        <item>Özgürlük kuralların yokluğu değil. Seçim yapmak.</item>
+        <item>Kendi hayatına tamamen bulunmaya hak sahibisin.</item>
+        <item>Vicdanın sana ne söylüyor? Dinle.</item>
+        <item>Saygı duyduğun senin versiyonu kim oluyorsun.</item>
+        <item>Niyetin sıradan anları anlamlı yapar.</item>
+        <item>Kırık değilsin. Kendini seçiyorsun.</item>
+        <item>Her gün kim olduğun gerçekten kanıtlamanın şansı.</item>
+        <item>İstek zayıflıyor. Kararın güçleniyor.</item>
+        <item>Söz tutan biri. Özellikle kendine.</item>
+        <item>Arkadaşına senin durumunda ne diyeceksin? Kendine söyle.</item>
+        <item>Kimlik bir seçimle başlar. Şu anda yapıyorsun.</item>
+        <item>Gelecek senin yabancı değil. Sensin.</item>
+        <item>Varlık hayatındaki insanlara nasıl sevdiğin.</item>
+        <item>Kendine güven duyabileceğin bir kişi inşa ediyorsun. Bu zaman alır. Zaman var.</item>
+        <item>Alışkanlık geçici. Kim olacağın kalıcı.</item>
+        <item>Gerçek güç sessizdir. Kendini ilan etmek zorunda değil.</item>
+        <item>Olmak istediğin kişi tipini seçiyorsun.</item>
+        <item>Bu kendine önem vermenin ne olduğu.</item>
+        <item>Değerlerin soyut değil. Bugünün seçimlerinde yaşıyor.</item>
+        <item>İstek kim olduğunu unutturtmak istiyor. Hatırla.</item>
+        <item>Kendinden gurur duymaya layıksın.</item>
+        <item>Her an kendi hayatını onurlandırmanın yeni şansı.</item>
+        <item>Onur kırılgan değil. Beslediğinde güçleniyor.</item>
+        <item>İnsan beklediğin kişi sensin.</item>
+        <item>Kendine tamamen güven ne hissettirecek?</item>
+        <item>Eski desen eski. Sen yeni.</item>
+        <item>Varlık doğru almak hakkında değil. Hazır bulunmak hakkında.</item>
+        <item>Kendini farklı şekilde sevmeyi öğreniyorsun.</item>
+        <item>Dikkattin sınırlı bir şey. İyi harcayın.</item>
+        <item>Alışkanlık kapasiteni tanımlamıyor. Seçimlerin tanımlıyor.</item>
+        <item>Saygı duyabileceğin biri oluyorsun.</item>
+        <item>Gerçek özgürlük kendi yolunu seçmek gibi tatıyor.</item>
+        <item>Tanışmak istediğin senin versiyonu şu anda oluşuyor.</item>
+        <item>Önemli bir kendiyle ilişki inşa ediyorsun.</item>
+        <item>Kimlik sabit değil. Gün gün seçtiğin bir şey.</item>
+        <item>İstek zayıflıyor. İnşa ettiğin saygı uzun sürüyor.</item>
+        <item>En önemli sözü tutmayı öğreniyorsun.</item>
+        <item>Kendine geri dön ve bak: neyi hatırlayabilmek istiyorsun?</item>
+        <item>Alışkanlık seni küçük istiyor. Kendini büyük seçiyorsun.</item>
+        <item>Varlık içinde bulunduğun anı tadını çıkaracaksın.</item>
+        <item>Gelecek senin mükemmelliyeti istemiyor. Sadece dürüstlük.</item>
+        <item>Kendine çıkan biri.</item>
+        <item>Bu ödül basit: sen.</item>
+        <item>Kendine saygı lüks değil. Nasıl yaşadığınız.</item>
+        <item>Kendile ilişkini yeniden yazıyorsun.</item>
+        <item>Her seçim kendine bir şey kanıtlama şansı.</item>
+        <item>İstek kim olduğunu karar veremiyor.</item>
+        <item>Değerlerin geçici çekişten daha önemli.</item>
+        <item>Kendine tamamen güvenmenin ne anlama geldiğini öğreniyorsun.</item>
+        <item>Olmak istediğin kişi sabırlı. Bekliyorum.</item>
+        <item>Varlık kendine ve başkalarına en büyük hediye.</item>
+        <item>Niyeti otonom yerine seçiyorsun.</item>
+        <item>Alışkanlık bir şey vaat etti. Kendine daha iyisini vaat ettin.</item>
+        <item>Kimlik böyle anlarda inşa edilir.</item>
+        <item>Gerçek güç kimse bakmadığında kendini seçmek.</item>
+        <item>Tanımak istediğin biri oluyorsun.</item>
+        <item>Saygı duyduğun senin versiyonu seçimlerinde yaşıyor.</item>
+        <item>Bir şeyden kaçmıyorsun. Bir şey seçiyorsun.</item>
+        <item>Onur her seçişinde kendini zaman güçleniyor.</item>
+        <item>İstek geçici. Bütünlüğün değil.</item>
+        <item>Kendi en iyi arkadaşın olmayı öğreniyorsun.</item>
+        <item>Sana alışkanlıktan daha önemli ne?</item>
+        <item>Eski desen kim olacağında oy hakkı yok.</item>
+        <item>Gerçek değerleri yansıtan bir hayat inşa ediyorsun.</item>
+        <item>Dikkattin istediğin hayata ait.</item>
+        <item>Olmaya çalışan kişi çabaya değer.</item>
+        <item>Kendine güvenebileceğin biri olmayı seçiyorsun.</item>
+        <item>Varlık kendi hayatını geri alışta nasıl.</item>
+        <item>Direndiğin her an kendini seçtiğin an.</item>
+        <item>Alışkanlık dalgınlıkta gelişir. Sen uyanık oluyorsun.</item>
+        <item>Gerçek özgürlüğün ne hissettiğini öğreniyorsun.</item>
+        <item>Kimlik bulmak değil. İnşa etmek.</item>
+        <item>Gelecek senin söz tuttuğunu bilecek.</item>
+        <item>Olmaya çalışan kişi hoşlanmaya layıksın.</item>
+        <item>İstek zayıflıyor. İnşa ettiğin kişi güçleniyor.</item>
+        <item>Ne değerler bilenen ve yaşayan biri.</item>
+        <item>Gerçek özgüven davranışı kim olmak istiyorsan ile uydurmaktan gelir.</item>
+        <item>Saygı duyduğun senin versiyonu ulaşılabilir.</item>
+        <item>Kendi hayatında tamamen seçiyorsun.</item>
+        <item>Böyle kendine çıkan kim? Sen bu kişi.</item>
+        <item>Netlik zihninizi örtmemeyi bırakmak gelir.</item>
+        <item>Şu anda yapıyorsun seçim kim olduğun tanımlıyor.</item>
+        <item>Bu özgürlüğün işi. Yapıyorsun.</item>
+        <item>Hayatın tek tam yaşayabileceğin.</item>
+        <item>Gerçek güç hayır demeyi öğreniyorsun.</item>
+        <item>İçindeki daha iyi bilen kişi rehberlik ediyor.</item>
+        <item>Kendini seçtiğin her an düşündüğünden daha önemli.</item>
+        <item>Bugün koruduğun yarın kim olduğun şekil.</item>
+        <item>Eski yol artık emir vermez. Sen emret.</item>
+        <item>Kendini hareket etmeyi öğreniyorsun.</item>
+        <item>Niyetin yaşadığın şekilde görünür sevgi.</item>
+        <item>Alışkanlık kim olabileceğini maskele. Maskesini çıkarıyorsun.</item>
+        <item>Gerçek barış doğru olmadığını bilmekten gelir.</item>
+        <item>Hayranlık duyabileceğin biri oluyorsun.</item>
+        <item>Ceza hakkında değil. Saygı hakkında.</item>
+        <item>İstek ne ihtiyacı olduğu konusunda yalan. Sen biliyorsun.</item>
+        <item>Bir şey inşa ediyorsun ki sarsılamaz.</item>
+        <item>Gelecek senin şu anda senin için çalışıyor.</item>
+        <item>Varlık önemli olan ne bağlı kalmak.</item>
+        <item>Kendine güvendiğin için başkalar kendine güvenebileceğini öğreniyorsun.</item>
+        <item>Her red bir iyiye evret.</item>
+        <item>Bütün olduğun senin versiyonu ortaya çıkıyor.</item>
+        <item>Kendini gibi hisset bir hayata layıksın.</item>
+        <item>Yaptığın şey gerçek cesaret istiyor. Adını koy.</item>
+        <item>Alışkanlık zamanı çalar. Senin zamanını geri alıyorsun.</item>
+        <item>Karmaşanın yerine açıklığı seçiyorsun.</item>
+        <item>Gerçek zafer sessiz. İçinde yaşıyor.</item>
+        <item>Kimlik kimse görmediği seçimlerde şekilleniyor.</item>
+        <item>Kendini tamamen onurlandırmanın ne olduğunu öğreniyorsun.</item>
+        <item>İstek daha kolay oluyor. Kendine saygın daha güçleniyor.</item>
+        <item>Gerçek sınırları olan biri oluyorsun.</item>
+        <item>Koruduğun şey kutsal. Kendin.</item>
+        <item>Eski desen kırılıyor. Yeni bir şey büyüyor.</item>
+        <item>Kendi bilgeliğine dinlemeyi öğreniyorsun.</item>
+        <item>Özgürlük varış noktası değil. Gün geçtikçe nasıl hareket ettiğin.</item>
+        <item>Gerçek değişimi destekleyen bir temel inşa ediyorsun.</item>
+        <item>Varlığın her anı güç anı.</item>
+        <item>Olmak istediğin kişi bunu yapmana ihtiyacı var.</item>
+        <item>Söz tutmanın en önemli olduğunu öğreniyorsun.</item>
+        <item>Gerçek onur asla pazarlıkla değil.</item>
+        <item>Hayatını yaşayan sen. Tamamen sahiplen.</item>
+        <item>Alışkanlık geleceğine sahip değil. Sen.</item>
+        <item>Bahane yerine seçim yapan biri oluyorsun.</item>
+        <item>İnşa ettiğin şey sadece senin için.</item>
+        <item>Varlık gerçek olan hayatına seni bağlıyor.</item>
+        <item>İsteğinden kendini daha çok istemeyi öğreniyorsun.</item>
+        <item>Bu yükten kurtulmuş senin versiyonu bekliyor.</item>
+        <item>Kendini seçtiğin her gün kazandığın gün.</item>
+        <item>Maddesiz biri hale geliyorsun.</item>
+        <item>Gerçek güç zor olduğunda kendini seçmek.</item>
+        <item>Gelen açıklık her anlamaya değer.</item>
+        <item>Özgürlüğün önce içsel olduğunu öğreniyorsun.</item>
+        <item>Kendinde saygı duyduğun şey beslemede büyüyor.</item>
+        <item>Değer bulma bekleme. Şu anda değerlisin.</item>
+        <item>Alışkanlık eski hikaye. Yeni bir tane yazıyorsun.</item>
+        <item>Kendi hayatında var olmayı seçiyorsun.</item>
+        <item>Direncin her anı büyüme anı.</item>
+        <item>Olmaya çalışan kişi bunu anlayacak.</item>
+        <item>Kendini eylemde sevmeyi öğreniyorsun.</item>
+        <item>Gerçek barış değerlerinle uyumda yaşamaktan gelir.</item>
+        <item>Hiçbir zaman yalan söylemek zorunda olmadığın biri inşa ediyorsun.</item>
+        <item>İstek geçici her şey gibi zayıflıyor.</item>
+        <item>Seçimlerinde evine benzeyerek hissetmeye layıksın.</item>
+        <item>Kimlik sınandığında yaptığında yazılıyor.</item>
+        <item>Varlığın en derin bakım biçimi olduğunu öğreniyorsun.</item>
+        <item>Özgür olan senin versiyonu bildiğinden daha yakın.</item>
+        <item>Bugün koruduğun yarın kim olacağın.</item>
+        <item>Güvenebileceğin biri olmayı seçiyorsun.</item>
+        <item>Dürüst an sayıyor. Sen topluyorsun.</item>
+        <item>Gerçek güç içsel. Omurganızda yaşıyor.</item>
+        <item>Kendi sözlerini onurlayan biri oluyorsun.</item>
+        <item>Kurduğun açıklık seni destekleyecek.</item>
+        <item>Kaçmıyorsun. Varıyorsun.</item>
+        <item>Yaptığın şey kendine bir şey kanıtlıyor.</item>
+        <item>Alışkanlık teslimiyet istiyor. Sen egemenlik seçiyorsun.</item>
+        <item>En iyi hayatın seçtiğin olduğunu öğreniyorsun.</item>
+        <item>Varlık alışkanlığın söylediği yalana karşı antidot.</item>
+        <item>Kalıyorsun her an kalıyorsun gerçek.</item>
+        <item>Olmaya değer biri oluyorsun.</item>
+        <item>Gerçek özgürlük inandığın şeyi yapmak gibi tatıyor.</item>
+        <item>Kendine güvenen senin versiyonu ortaya çıkıyor.</item>
+        <item>Onurun verilmediğini, seçildiğini öğreniyorsun.</item>
+        <item>Önemli olanı seçiyorsun. Seçmeyi devam ettir.</item>
+        <item>Eski hikaye sonraki bölümü sahiplemiyor.</item>
+        <item>Uzun sürüyor kendile ilişki inşa ediyorsun.</item>
+        <item>Seçim anı her güç anı.</item>
+        <item>Olmaya çalışan kişi uzak değil.</item>
+        <item>Niyetle yaşamayı öğreniyorsun.</item>
+        <item>Gerçek saygı kendi sözlerini tutmaktan gelir.</item>
+        <item>İstek geçici. Karakterin kalıcı.</item>
+        <item>Kendi hayatında tamamen yaşamayı seçiyorsun.</item>
+        <item>Kimlik kendiye bin tane ufak evetten inşa edilir.</item>
+        <item>Utanç olmaksızın kendine bakmaya layıksın.</item>
+        <item>Gelen açıklık yeni evin olacak.</item>
+        <item>İzin bekleme. Kendine veriyorsun.</item>
+        <item>Yaptığın şu anda her şeyin başlangıcı.</item>
+        <item>Doğru olduğunu bildiğine güvenmeyi öğreniyorsun.</item>
+        <item>Alışkanlık fısıldar. Vicdan konuşur. Daha yüksek dinle.</item>
+        <item>Gerçek seçim kararla yaşamak.</item>
+        <item>Gerçek inanç olan biri oluyorsun.</item>
+        <item>Kaldığın her an kendini inşa ettiğin an.</item>
+        <item>İçindeki daha iyi bilen kişi zaten rehberlik ediyor.</item>
+        <item>İnşa ettiğin şey sadece isteyenler için.</item>
+        <item>Özgürlük artık isteğe cevap vermiyorsun.</item>
+        <item>Kendi saygının daha değerli olduğunu öğreniyorsun.</item>
+        <item>Tamamen senin versiyonu geri büyüyor.</item>
+        <item>Korduğun bu anlarda geleceğin.</item>
+        <item>Tanıyabileceğin biri olmayı seçiyorsun.</item>
+        <item>Gerçek güç önemli ve yaşam olanı seçmek.</item>
+        <item>Inşa ettiğin açıklık kalıcı oluyor.</item>
+        <item>Varlığın hayat gerçekten bulunduğunu öğreniyorsun.</item>
+        <item>Dürüst seçim seni kendine daha yakın getirir.</item>
+        <item>Alışkanlık olmak istediğine dokunmaz.</item>
+        <item>Seçimlerinde bütün hissetmeye layıksın.</item>
+        <item>Isteğin asla almayacağı bir şey inşa ediyorsun.</item>
+        <item>Seni tanımlamak zor olduğunda seçtiğin.</item>
+        <item>Eski desen sıkı tutmuş. Sen sağlam duruyorsun.</item>
+        <item>Gerçek güç kararken söz tutmak.</item>
+        <item>Eveti anlamına gelen biri oluyorsun.</item>
+        <item>Kendini seçtiğin her an zafer anı.</item>
+        <item>Olmaya çalışan kişi şüküran olacak.</item>
+        <item>Özgürlüğün gerçekten ne istediğini öğreniyorsun.</item>
+        <item>Varlık otomat karşı ayaklanış.</item>
+        <item>Ruhunla uyumda yaşayan hayat inşa ediyorsun.</item>
+        <item>Autentik senin versiyonu şekilleniyor.</item>
+        <item>Şu anda yaptığın şey her şeye yayılıyor.</item>
+        <item>Seçimlerinle barışta olmaya layıksın.</item>
+        <item>Elde ettiğin açıklık her şey için temel.</item>
+        <item>Seçimler yapıyorsun kim olduğunu yansıtan.</item>
+        <item>Gerçek saygı zor şeyi yapıp önem verildiğinde gelir.</item>
+        <item>Eski alışkanlık olmayan her gün kanıt günü.</item>
+        <item>Kendine güvenebileceğin biri oluyorsun.</item>
+        <item>İstek kim olacağını anlamıyor.</item>
+        <item>Niyetle ve farkındalıkla yaşamayı seçiyorsun.</item>
+        <item>Koruduğun şey korduğun olur.</item>
+        <item>Kimlik kalıtsal değil. Günlük seçilen ve yapılı.</item>
+        <item>Özgürlüğün içsel iş olduğunu öğreniyorsun.</item>
+        <item>Özgür senin versiyonu bulunmayı beklıyor.</item>
+        <item>Direndiğin her an güç anı.</item>
+        <item>Söz tutan biri olarak kendini bilmeye layıksın.</item>
+        <item>Alışkanlık zayıflıyor. Daha açık oluyor.</item>
+        <item>Değerleri yaşanan biri oluyorsun.</item>
+        <item>Gerçek barış doğru seçim yaptığını bilmekten gelir.</item>
+        <item>İnşa ettiğin her şey seni destekleyecek.</item>
+        <item>Seçim kimtıp olmak istediğin oyu.</item>
+        <item>Olmak istediğin kişiye onur göstermeyi öğreniyorsun.</item>
+        <item>Seçimlerin açıklığı en büyük güç.</item>
+        <item>Yeni biri olmuyorsun. Daha çok sen oluyorsun.</item>
+        <item>Önemli olanı burasın. Seçiyorsun.</item>
+        <item>Eski hikaye bitiyor. Yeni başlıyor.</item>
+        <item>Varlığın her anı bütünlük anı.</item>
+        <item>Gerçekten sevdiğin biri oluyorsun.</item>
+        <item>Gerçek özgürlük kendi gerçeğini yaşamak gibi tatıyor.</item>
+        <item>Güvenen senin versiyonu şimdi oluşuyor.</item>
+        <item>Bugün hiç pişmanlık olmadan geri bakmaya layıksın.</item>
+        <item>İnşa ettiğin şey uzun sürüyor.</item>
+        <item>Tam olarak nerede olman gerekiyorsun.</item>
+        <item>İsteğe boyun eğmediğin her an güç anı.</item>
+        <item>Her geçen gün yeni bir şey inşa ediyorsun.</item>
+        <item>Küçük ileri adımlar sayılır.</item>
+        <item>İlerleme her zaman görünmüyor ama yapıyorsun.</item>
+        <item>Bugün kendini seçtin. Bu önemli.</item>
+        <item>Şeyi yapmadın. Bu her şey.</item>
+        <item>Değişim yolu bir seçimle başlıyor.</item>
+        <item>Zor olsa bile yine hareket ediyorsun.</item>
+        <item>Direnci bu anı güçün.</item>
+        <item>Sonsuza kadar kazanmak zorunda değilsin, sadece bugün.</item>
+        <item>Bir gün birer gün en uslu yol.</item>
+        <item>Özgürlüğe dönüş zaman alır. Zaman var.</item>
+        <item>Gelecek hafta endişe etme. Bugünü idare et.</item>
+        <item>Yolculuk uzun ama günde bir gün yürüyüyorsün.</item>
+        <item>Yarış koşmuyorsun. Hayat inşa ediyorsun.</item>
+        <item>Yarın kendi endişeleri.</item>
+        <item>Bugün yönetmen gerekeni.</item>
+        <item>Zaman sanıp daha yavaş hareket ediyor.</item>
+        <item>Kayma başarısızlık değil, bilgi.</item>
+        <item>Sendeleyedin. Bu ilerlemeyi silmiyor.</item>
+        <item>Bir an harcıyamazın tanımlamıyor.</item>
+        <item>Şu anda başlayabilirsin. Bekleme.</item>
+        <item>Kaymalar oluyor. Önemli olanı sonra.</item>
+        <item>Bir şey öğrendin. Kullan.</item>
+        <item>Mücadele anı öğretecek.</item>
+        <item>Bir kere geriye düşmek başarısızlık demek değil.</item>
+        <item>Seçim her zaman uygun.</item>
+        <item>Kaç kere başlayabilirsin gerekirse.</item>
+        <item>Arkadaşına olacak kadar kendi kendine iyi davran.</item>
+        <item>Cefa sırasında lütuflu olmaya layıksın.</item>
+        <item>Sert kelimeler yardımcı olmaz. Lütuf yardım eder.</item>
+        <item>Zor iş yapıyorsun. Kendine lütuflu davran.</item>
+        <item>Bu yolculuk ceza değil sadece sabır istiyor.</item>
+        <item>Şeyle yardım etmez. Şifakat yardım eder.</item>
+        <item>Değişirken kusurlu olmaya izinlisin.</item>
+        <item>Kendini yapabildiğin kadar çabuk affet.</item>
+        <item>Seçim sessizce kutla.</item>
+        <item>Seni indirten değil kaldıran ses ol.</item>
+        <item>Kırılan dizi güçünü silmez.</item>
+        <item>Tutarlılık mükemmelliyetten daha önemli.</item>
+        <item>Çoğu gün yapabilir daha önemi.</item>
+        <item>Gerçek ölçü düzenli göründüğü.</item>
+        <item>Bir kayma söylenme desenini silmez.</item>
+        <item>Alışkanlık küçük tekrarlı seçimle oluştı.</item>
+        <item>Önemli inşa ettiğin ritim mükemmel çizgi değil.</item>
+        <item>Dizi kırılır. Karakter değil.</item>
+        <item>Tekrarlama yoluyla eğitiyorsun.</item>
+        <item>Gün şansa ol şekilleniyor.</item>
+        <item>İlk günler en zor. Kolay oluyor.</item>
+        <item>Başlarda her şey acil. Zayıflar.</item>
+        <item>Şu anda imkansız hissetmiş. Her zaman değil.</item>
+        <item>İstekler zayıflar. Güven.</item>
+        <item>Parlak yabanları soğumaz.</item>
+        <item>Vücut ve zihin sanıdan daha çabuk alışır.</item>
+        <item>İlk hafta en dik tırmanış.</item>
+        <item>Her gün önceki biraz hafif.</item>
+        <item>En zor kısımsın. Değişecek.</item>
+        <item>Yoğunluk geçici.</item>
+        <item>Bir süre sonra seçim kolay olmaya başlar.</item>
+        <item>İstek zamanla tutumunu kaybeder.</item>
+        <item>Bir gün farkına varacaksın düşünmedin.</item>
+        <item>Kurtulş ilerleme kazanıyor.</item>
+        <item>Direnci her gün sonraki yumuşak yapar.</item>
+        <item>Beyin yeniden bağlanıyor. Zaman alır sonra oluyor.</item>
+        <item>Zor olanı doğal olur.</item>
+        <item>Yol ne kadar çok yürürsen pürüzsüz.</item>
+        <item>Bir gün uyanıp farklı hissettiğini.</item>
+        <item>Güç sessizce inşa oluyor sonra vardığını farkedilir.</item>
+        <item>Gün bir dönüm noktası. Bir hafta da.</item>
+        <item>Zaferlerini özel olarak işaretle. Hala zaferler.</item>
+        <item>Ilerlemen onurlandırmak için ilanını yapmamalısın.</item>
+        <item>Sessiz gurur kutlama kadar sayılır.</item>
+        <item>Söz olmadan kutla. Zafer gerçek.</item>
+        <item>Her dönüm noktası, boyut ne olursa olsun, takdir değer.</item>
+        <item>Atılım izle gerek değil önemli olmak için.</item>
+        <item>Sessiz güç yine güç.</item>
+        <item>Başarması fark et, kimse görmese de.</item>
+        <item>Buraya gelmek ne mal olduğunu biliyorsun. Yeterli.</item>
+        <item>Yarını aşan düşün. Uzun sürüyor bir şey inşa ediyorsun.</item>
+        <item>Bugün seçim yaşamın tümünü şekil.</item>
+        <item>Sadece bugünü geçmiyorsun, sonsuza dönüştüyüyorsün.</item>
+        <item>Gelecek senin yapıyor minnettar.</item>
+        <item>Olmaya çalışan kişi buna değer.</item>
+        <item>Gelecek senin güven.</item>
+        <item>Şu anda yapdığın zaman içinde çeviriye.</item>
+        <item>İstediğin hayata yatırım.</item>
+        <item>Bugün hakkında değil. Kim olacağın hakkında.</item>
+        <item>Her seçim ileriye yayılıyor.</item>
+        <item>İstek gelince, neden başladığı hatırla.</item>
+        <item>Eski desen geri dönmek istediyor. Hayır diyebilirsin.</item>
+        <item>Kırdığın alışkanlık oluşmak zaman aldı. Geri almak da alır.</item>
+        <item>Davranış yıllarını yeniden bağlıyorsun. Sabrızlı iş.</item>
+        <item>Alışkanlık fısıldar. Dinlemem seçebilirsin.</item>
+        <item>Hayır dediğin her sefer sonraki hayır eğitiyorsun.</item>
+        <item>Mahrum olmuyorsun. Serbest bırakılıyorsun.</item>
+        <item>İstediğin şey hakkında değil. Kim olmak istediğin.</item>
+        <item>Dönmek isteiğin neden istekten büyük.</item>
+        <item>Olmazsız hayat ver cesini değer.</item>
+        <item>Bugün alışkanlığından güçlüsün. Güven.</item>
+        <item>Bir şey istemeniz yapmanız gerekmiyor.</item>
+        <item>İsteği hissetebilir sonsuza yürüyebilirsin.</item>
+        <item>Duygu geçecek. Her duygya hareket etmek zorunda değilsin.</item>
+        <item>İstekler dalgalar gibi gelip gidiyor. Geçişleri izleyi öğreniyorsun.</item>
+        <item>Bu istek komut değil. Sadece düşünce.</item>
+        <item>Bir şey isteyip reddedebileceğin biri oluyorsun.</item>
+        <item>Her red sorguladığın güç kanıtlıyor.</item>
+        <item>Eski desen artık sana ait değil.</item>
+        <item>Hayatını geri alıyorsun, seçim seçim.</item>
+        <item>Yorgun olduğunda, ne kadar ilerde olduğun hatırla.</item>
+        <item>En zor kısım geride değil ama en kötüsü geçtin.</item>
+        <item>En zor şeyi zaten yaptın. Sabit kalmak kolay.</item>
+        <item>Bunu yapabildiğin kanıtladın. Tekrar kanıtlamana gerek yok.</item>
+        <item>Gerek duyduğunda dinlen. İş devam ediyor.</item>
+        <item>Yorgunluk gerçek. Başarısız olduğun anlamına gelmiyor.</item>
+        <item>Yorgun olabilirsin ileriye hareketli olmaya devam et.</item>
+        <item>Yarın taze gün. Bugün mükemmel olmak zorunda değil.</item>
+        <item>Bugün zorsa yarın kolay olabilir.</item>
+        <item>Bugün yaptığın hiçbir şey inşa ettiğini silmiyor.</item>
+        <item>Zor bir gün haftalarca ilerlemesi silmez.</item>
+        <item>Kötü gün tüm haftayı tanımlamıyor.</item>
+        <item>Zorlu an olabilirsin yine tamam olmaya izinlisin.</item>
+        <item>Kurtulş düz çizgi değil. Çizgi yine yukarı.</item>
+        <item>Bazı günler baştan başlamak gibi hissettirir. Normal.</item>
+        <item>Başlamı dönmüyorsün. Devam et. Zor günler de parça.</item>
+        <item>Şeyler parçalanmıyor hissettin, çoğu yorgunsun.</item>
+        <item>Değerin bir dizi ölçü değil.</item>
+        <item>Kim olduğun bir anın zayıflığı ölçü değil.</item>
+        <item>Tek seçim değilsin. Hepsinin birleşimi.</item>
+        <item>Alışkanlık bir bölüm. Tümüyle yeni kitap yazıyorsun.</item>
+        <item>Senin versiyonu hala oluşuyor. Zaman ver.</item>
+        <item>Yavaş değişmeye izinlisin.</item>
+        <item>Cifa son tarihi yok.</item>
+        <item>Kurtulş kendi hızında oluyor, tamam.</item>
+        <item>İleri yol her zaman açık değil. Tüm yolu görmen gerekmiyor.</item>
+        <item>Sadece sonraki adım yeterli.</item>
+        <item>Bugün her şeyi çözmek zorunda değilsin.</item>
+        <item>Sürece güven ilerleme görmese bile.</item>
+        <item>Yapıyorsun iş sonuçlar anında göstermez. İyi.</item>
+        <item>Görünmez ilerleme yine ilerleme.</item>
+        <item>Görmesende değişiyorsun.</item>
+        <item>Vücut ve zihin sessizce alışıyor.</item>
+        <item>Durmanın ödülü her zaman başında bariz değil.</item>
+        <item>Bu kazanmak zaman gösterir.</item>
+        <item>Sevdiğin birine olacak kadar kendine sabır davran.</item>
+        <item>Mücadele edersen zayıf değilsin.</item>
+        <item>Mücadele büyüyor işareti.</item>
+        <item>Rahatsızlık değişiyorsun kanıtı.</item>
+        <item>Çok zor bir şey yapıyorsun. Onuru ver.</item>
+        <item>Bunu seçiyorsun, her gün, acı olsa bile.</item>
+        <item>Kimse özgürlüğü alamaz. Bunu savaş.</item>
+        <item>Kendini mahrum bırakmıyorsun. Kendini talep ediyorsun.</item>
+        <item>Kendine saygı davranış.</item>
+        <item>Gerçekten sevdiğin şekilde davran buna.</item>
+        <item>Çabanın değerlisin.</item>
+        <item>Tutma değerlisin. Savaşma değerlisin.</item>
+        <item>Değerli olup olmadığına sorgulamayı kes.</item>
+        <item>Kuşku gelecek. Bırak. Buna inanman gerekmiyor.</item>
+        <item>Emin olmadan ileriye hareket edebilirsin.</item>
+        <item>İnanç eylemi takip eder. Önce davran.</item>
+        <item>Şeyi yapmak için kendine güven lazım değil.</item>
+        <item>Şeyi yap. Güven gelecek.</item>
+        <item>Bazı günler güçlü hissettirir. Bazı günler kırılgan.</item>
+        <item>Kırılgan günler gerçek güç yaşıyor.</item>
+        <item>Zayıf olduğunda bulunmak cesarettir.</item>
+        <item>Alışkanlık sessizlik ve utançta gelişti. Sessizlik ve utanç yakıt.</item>
+        <item>Konuş, kabul et, ileri hareket et aç bırakır.</item>
+        <item>Bunu gizlemek zorunda değilsin. Gizlemek için hiçbir şey yok.</item>
+        <item>Yaptığın cifa. Bu utançsız ters.</item>
+        <item>Bir şey koyan her kişi hissettiğin hissetti.</item>
+        <item>Başka insanlar bu yolu yürüdü.</item>
+        <item>Hikayeniz bitti değil. Yeni bir bölüm başlıyor.</item>
+        <item>İstediğin bitiş hala mümkün. Mümkünden daha.</item>
+        <item>Kaç sefer denedin önemli değil, bu kez farklı.</item>
+        <item>Geçmiş denemeleri başarısız değildi. Pratikti.</item>
+        <item>Her denediğinde bir şey öğrendin.</item>
+        <item>Bu bilgi senin. Kullan.</item>
+        <item>İstek seni test edecek. İstekler bunu yapar.</item>
+        <item>Geçtiğin her test barışa yakın.</item>
+        <item>Takıntılı düşünce zayıflar.</item>
+        <item>Zihinsel tekrar sessizleşir.</item>
+        <item>Gün gelecek saatlerde düşünmedin.</item>
+        <item>Bunu istemeye izinlisin. Tam iste.</item>
+        <item>Özgürlüğü iste. Barışı iste. Yeni senin iste.</item>
+        <item>Motivasyon zayıfladığında neden taşısın.</item>
+        <item>Nedenler zayıfladığında rutini taşısın.</item>
+        <item>Rutin kırıldığında yine al.</item>
+        <item>Kırılgan değil. Esnek.</item>
+        <item>Dayanıklı bir şey inşa ediyorsun.</item>
+        <item>Eski desen bir daha çalışacak. Biliyorsun.</item>
+        <item>Hazır olacaksın, çünkü hazırlandın.</item>
+        <item>Hayır dediğin her gün o an pratik.</item>
+        <item>Gelecek yazılmamış. Yazıyorsun.</item>
+        <item>Seçim yapıyorsun gelecek kelime.</item>
+        <item>Ne hikaye anlatmak istiyorsun?</item>
+        <item>Hiç yaptığın zor şey şu anda yapıyorsun.</item>
+        <item>Sadece hayatta kalma değil. Kim olmak istiyorsun.</item>
+        <item>Olmaya çalışan kişi alışkanlık lazım değil.</item>
+        <item>Büyüme yavaş. Büyüme gerçek. Büyüme oluyor.</item>
+        <item>Beynin plastik. Değişebilir. Değişiyor.</item>
+        <item>Bugün imkansız yarın normal.</item>
+        <item>Yeni normal seni bekliyor.</item>
+        <item>Denemeyi devam eden kişi kutlamaya değer.</item>
+        <item>Barış bir kerede gelmez yapıyorsun.</item>
+        <item>Buraya ait. Buraya kurtulşa ait.</item>
+        <item>Bu sabah ekstra saatin. Ne yapacaksın?</item>
+        <item>Zihniniz dün daha açık. Fark et.</item>
+        <item>Bugün kendini seçtin. Önemli.</item>
+        <item>Alışkanlık daha sessiz. Ritmi öğreniyorsun.</item>
+        <item>Sabah yürüyüş tüm günü sıfırlamaz.</item>
+        <item>Zaman tasarrufu ile gerçek inşa ediyorsun.</item>
+        <item>Gece uyku farklı hissettirir. Bırak.</item>
+        <item>Soğuk su ceza değil. Kendine rahatsızlık seçebileceğin kanıt.</item>
+        <item>Ellerin daha iyi için boş.</item>
+        <item>İstek gelecek. Bunu oturt biliyorsun.</item>
+        <item>Odaklanma eski deseni beslememeyi bırakınca büyür.</item>
+        <item>Alışkanlıkla savaşmıyorsun. Yüzünü döndürüyorsün.</item>
+        <item>Bugün disiplin yarın özgürlük. Her zaman.</item>
+        <item>Öğleden sonra çöküş daha az. Fark ettin?</item>
+        <item>Ufak zafer şükretle geçmiş utançtan daha hız kazanır.</item>
+        <item>Vucuduna yeni ritim öğretiyorsun.</item>
+        <item>Alışkanlık fısıldar. Taahhütün yüksek konuşur.</item>
+        <item>Bu enerji harcamaya senin.</item>
+        <item>İstek gelince sakin kalmak süper güç.</item>
+        <item>Arkadaşına ne diyeceksin durumunda?</item>
+        <item>Sabah rutinin çapanını.</item>
+        <item>İstek veri, kader değil.</item>
+        <item>Kendini mahrum bırakmıyorsun. Koruyor.</item>
+        <item>On dakika dışı on dakika bunu takip etmeyen.</item>
+        <item>Bu hafta sonunkidan farklı. Fark görüyor.</item>
+        <item>Ailen fark etti. Henüz söylemiyorlar ama fark.</item>
+        <item>Alışkanlık endişeyi besle. Sabit kal zayıfla.</item>
+        <item>Hareketsiz birisi oluyorsun.</item>
+        <item>Gün gün zayıflık değil. Strateji.</item>
+        <item>Uyku vücudun cifa yolu. Onoru ver.</item>
+        <item>İstek zayıflıyor tartışmadığında.</item>
+        <item>Başlama yok. Devam et.</item>
+        <item>Yer alışkanlık zaman. Kendine sabır.</item>
+        <item>Bu an daha kolay sonunkisinden.</item>
+        <item>Zihniniz daha az kalabalık. Boşluğu hisset.</item>
+        <item>İş daha açık alışkanlık yolda değilken.</item>
+        <item>Eski desenin malı vardı. Şimdi kurtulsun.</item>
+        <item>Sıkılmayı öğreniyorsun. Gerçek beceri.</item>
+        <item>Sabah senin. Bununla ne yaratacaksın?</item>
+        <item>Ellerin daha az titriyor. Fark ettin?</item>
+        <item>Bu barışın hissi.</item>
+        <item>Koymak için izin gerek yok. Zaten var.</item>
+        <item>İstek geçer. Her sefer geçer.</item>
+        <item>Vücut alışkanlığı hatırlar. Zihin bilir.</item>
+        <item>Küçük disiplin büyük özgürlük yarın.</item>
+        <item>Kırık değilsin. Gücünü yeniden yönlendiriyorsun.</item>
+        <item>On bin küçük seçim anı seni getirdi.</item>
+        <item>Alışkanlık hala burada olurdu besleseydin. Beslemedi.</item>
+        <item>Arkadaşlar seni böyle görmek istiyor. Açık ve bulunmak.</item>
+        <item>Akşam rutini sınav değil, ödül.</item>
+        <item>Daha derin nefes alıyor.</item>
+        <item>İstek karar verme gücünü kaybetti.</item>
+        <item>Bugün gerçek bir şey için enerji var.</item>
+        <item>Kaybettiğine pişmanlık yerine kazandığına şükretle.</item>
+        <item>Savaş yapma değilsin. Seçiyorsun.</item>
+        <item>Alışkanlık karanlıkta gelişti. Işık müttefik.</item>
+        <item>Enerji boşa harcama bırakınca odaklanma keskinleşir.</item>
+        <item>Soğuk su alışkanlık uyandırdığı gibi. Maliyet olmaksızın.</item>
+        <item>Kendini mahrum bırakmıyorsun. Kendine yatırım.</item>
+        <item>İstek bazı günler yüksek, bazı sessiz. İkisi tamam.</item>
+        <item>Uyku borcunuz azalıyor.</item>
+        <item>Sabah yürüyüş amaç vardı: sakin olabildiğini hatırla.</item>
+        <item>Mükemmel değilsin. Sabit.</item>
+        <item>Alışkanlık alışkanlıkta yaşıyor. Alışkanlık kır, gücü kır.</item>
+        <item>Zihniniz savaş alanı değil, araç.</item>
+        <item>Sabah senin boş sayfa.</item>
+        <item>Sinir sistemi yeni güvenli hissetme öğretiyorsun.</item>
+        <item>Bunu seçtin. Seçmeyi devam ettir.</item>
+        <item>Eski desen özgürlük gibi. Gerçek özgürlük böyle.</item>
+        <item>Enerji yarından ödünç değil.</item>
+        <item>İstek seni test edecek. Bırak. Her testi geçtin.</item>
+        <item>Disiplin kendine uygulanan sevgi.</item>
+        <item>Alışkanlıktan kaçmıyorsun. Daha iyi doğru koşuyorsun.</item>
+        <item>Açıklık korumaya değer.</item>
+        <item>Bir sakin akşam bircok olasılığı kanıtlar.</item>
+        <item>Vücut cifa ediyor. Sürece güven.</item>
+        <item>Savaş bıraktığın an kazanmaya başlıyorsun.</item>
+        <item>Alışkanlık için yeri olmayan hayat inşa ediyorsun.</item>
+        <item>İstek gizlilik besler. Işığa çıkar zayıfar.</item>
+        <item>Uyku vücut sözü tutar.</item>
+        <item>Yer alışkanlık gerçek oluyor.</item>
+        <item>Alışkanlığı özleme değilsin. Kendini hatırlamıyorsun.</item>
+        <item>Sabah rutini kendiye günlük oyunuz.</item>
+        <item>Şimdiki an endişesine gelecek kaygıdan daha iyi.</item>
+        <item>Zihinde yer var yeniye.</item>
+        <item>Ormandaki yürüyüş alışkanlığın ngildi edebilmek ilaç.</item>
+        <item>Rahatsızlıkta öturebilirsin beslemeksizin.</item>
+        <item>Alışkanlık aciliyet besler. Sakinlik düşman.</item>
+        <item>Odaklanma bölmemeyi bırakinça döner.</item>
+        <item>Küçük zafer büyüğe inanma izni.</item>
+        <item>Kendini mahrum bırakmıyorsun. Özgürlük pratik yapıyorsun.</item>
+        <item>İstek ziyaretçi, ev sahibi değil.</item>
+        <item>Enerji gerçek yol açıyor.</item>
+        <item>Eski desen sessiz beslemedi.</item>
+        <item>El sanat yapıyorsun, vakit boşa değil.</item>
+        <item>Şefkat olmayan disiplin cezadır. Fark biliyorsun.</item>
+        <item>Gece sessiz. Uyku kolay. Hissediyorsun.</item>
+        <item>Arkadaşlar böyle istiyorlar. Açık olanı.</item>
+        <item>Alışkanlık kaçış vaat etti. Buldum: varlık.</item>
+        <item>İstek yarın gelecek. Nasıl yapacağını biliyorsun.</item>
+        <item>Sabah rutini beyin günde bir yeniden yazıyor.</item>
+        <item>Güçlü çünkü isteği hissetmiyorsun değilsin. Çünkü hisset ve seçiyorsun yine.</item>
+        <item>Zihinde yer açıldı. Bununla ne yapacaksın?</item>
+        <item>Alışkanlık sıkıntıyı besle. Sıkılmayı ve yaşamayı öğreniyorsun.</item>
+        <item>Vücuduna şükretle, cifa ediyor, çalışıyor.</item>
+        <item>Bu sabah pratikti. Pratik devam et.</item>
+        <item>Uyku derin zihin bölmediğinde.</item>
+        <item>İstek gücünü kaybediyor ihtiyacına inanmamaya başlayınca.</item>
+        <item>Sıfırdan değilsin. Şu andan başlıyorsun.</item>
+        <item>Eski desen rahatlama vaat etti. Gerçek rahatlamada onsuz yaşamaktır.</item>
+        <item>Odaklanma her yüz döndüme keskinleşir.</item>
+        <item>Soğuk su hatırlatır: rahatsızlık alışkanlık istemiyor.</item>
+        <item>Savaş değilsin. Ateş beslemiyorsun.</item>
+        <item>Alışkanlık sabahını istedi. Geri al.</item>
+        <item>Ellerin çalışmaya açık.</item>
+        <item>İstek gerçek. Seçimin daha gerçek.</item>
+        <item>Kendine disiplin sevginin en yüksek şekli.</item>
+        <item>Akşam senin. Pazarlık yok. İstek yok. Sadece akşam.</item>
+        <item>Zihin sakin olmayı öğrenüyor. Öğretme bırak.</item>
+        <item>Alışkanlık yüksek. Sakinlik daha yüksek.</item>
+        <item>Yer alışkanlık ev oluyor.</item>
+        <item>Sinir sistemi onsuz güvendesin öğretiyorsun.</item>
+        <item>Sabah yürüyüş günlük hatırlatma: kendi yonünü seçebilirsin.</item>
+        <item>Buraya getiren an için şükretle.</item>
+        <item>Odaklanma parçalandı. Dönüyor.</item>
+        <item>İstek zirveye çıkıp düşer. Her zaman düşer.</item>
+        <item>Uyku tutarsızlık değil. Yapıdır.</item>
+        <item>Eski desen kapı açmak zorunda olmadığın.</item>
+        <item>Enerji gizlemede harcandı değil.</item>
+        <item>İsteği kabul ettiğin an gücünü kaybediyor.</item>
+        <item>Alışkanlık heyecan vaat etti. Barış buldum. Daha iyi.</item>
+        <item>Mükemmel değilsin. Dürüstün. Yeterli.</item>
+        <item>Gün senin. Kullan.</item>
+        <item>Vücut cifa ediyor biliyorsun. Güven.</item>
+        <item>İstek fısılda, çığlık değil, beslemediğinden.</item>
+        <item>Disiplin ki olduğun ve olacağın arasında köprü.</item>
+        <item>Yürüyüş cevap aradığında.</item>
+        <item>Zevkten değilsin. Varlığa doğru koşuyorsun.</item>
+        <item>Sabah her şeyin başlangıcı.</item>
+        <item>Alışkanlık test edecek. Geçeceksin.</item>
+        <item>Odaklanma kas. Egzersiz yapıyorsun.</item>
+        <item>Uyku vücut diyor: teşekkür ederim.</item>
+        <item>Alışkanlığın parçası olmayan inşa ediyorsun.</item>
+        <item>İstek bellek, ihtiyaç değil.</item>
+        <item>Değişmek isteyen kısım için şükretle.</item>
+        <item>Soğuk su müttefik.</item>
+        <item>Güçlü mücadeleden değilsin. Bununla.</item>
+        <item>Eski desen zayıflıyor beslemediğinden.</item>
+        <item>Zihin işe, çalışmaya, el sanatına yer açıyor.</item>
+        <item>Akşam rutini kendine tuttuğun söz.</item>
+        <item>İstek yorgun olduğunda gelir. Ne yapacağını biliyorsun.</item>
+        <item>Kendini mahrum bırakmıyorsun. Doğru bir şey kendine öğretiyorsun.</item>
+        <item>Alışkanlık kaygıyı besle. Sakinlik büyümeyi izle.</item>
+        <item>Uyku cifa işi oluyor.</item>
+        <item>Enerji gelecek haftaya ödünç değil.</item>
+        <item>Yer alışkanlık senin parçası oluyor.</item>
+        <item>Yürüyüş egzersiz değil. Hatırlamaktır.</item>
+        <item>Alışkanlığın izni olmaksızın tamam olabilirsin öğreniyorsun.</item>
+        <item>Disiplin ceza değil. Korunmadır.</item>
+        <item>Sabah rutini kendine günlük mektup.</item>
+        <item>Dönüyor odaklanma senin.</item>
+        <item>İstek zor günlerde yüksek. Normal. İyisin.</item>
+        <item>Ellerin serbest için şükretle.</item>
+        <item>Alışkanlık kulağında fısıldadı. Senin ses daha yüksek.</item>
+        <item>Eski desen rahatlama vaat etti. Gerçek inşa ediyorsun.</item>
+        <item>Vücut barış öğretiyor.</item>
+        <item>Savaş bıraktığın an kazanıyorsun.</item>
+        <item>Hiçbir şey kaybetmiyorsun. Her şeyi kazanıyorsun.</item>
+        <item>İstek bin kez geçtiğin test.</item>
+        <item>Akşam sessiz çünkü gün terimin üstündeydi.</item>
+        <item>Zihin daha az parçalandı.</item>
+        <item>Soğuk su seçebileceğinin kanıtı.</item>
+        <item>Alışkanlık gizlilik besle. Dürüstlüğün düşman.</item>
+        <item>Uyku cifa. Olsun.</item>
+        <item>Sabah yürüyüş günlük sıfırlama düğmesi.</item>
+        <item>Zayıf değilsin isteği hissettiğinden. Güçlü çünkü karşılaş.</item>
+        <item>Disiplin kendine saygı eylem.</item>
+        <item>Odaklanma dönüyor bölmemeyi bırakinça.</item>
+        <item>Arkadaşlar tanıdık biri. O sen.</item>
+        <item>Eski desen geçmiş. Şu andaysın.</item>
+        <item>Alışkanlık zamanını istedi. Geri alıyorsun.</item>
+        <item>Gelen açıklık için şükretle.</item>
+        <item>İstek ziyaret edecek. Kapıya yolu biliyorsun.</item>
+        <item>Zevkten kaçmıyorsun. Gerçeğe doğru.</item>
+        <item>Akşam rutini ceza olmaksızın yapı.</item>
+        <item>Vücut cifa ediyor dinlediğinden.</item>
+        <item>Yer alışkanlık bugün gerçek oluyor.</item>
+        <item>İstek geçtiği an her zaman geçtiğinin kanıtı.</item>
+        <item>Mükemmel değilsin. Sabit. Güç ile aynı.</item>
+        <item>Alışkanlık yüksek. Sakinlik ihtilal.</item>
+        <item>Uyku tembellik değil. En önemli iş yapıyorsun.</item>
+        <item>Sabah her gün verdiğin hediye.</item>
+        <item>Odaklanma keskinleşiyor bölmediğinden.</item>
+        <item>Soğuk su öğretmen. Ne söyler dinle.</item>
+        <item>İstek dürüstlük. Ne çalışman gerek söylüyor.</item>
+        <item>Disiplin senle konuşma.</item>
+        <item>Eski desen çekim vardı. Yörüngeden çıkıyorsun.</item>
+        <item>Enerji harcama yerine inşa ediyor.</item>
+        <item>Seçtiğin kısım için şükretle.</item>
+        <item>Alışkanlık kaçış vaat etti. Daha iyi buldun: kendin.</item>
+        <item>Kazandığın akşam.</item>
+        <item>Sıkılmayı ve tamam olmayı öğreniyorsun.</item>
+        <item>İstek hatırlatma. Neden başladığın hatırlatıyor.</item>
+        <item>Zihin ev oluyor.</item>
+        <item>Yer alışkanlık kimlik.</item>
+        <item>Sabah yürüyüş kendile konuşma.</item>
+        <item>Alışkanlıkla savaş değilsin. Yok sayıyorsun.</item>
+        <item>Disiplin sevgi. Kendine sevgi.</item>
+        <item>Dönüyor odaklanma her zaman senindi.</item>
+        <item>Alışkanlık uyku çalmıştı. Döndüğüne dikkat et.</item>
+        <item>Sinir sistemi için şükretle, sakinlik öğreniyor.</item>
+        <item>Eski desen yabancı oluyor.</item>
+        <item>Ellerin çalışma, çalışma, el sanatı, bağlantı için.</item>
+        <item>Soğuk su günlük seçtiğin küçük zafer.</item>
+        <item>İstek gelir. İstek gider. Kalıyorsun.</item>
+        <item>Uyku yapı. Sağlam inşa et.</item>
+        <item>Sabah rutini kendini seçme günlük pratik.</item>
+        <item>Akşam tuğla tuğla inşa ettiğin tapınak.</item>
+        <item>Açıklığın kaza değil. Küçük seçimlerin sonucu.</item>
+        <item>Yer alışkanlık daha kolay.</item>
+        <item>Alışkanlık stres besle. Stres azalmayı izle.</item>
+        <item>Şifakat olmaksızın disiplin sadece acı. Fark biliyorsun.</item>
+        <item>Yürüyüş kaçış değil. Dönüş.</item>
+        <item>Odaklanma alatı keskinleşiyor.</item>
+        <item>Değişmeyi seçtiğin an için şükretle.</item>
+        <item>İstek dalgadır. Dalışa girmemeyi öğrendin.</item>
+        <item>Eski desen hikaye gücünü kaybediyor.</item>
+        <item>Alışkanlıktan kaçmıyorsun. Kendine doğru.</item>
+        <item>Vücut dinlenmek hatırlıyor.</item>
+        <item>Sabah kanvas. Bugün gerçek bir şey boyuyorsun.</item>
+        <item>Soğuk su hatırlatır: rahatsızlık zarar değil.</item>
+        <item>Uyku artık rahatlama değil. Hayatın normal parçası.</item>
+        <item>Zihin sis beslememeyi bırakinça açılıyor.</item>
+        <item>Alışkanlık dikkatini istedi. Gerçek şeye veriyorsun.</item>
+        <item>Disiplin kendine söz tutma davranış.</item>
+        <item>Akşam rutini kafes değil, ritüel.</item>
+        <item>İstek zirveye çıkacak. Düşüşü izleyeceksin. Tamam olacaksın.</item>
+        <item>Bilmedediğin güç için şükretle.</item>
+        <item>Yer alışkanlık düzgün oluyor.</item>
+        <item>Odaklanma dönüyor bölmediğinden.</item>
+        <item>Eski desen kapısından geçmeyi öğrendin.</item>
+        <item>Sakinlik kaçıştan daha güçlü öğreniyorsun.</item>
+        <item>Alışkanlık ödünç hayat. Bu senin.</item>
+        <item>Sabah yürüyüş açıklıkla günlük konuşma.</item>
+        <item>Uyku temel. Hepsi buna inşa edilir.</item>
+        <item>Disiplin özgürlük mimarı.</item>
+        <item>İstek dürüst. Çalışmanın hala nerede olduğu söylüyor.</item>
+        <item>Enerji senin. Bununla ne inşa edeceksin?</item>
+        <item>Akşam sessiz çünkü gün teriminizi.</item>
+        <item>Soğuk su küçük söz: zor şeyi yapabilirsin.</item>
+        <item>Odaklanma günde bir gün dönüyor.</item>
+        <item>Vucudun şükretle denmeyi devam ediyor.</item>
+        <item>Eski desen geçmiş. Senin geçmişi şu an.</item>
+        <item>Yer alışkanlık kimliği oluyor.</item>
+        <item>Alışkanlık heyecan vaat etti. Anlam buldun. Daha iyi.</item>
+        <item>Zihin daha az kalabalık. İçine kim çağıracaksın?</item>
+        <item>Sabah rutini seçebileceğin günlük kanıt.</item>
+        <item>İstek gelecek gidecek. Kalacaksın.</item>
+        <item>Uyku en iyi iş yapıyorsun.</item>
+        <item>Şifakat disiplin durdurulamaz.</item>
+        <item>Yürüyüş kaçış değil. Dönüş.</item>
+        <item>Odaklanma keskinleşiyor anla açık kalıyorsun.</item>
+        <item>Olmaya çalışan kişi için şükretle.</item>
+        <item>Eski desen zamanı vardı. Bu an senin.</item>
+    </string-array>
+</resources>
