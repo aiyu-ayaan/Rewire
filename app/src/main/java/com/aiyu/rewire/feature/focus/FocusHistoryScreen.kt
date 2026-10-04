@@ -61,6 +61,10 @@ import com.aiyu.rewire.domain.focus.FocusSessionStatus
 import com.aiyu.rewire.domain.focus.FocusState
 import com.aiyu.rewire.ui.components.EmptyState
 import com.aiyu.rewire.ui.components.InnerScreen
+import com.aiyu.rewire.ui.components.ListDetail
+import com.aiyu.rewire.ui.components.paneSource
+import androidx.compose.foundation.layout.BoxWithConstraints
+import androidx.activity.compose.BackHandler
 import com.aiyu.rewire.ui.components.formatMinutes
 import java.time.Instant
 import java.time.ZoneId
@@ -76,24 +80,39 @@ class FocusHistoryViewModel @Inject constructor(private val sessions: FocusSessi
 
 private enum class HistoryFilter(@StringRes val label: Int) { ALL(R.string.focus_filter_all), COMPLETED(R.string.focus_completed), STOPPED(R.string.focus_stopped) }
 
-/** Every finished focus session, newest first, with its outcome and optional achievement note. */
+/** Every finished focus session, newest first, with its outcome and optional achievement note. Wide windows edit the note beside the list. */
 @Composable
 fun FocusHistoryScreen(onBack: () -> Unit) {
     val vm = hiltViewModel<FocusHistoryViewModel>()
     val sessions by vm.history.collectAsStateWithLifecycle()
-    var filter by rememberSaveable { mutableStateOf(HistoryFilter.ALL) }
-    var editing by remember { mutableStateOf<FocusSession?>(null) }
-
-    editing?.let { s ->
-        AchievementScreen(
-            initial = s.note.orEmpty(),
-            completed = s.state.status == FocusSessionStatus.COMPLETED,
-            onSave = { vm.setNote(s.id, it); editing = null },
-            onDismiss = { editing = null },
-        )
-        return
+    var editingId by rememberSaveable { mutableStateOf<String?>(null) }
+    val editor: @Composable (String) -> Unit = { id ->
+        sessions?.find { it.id == id }?.let { s ->
+            AchievementScreen(
+                initial = s.note.orEmpty(),
+                completed = s.state.status == FocusSessionStatus.COMPLETED,
+                onSave = { vm.setNote(s.id, it); editingId = null },
+                onDismiss = { editingId = null },
+            )
+        }
     }
 
+    // Back closes the open note before leaving history.
+    BackHandler(editingId != null) { editingId = null }
+    BoxWithConstraints {
+        if (maxWidth >= 840.dp) {
+            ListDetail(editingId, list = { HistoryList(sessions, onBack, onEdit = { editingId = it }, columns = 1) }, detailContent = editor)
+        } else {
+            val id = editingId
+            if (id != null && sessions?.any { it.id == id } == true) editor(id)
+            else HistoryList(sessions, onBack, onEdit = { editingId = it }, columns = if (LocalConfiguration.current.screenWidthDp >= 840) 2 else 1)
+        }
+    }
+}
+
+@Composable
+private fun HistoryList(sessions: List<FocusSession>?, onBack: () -> Unit, onEdit: (String) -> Unit, columns: Int) {
+    var filter by rememberSaveable { mutableStateOf(HistoryFilter.ALL) }
     val all = sessions.orEmpty()
     val completed = all.count { it.state.status == FocusSessionStatus.COMPLETED }
     InnerScreen(
@@ -122,9 +141,8 @@ fun FocusHistoryScreen(onBack: () -> Unit) {
                 body = if (all.isEmpty()) stringResource(R.string.focus_history_empty_body) else stringResource(R.string.focus_history_filtered_body, stringResource(filter.label).lowercase()),
                 modifier = Modifier.padding(top = 32.dp),
             )
-            // Cards sit side by side once the window is wide (InnerScreen caps width, so this only matters beyond ~640dp).
-            else -> FlowRow(horizontalArrangement = Arrangement.spacedBy(8.dp), verticalArrangement = Arrangement.spacedBy(8.dp), maxItemsInEachRow = if (LocalConfiguration.current.screenWidthDp >= 840) 2 else 1) {
-                shown.forEach { s -> SessionCard(s, onEditNote = { editing = s }, modifier = Modifier.weight(1f)) }
+            else -> FlowRow(horizontalArrangement = Arrangement.spacedBy(8.dp), verticalArrangement = Arrangement.spacedBy(8.dp), maxItemsInEachRow = columns) {
+                shown.forEach { s -> SessionCard(s, onEditNote = { onEdit(s.id) }, modifier = Modifier.weight(1f).paneSource(s.id)) }
             }
         }
     }
