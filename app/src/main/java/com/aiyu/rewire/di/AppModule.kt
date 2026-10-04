@@ -103,6 +103,9 @@ object AppModule {
     fun focusPresets(@ApplicationContext context: Context): FocusPresetRepository = DataStoreFocusPresetRepository(context)
 
     @Provides @Singleton
+    fun quit(@ApplicationContext context: Context): com.aiyu.rewire.data.QuitRepository = com.aiyu.rewire.data.DataStoreQuitRepository(context)
+
+    @Provides @Singleton
     fun screenTimeStore(@ApplicationContext context: Context) = com.aiyu.rewire.data.ScreenTimeStore(context)
 
     @Provides @Singleton
