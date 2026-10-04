@@ -1,5 +1,6 @@
 package com.aiyu.rewire.ui
 
+import androidx.activity.compose.BackHandler
 import androidx.compose.animation.AnimatedContent
 import androidx.compose.animation.animateColorAsState
 import androidx.compose.animation.animateContentSize
@@ -141,6 +142,8 @@ fun MainScreen(
     // On wide windows a screen opened from a tab shows beside the list instead of replacing it (see TabPane).
     var detail by rememberSaveable { mutableStateOf<String?>(null) }
     val select = { t: Tab -> tab = t; detail = null }
+    // Back closes an open detail pane before leaving the app.
+    BackHandler(detail != null) { detail = null }
     val navBar = remember { NavBarController() }
     LaunchedEffect(deepLink) {
         if (deepLink != null) {
