@@ -106,15 +106,10 @@ import com.aiyu.rewire.feature.profile.LanguageScreen
 import com.aiyu.rewire.feature.profile.NotificationSettingsScreen
 import com.aiyu.rewire.feature.profile.WarningLibraryScreen
 import com.aiyu.rewire.feature.update.UpdateScreen
-import com.aiyu.rewire.ui.components.LocalNavAnimatedScope
-import com.aiyu.rewire.ui.components.LocalSharedTransitionScope
-import com.aiyu.rewire.ui.components.MorphingShape
-import com.aiyu.rewire.ui.components.heroBrush
+import com.aiyu.rewire.ui.components.ListDetail
 import androidx.compose.foundation.layout.fillMaxHeight
-import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.material3.Surface
-import androidx.compose.ui.draw.alpha
 
 enum class Tab(@StringRes val label: Int, val icon: ImageVector, val selectedIcon: ImageVector, val link: DeepLink) {
     GUARD(R.string.nav_guard, Icons.Outlined.Shield, Icons.Rounded.Shield, DeepLink.GUARD),
@@ -274,26 +269,10 @@ fun HideNavigationBar(hide: Boolean = true) {
     }
 }
 
-/** Wide windows: [list] on the left (fixed width), the opened screen on the right like Android Settings. Narrow: [list] only. */
+/** Wide: the tab's list with its detail pane beside it ([ListDetail]). Narrow: [list] only. */
 @Composable
 private fun TabPane(wide: Boolean, detail: String?, detailContent: @Composable (String) -> Unit, list: @Composable () -> Unit) {
-    if (!wide) { list(); return }
-    Row(Modifier.fillMaxSize()) {
-        Box(Modifier.width(420.dp).fillMaxHeight()) { list() }
-        Surface(
-            Modifier.weight(1f).fillMaxHeight().padding(top = 8.dp, end = 8.dp, bottom = 8.dp),
-            shape = MaterialTheme.shapes.extraLarge,
-            color = MaterialTheme.colorScheme.surfaceContainerLow,
-        ) {
-            // The pane is not a nav destination: hero/container transforms don't apply here.
-            CompositionLocalProvider(LocalSharedTransitionScope provides null, LocalNavAnimatedScope provides null) {
-                if (detail != null) detailContent(detail)
-                else Box(Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
-                    MorphingShape(brush = heroBrush(), modifier = Modifier.size(96.dp).alpha(0.4f))
-                }
-            }
-        }
-    }
+    if (wide) ListDetail(detail, list, detailContent = detailContent) else list()
 }
 
 /** Screens that open beside the list on wide windows. [key] is "kind" or "kind:arg" and survives rotation. */

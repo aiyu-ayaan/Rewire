@@ -1,5 +1,6 @@
 package com.aiyu.rewire.feature.guard
 
+import com.aiyu.rewire.ui.components.paneSource
 import com.aiyu.rewire.ui.components.CappedFontScale
 import com.aiyu.rewire.ui.LocalBottomBarInsets
 
@@ -250,7 +251,7 @@ fun HabitCard(
         onClick = onClick,
         shape = MaterialTheme.shapes.large,
         colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surfaceContainerLow),
-        modifier = modifier.fillMaxWidth().sharedBoundsOrSelf("habit-${profile.id}"),
+        modifier = modifier.fillMaxWidth().sharedBoundsOrSelf("habit-${profile.id}").paneSource("habit:${profile.id}"),
     ) {
         Column(Modifier.padding(20.dp)) {
             Row(verticalAlignment = Alignment.CenterVertically) {

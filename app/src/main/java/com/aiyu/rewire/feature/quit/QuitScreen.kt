@@ -1,5 +1,6 @@
 package com.aiyu.rewire.feature.quit
 
+import com.aiyu.rewire.ui.components.paneSource
 import androidx.activity.compose.BackHandler
 import com.aiyu.rewire.ui.LocalBottomBarInsets
 import androidx.compose.animation.AnimatedContent
@@ -279,7 +280,7 @@ private fun QuitCard(h: QuitHabit, now: Long, onOpen: () -> Unit, onEdit: () -> 
         onClick = onOpen,
         shape = MaterialTheme.shapes.extraLarge,
         colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surfaceContainerHigh),
-        modifier = modifier.fillMaxWidth().sharedBoundsOrSelf("quit-${h.id}"),
+        modifier = modifier.fillMaxWidth().sharedBoundsOrSelf("quit-${h.id}").paneSource("quit:${h.id}"),
     ) {
         Column(Modifier.padding(start = 20.dp, end = 8.dp, top = 20.dp, bottom = 16.dp)) {
             Row(verticalAlignment = Alignment.CenterVertically) {

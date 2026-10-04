@@ -1,5 +1,6 @@
 package com.aiyu.rewire.feature.profile
 
+import com.aiyu.rewire.ui.components.paneSource
 import androidx.compose.ui.semantics.Role
 
 import androidx.compose.foundation.clickable
@@ -63,7 +64,7 @@ fun GoalsRow(containerColor: androidx.compose.ui.graphics.Color, onClick: () -> 
         leadingContent = { Icon(Icons.Rounded.Flag, contentDescription = null) },
         trailingContent = { Icon(Icons.AutoMirrored.Rounded.KeyboardArrowRight, contentDescription = null) },
         colors = ListItemDefaults.colors(containerColor = containerColor),
-        modifier = Modifier.clickable(role = Role.Button, onClick = onClick),
+        modifier = Modifier.paneSource("goals").clickable(role = Role.Button, onClick = onClick),
     )
 }
 

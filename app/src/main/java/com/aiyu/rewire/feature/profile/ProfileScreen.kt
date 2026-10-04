@@ -1,5 +1,6 @@
 package com.aiyu.rewire.feature.profile
 
+import com.aiyu.rewire.ui.components.paneSource
 import androidx.compose.ui.semantics.Role
 import com.aiyu.rewire.ui.LocalBottomBarInsets
 
@@ -122,13 +123,13 @@ fun ProfileScreen(onOpenNotificationSettings: () -> Unit, onOpenWarningLibrary: 
             NavRow(Icons.Rounded.Notifications, stringResource(R.string.profile_notifications), when (permission.status) {
                 PermissionStatus.GRANTED -> stringResource(R.string.profile_notifications_on, s.notifications.count { it.value }, s.notifications.size)
                 else -> stringResource(R.string.profile_notifications_off)
-            }, onOpenNotificationSettings)
-            NavRow(Icons.Rounded.FormatQuote, stringResource(R.string.profile_warning_library), stringResource(R.string.profile_warning_library_summary, warnings.count { it.enabled }, warnings.count { it.custom }), onOpenWarningLibrary)
+            }, onOpenNotificationSettings, "notifications")
+            NavRow(Icons.Rounded.FormatQuote, stringResource(R.string.profile_warning_library), stringResource(R.string.profile_warning_library_summary, warnings.count { it.enabled }, warnings.count { it.custom }), onOpenWarningLibrary, "warnings")
             val context = LocalContext.current
             val language = AppLocale.current(context)
-            NavRow(Icons.Rounded.Language, stringResource(R.string.profile_language), if (language.isEmpty()) stringResource(R.string.profile_language_system) else AppLocale.nativeName(language), onOpenLanguage)
+            NavRow(Icons.Rounded.Language, stringResource(R.string.profile_language), if (language.isEmpty()) stringResource(R.string.profile_language_system) else AppLocale.nativeName(language), onOpenLanguage, "language")
             if (BuildConfig.UPDATES) UpdatesRow(s, onOpenUpdates) // gone entirely in the play flavor
-            NavRow(Icons.Rounded.Info, stringResource(R.string.profile_about), stringResource(R.string.profile_about_summary, BuildConfig.VERSION_NAME), onOpenAbout)
+            NavRow(Icons.Rounded.Info, stringResource(R.string.profile_about), stringResource(R.string.profile_about_summary, BuildConfig.VERSION_NAME), onOpenAbout, "about")
         }
 
         }, second = {
@@ -157,14 +158,14 @@ private fun Group(content: @Composable () -> Unit) {
 private fun groupItemColors() = ListItemDefaults.colors(containerColor = MaterialTheme.colorScheme.surfaceContainerLow)
 
 @Composable
-private fun NavRow(icon: ImageVector, title: String, subtitle: String, onClick: () -> Unit) {
+private fun NavRow(icon: ImageVector, title: String, subtitle: String, onClick: () -> Unit, pane: String? = null) {
     ListItem(
         headlineContent = { Text(title) },
         supportingContent = { Text(subtitle) },
         leadingContent = { Icon(icon, contentDescription = null) },
         trailingContent = { Icon(Icons.AutoMirrored.Rounded.KeyboardArrowRight, contentDescription = null) },
         colors = groupItemColors(),
-        modifier = Modifier.clickable(role = Role.Button, onClick = onClick),
+        modifier = Modifier.then(if (pane != null) Modifier.paneSource(pane) else Modifier).clickable(role = Role.Button, onClick = onClick),
     )
 }
 
@@ -207,5 +208,6 @@ private fun UpdatesRow(s: Settings, onOpenUpdates: () -> Unit) {
             else -> stringResource(R.string.profile_update_channel, BuildConfig.VERSION_NAME, stringResource((s.updateChannel ?: updates.channel).labelRes))
         },
         onOpenUpdates,
+        "updates",
     )
 }
