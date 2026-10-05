@@ -7,7 +7,12 @@ import androidx.compose.ui.semantics.semantics
 import androidx.compose.animation.AnimatedVisibilityScope
 import androidx.compose.ui.res.stringResource
 import com.aiyu.rewire.R
+import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.SharedTransitionScope
+import androidx.compose.animation.fadeIn
+import androidx.compose.animation.fadeOut
+import androidx.compose.animation.scaleIn
+import androidx.compose.animation.scaleOut
 import androidx.compose.animation.core.spring
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -69,6 +74,19 @@ fun Modifier.sharedBoundsOrSelf(key: String): Modifier {
             resizeMode = SharedTransitionScope.ResizeMode.scaleToBounds(),
         )
     }
+}
+
+/** Keeps a FAB out of a running container transform: the shared card renders in the overlay above everything, so it would slide over the FAB. */
+@Composable
+fun FabOutsideSharedTransition(visible: Boolean, modifier: Modifier = Modifier, fab: @Composable () -> Unit) {
+    val moving = LocalSharedTransitionScope.current?.isTransitionActive == true
+    val motion = MaterialTheme.motionScheme
+    AnimatedVisibility(
+        visible && !moving,
+        modifier = modifier,
+        enter = fadeIn(motion.defaultEffectsSpec()) + scaleIn(motion.defaultSpatialSpec(), initialScale = 0.6f),
+        exit = fadeOut(motion.fastEffectsSpec()) + scaleOut(motion.fastSpatialSpec(), targetScale = 0.6f),
+    ) { fab() }
 }
 
 // ---- Level visuals (never color only: icon + label always present) -----------------------------
