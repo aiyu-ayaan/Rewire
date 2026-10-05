@@ -39,6 +39,7 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.outlined.Lock
 import androidx.compose.material.icons.rounded.Add
 import androidx.compose.material.icons.rounded.FormatQuote
+import androidx.compose.material.icons.rounded.History
 import androidx.compose.material.icons.rounded.MoreVert
 import androidx.compose.material.icons.rounded.Waves
 import androidx.compose.material3.AlertDialog
@@ -123,6 +124,7 @@ fun QuitScreen(onOpen: (String) -> Unit) {
     var urge by rememberSaveable { mutableStateOf(false) }
     // null = closed, "" = new tracker, otherwise the id being edited.
     var sheet by rememberSaveable { mutableStateOf<String?>(null) }
+    var history by rememberSaveable { mutableStateOf(false) }
     val thoughts = stringArrayResource(R.array.quit_thoughts)
 
     // Breathing is a step inside the tab, like the running focus timer: the bar steps away.
@@ -143,9 +145,12 @@ fun QuitScreen(onOpen: (String) -> Unit) {
                 onOpen = onOpen,
                 onEdit = { sheet = it },
                 onDelete = vm::delete,
+                onHistory = if (Quit.recentChanges(d, now).isNotEmpty()) ({ history = true }) else null,
             )
         }
     }
+
+    QuitHistory(data, now, open = history, onClose = { history = false }, onUndo = vm::undo, onRedo = vm::redo)
 
     sheet?.let { id ->
         val editing = data?.habits?.find { it.id == id }
@@ -171,6 +176,7 @@ private fun QuitHome(
     onOpen: (String) -> Unit,
     onEdit: (String) -> Unit,
     onDelete: (String) -> Unit,
+    onHistory: (() -> Unit)?,
 ) {
     val list = rememberLazyGridState()
     val fabExpanded by remember { derivedStateOf { list.firstVisibleItemIndex == 0 } }
@@ -183,7 +189,7 @@ private fun QuitHome(
             horizontalArrangement = Arrangement.spacedBy(12.dp),
         ) {
             val full: LazyGridItemSpanScope.() -> GridItemSpan = { GridItemSpan(maxLineSpan) }
-            item(span = full) { Header() }
+            item(span = full) { Header(onHistory) }
             item(span = full) { ThoughtCard(thoughts) }
             item(span = full) { UrgeCard(urgesRidden, onUrge) }
             item(span = full) { SectionTitle(stringResource(R.string.quit_section), trailing = { if (habits.isNotEmpty()) Text("${habits.size}", style = MaterialTheme.typography.labelLarge, color = MaterialTheme.colorScheme.onSurfaceVariant) }) }
@@ -216,7 +222,7 @@ private fun QuitHome(
 }
 
 @Composable
-private fun Header() {
+private fun Header(onHistory: (() -> Unit)?) {
     ScreenHeader(
         title = stringResource(R.string.nav_quit),
         subtitle = stringResource(R.string.quit_subtitle),
@@ -228,7 +234,10 @@ private fun Header() {
                 rotationMillis = 60_000,
             )
         },
-    )
+    ) {
+        // Shown only while a recent change can still be undone.
+        if (onHistory != null) IconButton(onClick = onHistory) { Icon(Icons.Rounded.History, contentDescription = stringResource(R.string.quit_history)) }
+    }
 }
 
 @Composable

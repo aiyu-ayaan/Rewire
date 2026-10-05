@@ -112,6 +112,8 @@ fun QuitDetailScreen(id: String, onBack: () -> Unit) {
             )
         }
     }
+    // The undo snackbar's "View" opens the history here too while this screen is on display.
+    QuitHistory(data, now, open = false, onClose = {}, onUndo = vm::undo, onRedo = vm::redo)
     if (editing) QuitSheet(
         initial = h,
         onDismiss = { editing = false },

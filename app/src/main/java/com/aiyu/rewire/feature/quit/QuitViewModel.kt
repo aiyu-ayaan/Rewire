@@ -1,15 +1,13 @@
 package com.aiyu.rewire.feature.quit
 
-import androidx.annotation.StringRes
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.aiyu.rewire.R
 import com.aiyu.rewire.core.undo.UndoCenter
 import com.aiyu.rewire.core.undo.UndoOffer
 import com.aiyu.rewire.data.QuitRepository
 import com.aiyu.rewire.domain.quit.Quit
 import com.aiyu.rewire.domain.quit.QuitData
-import com.aiyu.rewire.domain.quit.QuitHabit
+import com.aiyu.rewire.domain.quit.QuitChangeKind
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.SharingStarted
@@ -36,25 +34,25 @@ class QuitViewModel @Inject constructor(private val repo: QuitRepository) : View
         repo.update { op(it, t) }
     }
 
-    /** Runs [op] on one tracker and offers to undo it: undo puts the old tracker back, redo the new one. */
-    private fun undoable(@StringRes message: Int, id: String, op: (QuitData, Long) -> QuitData) = viewModelScope.launch {
-        val t = System.currentTimeMillis()
-        var before: QuitHabit? = null
-        var after: QuitHabit? = null
-        var index = 0
+    // Changes older than the undo window are deleted whenever the tab opens.
+    init { viewModelScope.launch { repo.update { Quit.prune(it, System.currentTimeMillis()) } } }
+
+    /** Runs [op] on one tracker, saves it to the undo history and offers to take it back. */
+    private fun undoable(kind: QuitChangeKind, trackerId: String, op: (QuitData, Long) -> QuitData) = viewModelScope.launch {
+        val changeId = UUID.randomUUID().toString()
+        var saved = 0
         repo.update { d ->
-            index = d.habits.indexOfFirst { it.id == id }
-            before = d.habits.getOrNull(index)
-            op(d, t).also { n -> after = n.habits.find { it.id == id } }
+            val t = System.currentTimeMillis()
+            Quit.record(d, changeId, kind, trackerId, t) { op(it, t) }.also { n -> saved = if (n.changes.any { it.id == changeId }) n.changes.size else 0 }
         }
-        if (before == after) return@launch // rejected (e.g. blank name): nothing to take back
-        val (b, a, i) = Triple(before, after, index)
-        UndoCenter.offer(UndoOffer(message, undo = { repo.update { Quit.put(it, id, b, i) } }, redo = { repo.update { Quit.put(it, id, a, i) } }))
+        if (saved > 0) UndoCenter.offer(UndoOffer(kind.message, saved, undo = { repo.update { Quit.undo(it, changeId) } }, redo = { repo.update { Quit.redo(it, changeId) } }))
     }
 
-    fun add(name: String, reason: String, startedAt: Long) = UUID.randomUUID().toString().let { id -> undoable(R.string.undo_quit_added, id) { d, t -> Quit.add(d, id, name, reason, startedAt, t) } }
-    fun edit(id: String, name: String, reason: String, startedAt: Long) = undoable(R.string.undo_quit_edited, id) { d, t -> Quit.edit(d, id, name, reason, startedAt, t) }
-    fun slip(id: String) = undoable(R.string.undo_quit_slipped, id) { d, t -> Quit.slip(d, id, t) }
-    fun delete(id: String) = undoable(R.string.undo_quit_deleted, id) { d, _ -> Quit.delete(d, id) }
+    fun add(name: String, reason: String, startedAt: Long) = UUID.randomUUID().toString().let { id -> undoable(QuitChangeKind.ADDED, id) { d, t -> Quit.add(d, id, name, reason, startedAt, t) } }
+    fun edit(id: String, name: String, reason: String, startedAt: Long) = undoable(QuitChangeKind.EDITED, id) { d, t -> Quit.edit(d, id, name, reason, startedAt, t) }
+    fun slip(id: String) = undoable(QuitChangeKind.SLIPPED, id) { d, t -> Quit.slip(d, id, t) }
+    fun delete(id: String) = undoable(QuitChangeKind.DELETED, id) { d, _ -> Quit.delete(d, id) }
+    fun undo(changeId: String) = update { d, _ -> Quit.undo(d, changeId) }
+    fun redo(changeId: String) = update { d, _ -> Quit.redo(d, changeId) }
     fun urgeRidden() = update { d, _ -> Quit.urgeRidden(d) }
 }
