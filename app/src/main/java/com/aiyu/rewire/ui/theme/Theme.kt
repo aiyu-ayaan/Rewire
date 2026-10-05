@@ -80,17 +80,19 @@ fun accentScheme(accent: Accent, dark: Boolean, dynamic: ColorScheme?): ColorSch
     }
 }
 
+// Every accent role (primary + secondary: buttons, chips, selected segments, progress tracks) gets the lead palette,
+// so a tab never mixes the wallpaper's primary with its own hue.
 private fun ColorScheme.leadWithSecondary() = copy(
     primary = secondary, onPrimary = onSecondary,
     primaryContainer = secondaryContainer, onPrimaryContainer = onSecondaryContainer,
-    secondary = primary, onSecondary = onPrimary,
-    secondaryContainer = primaryContainer, onSecondaryContainer = onPrimaryContainer,
     surfaceTint = secondary,
 )
 
 private fun ColorScheme.leadWithTertiary() = copy(
     primary = tertiary, onPrimary = onTertiary,
     primaryContainer = tertiaryContainer, onPrimaryContainer = onTertiaryContainer,
+    secondary = tertiary, onSecondary = onTertiary,
+    secondaryContainer = tertiaryContainer, onSecondaryContainer = onTertiaryContainer,
     tertiary = primary, onTertiary = onPrimary,
     tertiaryContainer = primaryContainer, onTertiaryContainer = onPrimaryContainer,
     surfaceTint = tertiary,

@@ -39,10 +39,13 @@ class AccentSchemeTest {
         assertSame(wall, accentScheme(Accent.BRAND, dark = false, dynamic = wall))
         val focus = accentScheme(Accent.FOCUS, dark = false, dynamic = wall)
         assertEquals(wall.secondary, focus.primary)
-        assertEquals(wall.primary, focus.secondary)
         assertEquals(wall.onSecondaryContainer, focus.onPrimaryContainer)
+        // Secondary roles must not fall back to the wallpaper's primary: no mixed hues on one tab.
+        assertEquals(wall.secondaryContainer, focus.secondaryContainer)
         val matrix = accentScheme(Accent.MATRIX, dark = false, dynamic = wall)
         assertEquals(wall.tertiary, matrix.primary)
+        assertEquals(wall.tertiaryContainer, matrix.secondaryContainer)
+        assertEquals(wall.onTertiaryContainer, matrix.onSecondaryContainer)
         assertEquals(wall.primaryContainer, matrix.tertiaryContainer)
         assertNotEquals(focus.primary, matrix.primary)
     }
