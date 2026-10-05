@@ -30,12 +30,40 @@ Friction → Awareness → Choice → Action → Measurement → Improvement
 | Focus | Matrix | Matrix (more) |
 |:---:|:---:|:---:|
 | <img src="docs/screenshots/focus.png" width="220"> | <img src="docs/screenshots/matrix.png" width="220"> | <img src="docs/screenshots/matrix-2.png" width="220"> |
-| Focus / break / cycles timer | Focus and Guard stats, donut breakdown | Peak hour, by habit, heatmap |
+| Focus / break / cycles timer | Today's focus and Guard stats with a timeline | Monthly profile, trends and focus calendar |
 
 | Warning library | Profile | Permissions |
 |:---:|:---:|:---:|
 | <img src="docs/screenshots/warning-library.png" width="220"> | <img src="docs/screenshots/profile.png" width="220"> | <img src="docs/screenshots/profile-2.png" width="220"> |
 | Data-driven, editable warnings | Theme, dynamic color, settings | Every permission explained |
+
+### Tablet, foldable and large screens
+
+REWIRE adapts to the window: a navigation rail and list-detail panes on tablets and unfolded foldables, two-column Matrix charts, and the usual bottom bar on phones.
+
+| Tablet (landscape) | Tablet (landscape) |
+|:---:|:---:|
+| <img src="docs/screenshots/tablet-guard.png" width="420"> | <img src="docs/screenshots/tablet-matrix.png" width="420"> |
+| Guard list with the habit detail beside it | Matrix monthly profile and focus calendar |
+
+| Foldable (unfolded) | Foldable (unfolded) | Tablet (portrait) | Tablet (portrait) |
+|:---:|:---:|:---:|:---:|
+| <img src="docs/screenshots/foldable-guard.png" width="200"> | <img src="docs/screenshots/foldable-matrix.png" width="200"> | <img src="docs/screenshots/tablet-portrait-habit.png" width="200"> | <img src="docs/screenshots/tablet-portrait-matrix.png" width="200"> |
+| Guard with the rail | Matrix weekly | Habit detail | Matrix monthly |
+
+### Dynamic color and languages
+
+<img src="docs/screenshots/dynamic-color.png" alt="Guard in six dynamic color palettes">
+
+<sub>Dynamic color follows your wallpaper: the same screen in six palettes.</sub>
+
+<img src="docs/screenshots/languages.png" alt="Guard in Hindi, Spanish, Arabic, Japanese, Russian and French">
+
+<sub>Hindi, Spanish, Arabic (right-to-left), Japanese, Russian and French. 27 languages in total.</sub>
+
+Every chart also has a **Show as table** view:
+
+<img src="docs/screenshots/matrix-table.png" width="220" alt="Matrix chart shown as an accessible table">
 
 ## Features
 
