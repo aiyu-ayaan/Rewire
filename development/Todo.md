@@ -231,4 +231,11 @@ service off -> banner + notification.
 - [x] Device pass: phone + tablet (upright nav pill on >= 600dp rail), RTL (ar/ur), large font scale (200%), dark theme, 5-tab pill at 360dp in de/ru (2026-10-05)
 - [ ] Optional: hide Quit tab / app-lock for it; include in backup only if the user opts in
 
+## Phase 6d — Per-tab color  (2026-10-05)
+- [x] Guard + Profile brand teal; Focus indigo, Quit leaf green, Matrix violet (tonal-spot schemes in `Color.kt`, tertiary amber + error kept brand)
+- [x] `AccentTheme` per tab, nav pill/rail follow the active tab; detail routes (Quit detail, Focus history, Matrix breakdown) and fullscreen focus keep their tab's color
+- [x] Dynamic color: Focus leads with wallpaper secondary, Matrix with tertiary, Guard/Profile/Quit with primary
+- [x] Nav icons pop with a spring twist on select (off with reduced motion)
+- [x] `AccentSchemeTest`; device pass light, dark and dynamic on emulator
+
 ## Phase 7 (V3) — External data adapters, backup, AI insights (read-only)

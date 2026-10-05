@@ -22,6 +22,12 @@ Seed teal `#0D9488`. Full scheme in `ui/theme/Color.kt` (light + dark, all surfa
 - error -> Max level, destructive
 - Dynamic color optional (Profile), brand scheme default.
 
+Per-tab accent (`AccentTheme` in `ui/theme/Theme.kt`): Guard + Profile teal, Focus indigo `#4F5BD5`,
+Quit leaf `#5B8C3A`, Matrix violet `#7E57C2`. Same tonal-spot generation as the brand; tertiary and
+error stay brand on every tab so warning levels never change color. With dynamic color on, Focus swaps
+in the wallpaper's secondary as primary and Matrix its tertiary. Screens use `primary`/`primaryContainer`
+for their own identity, never `tertiary` (that is the Major level).
+
 Warning level mapping (always paired with icon + label, never color only):
 | Level | Container | Icon |
 |---|---|---|
