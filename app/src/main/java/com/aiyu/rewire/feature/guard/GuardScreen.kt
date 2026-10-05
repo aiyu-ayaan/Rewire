@@ -91,6 +91,7 @@ import com.aiyu.rewire.ui.components.MorphingShape
 import com.aiyu.rewire.ui.components.heroBrush
 import com.aiyu.rewire.ui.components.SectionTitle
 import com.aiyu.rewire.ui.components.formatMinutes
+import com.aiyu.rewire.ui.components.FabOutsideSharedTransition
 import com.aiyu.rewire.ui.components.sharedBoundsOrSelf
 import java.time.LocalDate
 import java.time.format.DateTimeFormatter
@@ -139,13 +140,17 @@ fun GuardScreen(onOpenHabit: (String) -> Unit, onStartFocus: () -> Unit) {
             }
         }
         // The empty state already offers "Create first habit"; a second button would cover its text.
-        if (habits.isNotEmpty()) ExtendedFloatingActionButton(
-            onClick = { creating = true },
-            expanded = fabExpanded,
-            icon = { Icon(Icons.Rounded.Add, contentDescription = null) },
-            text = { Text(stringResource(R.string.guard_new_habit)) },
-            modifier = Modifier.align(Alignment.BottomEnd).padding(16.dp).padding(bottom = LocalBottomBarInsets.current.fab.coerceAtLeast(0.dp)),
-        )
+        FabOutsideSharedTransition(
+            visible = habits.isNotEmpty(),
+            modifier = Modifier.align(Alignment.BottomEnd).padding(16.dp).padding(bottom = LocalBottomBarInsets.current.fab),
+        ) {
+            ExtendedFloatingActionButton(
+                onClick = { creating = true },
+                expanded = fabExpanded,
+                icon = { Icon(Icons.Rounded.Add, contentDescription = null) },
+                text = { Text(stringResource(R.string.guard_new_habit)) },
+            )
+        }
     }
 
     if (creating) {

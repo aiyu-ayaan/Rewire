@@ -97,6 +97,7 @@ import com.aiyu.rewire.ui.components.EmptyState
 import com.aiyu.rewire.ui.components.MorphingShape
 import com.aiyu.rewire.ui.components.SectionTitle
 import com.aiyu.rewire.ui.components.readableWidth
+import com.aiyu.rewire.ui.components.FabOutsideSharedTransition
 import com.aiyu.rewire.ui.components.sharedBoundsOrSelf
 import kotlinx.coroutines.delay
 import java.time.Instant
@@ -198,13 +199,17 @@ private fun QuitHome(
             }
             item(span = full) { PrivateNote() }
         }
-        if (habits.isNotEmpty()) ExtendedFloatingActionButton(
-            onClick = onAdd,
-            expanded = fabExpanded,
-            icon = { Icon(Icons.Rounded.Add, contentDescription = null) },
-            text = { Text(stringResource(R.string.quit_new)) },
-            modifier = Modifier.align(Alignment.BottomEnd).padding(16.dp).padding(bottom = LocalBottomBarInsets.current.fab.coerceAtLeast(0.dp)),
-        )
+        FabOutsideSharedTransition(
+            visible = habits.isNotEmpty(),
+            modifier = Modifier.align(Alignment.BottomEnd).padding(16.dp).padding(bottom = LocalBottomBarInsets.current.fab),
+        ) {
+            ExtendedFloatingActionButton(
+                onClick = onAdd,
+                expanded = fabExpanded,
+                icon = { Icon(Icons.Rounded.Add, contentDescription = null) },
+                text = { Text(stringResource(R.string.quit_new)) },
+            )
+        }
     }
 }
 
