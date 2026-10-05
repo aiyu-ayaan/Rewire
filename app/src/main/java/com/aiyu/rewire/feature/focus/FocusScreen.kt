@@ -10,6 +10,9 @@ import androidx.compose.ui.semantics.LiveRegionMode
 
 import androidx.compose.ui.semantics.liveRegion
 
+import com.aiyu.rewire.ui.components.ScreenHeader
+import com.aiyu.rewire.ui.components.ticking
+import androidx.compose.ui.graphics.SolidColor
 import com.aiyu.rewire.ui.components.CappedFontScale
 
 import androidx.compose.foundation.layout.heightIn
@@ -214,13 +217,16 @@ private fun FocusSetup(
     Column(
         Modifier.fillMaxSize().statusBarsPadding().readableWidth(720.dp).verticalScroll(rememberScrollState()).padding(horizontal = 16.dp).padding(bottom = 24.dp + LocalBottomBarInsets.current.content),
     ) {
-        Row(Modifier.fillMaxWidth().padding(top = 16.dp), verticalAlignment = Alignment.CenterVertically) {
-            Text(stringResource(R.string.nav_focus), style = MaterialTheme.typography.headlineLarge, modifier = Modifier.weight(1f))
+        ScreenHeader(
+            title = stringResource(R.string.nav_focus),
+            subtitle = stringResource(R.string.focus_tagline),
+            // Focus keeps time: a clock-face cookie that ticks once a second.
+            mark = { MorphingShape(brush = SolidColor(MaterialTheme.colorScheme.primaryContainer), shapes = listOf(MaterialShapes.Cookie12Sided), animate = false, modifier = it.ticking()) },
+        ) {
             FilledTonalIconButton(onClick = onHistory, shapes = IconButtonDefaults.shapes()) {
                 Icon(Icons.Rounded.History, contentDescription = stringResource(R.string.focus_history))
             }
         }
-        Text(stringResource(R.string.focus_tagline), style = MaterialTheme.typography.bodyMedium, color = MaterialTheme.colorScheme.onSurfaceVariant)
 
         Box(Modifier.fillMaxWidth().padding(vertical = 24.dp), contentAlignment = Alignment.Center) {
             MorphingShape(
