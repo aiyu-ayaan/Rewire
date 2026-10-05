@@ -449,7 +449,7 @@
     <string name="perm_battery">电池不受限制</string>
     <string name="perm_battery_why">防止系统让保护功能进入休眠。找到 Rewire，选择“不受限制”或“不优化”。</string>
     <string name="perm_restricted_title">Android 13+ 受限制的设置</string>
-    <string name="perm_restricted_steps">如果“无障碍”显示为灰色并提示“受限制的设置”：\n1. 点按下方“打开应用信息”\n2. 点按右上角的三个点（⋮）\n3. 点按“允许受限制的设置”\n4. 返回这里开启“无障碍”。</string>
+    <string name="perm_restricted_steps">如果下方某项权限显示为灰色或提示“受限设置”：\n1. 点按下方“打开应用信息”\n2. 点按右上角的三个点（⋮）\n3. 点按“允许受限制的设置”\n4. 返回此处，再次点按“允许”。</string>
     <string name="perm_disclosure_title">在“无障碍”中开启 Rewire</string>
     <string name="perm_disclosure_steps">在下一个屏幕中：\n已安装的应用 → Rewire → 开启。</string>
     <string name="perm_disclosure_note">注意：如果 Android 提示“受限制的设置”，请点按“打开应用信息”，再点按右上角的三个点（⋮），选择“允许受限制的设置”。</string>

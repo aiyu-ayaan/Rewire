@@ -465,7 +465,7 @@
     <string name="perm_battery">Batterie sans restriction</string>
     <string name="perm_battery_why">Empêche le système de mettre la protection en veille. Trouvez Rewire et choisissez Sans restriction / Ne pas optimiser.</string>
     <string name="perm_restricted_title">Paramètres restreints d\'Android 13+</string>
-    <string name="perm_restricted_steps">Si Accessibilité est grisée avec « Paramètre restreint » :\n1. Touchez « Ouvrir les infos de l\'app » ci-dessous\n2. Touchez les 3 points (⋮) en haut à droite\n3. Touchez « Autoriser les paramètres restreints »\n4. Revenez ici pour activer Accessibilité.</string>
+    <string name="perm_restricted_steps">Si une autorisation ci-dessous est grisée ou indique \"Paramètre restreint\" :\n1. Touchez « Ouvrir les infos de l\'app » ci-dessous\n2. Touchez les 3 points (⋮) en haut à droite\n3. Touchez « Autoriser les paramètres restreints »\n4. Revenez ici et appuyez à nouveau sur Autoriser.</string>
     <string name="perm_disclosure_title">Activer Rewire dans Accessibilité</string>
     <string name="perm_disclosure_steps">Sur l\'écran suivant :\nApps installées → Rewire → activer.</string>
     <string name="perm_disclosure_note">Remarque : si Android indique « Paramètre restreint », touchez « Ouvrir les infos de l\'app », touchez les 3 points (⋮) en haut à droite et choisissez « Autoriser les paramètres restreints ».</string>

@@ -449,7 +449,7 @@
     <string name="perm_battery">Pin không hạn chế</string>
     <string name="perm_battery_why">Ngăn hệ thống đưa tính năng bảo vệ vào chế độ ngủ. Tìm Rewire và chọn Không hạn chế / Không tối ưu hóa.</string>
     <string name="perm_restricted_title">Cài đặt bị hạn chế trên Android 13+</string>
-    <string name="perm_restricted_steps">Nếu Hỗ trợ tiếp cận bị mờ với dòng \"Cài đặt bị hạn chế\":\n1. Chạm \"Mở thông tin ứng dụng\" bên dưới\n2. Chạm 3 chấm (⋮) ở góc trên bên phải\n3. Chạm \"Cho phép cài đặt bị hạn chế\"\n4. Quay lại đây để bật Hỗ trợ tiếp cận.</string>
+    <string name="perm_restricted_steps">Nếu một quyền bên dưới bị làm mờ hoặc hiện \"Cài đặt bị hạn chế\":\n1. Chạm \"Mở thông tin ứng dụng\" bên dưới\n2. Chạm 3 chấm (⋮) ở góc trên bên phải\n3. Chạm \"Cho phép cài đặt bị hạn chế\"\n4. Quay lại đây và nhấn Cho phép lần nữa.</string>
     <string name="perm_disclosure_title">Bật Rewire trong Hỗ trợ tiếp cận</string>
     <string name="perm_disclosure_steps">Ở màn hình tiếp theo:\nỨng dụng đã cài đặt → Rewire → bật.</string>
     <string name="perm_disclosure_note">Lưu ý: Nếu Android hiện \"Cài đặt bị hạn chế\", hãy chạm \"Mở thông tin ứng dụng\", chạm 3 chấm (⋮) ở góc trên bên phải rồi chọn \"Cho phép cài đặt bị hạn chế\".</string>

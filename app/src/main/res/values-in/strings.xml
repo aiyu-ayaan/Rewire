@@ -449,7 +449,7 @@
     <string name="perm_battery">Baterai tanpa batasan</string>
     <string name="perm_battery_why">Mencegah sistem menidurkan perlindungan. Temukan Rewire lalu pilih Tanpa batasan / Jangan optimalkan.</string>
     <string name="perm_restricted_title">Pengaturan Terbatas Android 13+</string>
-    <string name="perm_restricted_steps">Jika Aksesibilitas berwarna abu-abu dengan \"Pengaturan terbatas\":\n1. Ketuk \"Buka Info Aplikasi\" di bawah\n2. Ketuk 3 titik (⋮) di pojok kanan atas\n3. Ketuk \"Izinkan pengaturan terbatas\"\n4. Kembali ke sini untuk menyalakan Aksesibilitas.</string>
+    <string name="perm_restricted_steps">Jika izin di bawah berwarna abu-abu atau bertuliskan \"Setelan dibatasi\":\n1. Ketuk \"Buka Info Aplikasi\" di bawah\n2. Ketuk 3 titik (⋮) di pojok kanan atas\n3. Ketuk \"Izinkan pengaturan terbatas\"\n4. Kembali ke sini dan ketuk Izinkan lagi.</string>
     <string name="perm_disclosure_title">Nyalakan Rewire di Aksesibilitas</string>
     <string name="perm_disclosure_steps">Di layar berikutnya:\nAplikasi terinstal → Rewire → nyalakan.</string>
     <string name="perm_disclosure_note">Catatan: Jika Android menyebut \"Pengaturan terbatas\", ketuk \"Buka Info Aplikasi\", ketuk 3 titik (⋮) di kanan atas, lalu pilih \"Izinkan pengaturan terbatas\".</string>

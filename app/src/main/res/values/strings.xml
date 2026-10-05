@@ -485,7 +485,7 @@
     <string name="perm_battery">Unrestricted battery</string>
     <string name="perm_battery_why">Stops the system from putting protection to sleep. Find Rewire and choose Unrestricted / Don\'t optimize.</string>
     <string name="perm_restricted_title">Android 13+ Restricted Settings</string>
-    <string name="perm_restricted_steps">If Accessibility is greyed out with \"Restricted setting\":\n1. Tap \"Open App Info\" below\n2. Tap the 3 dots (⋮) in the top-right corner\n3. Tap \"Allow restricted settings\"\n4. Return here to turn on Accessibility.</string>
+    <string name="perm_restricted_steps">If a permission below is greyed out or says \"Restricted setting\":\n1. Tap \"Open App Info\" below\n2. Tap the 3 dots (⋮) in the top-right corner\n3. Tap \"Allow restricted settings\"\n4. Come back here and tap Allow again.</string>
     <string name="perm_disclosure_title">Turn on Rewire in Accessibility</string>
     <string name="perm_disclosure_steps">In the next screen:\nInstalled apps → Rewire → turn on.</string>
     <string name="perm_disclosure_note">Note: If Android says \"Restricted setting\", tap \"Open App Info\", tap the 3 dots (⋮) at top-right, and choose \"Allow restricted settings\".</string>

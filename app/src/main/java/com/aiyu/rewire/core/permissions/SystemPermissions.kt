@@ -128,6 +128,8 @@ private data class PermissionRow(
     @StringRes val title: Int,
     @StringRes val why: Int,
     val granted: Boolean,
+    /** Android can grey this out for sideloaded apps ("Restricted setting"): Accessibility from 13, Usage access and Display over apps from 15. */
+    val restrictable: Boolean = false,
     val onAllow: () -> Unit,
 )
 
@@ -149,22 +151,25 @@ fun PermissionsPanel(containerColor: Color = MaterialTheme.colorScheme.surfaceCo
                 Icons.Rounded.Notifications, R.string.profile_notifications,
                 R.string.perm_notifications_why,
                 notifications.status == PermissionStatus.GRANTED,
-                if (notifications.status == PermissionStatus.ASKABLE) notifications.request else notifications.openSettings,
+                onAllow = if (notifications.status == PermissionStatus.ASKABLE) notifications.request else notifications.openSettings,
             ),
             if (BuildConfig.ACCESSIBILITY) PermissionRow(
                 Icons.Rounded.Accessibility, R.string.guard_accessibility,
                 R.string.perm_accessibility_why,
                 SystemPermissions.accessibilityEnabled(context),
+                restrictable = true,
             ) { disclosure = true } else null,
             PermissionRow(
                 Icons.Rounded.QueryStats, R.string.perm_usage_access,
                 if (BuildConfig.ACCESSIBILITY) R.string.perm_usage_why_full else R.string.perm_usage_why_lite,
                 SystemPermissions.usageAccessGranted(context),
+                restrictable = true,
             ) { SystemPermissions.open(context, SystemPermissions.usageAccessSettings(context)) },
             PermissionRow(
                 Icons.Rounded.Layers, R.string.perm_overlay,
                 R.string.perm_overlay_why,
                 SystemPermissions.systemAlertWindowGranted(context),
+                restrictable = true,
             ) { SystemPermissions.open(context, SystemPermissions.systemAlertWindowSettings(context)) },
             PermissionRow(
                 Icons.Rounded.DoNotDisturbOn, R.string.perm_dnd,
@@ -180,7 +185,9 @@ fun PermissionsPanel(containerColor: Color = MaterialTheme.colorScheme.surfaceCo
     }
 
     Column {
-        if (BuildConfig.ACCESSIBILITY && Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU && !SystemPermissions.accessibilityEnabled(context)) RestrictedSettingsCard()
+        // Lite has no Accessibility but still needs Usage access + Display over apps, which Android 15 restricts too,
+        // so the card follows whichever restrictable permission this build still lacks.
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU && rows.any { it.restrictable && !it.granted }) RestrictedSettingsCard()
         rows.forEach { row ->
             ListItem(
                 headlineContent = { Text(stringResource(row.title)) },
@@ -250,7 +257,7 @@ fun PermissionsPanel(containerColor: Color = MaterialTheme.colorScheme.surfaceCo
     }
 }
 
-/** Android 13+ greys out Accessibility for sideloaded apps until "Allow restricted settings" is ticked, so it comes first. */
+/** Android 13+ greys out restrictable permissions for sideloaded apps until "Allow restricted settings" is ticked, so it comes first. */
 @Composable
 private fun RestrictedSettingsCard() {
     val context = LocalContext.current

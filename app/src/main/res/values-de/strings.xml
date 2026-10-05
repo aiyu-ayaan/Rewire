@@ -457,7 +457,7 @@
     <string name="perm_battery">Uneingeschränkter Akku</string>
     <string name="perm_battery_why">Verhindert, dass das System den Schutz in den Ruhezustand versetzt. Suche Rewire und wähle Uneingeschränkt / Nicht optimieren.</string>
     <string name="perm_restricted_title">Eingeschränkte Einstellungen ab Android 13</string>
-    <string name="perm_restricted_steps">Wenn die Bedienungshilfen mit „Eingeschränkte Einstellung“ ausgegraut sind:\n1. Tippe unten auf „App-Info öffnen“\n2. Tippe oben rechts auf die 3 Punkte (⋮)\n3. Tippe auf „Eingeschränkte Einstellungen zulassen“\n4. Komm hierher zurück, um die Bedienungshilfen einzuschalten.</string>
+    <string name="perm_restricted_steps">Wenn eine Berechtigung unten ausgegraut ist oder \"Eingeschränkte Einstellung\" anzeigt:\n1. Tippe unten auf „App-Info öffnen“\n2. Tippe oben rechts auf die 3 Punkte (⋮)\n3. Tippe auf „Eingeschränkte Einstellungen zulassen“\n4. Komm hierher zurück und tippe erneut auf Erlauben.</string>
     <string name="perm_disclosure_title">Rewire in den Bedienungshilfen einschalten</string>
     <string name="perm_disclosure_steps">Auf dem nächsten Bildschirm:\nInstallierte Apps → Rewire → einschalten.</string>
     <string name="perm_disclosure_note">Hinweis: Wenn Android „Eingeschränkte Einstellung“ meldet, tippe auf „App-Info öffnen“, tippe oben rechts auf die 3 Punkte (⋮) und wähle „Eingeschränkte Einstellungen zulassen“.</string>

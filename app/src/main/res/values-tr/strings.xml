@@ -457,7 +457,7 @@
     <string name="perm_battery">Sınırsız pil</string>
     <string name="perm_battery_why">Sistemin korumayı uykuya almasını engeller. Rewire\'ı bul ve Sınırsız / Optimize etme seçeneğini seç.</string>
     <string name="perm_restricted_title">Android 13+ Kısıtlı Ayarlar</string>
-    <string name="perm_restricted_steps">Erişilebilirlik \"Kısıtlı ayar\" ile gri görünüyorsa:\n1. Aşağıdaki \"Uygulama Bilgisi\'ni aç\"a dokun\n2. Sağ üstteki 3 noktaya (⋮) dokun\n3. \"Kısıtlı ayarlara izin ver\"e dokun\n4. Erişilebilirlik\'i açmak için buraya dön.</string>
+    <string name="perm_restricted_steps">Aşağıdaki bir izin griyse veya \"Kısıtlı ayar\" diyorsa:\n1. Aşağıdaki \"Uygulama Bilgisi\'ni aç\"a dokun\n2. Sağ üstteki 3 noktaya (⋮) dokun\n3. \"Kısıtlı ayarlara izin ver\"e dokun\n4. Buraya dönüp tekrar İzin ver\'e dokun.</string>
     <string name="perm_disclosure_title">Erişilebilirlik\'te Rewire\'ı aç</string>
     <string name="perm_disclosure_steps">Sonraki ekranda:\nYüklü uygulamalar → Rewire → aç.</string>
     <string name="perm_disclosure_note">Not: Android \"Kısıtlı ayar\" derse, \"Uygulama Bilgisi\'ni aç\"a dokun, sağ üstteki 3 noktaya (⋮) dokun ve \"Kısıtlı ayarlara izin ver\"i seç.</string>

@@ -465,7 +465,7 @@
     <string name="perm_battery">Bateria sem restrições</string>
     <string name="perm_battery_why">Impede que o sistema coloque a proteção para dormir. Encontre o Rewire e escolha Sem restrições / Não otimizar.</string>
     <string name="perm_restricted_title">Configurações restritas do Android 13+</string>
-    <string name="perm_restricted_steps">Se Acessibilidade estiver esmaecida com \"Configuração restrita\":\n1. Toque em \"Abrir informações do app\" abaixo\n2. Toque nos 3 pontos (⋮) no canto superior direito\n3. Toque em \"Permitir configurações restritas\"\n4. Volte aqui para ativar a Acessibilidade.</string>
+    <string name="perm_restricted_steps">Se uma permissão abaixo estiver esmaecida ou disser \"Configuração restrita\":\n1. Toque em \"Abrir informações do app\" abaixo\n2. Toque nos 3 pontos (⋮) no canto superior direito\n3. Toque em \"Permitir configurações restritas\"\n4. Volte aqui e toque em Permitir novamente.</string>
     <string name="perm_disclosure_title">Ative o Rewire em Acessibilidade</string>
     <string name="perm_disclosure_steps">Na próxima tela:\nApps instalados → Rewire → ativar.</string>
     <string name="perm_disclosure_note">Observação: se o Android disser \"Configuração restrita\", toque em \"Abrir informações do app\", toque nos 3 pontos (⋮) no canto superior direito e escolha \"Permitir configurações restritas\".</string>

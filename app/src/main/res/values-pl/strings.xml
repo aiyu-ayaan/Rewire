@@ -473,7 +473,7 @@
     <string name="perm_battery">Bateria bez ograniczeń</string>
     <string name="perm_battery_why">Zapobiega usypianiu ochrony przez system. Znajdź Rewire i wybierz Bez ograniczeń / Nie optymalizuj.</string>
     <string name="perm_restricted_title">Ustawienia z ograniczeniami w Androidzie 13+</string>
-    <string name="perm_restricted_steps">Jeśli Ułatwienia dostępu są wyszarzone z komunikatem „Ustawienie z ograniczeniami”:\n1. Dotknij poniżej „Otwórz informacje o aplikacji”\n2. Dotknij 3 kropek (⋮) w prawym górnym rogu\n3. Dotknij „Zezwól na ustawienia z ograniczeniami”\n4. Wróć tutaj, aby włączyć Ułatwienia dostępu.</string>
+    <string name="perm_restricted_steps">Jeśli uprawnienie poniżej jest wyszarzone lub widać \"Ustawienie z ograniczeniami\":\n1. Dotknij poniżej „Otwórz informacje o aplikacji”\n2. Dotknij 3 kropek (⋮) w prawym górnym rogu\n3. Dotknij „Zezwól na ustawienia z ograniczeniami”\n4. Wróć tutaj i ponownie kliknij Zezwól.</string>
     <string name="perm_disclosure_title">Włącz Rewire w Ułatwieniach dostępu</string>
     <string name="perm_disclosure_steps">Na następnym ekranie:\nZainstalowane aplikacje → Rewire → włącz.</string>
     <string name="perm_disclosure_note">Uwaga: jeśli Android pokaże „Ustawienie z ograniczeniami”, dotknij „Otwórz informacje o aplikacji”, dotknij 3 kropek (⋮) w prawym górnym rogu i wybierz „Zezwól na ustawienia z ograniczeniami”.</string>

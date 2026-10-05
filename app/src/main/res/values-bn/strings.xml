@@ -457,7 +457,7 @@
     <string name="perm_battery">সীমাহীন ব্যাটারি</string>
     <string name="perm_battery_why">সিস্টেম যাতে সুরক্ষাকে ঘুম পাড়িয়ে না দেয়। Rewire খুঁজে সীমাহীন / অপ্টিমাইজ করবেন না বেছে নিন।</string>
     <string name="perm_restricted_title">Android 13+ সীমিত সেটিংস</string>
-    <string name="perm_restricted_steps">অ্যাক্সেসিবিলিটি \"Restricted setting\" সহ ধূসর হয়ে থাকলে:\n১. নিচের \"অ্যাপ তথ্য খুলুন\"-এ ট্যাপ করুন\n২. ওপরের ডানদিকের ৩টি বিন্দুতে (⋮) ট্যাপ করুন\n৩. \"Allow restricted settings\"-এ ট্যাপ করুন\n৪. অ্যাক্সেসিবিলিটি চালু করতে এখানে ফিরে আসুন।</string>
+    <string name="perm_restricted_steps">নিচের কোনো অনুমতি ধূসর থাকলে বা \"সীমাবদ্ধ সেটিং\" দেখালে:\n১. নিচের \"অ্যাপ তথ্য খুলুন\"-এ ট্যাপ করুন\n২. ওপরের ডানদিকের ৩টি বিন্দুতে (⋮) ট্যাপ করুন\n৩. \"Allow restricted settings\"-এ ট্যাপ করুন\n4. এখানে ফিরে এসে আবার অনুমতি দিন-এ ট্যাপ করুন।</string>
     <string name="perm_disclosure_title">অ্যাক্সেসিবিলিটিতে Rewire চালু করুন</string>
     <string name="perm_disclosure_steps">পরের স্ক্রিনে:\nইনস্টল করা অ্যাপ → Rewire → চালু করুন।</string>
     <string name="perm_disclosure_note">নোট: Android \"Restricted setting\" বললে \"অ্যাপ তথ্য খুলুন\"-এ ট্যাপ করুন, ওপরের ডানদিকের ৩টি বিন্দুতে (⋮) ট্যাপ করুন এবং \"Allow restricted settings\" বেছে নিন।</string>

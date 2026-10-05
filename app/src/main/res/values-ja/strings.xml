@@ -449,7 +449,7 @@
     <string name="perm_battery">バッテリー使用の制限なし</string>
     <string name="perm_battery_why">システムによって保護機能が停止されないようにします。Rewireを探し、「制限なし」または「最適化しない」を選んでください。</string>
     <string name="perm_restricted_title">Android 13以降の制限付き設定</string>
-    <string name="perm_restricted_steps">ユーザー補助が「制限付き設定」でグレーアウトしている場合：\n1. 下の「アプリ情報を開く」をタップ\n2. 右上の3つの点（⋮）をタップ\n3. 「制限付き設定を許可」をタップ\n4. ここに戻ってユーザー補助をオンにします。</string>
+    <string name="perm_restricted_steps">下の権限がグレー表示されている、または「制限付き設定」と表示される場合:\n1. 下の「アプリ情報を開く」をタップ\n2. 右上の3つの点（⋮）をタップ\n3. 「制限付き設定を許可」をタップ\n4. ここに戻って、もう一度「許可」をタップします。</string>
     <string name="perm_disclosure_title">ユーザー補助でRewireをオンにする</string>
     <string name="perm_disclosure_steps">次の画面で：\nインストール済みのアプリ → Rewire → オンにします。</string>
     <string name="perm_disclosure_note">注意：Androidに「制限付き設定」と表示された場合は、「アプリ情報を開く」をタップし、右上の3つの点（⋮）をタップして「制限付き設定を許可」を選んでください。</string>
