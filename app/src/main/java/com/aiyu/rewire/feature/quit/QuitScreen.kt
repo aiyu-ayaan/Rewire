@@ -1,5 +1,7 @@
 package com.aiyu.rewire.feature.quit
 
+import com.aiyu.rewire.ui.components.ScreenHeader
+import com.aiyu.rewire.ui.components.breathing
 import com.aiyu.rewire.ui.components.paneSource
 import androidx.activity.compose.BackHandler
 import com.aiyu.rewire.ui.LocalBottomBarInsets
@@ -215,14 +217,18 @@ private fun QuitHome(
 
 @Composable
 private fun Header() {
-    Row(Modifier.padding(top = 16.dp, bottom = 8.dp), verticalAlignment = Alignment.CenterVertically) {
-        MorphingShape(brush = SolidColor(MaterialTheme.colorScheme.tertiaryContainer), modifier = Modifier.size(44.dp), rotationMillis = 60_000)
-        Spacer(Modifier.width(12.dp))
-        Column {
-            Text(stringResource(R.string.nav_quit), style = MaterialTheme.typography.headlineLarge)
-            Text(stringResource(R.string.quit_subtitle), style = MaterialTheme.typography.bodyMedium, color = MaterialTheme.colorScheme.onSurfaceVariant)
-        }
-    }
+    ScreenHeader(
+        title = stringResource(R.string.nav_quit),
+        subtitle = stringResource(R.string.quit_subtitle),
+        // Quit breathes: the same in / hold / out pace as "Ride the wave".
+        mark = {
+            MorphingShape(
+                brush = SolidColor(MaterialTheme.colorScheme.tertiaryContainer),
+                modifier = it.breathing(BREATH_IN * 1_000, BREATH_HOLD * 1_000, (BREATH_CYCLE - BREATH_IN - BREATH_HOLD) * 1_000),
+                rotationMillis = 60_000,
+            )
+        },
+    )
 }
 
 @Composable

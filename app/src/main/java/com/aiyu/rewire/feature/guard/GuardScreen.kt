@@ -1,5 +1,6 @@
 package com.aiyu.rewire.feature.guard
 
+import com.aiyu.rewire.ui.components.ScreenHeader
 import com.aiyu.rewire.ui.components.paneSource
 import com.aiyu.rewire.ui.components.CappedFontScale
 import com.aiyu.rewire.ui.LocalBottomBarInsets
@@ -167,23 +168,12 @@ fun GuardScreen(onOpenHabit: (String) -> Unit, onStartFocus: () -> Unit) {
 
 @Composable
 private fun Header() {
-    Row(Modifier.padding(top = 16.dp, bottom = 8.dp), verticalAlignment = Alignment.CenterVertically) {
-        // Same key as the landing hero: the big blob shrinks into this mark on first launch.
-        MorphingShape(
-            brush = heroBrush(),
-            modifier = Modifier.size(44.dp).sharedBoundsOrSelf(HERO_KEY),
-            rotationMillis = 40_000,
-        )
-        Spacer(Modifier.width(12.dp))
-        Column {
-            Text(stringResource(R.string.nav_guard), style = MaterialTheme.typography.headlineLarge)
-            Text(
-                LocalDate.now().format(DateTimeFormatter.ofPattern("EEEE, d MMMM")),
-                style = MaterialTheme.typography.bodyMedium,
-                color = MaterialTheme.colorScheme.onSurfaceVariant,
-            )
-        }
-    }
+    ScreenHeader(
+        title = stringResource(R.string.nav_guard),
+        subtitle = LocalDate.now().format(DateTimeFormatter.ofPattern("EEEE, d MMMM")),
+        // Guard keeps watch: a slow, steady orbit. Same key as the landing hero, which shrinks into it on first launch.
+        mark = { MorphingShape(brush = heroBrush(), modifier = it.sharedBoundsOrSelf(HERO_KEY), rotationMillis = 40_000) },
+    )
 }
 
 @Composable
