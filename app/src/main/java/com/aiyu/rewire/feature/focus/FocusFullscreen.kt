@@ -87,7 +87,7 @@ import com.aiyu.rewire.core.notifications.RewireNotifier
 import com.aiyu.rewire.domain.focus.FocusSessionStatus
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import com.aiyu.rewire.ui.components.sharedBoundsOrSelf
-import com.aiyu.rewire.ui.theme.DarkColors
+import com.aiyu.rewire.ui.theme.FocusDarkColors
 import com.aiyu.rewire.ui.theme.TimerTextStyle
 import com.aiyu.rewire.ui.theme.rememberReducedMotion
 import kotlinx.coroutines.delay
@@ -104,7 +104,7 @@ fun focusViewModel(): FocusViewModel =
     hiltViewModel<FocusViewModel>(LocalActivity.current as ComponentActivity)
 
 /** True-black scheme: AMOLED pixels off everywhere except the digits and thin progress. */
-private val AmoledColors = DarkColors.copy(
+private val AmoledColors = FocusDarkColors.copy(
     background = Color.Black, surface = Color.Black,
     surfaceContainerLowest = Color.Black, surfaceContainerLow = Color(0xFF0A0A0A),
     surfaceContainer = Color(0xFF111111), surfaceContainerHigh = Color(0xFF161616), surfaceContainerHighest = Color(0xFF1C1C1C),

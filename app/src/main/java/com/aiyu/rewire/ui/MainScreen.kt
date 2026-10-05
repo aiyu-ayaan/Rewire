@@ -27,6 +27,8 @@ import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.res.stringResource
 import com.aiyu.rewire.R
+import com.aiyu.rewire.ui.theme.Accent
+import com.aiyu.rewire.ui.theme.AccentTheme
 import androidx.annotation.StringRes
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.expandHorizontally
@@ -112,12 +114,12 @@ import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.width
 import androidx.compose.material3.Surface
 
-enum class Tab(@StringRes val label: Int, val icon: ImageVector, val selectedIcon: ImageVector, val link: DeepLink) {
-    GUARD(R.string.nav_guard, Icons.Outlined.Shield, Icons.Rounded.Shield, DeepLink.GUARD),
-    FOCUS(R.string.nav_focus, Icons.Outlined.Timer, Icons.Rounded.Timer, DeepLink.FOCUS),
-    QUIT(R.string.nav_quit, Icons.Outlined.Spa, Icons.Rounded.Spa, DeepLink.QUIT),
-    MATRIX(R.string.matrix_title, Icons.Outlined.Insights, Icons.Rounded.Insights, DeepLink.MATRIX),
-    PROFILE(R.string.nav_profile, Icons.Outlined.Person, Icons.Rounded.Person, DeepLink.PROFILE),
+enum class Tab(@StringRes val label: Int, val icon: ImageVector, val selectedIcon: ImageVector, val link: DeepLink, val accent: Accent) {
+    GUARD(R.string.nav_guard, Icons.Outlined.Shield, Icons.Rounded.Shield, DeepLink.GUARD, Accent.BRAND),
+    FOCUS(R.string.nav_focus, Icons.Outlined.Timer, Icons.Rounded.Timer, DeepLink.FOCUS, Accent.FOCUS),
+    QUIT(R.string.nav_quit, Icons.Outlined.Spa, Icons.Rounded.Spa, DeepLink.QUIT, Accent.QUIT),
+    MATRIX(R.string.matrix_title, Icons.Outlined.Insights, Icons.Rounded.Insights, DeepLink.MATRIX, Accent.MATRIX),
+    PROFILE(R.string.nav_profile, Icons.Outlined.Person, Icons.Rounded.Person, DeepLink.PROFILE, Accent.BRAND),
 }
 
 @Composable
@@ -168,6 +170,9 @@ fun MainScreen(
             },
             label = "tab",
         ) { current ->
+            // Each tab wears its own palette; the Surface repaints the background in that tab's tint.
+            AccentTheme(current.accent) {
+            Surface(Modifier.fillMaxSize()) {
             when (current) {
                 Tab.GUARD -> TabPane(wide, detail, { DetailContent(it, { detail = null }, { k -> detail = k }, onPreviewWarning) }) {
                     GuardScreen(onOpenHabit = { open("habit:$it") { onOpenHabit(it) } }, onStartFocus = { select(Tab.FOCUS) })
@@ -190,6 +195,8 @@ fun MainScreen(
                     )
                 }
             }
+            }
+            }
         }
         }
     }
@@ -206,7 +213,7 @@ fun MainScreen(
                     enter = slideInHorizontally(barSpatial) { -it } + expandHorizontally(barSize) + fadeIn(effects),
                     exit = slideOutHorizontally(barSpatial) { -it } + shrinkHorizontally(barSize) + fadeOut(fastEffects),
                 ) {
-                    FloatingNavRail(tab, select)
+                    AccentTheme(tab.accent) { FloatingNavRail(tab, select) }
                 }
                 Box(Modifier.weight(1f)) { content(Modifier.fillMaxSize(), widePane) }
             }
@@ -238,7 +245,7 @@ fun MainScreen(
                     enter = slideInVertically(barSpatial) { it } + fadeIn(effects),
                     exit = slideOutVertically(barSpatial) { it } + fadeOut(fastEffects),
                 ) {
-                    FloatingNavBar(tab, select, Modifier.onSizeChanged { pill = with(density) { it.height.toDp() } })
+                    AccentTheme(tab.accent) { FloatingNavBar(tab, select, Modifier.onSizeChanged { pill = with(density) { it.height.toDp() } }) }
                 }
             }
         }
@@ -327,8 +334,8 @@ private fun FloatingNavBar(tab: Tab, onSelect: (Tab) -> Unit, modifier: Modifier
 private fun PillItem(t: Tab, selected: Boolean, onClick: () -> Unit) {
     val c = MaterialTheme.colorScheme
     val effects = MaterialTheme.motionScheme.defaultEffectsSpec<Color>()
-    val bg by animateColorAsState(if (selected) c.secondaryContainer else Color.Transparent, effects, label = "pillBg")
-    val fg by animateColorAsState(if (selected) c.onSecondaryContainer else c.onSurfaceVariant, effects, label = "pillFg")
+    val bg by animateColorAsState(if (selected) c.primaryContainer else Color.Transparent, effects, label = "pillBg")
+    val fg by animateColorAsState(if (selected) c.onPrimaryContainer else c.onSurfaceVariant, effects, label = "pillFg")
     val label = stringResource(t.label)
     Row(
         Modifier
@@ -369,7 +376,10 @@ private fun FloatingNavRail(tab: Tab, onSelect: (Tab) -> Unit) {
                         onClick = { onSelect(t) },
                         icon = { Icon(if (t == tab) t.selectedIcon else t.icon, contentDescription = null) },
                         label = { Text(stringResource(t.label), maxLines = 1, overflow = TextOverflow.Ellipsis) },
-                        colors = NavigationRailItemDefaults.colors(indicatorColor = MaterialTheme.colorScheme.secondaryContainer),
+                        colors = NavigationRailItemDefaults.colors(
+                            indicatorColor = MaterialTheme.colorScheme.primaryContainer,
+                            selectedIconColor = MaterialTheme.colorScheme.onPrimaryContainer,
+                        ),
                     )
                 }
             }
