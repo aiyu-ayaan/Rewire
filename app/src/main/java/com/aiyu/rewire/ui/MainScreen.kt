@@ -1,5 +1,11 @@
 package com.aiyu.rewire.ui
 
+import com.aiyu.rewire.ui.theme.rememberReducedMotion
+import androidx.compose.ui.graphics.graphicsLayer
+import androidx.compose.material3.LocalContentColor
+import androidx.compose.animation.core.spring
+import androidx.compose.animation.core.Spring
+import androidx.compose.animation.core.Animatable
 import androidx.activity.compose.BackHandler
 import androidx.compose.animation.AnimatedContent
 import androidx.compose.animation.animateColorAsState
@@ -348,12 +354,39 @@ private fun PillItem(t: Tab, selected: Boolean, onClick: () -> Unit) {
             .animateContentSize(MaterialTheme.motionScheme.defaultSpatialSpec()),
         verticalAlignment = Alignment.CenterVertically,
     ) {
-        Icon(if (selected) t.selectedIcon else t.icon, contentDescription = null, tint = fg)
+        NavIcon(t, selected, tint = fg)
         if (selected) {
             Spacer(Modifier.width(8.dp))
             Text(label, style = MaterialTheme.typography.labelLarge, color = fg, maxLines = 1, overflow = TextOverflow.Ellipsis, modifier = Modifier.widthIn(max = 120.dp))
         }
     }
+}
+
+/** Tab icon that pops in with a small bouncy twist when its tab gets selected (not on first show, not with reduced motion). */
+@Composable
+private fun NavIcon(t: Tab, selected: Boolean, tint: Color = LocalContentColor.current) {
+    val reduced = rememberReducedMotion()
+    val pop = remember { Animatable(1f) }
+    var shown by remember { mutableStateOf(false) }
+    LaunchedEffect(selected) {
+        if (selected && shown && !reduced) {
+            pop.snapTo(0.6f)
+            pop.animateTo(1f, spring(dampingRatio = Spring.DampingRatioHighBouncy, stiffness = Spring.StiffnessMediumLow))
+        } else {
+            pop.snapTo(1f) // a fast tab switch cancels the pop mid-way; never leave the icon shrunk
+        }
+        shown = true
+    }
+    Icon(
+        if (selected) t.selectedIcon else t.icon,
+        contentDescription = null,
+        tint = tint,
+        modifier = Modifier.graphicsLayer {
+            scaleX = pop.value
+            scaleY = pop.value
+            rotationZ = (1f - pop.value) * -40f
+        },
+    )
 }
 
 /** Tablets / landscape: the same pill stood upright on the left edge, like Google Photos on large screens. */
@@ -374,7 +407,7 @@ private fun FloatingNavRail(tab: Tab, onSelect: (Tab) -> Unit) {
                     NavigationRailItem(
                         selected = t == tab,
                         onClick = { onSelect(t) },
-                        icon = { Icon(if (t == tab) t.selectedIcon else t.icon, contentDescription = null) },
+                        icon = { NavIcon(t, t == tab) },
                         label = { Text(stringResource(t.label), maxLines = 1, overflow = TextOverflow.Ellipsis) },
                         colors = NavigationRailItemDefaults.colors(
                             indicatorColor = MaterialTheme.colorScheme.primaryContainer,
