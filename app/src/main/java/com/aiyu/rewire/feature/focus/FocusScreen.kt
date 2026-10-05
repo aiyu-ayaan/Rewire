@@ -1,6 +1,5 @@
 package com.aiyu.rewire.feature.focus
 
-import androidx.activity.compose.BackHandler
 import com.aiyu.rewire.ui.LocalBottomBarInsets
 import androidx.compose.ui.semantics.Role
 
@@ -118,6 +117,7 @@ import com.aiyu.rewire.domain.focus.FocusSessionStatus
 import com.aiyu.rewire.domain.focus.FocusState
 import com.aiyu.rewire.ui.components.MorphingShape
 import com.aiyu.rewire.ui.components.heroBrush
+import com.aiyu.rewire.ui.components.PredictiveBack
 import com.aiyu.rewire.ui.components.SectionTitle
 import com.aiyu.rewire.ui.HideNavigationBar
 import com.aiyu.rewire.ui.components.formatMinutes
@@ -150,20 +150,23 @@ fun FocusScreen(onFullscreen: () -> Unit, onHistory: () -> Unit) {
     HideNavigationBar(hide = mode != 0 || awaitingNote != null)
     // Optional: Skip (or back) leaves the session in history without a note.
     awaitingNote?.let { s ->
-        AchievementScreen(
-            initial = "",
-            completed = s.state.status == FocusSessionStatus.COMPLETED,
-            onSave = vm::saveNote,
-            onDismiss = vm::skipNote,
-        )
+        // System back = Skip: the session is already in history, so back reveals the result screen instead of leaving the app.
+        PredictiveBack(onBack = vm::skipNote) {
+            AchievementScreen(
+                initial = "",
+                completed = s.state.status == FocusSessionStatus.COMPLETED,
+                onSave = vm::saveNote,
+                onDismiss = vm::skipNote,
+            )
+        }
         return
     }
     // The result screen is a step inside Focus: Back returns to setup, like "Back to setup", instead of leaving the app.
-    BackHandler(enabled = mode == 2, onBack = vm::reset)
     val motion = MaterialTheme.motionScheme
     val effects = motion.defaultEffectsSpec<Float>()
     val spatial = motion.defaultSpatialSpec<Float>()
     val fastEffects = motion.fastEffectsSpec<Float>()
+    PredictiveBack(enabled = mode == 2, onBack = vm::reset) {
     AnimatedContent(
         targetState = mode,
         transitionSpec = { (fadeIn(effects) + scaleIn(spatial, initialScale = 0.9f)).togetherWith(fadeOut(fastEffects)) },
@@ -190,6 +193,7 @@ fun FocusScreen(onFullscreen: () -> Unit, onHistory: () -> Unit) {
             1 -> FocusRunning(state, now, vm::pause, vm::resume, vm::skipBreak, vm::end, onFullscreen)
             else -> FocusFinished(state, onDone = vm::reset, onHistory = onHistory)
         }
+    }
     }
 }
 

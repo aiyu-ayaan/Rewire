@@ -64,7 +64,7 @@ import com.aiyu.rewire.ui.components.InnerScreen
 import com.aiyu.rewire.ui.components.ListDetail
 import com.aiyu.rewire.ui.components.paneSource
 import androidx.compose.foundation.layout.BoxWithConstraints
-import androidx.activity.compose.BackHandler
+import com.aiyu.rewire.ui.components.PredictiveBack
 import com.aiyu.rewire.ui.components.formatMinutes
 import java.time.Instant
 import java.time.ZoneId
@@ -98,7 +98,7 @@ fun FocusHistoryScreen(onBack: () -> Unit) {
     }
 
     // Back closes the open note before leaving history.
-    BackHandler(editingId != null) { editingId = null }
+    PredictiveBack(enabled = editingId != null, onBack = { editingId = null }) {
     BoxWithConstraints {
         if (maxWidth >= 840.dp) {
             ListDetail(editingId, list = { HistoryList(sessions, onBack, onEdit = { editingId = it }, columns = 1) }, detailContent = editor)
@@ -107,7 +107,7 @@ fun FocusHistoryScreen(onBack: () -> Unit) {
             if (id != null && sessions?.any { it.id == id } == true) editor(id)
             else HistoryList(sessions, onBack, onEdit = { editingId = it }, columns = if (LocalConfiguration.current.screenWidthDp >= 840) 2 else 1)
         }
-    }
+    }    }
 }
 
 @Composable
