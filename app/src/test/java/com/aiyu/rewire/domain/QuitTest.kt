@@ -72,4 +72,14 @@ class QuitTest {
         val h = one().habits.single().copy(slips = listOf(10L, 15L, 40L))
         assertEquals(listOf(40L to 25L, 15L to 5L), Quit.endedRuns(h))
     }
+
+    @Test fun putRestoresDeletedTrackerInPlaceAndRedoRemovesIt() {
+        val two = Quit.add(one(), "b", "Soda", "", t0, t0)
+        val a = two.habits.first()
+        val deleted = Quit.delete(two, "a")
+        assertEquals(two, Quit.put(deleted, "a", a, 0)) // undo
+        assertEquals(deleted, Quit.put(two, "a", null, 0)) // redo
+        val slipped = Quit.slip(two, "a", t0 + DAY_MS)
+        assertEquals(two, Quit.put(slipped, "a", a, 0)) // undo an edit keeps order
+    }
 }

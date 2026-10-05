@@ -84,6 +84,14 @@ object Quit {
 
     fun delete(data: QuitData, id: String) = data.copy(habits = data.habits.filterNot { it.id == id })
 
+    /** Puts one tracker back as it was ([habit] null = absent), at [index] if it has to be re-inserted. Undo and redo use this. */
+    fun put(data: QuitData, id: String, habit: QuitHabit?, index: Int): QuitData {
+        val rest = data.habits.filterNot { it.id == id }
+        if (habit == null) return data.copy(habits = rest)
+        val at = data.habits.indexOfFirst { it.id == id }.takeIf { it >= 0 } ?: index
+        return data.copy(habits = rest.toMutableList().apply { add(at.coerceIn(0, rest.size), habit) })
+    }
+
     fun urgeRidden(data: QuitData) = data.copy(urgesRidden = data.urgesRidden + 1)
 
     /**
