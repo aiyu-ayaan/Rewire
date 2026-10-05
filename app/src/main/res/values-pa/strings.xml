@@ -706,6 +706,11 @@
     <string name="undo_quit_edited">ਟ੍ਰੈਕਰ ਅੱਪਡੇਟ ਹੋਇਆ</string>
     <string name="undo_quit_slipped">ਮੁੜ ਸ਼ੁਰੂ ਹੋਇਆ</string>
     <string name="undo_quit_deleted">ਟ੍ਰੈਕਰ ਮਿਟਾਇਆ ਗਿਆ</string>
+    <string name="undo_view">ਵੇਖੋ</string>
+    <string name="undo_changes_saved">ਸੰਭਾਲੇ ਬਦਲਾਅ: %1$d</string>
+    <string name="quit_history">ਹਾਲੀਆ ਬਦਲਾਅ</string>
+    <string name="quit_history_note">30 ਮਿੰਟ ਲਈ ਰੱਖੇ ਜਾਂਦੇ ਹਨ ਤਾਂ ਜੋ ਤੁਸੀਂ ਵਾਪਸ ਜਾਂ ਮੁੜ ਕਰ ਸਕੋ, ਫਿਰ ਆਪਣੇ-ਆਪ ਮਿਟ ਜਾਂਦੇ ਹਨ।</string>
+    <string name="quit_history_empty">ਕੋਈ ਹਾਲੀਆ ਬਦਲਾਅ ਨਹੀਂ</string>
     <string name="quit_delete_title">ਇਸ ਟਰੈਕਰ ਨੂੰ ਹਟਾਉਣਾ ਹੈ?</string>
     <string name="quit_delete_body">ਇਸ ਦਾ ਇਤਿਹਾਸ ਇਸ ਡਿਵਾਈਸ ਤੋਂ ਹਟਾ ਦਿੱਤਾ ਗਿਆ ਹੈ।</string>
     <string name="quit_name">ਨਾਮ</string>

@@ -687,6 +687,11 @@
     <string name="undo_quit_edited">Pelacak diperbarui</string>
     <string name="undo_quit_slipped">Dimulai ulang</string>
     <string name="undo_quit_deleted">Pelacak dihapus</string>
+    <string name="undo_view">Lihat</string>
+    <string name="undo_changes_saved">%1$d perubahan disimpan</string>
+    <string name="quit_history">Perubahan terbaru</string>
+    <string name="quit_history_note">Disimpan selama 30 menit agar bisa diurungkan atau diulangi, lalu dihapus otomatis.</string>
+    <string name="quit_history_empty">Tidak ada perubahan terbaru</string>
     <string name="quit_delete_title">Hapus pelacak ini?</string>
     <string name="quit_delete_body"> Riwayatnya akan dihapus dari perangkat ini.</string>
     <string name="quit_name">Nama</string>

@@ -782,6 +782,11 @@
     <string name="undo_quit_edited">حُدّث المتتبع</string>
     <string name="undo_quit_slipped">بدأت المحاولة من جديد</string>
     <string name="undo_quit_deleted">حُذف المتتبع</string>
+    <string name="undo_view">عرض</string>
+    <string name="undo_changes_saved">التغييرات المحفوظة: %1$d</string>
+    <string name="quit_history">التغييرات الأخيرة</string>
+    <string name="quit_history_note">تُحفظ لمدة 30 دقيقة لتتمكن من التراجع عنها أو إعادتها، ثم تُحذف تلقائيًا.</string>
+    <string name="quit_history_empty">لا توجد تغييرات حديثة</string>
     <string name="quit_delete_title">حذف هذا المتتبع؟</string>
     <string name="quit_delete_body">تاريخه يتم حذفه من هذا الجهاز.</string>
     <string name="quit_name">الاسم</string>

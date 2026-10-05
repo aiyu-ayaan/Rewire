@@ -706,6 +706,11 @@
     <string name="undo_quit_edited">ટ્રેકર અપડેટ થયું</string>
     <string name="undo_quit_slipped">ફરી શરૂ થયું</string>
     <string name="undo_quit_deleted">ટ્રેકર કાઢી નાખ્યું</string>
+    <string name="undo_view">જુઓ</string>
+    <string name="undo_changes_saved">સાચવેલા ફેરફારો: %1$d</string>
+    <string name="quit_history">તાજેતરના ફેરફારો</string>
+    <string name="quit_history_note">30 મિનિટ સુધી રાખવામાં આવે છે જેથી તમે પૂર્વવત્ કે ફરી કરી શકો, પછી આપમેળે કાઢી નાખવામાં આવે છે.</string>
+    <string name="quit_history_empty">કોઈ તાજેતરના ફેરફારો નથી</string>
     <string name="quit_delete_title">આ ટ્રેકર કાઢી નાખવું?</string>
     <string name="quit_delete_body">આ ઇતિહાસ આ ઉપકરણમાંથી દૂર કરવામાં આવે છે.</string>
     <string name="quit_name">નામ</string>

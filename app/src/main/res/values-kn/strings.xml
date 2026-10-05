@@ -706,6 +706,11 @@
     <string name="undo_quit_edited">ಟ್ರ್ಯಾಕರ್ ನವೀಕರಿಸಲಾಗಿದೆ</string>
     <string name="undo_quit_slipped">ಮತ್ತೆ ಆರಂಭವಾಗಿದೆ</string>
     <string name="undo_quit_deleted">ಟ್ರ್ಯಾಕರ್ ಅಳಿಸಲಾಗಿದೆ</string>
+    <string name="undo_view">ವೀಕ್ಷಿಸಿ</string>
+    <string name="undo_changes_saved">ಉಳಿಸಿದ ಬದಲಾವಣೆಗಳು: %1$d</string>
+    <string name="quit_history">ಇತ್ತೀಚಿನ ಬದಲಾವಣೆಗಳು</string>
+    <string name="quit_history_note">ರದ್ದುಮಾಡಲು ಅಥವಾ ಮತ್ತೆ ಮಾಡಲು 30 ನಿಮಿಷ ಇರಿಸಲಾಗುತ್ತದೆ, ನಂತರ ತಾನಾಗಿ ಅಳಿಸಲಾಗುತ್ತದೆ.</string>
+    <string name="quit_history_empty">ಇತ್ತೀಚಿನ ಬದಲಾವಣೆಗಳಿಲ್ಲ</string>
     <string name="quit_delete_title">ಈ ಟ್ರ್ಯಾಕರ್ ಅನ್ನು ಅಳಿಸಬೇಕೆ?</string>
     <string name="quit_delete_body">ಇದರ ಇತಿಹಾಸವನ್ನು ಈ ಸಾಧನದಿಂದ ತೆಗೆದುಹಾಕಲಾಗುತ್ತದೆ.</string>
     <string name="quit_name">ಹೆಸರು</string>

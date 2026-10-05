@@ -725,6 +725,11 @@
     <string name="undo_quit_edited">Tracker aggiornato</string>
     <string name="undo_quit_slipped">Serie ricominciata</string>
     <string name="undo_quit_deleted">Tracker eliminato</string>
+    <string name="undo_view">Visualizza</string>
+    <string name="undo_changes_saved">%1$d modifiche salvate</string>
+    <string name="quit_history">Modifiche recenti</string>
+    <string name="quit_history_note">Conservate per 30 minuti così puoi annullarle o ripeterle, poi eliminate automaticamente.</string>
+    <string name="quit_history_empty">Nessuna modifica recente</string>
     <string name="quit_delete_title">Eliminare questo tracker?</string>
     <string name="quit_delete_body">La sua cronologia viene rimossa da questo dispositivo.</string>
     <string name="quit_name">Nome</string>

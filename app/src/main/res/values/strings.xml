@@ -723,6 +723,11 @@
     <string name="undo_quit_edited">Tracker updated</string>
     <string name="undo_quit_slipped">Run restarted</string>
     <string name="undo_quit_deleted">Tracker deleted</string>
+    <string name="undo_view">View</string>
+    <string name="undo_changes_saved">%1$d changes saved</string>
+    <string name="quit_history">Recent changes</string>
+    <string name="quit_history_note">Kept for 30 minutes so you can undo or redo them, then deleted automatically.</string>
+    <string name="quit_history_empty">No recent changes</string>
     <string name="quit_delete_title">Delete this tracker?</string>
     <string name="quit_delete_body">Its history is removed from this device.</string>
     <string name="quit_name">Name</string>

@@ -706,6 +706,11 @@
     <string name="undo_quit_edited">ట్రాకర్ నవీకరించబడింది</string>
     <string name="undo_quit_slipped">మళ్లీ మొదలైంది</string>
     <string name="undo_quit_deleted">ట్రాకర్ తొలగించబడింది</string>
+    <string name="undo_view">చూడండి</string>
+    <string name="undo_changes_saved">సేవ్ చేసిన మార్పులు: %1$d</string>
+    <string name="quit_history">ఇటీవలి మార్పులు</string>
+    <string name="quit_history_note">రద్దు చేయడానికి లేదా మళ్లీ చేయడానికి 30 నిమిషాలు ఉంచబడతాయి, తర్వాత స్వయంచాలకంగా తొలగించబడతాయి.</string>
+    <string name="quit_history_empty">ఇటీవలి మార్పులు లేవు</string>
     <string name="quit_delete_title">ఈ ట్రాకర్‌ను తొలగించాలా?</string>
     <string name="quit_delete_body">దీని చరిత్ర ఈ పరికరం నుండి తీసివేయబడుతుంది.</string>
     <string name="quit_name">పేరు</string>

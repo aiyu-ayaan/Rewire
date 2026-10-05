@@ -706,6 +706,11 @@
     <string name="undo_quit_edited">ट्रॅकर अपडेट केला</string>
     <string name="undo_quit_slipped">पुन्हा सुरू झाले</string>
     <string name="undo_quit_deleted">ट्रॅकर हटवला</string>
+    <string name="undo_view">पहा</string>
+    <string name="undo_changes_saved">जतन केलेले बदल: %1$d</string>
+    <string name="quit_history">अलीकडील बदल</string>
+    <string name="quit_history_note">पूर्ववत किंवा पुन्हा करता यावे म्हणून 30 मिनिटे ठेवले जातात, नंतर आपोआप हटवले जातात.</string>
+    <string name="quit_history_empty">अलीकडील बदल नाहीत</string>
     <string name="quit_delete_title">हा ट्रॅकर हटवायचा?</string>
     <string name="quit_delete_body">याचा इतिहास या डिव्हाइसवरून काढून टाकला जाईल.</string>
     <string name="quit_name">नाव</string>

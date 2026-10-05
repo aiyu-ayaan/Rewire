@@ -687,6 +687,11 @@
     <string name="undo_quit_edited">トラッカーを更新しました</string>
     <string name="undo_quit_slipped">リスタートしました</string>
     <string name="undo_quit_deleted">トラッカーを削除しました</string>
+    <string name="undo_view">表示</string>
+    <string name="undo_changes_saved">保存された変更: %1$d 件</string>
+    <string name="quit_history">最近の変更</string>
+    <string name="quit_history_note">元に戻したりやり直したりできるよう30分間保存され、その後自動的に削除されます。</string>
+    <string name="quit_history_empty">最近の変更はありません</string>
     <string name="quit_delete_title">このトラッカーを削除しますか?</string>
     <string name="quit_delete_body">その履歴はこのデバイスから削除されます。</string>
     <string name="quit_name">名前</string>

@@ -687,6 +687,11 @@
     <string name="undo_quit_edited">已更新追蹤</string>
     <string name="undo_quit_slipped">已重新開始</string>
     <string name="undo_quit_deleted">已刪除追蹤</string>
+    <string name="undo_view">查看</string>
+    <string name="undo_changes_saved">已儲存 %1$d 項變更</string>
+    <string name="quit_history">最近變更</string>
+    <string name="quit_history_note">保留 30 分鐘以便復原或重做，之後自動刪除。</string>
+    <string name="quit_history_empty">沒有最近變更</string>
     <string name="quit_delete_title">刪除這個追蹤器？</string>
     <string name="quit_delete_body">它的歷史從這個設備中刪除。</string>
     <string name="quit_name">名稱</string>

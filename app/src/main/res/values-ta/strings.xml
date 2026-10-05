@@ -706,6 +706,11 @@
     <string name="undo_quit_edited">டிராக்கர் புதுப்பிக்கப்பட்டது</string>
     <string name="undo_quit_slipped">மீண்டும் தொடங்கியது</string>
     <string name="undo_quit_deleted">டிராக்கர் நீக்கப்பட்டது</string>
+    <string name="undo_view">பார்</string>
+    <string name="undo_changes_saved">சேமித்த மாற்றங்கள்: %1$d</string>
+    <string name="quit_history">சமீபத்திய மாற்றங்கள்</string>
+    <string name="quit_history_note">செயல்தவிர்க்க அல்லது மீண்டும் செய்ய 30 நிமிடங்கள் வைக்கப்படும், பிறகு தானாக நீக்கப்படும்.</string>
+    <string name="quit_history_empty">சமீபத்திய மாற்றங்கள் இல்லை</string>
     <string name="quit_delete_title">இந்த டிராக்கரை நீக்கவா?</string>
     <string name="quit_delete_body">இதன் வரலாறு இந்தச் சாதனத்திலிருந்து அகற்றப்படும்.</string>
     <string name="quit_name">பெயர்</string>

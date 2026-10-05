@@ -725,6 +725,11 @@
     <string name="undo_quit_edited">Seguimiento actualizado</string>
     <string name="undo_quit_slipped">Racha reiniciada</string>
     <string name="undo_quit_deleted">Seguimiento eliminado</string>
+    <string name="undo_view">Ver</string>
+    <string name="undo_changes_saved">%1$d cambios guardados</string>
+    <string name="quit_history">Cambios recientes</string>
+    <string name="quit_history_note">Se guardan 30 minutos para que puedas deshacerlos o rehacerlos y luego se eliminan automáticamente.</string>
+    <string name="quit_history_empty">No hay cambios recientes</string>
     <string name="quit_delete_title">¿Borrar este rastreador?</string>
     <string name="quit_delete_body">Su historial se elimina de este dispositivo.</string>
     <string name="quit_name">Nombre</string>

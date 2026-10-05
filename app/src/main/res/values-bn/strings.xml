@@ -706,6 +706,11 @@
     <string name="undo_quit_edited">ট্র্যাকার আপডেট হয়েছে</string>
     <string name="undo_quit_slipped">নতুন করে শুরু হয়েছে</string>
     <string name="undo_quit_deleted">ট্র্যাকার মুছে ফেলা হয়েছে</string>
+    <string name="undo_view">দেখুন</string>
+    <string name="undo_changes_saved">সংরক্ষিত পরিবর্তন: %1$d</string>
+    <string name="quit_history">সাম্প্রতিক পরিবর্তন</string>
+    <string name="quit_history_note">৩০ মিনিট রাখা হয় যাতে আপনি পূর্বাবস্থায় ফেরাতে বা পুনরায় করতে পারেন, তারপর নিজে থেকেই মুছে যায়।</string>
+    <string name="quit_history_empty">সাম্প্রতিক কোনো পরিবর্তন নেই</string>
     <string name="quit_delete_title">এই ট্র্যাকারটি মুছে ফেলবেন?</string>
     <string name="quit_delete_body">এর ইতিহাস এই ডিভাইস থেকে সরিয়ে ফেলা হবে।</string>
     <string name="quit_name">নাম</string>

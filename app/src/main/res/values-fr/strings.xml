@@ -725,6 +725,11 @@
     <string name="undo_quit_edited">Suivi mis à jour</string>
     <string name="undo_quit_slipped">Série redémarrée</string>
     <string name="undo_quit_deleted">Suivi supprimé</string>
+    <string name="undo_view">Voir</string>
+    <string name="undo_changes_saved">%1$d modifications enregistrées</string>
+    <string name="quit_history">Modifications récentes</string>
+    <string name="quit_history_note">Conservées 30 minutes pour pouvoir les annuler ou les rétablir, puis supprimées automatiquement.</string>
+    <string name="quit_history_empty">Aucune modification récente</string>
     <string name="quit_delete_title">Supprimer ce suivi?</string>
     <string name="quit_delete_body">Son historique est supprimé de cet appareil.</string>
     <string name="quit_name">Nom</string>

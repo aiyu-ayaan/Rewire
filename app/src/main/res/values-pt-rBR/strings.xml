@@ -725,6 +725,11 @@
     <string name="undo_quit_edited">Rastreador atualizado</string>
     <string name="undo_quit_slipped">Sequência reiniciada</string>
     <string name="undo_quit_deleted">Rastreador excluído</string>
+    <string name="undo_view">Ver</string>
+    <string name="undo_changes_saved">%1$d alterações salvas</string>
+    <string name="quit_history">Alterações recentes</string>
+    <string name="quit_history_note">Ficam salvas por 30 minutos para você desfazer ou refazer e depois são excluídas automaticamente.</string>
+    <string name="quit_history_empty">Nenhuma alteração recente</string>
     <string name="quit_delete_title">Deletar este rastreador?</string>
     <string name="quit_delete_body">Seu histórico é removido deste aparelho.</string>
     <string name="quit_name">Nome</string>

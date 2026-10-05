@@ -687,6 +687,11 @@
     <string name="undo_quit_edited">อัปเดตตัวติดตามแล้ว</string>
     <string name="undo_quit_slipped">เริ่มนับใหม่แล้ว</string>
     <string name="undo_quit_deleted">ลบตัวติดตามแล้ว</string>
+    <string name="undo_view">ดู</string>
+    <string name="undo_changes_saved">บันทึกการเปลี่ยนแปลงแล้ว %1$d รายการ</string>
+    <string name="quit_history">การเปลี่ยนแปลงล่าสุด</string>
+    <string name="quit_history_note">เก็บไว้ 30 นาทีเพื่อให้เลิกทำหรือทำซ้ำได้ จากนั้นจะถูกลบโดยอัตโนมัติ</string>
+    <string name="quit_history_empty">ไม่มีการเปลี่ยนแปลงล่าสุด</string>
     <string name="quit_delete_title">ลบตัวติดตามนี้หรือไม่?</string>
     <string name="quit_delete_body">ประวัติของมันถูกลบออกจากอุปกรณ์นี้แล้ว</string>
     <string name="quit_name">ชื่อ</string>

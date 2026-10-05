@@ -744,6 +744,11 @@
     <string name="undo_quit_edited">Трекер обновлён</string>
     <string name="undo_quit_slipped">Отсчёт начат заново</string>
     <string name="undo_quit_deleted">Трекер удалён</string>
+    <string name="undo_view">Показать</string>
+    <string name="undo_changes_saved">Сохранено изменений: %1$d</string>
+    <string name="quit_history">Недавние изменения</string>
+    <string name="quit_history_note">Хранятся 30 минут, чтобы их можно было отменить или повторить, затем удаляются автоматически.</string>
+    <string name="quit_history_empty">Нет недавних изменений</string>
     <string name="quit_delete_title">Удалить этот трекер?</string>
     <string name="quit_delete_body">Его история удаляется с этого устройства.</string>
     <string name="quit_name">Имя</string>

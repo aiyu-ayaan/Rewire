@@ -706,6 +706,11 @@
     <string name="undo_quit_edited">ട്രാക്കർ പുതുക്കി</string>
     <string name="undo_quit_slipped">വീണ്ടും തുടങ്ങി</string>
     <string name="undo_quit_deleted">ട്രാക്കർ ഇല്ലാതാക്കി</string>
+    <string name="undo_view">കാണുക</string>
+    <string name="undo_changes_saved">സംരക്ഷിച്ച മാറ്റങ്ങൾ: %1$d</string>
+    <string name="quit_history">സമീപകാല മാറ്റങ്ങൾ</string>
+    <string name="quit_history_note">പഴയപടിയാക്കാനോ വീണ്ടും ചെയ്യാനോ 30 മിനിറ്റ് സൂക്ഷിക്കും, പിന്നീട് സ്വയം ഇല്ലാതാക്കും.</string>
+    <string name="quit_history_empty">സമീപകാല മാറ്റങ്ങളൊന്നുമില്ല</string>
     <string name="quit_delete_title">ഈ ട്രാക്കർ ഡിലീറ്റ് ചെയ്യണോ?</string>
     <string name="quit_delete_body">ഇതിന്റെ ചരിത്രം ഈ ഉപകരണത്തിൽ നിന്ന് നീക്കം ചെയ്യപ്പെടും.</string>
     <string name="quit_name">പേര്</string>

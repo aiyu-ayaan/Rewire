@@ -706,6 +706,11 @@
     <string name="undo_quit_edited">Tracker aktualisiert</string>
     <string name="undo_quit_slipped">Neu gestartet</string>
     <string name="undo_quit_deleted">Tracker gelöscht</string>
+    <string name="undo_view">Ansehen</string>
+    <string name="undo_changes_saved">%1$d Änderungen gespeichert</string>
+    <string name="quit_history">Letzte Änderungen</string>
+    <string name="quit_history_note">30 Minuten lang gespeichert, damit du sie rückgängig machen oder wiederholen kannst, danach automatisch gelöscht.</string>
+    <string name="quit_history_empty">Keine aktuellen Änderungen</string>
     <string name="quit_delete_title">Diesen Tracker löschen?</string>
     <string name="quit_delete_body">Seine Geschichte wird von diesem Gerät entfernt.</string>
     <string name="quit_name">Name</string>

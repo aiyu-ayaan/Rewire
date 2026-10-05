@@ -687,6 +687,11 @@
     <string name="undo_quit_edited">Đã cập nhật trình theo dõi</string>
     <string name="undo_quit_slipped">Đã bắt đầu lại</string>
     <string name="undo_quit_deleted">Đã xóa trình theo dõi</string>
+    <string name="undo_view">Xem</string>
+    <string name="undo_changes_saved">Đã lưu %1$d thay đổi</string>
+    <string name="quit_history">Thay đổi gần đây</string>
+    <string name="quit_history_note">Được giữ trong 30 phút để bạn hoàn tác hoặc làm lại, sau đó tự động xóa.</string>
+    <string name="quit_history_empty">Không có thay đổi gần đây</string>
     <string name="quit_delete_title">Xóa bộ theo dõi này?</string>
     <string name="quit_delete_body">Lịch sử của nó được xóa khỏi thiết bị này.</string>
     <string name="quit_name">Tên</string>
