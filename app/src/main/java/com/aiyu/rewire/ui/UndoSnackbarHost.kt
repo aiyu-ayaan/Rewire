@@ -13,6 +13,10 @@ import androidx.compose.ui.platform.LocalResources
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.aiyu.rewire.R
 import com.aiyu.rewire.core.undo.UndoCenter
+import kotlinx.coroutines.withTimeoutOrNull
+
+/** After this the change is still in the history; the snackbar only steps away. */
+private const val SNACKBAR_MILLIS = 6_000L
 
 /**
  * Shows the latest [UndoCenter] offer: "Undo" takes the change back, then "Redo" puts it again, and so on.
@@ -26,7 +30,9 @@ fun UndoSnackbarHost(modifier: Modifier = Modifier) {
     LaunchedEffect(offer) {
         val o = offer ?: return@LaunchedEffect
         val many = !o.undone && o.saved >= 2
-        val result = host.showSnackbar(
+        // Our own timeout: Material stretches Long/Short when an accessibility service is on (Rewire's always is),
+        // which left the snackbar up for good. Timing out cancels showSnackbar, which removes it.
+        val result = withTimeoutOrNull(SNACKBAR_MILLIS) { host.showSnackbar(
             message = when {
                 o.undone -> res.getString(R.string.undo_undone)
                 many -> res.getString(R.string.undo_changes_saved, o.saved)
@@ -34,8 +40,8 @@ fun UndoSnackbarHost(modifier: Modifier = Modifier) {
             },
             actionLabel = res.getString(if (o.undone) R.string.undo_redo else if (many) R.string.undo_view else R.string.undo_action),
             withDismissAction = true,
-            duration = SnackbarDuration.Long,
-        )
+            duration = SnackbarDuration.Indefinite,
+        ) } ?: SnackbarResult.Dismissed
         if (many) {
             if (result == SnackbarResult.ActionPerformed) UndoCenter.requestHistory()
             UndoCenter.settle(o, null)
