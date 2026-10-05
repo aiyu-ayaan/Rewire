@@ -233,7 +233,7 @@ private fun Header(onHistory: (() -> Unit)?) {
         // Quit breathes: the same in / hold / out pace as "Ride the wave".
         mark = {
             MorphingShape(
-                brush = SolidColor(MaterialTheme.colorScheme.tertiaryContainer),
+                brush = SolidColor(MaterialTheme.colorScheme.primaryContainer),
                 modifier = it.breathing(BREATH_IN * 1_000, BREATH_HOLD * 1_000, (BREATH_CYCLE - BREATH_IN - BREATH_HOLD) * 1_000),
                 rotationMillis = 60_000,
             )
@@ -489,11 +489,11 @@ internal fun UrgeScreen(thoughts: Array<String>, onLeave: () -> Unit, onDone: ()
         Spacer(Modifier.height(24.dp))
         Box(Modifier.size(240.dp), contentAlignment = Alignment.Center) {
             MorphingShape(
-                brush = SolidColor(MaterialTheme.colorScheme.tertiaryContainer),
+                brush = SolidColor(MaterialTheme.colorScheme.primaryContainer),
                 modifier = Modifier.fillMaxSize().graphicsLayer { scaleX = scale; scaleY = scale },
                 rotationMillis = 60_000,
             )
-            Text(stringResource(label), style = MaterialTheme.typography.headlineSmall, color = MaterialTheme.colorScheme.onTertiaryContainer, textAlign = TextAlign.Center, modifier = Modifier.semantics { liveRegion = LiveRegionMode.Polite })
+            Text(stringResource(label), style = MaterialTheme.typography.headlineSmall, color = MaterialTheme.colorScheme.onPrimaryContainer, textAlign = TextAlign.Center, modifier = Modifier.semantics { liveRegion = LiveRegionMode.Polite })
         }
         if (done) {
             Text(stringResource(R.string.quit_urge_done_body), style = MaterialTheme.typography.titleMedium, textAlign = TextAlign.Center)

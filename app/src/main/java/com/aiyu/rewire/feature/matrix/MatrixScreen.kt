@@ -263,7 +263,7 @@ fun MatrixScreen(onShowAll: (apps: Boolean) -> Unit) {
             // Matrix measures: brisk shifts between faceted shapes, like numbers being re-read.
             mark = {
                 MorphingShape(
-                    brush = SolidColor(MaterialTheme.colorScheme.secondaryContainer),
+                    brush = SolidColor(MaterialTheme.colorScheme.primaryContainer),
                     shapes = MatrixMarkShapes,
                     segmentMillis = 1_200,
                     rotationMillis = 90_000,
