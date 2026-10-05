@@ -3,6 +3,7 @@ package com.aiyu.rewire.domain
 import com.aiyu.rewire.domain.quit.Milestone
 import com.aiyu.rewire.domain.quit.Quit
 import com.aiyu.rewire.domain.quit.Quit.DAY_MS
+import com.aiyu.rewire.domain.quit.QuitChangeKind
 import com.aiyu.rewire.domain.quit.QuitData
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertTrue
@@ -81,5 +82,33 @@ class QuitTest {
         assertEquals(deleted, Quit.put(two, "a", null, 0)) // redo
         val slipped = Quit.slip(two, "a", t0 + DAY_MS)
         assertEquals(two, Quit.put(slipped, "a", a, 0)) // undo an edit keeps order
+    }
+
+    @Test fun recordedChangeUndoesAndRedoes() {
+        val d = Quit.record(one(), "c1", QuitChangeKind.DELETED, "a", t0) { Quit.delete(it, "a") }
+        assertTrue(d.habits.isEmpty())
+        val undone = Quit.undo(d, "c1")
+        assertEquals(one().habits, undone.habits)
+        assertTrue(undone.changes.single().undone)
+        assertEquals(d.habits, Quit.redo(undone, "c1").habits)
+        assertEquals(false, Quit.redo(undone, "c1").changes.single().undone)
+    }
+
+    @Test fun rejectedOpRecordsNothing() {
+        assertEquals(one(), Quit.record(one(), "c1", QuitChangeKind.EDITED, "a", t0) { Quit.edit(it, "a", " ", "", t0, t0) })
+    }
+
+    @Test fun olderChangeCannotUndoOverANewerOne() {
+        val edited = Quit.record(one(), "c1", QuitChangeKind.EDITED, "a", t0) { Quit.edit(it, "a", "Soda", "", t0, t0) }
+        val deleted = Quit.record(edited, "c2", QuitChangeKind.DELETED, "a", t0) { Quit.delete(it, "a") }
+        assertEquals(deleted, Quit.undo(deleted, "c1")) // would resurrect the deleted tracker
+        assertEquals("Soda", Quit.undo(deleted, "c2").habits.single().name)
+    }
+
+    @Test fun changesExpireAfterThirtyMinutes() {
+        val d = Quit.record(one(), "c1", QuitChangeKind.SLIPPED, "a", t0) { Quit.slip(it, "a", t0) }
+        assertEquals(1, Quit.recentChanges(d, t0 + Quit.UNDO_KEEP_MS - 1).size)
+        assertTrue(Quit.recentChanges(d, t0 + Quit.UNDO_KEEP_MS).isEmpty())
+        assertTrue(Quit.prune(d, t0 + Quit.UNDO_KEEP_MS).changes.isEmpty())
     }
 }

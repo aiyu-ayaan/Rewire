@@ -17,9 +17,28 @@ data class QuitHabit(
     val slips: List<Long> = emptyList(),
 )
 
-/** Everything the Quit tab stores. [urgesRidden] counts finished "ride the wave" sessions. */
+/** What a recent change did to a tracker. */
+enum class QuitChangeKind { ADDED, EDITED, SLIPPED, DELETED }
+
+/**
+ * One recent change that can be undone and redone: the tracker as it was [before] and [after] (null = absent),
+ * and where it sat in the list. Kept for [Quit.UNDO_KEEP_MS], then deleted.
+ */
 @Serializable
-data class QuitData(val habits: List<QuitHabit> = emptyList(), val urgesRidden: Int = 0)
+data class QuitChange(
+    val id: String,
+    val kind: QuitChangeKind,
+    val trackerId: String,
+    val index: Int,
+    val before: QuitHabit?,
+    val after: QuitHabit?,
+    val at: Long,
+    val undone: Boolean = false,
+)
+
+/** Everything the Quit tab stores. [urgesRidden] counts finished "ride the wave" sessions; [changes] is the undo history. */
+@Serializable
+data class QuitData(val habits: List<QuitHabit> = emptyList(), val urgesRidden: Int = 0, val changes: List<QuitChange> = emptyList())
 
 /** Where a run stands against the milestone ladder; [progress] is 0..1 from [previous] to [next] days. */
 data class Milestone(val previous: Int, val next: Int, val progress: Float)
@@ -30,6 +49,11 @@ object Quit {
     const val MAX_REASON = 160
     /** ponytail: slip history capped; only recent slips are shown. */
     const val MAX_SLIPS = 100
+
+    /** How long a change stays undoable before it is deleted. */
+    const val UNDO_KEEP_MS = 30 * 60_000L
+    /** ponytail: history capped; enough for any "oops" within half an hour. */
+    const val MAX_CHANGES = 20
 
     /** Days worth celebrating; after the last one every further year counts. */
     val MILESTONES = listOf(1, 3, 7, 14, 21, 30, 60, 90, 180, 365)
@@ -91,6 +115,44 @@ object Quit {
         val at = data.habits.indexOfFirst { it.id == id }.takeIf { it >= 0 } ?: index
         return data.copy(habits = rest.toMutableList().apply { add(at.coerceIn(0, rest.size), habit) })
     }
+
+    /** Changes still inside the 30-minute window, newest first. */
+    fun recentChanges(data: QuitData, now: Long) = data.changes.filter { now - it.at < UNDO_KEEP_MS }.reversed()
+
+    /** Drops changes older than the window. */
+    fun prune(data: QuitData, now: Long) = data.copy(changes = data.changes.filter { now - it.at < UNDO_KEEP_MS })
+
+    /**
+     * Applies [op] to tracker [trackerId] and records it as an undoable change with id [changeId].
+     * A rejected op (nothing changed) records nothing.
+     */
+    fun record(data: QuitData, changeId: String, kind: QuitChangeKind, trackerId: String, now: Long, op: (QuitData) -> QuitData): QuitData {
+        val index = data.habits.indexOfFirst { it.id == trackerId }
+        val before = data.habits.getOrNull(index)
+        val next = op(data)
+        val after = next.habits.find { it.id == trackerId }
+        if (before == after) return data
+        val change = QuitChange(changeId, kind, trackerId, index, before, after, now)
+        return prune(next, now).let { it.copy(changes = (it.changes + change).takeLast(MAX_CHANGES)) }
+    }
+
+    /** Undo only while the tracker still looks as this change left it, so an older change never overwrites a newer one. */
+    fun canUndo(data: QuitData, c: QuitChange) = !c.undone && data.habits.find { it.id == c.trackerId } == c.after
+
+    fun canRedo(data: QuitData, c: QuitChange) = c.undone && data.habits.find { it.id == c.trackerId } == c.before
+
+    fun undo(data: QuitData, changeId: String): QuitData {
+        val c = data.changes.find { it.id == changeId }?.takeIf { canUndo(data, it) } ?: return data
+        return put(data, c.trackerId, c.before, c.index).markUndone(changeId, true)
+    }
+
+    fun redo(data: QuitData, changeId: String): QuitData {
+        val c = data.changes.find { it.id == changeId }?.takeIf { canRedo(data, it) } ?: return data
+        return put(data, c.trackerId, c.after, c.index).markUndone(changeId, false)
+    }
+
+    private fun QuitData.markUndone(changeId: String, undone: Boolean) =
+        copy(changes = changes.map { if (it.id == changeId) it.copy(undone = undone) else it })
 
     fun urgeRidden(data: QuitData) = data.copy(urgesRidden = data.urgesRidden + 1)
 
