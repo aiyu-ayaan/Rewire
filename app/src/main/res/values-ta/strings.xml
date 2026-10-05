@@ -699,6 +699,13 @@
     </plurals>
     <string name="quit_more">கூடுதல் விருப்பங்கள்</string>
     <string name="quit_edit">திருத்து</string>
+    <string name="undo_action">செயல்தவிர்</string>
+    <string name="undo_redo">மீண்டும் செய்</string>
+    <string name="undo_undone">மாற்றம் செயல்தவிர்க்கப்பட்டது</string>
+    <string name="undo_quit_added">டிராக்கர் சேர்க்கப்பட்டது</string>
+    <string name="undo_quit_edited">டிராக்கர் புதுப்பிக்கப்பட்டது</string>
+    <string name="undo_quit_slipped">மீண்டும் தொடங்கியது</string>
+    <string name="undo_quit_deleted">டிராக்கர் நீக்கப்பட்டது</string>
     <string name="quit_delete_title">இந்த டிராக்கரை நீக்கவா?</string>
     <string name="quit_delete_body">இதன் வரலாறு இந்தச் சாதனத்திலிருந்து அகற்றப்படும்.</string>
     <string name="quit_name">பெயர்</string>

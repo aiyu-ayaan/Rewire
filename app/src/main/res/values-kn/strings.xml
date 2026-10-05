@@ -699,6 +699,13 @@
     </plurals>
     <string name="quit_more">ಹೆಚ್ಚಿನ ಆಯ್ಕೆಗಳು</string>
     <string name="quit_edit">ಸಂಪಾದಿಸಿ</string>
+    <string name="undo_action">ರದ್ದುಮಾಡಿ</string>
+    <string name="undo_redo">ಮತ್ತೆ ಮಾಡಿ</string>
+    <string name="undo_undone">ಬದಲಾವಣೆ ರದ್ದಾಗಿದೆ</string>
+    <string name="undo_quit_added">ಟ್ರ್ಯಾಕರ್ ಸೇರಿಸಲಾಗಿದೆ</string>
+    <string name="undo_quit_edited">ಟ್ರ್ಯಾಕರ್ ನವೀಕರಿಸಲಾಗಿದೆ</string>
+    <string name="undo_quit_slipped">ಮತ್ತೆ ಆರಂಭವಾಗಿದೆ</string>
+    <string name="undo_quit_deleted">ಟ್ರ್ಯಾಕರ್ ಅಳಿಸಲಾಗಿದೆ</string>
     <string name="quit_delete_title">ಈ ಟ್ರ್ಯಾಕರ್ ಅನ್ನು ಅಳಿಸಬೇಕೆ?</string>
     <string name="quit_delete_body">ಇದರ ಇತಿಹಾಸವನ್ನು ಈ ಸಾಧನದಿಂದ ತೆಗೆದುಹಾಕಲಾಗುತ್ತದೆ.</string>
     <string name="quit_name">ಹೆಸರು</string>

@@ -775,6 +775,13 @@
     </plurals>
     <string name="quit_more">خيارات أكثر</string>
     <string name="quit_edit">عدّل</string>
+    <string name="undo_action">تراجع</string>
+    <string name="undo_redo">إعادة</string>
+    <string name="undo_undone">تم التراجع</string>
+    <string name="undo_quit_added">أُضيف المتتبع</string>
+    <string name="undo_quit_edited">حُدّث المتتبع</string>
+    <string name="undo_quit_slipped">بدأت المحاولة من جديد</string>
+    <string name="undo_quit_deleted">حُذف المتتبع</string>
     <string name="quit_delete_title">حذف هذا المتتبع؟</string>
     <string name="quit_delete_body">تاريخه يتم حذفه من هذا الجهاز.</string>
     <string name="quit_name">الاسم</string>

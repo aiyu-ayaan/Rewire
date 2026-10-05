@@ -680,6 +680,13 @@
     </plurals>
     <string name="quit_more">更多选项</string>
     <string name="quit_edit">编辑</string>
+    <string name="undo_action">撤销</string>
+    <string name="undo_redo">重做</string>
+    <string name="undo_undone">已撤销更改</string>
+    <string name="undo_quit_added">已添加追踪</string>
+    <string name="undo_quit_edited">已更新追踪</string>
+    <string name="undo_quit_slipped">已重新开始</string>
+    <string name="undo_quit_deleted">已删除追踪</string>
     <string name="quit_delete_title">删除这个跟踪器？</string>
     <string name="quit_delete_body">它的历史从此设备被删除。</string>
     <string name="quit_name">名字</string>

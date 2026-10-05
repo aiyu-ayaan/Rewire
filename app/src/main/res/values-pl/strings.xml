@@ -737,6 +737,13 @@
     </plurals>
     <string name="quit_more">Więcej opcji</string>
     <string name="quit_edit">Edytuj</string>
+    <string name="undo_action">Cofnij</string>
+    <string name="undo_redo">Ponów</string>
+    <string name="undo_undone">Zmiana cofnięta</string>
+    <string name="undo_quit_added">Dodano licznik</string>
+    <string name="undo_quit_edited">Zaktualizowano licznik</string>
+    <string name="undo_quit_slipped">Seria zaczęta od nowa</string>
+    <string name="undo_quit_deleted">Usunięto licznik</string>
     <string name="quit_delete_title">Usunąć to śledzenie?</string>
     <string name="quit_delete_body">Jego historia jest usunięta z tego urządzenia.</string>
     <string name="quit_name">Nazwa</string>

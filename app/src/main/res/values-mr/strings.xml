@@ -699,6 +699,13 @@
     </plurals>
     <string name="quit_more">अधिक पर्याय</string>
     <string name="quit_edit">संपादित करा</string>
+    <string name="undo_action">पूर्ववत करा</string>
+    <string name="undo_redo">पुन्हा करा</string>
+    <string name="undo_undone">बदल पूर्ववत केला</string>
+    <string name="undo_quit_added">ट्रॅकर जोडला</string>
+    <string name="undo_quit_edited">ट्रॅकर अपडेट केला</string>
+    <string name="undo_quit_slipped">पुन्हा सुरू झाले</string>
+    <string name="undo_quit_deleted">ट्रॅकर हटवला</string>
     <string name="quit_delete_title">हा ट्रॅकर हटवायचा?</string>
     <string name="quit_delete_body">याचा इतिहास या डिव्हाइसवरून काढून टाकला जाईल.</string>
     <string name="quit_name">नाव</string>

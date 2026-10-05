@@ -680,6 +680,13 @@
     </plurals>
     <string name="quit_more">Tùy chọn khác</string>
     <string name="quit_edit">Chỉnh sửa</string>
+    <string name="undo_action">Hoàn tác</string>
+    <string name="undo_redo">Làm lại</string>
+    <string name="undo_undone">Đã hoàn tác thay đổi</string>
+    <string name="undo_quit_added">Đã thêm trình theo dõi</string>
+    <string name="undo_quit_edited">Đã cập nhật trình theo dõi</string>
+    <string name="undo_quit_slipped">Đã bắt đầu lại</string>
+    <string name="undo_quit_deleted">Đã xóa trình theo dõi</string>
     <string name="quit_delete_title">Xóa bộ theo dõi này?</string>
     <string name="quit_delete_body">Lịch sử của nó được xóa khỏi thiết bị này.</string>
     <string name="quit_name">Tên</string>

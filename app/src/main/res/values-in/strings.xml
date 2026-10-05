@@ -680,6 +680,13 @@
     </plurals>
     <string name="quit_more">Opsi lainnya</string>
     <string name="quit_edit">Ubah</string>
+    <string name="undo_action">Urungkan</string>
+    <string name="undo_redo">Ulangi</string>
+    <string name="undo_undone">Perubahan diurungkan</string>
+    <string name="undo_quit_added">Pelacak ditambahkan</string>
+    <string name="undo_quit_edited">Pelacak diperbarui</string>
+    <string name="undo_quit_slipped">Dimulai ulang</string>
+    <string name="undo_quit_deleted">Pelacak dihapus</string>
     <string name="quit_delete_title">Hapus pelacak ini?</string>
     <string name="quit_delete_body"> Riwayatnya akan dihapus dari perangkat ini.</string>
     <string name="quit_name">Nama</string>

@@ -8,7 +8,15 @@ import androidx.compose.animation.scaleIn
 import androidx.compose.animation.scaleOut
 import androidx.compose.animation.slideInHorizontally
 import androidx.compose.animation.slideOutHorizontally
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.navigationBarsPadding
+import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.ui.Alignment
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.unit.dp
+import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.runtime.LaunchedEffect
@@ -84,6 +92,7 @@ fun RewireNavHost(
     // Decided once: flipping onboardingDone mid-flight must not rebuild the graph (would kill the hero transition).
     val startDestination: Any = remember { if (onboardingDone) Routes.Main else Routes.Landing }
 
+    Box(Modifier.fillMaxSize()) {
     SharedTransitionLayout {
         CompositionLocalProvider(LocalSharedTransitionScope provides this) {
             NavHost(
@@ -224,5 +233,9 @@ fun RewireNavHost(
                 }
             }
         }
+    }
+    // One host for the whole app, so a change made on a detail screen can still be undone after it closes.
+    val onMain = nav.currentBackStackEntryAsState().value?.destination?.hasRoute(Routes.Main::class) == true
+    UndoSnackbarHost(Modifier.align(Alignment.BottomCenter).navigationBarsPadding().padding(bottom = if (onMain) 88.dp else 0.dp))
     }
 }

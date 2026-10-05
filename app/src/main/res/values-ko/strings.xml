@@ -680,6 +680,13 @@
     </plurals>
     <string name="quit_more">더 많은 선택</string>
     <string name="quit_edit">편집</string>
+    <string name="undo_action">실행취소</string>
+    <string name="undo_redo">다시 실행</string>
+    <string name="undo_undone">변경을 취소했어요</string>
+    <string name="undo_quit_added">트래커를 추가했어요</string>
+    <string name="undo_quit_edited">트래커를 수정했어요</string>
+    <string name="undo_quit_slipped">다시 시작했어요</string>
+    <string name="undo_quit_deleted">트래커를 삭제했어요</string>
     <string name="quit_delete_title">이 추적기를 삭제할까?</string>
     <string name="quit_delete_body">그 기록이 이 기기에서 제거된다.</string>
     <string name="quit_name">이름</string>

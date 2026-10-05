@@ -737,6 +737,13 @@
     </plurals>
     <string name="quit_more">Ещё опции</string>
     <string name="quit_edit">Отредактировать</string>
+    <string name="undo_action">Отменить</string>
+    <string name="undo_redo">Повторить</string>
+    <string name="undo_undone">Изменение отменено</string>
+    <string name="undo_quit_added">Трекер добавлен</string>
+    <string name="undo_quit_edited">Трекер обновлён</string>
+    <string name="undo_quit_slipped">Отсчёт начат заново</string>
+    <string name="undo_quit_deleted">Трекер удалён</string>
     <string name="quit_delete_title">Удалить этот трекер?</string>
     <string name="quit_delete_body">Его история удаляется с этого устройства.</string>
     <string name="quit_name">Имя</string>

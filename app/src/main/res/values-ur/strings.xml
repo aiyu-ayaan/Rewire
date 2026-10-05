@@ -699,6 +699,13 @@
     </plurals>
     <string name="quit_more">مزید اختیارات</string>
     <string name="quit_edit">ترمیم</string>
+    <string name="undo_action">واپس کریں</string>
+    <string name="undo_redo">دوبارہ کریں</string>
+    <string name="undo_undone">تبدیلی واپس ہو گئی</string>
+    <string name="undo_quit_added">ٹریکر شامل ہو گیا</string>
+    <string name="undo_quit_edited">ٹریکر اپ ڈیٹ ہو گیا</string>
+    <string name="undo_quit_slipped">دوبارہ شروع ہو گیا</string>
+    <string name="undo_quit_deleted">ٹریکر حذف ہو گیا</string>
     <string name="quit_delete_title">اس ٹریکر کو حذف کریں؟</string>
     <string name="quit_delete_body">اس کی سرگزشت اس آلے سے ہٹا دی گئی ہے۔</string>
     <string name="quit_name">نام</string>

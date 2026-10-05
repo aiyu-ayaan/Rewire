@@ -680,6 +680,13 @@
     </plurals>
     <string name="quit_more">その他のオプション</string>
     <string name="quit_edit">編集</string>
+    <string name="undo_action">元に戻す</string>
+    <string name="undo_redo">やり直す</string>
+    <string name="undo_undone">変更を元に戻しました</string>
+    <string name="undo_quit_added">トラッカーを追加しました</string>
+    <string name="undo_quit_edited">トラッカーを更新しました</string>
+    <string name="undo_quit_slipped">リスタートしました</string>
+    <string name="undo_quit_deleted">トラッカーを削除しました</string>
     <string name="quit_delete_title">このトラッカーを削除しますか?</string>
     <string name="quit_delete_body">その履歴はこのデバイスから削除されます。</string>
     <string name="quit_name">名前</string>

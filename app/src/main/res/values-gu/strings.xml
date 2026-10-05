@@ -699,6 +699,13 @@
     </plurals>
     <string name="quit_more">વધુ વિકલ્પો</string>
     <string name="quit_edit">સંપાદિત કરો</string>
+    <string name="undo_action">પૂર્વવત્ કરો</string>
+    <string name="undo_redo">ફરી કરો</string>
+    <string name="undo_undone">ફેરફાર પૂર્વવત્ થયો</string>
+    <string name="undo_quit_added">ટ્રેકર ઉમેરાયું</string>
+    <string name="undo_quit_edited">ટ્રેકર અપડેટ થયું</string>
+    <string name="undo_quit_slipped">ફરી શરૂ થયું</string>
+    <string name="undo_quit_deleted">ટ્રેકર કાઢી નાખ્યું</string>
     <string name="quit_delete_title">આ ટ્રેકર કાઢી નાખવું?</string>
     <string name="quit_delete_body">આ ઇતિહાસ આ ઉપકરણમાંથી દૂર કરવામાં આવે છે.</string>
     <string name="quit_name">નામ</string>

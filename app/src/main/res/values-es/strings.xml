@@ -718,6 +718,13 @@
     </plurals>
     <string name="quit_more">Más opciones</string>
     <string name="quit_edit">Editar</string>
+    <string name="undo_action">Deshacer</string>
+    <string name="undo_redo">Rehacer</string>
+    <string name="undo_undone">Cambio deshecho</string>
+    <string name="undo_quit_added">Seguimiento añadido</string>
+    <string name="undo_quit_edited">Seguimiento actualizado</string>
+    <string name="undo_quit_slipped">Racha reiniciada</string>
+    <string name="undo_quit_deleted">Seguimiento eliminado</string>
     <string name="quit_delete_title">¿Borrar este rastreador?</string>
     <string name="quit_delete_body">Su historial se elimina de este dispositivo.</string>
     <string name="quit_name">Nombre</string>

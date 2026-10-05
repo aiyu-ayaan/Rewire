@@ -718,6 +718,13 @@
     </plurals>
     <string name="quit_more">Altre opzioni</string>
     <string name="quit_edit">Modifica</string>
+    <string name="undo_action">Annulla</string>
+    <string name="undo_redo">Ripeti</string>
+    <string name="undo_undone">Modifica annullata</string>
+    <string name="undo_quit_added">Tracker aggiunto</string>
+    <string name="undo_quit_edited">Tracker aggiornato</string>
+    <string name="undo_quit_slipped">Serie ricominciata</string>
+    <string name="undo_quit_deleted">Tracker eliminato</string>
     <string name="quit_delete_title">Eliminare questo tracker?</string>
     <string name="quit_delete_body">La sua cronologia viene rimossa da questo dispositivo.</string>
     <string name="quit_name">Nome</string>
