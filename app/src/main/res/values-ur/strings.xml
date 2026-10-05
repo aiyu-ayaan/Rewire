@@ -241,7 +241,7 @@
     <string name="guard_fix">درست کریں</string>
     <string name="guard_restricted_title">ایکسیسبیلٹی میں Guard فعال کریں</string>
     <string name="guard_restricted_step1">1. ایکسیسبیلٹی سیٹنگز میں Rewire تلاش کریں اور آن کریں۔</string>
-    <string name="guard_restricted_step2">2. اگر سیٹنگ \\"پابندی والی سیٹنگ\\" بتائے: نیچے \\"ایپ کی معلومات کھولیں\\" پر ٹیپ کریں، اوپر دائیں کونے کے 3 نقطوں (⋮) پر ٹیپ کریں، اور \\"پابندی والی سیٹنگز کی اجازت دیں\\" چنیں۔</string>
+    <string name="guard_restricted_step2">2. اگر سیٹنگ \"پابندی والی سیٹنگ\" بتائے: نیچے \"ایپ کی معلومات کھولیں\" پر ٹیپ کریں، اوپر دائیں کونے کے 3 نقطوں (⋮) پر ٹیپ کریں، اور \"پابندی والی سیٹنگز کی اجازت دیں\" چنیں۔</string>
     <string name="guard_accessibility">ایکسیسبیلٹی</string>
     <string name="guard_open_app_info">ایپ کی معلومات کھولیں</string>
     <string name="guard_sheet_step">مرحلہ %1$d / %2$d</string>
@@ -460,7 +460,7 @@
     <string name="perm_restricted_steps">اگر نیچے کوئی اجازت دھندلی ہے یا \"محدود ترتیب\" دکھاتی ہے:\n1. نیچے \"ایپ کی معلومات کھولیں\" پر ٹیپ کریں\n2. اوپر دائیں کونے کے 3 نقطوں (⋮) پر ٹیپ کریں\n3. \"پابندی والی سیٹنگز کی اجازت دیں\" پر ٹیپ کریں\n4. یہاں واپس آ کر دوبارہ اجازت دیں پر ٹیپ کریں۔</string>
     <string name="perm_disclosure_title">ایکسیسبیلٹی میں Rewire آن کریں</string>
     <string name="perm_disclosure_steps">اگلی اسکرین پر:\nانسٹال کردہ ایپس ← Rewire ← آن کریں۔</string>
-    <string name="perm_disclosure_note">نوٹ: اگر Android \\"پابندی والی سیٹنگ\\" بتائے، تو \\"ایپ کی معلومات کھولیں\\" پر ٹیپ کریں، اوپر دائیں کے 3 نقطوں (⋮) پر ٹیپ کریں، اور \\"پابندی والی سیٹنگز کی اجازت دیں\\" چنیں۔</string>
+    <string name="perm_disclosure_note">نوٹ: اگر Android \"پابندی والی سیٹنگ\" بتائے، تو \"ایپ کی معلومات کھولیں\" پر ٹیپ کریں، اوپر دائیں کے 3 نقطوں (⋮) پر ٹیپ کریں، اور \"پابندی والی سیٹنگز کی اجازت دیں\" چنیں۔</string>
     <string name="onboarding_make_yours">اسے اپنا بنائیں</string>
     <string name="onboarding_step1_subtitle">مرحلہ 1 / 2 · اسی آلے پر رہتا ہے</string>
     <string name="onboarding_stays_on_device">اسی آلے پر رہتا ہے</string>
@@ -524,7 +524,7 @@
     <string name="focus_preset_rename_title">پری سیٹ کا نام بدلیں</string>
     <string name="focus_preset_delete">حذف کریں</string>
     <string name="focus_preset_delete_title">پری سیٹ حذف کرنا ہے؟</string>
-    <string name="focus_preset_delete_body">\\"%1$s\\" ہٹا دیا جائے گا۔ آپ کی موجودہ سیٹنگز جوں کی توں رہیں گی۔</string>
+    <string name="focus_preset_delete_body">\"%1$s\" ہٹا دیا جائے گا۔ آپ کی موجودہ سیٹنگز جوں کی توں رہیں گی۔</string>
     <string name="focus_preset_name_title">اس پری سیٹ کو نام دیں</string>
     <string name="focus_preset_name_label">پری سیٹ کا نام</string>
     <string name="focus_preset_confirm">محفوظ کریں</string>

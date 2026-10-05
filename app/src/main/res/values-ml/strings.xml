@@ -241,7 +241,7 @@
     <string name="guard_fix">ശരിയാക്കൂ</string>
     <string name="guard_restricted_title">ആക്സസിബിലിറ്റിയിൽ Guard പ്രവർത്തനക്ഷമമാക്കൂ</string>
     <string name="guard_restricted_step1">1. ആക്സസിബിലിറ്റി ക്രമീകരണങ്ങളിൽ Rewire കണ്ടെത്തി ഓണാക്കൂ.</string>
-    <string name="guard_restricted_step2">2. ക്രമീകരണം \\"നിയന്ത്രിത ക്രമീകരണം\\" എന്ന് കാണിച്ചാൽ: താഴെയുള്ള \\"ആപ്പ് വിവരങ്ങൾ തുറക്കൂ\\" ടാപ്പ് ചെയ്യൂ, മുകളിൽ വലത് മൂലയിലെ 3 കുത്തുകളിൽ (⋮) ടാപ്പ് ചെയ്യൂ, \\"നിയന്ത്രിത ക്രമീകരണങ്ങൾ അനുവദിക്കൂ\\" തിരഞ്ഞെടുക്കൂ.</string>
+    <string name="guard_restricted_step2">2. ക്രമീകരണം \"നിയന്ത്രിത ക്രമീകരണം\" എന്ന് കാണിച്ചാൽ: താഴെയുള്ള \"ആപ്പ് വിവരങ്ങൾ തുറക്കൂ\" ടാപ്പ് ചെയ്യൂ, മുകളിൽ വലത് മൂലയിലെ 3 കുത്തുകളിൽ (⋮) ടാപ്പ് ചെയ്യൂ, \"നിയന്ത്രിത ക്രമീകരണങ്ങൾ അനുവദിക്കൂ\" തിരഞ്ഞെടുക്കൂ.</string>
     <string name="guard_accessibility">ആക്സസിബിലിറ്റി</string>
     <string name="guard_open_app_info">ആപ്പ് വിവരങ്ങൾ തുറക്കൂ</string>
     <string name="guard_sheet_step">ഘട്ടം %1$d / %2$d</string>
@@ -460,7 +460,7 @@
     <string name="perm_restricted_steps">താഴെയുള്ള അനുമതി ചാരനിറത്തിലാണെങ്കിൽ അല്ലെങ്കിൽ \"നിയന്ത്രിത ക്രമീകരണം\" എന്ന് കാണിച്ചാൽ:\n1. താഴെയുള്ള \"ആപ്പ് വിവരങ്ങൾ തുറക്കൂ\" ടാപ്പ് ചെയ്യൂ\n2. മുകളിൽ വലത് മൂലയിലെ 3 കുത്തുകളിൽ (⋮) ടാപ്പ് ചെയ്യൂ\n3. \"നിയന്ത്രിത ക്രമീകരണങ്ങൾ അനുവദിക്കൂ\" ടാപ്പ് ചെയ്യൂ\n4. ഇവിടെ തിരിച്ചെത്തി വീണ്ടും അനുവദിക്കുക ടാപ്പ് ചെയ്യുക.</string>
     <string name="perm_disclosure_title">ആക്സസിബിലിറ്റിയിൽ Rewire ഓണാക്കൂ</string>
     <string name="perm_disclosure_steps">അടുത്ത സ്ക്രീനിൽ:\nഇൻസ്റ്റാൾ ചെയ്ത ആപ്പുകൾ → Rewire → ഓണാക്കൂ.</string>
-    <string name="perm_disclosure_note">ശ്രദ്ധിക്കുക: Android \\"നിയന്ത്രിത ക്രമീകരണം\\" എന്ന് പറഞ്ഞാൽ, \\"ആപ്പ് വിവരങ്ങൾ തുറക്കൂ\\" ടാപ്പ് ചെയ്യൂ, മുകളിൽ വലതുള്ള 3 കുത്തുകളിൽ (⋮) ടാപ്പ് ചെയ്യൂ, \\"നിയന്ത്രിത ക്രമീകരണങ്ങൾ അനുവദിക്കൂ\\" തിരഞ്ഞെടുക്കൂ.</string>
+    <string name="perm_disclosure_note">ശ്രദ്ധിക്കുക: Android \"നിയന്ത്രിത ക്രമീകരണം\" എന്ന് പറഞ്ഞാൽ, \"ആപ്പ് വിവരങ്ങൾ തുറക്കൂ\" ടാപ്പ് ചെയ്യൂ, മുകളിൽ വലതുള്ള 3 കുത്തുകളിൽ (⋮) ടാപ്പ് ചെയ്യൂ, \"നിയന്ത്രിത ക്രമീകരണങ്ങൾ അനുവദിക്കൂ\" തിരഞ്ഞെടുക്കൂ.</string>
     <string name="onboarding_make_yours">നിങ്ങളുടേതാക്കൂ</string>
     <string name="onboarding_step1_subtitle">ഘട്ടം 1 / 2 · ഈ ഉപകരണത്തിൽ തന്നെ തുടരും</string>
     <string name="onboarding_stays_on_device">ഈ ഉപകരണത്തിൽ തന്നെ തുടരും</string>
@@ -524,7 +524,7 @@
     <string name="focus_preset_rename_title">പ്രീസെറ്റിന്റെ പേര് മാറ്റൂ</string>
     <string name="focus_preset_delete">ഇല്ലാതാക്കൂ</string>
     <string name="focus_preset_delete_title">പ്രീസെറ്റ് ഇല്ലാതാക്കണോ?</string>
-    <string name="focus_preset_delete_body">\\"%1$s\\" നീക്കം ചെയ്യും. നിങ്ങളുടെ നിലവിലെ ക്രമീകരണങ്ങൾ അതുപോലെ തുടരും.</string>
+    <string name="focus_preset_delete_body">\"%1$s\" നീക്കം ചെയ്യും. നിങ്ങളുടെ നിലവിലെ ക്രമീകരണങ്ങൾ അതുപോലെ തുടരും.</string>
     <string name="focus_preset_name_title">ഈ പ്രീസെറ്റിന് പേരിടൂ</string>
     <string name="focus_preset_name_label">പ്രീസെറ്റിന്റെ പേര്</string>
     <string name="focus_preset_confirm">സേവ് ചെയ്യൂ</string>

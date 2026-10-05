@@ -241,7 +241,7 @@
     <string name="guard_fix">ਠੀਕ ਕਰੋ</string>
     <string name="guard_restricted_title">ਐਕਸੈਸਿਬਿਲਟੀ ਵਿੱਚ Guard ਚਾਲੂ ਕਰੋ</string>
     <string name="guard_restricted_step1">1. ਐਕਸੈਸਿਬਿਲਟੀ ਸੈਟਿੰਗਾਂ ਵਿੱਚ Rewire ਲੱਭੋ ਅਤੇ ਚਾਲੂ ਕਰੋ।</string>
-    <string name="guard_restricted_step2">2. ਜੇ ਸੈਟਿੰਗ \\"ਪਾਬੰਦੀਸ਼ੁਦਾ ਸੈਟਿੰਗ\\" ਦੱਸੇ: ਹੇਠਾਂ \\"ਐਪ ਜਾਣਕਾਰੀ ਖੋਲ੍ਹੋ\\" \'ਤੇ ਟੈਪ ਕਰੋ, ਉੱਪਰ ਸੱਜੇ ਕੋਨੇ ਦੇ 3 ਬਿੰਦੂਆਂ (⋮) \'ਤੇ ਟੈਪ ਕਰੋ, ਅਤੇ \\"ਪਾਬੰਦੀਸ਼ੁਦਾ ਸੈਟਿੰਗਾਂ ਦੀ ਇਜਾਜ਼ਤ ਦਿਓ\\" ਚੁਣੋ।</string>
+    <string name="guard_restricted_step2">2. ਜੇ ਸੈਟਿੰਗ \"ਪਾਬੰਦੀਸ਼ੁਦਾ ਸੈਟਿੰਗ\" ਦੱਸੇ: ਹੇਠਾਂ \"ਐਪ ਜਾਣਕਾਰੀ ਖੋਲ੍ਹੋ\" \'ਤੇ ਟੈਪ ਕਰੋ, ਉੱਪਰ ਸੱਜੇ ਕੋਨੇ ਦੇ 3 ਬਿੰਦੂਆਂ (⋮) \'ਤੇ ਟੈਪ ਕਰੋ, ਅਤੇ \"ਪਾਬੰਦੀਸ਼ੁਦਾ ਸੈਟਿੰਗਾਂ ਦੀ ਇਜਾਜ਼ਤ ਦਿਓ\" ਚੁਣੋ।</string>
     <string name="guard_accessibility">ਐਕਸੈਸਿਬਿਲਟੀ</string>
     <string name="guard_open_app_info">ਐਪ ਜਾਣਕਾਰੀ ਖੋਲ੍ਹੋ</string>
     <string name="guard_sheet_step">ਕਦਮ %1$d / %2$d</string>
@@ -460,7 +460,7 @@
     <string name="perm_restricted_steps">ਜੇ ਹੇਠਾਂ ਕੋਈ ਇਜਾਜ਼ਤ ਧੁੰਦਲੀ ਹੈ ਜਾਂ \"ਪਾਬੰਦੀਸ਼ੁਦਾ ਸੈਟਿੰਗ\" ਦਿਖਾਉਂਦੀ ਹੈ:\n1. ਹੇਠਾਂ \"ਐਪ ਜਾਣਕਾਰੀ ਖੋਲ੍ਹੋ\" \'ਤੇ ਟੈਪ ਕਰੋ\n2. ਉੱਪਰ ਸੱਜੇ ਕੋਨੇ ਦੇ 3 ਬਿੰਦੂਆਂ (⋮) \'ਤੇ ਟੈਪ ਕਰੋ\n3. \"ਪਾਬੰਦੀਸ਼ੁਦਾ ਸੈਟਿੰਗਾਂ ਦੀ ਇਜਾਜ਼ਤ ਦਿਓ\" \'ਤੇ ਟੈਪ ਕਰੋ\n4. ਇੱਥੇ ਵਾਪਸ ਆ ਕੇ ਦੁਬਾਰਾ ਇਜਾਜ਼ਤ ਦਿਓ \'ਤੇ ਟੈਪ ਕਰੋ।</string>
     <string name="perm_disclosure_title">ਐਕਸੈਸਿਬਿਲਟੀ ਵਿੱਚ Rewire ਚਾਲੂ ਕਰੋ</string>
     <string name="perm_disclosure_steps">ਅਗਲੀ ਸਕ੍ਰੀਨ \'ਤੇ:\nਇੰਸਟਾਲ ਕੀਤੀਆਂ ਐਪਾਂ → Rewire → ਚਾਲੂ ਕਰੋ।</string>
-    <string name="perm_disclosure_note">ਨੋਟ: ਜੇ Android \\"ਪਾਬੰਦੀਸ਼ੁਦਾ ਸੈਟਿੰਗ\\" ਦੱਸੇ, ਤਾਂ \\"ਐਪ ਜਾਣਕਾਰੀ ਖੋਲ੍ਹੋ\\" \'ਤੇ ਟੈਪ ਕਰੋ, ਉੱਪਰ ਸੱਜੇ ਦੇ 3 ਬਿੰਦੂਆਂ (⋮) \'ਤੇ ਟੈਪ ਕਰੋ, ਅਤੇ \\"ਪਾਬੰਦੀਸ਼ੁਦਾ ਸੈਟਿੰਗਾਂ ਦੀ ਇਜਾਜ਼ਤ ਦਿਓ\\" ਚੁਣੋ।</string>
+    <string name="perm_disclosure_note">ਨੋਟ: ਜੇ Android \"ਪਾਬੰਦੀਸ਼ੁਦਾ ਸੈਟਿੰਗ\" ਦੱਸੇ, ਤਾਂ \"ਐਪ ਜਾਣਕਾਰੀ ਖੋਲ੍ਹੋ\" \'ਤੇ ਟੈਪ ਕਰੋ, ਉੱਪਰ ਸੱਜੇ ਦੇ 3 ਬਿੰਦੂਆਂ (⋮) \'ਤੇ ਟੈਪ ਕਰੋ, ਅਤੇ \"ਪਾਬੰਦੀਸ਼ੁਦਾ ਸੈਟਿੰਗਾਂ ਦੀ ਇਜਾਜ਼ਤ ਦਿਓ\" ਚੁਣੋ।</string>
     <string name="onboarding_make_yours">ਇਸ ਨੂੰ ਆਪਣਾ ਬਣਾਓ</string>
     <string name="onboarding_step1_subtitle">ਕਦਮ 1 / 2 · ਇਸ ਡਿਵਾਈਸ \'ਤੇ ਹੀ ਰਹਿੰਦਾ ਹੈ</string>
     <string name="onboarding_stays_on_device">ਇਸ ਡਿਵਾਈਸ \'ਤੇ ਹੀ ਰਹਿੰਦਾ ਹੈ</string>
@@ -524,7 +524,7 @@
     <string name="focus_preset_rename_title">ਪ੍ਰੀਸੈੱਟ ਦਾ ਨਾਮ ਬਦਲੋ</string>
     <string name="focus_preset_delete">ਮਿਟਾਓ</string>
     <string name="focus_preset_delete_title">ਪ੍ਰੀਸੈੱਟ ਮਿਟਾਉਣਾ ਹੈ?</string>
-    <string name="focus_preset_delete_body">\\"%1$s\\" ਹਟਾ ਦਿੱਤਾ ਜਾਵੇਗਾ। ਤੁਹਾਡੀਆਂ ਮੌਜੂਦਾ ਸੈਟਿੰਗਾਂ ਜਿਉਂ ਦੀਆਂ ਤਿਉਂ ਰਹਿਣਗੀਆਂ।</string>
+    <string name="focus_preset_delete_body">\"%1$s\" ਹਟਾ ਦਿੱਤਾ ਜਾਵੇਗਾ। ਤੁਹਾਡੀਆਂ ਮੌਜੂਦਾ ਸੈਟਿੰਗਾਂ ਜਿਉਂ ਦੀਆਂ ਤਿਉਂ ਰਹਿਣਗੀਆਂ।</string>
     <string name="focus_preset_name_title">ਇਸ ਪ੍ਰੀਸੈੱਟ ਨੂੰ ਨਾਮ ਦਿਓ</string>
     <string name="focus_preset_name_label">ਪ੍ਰੀਸੈੱਟ ਦਾ ਨਾਮ</string>
     <string name="focus_preset_confirm">ਸੇਵ ਕਰੋ</string>

@@ -241,7 +241,7 @@
     <string name="guard_fix">ಸರಿಪಡಿಸಿ</string>
     <string name="guard_restricted_title">ಆಕ್ಸೆಸಿಬಿಲಿಟಿಯಲ್ಲಿ Guard ಸಕ್ರಿಯಗೊಳಿಸಿ</string>
     <string name="guard_restricted_step1">1. ಆಕ್ಸೆಸಿಬಿಲಿಟಿ ಸೆಟ್ಟಿಂಗ್‌ಗಳಲ್ಲಿ Rewire ಹುಡುಕಿ ಮತ್ತು ಆನ್ ಮಾಡಿ.</string>
-    <string name="guard_restricted_step2">2. ಸೆಟ್ಟಿಂಗ್ \\"ನಿರ್ಬಂಧಿತ ಸೆಟ್ಟಿಂಗ್\\" ಎಂದು ತೋರಿಸಿದರೆ: ಕೆಳಗಿನ \\"ಆ್ಯಪ್ ಮಾಹಿತಿ ತೆರೆಯಿರಿ\\" ಟ್ಯಾಪ್ ಮಾಡಿ, ಮೇಲಿನ ಬಲ ಮೂಲೆಯ 3 ಚುಕ್ಕೆಗಳನ್ನು (⋮) ಟ್ಯಾಪ್ ಮಾಡಿ, ಮತ್ತು \\"ನಿರ್ಬಂಧಿತ ಸೆಟ್ಟಿಂಗ್‌ಗಳನ್ನು ಅನುಮತಿಸಿ\\" ಆರಿಸಿ.</string>
+    <string name="guard_restricted_step2">2. ಸೆಟ್ಟಿಂಗ್ \"ನಿರ್ಬಂಧಿತ ಸೆಟ್ಟಿಂಗ್\" ಎಂದು ತೋರಿಸಿದರೆ: ಕೆಳಗಿನ \"ಆ್ಯಪ್ ಮಾಹಿತಿ ತೆರೆಯಿರಿ\" ಟ್ಯಾಪ್ ಮಾಡಿ, ಮೇಲಿನ ಬಲ ಮೂಲೆಯ 3 ಚುಕ್ಕೆಗಳನ್ನು (⋮) ಟ್ಯಾಪ್ ಮಾಡಿ, ಮತ್ತು \"ನಿರ್ಬಂಧಿತ ಸೆಟ್ಟಿಂಗ್‌ಗಳನ್ನು ಅನುಮತಿಸಿ\" ಆರಿಸಿ.</string>
     <string name="guard_accessibility">ಆಕ್ಸೆಸಿಬಿಲಿಟಿ</string>
     <string name="guard_open_app_info">ಆ್ಯಪ್ ಮಾಹಿತಿ ತೆರೆಯಿರಿ</string>
     <string name="guard_sheet_step">ಹಂತ %1$d / %2$d</string>
@@ -460,7 +460,7 @@
     <string name="perm_restricted_steps">ಕೆಳಗಿನ ಅನುಮತಿ ಬೂದು ಬಣ್ಣದಲ್ಲಿದ್ದರೆ ಅಥವಾ \"ನಿರ್ಬಂಧಿತ ಸೆಟ್ಟಿಂಗ್\" ಎಂದು ತೋರಿಸಿದರೆ:\n1. ಕೆಳಗಿನ \"ಆ್ಯಪ್ ಮಾಹಿತಿ ತೆರೆಯಿರಿ\" ಟ್ಯಾಪ್ ಮಾಡಿ\n2. ಮೇಲಿನ ಬಲ ಮೂಲೆಯ 3 ಚುಕ್ಕೆಗಳನ್ನು (⋮) ಟ್ಯಾಪ್ ಮಾಡಿ\n3. \"ನಿರ್ಬಂಧಿತ ಸೆಟ್ಟಿಂಗ್‌ಗಳನ್ನು ಅನುಮತಿಸಿ\" ಟ್ಯಾಪ್ ಮಾಡಿ\n4. ಇಲ್ಲಿಗೆ ಮರಳಿ ಬಂದು ಮತ್ತೆ ಅನುಮತಿಸಿ ಟ್ಯಾಪ್ ಮಾಡಿ.</string>
     <string name="perm_disclosure_title">ಆಕ್ಸೆಸಿಬಿಲಿಟಿಯಲ್ಲಿ Rewire ಆನ್ ಮಾಡಿ</string>
     <string name="perm_disclosure_steps">ಮುಂದಿನ ಪರದೆಯಲ್ಲಿ:\nಇನ್‌ಸ್ಟಾಲ್ ಮಾಡಿದ ಆ್ಯಪ್‌ಗಳು → Rewire → ಆನ್ ಮಾಡಿ.</string>
-    <string name="perm_disclosure_note">ಗಮನಿಸಿ: Android \\"ನಿರ್ಬಂಧಿತ ಸೆಟ್ಟಿಂಗ್\\" ಎಂದು ಹೇಳಿದರೆ, \\"ಆ್ಯಪ್ ಮಾಹಿತಿ ತೆರೆಯಿರಿ\\" ಟ್ಯಾಪ್ ಮಾಡಿ, ಮೇಲಿನ ಬಲದ 3 ಚುಕ್ಕೆಗಳನ್ನು (⋮) ಟ್ಯಾಪ್ ಮಾಡಿ, ಮತ್ತು \\"ನಿರ್ಬಂಧಿತ ಸೆಟ್ಟಿಂಗ್‌ಗಳನ್ನು ಅನುಮತಿಸಿ\\" ಆರಿಸಿ.</string>
+    <string name="perm_disclosure_note">ಗಮನಿಸಿ: Android \"ನಿರ್ಬಂಧಿತ ಸೆಟ್ಟಿಂಗ್\" ಎಂದು ಹೇಳಿದರೆ, \"ಆ್ಯಪ್ ಮಾಹಿತಿ ತೆರೆಯಿರಿ\" ಟ್ಯಾಪ್ ಮಾಡಿ, ಮೇಲಿನ ಬಲದ 3 ಚುಕ್ಕೆಗಳನ್ನು (⋮) ಟ್ಯಾಪ್ ಮಾಡಿ, ಮತ್ತು \"ನಿರ್ಬಂಧಿತ ಸೆಟ್ಟಿಂಗ್‌ಗಳನ್ನು ಅನುಮತಿಸಿ\" ಆರಿಸಿ.</string>
     <string name="onboarding_make_yours">ನಿಮ್ಮದಾಗಿಸಿಕೊಳ್ಳಿ</string>
     <string name="onboarding_step1_subtitle">ಹಂತ 1 / 2 · ಈ ಸಾಧನದಲ್ಲೇ ಇರುತ್ತದೆ</string>
     <string name="onboarding_stays_on_device">ಈ ಸಾಧನದಲ್ಲೇ ಇರುತ್ತದೆ</string>
@@ -524,7 +524,7 @@
     <string name="focus_preset_rename_title">ಪ್ರಿಸೆಟ್ ಮರುಹೆಸರಿಸಿ</string>
     <string name="focus_preset_delete">ಅಳಿಸಿ</string>
     <string name="focus_preset_delete_title">ಪ್ರಿಸೆಟ್ ಅಳಿಸಬೇಕೆ?</string>
-    <string name="focus_preset_delete_body">\\"%1$s\\" ತೆಗೆದುಹಾಕಲಾಗುತ್ತದೆ. ನಿಮ್ಮ ಈಗಿನ ಸೆಟ್ಟಿಂಗ್‌ಗಳು ಹಾಗೆಯೇ ಇರುತ್ತವೆ.</string>
+    <string name="focus_preset_delete_body">\"%1$s\" ತೆಗೆದುಹಾಕಲಾಗುತ್ತದೆ. ನಿಮ್ಮ ಈಗಿನ ಸೆಟ್ಟಿಂಗ್‌ಗಳು ಹಾಗೆಯೇ ಇರುತ್ತವೆ.</string>
     <string name="focus_preset_name_title">ಈ ಪ್ರಿಸೆಟ್‌ಗೆ ಹೆಸರಿಡಿ</string>
     <string name="focus_preset_name_label">ಪ್ರಿಸೆಟ್ ಹೆಸರು</string>
     <string name="focus_preset_confirm">ಉಳಿಸಿ</string>
