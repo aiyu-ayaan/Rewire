@@ -47,6 +47,7 @@ import androidx.compose.material.icons.rounded.FullscreenExit
 import androidx.compose.material.icons.rounded.Pause
 import androidx.compose.material.icons.rounded.PlayArrow
 import androidx.compose.material.icons.rounded.SkipNext
+import androidx.compose.material3.ColorScheme
 import androidx.compose.material3.FilledIconButton
 import androidx.compose.material3.FilledTonalIconButton
 import androidx.compose.material3.Icon
@@ -87,7 +88,8 @@ import com.aiyu.rewire.core.notifications.RewireNotifier
 import com.aiyu.rewire.domain.focus.FocusSessionStatus
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import com.aiyu.rewire.ui.components.sharedBoundsOrSelf
-import com.aiyu.rewire.ui.theme.FocusDarkColors
+import com.aiyu.rewire.ui.theme.Accent
+import com.aiyu.rewire.ui.theme.darkAccentScheme
 import com.aiyu.rewire.ui.theme.TimerTextStyle
 import com.aiyu.rewire.ui.theme.rememberReducedMotion
 import kotlinx.coroutines.delay
@@ -103,8 +105,8 @@ private val ControlLane = 112.dp
 fun focusViewModel(): FocusViewModel =
     hiltViewModel<FocusViewModel>(LocalActivity.current as ComponentActivity)
 
-/** True-black scheme: AMOLED pixels off everywhere except the digits and thin progress. */
-private val AmoledColors = FocusDarkColors.copy(
+/** True-black version of [scheme]: AMOLED pixels off everywhere except the digits and thin progress. */
+private fun amoled(scheme: ColorScheme) = scheme.copy(
     background = Color.Black, surface = Color.Black,
     surfaceContainerLowest = Color.Black, surfaceContainerLow = Color(0xFF0A0A0A),
     surfaceContainer = Color(0xFF111111), surfaceContainerHigh = Color(0xFF161616), surfaceContainerHighest = Color(0xFF1C1C1C),
@@ -128,7 +130,7 @@ fun FocusFullscreenScreen(onExit: () -> Unit) {
     // Controls auto-hide; every tap/action restarts the timer.
     LaunchedEffect(controlsVisible, interaction) { if (controlsVisible && !paused) { delay(4_000); controlsVisible = false } }
 
-    MaterialTheme(colorScheme = AmoledColors) {
+    MaterialTheme(colorScheme = amoled(darkAccentScheme(Accent.FOCUS))) {
         val c = MaterialTheme.colorScheme
         val accent = if (onBreak) c.tertiary else c.primary
         Box(

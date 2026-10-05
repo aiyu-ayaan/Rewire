@@ -2,6 +2,7 @@ package com.aiyu.rewire.ui
 
 import com.aiyu.rewire.ui.theme.Accent
 import com.aiyu.rewire.ui.theme.DarkColors
+import com.aiyu.rewire.ui.theme.DynamicSchemes
 import com.aiyu.rewire.ui.theme.FocusDarkColors
 import com.aiyu.rewire.ui.theme.FocusLightColors
 import com.aiyu.rewire.ui.theme.LightColors
@@ -34,19 +35,36 @@ class AccentSchemeTest {
         }
     }
 
+    // DarkColors / LightColors stand in for the wallpaper's two schemes.
+    private val wall = DynamicSchemes(light = LightColors, dark = DarkColors)
+
     @Test fun dynamicSwapsWhichRoleLeads() {
-        val wall = LightColors // stands in for a wallpaper scheme
-        assertSame(wall, accentScheme(Accent.BRAND, dark = false, dynamic = wall))
+        assertSame(LightColors, accentScheme(Accent.BRAND, dark = false, dynamic = wall))
+        assertSame(DarkColors, accentScheme(Accent.QUIT, dark = true, dynamic = wall))
         val focus = accentScheme(Accent.FOCUS, dark = false, dynamic = wall)
-        assertEquals(wall.secondary, focus.primary)
-        assertEquals(wall.onSecondaryContainer, focus.onPrimaryContainer)
-        // Secondary roles must not fall back to the wallpaper's primary: no mixed hues on one tab.
-        assertEquals(wall.secondaryContainer, focus.secondaryContainer)
+        assertEquals(LightColors.secondary, focus.primary)
+        assertEquals(LightColors.onSecondaryContainer, focus.onPrimaryContainer)
+        assertEquals(LightColors.secondaryContainer, focus.secondaryContainer)
         val matrix = accentScheme(Accent.MATRIX, dark = false, dynamic = wall)
-        assertEquals(wall.tertiary, matrix.primary)
-        assertEquals(wall.tertiaryContainer, matrix.secondaryContainer)
-        assertEquals(wall.onTertiaryContainer, matrix.onSecondaryContainer)
-        assertEquals(wall.primaryContainer, matrix.tertiaryContainer)
+        assertEquals(LightColors.tertiary, matrix.primary)
+        // Containers follow the lead hue (no wallpaper-primary chips on Matrix)...
+        assertEquals(LightColors.tertiaryContainer, matrix.secondaryContainer)
+        assertEquals(LightColors.onTertiaryContainer, matrix.onSecondaryContainer)
+        assertEquals(LightColors.primaryContainer, matrix.tertiaryContainer)
         assertNotEquals(focus.primary, matrix.primary)
+    }
+
+    @Test fun dynamicChartSeriesStayDistinct() {
+        for (dark in listOf(false, true)) {
+            val m = accentScheme(Accent.MATRIX, dark, wall)
+            val series = listOf(m.primary, m.secondary, m.tertiary, m.error)
+            assertEquals(series.size, series.toSet().size)
+        }
+    }
+
+    @Test fun dynamicGradientStaysInTheLeadHue() {
+        // heroBrush = primary -> inversePrimary; inverse is the lead role's tone from the other mode.
+        assertEquals(DarkColors.secondary, accentScheme(Accent.FOCUS, dark = false, dynamic = wall).inversePrimary)
+        assertEquals(LightColors.tertiary, accentScheme(Accent.MATRIX, dark = true, dynamic = wall).inversePrimary)
     }
 }

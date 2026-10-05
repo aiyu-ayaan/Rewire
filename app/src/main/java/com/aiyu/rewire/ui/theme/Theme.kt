@@ -12,14 +12,18 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.staticCompositionLocalOf
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import com.aiyu.rewire.core.settings.ThemeMode
 
 /** Screen color: Guard and Profile wear the brand teal, Focus, Quit and Matrix their own hue. */
 enum class Accent { BRAND, FOCUS, QUIT, MATRIX }
 
-/** What [AccentTheme] derives from: the app's light/dark choice and, with dynamic color on, the wallpaper scheme. */
-private data class ThemeBase(val dark: Boolean, val dynamic: ColorScheme?)
+/** The wallpaper's light and dark schemes. Both are kept: a role's inverse color is its tone in the other mode. */
+data class DynamicSchemes(val light: ColorScheme, val dark: ColorScheme)
+
+/** What [AccentTheme] derives from: the app's light/dark choice and, with dynamic color on, the wallpaper schemes. */
+private data class ThemeBase(val dark: Boolean, val dynamic: DynamicSchemes?)
 
 private val LocalThemeBase = staticCompositionLocalOf { ThemeBase(dark = false, dynamic = null) }
 
@@ -36,7 +40,7 @@ fun RewireTheme(
     }
     val dynamic = if (dynamicColor && Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
         val context = LocalContext.current
-        if (dark) dynamicDarkColorScheme(context) else dynamicLightColorScheme(context)
+        DynamicSchemes(dynamicLightColorScheme(context), dynamicDarkColorScheme(context))
     } else null
     CompositionLocalProvider(LocalThemeBase provides ThemeBase(dark, dynamic)) {
         MaterialExpressiveTheme(
@@ -62,15 +66,25 @@ fun AccentTheme(accent: Accent, content: @Composable () -> Unit) {
     )
 }
 
+/** [accent]'s dark scheme whatever the app's mode, for always-dark screens (fullscreen focus). Wallpaper-based when dynamic color is on. */
+@Composable
+fun darkAccentScheme(accent: Accent): ColorScheme {
+    val base = LocalThemeBase.current
+    return remember(accent, base) { accentScheme(accent, dark = true, dynamic = base.dynamic) }
+}
+
 /**
  * Brand palettes per accent. With dynamic color ([dynamic] non-null) the wallpaper gives one palette only,
  * so tabs swap which of its roles leads: Focus leads with secondary, Matrix with tertiary.
  */
-fun accentScheme(accent: Accent, dark: Boolean, dynamic: ColorScheme?): ColorScheme = when {
-    dynamic != null -> when (accent) {
-        Accent.BRAND, Accent.QUIT -> dynamic
-        Accent.FOCUS -> dynamic.leadWithSecondary()
-        Accent.MATRIX -> dynamic.leadWithTertiary()
+fun accentScheme(accent: Accent, dark: Boolean, dynamic: DynamicSchemes?): ColorScheme = when {
+    dynamic != null -> {
+        val (scheme, other) = if (dark) dynamic.dark to dynamic.light else dynamic.light to dynamic.dark
+        when (accent) {
+            Accent.BRAND, Accent.QUIT -> scheme
+            Accent.FOCUS -> scheme.leadWithSecondary(inverse = other.secondary)
+            Accent.MATRIX -> scheme.leadWithTertiary(inverse = other.tertiary)
+        }
     }
     else -> when (accent) {
         Accent.BRAND -> if (dark) DarkColors else LightColors
@@ -80,20 +94,22 @@ fun accentScheme(accent: Accent, dark: Boolean, dynamic: ColorScheme?): ColorSch
     }
 }
 
-// Every accent role (primary + secondary: buttons, chips, selected segments, progress tracks) gets the lead palette,
-// so a tab never mixes the wallpaper's primary with its own hue.
-private fun ColorScheme.leadWithSecondary() = copy(
+// The lead palette takes over primary and the secondary containers (chips, selected segments, progress tracks), so
+// a tab never mixes the wallpaper's primary into its own hue. Solid secondary/tertiary stay distinct: charts use them
+// as separate series. [inverse] keeps gradients (primary -> inversePrimary) inside the lead hue.
+private fun ColorScheme.leadWithSecondary(inverse: Color) = copy(
     primary = secondary, onPrimary = onSecondary,
     primaryContainer = secondaryContainer, onPrimaryContainer = onSecondaryContainer,
+    inversePrimary = inverse,
     surfaceTint = secondary,
 )
 
-private fun ColorScheme.leadWithTertiary() = copy(
+private fun ColorScheme.leadWithTertiary(inverse: Color) = copy(
     primary = tertiary, onPrimary = onTertiary,
     primaryContainer = tertiaryContainer, onPrimaryContainer = onTertiaryContainer,
-    secondary = tertiary, onSecondary = onTertiary,
     secondaryContainer = tertiaryContainer, onSecondaryContainer = onTertiaryContainer,
     tertiary = primary, onTertiary = onPrimary,
     tertiaryContainer = primaryContainer, onTertiaryContainer = onPrimaryContainer,
+    inversePrimary = inverse,
     surfaceTint = tertiary,
 )
