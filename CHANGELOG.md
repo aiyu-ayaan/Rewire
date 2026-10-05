@@ -1,5 +1,43 @@
 # Changelog
 
+## [1.1.2](https://github.com/aiyu-ayaan/Rewire/compare/v1.1.1...v1.1.2) (2026-10-05)
+
+### Features
+
+* Quit detail, focus history and matrix breakdown keep their tab's color
+* Nav icons pop with a bouncy twist when their tab is selected
+* Each tab and the floating nav bar wear the tab's own palette
+* Per-screen accent palettes for focus, quit and matrix with a dynamic color fallback
+* Undo, redo and recent changes in the quit tracker menus and a clearer history button
+* Quit change history sheet with per-change undo and redo, kept for 30 minutes
+* Snackbar points to change history once two or more changes are saved
+* Store quit undo history for 30 minutes with guarded undo and redo
+* Undo and redo quit tracker add, edit, slip and delete
+* Add app-wide undo/redo snackbar
+* Add Quit.put to restore a single tracker for undo and redo
+* Give focus and matrix the shared header with a ticking and a shifting mark
+* Add ScreenHeader with ticking and breathing mark motions
+* Add FabOutsideSharedTransition to hide FABs during container transforms
+
+### Bug fixes
+
+* Exclude .agents and .claude from github language stats
+* Stray backslashes before quotes in kannada, malayalam, punjabi and urdu strings
+* Restricted settings card shows on lite too when usage access or display over apps is missing
+* Dynamic color keeps chart series distinct, gradients in the tab hue and fullscreen focus on the wallpaper
+* Dynamic color keeps one hue per tab so matrix no longer mixes pink and peach
+* Back on the focus note page returns to the result instead of closing the app, with predictive back
+* Quit and matrix header marks use their tab color instead of amber and grey
+* Undo snackbar dismisses itself after 6 seconds even with accessibility on
+* Hide guard and quit FABs while the card collapses back so it no longer slides over them
+
+### Other changes
+
+* Replace launch video and gif with the 9:16 2K cut covering every feature, dynamic color, languages and large screens
+* Refresh screenshots and add tablet, foldable, dynamic color and language galleries
+* Per-tab accent colors in design notes and tracker
+* Move guard and quit headers onto ScreenHeader; quit mark breathes with ride the wave pace
+
 ## [1.1.1](https://github.com/aiyu-ayaan/Rewire/compare/v1.1.0...v1.1.1) (2026-10-04)
 
 ### Bug fixes
