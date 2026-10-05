@@ -11,7 +11,11 @@ import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.automirrored.rounded.Redo
+import androidx.compose.material.icons.automirrored.rounded.Undo
+import androidx.compose.material.icons.rounded.History
 import androidx.compose.material.icons.rounded.Timer
+import androidx.compose.material3.DropdownMenuItem
 import androidx.compose.material3.Icon
 import androidx.compose.material3.ListItem
 import androidx.compose.material3.ListItemDefaults
@@ -49,6 +53,34 @@ internal fun QuitHistory(data: QuitData?, now: Long, open: Boolean, onClose: () 
     if ((open || requested) && data != null) {
         QuitHistorySheet(data, now, onUndo, onRedo, onDismiss = { onClose(); UndoCenter.historyShown() })
     }
+}
+
+/**
+ * ⋮-menu entries for one tracker: undo or redo its latest change, and the full history. Nothing while the
+ * history is empty, so the menu stays as it was.
+ */
+@Composable
+internal fun ChangeMenuItems(data: QuitData?, trackerId: String, now: Long, onUndo: (String) -> Unit, onRedo: (String) -> Unit, onHistory: () -> Unit, close: () -> Unit) {
+    if (data == null || Quit.recentChanges(data, now).isEmpty()) return
+    val last = Quit.lastChange(data, trackerId, now)
+    if (last != null && Quit.canUndo(data, last)) {
+        DropdownMenuItem(
+            text = { Text("${stringResource(R.string.undo_action)} · ${stringResource(last.kind.message)}") },
+            leadingIcon = { Icon(Icons.AutoMirrored.Rounded.Undo, contentDescription = null) },
+            onClick = { close(); onUndo(last.id) },
+        )
+    } else if (last != null && Quit.canRedo(data, last)) {
+        DropdownMenuItem(
+            text = { Text("${stringResource(R.string.undo_redo)} · ${stringResource(last.kind.message)}") },
+            leadingIcon = { Icon(Icons.AutoMirrored.Rounded.Redo, contentDescription = null) },
+            onClick = { close(); onRedo(last.id) },
+        )
+    }
+    DropdownMenuItem(
+        text = { Text(stringResource(R.string.quit_history)) },
+        leadingIcon = { Icon(Icons.Rounded.History, contentDescription = null) },
+        onClick = { close(); onHistory() },
+    )
 }
 
 /** Recent tracker changes, newest first, each with its own undo or redo. Kept for 30 minutes, then deleted. */

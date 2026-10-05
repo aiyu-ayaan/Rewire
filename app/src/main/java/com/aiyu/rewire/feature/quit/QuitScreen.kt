@@ -53,7 +53,9 @@ import androidx.compose.material3.DropdownMenu
 import androidx.compose.material3.DropdownMenuItem
 import androidx.compose.material3.ExtendedFloatingActionButton
 import androidx.compose.material3.FilledTonalButton
+import androidx.compose.material3.FilledTonalIconButton
 import androidx.compose.material3.FilterChip
+import androidx.compose.material3.IconButtonDefaults
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
@@ -146,6 +148,7 @@ fun QuitScreen(onOpen: (String) -> Unit) {
                 onEdit = { sheet = it },
                 onDelete = vm::delete,
                 onHistory = if (Quit.recentChanges(d, now).isNotEmpty()) ({ history = true }) else null,
+                menuExtras = { id, close -> ChangeMenuItems(d, id, now, vm::undo, vm::redo, onHistory = { history = true }, close = close) },
             )
         }
     }
@@ -177,6 +180,7 @@ private fun QuitHome(
     onEdit: (String) -> Unit,
     onDelete: (String) -> Unit,
     onHistory: (() -> Unit)?,
+    menuExtras: @Composable (trackerId: String, close: () -> Unit) -> Unit,
 ) {
     val list = rememberLazyGridState()
     val fabExpanded by remember { derivedStateOf { list.firstVisibleItemIndex == 0 } }
@@ -203,7 +207,7 @@ private fun QuitHome(
                 }
             }
             items(habits, key = { it.id }) { h ->
-                QuitCard(h, now, onOpen = { onOpen(h.id) }, onEdit = { onEdit(h.id) }, onDelete = { onDelete(h.id) }, modifier = Modifier.animateItem().padding(bottom = 12.dp))
+                QuitCard(h, now, onOpen = { onOpen(h.id) }, onEdit = { onEdit(h.id) }, onDelete = { onDelete(h.id) }, menuExtras = { close -> menuExtras(h.id, close) }, modifier = Modifier.animateItem().padding(bottom = 12.dp))
             }
             item(span = full) { PrivateNote() }
         }
@@ -236,7 +240,7 @@ private fun Header(onHistory: (() -> Unit)?) {
         },
     ) {
         // Shown only while a recent change can still be undone.
-        if (onHistory != null) IconButton(onClick = onHistory) { Icon(Icons.Rounded.History, contentDescription = stringResource(R.string.quit_history)) }
+        if (onHistory != null) FilledTonalIconButton(onClick = onHistory, shapes = IconButtonDefaults.shapes()) { Icon(Icons.Rounded.History, contentDescription = stringResource(R.string.quit_history)) }
     }
 }
 
@@ -288,7 +292,7 @@ private fun UrgeCard(urgesRidden: Int, onUrge: () -> Unit) {
 }
 
 @Composable
-private fun QuitCard(h: QuitHabit, now: Long, onOpen: () -> Unit, onEdit: () -> Unit, onDelete: () -> Unit, modifier: Modifier = Modifier) {
+private fun QuitCard(h: QuitHabit, now: Long, onOpen: () -> Unit, onEdit: () -> Unit, onDelete: () -> Unit, menuExtras: @Composable (close: () -> Unit) -> Unit, modifier: Modifier = Modifier) {
     val days = Quit.runDays(h, now)
     val m = Quit.milestone(days)
     val progress by animateFloatAsState(m.progress, MaterialTheme.motionScheme.slowSpatialSpec(), label = "milestone")
@@ -329,6 +333,7 @@ private fun QuitCard(h: QuitHabit, now: Long, onOpen: () -> Unit, onEdit: () -> 
                     DropdownMenu(menu, onDismissRequest = { menu = false }) {
                         DropdownMenuItem(text = { Text(stringResource(R.string.quit_edit)) }, onClick = { menu = false; onEdit() })
                         DropdownMenuItem(text = { Text(stringResource(R.string.common_delete)) }, onClick = { menu = false; confirmDelete = true })
+                        menuExtras { menu = false }
                     }
                 }
             }

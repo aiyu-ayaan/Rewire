@@ -96,6 +96,7 @@ fun QuitDetailScreen(id: String, onBack: () -> Unit) {
     val h = data?.habits?.find { it.id == id } ?: return // loading, or deleted -> already popped
     var urge by rememberSaveable { mutableStateOf(false) }
     var editing by rememberSaveable { mutableStateOf(false) }
+    var history by rememberSaveable { mutableStateOf(false) }
     val thoughts = stringArrayResource(R.array.quit_thoughts)
     val effects = MaterialTheme.motionScheme.defaultEffectsSpec<Float>()
 
@@ -109,11 +110,12 @@ fun QuitDetailScreen(id: String, onBack: () -> Unit) {
                 onDelete = { onBack(); vm.delete(id) },
                 onSlip = { vm.slip(id) },
                 onUrge = { urge = true },
+                menuExtras = { close -> ChangeMenuItems(data, id, now, vm::undo, vm::redo, onHistory = { history = true }, close = close) },
             )
         }
     }
-    // The undo snackbar's "View" opens the history here too while this screen is on display.
-    QuitHistory(data, now, open = false, onClose = {}, onUndo = vm::undo, onRedo = vm::redo)
+    // Opened from the ⋮ menu, or by the undo snackbar's "View" while this screen is on display.
+    QuitHistory(data, now, open = history, onClose = { history = false }, onUndo = vm::undo, onRedo = vm::redo)
     if (editing) QuitSheet(
         initial = h,
         onDismiss = { editing = false },
@@ -123,7 +125,7 @@ fun QuitDetailScreen(id: String, onBack: () -> Unit) {
 
 @OptIn(ExperimentalLayoutApi::class)
 @Composable
-private fun Journey(h: QuitHabit, now: Long, onBack: () -> Unit, onEdit: () -> Unit, onDelete: () -> Unit, onSlip: () -> Unit, onUrge: () -> Unit) {
+private fun Journey(h: QuitHabit, now: Long, onBack: () -> Unit, onEdit: () -> Unit, onDelete: () -> Unit, onSlip: () -> Unit, onUrge: () -> Unit, menuExtras: @Composable (close: () -> Unit) -> Unit) {
     val days = Quit.runDays(h, now)
     val m = Quit.milestone(days)
     val run = Quit.runMillis(h, now)
@@ -153,6 +155,7 @@ private fun Journey(h: QuitHabit, now: Long, onBack: () -> Unit, onEdit: () -> U
                         DropdownMenu(menu, onDismissRequest = { menu = false }) {
                             DropdownMenuItem(text = { Text(stringResource(R.string.quit_edit)) }, onClick = { menu = false; onEdit() })
                             DropdownMenuItem(text = { Text(stringResource(R.string.common_delete)) }, onClick = { menu = false; confirmDelete = true })
+                            menuExtras { menu = false }
                         }
                     }
                 },

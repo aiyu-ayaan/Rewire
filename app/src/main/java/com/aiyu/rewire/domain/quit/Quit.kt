@@ -119,6 +119,9 @@ object Quit {
     /** Changes still inside the 30-minute window, newest first. */
     fun recentChanges(data: QuitData, now: Long) = data.changes.filter { now - it.at < UNDO_KEEP_MS }.reversed()
 
+    /** The newest change to one tracker still inside the window, if any. */
+    fun lastChange(data: QuitData, trackerId: String, now: Long) = recentChanges(data, now).firstOrNull { it.trackerId == trackerId }
+
     /** Drops changes older than the window. */
     fun prune(data: QuitData, now: Long) = data.copy(changes = data.changes.filter { now - it.at < UNDO_KEEP_MS })
 
