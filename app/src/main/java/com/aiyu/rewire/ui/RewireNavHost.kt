@@ -15,6 +15,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.material3.Surface
 import androidx.compose.ui.unit.dp
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.compose.runtime.Composable
@@ -47,6 +48,8 @@ import com.aiyu.rewire.feature.profile.LanguageScreen
 import com.aiyu.rewire.feature.profile.NotificationSettingsScreen
 import com.aiyu.rewire.feature.profile.WarningLibraryScreen
 import com.aiyu.rewire.ui.components.LocalNavAnimatedScope
+import com.aiyu.rewire.ui.theme.Accent
+import com.aiyu.rewire.ui.theme.AccentTheme
 import com.aiyu.rewire.ui.components.LocalSharedTransitionScope
 import kotlinx.serialization.Serializable
 
@@ -186,7 +189,7 @@ fun RewireNavHost(
                     popExitTransition = { fadeOut(effects) },
                 ) { entry ->
                     CompositionLocalProvider(LocalNavAnimatedScope provides this) {
-                        QuitDetailScreen(id = entry.toRoute<Routes.QuitDetail>().id, onBack = { nav.popBackStack() })
+                        AccentTheme(Accent.QUIT) { QuitDetailScreen(id = entry.toRoute<Routes.QuitDetail>().id, onBack = { nav.popBackStack() }) }
                     }
                 }
                 composable<Routes.WarningPreview>(
@@ -205,7 +208,7 @@ fun RewireNavHost(
                     }
                 }
                 composable<Routes.FocusHistory> {
-                    FocusHistoryScreen(onBack = { nav.popBackStack() })
+                    AccentTheme(Accent.FOCUS) { Surface(Modifier.fillMaxSize()) { FocusHistoryScreen(onBack = { nav.popBackStack() }) } }
                 }
                 composable<Routes.NotificationSettings> {
                     NotificationSettingsScreen(onBack = { nav.popBackStack() })
@@ -220,7 +223,7 @@ fun RewireNavHost(
                     AcknowledgementsScreen(onBack = { nav.popBackStack() })
                 }
                 composable<Routes.MatrixBreakdown> {
-                    MatrixBreakdownScreen(it.toRoute<Routes.MatrixBreakdown>().apps, onBack = { nav.popBackStack() })
+                    AccentTheme(Accent.MATRIX) { MatrixBreakdownScreen(it.toRoute<Routes.MatrixBreakdown>().apps, onBack = { nav.popBackStack() }) }
                 }
                 composable<Routes.Goals> {
                     GoalsScreen(onBack = { nav.popBackStack() })
