@@ -71,6 +71,12 @@ android {
             buildConfigField("boolean", "ACCESSIBILITY", "true")
             buildConfigField("boolean", "UPDATES", "false")
         }
+        // playLite = Lite detection without the self-updater: the fewest permissions. This is the AAB Play gets.
+        create("playLite") {
+            dimension = "detection"
+            buildConfigField("boolean", "ACCESSIBILITY", "false")
+            buildConfigField("boolean", "UPDATES", "false")
+        }
     }
 
     // MigrationTestHelper reads the exported schemas as assets.
