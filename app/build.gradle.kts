@@ -50,7 +50,7 @@ android {
     defaultConfig {
         applicationId = "com.aiyu.rewire"
         minSdk = 26
-        targetSdk = 35
+        targetSdk = 36
         versionCode = versionCodeOf(appVersionName)
         versionName = appVersionName
 
