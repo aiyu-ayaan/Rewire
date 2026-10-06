@@ -11,12 +11,21 @@ applicationId, same signing key. Only how Guard notices a protected app differs.
 | `BuildConfig.ACCESSIBILITY` | `true` | `false` |
 | Play Protect, browser install | blocked (enhanced fraud protection) | allowed |
 | Payment / UPI apps | refuse to run while the service is on | unaffected |
-| Release asset | `Rewire-<v>.apk` (+ `.aab` for Play) | `Rewire-Lite-<v>.apk` |
+| Release asset | `Rewire-<v>.apk` | `Rewire-Lite-<v>.apk` |
 
 A third flavor, `play`, is Full detection with the self-updater compiled out (no `INTERNET` or
 `REQUEST_INSTALL_PACKAGES`, no Updates UI): `BuildConfig.UPDATES = false`, overlay `src/play/AndroidManifest.xml`.
 Build it with `./gradlew bundlePlayRelease`; details in [UPDATES.md](UPDATES.md). It is not part of the
 GitHub release assets.
+
+A fourth flavor, `playLite`, is **what Google Play gets**: Lite detection (no accessibility service) with the
+self-updater compiled out, so the fewest permissions. `ACCESSIBILITY = false`, `UPDATES = false`, overlay
+`src/playLite/AndroidManifest.xml` (Lite's and Play's removals together: keep it in step with both). Release asset
+`Rewire-Play-<v>.aab`, the file to upload to the Play Console. Build it with `./gradlew bundlePlayLiteRelease`.
+
+Both Play flavors update through Google Play's in-app update screen (`com.google.android.play:app-update`, no
+permission): `src/playStore/java/.../PlayUpdates.kt` offers it once per launch and resumes an update already
+started. `full` and `lite` compile the no-op `src/sideload/java/.../PlayUpdates.kt` and keep the GitHub updater.
 
 Why: Play Protect blocks sideloaded installs (browser, file manager, messaging) of any app that
 declares an accessibility service. Payment apps refuse to run while a non-Play accessibility service is
@@ -68,9 +77,9 @@ aapt2 dump xmltree --file AndroidManifest.xml app/build/outputs/apk/lite/release
 
 ## Release
 
-`.github/workflows/release.yml` builds `assembleFullRelease assembleLiteRelease bundleFullRelease`, names the
-assets as in the table, and fails if either APK is missing, Lite declares an accessibility service, or Full
-lost it. The in-app updater (`Releases.apkFor`) only offers the installed flavor's asset. Release notes link
+`.github/workflows/release.yml` builds `assembleFullRelease assembleLiteRelease bundlePlayLiteRelease`, names the
+assets as above, and fails if either APK is missing, Lite declares an accessibility service, Full lost it, or the
+Play AAB declares an accessibility service, `INTERNET`, `REQUEST_INSTALL_PACKAGES` or the update receiver. The in-app updater (`Releases.apkFor`) only offers the installed flavor's asset. Release notes link
 users to README → Install, and the app shows its build in Profile → About.
 
 ## Background behaviour (both)

@@ -200,7 +200,7 @@ flowchart LR
 - Warning text is data (`res/raw*/default_warnings.json`, plus user-edited warnings), and every UI string is in `strings.xml`, so nothing is hardcoded in the UI.
 - Everything important becomes a `HabitEvent` (`APP_OPENED`, `WARNING_SHOWN`, `APP_BLOCKED`, `OVERRIDE_USED`, `FOCUS_*` and so on), and the events power Matrix.
 - State is persisted in Room so a killed process recovers its rules and any running focus session. REWIRE does not assume Android keeps it alive.
-- Three build flavors share one codebase: **Full** (Accessibility), **Lite** (Usage access, no accessibility service) and **Play** (Full without the self-updater). See [`FLAVORS.md`](development/docs/FLAVORS.md).
+- Four build flavors share one codebase: **Full** (Accessibility), **Lite** (Usage access, no accessibility service), **Play** (Full without the self-updater) and **Play Lite** (Lite without the self-updater, the Google Play build; updates through Play). See [`FLAVORS.md`](development/docs/FLAVORS.md).
 
 ### Project structure
 
