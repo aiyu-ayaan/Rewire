@@ -1,5 +1,16 @@
 # Changelog
 
+## [1.1.4](https://github.com/aiyu-ayaan/Rewire/compare/v1.1.3...v1.1.4) (2026-10-06)
+
+### Features
+
+* Add rewire-fgs-demo video file
+
+### Bug fixes
+
+* Target api 36, required by google play
+* Each patch rebuild gets a new version code so play accepts it
+
 ## [1.1.3](https://github.com/aiyu-ayaan/Rewire/compare/v1.1.2...v1.1.3) (2026-10-06)
 
 ### Features
