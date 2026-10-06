@@ -1,5 +1,20 @@
 # Changelog
 
+## [1.1.3](https://github.com/aiyu-ayaan/Rewire/compare/v1.1.2...v1.1.3) (2026-10-06)
+
+### Features
+
+* Play builds update through google play's in-app update screen
+* Add playlite flavor, lite detection without the self-updater for play
+
+### Bug fixes
+
+* Play store aab is now play lite, lite detection without the self-updater, updated through google play
+
+### Other changes
+
+* Document the playlite flavor and play in-app updates
+
 ## [1.1.2](https://github.com/aiyu-ayaan/Rewire/compare/v1.1.1...v1.1.2) (2026-10-05)
 
 ### Features
