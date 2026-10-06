@@ -211,6 +211,7 @@ jobs:
       version: ${{ steps.detect.outputs.version }}
       prerelease: ${{ steps.detect.outputs.prerelease }}
       patch: ${{ steps.detect.outputs.patch }}
+      build: ${{ steps.detect.outputs.build }}
     steps:
       # The whole history: HEAD^ is what the version is compared against.
       - uses: actions/checkout@v4
@@ -290,10 +291,18 @@ jobs:
             *)                  prerelease=false ;;
           esac
 
+          # Play refuses a version code it has seen, so each patch of a version
+          # gets the next build number: commits since its tag (0 for the release).
+          build=0
+          if [ "$patch" = true ]; then
+            build="$(git rev-list --count "v${current}..HEAD")"
+          fi
+
           {
             echo "version=$current"
             echo "prerelease=$prerelease"
             echo "patch=$patch"
+            echo "build=$build"
           } >> "$GITHUB_OUTPUT"
           echo "Releasing v$current (prerelease: $prerelease, patch: $patch)."
 
@@ -357,6 +366,7 @@ jobs:
           ANDROID_KEYSTORE_PASSWORD: ${{ secrets.ANDROID_KEYSTORE_PASSWORD }}
           ANDROID_KEY_ALIAS: ${{ secrets.ANDROID_KEY_ALIAS }}
           ANDROID_KEY_PASSWORD: ${{ secrets.ANDROID_KEY_PASSWORD }}
+          REWIRE_BUILD: ${{ needs.merged.outputs.build }}
         run: ./gradlew ${{ matrix.task }} --stacktrace
 
       # app-release.apk says nothing about which release it is once it has been

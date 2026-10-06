@@ -23,17 +23,24 @@ val keystoreFile = signingValue("ANDROID_KEYSTORE_FILE", "storeFile")?.let(rootP
 // Version name lives in the root VERSION file, bumped by the release PR.
 val appVersionName = rootProject.file("VERSION").readText().trim()
 
-/** Packs X.Y.Z[-alpha|beta.N] into a code that rises with every release: 1.4.2-beta.3 = 10402103, 1.4.2 = 10402200. */
-fun versionCodeOf(name: String): Int {
+/**
+ * Packs X.Y.Z[-alpha|beta.N] into a code that rises with every release: 1.4.2-beta.3 = 10402103, 1.4.2 = 10402200.
+ * [build] (REWIRE_BUILD, set by a `!patch` rebuild) fills a stable release's free last two digits, so Play never sees
+ * the same code twice: 1.4.2 patched twice = 10402202.
+ */
+fun versionCodeOf(name: String, build: Int = System.getenv("REWIRE_BUILD")?.toIntOrNull() ?: 0): Int {
     val match = Regex("""^(\d+)\.(\d+)\.(\d+)(?:-(alpha|beta)\.(\d+))?$""").matchEntire(name)
         ?: error("VERSION '$name' is not X.Y.Z or X.Y.Z-alpha|beta.N")
     val (major, minor, patch, label, number) = match.destructured
     require(minor.toInt() < 100 && patch.toInt() < 100 && (number.toIntOrNull() ?: 0) < 100) {
         "VERSION '$name' overflows a version code slot"
     }
+    require(build in 0..99) { "REWIRE_BUILD $build overflows a version code slot" }
     val stage = when (label) { "alpha" -> 0; "beta" -> 1; else -> 2 }
-    return major.toInt() * 10_000_000 + minor.toInt() * 100_000 + patch.toInt() * 1_000 +
-        stage * 100 + (number.toIntOrNull() ?: 0)
+    // ponytail: a prerelease's last two digits are its N, so a patched prerelease keeps its code (fine for sideload
+    // APKs; Play only gets stable builds). Give prereleases their own build slot if they ever go to a Play track.
+    val tail = if (label.isEmpty()) build else number.toInt()
+    return major.toInt() * 10_000_000 + minor.toInt() * 100_000 + patch.toInt() * 1_000 + stage * 100 + tail
 }
 
 android {
