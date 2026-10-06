@@ -20,8 +20,8 @@
 #      writes the CHANGELOG entry, and nothing is built. The diff is the last
 #      chance to look at what is about to ship and at the notes describing it.
 #
-#   2. Merging that PR is what releases. The signed APKs (Full + Lite) and AAB are built, and
-#      the tag and the GitHub Release are created last, once both exist.
+#   2. Merging that PR is what releases. The signed APKs (Full + Lite) and the Play AAB
+#      (Play Lite) are built, and the tag and the GitHub Release are created last, once both exist.
 #
 # `!patch` skips step 1: it rebuilds the APK/AAB of the version master already
 # carries and re-attaches them to the Release that exists. There is no rollback
@@ -174,14 +174,14 @@ jobs:
             | From | `${{ needs.version.outputs.current }}` |
             | To | `${{ needs.version.outputs.version }}` |
             | Marker | `!${{ needs.version.outputs.marker }}` |
-            | Builds | `android (Full APK + Lite APK + AAB)` |
+            | Builds | `android (Full APK + Lite APK + Play Lite AAB)` |
 
             Changed here: `VERSION`, `CHANGELOG.md`.
             The CHANGELOG diff is the release note — edit it in this branch if it
             reads badly, that is what this PR is for.
 
             **Merging this PR is what releases.** It builds the signed Android APKs
-            (Full + Lite) and AAB, then creates the tag and the GitHub Release. Closing it
+            (Full + Lite) and the Play AAB (Play Lite), then creates the tag and the GitHub Release. Closing it
             without merging releases nothing and costs nothing.
           branch: chore/release-v${{ needs.version.outputs.version }}
           base: master
@@ -307,14 +307,15 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          # Both flavors' APKs (full = Accessibility, lite = none, for Play
-          # Protect / payment apps). Only full goes to Play, so one AAB.
+          # Both sideload flavors' APKs (full = Accessibility, lite = none, for
+          # Play Protect / payment apps). Play gets playLite: Lite without the
+          # self-updater (no INTERNET / REQUEST_INSTALL_PACKAGES), so one AAB.
           - label: APK
             artifact: apk
             task: ':app:assembleFullRelease :app:assembleLiteRelease'
           - label: AAB
             artifact: aab
-            task: ':app:bundleFullRelease'
+            task: ':app:bundlePlayLiteRelease'
     # Hoisted so a step can ask whether it was supplied: the `secrets` context
     # is not available in a step-level `if`, but `env` is.
     env:
@@ -371,7 +372,7 @@ jobs:
             cp app/build/outputs/apk/full/release/app-full-release*.apk "$RUNNER_TEMP/android/Rewire-${VERSION}.apk"
             cp app/build/outputs/apk/lite/release/app-lite-release*.apk "$RUNNER_TEMP/android/Rewire-Lite-${VERSION}.apk"
           else
-            cp app/build/outputs/bundle/fullRelease/app-full-release.aab "$RUNNER_TEMP/android/Rewire-${VERSION}.aab"
+            cp app/build/outputs/bundle/playLiteRelease/app-playLite-release.aab "$RUNNER_TEMP/android/Rewire-Play-${VERSION}.aab"
           fi
           ls -la "$RUNNER_TEMP/android"
 
@@ -395,6 +396,22 @@ jobs:
           "$aapt2" dump xmltree --file AndroidManifest.xml "$full" | grep -q BIND_ACCESSIBILITY_SERVICE \
             || { echo "::error::Full APK lost its accessibility service."; exit 1; }
           echo "Full + Lite APKs present; Lite has no accessibility service."
+
+      # Play's AAB is the fewest-permissions build: no accessibility service and
+      # no self-updater. The bundle manifest is protobuf, so its strings grep as-is.
+      - name: Check the Play bundle
+        if: matrix.artifact == 'aab'
+        env:
+          VERSION: ${{ needs.merged.outputs.version }}
+        run: |
+          manifest="$(unzip -p "$RUNNER_TEMP/android/Rewire-Play-${VERSION}.aab" base/manifest/AndroidManifest.xml | tr -c '[:print:]' '\n')"
+          for banned in BIND_ACCESSIBILITY_SERVICE android.permission.INTERNET REQUEST_INSTALL_PACKAGES UpdateInstallReceiver; do
+            if printf '%s' "$manifest" | grep -q "$banned"; then
+              echo "::error::Play AAB declares $banned; Play Lite must not."
+              exit 1
+            fi
+          done
+          echo "Play AAB: no accessibility service, no self-updater."
 
       # One name per matrix leg; two legs uploading the same name is a 409.
       - uses: actions/upload-artifact@v4
@@ -461,7 +478,8 @@ jobs:
               before paying — Guard keeps working through Usage access.
 
             Both are signed with the same key, so you can switch by installing the other.
-            Each updates itself to its own flavor. The `.aab` is for Play, not for sideloading.
+            Each updates itself to its own flavor. `Rewire-Play-*.aab` is the Play Store upload
+            (Lite without the self-updater; Play updates it), not for sideloading.
 
             Which one am I on? **Profile → About Rewire** shows *Full build* or *Lite build*.
             More: [Full vs Lite, Play Protect and payment apps](https://github.com/${{ github.repository }}#install)
