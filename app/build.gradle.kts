@@ -79,6 +79,11 @@ android {
         }
     }
 
+    // In-app updates: sideload builds (full, lite) use the GitHub AppUpdater, Play builds Google Play's update screen.
+    // Both source sets hold one PlayUpdates object; only the Play one pulls in the Play library.
+    listOf("full", "lite").forEach { sourceSets.getByName(it).kotlin.srcDir("src/sideload/java") }
+    listOf("play", "playLite").forEach { sourceSets.getByName(it).kotlin.srcDir("src/playStore/java") }
+
     // MigrationTestHelper reads the exported schemas as assets.
     sourceSets.getByName("androidTest").assets.srcDir("$projectDir/schemas")
 
@@ -167,6 +172,8 @@ kotlin {
 }
 
 dependencies {
+    "playImplementation"(libs.play.app.update)
+    "playLiteImplementation"(libs.play.app.update)
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime)
     implementation(libs.androidx.lifecycle.viewmodel.compose)

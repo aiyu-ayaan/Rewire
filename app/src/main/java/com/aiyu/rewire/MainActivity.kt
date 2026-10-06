@@ -2,6 +2,7 @@ package com.aiyu.rewire
 
 import androidx.lifecycle.lifecycleScope
 import com.aiyu.rewire.core.update.AppUpdater
+import com.aiyu.rewire.core.update.PlayUpdates
 import com.aiyu.rewire.feature.update.UpdateHost
 import kotlinx.coroutines.launch
 import com.aiyu.rewire.core.focus.FocusController
@@ -79,6 +80,7 @@ class MainActivity : ComponentActivity() {
             // Silent unless something newer exists; skipped when auto-update is off, snoozed or checked within the hour.
             if (BuildConfig.UPDATES) lifecycleScope.launch { updater.get().check() }
         }
+        PlayUpdates.attach(this, offer = savedInstanceState == null) // Play builds only; no-op when sideloaded
         setContent {
             val settings by settingsState.collectAsStateWithLifecycle()
             val s = settings
